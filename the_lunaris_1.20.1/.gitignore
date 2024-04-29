@@ -1,2 +1,13 @@
-/.gradle/
+.gradle
+
 /build/
+build/*
+/**/build/
+
+run/
+
+/bin/
+
+/**/logs
+
+*.launch
