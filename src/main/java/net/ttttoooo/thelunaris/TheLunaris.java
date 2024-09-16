@@ -28,6 +28,7 @@ import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
 import net.ttttoooo.thelunaris.block.ModBlocks;
+import net.ttttoooo.thelunaris.item.ModCreativeTabs;
 import net.ttttoooo.thelunaris.item.ModItems;
 
 import org.slf4j.Logger;
@@ -42,6 +43,8 @@ public class TheLunaris
     public TheLunaris()
     {
         IEventBus modEventBus = FMLJavaModLoadingContext.get().getModEventBus();
+        
+        ModCreativeTabs.register(modEventBus);
 
         ModItems.register(modEventBus);
         ModBlocks.register(modEventBus);
@@ -54,7 +57,7 @@ public class TheLunaris
 
     private void commonSetup(final FMLCommonSetupEvent event)
     {
-        LOGGER.info("HELLO FROM The Lunaris Part 2");
+        LOGGER.info("HELLO FROM The Lunaris");
         LOGGER.info("DIRT BLOCK >> {}", ForgeRegistries.BLOCKS.getKey(Blocks.DIRT));
     }
 
@@ -65,6 +68,11 @@ public class TheLunaris
     		event.accept(ModItems.MOONSTEEL);
     		event.accept(ModItems.EMOONSTEEL);
     		event.accept(ModItems.LUNARITE);
+    	}
+    	if(event.getTabKey() == CreativeModeTabs.BUILDING_BLOCKS) {
+    		event.accept(ModBlocks.MOONDIALBLOCK);
+    		event.accept(ModBlocks.VAILSTONE);
+    		event.accept(ModBlocks.VAILSTONEBRICK);
     	}
     }
 

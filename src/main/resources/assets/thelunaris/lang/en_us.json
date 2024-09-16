@@ -1,8 +1,12 @@
 {
+    "creativetab.thelunaris_tab": "The Lunaris",
+    
     "item.thelunaris.moondial": "Moondial",
     "item.thelunaris.moonsteel": "Moon Steel",
     "item.thelunaris.emoonsteel": "Etheral Moon Steel",
     "item.thelunaris.lunarite": "Lunarite",
 
-    "block.thelunaris.moondialblock": "Moondial"
+    "block.thelunaris.moondialblock": "Moondial",
+    "block.thelunaris.vailstone": "Vailstone",
+    "block.thelunaris.vailstonebrick": "Vailstone Bricks"
 }

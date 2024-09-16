@@ -19,6 +19,8 @@ public class ModItems {
 			() -> new Item(new Item.Properties()));
 	public static final RegistryObject<Item> LUNARITE = ITEMS.register("lunarite", 
 			() -> new Item(new Item.Properties()));
+	public static final RegistryObject<Item> TESTITEM = ITEMS.register("testitem", 
+			() -> new Item(new Item.Properties()));
 	
 	public static void register(IEventBus eventBus) {
 		ITEMS.register(eventBus);

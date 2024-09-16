@@ -20,16 +20,25 @@ public class ModBlocks {
 	public static final DeferredRegister<Block> BLOCKS =
 			DeferredRegister.create(ForgeRegistries.BLOCKS, TheLunaris.MODID);
 	
-	public static final RegistryObject<Block> MOONDIALBLOCK = BLOCKS.register("moondialblock", 
+//Special Blocks
+	public static final RegistryObject<Block> MOONDIALBLOCK = registerBlock("moondialblock", 
 			() -> new Block(BlockBehaviour.Properties.copy(Blocks.IRON_BLOCK).sound(SoundType.ANCIENT_DEBRIS)));
 	
-	public static <T extends Block> RegistryObject<T> registerBlock(String name, Supplier<T> block){
+//Vailstone Blocks
+	public static final RegistryObject<Block> VAILSTONE = registerBlock("vailstone", 
+			() -> new Block(BlockBehaviour.Properties.copy(Blocks.STONE).sound(SoundType.STONE)));
+	
+	public static final RegistryObject<Block> VAILSTONEBRICK = registerBlock("vailstonebrick", 
+			() -> new Block(BlockBehaviour.Properties.copy(Blocks.STONE_BRICKS).sound(SoundType.STONE)));
+	
+	
+	private static <T extends Block> RegistryObject<T> registerBlock(String name, Supplier<T> block){
 		RegistryObject<T> toReturn = BLOCKS.register(name, block);
 		registerBlockItem(name, toReturn);
 		return toReturn;
 	}
 	
-	public static <T extends Block> RegistryObject<Item> registerBlockItem(String name, RegistryObject<T> block){
+	private static <T extends Block> RegistryObject<Item> registerBlockItem(String name, RegistryObject<T> block){
 		return ModItems.ITEMS.register(name, () -> new BlockItem(block.get(), new Item.Properties()));
 	}
 	
