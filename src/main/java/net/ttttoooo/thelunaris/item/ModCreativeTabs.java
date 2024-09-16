@@ -22,6 +22,8 @@ public class ModCreativeTabs {
 				pOutput.accept(ModBlocks.MOONDIALBLOCK.get());
 				pOutput.accept(ModBlocks.VAILSTONE.get());
 				pOutput.accept(ModBlocks.VAILSTONEBRICK.get());
+				pOutput.accept(ModBlocks.VAILSTONEBRICK_STAIRS.get());
+				pOutput.accept(ModBlocks.VAILSTONEBRICK_SLAB.get());
 				//Item Entry
 				pOutput.accept(ModItems.MOONDIAL.get());
 				pOutput.accept(ModItems.MOONSTEEL.get());
