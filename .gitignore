@@ -20,6 +20,13 @@ build
 # other
 eclipse
 run
+saves
+config
+logs
+options.txt
+usercache.json
+usernamecache.json
+imgui.ini
 
 # Files from Forge MDK
 forge*changelog.txt
