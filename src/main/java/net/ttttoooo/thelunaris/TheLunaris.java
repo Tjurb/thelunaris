@@ -54,7 +54,7 @@ public class TheLunaris
 
     private void commonSetup(final FMLCommonSetupEvent event)
     {
-        LOGGER.info("HELLO FROM The Lunaris");
+        LOGGER.info("HELLO FROM The Lunaris Part 2");
         LOGGER.info("DIRT BLOCK >> {}", ForgeRegistries.BLOCKS.getKey(Blocks.DIRT));
     }
 
