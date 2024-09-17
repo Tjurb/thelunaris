@@ -8,5 +8,26 @@
 
     "block.thelunaris.moondialblock": "Moondial",
     "block.thelunaris.vailstone": "Vailstone",
-    "block.thelunaris.vailstonebrick": "Vailstone Bricks"
+    "block.thelunaris.vailstonebrick_stairs": "Vailstone Bricks Stairs",
+    "block.thelunaris.vailstonebrick_slab": "Vailstone Bricks Slab",
+    "block.thelunaris.vailstonebrick_wall": "Vailstone Bricks Wall",
+    
+    "block.thelunaris.lunarshale": "Lunarshale",
+    "block.thelunaris.lunarslate": "Lunarslate",
+    "block.thelunaris.smoothlunarslate": "Smooth Lunarslate",
+    "block.thelunaris.smoothlunarslate_stairs": "Smooth Lunarslate Stairs",
+    "block.thelunaris.smoothlunarslate_slab": "Smooth Lunarslate Slab",
+    "block.thelunaris.smoothlunarslate_wall": "Smooth Lunarslate Wall",
+    
+    "block.thelunaris.gneiss": "Gneiss",
+    "block.thelunaris.smoothgneiss": "Smooth Gneiss",
+    "block.thelunaris.smoothgneiss_stairs": "Smooth Gneiss Stairs",
+    "block.thelunaris.smoothgneiss_slab": "Smooth Gneiss Slab",
+    "block.thelunaris.smoothgneiss_wall": "Smooth Gneiss Wall",
+    
+    "block.thelunaris.marble": "Marble",
+    "block.thelunaris.smoothmarble": "Smooth Marble",
+    "block.thelunaris.smoothmarble_stairs": "Smooth Marble Stairs",
+    "block.thelunaris.smoothmarble_slab": "Smooth Marble Slab",
+    "block.thelunaris.smoothmarble_wall": "Smooth Marble Wall"
 }

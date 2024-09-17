@@ -40,6 +40,45 @@ public class ModBlocks {
 	public static final RegistryObject<Block> VAILSTONEBRICK_WALL = registerBlock("vailstonebrick_wall", 
 			() -> new WallBlock(BlockBehaviour.Properties.copy(Blocks.STONE_BRICKS).sound(SoundType.STONE)));
 	
+//Additional Stone Blocks
+	public static final RegistryObject<Block> LUNARSHALE = registerBlock("lunarshale", 
+			() -> new Block(BlockBehaviour.Properties.copy(Blocks.STONE).sound(SoundType.STONE)));
+	public static final RegistryObject<Block> LUNARSLATE = registerBlock("lunarslate", 
+			() -> new Block(BlockBehaviour.Properties.copy(Blocks.STONE).sound(SoundType.STONE)));
+	public static final RegistryObject<Block> SMOOTHLUNARSLATE = registerBlock("smoothlunarslate", 
+			() -> new Block(BlockBehaviour.Properties.copy(Blocks.STONE).sound(SoundType.STONE)));
+	public static final RegistryObject<Block> SMOOTHLUNARSLATE_STAIRS = registerBlock("smoothlunarslate_stairs", 
+			() -> new StairBlock(() -> ModBlocks.SMOOTHLUNARSLATE.get().defaultBlockState(),
+			BlockBehaviour.Properties.copy(Blocks.STONE_BRICKS).sound(SoundType.STONE)));
+	public static final RegistryObject<Block> SMOOTHLUNARSLATE_SLAB = registerBlock("smoothlunarslate_slab", 
+			() -> new SlabBlock(BlockBehaviour.Properties.copy(Blocks.STONE).sound(SoundType.STONE)));
+	public static final RegistryObject<Block> SMOOTHLUNARSLATE_WALL = registerBlock("smoothlunarslate_wall", 
+			() -> new WallBlock(BlockBehaviour.Properties.copy(Blocks.STONE).sound(SoundType.STONE)));
+	
+	public static final RegistryObject<Block> GNEISS = registerBlock("gneiss", 
+			() -> new Block(BlockBehaviour.Properties.copy(Blocks.STONE).sound(SoundType.STONE)));
+	public static final RegistryObject<Block> SMOOTHGNEISS = registerBlock("smoothgneiss", 
+			() -> new Block(BlockBehaviour.Properties.copy(Blocks.STONE).sound(SoundType.STONE)));
+	public static final RegistryObject<Block> SMOOTHGNEISS_STAIRS = registerBlock("smoothgneiss_stairs", 
+			() -> new StairBlock(() -> ModBlocks.SMOOTHGNEISS.get().defaultBlockState(),
+			BlockBehaviour.Properties.copy(Blocks.STONE_BRICKS).sound(SoundType.STONE)));
+	public static final RegistryObject<Block> SMOOTHGNEISS_SLAB = registerBlock("smoothgneiss_slab", 
+			() -> new SlabBlock(BlockBehaviour.Properties.copy(Blocks.STONE).sound(SoundType.STONE)));
+	public static final RegistryObject<Block> SMOOTHGNEISS_WALL = registerBlock("smoothgneiss_wall", 
+			() -> new WallBlock(BlockBehaviour.Properties.copy(Blocks.STONE).sound(SoundType.STONE)));
+	
+	public static final RegistryObject<Block> MARBLE = registerBlock("marble", 
+			() -> new Block(BlockBehaviour.Properties.copy(Blocks.STONE).sound(SoundType.STONE)));
+	public static final RegistryObject<Block> SMOOTHMARBLE = registerBlock("smoothmarble", 
+			() -> new Block(BlockBehaviour.Properties.copy(Blocks.STONE).sound(SoundType.STONE)));
+	public static final RegistryObject<Block> SMOOTHMARBLE_STAIRS = registerBlock("smoothmarble_stairs", 
+			() -> new StairBlock(() -> ModBlocks.SMOOTHMARBLE.get().defaultBlockState(),
+			BlockBehaviour.Properties.copy(Blocks.STONE_BRICKS).sound(SoundType.STONE)));
+	public static final RegistryObject<Block> SMOOTHMARBLE_SLAB = registerBlock("smoothmarble_slab", 
+			() -> new SlabBlock(BlockBehaviour.Properties.copy(Blocks.STONE).sound(SoundType.STONE)));
+	public static final RegistryObject<Block> SMOOTHMARBLE_WALL = registerBlock("smoothmarble_wall", 
+			() -> new WallBlock(BlockBehaviour.Properties.copy(Blocks.STONE).sound(SoundType.STONE)));
+	
 //Ore Blocks
 	public static final RegistryObject<Block> LUNARITE_ORE = registerBlock("lunarite_ore", 
 			() -> new Block(BlockBehaviour.Properties.copy(Blocks.STONE).sound(SoundType.STONE)));
