@@ -25,10 +25,26 @@ public class ModCreativeTabs {
 				pOutput.accept(ModBlocks.VAILSTONEBRICK.get());
 				pOutput.accept(ModBlocks.VAILSTONEBRICK_STAIRS.get());
 				pOutput.accept(ModBlocks.VAILSTONEBRICK_SLAB.get());
-				
+				pOutput.accept(ModBlocks.VAILSTONEBRICK_WALL.get());
+
+				pOutput.accept(ModBlocks.LUNARSHALE.get());
 				pOutput.accept(ModBlocks.LUNARSLATE.get());
+				pOutput.accept(ModBlocks.SMOOTHLUNARSLATE.get());
+				pOutput.accept(ModBlocks.SMOOTHLUNARSLATE_STAIRS.get());
+				pOutput.accept(ModBlocks.SMOOTHLUNARSLATE_SLAB.get());
+				pOutput.accept(ModBlocks.SMOOTHLUNARSLATE_WALL.get());
+				
 				pOutput.accept(ModBlocks.GNEISS.get());
+				pOutput.accept(ModBlocks.SMOOTHGNEISS.get());
+				pOutput.accept(ModBlocks.SMOOTHGNEISS_STAIRS.get());
+				pOutput.accept(ModBlocks.SMOOTHGNEISS_SLAB.get());
+				pOutput.accept(ModBlocks.SMOOTHGNEISS_WALL.get());
+				
 				pOutput.accept(ModBlocks.MARBLE.get());
+				pOutput.accept(ModBlocks.SMOOTHMARBLE.get());
+				pOutput.accept(ModBlocks.SMOOTHMARBLE_STAIRS.get());
+				pOutput.accept(ModBlocks.SMOOTHMARBLE_SLAB.get());
+				pOutput.accept(ModBlocks.SMOOTHMARBLE_WALL.get());
 				
 				//Item Entry
 				pOutput.accept(ModItems.MOONDIAL.get());
