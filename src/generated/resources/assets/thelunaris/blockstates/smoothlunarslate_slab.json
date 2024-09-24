@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=bottom": {
+      "model": "thelunaris:block/smoothlunarslate_slab"
+    },
+    "type=double": {
+      "model": "thelunaris:block/smoothlunarslate"
+    },
+    "type=top": {
+      "model": "thelunaris:block/smoothlunarslate_slab_top"
+    }
+  }
+}

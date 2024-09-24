@@ -6,6 +6,8 @@ import net.minecraft.data.loot.BlockLootSubProvider;
 import net.minecraft.world.flag.FeatureFlagSet;
 import net.minecraft.world.flag.FeatureFlags;
 import net.minecraft.world.item.Item;
+import net.minecraft.world.level.block.Block;
+import net.minecraftforge.registries.RegistryObject;
 import net.ttttoooo.thelunaris.block.ModBlocks;
 
 public class ModBlockLootTables extends BlockLootSubProvider{
@@ -35,6 +37,8 @@ public class ModBlockLootTables extends BlockLootSubProvider{
 		this.dropSelf(ModBlocks.SMOOTHMARBLE.get());
 		this.dropSelf(ModBlocks.SMOOTHMARBLE_STAIRS.get());
 		this.dropSelf(ModBlocks.SMOOTHMARBLE_WALL.get());
+
+		this.dropSelf(ModBlocks.LUNARITE_ORE.get());
 		
 		this.add(ModBlocks.VAILSTONEBRICK_SLAB.get(),
 				block -> createSlabItemTable(ModBlocks.VAILSTONEBRICK_SLAB.get()));
@@ -44,6 +48,11 @@ public class ModBlockLootTables extends BlockLootSubProvider{
 				block -> createSlabItemTable(ModBlocks.SMOOTHGNEISS_SLAB.get()));
 		this.add(ModBlocks.SMOOTHMARBLE_SLAB.get(),
 				block -> createSlabItemTable(ModBlocks.SMOOTHMARBLE_SLAB.get()));
+	}
+	
+	@Override
+	protected Iterable<Block> getKnownBlocks(){
+		return ModBlocks.BLOCKS.getEntries().stream().map(RegistryObject::get)::iterator;
 	}
 	
 }

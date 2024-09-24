@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/stairs",
+  "textures": {
+    "bottom": "thelunaris:block/smoothgneiss",
+    "side": "thelunaris:block/smoothgneiss",
+    "top": "thelunaris:block/smoothgneiss"
+  }
+}

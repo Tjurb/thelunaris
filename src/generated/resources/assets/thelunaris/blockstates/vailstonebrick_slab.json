@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=bottom": {
+      "model": "thelunaris:block/vailstonebrick_slab"
+    },
+    "type=double": {
+      "model": "thelunaris:block/vailstonebrick"
+    },
+    "type=top": {
+      "model": "thelunaris:block/vailstonebrick_slab_top"
+    }
+  }
+}

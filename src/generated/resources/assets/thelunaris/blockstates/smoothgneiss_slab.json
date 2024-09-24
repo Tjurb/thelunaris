@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=bottom": {
+      "model": "thelunaris:block/smoothgneiss_slab"
+    },
+    "type=double": {
+      "model": "thelunaris:block/smoothgneiss"
+    },
+    "type=top": {
+      "model": "thelunaris:block/smoothgneiss_slab_top"
+    }
+  }
+}

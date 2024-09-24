@@ -31,7 +31,6 @@ public class ModItemModelProvider extends ItemModelProvider{
 		wallItem(ModBlocks.SMOOTHGNEISS_WALL, ModBlocks.SMOOTHGNEISS);
 		wallItem(ModBlocks.SMOOTHLUNARSLATE_WALL, ModBlocks.SMOOTHLUNARSLATE);
 		wallItem(ModBlocks.SMOOTHMARBLE_WALL, ModBlocks.SMOOTHMARBLE);
-		
 	}
 	
 	private ItemModelBuilder simpleItem(RegistryObject<Item> item) {

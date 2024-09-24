@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=bottom": {
+      "model": "thelunaris:block/smoothmarble_slab"
+    },
+    "type=double": {
+      "model": "thelunaris:block/smoothmarble"
+    },
+    "type=top": {
+      "model": "thelunaris:block/smoothmarble_slab_top"
+    }
+  }
+}

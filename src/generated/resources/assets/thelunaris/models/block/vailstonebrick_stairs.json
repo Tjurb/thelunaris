@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/stairs",
+  "textures": {
+    "bottom": "thelunaris:block/vailstonebrick",
+    "side": "thelunaris:block/vailstonebrick",
+    "top": "thelunaris:block/vailstonebrick"
+  }
+}

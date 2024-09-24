@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/inner_stairs",
+  "textures": {
+    "bottom": "thelunaris:block/smoothmarble",
+    "side": "thelunaris:block/smoothmarble",
+    "top": "thelunaris:block/smoothmarble"
+  }
+}
