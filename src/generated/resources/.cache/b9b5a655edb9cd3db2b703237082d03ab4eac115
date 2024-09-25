@@ -1,5 +1,6 @@
-// 1.20.1	2024-09-24T12:25:38.2289908	Block States: thelunaris
+// 1.20.1	2024-09-24T16:30:27.4673181	Block States: thelunaris
 52548ff1f441677d404f1ffd122be160eb634a25 assets/thelunaris/blockstates/gneiss.json
+fc9b1a46f945d39173d3824e512223dc7989e558 assets/thelunaris/blockstates/lunarite_ore.json
 70b64ce25c3fb70d88bff4f06db8555548a4433d assets/thelunaris/blockstates/lunarshale.json
 d050bca328b5282bb645fb6cffeb2d22ed84b2ad assets/thelunaris/blockstates/lunarslate.json
 c86f6a28f55d67c86cba3b56ef89707884a2535c assets/thelunaris/blockstates/marble.json
@@ -22,6 +23,7 @@ c7d35b25c1aefacedcfae4c406371d95f4e26b84 assets/thelunaris/blockstates/smoothmar
 cd2d9792a1fc19f0a7c5ab7e69dd13bb8fca8e97 assets/thelunaris/blockstates/vailstonebrick_stairs.json
 2eb2a0e906f51d0bccc422c59b242ef36fc82088 assets/thelunaris/blockstates/vailstonebrick_wall.json
 2699dba517348c4d3eae874abfbe1c2be9d63e91 assets/thelunaris/models/block/gneiss.json
+7ccd04b79bff53f20ee4f505f579589deb06436a assets/thelunaris/models/block/lunarite_ore.json
 e8c67b8ad6cf8c9f8ee576e392f6536371aa814d assets/thelunaris/models/block/lunarshale.json
 b6247b20f5dae4a0084171ce4ae3606f8f490d5d assets/thelunaris/models/block/lunarslate.json
 7949bdd6f66e4d0941c24d79abb259823beb8e09 assets/thelunaris/models/block/marble.json
@@ -64,6 +66,7 @@ c1c91e299f7eb98e74b3abf3a59720563452fc6d assets/thelunaris/models/block/vailston
 7867bf90e0f2e051e0594b7adab0fd9a08611315 assets/thelunaris/models/block/vailstonebrick_wall_side.json
 89d608ecc9efcd083c9eea008f6c707157bcfddf assets/thelunaris/models/block/vailstonebrick_wall_side_tall.json
 d14d3dfd4bba185f841f05e533617a53a3ae515c assets/thelunaris/models/item/gneiss.json
+33903813865025614fa7c96e9db2640beb7ffff4 assets/thelunaris/models/item/lunarite_ore.json
 7b4cd1606d809e21df85081545cdfc3639d323a6 assets/thelunaris/models/item/lunarshale.json
 ed908c74d05b845122708a987444572dc99956b0 assets/thelunaris/models/item/lunarslate.json
 40a67aed8dbc348afdef9a99d1a01ba747d16e9a assets/thelunaris/models/item/marble.json

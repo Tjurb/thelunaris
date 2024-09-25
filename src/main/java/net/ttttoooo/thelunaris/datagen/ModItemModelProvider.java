@@ -31,6 +31,17 @@ public class ModItemModelProvider extends ItemModelProvider{
 		wallItem(ModBlocks.SMOOTHGNEISS_WALL, ModBlocks.SMOOTHGNEISS);
 		wallItem(ModBlocks.SMOOTHLUNARSLATE_WALL, ModBlocks.SMOOTHLUNARSLATE);
 		wallItem(ModBlocks.SMOOTHMARBLE_WALL, ModBlocks.SMOOTHMARBLE);
+		
+		evenSimplerBlockItem(ModBlocks.VAILSTONEBRICK_STAIRS);
+		evenSimplerBlockItem(ModBlocks.SMOOTHGNEISS_STAIRS);
+		evenSimplerBlockItem(ModBlocks.SMOOTHLUNARSLATE_STAIRS);
+		evenSimplerBlockItem(ModBlocks.SMOOTHMARBLE_STAIRS);
+		
+		evenSimplerBlockItem(ModBlocks.VAILSTONEBRICK_SLAB);
+		evenSimplerBlockItem(ModBlocks.SMOOTHGNEISS_SLAB);
+		evenSimplerBlockItem(ModBlocks.SMOOTHLUNARSLATE_SLAB);
+		evenSimplerBlockItem(ModBlocks.SMOOTHMARBLE_SLAB);
+
 	}
 	
 	private ItemModelBuilder simpleItem(RegistryObject<Item> item) {
@@ -38,6 +49,11 @@ public class ModItemModelProvider extends ItemModelProvider{
 				new ResourceLocation("item/generated")).texture("layer0",
 				new ResourceLocation(TheLunaris.MODID, "item/" + item.getId().getPath()));
 	}
+	
+	public void evenSimplerBlockItem(RegistryObject<Block> block) {
+        this.withExistingParent(TheLunaris.MODID + ":" + ForgeRegistries.BLOCKS.getKey(block.get()).getPath(),
+                modLoc("block/" + ForgeRegistries.BLOCKS.getKey(block.get()).getPath()));
+    }
 	
 	public void wallItem(RegistryObject<Block> block, RegistryObject<Block> baseBlock) {
 		this.withExistingParent(ForgeRegistries.BLOCKS.getKey(block.get()).getPath(), mcLoc("block/wall_inventory"))

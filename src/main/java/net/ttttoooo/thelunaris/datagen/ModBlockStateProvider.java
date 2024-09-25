@@ -18,13 +18,16 @@ public class ModBlockStateProvider extends BlockStateProvider{
 
 	@Override
 	protected void registerStatesAndModels() {
+		//special blocks
 		blockWithItem(ModBlocks.MOONDIALBLOCK);
 		
+		//stone blocks
 		blockWithItem(ModBlocks.VAILSTONE);
 		blockWithItem(ModBlocks.VAILSTONEBRICK);
 		stairsBlock(((StairBlock) ModBlocks.VAILSTONEBRICK_STAIRS.get()), blockTexture(ModBlocks.VAILSTONEBRICK.get()));
 		slabBlock(((SlabBlock) ModBlocks.VAILSTONEBRICK_SLAB.get()), blockTexture(ModBlocks.VAILSTONEBRICK.get()), blockTexture(ModBlocks.VAILSTONEBRICK.get()));
 		wallBlock(((WallBlock) ModBlocks.VAILSTONEBRICK_WALL.get()), blockTexture(ModBlocks.VAILSTONEBRICK.get()));
+		
 		
 		blockWithItem(ModBlocks.LUNARSHALE);
 		blockWithItem(ModBlocks.LUNARSLATE);
@@ -47,6 +50,8 @@ public class ModBlockStateProvider extends BlockStateProvider{
 		slabBlock(((SlabBlock) ModBlocks.SMOOTHMARBLE_SLAB.get()), blockTexture(ModBlocks.SMOOTHMARBLE.get()), blockTexture(ModBlocks.SMOOTHMARBLE.get()));
 		wallBlock(((WallBlock) ModBlocks.SMOOTHMARBLE_WALL.get()), blockTexture(ModBlocks.SMOOTHMARBLE.get()));
 		
+		//ore blocks
+		blockWithItem(ModBlocks.LUNARITE_ORE);
 		
 	}
 	

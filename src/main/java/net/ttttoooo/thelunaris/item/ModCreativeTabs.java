@@ -46,11 +46,23 @@ public class ModCreativeTabs {
 				pOutput.accept(ModBlocks.SMOOTHMARBLE_SLAB.get());
 				pOutput.accept(ModBlocks.SMOOTHMARBLE_WALL.get());
 				
+				//Ore Entry
+				pOutput.accept(ModBlocks.LUNARITE_ORE.get());
+				
+				//Tree Entry
+				pOutput.accept(ModBlocks.CELEST_WOOD.get());
+				pOutput.accept(ModBlocks.STELLAR_WOOD.get());
+				pOutput.accept(ModBlocks.SKYOAK_WOOD.get());
+				pOutput.accept(ModBlocks.CELEST_LEAVES.get());
+				pOutput.accept(ModBlocks.STELLAR_LEAVES.get());
+				pOutput.accept(ModBlocks.SKYOAK_LEAVES.get());
+				
 				//Item Entry
 				pOutput.accept(ModItems.MOONDIAL.get());
 				pOutput.accept(ModItems.MOONSTEEL.get());
 				pOutput.accept(ModItems.EMOONSTEEL.get());
 				pOutput.accept(ModItems.LUNARITE.get());
+				
 			})
 			.build());
 	

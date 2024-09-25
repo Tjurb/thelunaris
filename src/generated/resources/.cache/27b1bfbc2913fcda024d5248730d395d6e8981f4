@@ -1,9 +1,17 @@
-// 1.20.1	2024-09-24T12:25:38.237355	Item Models: thelunaris
+// 1.20.1	2024-09-24T16:30:27.4718929	Item Models: thelunaris
 0414281635d08f78f0de15b50fdf44888b1001ee assets/thelunaris/models/item/emoonsteel.json
 73ffec3d598684617c17abeb2091ec48c69d8aeb assets/thelunaris/models/item/lunarite.json
 1e1b006d1470092ca23c87593b0847e6dbefd0a7 assets/thelunaris/models/item/moondial.json
 1631c2ef1b5f64ba53fba49e3c86ea97309bd849 assets/thelunaris/models/item/moonsteel.json
+3f92e78d47f6b45f893e41edae3bd256288f62c7 assets/thelunaris/models/item/smoothgneiss_slab.json
+084512e2e77a3b2d32899b4e9ee0738b89f9a6a7 assets/thelunaris/models/item/smoothgneiss_stairs.json
 cc80e93459e95d0aa81166e253d3684da4ec1a63 assets/thelunaris/models/item/smoothgneiss_wall.json
+0cc27d1a3c2986756873b9da2c4df6db72fefcbd assets/thelunaris/models/item/smoothlunarslate_slab.json
+532638a5cd94feaafa62612e29ae885d44f201e2 assets/thelunaris/models/item/smoothlunarslate_stairs.json
 637a43fdfff9db78776c0fc6607ee5646fa0d49b assets/thelunaris/models/item/smoothlunarslate_wall.json
+7eb812d00185a67177ac792f7b9272ebe51c8770 assets/thelunaris/models/item/smoothmarble_slab.json
+7fe91116eef3e9e5ff99e9eaf33b256eb2fe925b assets/thelunaris/models/item/smoothmarble_stairs.json
 24ff9d4577c0a666c0a2182f73946571811d2c86 assets/thelunaris/models/item/smoothmarble_wall.json
+254566af11e649d0bfaee442114c9add65135f83 assets/thelunaris/models/item/vailstonebrick_slab.json
+a80f4cd67e9a7243b2590802a35659a98173a549 assets/thelunaris/models/item/vailstonebrick_stairs.json
 cb5d1c1d043438e4894d7d87d07e536cd8d8dbba assets/thelunaris/models/item/vailstonebrick_wall.json
