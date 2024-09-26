@@ -27,20 +27,29 @@ public class ModItemModelProvider extends ItemModelProvider{
 		simpleItem(ModItems.EMOONSTEEL);
 		simpleItem(ModItems.LUNARITE);
 		
+		//walls
 		wallItem(ModBlocks.VAILSTONEBRICK_WALL, ModBlocks.VAILSTONEBRICK);
 		wallItem(ModBlocks.SMOOTHGNEISS_WALL, ModBlocks.SMOOTHGNEISS);
 		wallItem(ModBlocks.SMOOTHLUNARSLATE_WALL, ModBlocks.SMOOTHLUNARSLATE);
 		wallItem(ModBlocks.SMOOTHMARBLE_WALL, ModBlocks.SMOOTHMARBLE);
 		
+		//stairs
 		evenSimplerBlockItem(ModBlocks.VAILSTONEBRICK_STAIRS);
 		evenSimplerBlockItem(ModBlocks.SMOOTHGNEISS_STAIRS);
 		evenSimplerBlockItem(ModBlocks.SMOOTHLUNARSLATE_STAIRS);
 		evenSimplerBlockItem(ModBlocks.SMOOTHMARBLE_STAIRS);
+		evenSimplerBlockItem(ModBlocks.CELEST_STAIRS);
+		evenSimplerBlockItem(ModBlocks.STELLAR_STAIRS);
+		evenSimplerBlockItem(ModBlocks.SKYOAK_STAIRS);
 		
+		//slabs
 		evenSimplerBlockItem(ModBlocks.VAILSTONEBRICK_SLAB);
 		evenSimplerBlockItem(ModBlocks.SMOOTHGNEISS_SLAB);
 		evenSimplerBlockItem(ModBlocks.SMOOTHLUNARSLATE_SLAB);
 		evenSimplerBlockItem(ModBlocks.SMOOTHMARBLE_SLAB);
+		evenSimplerBlockItem(ModBlocks.CELEST_SLAB);
+		evenSimplerBlockItem(ModBlocks.STELLAR_SLAB);
+		evenSimplerBlockItem(ModBlocks.SKYOAK_SLAB);
 
 	}
 	

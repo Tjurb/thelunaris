@@ -37,6 +37,19 @@ public class ModBlockLootTables extends BlockLootSubProvider{
 		this.dropSelf(ModBlocks.SMOOTHMARBLE.get());
 		this.dropSelf(ModBlocks.SMOOTHMARBLE_STAIRS.get());
 		this.dropSelf(ModBlocks.SMOOTHMARBLE_WALL.get());
+		
+		this.dropSelf(ModBlocks.CELEST_WOOD.get());
+		this.dropSelf(ModBlocks.CELEST_LEAVES.get());
+		this.dropSelf(ModBlocks.CELEST_PLANKS.get());
+		this.dropSelf(ModBlocks.CELEST_STAIRS.get());
+		this.dropSelf(ModBlocks.STELLAR_WOOD.get());
+		this.dropSelf(ModBlocks.STELLAR_LEAVES.get());
+		this.dropSelf(ModBlocks.STELLAR_PLANKS.get());
+		this.dropSelf(ModBlocks.STELLAR_STAIRS.get());
+		this.dropSelf(ModBlocks.SKYOAK_WOOD.get());
+		this.dropSelf(ModBlocks.SKYOAK_LEAVES.get());
+		this.dropSelf(ModBlocks.SKYOAK_PLANKS.get());
+		this.dropSelf(ModBlocks.SKYOAK_STAIRS.get());
 
 		this.dropSelf(ModBlocks.LUNARITE_ORE.get());
 		
@@ -48,6 +61,13 @@ public class ModBlockLootTables extends BlockLootSubProvider{
 				block -> createSlabItemTable(ModBlocks.SMOOTHGNEISS_SLAB.get()));
 		this.add(ModBlocks.SMOOTHMARBLE_SLAB.get(),
 				block -> createSlabItemTable(ModBlocks.SMOOTHMARBLE_SLAB.get()));
+		
+		this.add(ModBlocks.CELEST_SLAB.get(),
+				block -> createSlabItemTable(ModBlocks.CELEST_SLAB.get()));
+		this.add(ModBlocks.STELLAR_SLAB.get(),
+				block -> createSlabItemTable(ModBlocks.STELLAR_SLAB.get()));
+		this.add(ModBlocks.SKYOAK_SLAB.get(),
+				block -> createSlabItemTable(ModBlocks.SKYOAK_SLAB.get()));
 	}
 	
 	@Override

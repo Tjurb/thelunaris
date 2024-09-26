@@ -32,14 +32,37 @@ public class ModBlocks {
 			() -> new Block(BlockBehaviour.Properties.copy(Blocks.OAK_WOOD).sound(SoundType.WOOD)));
 	public static final RegistryObject<Block> CELEST_LEAVES = registerBlock("celest_leaves", 
 			() -> new Block(BlockBehaviour.Properties.copy(Blocks.OAK_LEAVES).sound(SoundType.GRASS)));
+	public static final RegistryObject<Block> CELEST_PLANKS = registerBlock("celest_planks", 
+			() -> new Block(BlockBehaviour.Properties.copy(Blocks.OAK_PLANKS).sound(SoundType.WOOD)));
+	public static final RegistryObject<Block> CELEST_STAIRS = registerBlock("celest_stairs", 
+			() -> new StairBlock(() -> ModBlocks.CELEST_PLANKS.get().defaultBlockState(),
+			BlockBehaviour.Properties.copy(Blocks.OAK_PLANKS).sound(SoundType.WOOD)));
+	public static final RegistryObject<Block> CELEST_SLAB = registerBlock("celest_slab", 
+			() -> new SlabBlock(BlockBehaviour.Properties.copy(Blocks.OAK_PLANKS).sound(SoundType.WOOD)));
+	
 	public static final RegistryObject<Block> STELLAR_WOOD = registerBlock("stellar_wood", 
 			() -> new Block(BlockBehaviour.Properties.copy(Blocks.OAK_WOOD).sound(SoundType.WOOD)));
 	public static final RegistryObject<Block> STELLAR_LEAVES = registerBlock("stellar_leaves", 
 			() -> new Block(BlockBehaviour.Properties.copy(Blocks.OAK_LEAVES).sound(SoundType.GRASS)));
+	public static final RegistryObject<Block> STELLAR_PLANKS = registerBlock("stellar_planks", 
+			() -> new Block(BlockBehaviour.Properties.copy(Blocks.OAK_PLANKS).sound(SoundType.WOOD)));
+	public static final RegistryObject<Block> STELLAR_STAIRS = registerBlock("stellar_stairs", 
+			() -> new StairBlock(() -> ModBlocks.STELLAR_PLANKS.get().defaultBlockState(),
+			BlockBehaviour.Properties.copy(Blocks.OAK_PLANKS).sound(SoundType.WOOD)));
+	public static final RegistryObject<Block> STELLAR_SLAB = registerBlock("stellar_slab", 
+			() -> new SlabBlock(BlockBehaviour.Properties.copy(Blocks.OAK_PLANKS).sound(SoundType.WOOD)));
+	
 	public static final RegistryObject<Block> SKYOAK_WOOD = registerBlock("skyoak_wood", 
 			() -> new Block(BlockBehaviour.Properties.copy(Blocks.OAK_WOOD).sound(SoundType.WOOD)));
 	public static final RegistryObject<Block> SKYOAK_LEAVES = registerBlock("skyoak_leaves", 
 			() -> new Block(BlockBehaviour.Properties.copy(Blocks.OAK_LEAVES).sound(SoundType.GRASS)));
+	public static final RegistryObject<Block> SKYOAK_PLANKS = registerBlock("skyoak_planks", 
+			() -> new Block(BlockBehaviour.Properties.copy(Blocks.OAK_PLANKS).sound(SoundType.WOOD)));
+	public static final RegistryObject<Block> SKYOAK_STAIRS = registerBlock("skyoak_stairs", 
+			() -> new StairBlock(() -> ModBlocks.SKYOAK_PLANKS.get().defaultBlockState(),
+			BlockBehaviour.Properties.copy(Blocks.OAK_PLANKS).sound(SoundType.WOOD)));
+	public static final RegistryObject<Block> SKYOAK_SLAB = registerBlock("skyoak_slab", 
+			() -> new SlabBlock(BlockBehaviour.Properties.copy(Blocks.OAK_PLANKS).sound(SoundType.WOOD)));
 	
 //Vailstone Blocks
 	public static final RegistryObject<Block> VAILSTONE = registerBlock("vailstone", 

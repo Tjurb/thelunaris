@@ -57,5 +57,22 @@ public class ModBlockTagGenerator extends BlockTagsProvider{
 					ModBlocks.SMOOTHGNEISS_WALL.get(),
 					ModBlocks.SMOOTHMARBLE_WALL.get());
 		
+		this.tag(BlockTags.MINEABLE_WITH_AXE)
+			.add(ModBlocks.CELEST_WOOD.get(),
+				ModBlocks.CELEST_PLANKS.get(),
+				ModBlocks.CELEST_STAIRS.get(),
+				ModBlocks.CELEST_SLAB.get(),
+				
+				ModBlocks.STELLAR_WOOD.get(),
+				ModBlocks.STELLAR_PLANKS.get(),
+				ModBlocks.STELLAR_STAIRS.get(),
+				ModBlocks.STELLAR_SLAB.get(),
+				
+				ModBlocks.SKYOAK_WOOD.get(),
+				ModBlocks.SKYOAK_PLANKS.get(),
+				ModBlocks.SKYOAK_STAIRS.get(),
+				ModBlocks.SKYOAK_SLAB.get());
+		
+		
 	}
 }

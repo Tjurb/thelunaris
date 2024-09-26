@@ -51,11 +51,22 @@ public class ModCreativeTabs {
 				
 				//Tree Entry
 				pOutput.accept(ModBlocks.CELEST_WOOD.get());
-				pOutput.accept(ModBlocks.STELLAR_WOOD.get());
-				pOutput.accept(ModBlocks.SKYOAK_WOOD.get());
 				pOutput.accept(ModBlocks.CELEST_LEAVES.get());
-				pOutput.accept(ModBlocks.STELLAR_LEAVES.get());
-				pOutput.accept(ModBlocks.SKYOAK_LEAVES.get());
+				pOutput.accept(ModBlocks.CELEST_PLANKS.get());
+				pOutput.accept(ModBlocks.CELEST_STAIRS.get());
+				pOutput.accept(ModBlocks.CELEST_SLAB.get());
+				
+				pOutput.accept(ModBlocks.STELLAR_WOOD.get());
+				pOutput.accept(ModBlocks.STELLAR_LEAVES.get());;
+				pOutput.accept(ModBlocks.STELLAR_PLANKS.get());
+				pOutput.accept(ModBlocks.STELLAR_STAIRS.get());
+				pOutput.accept(ModBlocks.STELLAR_SLAB.get());
+				
+				pOutput.accept(ModBlocks.SKYOAK_WOOD.get());
+				pOutput.accept(ModBlocks.SKYOAK_LEAVES.get());;
+				pOutput.accept(ModBlocks.SKYOAK_PLANKS.get());
+				pOutput.accept(ModBlocks.SKYOAK_STAIRS.get());
+				pOutput.accept(ModBlocks.SKYOAK_SLAB.get());
 				
 				//Item Entry
 				pOutput.accept(ModItems.MOONDIAL.get());
