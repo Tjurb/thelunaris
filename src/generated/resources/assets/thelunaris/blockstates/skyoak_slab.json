@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=bottom": {
+      "model": "thelunaris:block/skyoak_slab"
+    },
+    "type=double": {
+      "model": "thelunaris:block/skyoak_planks"
+    },
+    "type=top": {
+      "model": "thelunaris:block/skyoak_slab_top"
+    }
+  }
+}

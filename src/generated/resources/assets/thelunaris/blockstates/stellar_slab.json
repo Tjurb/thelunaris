@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=bottom": {
+      "model": "thelunaris:block/stellar_slab"
+    },
+    "type=double": {
+      "model": "thelunaris:block/stellar_planks"
+    },
+    "type=top": {
+      "model": "thelunaris:block/stellar_slab_top"
+    }
+  }
+}
