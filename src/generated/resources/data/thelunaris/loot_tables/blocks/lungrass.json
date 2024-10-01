@@ -24,7 +24,7 @@
                   }
                 }
               ],
-              "name": "thelunaris:moonsteel_ore"
+              "name": "thelunaris:lungrass"
             },
             {
               "type": "minecraft:item",
@@ -33,21 +33,16 @@
                   "add": false,
                   "count": {
                     "type": "minecraft:uniform",
-                    "max": 2.0,
+                    "max": 1.0,
                     "min": 1.0
                   },
                   "function": "minecraft:set_count"
                 },
                 {
-                  "enchantment": "minecraft:fortune",
-                  "formula": "minecraft:ore_drops",
-                  "function": "minecraft:apply_bonus"
-                },
-                {
                   "function": "minecraft:explosion_decay"
                 }
               ],
-              "name": "thelunaris:raw_moonsteel"
+              "name": "thelunaris:lundirt"
             }
           ]
         }
@@ -55,5 +50,5 @@
       "rolls": 1.0
     }
   ],
-  "random_sequence": "thelunaris:blocks/moonsteel_ore"
+  "random_sequence": "thelunaris:blocks/lungrass"
 }

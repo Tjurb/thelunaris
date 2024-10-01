@@ -1,4 +1,4 @@
-// 1.20.1	2024-09-30T19:14:25.6001267	Loot Tables
+// 1.20.1	2024-10-01T12:12:05.0072486	Loot Tables
 94a9bb4b5b394b2e88ea03c16a0a820122c9fcd3 data/thelunaris/loot_tables/blocks/celest_leaves.json
 90082787e0587990d18a7d5804e5014715ec7540 data/thelunaris/loot_tables/blocks/celest_planks.json
 2dc9bd7a348108cbd2c51f3d9fa7ce79d8a767c5 data/thelunaris/loot_tables/blocks/celest_slab.json
@@ -8,9 +8,16 @@ ca549ddea92ce96c307d9bea5cee5b5f22a81fc3 data/thelunaris/loot_tables/blocks/gnei
 333c8f4748a64754b04a2ff57293b5dba52a38b9 data/thelunaris/loot_tables/blocks/lunarite_ore.json
 7e957e2d343d86df3d28bf8832bb0be5a37590c9 data/thelunaris/loot_tables/blocks/lunarshale.json
 f8b7397dd45558a9ee9a47a08621ddb46a276191 data/thelunaris/loot_tables/blocks/lunarslate.json
+aa8cdb4ea61a58f7af007f4f20f47b5f569ca037 data/thelunaris/loot_tables/blocks/lundirt.json
+a0aaad3ffa97b19e614ac39f5afea63a67b44dea data/thelunaris/loot_tables/blocks/lungrass.json
+006879644826ae4dc8f5c30b3a3bdea7eb68afb4 data/thelunaris/loot_tables/blocks/lunsand.json
+4277386d66f6016668ba8ed064dda5d00627d70a data/thelunaris/loot_tables/blocks/lunsandstone.json
+1a9411aaa14da28847e3edff32015f09f93ac21c data/thelunaris/loot_tables/blocks/lunsandstone_slab.json
+2bb58b764701f6d5dfedddcaeea2735aab4a7ee7 data/thelunaris/loot_tables/blocks/lunsandstone_stairs.json
+0062ae15b56b73fac107c952e9abb20bc3a758b3 data/thelunaris/loot_tables/blocks/lunsandstone_wall.json
 a17d7a2c0e758678737f6ce51f9a4270eeb6ed61 data/thelunaris/loot_tables/blocks/marble.json
 3595797ef6d5daeea4a04a40edaafcd87f8b317e data/thelunaris/loot_tables/blocks/moondialblock.json
-d26bca683e75a2a1c4c7d16a87e2cd87d474755c data/thelunaris/loot_tables/blocks/moonsteel_ore.json
+e73a60f1420da7ed27675257d4cd143e4b5efc8f data/thelunaris/loot_tables/blocks/moonsteel_ore.json
 57c3e445ebc86cbd0d64465ca8f2bf99525fa45c data/thelunaris/loot_tables/blocks/skyoak_leaves.json
 c301ae733823cd3ac3908b7f21c9b8bf670b6b43 data/thelunaris/loot_tables/blocks/skyoak_planks.json
 b9d0c37c296c432f899fd9143bc4a3501783b9fb data/thelunaris/loot_tables/blocks/skyoak_slab.json

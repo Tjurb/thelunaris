@@ -53,6 +53,7 @@ public class ModItemModelProvider extends ItemModelProvider{
 		wallItem(ModBlocks.SMOOTHGNEISS_WALL, ModBlocks.SMOOTHGNEISS);
 		wallItem(ModBlocks.SMOOTHLUNARSLATE_WALL, ModBlocks.SMOOTHLUNARSLATE);
 		wallItem(ModBlocks.SMOOTHMARBLE_WALL, ModBlocks.SMOOTHMARBLE);
+		wallItem(ModBlocks.LUNSANDSTONE_WALL, ModBlocks.LUNSANDSTONE);
 		
 		//stairs
 		evenSimplerBlockItem(ModBlocks.VAILSTONEBRICK_STAIRS);
@@ -62,6 +63,7 @@ public class ModItemModelProvider extends ItemModelProvider{
 		evenSimplerBlockItem(ModBlocks.CELEST_STAIRS);
 		evenSimplerBlockItem(ModBlocks.STELLAR_STAIRS);
 		evenSimplerBlockItem(ModBlocks.SKYOAK_STAIRS);
+		evenSimplerBlockItem(ModBlocks.LUNSANDSTONE_STAIRS);
 		
 		//slabs
 		evenSimplerBlockItem(ModBlocks.VAILSTONEBRICK_SLAB);
@@ -71,6 +73,7 @@ public class ModItemModelProvider extends ItemModelProvider{
 		evenSimplerBlockItem(ModBlocks.CELEST_SLAB);
 		evenSimplerBlockItem(ModBlocks.STELLAR_SLAB);
 		evenSimplerBlockItem(ModBlocks.SKYOAK_SLAB);
+		evenSimplerBlockItem(ModBlocks.LUNSANDSTONE_SLAB);
 
 	}
 	

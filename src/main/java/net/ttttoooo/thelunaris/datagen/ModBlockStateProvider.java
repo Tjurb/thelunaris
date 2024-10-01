@@ -21,6 +21,15 @@ public class ModBlockStateProvider extends BlockStateProvider{
 		//special blocks
 		blockWithItem(ModBlocks.MOONDIALBLOCK);
 		
+		//terrain blocks
+		blockWithItem(ModBlocks.LUNDIRT);
+		blockWithItem(ModBlocks.LUNGRASS);
+		blockWithItem(ModBlocks.LUNSAND);
+		blockWithItem(ModBlocks.LUNSANDSTONE);
+		stairsBlock(((StairBlock) ModBlocks.LUNSANDSTONE_STAIRS.get()), blockTexture(ModBlocks.LUNSANDSTONE.get()));
+		slabBlock(((SlabBlock) ModBlocks.LUNSANDSTONE_SLAB.get()), blockTexture(ModBlocks.LUNSANDSTONE.get()), blockTexture(ModBlocks.LUNSANDSTONE.get()));
+		wallBlock(((WallBlock) ModBlocks.LUNSANDSTONE_WALL.get()), blockTexture(ModBlocks.LUNSANDSTONE.get()));
+		
 		//tree blocks
 		blockWithItem(ModBlocks.CELEST_WOOD);
 		blockWithItem(ModBlocks.CELEST_LEAVES);

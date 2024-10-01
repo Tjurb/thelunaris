@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=bottom": {
+      "model": "thelunaris:block/lunsandstone_slab"
+    },
+    "type=double": {
+      "model": "thelunaris:block/lunsandstone"
+    },
+    "type=top": {
+      "model": "thelunaris:block/lunsandstone_slab_top"
+    }
+  }
+}

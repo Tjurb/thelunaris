@@ -31,13 +31,20 @@ public class ModBlocks {
 	
 //Dirt and Sand Blocks	
 	public static final RegistryObject<Block> LUNDIRT = registerBlock("lundirt", 
-	() -> new Block(BlockBehaviour.Properties.copy(Blocks.DIRT).sound(SoundType.ROOTED_DIRT)));
+			() -> new Block(BlockBehaviour.Properties.copy(Blocks.DIRT).sound(SoundType.GRAVEL)));
 	public static final RegistryObject<Block> LUNGRASS = registerBlock("lungrass", 
-	() -> new Block(BlockBehaviour.Properties.copy(Blocks.GRASS_BLOCK).sound(SoundType.GRASS)));
+			() -> new Block(BlockBehaviour.Properties.copy(Blocks.GRASS_BLOCK).sound(SoundType.GRASS)));
 	public static final RegistryObject<Block> LUNSAND = registerBlock("lunsand", 
 			() -> new Block(BlockBehaviour.Properties.copy(Blocks.SAND).sound(SoundType.SAND)));
 	public static final RegistryObject<Block> LUNSANDSTONE = registerBlock("lunsandstone", 
 			() -> new Block(BlockBehaviour.Properties.copy(Blocks.SANDSTONE).sound(SoundType.STONE)));
+	public static final RegistryObject<Block> LUNSANDSTONE_STAIRS = registerBlock("lunsandstone_stairs", 
+			() -> new StairBlock(() -> ModBlocks.LUNSANDSTONE.get().defaultBlockState(),
+			BlockBehaviour.Properties.copy(Blocks.SANDSTONE).sound(SoundType.STONE)));
+	public static final RegistryObject<Block> LUNSANDSTONE_SLAB = registerBlock("lunsandstone_slab", 
+			() -> new SlabBlock(BlockBehaviour.Properties.copy(Blocks.SANDSTONE).sound(SoundType.STONE)));
+	public static final RegistryObject<Block> LUNSANDSTONE_WALL = registerBlock("lunsandstone_wall", 
+			() -> new WallBlock(BlockBehaviour.Properties.copy(Blocks.SANDSTONE).sound(SoundType.STONE)));
 
 	//Tree Blocks
 	public static final RegistryObject<Block> CELEST_WOOD = registerBlock("celest_wood", 

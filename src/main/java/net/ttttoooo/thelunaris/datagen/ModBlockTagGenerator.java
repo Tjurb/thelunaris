@@ -47,13 +47,21 @@ public class ModBlockTagGenerator extends BlockTagsProvider{
 					ModBlocks.SMOOTHMARBLE_STAIRS.get(),
 					ModBlocks.SMOOTHMARBLE_SLAB.get(),
 					ModBlocks.SMOOTHMARBLE_WALL.get(),
+					ModBlocks.LUNSANDSTONE.get(),
+					ModBlocks.LUNSANDSTONE_STAIRS.get(),
+					ModBlocks.LUNSANDSTONE_SLAB.get(),
 					
 					ModBlocks.MOONDIALBLOCK.get(),
 					
 					ModBlocks.MOONSTEEL_ORE.get(),
 					ModBlocks.LUNARITE_ORE.get());
 		
-		this.tag(BlockTags.NEEDS_IRON_TOOL)
+		this.tag(BlockTags.MINEABLE_WITH_SHOVEL)
+			.add(ModBlocks.LUNDIRT.get(),
+					ModBlocks.LUNSAND.get(),
+					ModBlocks.LUNGRASS.get());
+		
+		this.tag(ModTags.Blocks.NEEDS_MOONSTEEL_TOOL)
 			.add(ModBlocks.MOONDIALBLOCK.get(),
 					ModBlocks.MOONSTEEL_ORE.get());
 		
@@ -62,6 +70,7 @@ public class ModBlockTagGenerator extends BlockTagsProvider{
 		
 		this.tag(BlockTags.WALLS)
 			.add(ModBlocks.VAILSTONEBRICK_WALL.get(),
+					ModBlocks.LUNSANDSTONE_WALL.get(),
 					ModBlocks.SMOOTHLUNARSLATE_WALL.get(),
 					ModBlocks.SMOOTHGNEISS_WALL.get(),
 					ModBlocks.SMOOTHMARBLE_WALL.get());

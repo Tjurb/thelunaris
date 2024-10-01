@@ -25,6 +25,9 @@ public class ModCreativeTabs {
 				pOutput.accept(ModBlocks.LUNDIRT.get());
 				pOutput.accept(ModBlocks.LUNSAND.get());
 				pOutput.accept(ModBlocks.LUNSANDSTONE.get());
+				pOutput.accept(ModBlocks.LUNSANDSTONE_STAIRS.get());
+				pOutput.accept(ModBlocks.LUNSANDSTONE_SLAB.get());
+				pOutput.accept(ModBlocks.LUNSANDSTONE_WALL.get());
 				
 				
 				pOutput.accept(ModBlocks.VAILSTONE.get());
@@ -77,6 +80,7 @@ public class ModCreativeTabs {
 				
 				//Item Entry
 				pOutput.accept(ModItems.MOONDIAL.get());
+				pOutput.accept(ModItems.RAW_MOONSTEEL.get());
 				pOutput.accept(ModItems.MOONSTEEL.get());
 				pOutput.accept(ModItems.EMOONSTEEL.get());
 				pOutput.accept(ModItems.LUNARITE.get());

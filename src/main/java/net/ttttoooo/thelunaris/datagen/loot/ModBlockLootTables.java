@@ -45,6 +45,15 @@ public class ModBlockLootTables extends BlockLootSubProvider{
 		this.dropSelf(ModBlocks.SMOOTHMARBLE_STAIRS.get());
 		this.dropSelf(ModBlocks.SMOOTHMARBLE_WALL.get());
 		
+
+		this.add(ModBlocks.LUNGRASS.get(),
+				block -> createGrassLikeDrops(ModBlocks.LUNGRASS.get(), ModBlocks.LUNDIRT.get()));
+		this.dropSelf(ModBlocks.LUNDIRT.get());
+		this.dropSelf(ModBlocks.LUNSAND.get());
+		this.dropSelf(ModBlocks.LUNSANDSTONE.get());
+		this.dropSelf(ModBlocks.LUNSANDSTONE_STAIRS.get());
+		this.dropSelf(ModBlocks.LUNSANDSTONE_WALL.get());
+		
 		this.dropSelf(ModBlocks.CELEST_WOOD.get());
 		this.dropSelf(ModBlocks.CELEST_LEAVES.get());
 		this.dropSelf(ModBlocks.CELEST_PLANKS.get());
@@ -61,7 +70,7 @@ public class ModBlockLootTables extends BlockLootSubProvider{
 		this.add(ModBlocks.LUNARITE_ORE.get(),
 				block -> createDiamondLikeOreDrops(ModBlocks.LUNARITE_ORE.get(), ModItems.LUNARITE.get()));
 		this.add(ModBlocks.MOONSTEEL_ORE.get(),
-				block -> createIronLikeOreDrops(ModBlocks.LUNARITE_ORE.get(), ModItems.LUNARITE.get()));
+				block -> createIronLikeOreDrops(ModBlocks.MOONSTEEL_ORE.get(), ModItems.RAW_MOONSTEEL.get()));
 		
 		this.add(ModBlocks.VAILSTONEBRICK_SLAB.get(),
 				block -> createSlabItemTable(ModBlocks.VAILSTONEBRICK_SLAB.get()));
@@ -78,6 +87,9 @@ public class ModBlockLootTables extends BlockLootSubProvider{
 				block -> createSlabItemTable(ModBlocks.STELLAR_SLAB.get()));
 		this.add(ModBlocks.SKYOAK_SLAB.get(),
 				block -> createSlabItemTable(ModBlocks.SKYOAK_SLAB.get()));
+		
+		this.add(ModBlocks.LUNSANDSTONE_SLAB.get(),
+				block -> createSlabItemTable(ModBlocks.LUNSANDSTONE_SLAB.get()));
 	}
 	
 	protected LootTable.Builder createDiamondLikeOreDrops(Block pBlock, Item item){
@@ -94,6 +106,13 @@ public class ModBlockLootTables extends BlockLootSubProvider{
 						LootItem.lootTableItem(item)
 						.apply(SetItemCountFunction.setCount(UniformGenerator.between(1.0f, 2.0f)))
 						.apply(ApplyBonusCount.addOreBonusCount(Enchantments.BLOCK_FORTUNE))));
+	}
+	
+	protected LootTable.Builder createGrassLikeDrops(Block pBlock, Block Block){
+		return createSilkTouchDispatchTable(pBlock,
+				this.applyExplosionDecay(pBlock,
+						LootItem.lootTableItem(Block)
+						.apply(SetItemCountFunction.setCount(UniformGenerator.between(1.0f, 1.0f)))));
 	}
 	
 	@Override

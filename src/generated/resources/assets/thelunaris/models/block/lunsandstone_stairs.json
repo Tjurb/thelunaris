@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/stairs",
+  "textures": {
+    "bottom": "thelunaris:block/lunsandstone",
+    "side": "thelunaris:block/lunsandstone",
+    "top": "thelunaris:block/lunsandstone"
+  }
+}

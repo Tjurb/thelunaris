@@ -15,7 +15,7 @@ public class ModToolTiers {
 	public static final Tier MOONSTEEL = TierSortingRegistry.registerTier(
 			new ForgeTier(2, 400, 6f, 2f, 12,
 					ModTags.Blocks.NEEDS_MOONSTEEL_TOOL, () -> Ingredient.of(ModItems.MOONSTEEL.get())),
-			new ResourceLocation(TheLunaris.MODID, "moonsteel"), List.of(Tiers.WOOD), List.of(Tiers.DIAMOND));
+			new ResourceLocation(TheLunaris.MODID, "moonsteel"), List.of(Tiers.STONE), List.of(Tiers.DIAMOND));
 	
 	public static final Tier EMOONSTEEL = TierSortingRegistry.registerTier(
 			new ForgeTier(3, 1500, 8f, 3f, 15,
