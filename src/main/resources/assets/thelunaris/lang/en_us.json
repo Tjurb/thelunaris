@@ -3,10 +3,53 @@
     
     "item.thelunaris.moondial": "Moondial",
     "item.thelunaris.moonsteel": "Moon Steel",
+    "item.thelunaris.raw_moonsteel": "Raw Moon Steel",
     "item.thelunaris.emoonsteel": "Etheral Moon Steel",
     "item.thelunaris.lunarite": "Lunarite",
 
+    "item.thelunaris.moonsteel_sword": "Moon Steel Sword",
+    "item.thelunaris.moonsteel_pickaxe": "Moon Steel Pickaxe",
+    "item.thelunaris.moonsteel_axe": "Moon Steel Axe",
+    "item.thelunaris.moonsteel_shovel": "Moon Steel Shovel",
+    "item.thelunaris.moonsteel_hoe": "Moon Steel Hoe",
+    
+    "item.thelunaris.emoonsteel_sword": "Etheral Moon Steel Sword",
+    "item.thelunaris.emoonsteel_pickaxe": "Etheral Moon Steel Pickaxe",
+    "item.thelunaris.emoonsteel_axe": "Etheral Moon Steel Axe",
+    "item.thelunaris.emoonsteel_shovel": "Etheral Moon Steel Shovel",
+    "item.thelunaris.emoonsteel_hoe": "Etheral Moon Steel Hoe",
+
+    "item.thelunaris.lunarite_sword": "Lunarite Sword",
+    "item.thelunaris.lunarite_pickaxe": "Lunarite Pickaxe",
+    "item.thelunaris.lunarite_axe": "Lunarite Axe",
+    "item.thelunaris.lunarite_shovel": "Lunarite Shovel",
+    "item.thelunaris.lunarite_hoe": "Lunarite Hoe",
+
+    "item.thelunaris.loonberry": "Loonberries",
+
     "block.thelunaris.moondialblock": "Moondial",
+
+    "block.thelunaris.lunarite_ore": "Lunarite Ore",
+    "block.thelunaris.moonsteel_ore": "Moonsteel Ore",
+
+    "block.thelunaris.celest_wood": "Celest Wood",
+    "block.thelunaris.celest_leaves": "Celest Leaves",
+    "block.thelunaris.celest_stairs": "Celest Stairs",
+    "block.thelunaris.celest_slab": "Celest Slab",
+    "block.thelunaris.celest_planks": "Celest Planks",
+    
+    "block.thelunaris.stellar_wood": "Stellar Wood",
+    "block.thelunaris.stellar_leaves": "Stellar Leaves",
+    "block.thelunaris.stellar_stairs": "Stellar Stairs",
+    "block.thelunaris.stellar_slab": "Stellar Slab",
+    "block.thelunaris.stellar_planks": "Stellar Planks",
+    
+    "block.thelunaris.skyoak_wood": "Skyoak Wood",
+    "block.thelunaris.skyoak_leaves": "Skyoak Leaves",
+    "block.thelunaris.skyoak_stairs": "Skyoak Stairs",
+    "block.thelunaris.skyoak_slab": "Skyoak Slab",
+    "block.thelunaris.skyoak_planks": "Skyoak Planks",
+
     "block.thelunaris.vailstone": "Vailstone",
     "block.thelunaris.vailstonebrick_stairs": "Vailstone Bricks Stairs",
     "block.thelunaris.vailstonebrick_slab": "Vailstone Bricks Slab",

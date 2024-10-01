@@ -68,6 +68,7 @@ public class ModBlockStateProvider extends BlockStateProvider{
 		
 		//ore blocks
 		blockWithItem(ModBlocks.LUNARITE_ORE);
+		blockWithItem(ModBlocks.MOONSTEEL_ORE);
 		
 	}
 	

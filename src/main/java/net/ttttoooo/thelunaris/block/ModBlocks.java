@@ -4,9 +4,11 @@ import net.minecraft.world.item.Item;
 
 import java.util.function.Supplier;
 
+import net.minecraft.util.valueproviders.UniformInt;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
+import net.minecraft.world.level.block.DropExperienceBlock;
 import net.minecraft.world.level.block.SlabBlock;
 import net.minecraft.world.level.block.SoundType;
 import net.minecraft.world.level.block.StairBlock;
@@ -27,7 +29,17 @@ public class ModBlocks {
 	public static final RegistryObject<Block> MOONDIALBLOCK = registerBlock("moondialblock", 
 			() -> new Block(BlockBehaviour.Properties.copy(Blocks.IRON_BLOCK).sound(SoundType.ANCIENT_DEBRIS)));
 	
-//Tree Blocks
+//Dirt and Sand Blocks	
+	public static final RegistryObject<Block> LUNDIRT = registerBlock("lundirt", 
+	() -> new Block(BlockBehaviour.Properties.copy(Blocks.DIRT).sound(SoundType.ROOTED_DIRT)));
+	public static final RegistryObject<Block> LUNGRASS = registerBlock("lungrass", 
+	() -> new Block(BlockBehaviour.Properties.copy(Blocks.GRASS_BLOCK).sound(SoundType.GRASS)));
+	public static final RegistryObject<Block> LUNSAND = registerBlock("lunsand", 
+			() -> new Block(BlockBehaviour.Properties.copy(Blocks.SAND).sound(SoundType.SAND)));
+	public static final RegistryObject<Block> LUNSANDSTONE = registerBlock("lunsandstone", 
+			() -> new Block(BlockBehaviour.Properties.copy(Blocks.SANDSTONE).sound(SoundType.STONE)));
+
+	//Tree Blocks
 	public static final RegistryObject<Block> CELEST_WOOD = registerBlock("celest_wood", 
 			() -> new Block(BlockBehaviour.Properties.copy(Blocks.OAK_WOOD).sound(SoundType.WOOD)));
 	public static final RegistryObject<Block> CELEST_LEAVES = registerBlock("celest_leaves", 
@@ -114,11 +126,15 @@ public class ModBlocks {
 	public static final RegistryObject<Block> SMOOTHMARBLE_SLAB = registerBlock("smoothmarble_slab", 
 			() -> new SlabBlock(BlockBehaviour.Properties.copy(Blocks.STONE).sound(SoundType.STONE)));
 	public static final RegistryObject<Block> SMOOTHMARBLE_WALL = registerBlock("smoothmarble_wall", 
-			() -> new WallBlock(BlockBehaviour.Properties.copy(Blocks.STONE).sound(SoundType.STONE)));
+			() -> new WallBlock(BlockBehaviour.Properties.copy(Blocks.STONE).sound(SoundType.STONE)));	
 	
 //Ore Blocks
 	public static final RegistryObject<Block> LUNARITE_ORE = registerBlock("lunarite_ore", 
-			() -> new Block(BlockBehaviour.Properties.copy(Blocks.STONE).sound(SoundType.STONE)));
+			() -> new DropExperienceBlock(BlockBehaviour.Properties.copy(Blocks.STONE).strength(3f)
+					.requiresCorrectToolForDrops(), UniformInt.of(3, 7)));
+	public static final RegistryObject<Block> MOONSTEEL_ORE = registerBlock("moonsteel_ore", 
+			() -> new DropExperienceBlock(BlockBehaviour.Properties.copy(Blocks.STONE).strength(2f)
+					.requiresCorrectToolForDrops(), UniformInt.of(1, 4)));
 	
 	private static <T extends Block> RegistryObject<T> registerBlock(String name, Supplier<T> block){
 		RegistryObject<T> toReturn = BLOCKS.register(name, block);

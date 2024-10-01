@@ -12,6 +12,7 @@ import net.minecraftforge.common.data.BlockTagsProvider;
 import net.minecraftforge.common.data.ExistingFileHelper;
 import net.ttttoooo.thelunaris.TheLunaris;
 import net.ttttoooo.thelunaris.block.ModBlocks;
+import net.ttttoooo.thelunaris.util.ModTags;
 
 public class ModBlockTagGenerator extends BlockTagsProvider{
 	
@@ -45,11 +46,19 @@ public class ModBlockTagGenerator extends BlockTagsProvider{
 					ModBlocks.SMOOTHMARBLE.get(),
 					ModBlocks.SMOOTHMARBLE_STAIRS.get(),
 					ModBlocks.SMOOTHMARBLE_SLAB.get(),
-					ModBlocks.SMOOTHMARBLE_WALL.get());
+					ModBlocks.SMOOTHMARBLE_WALL.get(),
+					
+					ModBlocks.MOONDIALBLOCK.get(),
+					
+					ModBlocks.MOONSTEEL_ORE.get(),
+					ModBlocks.LUNARITE_ORE.get());
 		
 		this.tag(BlockTags.NEEDS_IRON_TOOL)
 			.add(ModBlocks.MOONDIALBLOCK.get(),
-					ModBlocks.LUNARITE_ORE.get());
+					ModBlocks.MOONSTEEL_ORE.get());
+		
+		this.tag(ModTags.Blocks.NEEDS_EMOONSTEEL_TOOL)
+			.add(ModBlocks.LUNARITE_ORE.get());
 		
 		this.tag(BlockTags.WALLS)
 			.add(ModBlocks.VAILSTONEBRICK_WALL.get(),

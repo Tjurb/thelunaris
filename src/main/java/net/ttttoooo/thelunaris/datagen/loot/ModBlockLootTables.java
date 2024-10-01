@@ -6,9 +6,16 @@ import net.minecraft.data.loot.BlockLootSubProvider;
 import net.minecraft.world.flag.FeatureFlagSet;
 import net.minecraft.world.flag.FeatureFlags;
 import net.minecraft.world.item.Item;
+import net.minecraft.world.item.enchantment.Enchantments;
 import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.storage.loot.LootTable;
+import net.minecraft.world.level.storage.loot.entries.LootItem;
+import net.minecraft.world.level.storage.loot.functions.ApplyBonusCount;
+import net.minecraft.world.level.storage.loot.functions.SetItemCountFunction;
+import net.minecraft.world.level.storage.loot.providers.number.UniformGenerator;
 import net.minecraftforge.registries.RegistryObject;
 import net.ttttoooo.thelunaris.block.ModBlocks;
+import net.ttttoooo.thelunaris.item.ModItems;
 
 public class ModBlockLootTables extends BlockLootSubProvider{
 
@@ -51,7 +58,10 @@ public class ModBlockLootTables extends BlockLootSubProvider{
 		this.dropSelf(ModBlocks.SKYOAK_PLANKS.get());
 		this.dropSelf(ModBlocks.SKYOAK_STAIRS.get());
 
-		this.dropSelf(ModBlocks.LUNARITE_ORE.get());
+		this.add(ModBlocks.LUNARITE_ORE.get(),
+				block -> createDiamondLikeOreDrops(ModBlocks.LUNARITE_ORE.get(), ModItems.LUNARITE.get()));
+		this.add(ModBlocks.MOONSTEEL_ORE.get(),
+				block -> createIronLikeOreDrops(ModBlocks.LUNARITE_ORE.get(), ModItems.LUNARITE.get()));
 		
 		this.add(ModBlocks.VAILSTONEBRICK_SLAB.get(),
 				block -> createSlabItemTable(ModBlocks.VAILSTONEBRICK_SLAB.get()));
@@ -68,6 +78,22 @@ public class ModBlockLootTables extends BlockLootSubProvider{
 				block -> createSlabItemTable(ModBlocks.STELLAR_SLAB.get()));
 		this.add(ModBlocks.SKYOAK_SLAB.get(),
 				block -> createSlabItemTable(ModBlocks.SKYOAK_SLAB.get()));
+	}
+	
+	protected LootTable.Builder createDiamondLikeOreDrops(Block pBlock, Item item){
+		return createSilkTouchDispatchTable(pBlock,
+				this.applyExplosionDecay(pBlock,
+						LootItem.lootTableItem(item)
+						.apply(SetItemCountFunction.setCount(UniformGenerator.between(1.0f, 1.0f)))
+						.apply(ApplyBonusCount.addOreBonusCount(Enchantments.BLOCK_FORTUNE))));
+	}
+	
+	protected LootTable.Builder createIronLikeOreDrops(Block pBlock, Item item){
+		return createSilkTouchDispatchTable(pBlock,
+				this.applyExplosionDecay(pBlock,
+						LootItem.lootTableItem(item)
+						.apply(SetItemCountFunction.setCount(UniformGenerator.between(1.0f, 2.0f)))
+						.apply(ApplyBonusCount.addOreBonusCount(Enchantments.BLOCK_FORTUNE))));
 	}
 	
 	@Override

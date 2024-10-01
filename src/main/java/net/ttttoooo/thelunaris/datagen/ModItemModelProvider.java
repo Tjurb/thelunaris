@@ -24,8 +24,29 @@ public class ModItemModelProvider extends ItemModelProvider{
 	protected void registerModels() {
 		simpleItem(ModItems.MOONDIAL);
 		simpleItem(ModItems.MOONSTEEL);
+		simpleItem(ModItems.RAW_MOONSTEEL);
 		simpleItem(ModItems.EMOONSTEEL);
 		simpleItem(ModItems.LUNARITE);
+		simpleItem(ModItems.LOONBERRY);
+		
+		//tools
+		handheldItem(ModItems.MOONSTEEL_SWORD);
+		handheldItem(ModItems.MOONSTEEL_PICKAXE);
+		handheldItem(ModItems.MOONSTEEL_AXE);
+		handheldItem(ModItems.MOONSTEEL_SHOVEL);
+		handheldItem(ModItems.MOONSTEEL_HOE);
+		
+		handheldItem(ModItems.EMOONSTEEL_SWORD);
+		handheldItem(ModItems.EMOONSTEEL_PICKAXE);
+		handheldItem(ModItems.EMOONSTEEL_AXE);
+		handheldItem(ModItems.EMOONSTEEL_SHOVEL);
+		handheldItem(ModItems.EMOONSTEEL_HOE);
+
+		handheldItem(ModItems.LUNARITE_SWORD);
+		handheldItem(ModItems.LUNARITE_PICKAXE);
+		handheldItem(ModItems.LUNARITE_AXE);
+		handheldItem(ModItems.LUNARITE_SHOVEL);
+		handheldItem(ModItems.LUNARITE_HOE);
 		
 		//walls
 		wallItem(ModBlocks.VAILSTONEBRICK_WALL, ModBlocks.VAILSTONEBRICK);
@@ -56,6 +77,12 @@ public class ModItemModelProvider extends ItemModelProvider{
 	private ItemModelBuilder simpleItem(RegistryObject<Item> item) {
 		return withExistingParent(item.getId().getPath(),
 				new ResourceLocation("item/generated")).texture("layer0",
+				new ResourceLocation(TheLunaris.MODID, "item/" + item.getId().getPath()));
+	}
+	
+	private ItemModelBuilder handheldItem(RegistryObject<Item> item) {
+		return withExistingParent(item.getId().getPath(),
+				new ResourceLocation("item/handheld")).texture("layer0",
 				new ResourceLocation(TheLunaris.MODID, "item/" + item.getId().getPath()));
 	}
 	

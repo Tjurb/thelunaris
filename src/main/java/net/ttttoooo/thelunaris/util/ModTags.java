@@ -1,0 +1,19 @@
+package net.ttttoooo.thelunaris.util;
+
+import net.minecraft.resources.ResourceLocation;
+import net.minecraft.tags.BlockTags;
+import net.minecraft.tags.TagKey;
+import net.minecraft.world.level.block.Block;
+import net.ttttoooo.thelunaris.TheLunaris;
+
+public class ModTags {
+	public static class Blocks {
+		public static final TagKey<Block> NEEDS_LUNARITE_TOOL = tag("needs_lunarite_tool");
+		public static final TagKey<Block> NEEDS_EMOONSTEEL_TOOL = tag("needs_emoonsteel_tool");
+		public static final TagKey<Block> NEEDS_MOONSTEEL_TOOL = tag("needs_moonsteel_tool");
+		
+		private static TagKey<Block> tag(String name){
+			return BlockTags.create(new ResourceLocation(TheLunaris.MODID, name));
+		}
+	}
+}

@@ -33,7 +33,7 @@
                   "add": false,
                   "count": {
                     "type": "minecraft:uniform",
-                    "max": 1.0,
+                    "max": 2.0,
                     "min": 1.0
                   },
                   "function": "minecraft:set_count"
@@ -55,5 +55,5 @@
       "rolls": 1.0
     }
   ],
-  "random_sequence": "thelunaris:blocks/lunarite_ore"
+  "random_sequence": "thelunaris:blocks/moonsteel_ore"
 }

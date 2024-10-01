@@ -1,6 +1,11 @@
 package net.ttttoooo.thelunaris.item;
 
+import net.minecraft.world.item.AxeItem;
+import net.minecraft.world.item.HoeItem;
 import net.minecraft.world.item.Item;
+import net.minecraft.world.item.PickaxeItem;
+import net.minecraft.world.item.ShovelItem;
+import net.minecraft.world.item.SwordItem;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
@@ -17,12 +22,52 @@ public class ModItems {
 	//materials
 	public static final RegistryObject<Item> MOONSTEEL = ITEMS.register("moonsteel", 
 			() -> new Item(new Item.Properties()));
+	public static final RegistryObject<Item> RAW_MOONSTEEL = ITEMS.register("raw_moonsteel", 
+			() -> new Item(new Item.Properties()));
 	public static final RegistryObject<Item> EMOONSTEEL = ITEMS.register("emoonsteel", 
 			() -> new Item(new Item.Properties()));
 	public static final RegistryObject<Item> LUNARITE = ITEMS.register("lunarite", 
 			() -> new Item(new Item.Properties()));
 	
+	//foods
+	public static final RegistryObject<Item> LOONBERRY = ITEMS.register("loonberry", 
+			() -> new Item(new Item.Properties().food(ModFoods.LOONBERRY)));
+	
 	//tools
+	public static final RegistryObject<Item> MOONSTEEL_SWORD = ITEMS.register("moonsteel_sword", 
+			() -> new SwordItem(ModToolTiers.MOONSTEEL, 4, 2, new Item.Properties()));
+	public static final RegistryObject<Item> MOONSTEEL_PICKAXE = ITEMS.register("moonsteel_pickaxe", 
+			() -> new PickaxeItem(ModToolTiers.MOONSTEEL, 2, 1, new Item.Properties()));
+	public static final RegistryObject<Item> MOONSTEEL_SHOVEL = ITEMS.register("moonsteel_shovel", 
+			() -> new ShovelItem(ModToolTiers.MOONSTEEL, 0, 0, new Item.Properties()));
+	public static final RegistryObject<Item> MOONSTEEL_AXE = ITEMS.register("moonsteel_axe", 
+			() -> new AxeItem(ModToolTiers.MOONSTEEL, 5, 1, new Item.Properties()));
+	public static final RegistryObject<Item> MOONSTEEL_HOE = ITEMS.register("moonsteel_hoe", 
+			() -> new HoeItem(ModToolTiers.MOONSTEEL, 0, 0, new Item.Properties()));
+	
+
+	public static final RegistryObject<Item> EMOONSTEEL_SWORD = ITEMS.register("emoonsteel_sword", 
+			() -> new SwordItem(ModToolTiers.EMOONSTEEL, 4, 2, new Item.Properties()));
+	public static final RegistryObject<Item> EMOONSTEEL_PICKAXE = ITEMS.register("emoonsteel_pickaxe", 
+			() -> new PickaxeItem(ModToolTiers.EMOONSTEEL, 2, 1, new Item.Properties()));
+	public static final RegistryObject<Item> EMOONSTEEL_SHOVEL = ITEMS.register("emoonsteel_shovel", 
+			() -> new ShovelItem(ModToolTiers.EMOONSTEEL, 0, 0, new Item.Properties()));
+	public static final RegistryObject<Item> EMOONSTEEL_AXE = ITEMS.register("emoonsteel_axe", 
+			() -> new AxeItem(ModToolTiers.EMOONSTEEL, 5, 1, new Item.Properties()));
+	public static final RegistryObject<Item> EMOONSTEEL_HOE = ITEMS.register("emoonsteel_hoe", 
+			() -> new HoeItem(ModToolTiers.EMOONSTEEL, 0, 0, new Item.Properties()));
+	
+
+	public static final RegistryObject<Item> LUNARITE_SWORD = ITEMS.register("lunarite_sword", 
+			() -> new SwordItem(ModToolTiers.LUNARITE, 4, 2, new Item.Properties()));
+	public static final RegistryObject<Item> LUNARITE_PICKAXE = ITEMS.register("lunarite_pickaxe", 
+			() -> new PickaxeItem(ModToolTiers.LUNARITE, 2, 1, new Item.Properties()));
+	public static final RegistryObject<Item> LUNARITE_SHOVEL = ITEMS.register("lunarite_shovel", 
+			() -> new ShovelItem(ModToolTiers.LUNARITE, 0, 0, new Item.Properties()));
+	public static final RegistryObject<Item> LUNARITE_AXE = ITEMS.register("lunarite_axe", 
+			() -> new AxeItem(ModToolTiers.LUNARITE, 5, 1, new Item.Properties()));
+	public static final RegistryObject<Item> LUNARITE_HOE = ITEMS.register("lunarite_hoe", 
+			() -> new HoeItem(ModToolTiers.LUNARITE, 0, 0, new Item.Properties()));
 	
 	
 	public static void register(IEventBus eventBus) {
