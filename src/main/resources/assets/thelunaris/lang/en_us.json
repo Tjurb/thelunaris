@@ -4,6 +4,7 @@
     "item.thelunaris.moondial": "Moondial",
     "item.thelunaris.moonsteel": "Moon Steel",
     "item.thelunaris.raw_moonsteel": "Raw Moon Steel",
+    "item.thelunaris.tektite": "Tektite",
     "item.thelunaris.emoonsteel": "Etheral Moon Steel",
     "item.thelunaris.lunarite": "Lunarite",
 
@@ -31,6 +32,7 @@
 
     "block.thelunaris.lunarite_ore": "Lunarite Ore",
     "block.thelunaris.moonsteel_ore": "Moonsteel Ore",
+    "block.thelunaris.tektite_ore": "Tektite Ore",
 
     "block.thelunaris.celest_wood": "Celest Wood",
     "block.thelunaris.celest_leaves": "Celest Leaves",
@@ -49,6 +51,14 @@
     "block.thelunaris.skyoak_stairs": "Skyoak Stairs",
     "block.thelunaris.skyoak_slab": "Skyoak Slab",
     "block.thelunaris.skyoak_planks": "Skyoak Planks",
+    
+    "block.thelunaris.lunsgrass": "Lun Grass",
+    "block.thelunaris.lundirt": "Lun Dirt",
+    "block.thelunaris.lunsand": "Lun Sand",
+    "block.thelunaris.lunsandstone": "Lun Sandstone",
+    "block.thelunaris.lunsandstone_stairs": "Lun Sandstone Stairs",
+    "block.thelunaris.lunsandstone_slab": "Lun Sandstone Slab",
+    "block.thelunaris.lunsandstone_wall": "Lun Sandstone Wall",
 
     "block.thelunaris.vailstone": "Vailstone",
     "block.thelunaris.vailstonebrick_stairs": "Vailstone Bricks Stairs",

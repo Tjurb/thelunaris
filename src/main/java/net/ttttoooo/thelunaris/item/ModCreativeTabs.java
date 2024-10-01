@@ -58,6 +58,7 @@ public class ModCreativeTabs {
 				//Ore Entry
 				pOutput.accept(ModBlocks.LUNARITE_ORE.get());
 				pOutput.accept(ModBlocks.MOONSTEEL_ORE.get());
+				pOutput.accept(ModBlocks.TEKTITE_ORE.get());
 				
 				//Tree Entry
 				pOutput.accept(ModBlocks.CELEST_WOOD.get());
@@ -82,6 +83,7 @@ public class ModCreativeTabs {
 				pOutput.accept(ModItems.MOONDIAL.get());
 				pOutput.accept(ModItems.RAW_MOONSTEEL.get());
 				pOutput.accept(ModItems.MOONSTEEL.get());
+				pOutput.accept(ModItems.TEKTITE.get());
 				pOutput.accept(ModItems.EMOONSTEEL.get());
 				pOutput.accept(ModItems.LUNARITE.get());
 				pOutput.accept(ModItems.LOONBERRY.get());

@@ -25,6 +25,7 @@ public class ModItemModelProvider extends ItemModelProvider{
 		simpleItem(ModItems.MOONDIAL);
 		simpleItem(ModItems.MOONSTEEL);
 		simpleItem(ModItems.RAW_MOONSTEEL);
+		simpleItem(ModItems.TEKTITE);
 		simpleItem(ModItems.EMOONSTEEL);
 		simpleItem(ModItems.LUNARITE);
 		simpleItem(ModItems.LOONBERRY);

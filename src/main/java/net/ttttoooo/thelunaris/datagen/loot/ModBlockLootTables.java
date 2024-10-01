@@ -66,11 +66,13 @@ public class ModBlockLootTables extends BlockLootSubProvider{
 		this.dropSelf(ModBlocks.SKYOAK_LEAVES.get());
 		this.dropSelf(ModBlocks.SKYOAK_PLANKS.get());
 		this.dropSelf(ModBlocks.SKYOAK_STAIRS.get());
-
+		
 		this.add(ModBlocks.LUNARITE_ORE.get(),
 				block -> createDiamondLikeOreDrops(ModBlocks.LUNARITE_ORE.get(), ModItems.LUNARITE.get()));
 		this.add(ModBlocks.MOONSTEEL_ORE.get(),
 				block -> createIronLikeOreDrops(ModBlocks.MOONSTEEL_ORE.get(), ModItems.RAW_MOONSTEEL.get()));
+		this.add(ModBlocks.TEKTITE_ORE.get(),
+				block -> createIronLikeOreDrops(ModBlocks.TEKTITE_ORE.get(), ModItems.TEKTITE.get()));
 		
 		this.add(ModBlocks.VAILSTONEBRICK_SLAB.get(),
 				block -> createSlabItemTable(ModBlocks.VAILSTONEBRICK_SLAB.get()));

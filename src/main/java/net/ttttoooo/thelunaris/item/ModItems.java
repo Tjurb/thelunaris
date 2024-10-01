@@ -24,6 +24,8 @@ public class ModItems {
 			() -> new Item(new Item.Properties()));
 	public static final RegistryObject<Item> RAW_MOONSTEEL = ITEMS.register("raw_moonsteel", 
 			() -> new Item(new Item.Properties()));
+	public static final RegistryObject<Item> TEKTITE = ITEMS.register("tektite", 
+			() -> new Item(new Item.Properties()));
 	public static final RegistryObject<Item> EMOONSTEEL = ITEMS.register("emoonsteel", 
 			() -> new Item(new Item.Properties()));
 	public static final RegistryObject<Item> LUNARITE = ITEMS.register("lunarite", 
