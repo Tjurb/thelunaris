@@ -1,0 +1,74 @@
+{
+	"credit": "Made with Blockbench",
+	"textures": {
+		"0": "thelunaris:block/lunarite_block",
+		"particle": "thelunaris:block/lunarite_block"
+	},
+	"elements": [
+		{
+			"name": "outside",
+			"from": [16, 16, 16],
+			"to": [0, 0, 0],
+			"faces": {
+				"north": {"uv": [0, 0, 1, 1], "texture": "#0"},
+				"east": {"uv": [0, 0, 1, 1], "texture": "#0"},
+				"south": {"uv": [0, 0, 1, 1], "texture": "#0"},
+				"west": {"uv": [0, 0, 1, 1], "texture": "#0"},
+				"up": {"uv": [0, 0, 1, 1], "texture": "#0"},
+				"down": {"uv": [0, 0, 1, 1], "texture": "#0"}
+			}
+		},
+		{
+			"name": "middle",
+			"from": [15, 15, 15],
+			"to": [1, 1, 1],
+			"faces": {
+				"north": {"uv": [1, 1, 2, 2], "texture": "#0"},
+				"east": {"uv": [1, 1, 2, 2], "texture": "#0"},
+				"south": {"uv": [1, 1, 2, 2], "texture": "#0"},
+				"west": {"uv": [1, 1, 2, 2], "texture": "#0"},
+				"up": {"uv": [1, 1, 2, 2], "texture": "#0"},
+				"down": {"uv": [1, 1, 2, 2], "texture": "#0"}
+			}
+		},
+		{
+			"name": "inside",
+			"from": [2, 2, 2],
+			"to": [14, 14, 14],
+			"faces": {
+				"north": {"uv": [2, 2, 14, 14], "texture": "#0"},
+				"east": {"uv": [2, 2, 14, 14], "texture": "#0"},
+				"south": {"uv": [2, 2, 14, 14], "texture": "#0"},
+				"west": {"uv": [2, 2, 14, 14], "texture": "#0"},
+				"up": {"uv": [2, 2, 14, 14], "texture": "#0"},
+				"down": {"uv": [2, 2, 14, 14], "texture": "#0"}
+			}
+		}
+	],
+	"display": {
+		"thirdperson_righthand": {
+			"rotation": [75, 45, 0],
+			"scale": [0.3, 0.3, 0.3]
+		},
+		"thirdperson_lefthand": {
+			"rotation": [75, 45, 0],
+			"scale": [0.3, 0.3, 0.3]
+		},
+		"firstperson_righthand": {
+			"scale": [0.3, 0.3, 0.3]
+		},
+		"firstperson_lefthand": {
+			"scale": [0.3, 0.3, 0.3]
+		},
+		"ground": {
+			"scale": [0.2, 0.2, 0.2]
+		},
+		"gui": {
+			"rotation": [34, 45, 0],
+			"scale": [0.6, 0.6, 0.6]
+		},
+		"fixed": {
+			"scale": [0.6, 0.6, 0.6]
+		}
+	}
+}

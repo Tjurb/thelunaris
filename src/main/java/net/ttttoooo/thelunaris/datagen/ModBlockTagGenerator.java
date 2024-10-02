@@ -52,6 +52,11 @@ public class ModBlockTagGenerator extends BlockTagsProvider{
 					ModBlocks.LUNSANDSTONE_SLAB.get(),
 					
 					ModBlocks.MOONDIALBLOCK.get(),
+					ModBlocks.LUNARITE_BLOCK.get(),
+					ModBlocks.TEKTITE_BLOCK.get(),
+					ModBlocks.EMOONSTEEL_BLOCK.get(),
+					ModBlocks.MOONSTEEL_BLOCK.get(),
+					ModBlocks.RAW_MOONSTEEL_BLOCK.get(),
 
 					ModBlocks.TEKTITE_ORE.get(),
 					ModBlocks.MOONSTEEL_ORE.get(),

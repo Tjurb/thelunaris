@@ -1,0 +1,23 @@
+{
+    "type": "minecraft:crafting_shaped",
+    "catagory": "misc",
+    "pattern": [
+        "lgl",
+        "gdg",
+        "lgl"
+    ],
+    "key": {
+        "l": {
+            "item":"minecraft:lapis_lazuli"
+        },
+        "g": {
+            "item":"minecraft:gold_ingot"
+        },
+        "d": {
+            "item":"minecraft:diamond"
+        }
+    },
+    "result": {
+        "item": "thelunaris:moondial"
+    }
+}

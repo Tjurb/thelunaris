@@ -1,0 +1,17 @@
+{
+    "type": "minecraft:crafting_shaped",
+    "catagory": "misc",
+    "pattern": [
+        "mmm",
+        "mmm",
+        "mmm"
+    ],
+    "key": {
+        "m": {
+            "item":"thelunaris:raw_moonsteel"
+        }
+    },
+    "result": {
+        "item": "thelunaris:raw_moonsteel_block"
+    }
+}

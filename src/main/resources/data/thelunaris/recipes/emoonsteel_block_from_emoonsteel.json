@@ -1,0 +1,17 @@
+{
+    "type": "minecraft:crafting_shaped",
+    "catagory": "misc",
+    "pattern": [
+        "mmm",
+        "mmm",
+        "mmm"
+    ],
+    "key": {
+        "m": {
+            "item":"thelunaris:emoonsteel"
+        }
+    },
+    "result": {
+        "item": "thelunaris:emoonsteel_block"
+    }
+}

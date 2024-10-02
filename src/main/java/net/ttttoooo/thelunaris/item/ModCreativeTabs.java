@@ -29,7 +29,6 @@ public class ModCreativeTabs {
 				pOutput.accept(ModBlocks.LUNSANDSTONE_SLAB.get());
 				pOutput.accept(ModBlocks.LUNSANDSTONE_WALL.get());
 				
-				
 				pOutput.accept(ModBlocks.VAILSTONE.get());
 				pOutput.accept(ModBlocks.VAILSTONEBRICK.get());
 				pOutput.accept(ModBlocks.VAILSTONEBRICK_STAIRS.get());
@@ -79,14 +78,26 @@ public class ModCreativeTabs {
 				pOutput.accept(ModBlocks.SKYOAK_STAIRS.get());
 				pOutput.accept(ModBlocks.SKYOAK_SLAB.get());
 				
+				//Pure Blocks
+				pOutput.accept(ModBlocks.LUNARITE_BLOCK.get());
+				pOutput.accept(ModBlocks.TEKTITE_BLOCK.get());
+				pOutput.accept(ModBlocks.EMOONSTEEL_BLOCK.get());
+				pOutput.accept(ModBlocks.MOONSTEEL_BLOCK.get());
+				pOutput.accept(ModBlocks.RAW_MOONSTEEL_BLOCK.get());
+				
 				//Item Entry
+				pOutput.accept(ModItems.LUNAR_STICK.get());
 				pOutput.accept(ModItems.MOONDIAL.get());
 				pOutput.accept(ModItems.RAW_MOONSTEEL.get());
 				pOutput.accept(ModItems.MOONSTEEL.get());
 				pOutput.accept(ModItems.TEKTITE.get());
 				pOutput.accept(ModItems.EMOONSTEEL.get());
 				pOutput.accept(ModItems.LUNARITE.get());
+				
+				//Food Entry
 				pOutput.accept(ModItems.LOONBERRY.get());
+				pOutput.accept(ModItems.ARCHFISH.get());
+				pOutput.accept(ModItems.SARROT.get());
 				
 				//Tool Entry
 				pOutput.accept(ModItems.MOONSTEEL_SWORD.get());

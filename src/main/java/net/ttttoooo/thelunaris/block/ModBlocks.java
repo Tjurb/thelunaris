@@ -3,6 +3,7 @@ package net.ttttoooo.thelunaris.block;
 import net.minecraft.world.item.Item;
 
 import java.util.function.Supplier;
+import java.util.function.ToIntFunction;
 
 import net.minecraft.util.valueproviders.UniformInt;
 import net.minecraft.world.item.BlockItem;
@@ -28,6 +29,16 @@ public class ModBlocks {
 //Special Blocks
 	public static final RegistryObject<Block> MOONDIALBLOCK = registerBlock("moondialblock", 
 			() -> new Block(BlockBehaviour.Properties.copy(Blocks.IRON_BLOCK).sound(SoundType.ANCIENT_DEBRIS)));
+	public static final RegistryObject<Block> RAW_MOONSTEEL_BLOCK = registerBlock("raw_moonsteel_block", 
+			() -> new Block(BlockBehaviour.Properties.copy(Blocks.RAW_IRON_BLOCK).sound(SoundType.METAL)));
+	public static final RegistryObject<Block> MOONSTEEL_BLOCK = registerBlock("moonsteel_block", 
+			() -> new Block(BlockBehaviour.Properties.copy(Blocks.IRON_BLOCK).sound(SoundType.METAL)));
+	public static final RegistryObject<Block> EMOONSTEEL_BLOCK = registerBlock("emoonsteel_block", 
+			() -> new Block(BlockBehaviour.Properties.copy(Blocks.IRON_BLOCK).sound(SoundType.METAL)));
+	public static final RegistryObject<Block> LUNARITE_BLOCK = registerBlock("lunarite_block", 
+			() -> new Block(BlockBehaviour.Properties.copy(Blocks.GLOWSTONE).sound(SoundType.AMETHYST)));
+	public static final RegistryObject<Block> TEKTITE_BLOCK = registerBlock("tektite_block", 
+			() -> new Block(BlockBehaviour.Properties.copy(Blocks.IRON_BLOCK).sound(SoundType.STONE)));
 	
 //Dirt and Sand Blocks	
 	public static final RegistryObject<Block> LUNDIRT = registerBlock("lundirt", 

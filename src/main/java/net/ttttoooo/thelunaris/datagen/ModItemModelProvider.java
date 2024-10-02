@@ -23,12 +23,17 @@ public class ModItemModelProvider extends ItemModelProvider{
 	@Override
 	protected void registerModels() {
 		simpleItem(ModItems.MOONDIAL);
+		
+		simpleItem(ModItems.LUNAR_STICK);
 		simpleItem(ModItems.MOONSTEEL);
 		simpleItem(ModItems.RAW_MOONSTEEL);
 		simpleItem(ModItems.TEKTITE);
 		simpleItem(ModItems.EMOONSTEEL);
 		simpleItem(ModItems.LUNARITE);
+		
 		simpleItem(ModItems.LOONBERRY);
+		simpleItem(ModItems.ARCHFISH);
+		simpleItem(ModItems.SARROT);
 		
 		//tools
 		handheldItem(ModItems.MOONSTEEL_SWORD);

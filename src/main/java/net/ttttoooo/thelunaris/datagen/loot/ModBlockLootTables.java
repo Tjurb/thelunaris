@@ -26,6 +26,11 @@ public class ModBlockLootTables extends BlockLootSubProvider{
 	@Override
 	protected void generate() {
 		this.dropSelf(ModBlocks.MOONDIALBLOCK.get());
+		this.dropSelf(ModBlocks.LUNARITE_BLOCK.get());
+		this.dropSelf(ModBlocks.TEKTITE_BLOCK.get());
+		this.dropSelf(ModBlocks.EMOONSTEEL_BLOCK.get());
+		this.dropSelf(ModBlocks.MOONSTEEL_BLOCK.get());
+		this.dropSelf(ModBlocks.RAW_MOONSTEEL_BLOCK.get());
 		
 		this.dropSelf(ModBlocks.VAILSTONE.get());
 		this.dropSelf(ModBlocks.VAILSTONEBRICK.get());

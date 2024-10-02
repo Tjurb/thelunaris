@@ -5,7 +5,7 @@
     "item.thelunaris.moonsteel": "Moon Steel",
     "item.thelunaris.raw_moonsteel": "Raw Moon Steel",
     "item.thelunaris.tektite": "Tektite",
-    "item.thelunaris.emoonsteel": "Etheral Moon Steel",
+    "item.thelunaris.emoonsteel": "Ethereal Moon Steel",
     "item.thelunaris.lunarite": "Lunarite",
 
     "item.thelunaris.moonsteel_sword": "Moon Steel Sword",
@@ -14,11 +14,11 @@
     "item.thelunaris.moonsteel_shovel": "Moon Steel Shovel",
     "item.thelunaris.moonsteel_hoe": "Moon Steel Hoe",
     
-    "item.thelunaris.emoonsteel_sword": "Etheral Moon Steel Sword",
-    "item.thelunaris.emoonsteel_pickaxe": "Etheral Moon Steel Pickaxe",
-    "item.thelunaris.emoonsteel_axe": "Etheral Moon Steel Axe",
-    "item.thelunaris.emoonsteel_shovel": "Etheral Moon Steel Shovel",
-    "item.thelunaris.emoonsteel_hoe": "Etheral Moon Steel Hoe",
+    "item.thelunaris.emoonsteel_sword": "Ethereal Moon Steel Sword",
+    "item.thelunaris.emoonsteel_pickaxe": "Ethereal Moon Steel Pickaxe",
+    "item.thelunaris.emoonsteel_axe": "Ethereal Moon Steel Axe",
+    "item.thelunaris.emoonsteel_shovel": "Ethereal Moon Steel Shovel",
+    "item.thelunaris.emoonsteel_hoe": "Ethereal Moon Steel Hoe",
 
     "item.thelunaris.lunarite_sword": "Lunarite Sword",
     "item.thelunaris.lunarite_pickaxe": "Lunarite Pickaxe",
@@ -29,6 +29,11 @@
     "item.thelunaris.loonberry": "Loonberries",
 
     "block.thelunaris.moondialblock": "Moondial",
+    "block.thelunaris.lunarite_block": "Lunarite Block",
+    "block.thelunaris.emoonsteel_block": "Ethereal Moon Steel Block",
+    "block.thelunaris.moonsteel_block": "Moon Steel Block",
+    "block.thelunaris.raw_moonsteel_block": "Raw Moon Steel Block",
+    "block.thelunaris.tektite_block": "Tektite Block",
 
     "block.thelunaris.lunarite_ore": "Lunarite Ore",
     "block.thelunaris.moonsteel_ore": "Moonsteel Ore",

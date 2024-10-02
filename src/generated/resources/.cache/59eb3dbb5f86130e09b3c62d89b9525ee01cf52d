@@ -1,10 +1,12 @@
-// 1.20.1	2024-10-01T13:24:11.9645053	Loot Tables
+// 1.20.1	2024-10-01T14:20:32.0069866	Loot Tables
 94a9bb4b5b394b2e88ea03c16a0a820122c9fcd3 data/thelunaris/loot_tables/blocks/celest_leaves.json
 90082787e0587990d18a7d5804e5014715ec7540 data/thelunaris/loot_tables/blocks/celest_planks.json
 2dc9bd7a348108cbd2c51f3d9fa7ce79d8a767c5 data/thelunaris/loot_tables/blocks/celest_slab.json
 4ea41365bf2432732ec704343ab999d53f8b7075 data/thelunaris/loot_tables/blocks/celest_stairs.json
 0c298f989dfc2549587b9c61b1a50df530b0720e data/thelunaris/loot_tables/blocks/celest_wood.json
+45a186dae6426145885d6bea0b211a8c421a2730 data/thelunaris/loot_tables/blocks/emoonsteel_block.json
 ca549ddea92ce96c307d9bea5cee5b5f22a81fc3 data/thelunaris/loot_tables/blocks/gneiss.json
+30b223ffbfd0c9716f0f34ec67dbe54bb86d01cc data/thelunaris/loot_tables/blocks/lunarite_block.json
 333c8f4748a64754b04a2ff57293b5dba52a38b9 data/thelunaris/loot_tables/blocks/lunarite_ore.json
 7e957e2d343d86df3d28bf8832bb0be5a37590c9 data/thelunaris/loot_tables/blocks/lunarshale.json
 f8b7397dd45558a9ee9a47a08621ddb46a276191 data/thelunaris/loot_tables/blocks/lunarslate.json
@@ -17,7 +19,9 @@ a0aaad3ffa97b19e614ac39f5afea63a67b44dea data/thelunaris/loot_tables/blocks/lung
 0062ae15b56b73fac107c952e9abb20bc3a758b3 data/thelunaris/loot_tables/blocks/lunsandstone_wall.json
 a17d7a2c0e758678737f6ce51f9a4270eeb6ed61 data/thelunaris/loot_tables/blocks/marble.json
 3595797ef6d5daeea4a04a40edaafcd87f8b317e data/thelunaris/loot_tables/blocks/moondialblock.json
+217d185464ec6fc9596c63f76e4755ecb1688262 data/thelunaris/loot_tables/blocks/moonsteel_block.json
 e73a60f1420da7ed27675257d4cd143e4b5efc8f data/thelunaris/loot_tables/blocks/moonsteel_ore.json
+f103fe266711c8ecf17f0fa78f37a0d0c417a466 data/thelunaris/loot_tables/blocks/raw_moonsteel_block.json
 57c3e445ebc86cbd0d64465ca8f2bf99525fa45c data/thelunaris/loot_tables/blocks/skyoak_leaves.json
 c301ae733823cd3ac3908b7f21c9b8bf670b6b43 data/thelunaris/loot_tables/blocks/skyoak_planks.json
 b9d0c37c296c432f899fd9143bc4a3501783b9fb data/thelunaris/loot_tables/blocks/skyoak_slab.json
@@ -40,6 +44,7 @@ f603d616c3c6e3aeac585faabb9f2abe60fc375a data/thelunaris/loot_tables/blocks/smoo
 b11bf5d319c985b685ca1206ddb587d5861027d0 data/thelunaris/loot_tables/blocks/stellar_slab.json
 aff24f3267e61081625077ee3cdcd62f1314a145 data/thelunaris/loot_tables/blocks/stellar_stairs.json
 a27bd0b31b58e263fd9aea3ea20ccc8c8e7e6c76 data/thelunaris/loot_tables/blocks/stellar_wood.json
+308eeab57615674a543ae0f13e7d9006c4162678 data/thelunaris/loot_tables/blocks/tektite_block.json
 5349675287b6dcbba78c541df641b25192e1d13f data/thelunaris/loot_tables/blocks/tektite_ore.json
 b4f8f51358de14b09730649318523312951cfd10 data/thelunaris/loot_tables/blocks/vailstone.json
 44c99c921cf7b784e046d5c088542e6240a11273 data/thelunaris/loot_tables/blocks/vailstonebrick.json

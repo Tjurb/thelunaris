@@ -30,10 +30,16 @@ public class ModItems {
 			() -> new Item(new Item.Properties()));
 	public static final RegistryObject<Item> LUNARITE = ITEMS.register("lunarite", 
 			() -> new Item(new Item.Properties()));
+	public static final RegistryObject<Item> LUNAR_STICK = ITEMS.register("lunar_stick", 
+			() -> new Item(new Item.Properties()));
 	
 	//foods
 	public static final RegistryObject<Item> LOONBERRY = ITEMS.register("loonberry", 
 			() -> new Item(new Item.Properties().food(ModFoods.LOONBERRY)));
+	public static final RegistryObject<Item> ARCHFISH = ITEMS.register("archfish", 
+			() -> new Item(new Item.Properties().food(ModFoods.ARCHFISH)));
+	public static final RegistryObject<Item> SARROT = ITEMS.register("sarrot", 
+			() -> new Item(new Item.Properties().food(ModFoods.SARROT)));
 	
 	//tools
 	public static final RegistryObject<Item> MOONSTEEL_SWORD = ITEMS.register("moonsteel_sword", 

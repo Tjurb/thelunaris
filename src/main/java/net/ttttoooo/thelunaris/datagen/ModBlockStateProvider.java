@@ -20,6 +20,11 @@ public class ModBlockStateProvider extends BlockStateProvider{
 	protected void registerStatesAndModels() {
 		//special blocks
 		blockWithItem(ModBlocks.MOONDIALBLOCK);
+		blockWithItem(ModBlocks.LUNARITE_BLOCK);
+		blockWithItem(ModBlocks.EMOONSTEEL_BLOCK);
+		blockWithItem(ModBlocks.MOONSTEEL_BLOCK);
+		blockWithItem(ModBlocks.RAW_MOONSTEEL_BLOCK);
+		blockWithItem(ModBlocks.TEKTITE_BLOCK);
 		
 		//terrain blocks
 		blockWithItem(ModBlocks.LUNDIRT);
