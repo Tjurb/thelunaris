@@ -1,0 +1,11 @@
+{
+  "type": "minecraft:blasting",
+  "category": "misc",
+  "cookingtime": 90,
+  "experience": 0.15,
+  "group": "moonsteel",
+  "ingredient": {
+    "item": "thelunaris:raw_moonsteel"
+  },
+  "result": "thelunaris:moonsteel"
+}

@@ -1,4 +1,4 @@
-// 1.20.1	2024-10-01T14:20:32.0069866	Loot Tables
+// 1.20.1	2024-10-02T22:07:02.4621981	Loot Tables
 94a9bb4b5b394b2e88ea03c16a0a820122c9fcd3 data/thelunaris/loot_tables/blocks/celest_leaves.json
 90082787e0587990d18a7d5804e5014715ec7540 data/thelunaris/loot_tables/blocks/celest_planks.json
 2dc9bd7a348108cbd2c51f3d9fa7ce79d8a767c5 data/thelunaris/loot_tables/blocks/celest_slab.json
@@ -6,10 +6,13 @@
 0c298f989dfc2549587b9c61b1a50df530b0720e data/thelunaris/loot_tables/blocks/celest_wood.json
 45a186dae6426145885d6bea0b211a8c421a2730 data/thelunaris/loot_tables/blocks/emoonsteel_block.json
 ca549ddea92ce96c307d9bea5cee5b5f22a81fc3 data/thelunaris/loot_tables/blocks/gneiss.json
+cc341454641140011ddf620b78f5959ac125e8cd data/thelunaris/loot_tables/blocks/labradorite_block.json
+2da2465427d2e0d298009823dbd6a3c5c36267cd data/thelunaris/loot_tables/blocks/labradorite_ore.json
 30b223ffbfd0c9716f0f34ec67dbe54bb86d01cc data/thelunaris/loot_tables/blocks/lunarite_block.json
 333c8f4748a64754b04a2ff57293b5dba52a38b9 data/thelunaris/loot_tables/blocks/lunarite_ore.json
 7e957e2d343d86df3d28bf8832bb0be5a37590c9 data/thelunaris/loot_tables/blocks/lunarshale.json
 f8b7397dd45558a9ee9a47a08621ddb46a276191 data/thelunaris/loot_tables/blocks/lunarslate.json
+bb2d212f5520ee1031dbc871e7e043466aa2110d data/thelunaris/loot_tables/blocks/lunar_crafter.json
 aa8cdb4ea61a58f7af007f4f20f47b5f569ca037 data/thelunaris/loot_tables/blocks/lundirt.json
 a0aaad3ffa97b19e614ac39f5afea63a67b44dea data/thelunaris/loot_tables/blocks/lungrass.json
 006879644826ae4dc8f5c30b3a3bdea7eb68afb4 data/thelunaris/loot_tables/blocks/lunsand.json
@@ -44,8 +47,6 @@ f603d616c3c6e3aeac585faabb9f2abe60fc375a data/thelunaris/loot_tables/blocks/smoo
 b11bf5d319c985b685ca1206ddb587d5861027d0 data/thelunaris/loot_tables/blocks/stellar_slab.json
 aff24f3267e61081625077ee3cdcd62f1314a145 data/thelunaris/loot_tables/blocks/stellar_stairs.json
 a27bd0b31b58e263fd9aea3ea20ccc8c8e7e6c76 data/thelunaris/loot_tables/blocks/stellar_wood.json
-308eeab57615674a543ae0f13e7d9006c4162678 data/thelunaris/loot_tables/blocks/tektite_block.json
-5349675287b6dcbba78c541df641b25192e1d13f data/thelunaris/loot_tables/blocks/tektite_ore.json
 b4f8f51358de14b09730649318523312951cfd10 data/thelunaris/loot_tables/blocks/vailstone.json
 44c99c921cf7b784e046d5c088542e6240a11273 data/thelunaris/loot_tables/blocks/vailstonebrick.json
 7fe0eaf58eda67c67906a5ab287d20aa8f838039 data/thelunaris/loot_tables/blocks/vailstonebrick_slab.json

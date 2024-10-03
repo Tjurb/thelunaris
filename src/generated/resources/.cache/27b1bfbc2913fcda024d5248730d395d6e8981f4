@@ -1,14 +1,17 @@
-// 1.20.1	2024-10-02T14:52:53.4010118	Item Models: thelunaris
+// 1.20.1	2024-10-02T22:07:02.4648622	Item Models: thelunaris
 b7176a2f31e02ede645f754b6b7dd43a1b142ecc assets/thelunaris/models/item/archfish.json
 96fa6f9c7db59f40a706bbc159fbed773ee508c3 assets/thelunaris/models/item/celest_slab.json
 bcea65955536a9c7105ba8924a653ea35db48470 assets/thelunaris/models/item/celest_stairs.json
+9120ca205b5c0208a34a3a425218d0a9309d086b assets/thelunaris/models/item/cooked_archfish.json
 0414281635d08f78f0de15b50fdf44888b1001ee assets/thelunaris/models/item/emoonsteel.json
 733ec8c997ecf5c63c7291cb7663168feb25f733 assets/thelunaris/models/item/emoonsteel_axe.json
 0b3eb7f2610f6a1d3e9b1f1035391e2934ebda8d assets/thelunaris/models/item/emoonsteel_hoe.json
 179f95a08d568a4fceef6eae3c94895f46d957b7 assets/thelunaris/models/item/emoonsteel_pickaxe.json
 44aa0834e8277df319ce5372031e3dc27e3006f2 assets/thelunaris/models/item/emoonsteel_shovel.json
 62c6389073c679d65c9d3ee9adfda2ccea62419f assets/thelunaris/models/item/emoonsteel_sword.json
+cd8161acf28a94464e953dc839c7f39832cc2d32 assets/thelunaris/models/item/labradorite.json
 e5c1a8cba13f83b6b236fe51e4fd66aab34ab1c7 assets/thelunaris/models/item/loonberry.json
+542b4cfa98097c063394d7a15d751a52edffeff9 assets/thelunaris/models/item/loonberry_pie.json
 73ffec3d598684617c17abeb2091ec48c69d8aeb assets/thelunaris/models/item/lunarite.json
 d6881d743e5ba7973417f1fae56f5adb1fb04312 assets/thelunaris/models/item/lunarite_axe.json
 fed76f0e872ca8c7cf225af0177fae41d4dcf6c4 assets/thelunaris/models/item/lunarite_hoe.json
@@ -16,6 +19,7 @@ fed76f0e872ca8c7cf225af0177fae41d4dcf6c4 assets/thelunaris/models/item/lunarite_
 17e92add915110a59805f7a901900e054ac41127 assets/thelunaris/models/item/lunarite_shovel.json
 5c76fa0d524f19f8d6b5586ca1fa8e723cc8ad21 assets/thelunaris/models/item/lunarite_sword.json
 d36348d59489c028f8a38789d89b0ceefa2d3fd5 assets/thelunaris/models/item/lunar_stick.json
+ef203815016d8e4e0a776470e0fc105abf381a11 assets/thelunaris/models/item/lunar_wheat.json
 37ff6b4bb8e5b6c4919823c611ecf0948880fc5c assets/thelunaris/models/item/lunsandstone_slab.json
 ee055d692d134558cc4b3dd88840b904ee5e1735 assets/thelunaris/models/item/lunsandstone_stairs.json
 078bb8e3666fe30bd894dfc4b25c418de058f8f5 assets/thelunaris/models/item/lunsandstone_wall.json
@@ -41,7 +45,11 @@ cc80e93459e95d0aa81166e253d3684da4ec1a63 assets/thelunaris/models/item/smoothgne
 24ff9d4577c0a666c0a2182f73946571811d2c86 assets/thelunaris/models/item/smoothmarble_wall.json
 27a62a3b4e5b41b515b771694fba7b6586d614f9 assets/thelunaris/models/item/stellar_slab.json
 93f11e34c673b116d977e67dcc3695d1e60a9970 assets/thelunaris/models/item/stellar_stairs.json
-146eafc41b7684771d133d9b4b4cb3b0604625a2 assets/thelunaris/models/item/tektite.json
 254566af11e649d0bfaee442114c9add65135f83 assets/thelunaris/models/item/vailstonebrick_slab.json
 a80f4cd67e9a7243b2590802a35659a98173a549 assets/thelunaris/models/item/vailstonebrick_stairs.json
 cb5d1c1d043438e4894d7d87d07e536cd8d8dbba assets/thelunaris/models/item/vailstonebrick_wall.json
+aec6995ae8a746c2d7676077f11d8bd00cd29e9e assets/thelunaris/models/item/vailstone_axe.json
+19e4f49e78760c26c9c5a210ace53afe1f18af8e assets/thelunaris/models/item/vailstone_hoe.json
+73646ef3184ef78921b8e10dae7c9e4f79cecacb assets/thelunaris/models/item/vailstone_pickaxe.json
+dc7b5d7059b10d7ac56552d44cf3dd5bb2ae9434 assets/thelunaris/models/item/vailstone_shovel.json
+63d0c3461611dad6c28e74ccd0d790c6662d9178 assets/thelunaris/models/item/vailstone_sword.json

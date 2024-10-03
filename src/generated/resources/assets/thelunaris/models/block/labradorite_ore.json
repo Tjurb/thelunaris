@@ -1,6 +1,6 @@
 {
   "parent": "minecraft:block/cube_all",
   "textures": {
-    "all": "thelunaris:block/tektite_block"
+    "all": "thelunaris:block/labradorite_ore"
   }
 }
