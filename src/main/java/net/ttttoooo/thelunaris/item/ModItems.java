@@ -24,13 +24,15 @@ public class ModItems {
 			() -> new Item(new Item.Properties()));
 	public static final RegistryObject<Item> RAW_MOONSTEEL = ITEMS.register("raw_moonsteel", 
 			() -> new Item(new Item.Properties()));
-	public static final RegistryObject<Item> TEKTITE = ITEMS.register("tektite", 
+	public static final RegistryObject<Item> LABRADORITE = ITEMS.register("labradorite", 
 			() -> new Item(new Item.Properties()));
 	public static final RegistryObject<Item> EMOONSTEEL = ITEMS.register("emoonsteel", 
 			() -> new Item(new Item.Properties()));
 	public static final RegistryObject<Item> LUNARITE = ITEMS.register("lunarite", 
 			() -> new Item(new Item.Properties()));
 	public static final RegistryObject<Item> LUNAR_STICK = ITEMS.register("lunar_stick", 
+			() -> new Item(new Item.Properties()));
+	public static final RegistryObject<Item> LUNAR_WHEAT = ITEMS.register("lunar_wheat", 
 			() -> new Item(new Item.Properties()));
 	
 	//foods
@@ -40,8 +42,23 @@ public class ModItems {
 			() -> new Item(new Item.Properties().food(ModFoods.ARCHFISH)));
 	public static final RegistryObject<Item> SARROT = ITEMS.register("sarrot", 
 			() -> new Item(new Item.Properties().food(ModFoods.SARROT)));
+	public static final RegistryObject<Item> COOKED_ARCHFISH = ITEMS.register("cooked_archfish", 
+			() -> new Item(new Item.Properties().food(ModFoods.COOKED_ARCHFISH)));
+	public static final RegistryObject<Item> LOONBERRY_PIE = ITEMS.register("loonberry_pie", 
+			() -> new Item(new Item.Properties().food(ModFoods.LOONBERRY_PIE)));
 	
 	//tools
+	public static final RegistryObject<Item> VAILSTONE_SWORD = ITEMS.register("vailstone_sword", 
+			() -> new SwordItem(ModToolTiers.VAILSTONE, 4, 2, new Item.Properties()));
+	public static final RegistryObject<Item> VAILSTONE_PICKAXE = ITEMS.register("vailstone_pickaxe", 
+			() -> new PickaxeItem(ModToolTiers.VAILSTONE, 2, 1, new Item.Properties()));
+	public static final RegistryObject<Item> VAILSTONE_SHOVEL = ITEMS.register("vailstone_shovel", 
+			() -> new ShovelItem(ModToolTiers.VAILSTONE, 0, 0, new Item.Properties()));
+	public static final RegistryObject<Item> VAILSTONE_AXE = ITEMS.register("vailstone_axe", 
+			() -> new AxeItem(ModToolTiers.VAILSTONE, 5, 1, new Item.Properties()));
+	public static final RegistryObject<Item> VAILSTONE_HOE = ITEMS.register("vailstone_hoe", 
+			() -> new HoeItem(ModToolTiers.VAILSTONE, 0, 0, new Item.Properties()));
+	
 	public static final RegistryObject<Item> MOONSTEEL_SWORD = ITEMS.register("moonsteel_sword", 
 			() -> new SwordItem(ModToolTiers.MOONSTEEL, 4, 2, new Item.Properties()));
 	public static final RegistryObject<Item> MOONSTEEL_PICKAXE = ITEMS.register("moonsteel_pickaxe", 

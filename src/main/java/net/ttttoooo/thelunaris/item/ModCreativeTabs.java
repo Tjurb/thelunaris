@@ -20,6 +20,7 @@ public class ModCreativeTabs {
 			.displayItems((pParameters, pOutput) -> {
 				//Block Entry
 				pOutput.accept(ModBlocks.MOONDIALBLOCK.get());
+				pOutput.accept(ModBlocks.LUNAR_CRAFTER.get());
 				
 				pOutput.accept(ModBlocks.LUNGRASS.get());
 				pOutput.accept(ModBlocks.LUNDIRT.get());
@@ -57,7 +58,7 @@ public class ModCreativeTabs {
 				//Ore Entry
 				pOutput.accept(ModBlocks.LUNARITE_ORE.get());
 				pOutput.accept(ModBlocks.MOONSTEEL_ORE.get());
-				pOutput.accept(ModBlocks.TEKTITE_ORE.get());
+				pOutput.accept(ModBlocks.LABRADORITE_ORE.get());
 				
 				//Tree Entry
 				pOutput.accept(ModBlocks.CELEST_WOOD.get());
@@ -80,7 +81,7 @@ public class ModCreativeTabs {
 				
 				//Pure Blocks
 				pOutput.accept(ModBlocks.LUNARITE_BLOCK.get());
-				pOutput.accept(ModBlocks.TEKTITE_BLOCK.get());
+				pOutput.accept(ModBlocks.LABRADORITE_BLOCK.get());
 				pOutput.accept(ModBlocks.EMOONSTEEL_BLOCK.get());
 				pOutput.accept(ModBlocks.MOONSTEEL_BLOCK.get());
 				pOutput.accept(ModBlocks.RAW_MOONSTEEL_BLOCK.get());
@@ -90,7 +91,7 @@ public class ModCreativeTabs {
 				pOutput.accept(ModItems.MOONDIAL.get());
 				pOutput.accept(ModItems.RAW_MOONSTEEL.get());
 				pOutput.accept(ModItems.MOONSTEEL.get());
-				pOutput.accept(ModItems.TEKTITE.get());
+				pOutput.accept(ModItems.LABRADORITE.get());
 				pOutput.accept(ModItems.EMOONSTEEL.get());
 				pOutput.accept(ModItems.LUNARITE.get());
 				
@@ -98,8 +99,15 @@ public class ModCreativeTabs {
 				pOutput.accept(ModItems.LOONBERRY.get());
 				pOutput.accept(ModItems.ARCHFISH.get());
 				pOutput.accept(ModItems.SARROT.get());
+				pOutput.accept(ModItems.COOKED_ARCHFISH.get());
+				pOutput.accept(ModItems.LOONBERRY_PIE.get());
 				
 				//Tool Entry
+				pOutput.accept(ModItems.VAILSTONE_SWORD.get());
+				pOutput.accept(ModItems.VAILSTONE_PICKAXE.get());
+				pOutput.accept(ModItems.VAILSTONE_AXE.get());
+				pOutput.accept(ModItems.VAILSTONE_SHOVEL.get());
+				pOutput.accept(ModItems.VAILSTONE_HOE.get());
 				pOutput.accept(ModItems.MOONSTEEL_SWORD.get());
 				pOutput.accept(ModItems.MOONSTEEL_PICKAXE.get());
 				pOutput.accept(ModItems.MOONSTEEL_AXE.get());

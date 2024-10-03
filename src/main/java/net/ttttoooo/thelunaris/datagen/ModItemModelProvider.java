@@ -27,15 +27,24 @@ public class ModItemModelProvider extends ItemModelProvider{
 		simpleItem(ModItems.LUNAR_STICK);
 		simpleItem(ModItems.MOONSTEEL);
 		simpleItem(ModItems.RAW_MOONSTEEL);
-		simpleItem(ModItems.TEKTITE);
+		simpleItem(ModItems.LABRADORITE);
 		simpleItem(ModItems.EMOONSTEEL);
 		simpleItem(ModItems.LUNARITE);
+		simpleItem(ModItems.LUNAR_WHEAT);
 		
 		simpleItem(ModItems.LOONBERRY);
 		simpleItem(ModItems.ARCHFISH);
 		simpleItem(ModItems.SARROT);
+		simpleItem(ModItems.COOKED_ARCHFISH);
+		simpleItem(ModItems.LOONBERRY_PIE);
 		
 		//tools
+		handheldItem(ModItems.VAILSTONE_SWORD);
+		handheldItem(ModItems.VAILSTONE_PICKAXE);
+		handheldItem(ModItems.VAILSTONE_AXE);
+		handheldItem(ModItems.VAILSTONE_SHOVEL);
+		handheldItem(ModItems.VAILSTONE_HOE);
+		
 		handheldItem(ModItems.MOONSTEEL_SWORD);
 		handheldItem(ModItems.MOONSTEEL_PICKAXE);
 		handheldItem(ModItems.MOONSTEEL_AXE);

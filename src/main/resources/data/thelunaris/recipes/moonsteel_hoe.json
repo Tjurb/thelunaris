@@ -1,0 +1,20 @@
+{
+    "type": "minecraft:crafting_shaped",
+    "catagory": "misc",
+    "pattern": [
+        "mm ",
+        " s ",
+        " s "
+    ],
+    "key": {
+        "m": {
+            "item":"thelunaris:moonsteel"
+        },
+        "s": {
+            "item":"thelunaris:lunar_stick"
+        }
+    },
+    "result": {
+        "item": "thelunaris:moonsteel_hoe"
+    }
+}

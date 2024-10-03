@@ -1,0 +1,13 @@
+{
+    "type": "minecraft:crafting_shapeless",
+    "catagory": "misc",
+    "ingredients": [
+        {
+            "item": "thelunaris:skyoak_wood"
+        }
+    ],
+    "result": {
+        "item": "thelunaris:skyoak_planks",
+        "count": 4
+    }
+}

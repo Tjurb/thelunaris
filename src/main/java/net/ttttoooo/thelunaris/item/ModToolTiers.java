@@ -9,9 +9,15 @@ import net.minecraft.world.item.crafting.Ingredient;
 import net.minecraftforge.common.ForgeTier;
 import net.minecraftforge.common.TierSortingRegistry;
 import net.ttttoooo.thelunaris.TheLunaris;
+import net.ttttoooo.thelunaris.block.ModBlocks;
 import net.ttttoooo.thelunaris.util.ModTags;
 
 public class ModToolTiers {
+	public static final Tier VAILSTONE = TierSortingRegistry.registerTier(
+			new ForgeTier(1, 200, 4f, 1f, 8,
+					ModTags.Blocks.NEEDS_VAILSTONE_TOOL, () -> Ingredient.of(ModBlocks.VAILSTONE.get())),
+			new ResourceLocation(TheLunaris.MODID, "vailstone"), List.of(Tiers.WOOD), List.of(Tiers.IRON));
+	
 	public static final Tier MOONSTEEL = TierSortingRegistry.registerTier(
 			new ForgeTier(2, 400, 6f, 2f, 12,
 					ModTags.Blocks.NEEDS_MOONSTEEL_TOOL, () -> Ingredient.of(ModItems.MOONSTEEL.get())),

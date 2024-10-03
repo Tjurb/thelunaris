@@ -20,11 +20,13 @@ public class ModBlockStateProvider extends BlockStateProvider{
 	protected void registerStatesAndModels() {
 		//special blocks
 		blockWithItem(ModBlocks.MOONDIALBLOCK);
+		blockWithItem(ModBlocks.LUNAR_CRAFTER);
+		
 		blockWithItem(ModBlocks.LUNARITE_BLOCK);
 		blockWithItem(ModBlocks.EMOONSTEEL_BLOCK);
 		blockWithItem(ModBlocks.MOONSTEEL_BLOCK);
 		blockWithItem(ModBlocks.RAW_MOONSTEEL_BLOCK);
-		blockWithItem(ModBlocks.TEKTITE_BLOCK);
+		blockWithItem(ModBlocks.LABRADORITE_BLOCK);
 		
 		//terrain blocks
 		blockWithItem(ModBlocks.LUNDIRT);
@@ -83,7 +85,7 @@ public class ModBlockStateProvider extends BlockStateProvider{
 		//ore blocks
 		blockWithItem(ModBlocks.LUNARITE_ORE);
 		blockWithItem(ModBlocks.MOONSTEEL_ORE);
-		blockWithItem(ModBlocks.TEKTITE_ORE);
+		blockWithItem(ModBlocks.LABRADORITE_ORE);
 		
 	}
 	

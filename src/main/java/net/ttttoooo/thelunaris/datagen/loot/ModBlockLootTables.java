@@ -26,8 +26,10 @@ public class ModBlockLootTables extends BlockLootSubProvider{
 	@Override
 	protected void generate() {
 		this.dropSelf(ModBlocks.MOONDIALBLOCK.get());
+		this.dropSelf(ModBlocks.LUNAR_CRAFTER.get());
+		
 		this.dropSelf(ModBlocks.LUNARITE_BLOCK.get());
-		this.dropSelf(ModBlocks.TEKTITE_BLOCK.get());
+		this.dropSelf(ModBlocks.LABRADORITE_BLOCK.get());
 		this.dropSelf(ModBlocks.EMOONSTEEL_BLOCK.get());
 		this.dropSelf(ModBlocks.MOONSTEEL_BLOCK.get());
 		this.dropSelf(ModBlocks.RAW_MOONSTEEL_BLOCK.get());
@@ -76,8 +78,8 @@ public class ModBlockLootTables extends BlockLootSubProvider{
 				block -> createDiamondLikeOreDrops(ModBlocks.LUNARITE_ORE.get(), ModItems.LUNARITE.get()));
 		this.add(ModBlocks.MOONSTEEL_ORE.get(),
 				block -> createIronLikeOreDrops(ModBlocks.MOONSTEEL_ORE.get(), ModItems.RAW_MOONSTEEL.get()));
-		this.add(ModBlocks.TEKTITE_ORE.get(),
-				block -> createIronLikeOreDrops(ModBlocks.TEKTITE_ORE.get(), ModItems.TEKTITE.get()));
+		this.add(ModBlocks.LABRADORITE_ORE.get(),
+				block -> createDiamondLikeOreDrops(ModBlocks.LABRADORITE_ORE.get(), ModItems.LABRADORITE.get()));
 		
 		this.add(ModBlocks.VAILSTONEBRICK_SLAB.get(),
 				block -> createSlabItemTable(ModBlocks.VAILSTONEBRICK_SLAB.get()));

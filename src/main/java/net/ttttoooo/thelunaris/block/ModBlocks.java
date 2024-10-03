@@ -29,6 +29,10 @@ public class ModBlocks {
 //Special Blocks
 	public static final RegistryObject<Block> MOONDIALBLOCK = registerBlock("moondialblock", 
 			() -> new Block(BlockBehaviour.Properties.copy(Blocks.IRON_BLOCK).sound(SoundType.ANCIENT_DEBRIS)));
+	public static final RegistryObject<Block> LUNAR_CRAFTER = registerBlock("lunar_crafter", 
+			() -> new Block(BlockBehaviour.Properties.copy(Blocks.IRON_BLOCK).sound(SoundType.ANCIENT_DEBRIS)));
+	
+//Condensed Blocks	
 	public static final RegistryObject<Block> RAW_MOONSTEEL_BLOCK = registerBlock("raw_moonsteel_block", 
 			() -> new Block(BlockBehaviour.Properties.copy(Blocks.RAW_IRON_BLOCK).sound(SoundType.METAL)));
 	public static final RegistryObject<Block> MOONSTEEL_BLOCK = registerBlock("moonsteel_block", 
@@ -37,7 +41,7 @@ public class ModBlocks {
 			() -> new Block(BlockBehaviour.Properties.copy(Blocks.IRON_BLOCK).sound(SoundType.METAL)));
 	public static final RegistryObject<Block> LUNARITE_BLOCK = registerBlock("lunarite_block", 
 			() -> new Block(BlockBehaviour.Properties.copy(Blocks.GLOWSTONE).sound(SoundType.AMETHYST)));
-	public static final RegistryObject<Block> TEKTITE_BLOCK = registerBlock("tektite_block", 
+	public static final RegistryObject<Block> LABRADORITE_BLOCK = registerBlock("labradorite_block", 
 			() -> new Block(BlockBehaviour.Properties.copy(Blocks.IRON_BLOCK).sound(SoundType.STONE)));
 	
 //Dirt and Sand Blocks	
@@ -153,7 +157,7 @@ public class ModBlocks {
 	public static final RegistryObject<Block> MOONSTEEL_ORE = registerBlock("moonsteel_ore", 
 			() -> new DropExperienceBlock(BlockBehaviour.Properties.copy(Blocks.STONE).strength(2f)
 					.requiresCorrectToolForDrops(), UniformInt.of(1, 4)));
-	public static final RegistryObject<Block> TEKTITE_ORE = registerBlock("tektite_ore", 
+	public static final RegistryObject<Block> LABRADORITE_ORE = registerBlock("labradorite_ore", 
 			() -> new DropExperienceBlock(BlockBehaviour.Properties.copy(Blocks.STONE).strength(2f)
 					.requiresCorrectToolForDrops(), UniformInt.of(2, 5)));
 	

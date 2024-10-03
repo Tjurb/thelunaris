@@ -52,13 +52,14 @@ public class ModBlockTagGenerator extends BlockTagsProvider{
 					ModBlocks.LUNSANDSTONE_SLAB.get(),
 					
 					ModBlocks.MOONDIALBLOCK.get(),
+					ModBlocks.LUNAR_CRAFTER.get(),
 					ModBlocks.LUNARITE_BLOCK.get(),
-					ModBlocks.TEKTITE_BLOCK.get(),
+					ModBlocks.LABRADORITE_BLOCK.get(),
 					ModBlocks.EMOONSTEEL_BLOCK.get(),
 					ModBlocks.MOONSTEEL_BLOCK.get(),
 					ModBlocks.RAW_MOONSTEEL_BLOCK.get(),
 
-					ModBlocks.TEKTITE_ORE.get(),
+					ModBlocks.LABRADORITE_ORE.get(),
 					ModBlocks.MOONSTEEL_ORE.get(),
 					ModBlocks.LUNARITE_ORE.get());
 		
@@ -70,7 +71,7 @@ public class ModBlockTagGenerator extends BlockTagsProvider{
 		this.tag(ModTags.Blocks.NEEDS_MOONSTEEL_TOOL)
 			.add(ModBlocks.MOONDIALBLOCK.get(),
 					ModBlocks.MOONSTEEL_ORE.get(),
-					ModBlocks.TEKTITE_ORE.get());
+					ModBlocks.LABRADORITE_ORE.get());
 		
 		this.tag(ModTags.Blocks.NEEDS_EMOONSTEEL_TOOL)
 			.add(ModBlocks.LUNARITE_ORE.get());

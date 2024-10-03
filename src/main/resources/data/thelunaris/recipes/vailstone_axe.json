@@ -1,0 +1,20 @@
+{
+    "type": "minecraft:crafting_shaped",
+    "catagory": "misc",
+    "pattern": [
+        "mm ",
+        "ms ",
+        " s "
+    ],
+    "key": {
+        "m": {
+            "item":"thelunaris:vailstone"
+        },
+        "s": {
+            "item":"thelunaris:lunar_stick"
+        }
+    },
+    "result": {
+        "item": "thelunaris:vailstone_axe"
+    }
+}

@@ -1,0 +1,13 @@
+{
+    "type": "minecraft:crafting_shapeless",
+    "catagory": "misc",
+    "ingredients": [
+        {
+            "item": "thelunaris:stellar_wood"
+        }
+    ],
+    "result": {
+        "item": "thelunaris:stellar_planks",
+        "count": 4
+    }
+}
