@@ -1,6 +1,7 @@
 {
-  "parent": "minecraft:block/cube_all",
+  "parent": "minecraft:block/cube_column",
   "textures": {
-    "all": "thelunaris:block/stellar_wood"
+    "end": "thelunaris:block/stellar_log",
+    "side": "thelunaris:block/stellar_log"
   }
 }

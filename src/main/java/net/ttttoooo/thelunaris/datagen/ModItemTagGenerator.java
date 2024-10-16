@@ -7,9 +7,12 @@ import org.jetbrains.annotations.Nullable;
 import net.minecraft.core.HolderLookup.Provider;
 import net.minecraft.data.PackOutput;
 import net.minecraft.data.tags.ItemTagsProvider;
+import net.minecraft.tags.BlockTags;
+import net.minecraft.tags.ItemTags;
 import net.minecraft.world.level.block.Block;
 import net.minecraftforge.common.data.ExistingFileHelper;
 import net.ttttoooo.thelunaris.TheLunaris;
+import net.ttttoooo.thelunaris.block.ModBlocks;
 
 public class ModItemTagGenerator extends ItemTagsProvider {
 
@@ -22,8 +25,21 @@ public class ModItemTagGenerator extends ItemTagsProvider {
 
 	@Override
 	protected void addTags(Provider p_256380_) {
-		// TODO Auto-generated method stub
-		
+		this.tag(ItemTags.LOGS_THAT_BURN)
+		.add(ModBlocks.CELEST_LOG.get().asItem(),
+				ModBlocks.CELEST_WOOD.get().asItem(),
+				ModBlocks.STRIPPED_CELEST_LOG.get().asItem(),
+				ModBlocks.STRIPPED_CELEST_WOOD.get().asItem(),
+				
+				ModBlocks.STELLAR_LOG.get().asItem(),
+				ModBlocks.STELLAR_WOOD.get().asItem(),
+				ModBlocks.STRIPPED_STELLAR_LOG.get().asItem(),
+				ModBlocks.STRIPPED_STELLAR_WOOD.get().asItem(),
+				
+				ModBlocks.SKYOAK_LOG.get().asItem(),
+				ModBlocks.SKYOAK_WOOD.get().asItem(),
+				ModBlocks.STRIPPED_SKYOAK_LOG.get().asItem(),
+				ModBlocks.STRIPPED_SKYOAK_WOOD.get().asItem());
 	}
 
 }

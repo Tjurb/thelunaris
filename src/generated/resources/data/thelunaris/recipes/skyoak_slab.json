@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "P": {
+      "item": "thelunaris:skyoak_planks"
+    }
+  },
+  "pattern": [
+    "   ",
+    "   ",
+    "PPP"
+  ],
+  "result": {
+    "count": 6,
+    "item": "thelunaris:skyoak_slab"
+  },
+  "show_notification": true
+}

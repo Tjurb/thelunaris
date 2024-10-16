@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "S": {
+      "item": "thelunaris:smoothlunarslate"
+    }
+  },
+  "pattern": [
+    "  S",
+    " SS",
+    "SSS"
+  ],
+  "result": {
+    "count": 4,
+    "item": "thelunaris:smoothlunarslate_stairs"
+  },
+  "show_notification": true
+}

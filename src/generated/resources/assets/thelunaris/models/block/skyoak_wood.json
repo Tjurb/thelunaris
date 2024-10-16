@@ -1,6 +1,7 @@
 {
-  "parent": "minecraft:block/cube_all",
+  "parent": "minecraft:block/cube_column",
   "textures": {
-    "all": "thelunaris:block/skyoak_wood"
+    "end": "thelunaris:block/skyoak_log",
+    "side": "thelunaris:block/skyoak_log"
   }
 }

@@ -1,12 +1,16 @@
 package net.ttttoooo.thelunaris.datagen;
 
 import net.minecraft.data.PackOutput;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.block.RotatedPillarBlock;
 import net.minecraft.world.level.block.SlabBlock;
 import net.minecraft.world.level.block.StairBlock;
 import net.minecraft.world.level.block.WallBlock;
 import net.minecraftforge.client.model.generators.BlockStateProvider;
+import net.minecraftforge.client.model.generators.ModelFile;
 import net.minecraftforge.common.data.ExistingFileHelper;
+import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
 import net.ttttoooo.thelunaris.TheLunaris;
 import net.ttttoooo.thelunaris.block.ModBlocks;
@@ -38,19 +42,49 @@ public class ModBlockStateProvider extends BlockStateProvider{
 		wallBlock(((WallBlock) ModBlocks.LUNSANDSTONE_WALL.get()), blockTexture(ModBlocks.LUNSANDSTONE.get()));
 		
 		//tree blocks
-		blockWithItem(ModBlocks.CELEST_WOOD);
+		logBlock(((RotatedPillarBlock)ModBlocks.CELEST_LOG.get()));
+		axisBlock(((RotatedPillarBlock)ModBlocks.CELEST_WOOD.get()),
+				blockTexture(ModBlocks.CELEST_LOG.get()),blockTexture(ModBlocks.CELEST_LOG.get()));
+		axisBlock(((RotatedPillarBlock)ModBlocks.STRIPPED_CELEST_LOG.get()),blockTexture(ModBlocks.STRIPPED_CELEST_LOG.get()),
+				new ResourceLocation(TheLunaris.MODID, "block/stripped_celest_top"));
+		axisBlock(((RotatedPillarBlock)ModBlocks.STRIPPED_CELEST_WOOD.get()),
+				blockTexture(ModBlocks.STRIPPED_CELEST_LOG.get()),blockTexture(ModBlocks.STRIPPED_CELEST_LOG.get()));
+		blockItem(ModBlocks.CELEST_LOG);
+		blockItem(ModBlocks.CELEST_WOOD);
+		blockItem(ModBlocks.STRIPPED_CELEST_LOG);
+		blockItem(ModBlocks.STRIPPED_CELEST_WOOD);
 		blockWithItem(ModBlocks.CELEST_LEAVES);
 		blockWithItem(ModBlocks.CELEST_PLANKS);
 		stairsBlock(((StairBlock) ModBlocks.CELEST_STAIRS.get()), blockTexture(ModBlocks.CELEST_PLANKS.get()));
 		slabBlock(((SlabBlock) ModBlocks.CELEST_SLAB.get()), blockTexture(ModBlocks.CELEST_PLANKS.get()), blockTexture(ModBlocks.CELEST_PLANKS.get()));
-		
-		blockWithItem(ModBlocks.STELLAR_WOOD);
+
+		logBlock(((RotatedPillarBlock)ModBlocks.STELLAR_LOG.get()));
+		axisBlock(((RotatedPillarBlock)ModBlocks.STELLAR_WOOD.get()),
+				blockTexture(ModBlocks.STELLAR_LOG.get()),blockTexture(ModBlocks.STELLAR_LOG.get()));
+		axisBlock(((RotatedPillarBlock)ModBlocks.STRIPPED_STELLAR_LOG.get()),blockTexture(ModBlocks.STRIPPED_STELLAR_LOG.get()),
+				new ResourceLocation(TheLunaris.MODID, "block/stripped_stellar_top"));
+		axisBlock(((RotatedPillarBlock)ModBlocks.STRIPPED_STELLAR_WOOD.get()),
+				blockTexture(ModBlocks.STRIPPED_STELLAR_LOG.get()),blockTexture(ModBlocks.STRIPPED_STELLAR_LOG.get()));
+		blockItem(ModBlocks.STELLAR_LOG);
+		blockItem(ModBlocks.STELLAR_WOOD);
+		blockItem(ModBlocks.STRIPPED_STELLAR_LOG);
+		blockItem(ModBlocks.STRIPPED_STELLAR_WOOD);
 		blockWithItem(ModBlocks.STELLAR_LEAVES);
 		blockWithItem(ModBlocks.STELLAR_PLANKS);
 		stairsBlock(((StairBlock) ModBlocks.STELLAR_STAIRS.get()), blockTexture(ModBlocks.STELLAR_PLANKS.get()));
 		slabBlock(((SlabBlock) ModBlocks.STELLAR_SLAB.get()), blockTexture(ModBlocks.STELLAR_PLANKS.get()), blockTexture(ModBlocks.STELLAR_PLANKS.get()));
-		
-		blockWithItem(ModBlocks.SKYOAK_WOOD);
+
+		logBlock(((RotatedPillarBlock)ModBlocks.SKYOAK_LOG.get()));
+		axisBlock(((RotatedPillarBlock)ModBlocks.SKYOAK_WOOD.get()),
+				blockTexture(ModBlocks.SKYOAK_LOG.get()),blockTexture(ModBlocks.SKYOAK_LOG.get()));
+		axisBlock(((RotatedPillarBlock)ModBlocks.STRIPPED_SKYOAK_LOG.get()),blockTexture(ModBlocks.STRIPPED_SKYOAK_LOG.get()),
+				new ResourceLocation(TheLunaris.MODID, "block/stripped_skyoak_top"));
+		axisBlock(((RotatedPillarBlock)ModBlocks.STRIPPED_SKYOAK_WOOD.get()),
+				blockTexture(ModBlocks.STRIPPED_SKYOAK_LOG.get()),blockTexture(ModBlocks.STRIPPED_SKYOAK_LOG.get()));
+		blockItem(ModBlocks.SKYOAK_LOG);
+		blockItem(ModBlocks.SKYOAK_WOOD);
+		blockItem(ModBlocks.STRIPPED_SKYOAK_LOG);
+		blockItem(ModBlocks.STRIPPED_SKYOAK_WOOD);
 		blockWithItem(ModBlocks.SKYOAK_LEAVES);
 		blockWithItem(ModBlocks.SKYOAK_PLANKS);
 		stairsBlock(((StairBlock) ModBlocks.SKYOAK_STAIRS.get()), blockTexture(ModBlocks.SKYOAK_PLANKS.get()));
@@ -92,4 +126,9 @@ public class ModBlockStateProvider extends BlockStateProvider{
 	private void blockWithItem(RegistryObject<Block> blockRegistryObject) {
 		simpleBlockWithItem(blockRegistryObject.get(), cubeAll(blockRegistryObject.get()));
 	}
+	
+	private void blockItem(RegistryObject<Block> blockRegistryObject) {
+        simpleBlockItem(blockRegistryObject.get(), new ModelFile.UncheckedModelFile(TheLunaris.MODID +
+                ":block/" + ForgeRegistries.BLOCKS.getKey(blockRegistryObject.get()).getPath()));
+    }
 }

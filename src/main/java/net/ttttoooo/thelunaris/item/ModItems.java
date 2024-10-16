@@ -46,6 +46,8 @@ public class ModItems {
 			() -> new Item(new Item.Properties().food(ModFoods.COOKED_ARCHFISH)));
 	public static final RegistryObject<Item> LOONBERRY_PIE = ITEMS.register("loonberry_pie", 
 			() -> new Item(new Item.Properties().food(ModFoods.LOONBERRY_PIE)));
+	public static final RegistryObject<Item> SPICY_ARCHFISH = ITEMS.register("spicy_archfish", 
+			() -> new Item(new Item.Properties().food(ModFoods.SPICY_ARCHFISH)));
 	
 	//tools
 	public static final RegistryObject<Item> VAILSTONE_SWORD = ITEMS.register("vailstone_sword", 

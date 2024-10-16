@@ -13,5 +13,6 @@ public class ModFoods {
 			.nutrition(3).saturationMod(0.2f).build();
 	public static final FoodProperties LOONBERRY_PIE = new FoodProperties.Builder().fast()
 			.nutrition(5).saturationMod(0.4f).build();
-	
+	public static final FoodProperties SPICY_ARCHFISH = new FoodProperties.Builder().fast()
+			.nutrition(5).saturationMod(0.5f).build();
 }

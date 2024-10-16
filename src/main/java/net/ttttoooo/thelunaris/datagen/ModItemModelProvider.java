@@ -37,6 +37,7 @@ public class ModItemModelProvider extends ItemModelProvider{
 		simpleItem(ModItems.SARROT);
 		simpleItem(ModItems.COOKED_ARCHFISH);
 		simpleItem(ModItems.LOONBERRY_PIE);
+		simpleItem(ModItems.SPICY_ARCHFISH);
 		
 		//tools
 		handheldItem(ModItems.VAILSTONE_SWORD);

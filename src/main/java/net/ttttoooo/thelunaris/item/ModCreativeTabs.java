@@ -61,19 +61,28 @@ public class ModCreativeTabs {
 				pOutput.accept(ModBlocks.LABRADORITE_ORE.get());
 				
 				//Tree Entry
+				pOutput.accept(ModBlocks.CELEST_LOG.get());
 				pOutput.accept(ModBlocks.CELEST_WOOD.get());
+				pOutput.accept(ModBlocks.STRIPPED_CELEST_LOG.get());
+				pOutput.accept(ModBlocks.STRIPPED_CELEST_WOOD.get());
 				pOutput.accept(ModBlocks.CELEST_LEAVES.get());
 				pOutput.accept(ModBlocks.CELEST_PLANKS.get());
 				pOutput.accept(ModBlocks.CELEST_STAIRS.get());
 				pOutput.accept(ModBlocks.CELEST_SLAB.get());
 				
+				pOutput.accept(ModBlocks.STELLAR_LOG.get());
 				pOutput.accept(ModBlocks.STELLAR_WOOD.get());
+				pOutput.accept(ModBlocks.STRIPPED_STELLAR_LOG.get());
+				pOutput.accept(ModBlocks.STRIPPED_STELLAR_WOOD.get());
 				pOutput.accept(ModBlocks.STELLAR_LEAVES.get());;
 				pOutput.accept(ModBlocks.STELLAR_PLANKS.get());
 				pOutput.accept(ModBlocks.STELLAR_STAIRS.get());
 				pOutput.accept(ModBlocks.STELLAR_SLAB.get());
 				
+				pOutput.accept(ModBlocks.SKYOAK_LOG.get());
 				pOutput.accept(ModBlocks.SKYOAK_WOOD.get());
+				pOutput.accept(ModBlocks.STRIPPED_SKYOAK_LOG.get());
+				pOutput.accept(ModBlocks.STRIPPED_SKYOAK_WOOD.get());
 				pOutput.accept(ModBlocks.SKYOAK_LEAVES.get());;
 				pOutput.accept(ModBlocks.SKYOAK_PLANKS.get());
 				pOutput.accept(ModBlocks.SKYOAK_STAIRS.get());

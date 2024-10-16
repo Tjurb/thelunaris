@@ -1,7 +1,16 @@
 {
   "variants": {
-    "": {
+    "axis=x": {
+      "model": "thelunaris:block/celest_wood_horizontal",
+      "x": 90,
+      "y": 90
+    },
+    "axis=y": {
       "model": "thelunaris:block/celest_wood"
+    },
+    "axis=z": {
+      "model": "thelunaris:block/celest_wood_horizontal",
+      "x": 90
     }
   }
 }

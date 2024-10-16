@@ -7,6 +7,7 @@ import net.minecraft.data.PackOutput;
 import net.minecraft.data.recipes.FinishedRecipe;
 import net.minecraft.data.recipes.RecipeCategory;
 import net.minecraft.data.recipes.RecipeProvider;
+import net.minecraft.data.recipes.ShapedRecipeBuilder;
 import net.minecraft.data.recipes.SimpleCookingRecipeBuilder;
 import net.minecraft.world.item.crafting.AbstractCookingRecipe;
 import net.minecraft.world.item.crafting.Ingredient;
@@ -35,6 +36,126 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
 		oreBlasting(pWriter, MOONSTEEL_SMELTABLES, RecipeCategory.MISC, ModItems.MOONSTEEL.get(), 0.15f, 90, "moonsteel" );
 		oreSmelting(pWriter, LABRADORITE_SMELTABLES, RecipeCategory.MISC, ModItems.LABRADORITE.get(), 0.10f, 100, "labradorite" );
 		oreBlasting(pWriter, LABRADORITE_SMELTABLES, RecipeCategory.MISC, ModItems.LABRADORITE.get(), 0.10f, 90, "labradorite" );
+	
+		//Stairs
+		ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModBlocks.CELEST_STAIRS.get(),4 )
+			.pattern("  P")
+			.pattern(" PP")
+			.pattern("PPP")
+			.define('P', ModBlocks.CELEST_PLANKS.get())
+			.unlockedBy(getHasName(ModBlocks.CELEST_PLANKS.get()), has(ModBlocks.CELEST_PLANKS.get()))
+			.save(pWriter);
+		ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModBlocks.STELLAR_STAIRS.get(), 4)
+			.pattern("  P")
+			.pattern(" PP")
+			.pattern("PPP")
+			.define('P', ModBlocks.STELLAR_PLANKS.get())
+			.unlockedBy(getHasName(ModBlocks.STELLAR_PLANKS.get()), has(ModBlocks.STELLAR_PLANKS.get()))
+			.save(pWriter);
+		ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModBlocks.SKYOAK_STAIRS.get(), 4)
+			.pattern("  P")
+			.pattern(" PP")
+			.pattern("PPP")
+			.define('P', ModBlocks.SKYOAK_PLANKS.get())
+			.unlockedBy(getHasName(ModBlocks.SKYOAK_PLANKS.get()), has(ModBlocks.SKYOAK_PLANKS.get()))
+			.save(pWriter);
+		
+		ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModBlocks.SMOOTHGNEISS_STAIRS.get(), 4)
+			.pattern("  S")
+			.pattern(" SS")
+			.pattern("SSS")
+			.define('S', ModBlocks.SMOOTHGNEISS.get())
+			.unlockedBy(getHasName(ModBlocks.SMOOTHGNEISS.get()), has(ModBlocks.SMOOTHGNEISS.get()))
+			.save(pWriter);	
+		ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModBlocks.SMOOTHLUNARSLATE_STAIRS.get(), 4)
+			.pattern("  S")
+			.pattern(" SS")
+			.pattern("SSS")
+			.define('S', ModBlocks.SMOOTHLUNARSLATE.get())
+			.unlockedBy(getHasName(ModBlocks.SMOOTHLUNARSLATE.get()), has(ModBlocks.SMOOTHLUNARSLATE.get()))
+			.save(pWriter);	
+		ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModBlocks.SMOOTHMARBLE_STAIRS.get(), 4)
+			.pattern("  S")
+			.pattern(" SS")
+			.pattern("SSS")
+			.define('S', ModBlocks.SMOOTHMARBLE.get())
+			.unlockedBy(getHasName(ModBlocks.SMOOTHMARBLE.get()), has(ModBlocks.SMOOTHMARBLE.get()))
+			.save(pWriter);	
+		
+		//slabs
+		ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModBlocks.CELEST_SLAB.get(), 6)
+			.pattern("   ")
+			.pattern("   ")
+			.pattern("PPP")
+			.define('P', ModBlocks.CELEST_PLANKS.get())
+			.unlockedBy(getHasName(ModBlocks.CELEST_PLANKS.get()), has(ModBlocks.CELEST_PLANKS.get()))
+			.save(pWriter);
+		ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModBlocks.STELLAR_SLAB.get(), 6)
+			.pattern("   ")
+			.pattern("   ")
+			.pattern("PPP")
+			.define('P', ModBlocks.STELLAR_PLANKS.get())
+			.unlockedBy(getHasName(ModBlocks.STELLAR_PLANKS.get()), has(ModBlocks.STELLAR_PLANKS.get()))
+			.save(pWriter);
+		ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModBlocks.SKYOAK_SLAB.get(), 6)
+			.pattern("   ")
+			.pattern("   ")
+			.pattern("PPP")
+			.define('P', ModBlocks.SKYOAK_PLANKS.get())
+			.unlockedBy(getHasName(ModBlocks.SKYOAK_PLANKS.get()), has(ModBlocks.SKYOAK_PLANKS.get()))
+			.save(pWriter);
+	
+		ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModBlocks.SMOOTHGNEISS_SLAB.get(), 6)
+			.pattern("   ")
+			.pattern("   ")
+			.pattern("SSS")
+			.define('S', ModBlocks.SMOOTHGNEISS.get())
+			.unlockedBy(getHasName(ModBlocks.SMOOTHGNEISS.get()), has(ModBlocks.SMOOTHGNEISS.get()))
+			.save(pWriter);	
+		ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModBlocks.SMOOTHLUNARSLATE_SLAB.get(), 6)
+			.pattern("   ")
+			.pattern("   ")
+			.pattern("SSS")
+			.define('S', ModBlocks.SMOOTHLUNARSLATE.get())
+			.unlockedBy(getHasName(ModBlocks.SMOOTHLUNARSLATE.get()), has(ModBlocks.SMOOTHLUNARSLATE.get()))
+			.save(pWriter);	
+		ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModBlocks.SMOOTHMARBLE_SLAB.get(), 6)
+			.pattern("   ")
+			.pattern("   ")
+			.pattern("SSS")
+			.define('S', ModBlocks.SMOOTHMARBLE.get())
+			.unlockedBy(getHasName(ModBlocks.SMOOTHMARBLE.get()), has(ModBlocks.SMOOTHMARBLE.get()))
+			.save(pWriter);	
+	
+		//walls
+		ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModBlocks.SMOOTHGNEISS_WALL.get(), 6)
+			.pattern("   ")
+			.pattern("SSS")
+			.pattern("SSS")
+			.define('S', ModBlocks.SMOOTHGNEISS.get())
+			.unlockedBy(getHasName(ModBlocks.SMOOTHGNEISS.get()), has(ModBlocks.SMOOTHGNEISS.get()))
+			.save(pWriter);	
+		ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModBlocks.SMOOTHLUNARSLATE_WALL.get(), 6)
+			.pattern("   ")
+			.pattern("SSS")
+			.pattern("SSS")
+			.define('S', ModBlocks.SMOOTHLUNARSLATE.get())
+			.unlockedBy(getHasName(ModBlocks.SMOOTHLUNARSLATE.get()), has(ModBlocks.SMOOTHLUNARSLATE.get()))
+			.save(pWriter);	
+		ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModBlocks.SMOOTHMARBLE_WALL.get(), 6)
+			.pattern("   ")
+			.pattern("SSS")
+			.pattern("SSS")
+			.define('S', ModBlocks.SMOOTHMARBLE.get())
+			.unlockedBy(getHasName(ModBlocks.SMOOTHMARBLE.get()), has(ModBlocks.SMOOTHMARBLE.get()))
+			.save(pWriter);	
+		
+		//fence
+		
+		//doors
+		
+		//trapdoors
+
 	}
 	
 	protected static void oreSmelting(Consumer<FinishedRecipe> p_250654_, List<ItemLike> p_250172_, RecipeCategory p_250588_, ItemLike p_251868_, float p_250789_, int p_252144_, String p_251687_) {
