@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/cube_column_horizontal",
+  "textures": {
+    "end": "thelunaris:block/celest_log",
+    "side": "thelunaris:block/celest_log"
+  }
+}

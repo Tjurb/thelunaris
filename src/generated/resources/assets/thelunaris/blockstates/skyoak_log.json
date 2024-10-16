@@ -1,0 +1,16 @@
+{
+  "variants": {
+    "axis=x": {
+      "model": "thelunaris:block/skyoak_log_horizontal",
+      "x": 90,
+      "y": 90
+    },
+    "axis=y": {
+      "model": "thelunaris:block/skyoak_log"
+    },
+    "axis=z": {
+      "model": "thelunaris:block/skyoak_log_horizontal",
+      "x": 90
+    }
+  }
+}

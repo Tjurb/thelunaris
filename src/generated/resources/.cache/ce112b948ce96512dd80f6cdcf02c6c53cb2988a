@@ -1,7 +1,9 @@
-// 1.20.1	2024-10-02T22:07:02.4660134	Tags for minecraft:block mod id thelunaris
-554d6389207a0da2f85edc18618674aef58adecc data/minecraft/tags/blocks/mineable/axe.json
+// 1.20.1	2024-10-15T21:23:51.0614605	Tags for minecraft:block mod id thelunaris
+d607f02152b453bab537280ef438830cb97e631e data/minecraft/tags/blocks/logs_that_burn.json
+db7a5d902812536836217fbd3a45c1ae5ac687ce data/minecraft/tags/blocks/mineable/axe.json
 f3783b3dc2bde750f3e20c9f8b1ce4b0f86cb381 data/minecraft/tags/blocks/mineable/pickaxe.json
 95113718a380a3905e40ff2143315f96650adf34 data/minecraft/tags/blocks/mineable/shovel.json
+84d0bc08e0d868a2d590235e965dbc0dacfb7628 data/minecraft/tags/blocks/planks.json
 796d8eafd057e066ad2b46596586e782be60545b data/minecraft/tags/blocks/walls.json
 76ca1fd9ede275cc9c57e4369bd5bb19bb3f2a94 data/thelunaris/tags/blocks/needs_emoonsteel_tool.json
 f521827b5e1992533887eaa3f20539414326532a data/thelunaris/tags/blocks/needs_moonsteel_tool.json
