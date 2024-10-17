@@ -30,6 +30,7 @@ import net.minecraftforge.registries.RegistryObject;
 import net.ttttoooo.thelunaris.block.ModBlocks;
 import net.ttttoooo.thelunaris.item.ModCreativeTabs;
 import net.ttttoooo.thelunaris.item.ModItems;
+import net.ttttoooo.thelunaris.worldgen.biomes.ModBiomes;
 
 import org.slf4j.Logger;
 

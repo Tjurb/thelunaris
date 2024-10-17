@@ -13,6 +13,8 @@ public class ModTags {
 		public static final TagKey<Block> NEEDS_MOONSTEEL_TOOL = tag("needs_moonsteel_tool");
 		public static final TagKey<Block> NEEDS_VAILSTONE_TOOL = tag("needs_vailstone_tool");
 		
+		public static final TagKey<Block> VAILSTONE_ORE_REPLACEABLES = tag("vailstone_ore_replaceables");
+		
 		private static TagKey<Block> tag(String name){
 			return BlockTags.create(new ResourceLocation(TheLunaris.MODID, name));
 		}

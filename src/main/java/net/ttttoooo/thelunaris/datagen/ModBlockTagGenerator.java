@@ -23,8 +23,7 @@ public class ModBlockTagGenerator extends BlockTagsProvider{
 	}
 
 	@Override
-	protected void addTags(HolderLookup.Provider pProvider) {
-		//
+	protected void addTags(HolderLookup.Provider pProvider) {	
 		this.tag(BlockTags.MINEABLE_WITH_PICKAXE)
 			.add(ModBlocks.VAILSTONE.get(),
 					ModBlocks.VAILSTONEBRICK.get(),
@@ -62,6 +61,9 @@ public class ModBlockTagGenerator extends BlockTagsProvider{
 					ModBlocks.LABRADORITE_ORE.get(),
 					ModBlocks.MOONSTEEL_ORE.get(),
 					ModBlocks.LUNARITE_ORE.get());
+
+		this.tag(ModTags.Blocks.VAILSTONE_ORE_REPLACEABLES)
+			.add(ModBlocks.VAILSTONE.get());
 		
 		this.tag(BlockTags.MINEABLE_WITH_SHOVEL)
 			.add(ModBlocks.LUNDIRT.get(),
