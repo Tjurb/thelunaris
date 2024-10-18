@@ -43,6 +43,7 @@ public class ModBlockStateProvider extends BlockStateProvider{
 		
 		//tree blocks
 		logBlock(((RotatedPillarBlock)ModBlocks.CELEST_LOG.get()));
+		saplingBlock(ModBlocks.CELEST_SAPLING);
 		axisBlock(((RotatedPillarBlock)ModBlocks.CELEST_WOOD.get()),
 				blockTexture(ModBlocks.CELEST_LOG.get()),blockTexture(ModBlocks.CELEST_LOG.get()));
 		axisBlock(((RotatedPillarBlock)ModBlocks.STRIPPED_CELEST_LOG.get()),blockTexture(ModBlocks.STRIPPED_CELEST_LOG.get()),
@@ -59,6 +60,7 @@ public class ModBlockStateProvider extends BlockStateProvider{
 		slabBlock(((SlabBlock) ModBlocks.CELEST_SLAB.get()), blockTexture(ModBlocks.CELEST_PLANKS.get()), blockTexture(ModBlocks.CELEST_PLANKS.get()));
 
 		logBlock(((RotatedPillarBlock)ModBlocks.STELLAR_LOG.get()));
+		saplingBlock(ModBlocks.STELLAR_SAPLING);
 		axisBlock(((RotatedPillarBlock)ModBlocks.STELLAR_WOOD.get()),
 				blockTexture(ModBlocks.STELLAR_LOG.get()),blockTexture(ModBlocks.STELLAR_LOG.get()));
 		axisBlock(((RotatedPillarBlock)ModBlocks.STRIPPED_STELLAR_LOG.get()),blockTexture(ModBlocks.STRIPPED_STELLAR_LOG.get()),
@@ -75,6 +77,7 @@ public class ModBlockStateProvider extends BlockStateProvider{
 		slabBlock(((SlabBlock) ModBlocks.STELLAR_SLAB.get()), blockTexture(ModBlocks.STELLAR_PLANKS.get()), blockTexture(ModBlocks.STELLAR_PLANKS.get()));
 
 		logBlock(((RotatedPillarBlock)ModBlocks.SKYOAK_LOG.get()));
+		saplingBlock(ModBlocks.SKYOAK_SAPLING);
 		axisBlock(((RotatedPillarBlock)ModBlocks.SKYOAK_WOOD.get()),
 				blockTexture(ModBlocks.SKYOAK_LOG.get()),blockTexture(ModBlocks.SKYOAK_LOG.get()));
 		axisBlock(((RotatedPillarBlock)ModBlocks.STRIPPED_SKYOAK_LOG.get()),blockTexture(ModBlocks.STRIPPED_SKYOAK_LOG.get()),
@@ -122,6 +125,11 @@ public class ModBlockStateProvider extends BlockStateProvider{
 		blockWithItem(ModBlocks.LABRADORITE_ORE);
 		
 	}
+	
+	private void saplingBlock(RegistryObject<Block> blockRegistryObject) {
+        simpleBlock(blockRegistryObject.get(),
+                models().cross(ForgeRegistries.BLOCKS.getKey(blockRegistryObject.get()).getPath(), blockTexture(blockRegistryObject.get())).renderType("cutout"));
+    }
 	
 	private void blockWithItem(RegistryObject<Block> blockRegistryObject) {
 		simpleBlockWithItem(blockRegistryObject.get(), cubeAll(blockRegistryObject.get()));

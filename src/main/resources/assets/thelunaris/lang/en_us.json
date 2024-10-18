@@ -52,6 +52,7 @@
     "block.thelunaris.labradorite_ore": "Labradorite Ore",
 
     "block.thelunaris.celest_log": "Celest Log",
+    "block.thelunaris.celest_sapling": "Celest Sapling",
     "block.thelunaris.celest_wood": "Celest Wood",
     "block.thelunaris.stripped_celest_log": "Stripped Celest Log",
     "block.thelunaris.stripped_celest_wood": "Stripped Celest Wood",
@@ -61,6 +62,7 @@
     "block.thelunaris.celest_planks": "Celest Planks",
     
     "block.thelunaris.stellar_log": "Stellar Log",
+    "block.thelunaris.stellar_sapling": "Stellar Sapling",
     "block.thelunaris.stellar_wood": "Stellar Wood",
     "block.thelunaris.stripped_stellar_log": "Stripped Stellar Log",
     "block.thelunaris.stripped_stellar_wood": "Stripped Stellar Wood",
@@ -70,6 +72,7 @@
     "block.thelunaris.stellar_planks": "Stellar Planks",
     
     "block.thelunaris.skyoak_log": "Skyoak log",
+    "block.thelunaris.skyoak_sapling": "Skyoak Sapling",
     "block.thelunaris.skyoak_wood": "Skyoak Wood",
     "block.thelunaris.stripped_skyoak_log": "Stripped Skyoak log",
     "block.thelunaris.stripped_skyoak_wood": "Stripped Skyoak Wood",

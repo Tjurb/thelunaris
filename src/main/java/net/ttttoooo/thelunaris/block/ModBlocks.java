@@ -14,6 +14,7 @@ import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.DropExperienceBlock;
 import net.minecraft.world.level.block.LeavesBlock;
+import net.minecraft.world.level.block.SaplingBlock;
 import net.minecraft.world.level.block.SlabBlock;
 import net.minecraft.world.level.block.SoundType;
 import net.minecraft.world.level.block.StairBlock;
@@ -27,6 +28,9 @@ import net.minecraftforge.registries.RegistryObject;
 import net.ttttoooo.thelunaris.TheLunaris;
 import net.ttttoooo.thelunaris.block.custom.ModFlammableRotatedPillarBlock;
 import net.ttttoooo.thelunaris.item.ModItems;
+import net.ttttoooo.thelunaris.worldgen.tree.CelestTreeGrower;
+import net.ttttoooo.thelunaris.worldgen.tree.SkyoakTreeGrower;
+import net.ttttoooo.thelunaris.worldgen.tree.StellarTreeGrower;
 
 public class ModBlocks {
 	public static final DeferredRegister<Block> BLOCKS =
@@ -289,6 +293,14 @@ public class ModBlocks {
                     return 5;
                 }
 			});
+	
+//Sapling Blocks
+	public static final RegistryObject<Block> CELEST_SAPLING = registerBlock("celest_sapling", 
+			() -> new SaplingBlock(new CelestTreeGrower(), BlockBehaviour.Properties.copy(Blocks.OAK_SAPLING)));
+	public static final RegistryObject<Block> STELLAR_SAPLING = registerBlock("stellar_sapling", 
+			() -> new SaplingBlock(new StellarTreeGrower(), BlockBehaviour.Properties.copy(Blocks.OAK_SAPLING)));
+	public static final RegistryObject<Block> SKYOAK_SAPLING = registerBlock("skyoak_sapling", 
+			() -> new SaplingBlock(new SkyoakTreeGrower(), BlockBehaviour.Properties.copy(Blocks.OAK_SAPLING)));
 	
 //Stripped Logs
 	public static final RegistryObject<Block> STRIPPED_CELEST_LOG = registerBlock("stripped_celest_log", 

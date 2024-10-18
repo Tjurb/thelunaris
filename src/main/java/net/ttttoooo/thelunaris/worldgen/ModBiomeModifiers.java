@@ -7,35 +7,35 @@ import net.minecraft.resources.ResourceKey;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.tags.BiomeTags;
 import net.minecraft.world.level.levelgen.GenerationStep;
+import net.minecraftforge.common.Tags;
 import net.minecraftforge.common.world.BiomeModifier;
 import net.minecraftforge.common.world.ForgeBiomeModifiers;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.ttttoooo.thelunaris.TheLunaris;
 
 public class ModBiomeModifiers {
-    public static final ResourceKey<BiomeModifier> ADD_MOONSTEEL_ORE = registerKey("add_moonsteel_ore");
-    public static final ResourceKey<BiomeModifier> ADD_LABRADORITE_ORE = registerKey("add_labradorite_ore");
-    public static final ResourceKey<BiomeModifier> ADD_LUNARITE_ORE = registerKey("add_lunarite_ore");
-
+    public static final ResourceKey<BiomeModifier> ADD_TREE_CELEST = registerKey("add_tree_celest");
+    public static final ResourceKey<BiomeModifier> ADD_TREE_STELLAR = registerKey("add_tree_stellar");
+    public static final ResourceKey<BiomeModifier> ADD_TREE_SKYOAK = registerKey("add_tree_skyoak");
 
     public static void bootstrap(BootstapContext<BiomeModifier> context) {
         var placedFeatures = context.lookup(Registries.PLACED_FEATURE);
         var biomes = context.lookup(Registries.BIOME);
-
-        context.register(ADD_MOONSTEEL_ORE, new ForgeBiomeModifiers.AddFeaturesBiomeModifier(
-                biomes.getOrThrow(BiomeTags.IS_OVERWORLD),//Set to IS_OVERWORLD TO PREVENT ERRORS
-                HolderSet.direct(placedFeatures.getOrThrow(ModPlacedFeatures.LUNARIS_MOONSTEEL_ORE_PLACED_KEY)),
-                GenerationStep.Decoration.UNDERGROUND_ORES));
-
-        context.register(ADD_LABRADORITE_ORE, new ForgeBiomeModifiers.AddFeaturesBiomeModifier(
-                biomes.getOrThrow(BiomeTags.IS_OVERWORLD),//Set to IS_OVERWORLD TO PREVENT ERRORS
-                HolderSet.direct(placedFeatures.getOrThrow(ModPlacedFeatures.LUNARIS_LABRADORITE_ORE_PLACED_KEY)),
-                GenerationStep.Decoration.UNDERGROUND_ORES));
-
-        context.register(ADD_LUNARITE_ORE, new ForgeBiomeModifiers.AddFeaturesBiomeModifier(
-                biomes.getOrThrow(BiomeTags.IS_OVERWORLD),
-                HolderSet.direct(placedFeatures.getOrThrow(ModPlacedFeatures.LUNARIS_LUNARITE_ORE_PLACED_KEY)),
-                GenerationStep.Decoration.UNDERGROUND_ORES));//Set to IS_OVERWORLD TO PREVENT ERRORS
+        
+        context.register(ADD_TREE_CELEST, new ForgeBiomeModifiers.AddFeaturesBiomeModifier(
+                biomes.getOrThrow(Tags.Biomes.IS_PLAINS),
+                HolderSet.direct(placedFeatures.getOrThrow(ModPlacedFeatures.CELEST_PLACED_KEY)),
+                GenerationStep.Decoration.VEGETAL_DECORATION));
+        
+        context.register(ADD_TREE_STELLAR, new ForgeBiomeModifiers.AddFeaturesBiomeModifier(
+                biomes.getOrThrow(Tags.Biomes.IS_PLAINS),
+                HolderSet.direct(placedFeatures.getOrThrow(ModPlacedFeatures.STELLAR_PLACED_KEY)),
+                GenerationStep.Decoration.VEGETAL_DECORATION));
+        
+        context.register(ADD_TREE_SKYOAK, new ForgeBiomeModifiers.AddFeaturesBiomeModifier(
+                biomes.getOrThrow(Tags.Biomes.IS_PLAINS),
+                HolderSet.direct(placedFeatures.getOrThrow(ModPlacedFeatures.SKYOAK_PLACED_KEY)),
+                GenerationStep.Decoration.VEGETAL_DECORATION));
     }
 
     private static ResourceKey<BiomeModifier> registerKey(String name) {
