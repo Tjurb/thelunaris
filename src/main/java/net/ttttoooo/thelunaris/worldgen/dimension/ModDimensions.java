@@ -14,6 +14,7 @@ import net.minecraft.tags.BlockTags;
 import net.minecraft.util.valueproviders.ConstantInt;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.biome.Biome;
+import net.minecraft.world.level.biome.Biomes;
 import net.minecraft.world.level.biome.Climate;
 import net.minecraft.world.level.biome.FixedBiomeSource;
 import net.minecraft.world.level.biome.MultiNoiseBiomeSource;
@@ -51,4 +52,28 @@ public class ModDimensions {
                 1.0f, // ambientLight
                 new DimensionType.MonsterSettings(false, false, ConstantInt.of(0), 0)));
     }
+    
+    public static void bootstrapStem(BootstapContext<LevelStem> context) {
+        HolderGetter<Biome> biomeRegistry = context.lookup(Registries.BIOME);
+        HolderGetter<DimensionType> dimTypes = context.lookup(Registries.DIMENSION_TYPE);
+        HolderGetter<NoiseGeneratorSettings> noiseGenSettings = context.lookup(Registries.NOISE_SETTINGS);
+        
+        NoiseBasedChunkGenerator noiseBasedChunkGenerator = new NoiseBasedChunkGenerator(
+                MultiNoiseBiomeSource.createFromList(
+                		//Temp,humidity,continentalness,erosion,depth,weirdness,offset
+                        new Climate.ParameterList<>(List.of(
+                        		Pair.of(
+                                        Climate.parameters(0.1F, 0.2F, 0.0F, 0.2F, 0.0F, 0.0F, 0.0F), biomeRegistry.getOrThrow(Biomes.FOREST)),
+                                Pair.of(
+                                        Climate.parameters(0.3F, 0.6F, 0.1F, 0.1F, 0.0F, 0.0F, 0.0F), biomeRegistry.getOrThrow(Biomes.OCEAN))
+
+                        ))),
+                noiseGenSettings.getOrThrow(NoiseGeneratorSettings.OVERWORLD));
+
+        LevelStem stem = new LevelStem(dimTypes.getOrThrow(ModDimensions.LUNARIS_DIM_TYPE), noiseBasedChunkGenerator);
+
+        context.register(LUNARIS_KEY, stem);
+    }
 }
+
+

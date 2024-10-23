@@ -27,6 +27,7 @@ import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
 import net.ttttoooo.thelunaris.TheLunaris;
 import net.ttttoooo.thelunaris.block.custom.ModFlammableRotatedPillarBlock;
+import net.ttttoooo.thelunaris.block.custom.portal.ModPortalBlock;
 import net.ttttoooo.thelunaris.item.ModItems;
 import net.ttttoooo.thelunaris.worldgen.tree.CelestTreeGrower;
 import net.ttttoooo.thelunaris.worldgen.tree.SkyoakTreeGrower;
@@ -41,6 +42,11 @@ public class ModBlocks {
 			() -> new Block(BlockBehaviour.Properties.copy(Blocks.IRON_BLOCK).sound(SoundType.ANCIENT_DEBRIS)));
 	public static final RegistryObject<Block> LUNAR_CRAFTER = registerBlock("lunar_crafter", 
 			() -> new Block(BlockBehaviour.Properties.copy(Blocks.IRON_BLOCK).sound(SoundType.ANCIENT_DEBRIS)));
+	public static final RegistryObject<Block> LUNARPORTAL_BLOCK = registerBlock("lunarportal_block", 
+			() -> new ModPortalBlock(BlockBehaviour.Properties.copy(Blocks.STONE).sound(SoundType.GLASS)
+					.noLootTable().noOcclusion().noCollission()));
+	public static final RegistryObject<Block> LUNARIS_BEDROCK = registerBlock("lunaris_bedrock", 
+			() -> new Block(BlockBehaviour.Properties.copy(Blocks.BEDROCK).sound(SoundType.ANCIENT_DEBRIS).noLootTable()));
 	
 //Condensed Blocks	
 	public static final RegistryObject<Block> RAW_MOONSTEEL_BLOCK = registerBlock("raw_moonsteel_block", 

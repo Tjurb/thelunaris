@@ -17,7 +17,7 @@ public class ModItems {
 			DeferredRegister.create(ForgeRegistries.ITEMS, TheLunaris.MODID);
 	
 	public static final RegistryObject<Item> MOONDIAL = ITEMS.register("moondial", 
-			() -> new Item(new Item.Properties()));
+			() -> new ModPortalIgniter(new Item.Properties().stacksTo(1).durability(100)));
 	
 	//materials
 	public static final RegistryObject<Item> MOONSTEEL = ITEMS.register("moonsteel", 

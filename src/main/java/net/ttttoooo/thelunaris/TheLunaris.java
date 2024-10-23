@@ -31,6 +31,7 @@ import net.ttttoooo.thelunaris.block.ModBlocks;
 import net.ttttoooo.thelunaris.item.ModCreativeTabs;
 import net.ttttoooo.thelunaris.item.ModItems;
 import net.ttttoooo.thelunaris.worldgen.biomes.ModBiomes;
+import net.ttttoooo.thelunaris.worldgen.biomes.surface.ModSurfaceRules;
 
 import org.slf4j.Logger;
 

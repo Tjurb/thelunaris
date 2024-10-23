@@ -25,6 +25,7 @@ public class ModBlockStateProvider extends BlockStateProvider{
 		//special blocks
 		blockWithItem(ModBlocks.MOONDIALBLOCK);
 		blockWithItem(ModBlocks.LUNAR_CRAFTER);
+		blockWithItem(ModBlocks.LUNARIS_BEDROCK);
 		
 		blockWithItem(ModBlocks.LUNARITE_BLOCK);
 		blockWithItem(ModBlocks.EMOONSTEEL_BLOCK);
@@ -123,6 +124,9 @@ public class ModBlockStateProvider extends BlockStateProvider{
 		blockWithItem(ModBlocks.LUNARITE_ORE);
 		blockWithItem(ModBlocks.MOONSTEEL_ORE);
 		blockWithItem(ModBlocks.LABRADORITE_ORE);
+		
+		//portal block
+		blockWithItem(ModBlocks.LUNARPORTAL_BLOCK);
 		
 	}
 	

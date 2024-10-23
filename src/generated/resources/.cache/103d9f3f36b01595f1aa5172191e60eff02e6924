@@ -1,7 +1,10 @@
-// 1.20.1	2024-10-17T23:04:21.139726	Registries
+// 1.20.1	2024-10-22T23:49:24.1950998	Registries
+234870b23410799d1559956698fbac480be9dd4e data/thelunaris/dimension/lunarisdim.json
+e241e971aacde6f4d0236c622c99d6c9caeb981e data/thelunaris/dimension_type/lunarisdim_type.json
 326e93c9efeb828d9dc3ac2cf1d765d60d48e2b6 data/thelunaris/forge/biome_modifier/add_tree_celest.json
 c73ba671a8ccb2e89067989a14b19ef265be5726 data/thelunaris/forge/biome_modifier/add_tree_skyoak.json
 e446f215f01c6c9397b8d79a7385b6aac22ee686 data/thelunaris/forge/biome_modifier/add_tree_stellar.json
+fcf3b153991c07995fe1d7ebe14a4b9aeadfe8ac data/thelunaris/worldgen/biome/test_biome.json
 ee0b8a2508e35d922f8123665ec51a539e28d28e data/thelunaris/worldgen/configured_feature/celest.json
 1c978273c103117405ad080333be716c524ea42f data/thelunaris/worldgen/configured_feature/skyoak.json
 153e650bebbeb3a3846588712616e5f0870e5c17 data/thelunaris/worldgen/configured_feature/stellar.json

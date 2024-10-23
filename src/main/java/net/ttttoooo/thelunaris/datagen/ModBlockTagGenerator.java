@@ -8,6 +8,7 @@ import net.minecraft.core.HolderLookup;
 import net.minecraft.core.HolderLookup.Provider;
 import net.minecraft.data.PackOutput;
 import net.minecraft.tags.BlockTags;
+import net.minecraft.world.level.block.Blocks;
 import net.minecraftforge.common.data.BlockTagsProvider;
 import net.minecraftforge.common.data.ExistingFileHelper;
 import net.ttttoooo.thelunaris.TheLunaris;
@@ -61,6 +62,9 @@ public class ModBlockTagGenerator extends BlockTagsProvider{
 					ModBlocks.LABRADORITE_ORE.get(),
 					ModBlocks.MOONSTEEL_ORE.get(),
 					ModBlocks.LUNARITE_ORE.get());
+		
+		this.tag(ModTags.Blocks.LUNAR_PORTAL_BLOCKS)
+			.add(Blocks.CHISELED_SANDSTONE);
 
 		this.tag(ModTags.Blocks.VAILSTONE_ORE_REPLACEABLES)
 			.add(ModBlocks.VAILSTONE.get());
