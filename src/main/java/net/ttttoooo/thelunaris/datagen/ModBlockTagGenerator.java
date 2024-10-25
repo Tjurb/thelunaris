@@ -63,6 +63,13 @@ public class ModBlockTagGenerator extends BlockTagsProvider{
 					ModBlocks.MOONSTEEL_ORE.get(),
 					ModBlocks.LUNARITE_ORE.get());
 		
+		this.tag(BlockTags.DIRT)
+			.add(ModBlocks.LUNDIRT.get(),
+					ModBlocks.LUNGRASS.get());
+		
+		this.tag(BlockTags.SAND)
+			.add(ModBlocks.LUNSAND.get());
+		
 		this.tag(ModTags.Blocks.LUNAR_PORTAL_BLOCKS)
 			.add(Blocks.CHISELED_SANDSTONE);
 

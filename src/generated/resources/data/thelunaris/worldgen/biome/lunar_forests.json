@@ -1,0 +1,49 @@
+{
+  "carvers": {},
+  "downfall": 0.0,
+  "effects": {
+    "fog_color": 1196646,
+    "foliage_color": 1404335,
+    "grass_color": 2721484,
+    "music": {
+      "max_delay": 24000,
+      "min_delay": 12000,
+      "replace_current_music": false,
+      "sound": "minecraft:music.overworld.forest"
+    },
+    "sky_color": 1196646,
+    "water_color": 119,
+    "water_fog_color": 119
+  },
+  "features": [
+    [],
+    [],
+    [],
+    [],
+    [],
+    [],
+    [
+      "thelunaris:lunarite_ore_placed",
+      "thelunaris:moonsteel_ore_placed"
+    ],
+    [],
+    [],
+    [
+      "thelunaris:celest_placed",
+      "thelunaris:stellar_placed"
+    ]
+  ],
+  "has_precipitation": false,
+  "spawn_costs": {},
+  "spawners": {
+    "ambient": [],
+    "axolotls": [],
+    "creature": [],
+    "misc": [],
+    "monster": [],
+    "underground_water_creature": [],
+    "water_ambient": [],
+    "water_creature": []
+  },
+  "temperature": 0.8
+}

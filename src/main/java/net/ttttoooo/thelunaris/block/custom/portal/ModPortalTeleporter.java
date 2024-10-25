@@ -1,7 +1,5 @@
 package net.ttttoooo.thelunaris.block.custom.portal;
 
-import java.util.function.Function;
-
 import net.minecraft.core.BlockPos;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.server.level.ServerPlayer;

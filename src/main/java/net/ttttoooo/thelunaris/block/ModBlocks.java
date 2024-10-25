@@ -3,7 +3,6 @@ package net.ttttoooo.thelunaris.block;
 import net.minecraft.world.item.Item;
 
 import java.util.function.Supplier;
-import java.util.function.ToIntFunction;
 
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
@@ -13,6 +12,7 @@ import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.DropExperienceBlock;
+import net.minecraft.world.level.block.GrassBlock;
 import net.minecraft.world.level.block.LeavesBlock;
 import net.minecraft.world.level.block.SaplingBlock;
 import net.minecraft.world.level.block.SlabBlock;
@@ -64,7 +64,7 @@ public class ModBlocks {
 	public static final RegistryObject<Block> LUNDIRT = registerBlock("lundirt", 
 			() -> new Block(BlockBehaviour.Properties.copy(Blocks.DIRT).sound(SoundType.GRAVEL)));
 	public static final RegistryObject<Block> LUNGRASS = registerBlock("lungrass", 
-			() -> new Block(BlockBehaviour.Properties.copy(Blocks.GRASS_BLOCK).sound(SoundType.GRASS)));
+			() -> new GrassBlock(BlockBehaviour.Properties.copy(Blocks.GRASS_BLOCK).sound(SoundType.GRASS)));
 	public static final RegistryObject<Block> LUNSAND = registerBlock("lunsand", 
 			() -> new Block(BlockBehaviour.Properties.copy(Blocks.SAND).sound(SoundType.SAND)));
 	public static final RegistryObject<Block> LUNSANDSTONE = registerBlock("lunsandstone", 

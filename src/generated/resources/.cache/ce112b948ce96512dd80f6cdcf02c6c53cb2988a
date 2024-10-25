@@ -1,9 +1,11 @@
-// 1.20.1	2024-10-22T18:03:14.8478434	Tags for minecraft:block mod id thelunaris
+// 1.20.1	2024-10-23T13:37:31.1054696	Tags for minecraft:block mod id thelunaris
+12f5950431b49e01f32f8cfc2a8baacf2a864797 data/minecraft/tags/blocks/dirt.json
 d607f02152b453bab537280ef438830cb97e631e data/minecraft/tags/blocks/logs_that_burn.json
 db7a5d902812536836217fbd3a45c1ae5ac687ce data/minecraft/tags/blocks/mineable/axe.json
 f3783b3dc2bde750f3e20c9f8b1ce4b0f86cb381 data/minecraft/tags/blocks/mineable/pickaxe.json
 95113718a380a3905e40ff2143315f96650adf34 data/minecraft/tags/blocks/mineable/shovel.json
 84d0bc08e0d868a2d590235e965dbc0dacfb7628 data/minecraft/tags/blocks/planks.json
+723ff3c7b1afb89852189905785c5169d3d5b80f data/minecraft/tags/blocks/sand.json
 796d8eafd057e066ad2b46596586e782be60545b data/minecraft/tags/blocks/walls.json
 318bedd6d4903150b717022bc6cad9982e2bb01e data/thelunaris/tags/blocks/lunar_portal_blocks.json
 76ca1fd9ede275cc9c57e4369bd5bb19bb3f2a94 data/thelunaris/tags/blocks/needs_emoonsteel_tool.json
