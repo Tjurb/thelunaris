@@ -3,9 +3,9 @@
   "argument": {
     "type": "minecraft:shifted_noise",
     "noise": "minecraft:ridge",
-    "shift_x": "thelunaris:shift_x",
+    "shift_x": "thelunaris:lunaris_shift_x",
     "shift_y": 0.0,
-    "shift_z": "thelunaris:shift_z",
+    "shift_z": "thelunaris:lunaris_shift_z",
     "xz_scale": 0.25,
     "y_scale": 0.0
   }

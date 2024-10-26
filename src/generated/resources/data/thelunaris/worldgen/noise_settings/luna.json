@@ -329,7 +329,7 @@
             "type": "minecraft:interpolated",
             "argument": {
               "type": "minecraft:range_choice",
-              "input": "thelunaris:y",
+              "input": "thelunaris:lunaris_y",
               "max_exclusive": -59.0,
               "min_inclusive": 4.0,
               "when_in_range": {
@@ -348,7 +348,7 @@
             "type": "minecraft:interpolated",
             "argument": {
               "type": "minecraft:range_choice",
-              "input": "thelunaris:y",
+              "input": "thelunaris:lunaris_y",
               "max_exclusive": -59.0,
               "min_inclusive": 4.0,
               "when_in_range": {
@@ -367,7 +367,7 @@
       "type": "minecraft:interpolated",
       "argument": {
         "type": "minecraft:range_choice",
-        "input": "thelunaris:y",
+        "input": "thelunaris:lunaris_y",
         "max_exclusive": -59.0,
         "min_inclusive": 4.0,
         "when_in_range": {

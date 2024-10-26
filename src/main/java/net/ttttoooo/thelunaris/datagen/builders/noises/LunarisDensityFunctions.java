@@ -30,11 +30,11 @@ public class LunarisDensityFunctions {
 	   public static final long ISLAND_CHUNK_DISTANCE_SQR = 4096L;
 	private static final DensityFunction BLENDING_FACTOR = DensityFunctions.constant(10.0D);
 	private static final DensityFunction BLENDING_JAGGEDNESS = DensityFunctions.zero();
-	private static final ResourceKey<DensityFunction> ZERO = createKey("zero");
-	private static final ResourceKey<DensityFunction> SHIFT_X = createKey("shift_x");
-	private static final ResourceKey<DensityFunction> SHIFT_Z = createKey("shift_z");
+	private static final ResourceKey<DensityFunction> ZERO = createKey("lunaris_zero");
+	private static final ResourceKey<DensityFunction> SHIFT_X = createKey("lunaris_shift_x");
+	private static final ResourceKey<DensityFunction> SHIFT_Z = createKey("lunaris_shift_z");
     public static final ResourceKey<DensityFunction> BASE_3D_NOISE_LUNARIS = createKey("base_3d_noise_lunaris");
-    public static final ResourceKey<DensityFunction> Y = createKey("y");
+    public static final ResourceKey<DensityFunction> Y = createKey("lunaris_y");
     public static final ResourceKey<DensityFunction> CONTINENTS = createKey("lunaris_continents");
     public static final ResourceKey<DensityFunction> EROSION = createKey("lunaris_erosion");
     public static final ResourceKey<DensityFunction> DEPTH = createKey("lunaris_depth");
