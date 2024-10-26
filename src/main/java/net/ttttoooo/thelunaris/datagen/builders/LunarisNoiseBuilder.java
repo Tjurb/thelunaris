@@ -7,7 +7,6 @@ import net.minecraft.resources.ResourceKey;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.state.BlockState;
-import net.minecraft.world.level.dimension.DimensionType;
 import net.minecraft.world.level.levelgen.*;
 import net.minecraft.world.level.levelgen.synth.NormalNoise;
 import net.ttttoooo.thelunaris.TheLunaris;
@@ -17,7 +16,6 @@ import net.ttttoooo.thelunaris.datagen.builders.noises.LunarisNoise;
 import net.ttttoooo.thelunaris.worldgen.dimension.ModSurfaceRules;
 
 import java.util.List;
-import java.util.stream.Stream;
 
 public class LunarisNoiseBuilder {
 
@@ -73,15 +71,17 @@ public class LunarisNoiseBuilder {
         DensityFunction densityfunction10 = LunarisDensityFunctions.noiseGradientDensity(DensityFunctions.cache2d(factor), depth);
         
         DensityFunction slopedcheese = getFunction(densityFunctions, LunarisDensityFunctions.SLOPED_CHEESE);
-        DensityFunction entrences = DensityFunctions.min(slopedcheese, DensityFunctions.mul(DensityFunctions.constant(5.0D), getFunction(densityFunctions, LunarisDensityFunctions.ENTRANCES)));
-        DensityFunction densityfunction13 = DensityFunctions.rangeChoice(slopedcheese, -1000000.0D, 1.5625D, entrences, LunarisDensityFunctions.underground(densityFunctions, noise, slopedcheese));
+        DensityFunction densityfunction12 = DensityFunctions.min(slopedcheese, DensityFunctions.mul(DensityFunctions.constant(5.0D), getFunction(densityFunctions, LunarisDensityFunctions.ENTRANCES)));
+        DensityFunction densityfunction13 = DensityFunctions.rangeChoice(slopedcheese, -1000000.0D, 1.5625D, densityfunction12, LunarisDensityFunctions.underground(densityFunctions, noise, slopedcheese));
         DensityFunction finaldensity = DensityFunctions.min(buildFinalDensity(densityFunctions ,LunarisDensityFunctions.slideLunaris(densityfunction13)), getFunction(densityFunctions, LunarisDensityFunctions.NOODLE));
         
         DensityFunction densityfunction15 = getFunction(densityFunctions, LunarisDensityFunctions.Y);
 
         int i = 4;
         int j = -60;
+        
         DensityFunction oreveins = LunarisDensityFunctions.yLimitedInterpolatable(densityfunction15, DensityFunctions.noise(noise.getOrThrow(Noises.ORE_VEININESS), 1.5D, 1.5D), i, j, 0);
+        float f = 4.0F;
         DensityFunction oreveinA = LunarisDensityFunctions.yLimitedInterpolatable(densityfunction15, DensityFunctions.noise(noise.getOrThrow(Noises.ORE_VEIN_A), 4.0D, 4.0D), i, j, 0).abs();
         DensityFunction oreveinB = LunarisDensityFunctions.yLimitedInterpolatable(densityfunction15, DensityFunctions.noise(noise.getOrThrow(Noises.ORE_VEIN_B), 4.0D, 4.0D), i, j, 0).abs();
         DensityFunction oreveinAB = DensityFunctions.add(DensityFunctions.constant((double)-0.08F), DensityFunctions.max(oreveinA, oreveinB));

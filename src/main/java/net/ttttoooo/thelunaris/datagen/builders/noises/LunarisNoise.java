@@ -11,18 +11,18 @@ import net.minecraft.world.level.levelgen.synth.NormalNoise.NoiseParameters;
 import net.ttttoooo.thelunaris.TheLunaris;
 
 public class LunarisNoise {
-	public static final ResourceKey<NoiseParameters> AQUIFERBARRIER = createKey("aquiferbarrier");
-	public static final ResourceKey<NoiseParameters> AQUIFERFLOOD = createKey("aquiferflood");
-	public static final ResourceKey<NoiseParameters> AQUIFERSPREAD = createKey("aquiferspread");
-	public static final ResourceKey<NoiseParameters> AQUIFERLAVA = createKey("aquiferlava");
-	public static final ResourceKey<NoiseParameters> TEMPERATURE = createKey("temperature");
-	public static final ResourceKey<NoiseParameters> VEGETATION = createKey("vegetation");
-	public static final ResourceKey<NoiseParameters> CONTINENTALNESS = createKey("continentalness");
-	public static final ResourceKey<NoiseParameters> EROSION = createKey("erosion");
-	public static final ResourceKey<NoiseParameters> DEPTH = createKey("depth");
-	public static final ResourceKey<NoiseParameters> RIDGE = createKey("ridge");
-	public static final ResourceKey<NoiseParameters> FACTOR = createKey("factor");
-	public static final ResourceKey<NoiseParameters> JAGGED = createKey("jagged");
+	public static final ResourceKey<NoiseParameters> AQUIFERBARRIER = createKey("luna_aquiferbarrier");
+	public static final ResourceKey<NoiseParameters> AQUIFERFLOOD = createKey("luna_aquiferflood");
+	public static final ResourceKey<NoiseParameters> AQUIFERSPREAD = createKey("luna_aquiferspread");
+	public static final ResourceKey<NoiseParameters> AQUIFERLAVA = createKey("luna_aquiferlava");
+	public static final ResourceKey<NoiseParameters> TEMPERATURE = createKey("luna_temperature");
+	public static final ResourceKey<NoiseParameters> VEGETATION = createKey("luna_vegetation");
+	public static final ResourceKey<NoiseParameters> CONTINENTALNESS = createKey("luna_continentalness");
+	public static final ResourceKey<NoiseParameters> EROSION = createKey("luna_erosion");
+	public static final ResourceKey<NoiseParameters> DEPTH = createKey("luna_depth");
+	public static final ResourceKey<NoiseParameters> RIDGE = createKey("luna_ridge");
+	public static final ResourceKey<NoiseParameters> FACTOR = createKey("luna_factor");
+	public static final ResourceKey<NoiseParameters> JAGGED = createKey("luna_jagged");
 	
 	private static ResourceKey<NoiseParameters> createKey(String name) {
         return ResourceKey.create(Registries.NOISE, new ResourceLocation(TheLunaris.MODID, name));
@@ -41,7 +41,7 @@ public class LunarisNoise {
 		register(context, RIDGE, -7, -1.0, 5.0, 4.0, -4.0, 5.0, 6.0);
 		register(context, FACTOR, -7, -1.0, 5.0, 4.0, -4.0, 5.0, 6.0);
 		register(context, JAGGED, -16, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0);
-    }
+	    }
 	
 	public static void register(BootstapContext<NoiseParameters> context, ResourceKey<NormalNoise.NoiseParameters> key, int firstOctave, double firstAmplitude, double... amplitudes) {
 		context.register(key, new NormalNoise.NoiseParameters(firstOctave, firstAmplitude, amplitudes));

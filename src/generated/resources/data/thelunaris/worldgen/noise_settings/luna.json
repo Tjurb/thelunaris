@@ -20,13 +20,13 @@
   "noise_router": {
     "barrier": {
       "type": "minecraft:noise",
-      "noise": "thelunaris:aquiferbarrier",
+      "noise": "thelunaris:luna_aquiferbarrier",
       "xz_scale": 1.0,
       "y_scale": 0.5
     },
     "continents": {
       "type": "minecraft:shifted_noise",
-      "noise": "thelunaris:continentalness",
+      "noise": "thelunaris:luna_continentalness",
       "shift_x": "minecraft:shift_x",
       "shift_y": 0.0,
       "shift_z": "minecraft:shift_z",
@@ -35,7 +35,7 @@
     },
     "depth": {
       "type": "minecraft:shifted_noise",
-      "noise": "thelunaris:depth",
+      "noise": "thelunaris:luna_depth",
       "shift_x": "minecraft:shift_x",
       "shift_y": 0.0,
       "shift_z": "minecraft:shift_z",
@@ -44,7 +44,7 @@
     },
     "erosion": {
       "type": "minecraft:shifted_noise",
-      "noise": "thelunaris:erosion",
+      "noise": "thelunaris:luna_erosion",
       "shift_x": "minecraft:shift_x",
       "shift_y": 0.0,
       "shift_z": "minecraft:shift_z",
@@ -193,13 +193,13 @@
     },
     "fluid_level_floodedness": {
       "type": "minecraft:noise",
-      "noise": "thelunaris:aquiferflood",
+      "noise": "thelunaris:luna_aquiferflood",
       "xz_scale": 1.0,
       "y_scale": 0.6
     },
     "fluid_level_spread": {
       "type": "minecraft:noise",
-      "noise": "thelunaris:aquiferspread",
+      "noise": "thelunaris:luna_aquiferspread",
       "xz_scale": 1.0,
       "y_scale": 0.7
     },
@@ -247,7 +247,7 @@
                           "type": "minecraft:mul",
                           "argument1": {
                             "type": "minecraft:shifted_noise",
-                            "noise": "thelunaris:depth",
+                            "noise": "thelunaris:luna_depth",
                             "shift_x": "minecraft:shift_x",
                             "shift_y": 0.0,
                             "shift_z": "minecraft:shift_z",
@@ -258,7 +258,7 @@
                             "type": "minecraft:cache_2d",
                             "argument": {
                               "type": "minecraft:shifted_noise",
-                              "noise": "thelunaris:ridge",
+                              "noise": "thelunaris:luna_ridge",
                               "shift_x": "minecraft:shift_x",
                               "shift_y": 0.0,
                               "shift_z": "minecraft:shift_z",
@@ -281,13 +281,13 @@
     },
     "lava": {
       "type": "minecraft:noise",
-      "noise": "thelunaris:aquiferlava",
+      "noise": "thelunaris:luna_aquiferlava",
       "xz_scale": 1.0,
       "y_scale": 1.0
     },
     "ridges": {
       "type": "minecraft:shifted_noise",
-      "noise": "thelunaris:ridge",
+      "noise": "thelunaris:luna_ridge",
       "shift_x": "minecraft:shift_x",
       "shift_y": 0.0,
       "shift_z": "minecraft:shift_z",
@@ -296,7 +296,7 @@
     },
     "temperature": {
       "type": "minecraft:shifted_noise",
-      "noise": "thelunaris:temperature",
+      "noise": "thelunaris:luna_temperature",
       "shift_x": "minecraft:shift_x",
       "shift_y": 0.0,
       "shift_z": "minecraft:shift_z",
@@ -305,7 +305,7 @@
     },
     "vegetation": {
       "type": "minecraft:shifted_noise",
-      "noise": "thelunaris:vegetation",
+      "noise": "thelunaris:luna_vegetation",
       "shift_x": "minecraft:shift_x",
       "shift_y": 0.0,
       "shift_z": "minecraft:shift_z",

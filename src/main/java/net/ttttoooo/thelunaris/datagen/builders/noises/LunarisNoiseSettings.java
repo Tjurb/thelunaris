@@ -22,6 +22,6 @@ public class LunarisNoiseSettings {
         HolderGetter<DensityFunction> densityFunctions = context.lookup(Registries.DENSITY_FUNCTION);
         HolderGetter<NormalNoise.NoiseParameters> noise = context.lookup(Registries.NOISE);
         
-        context.register(LUNA, LunarisNoiseBuilder.lunaNoiseSettings(context,densityFunctions, noise));
+        context.register(LUNA, LunarisNoiseBuilder.lunaNoiseSettings(context, densityFunctions, noise));
     }
 }
