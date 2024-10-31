@@ -12,6 +12,8 @@ import net.minecraft.world.level.block.Block;
 import net.minecraftforge.common.data.ExistingFileHelper;
 import net.ttttoooo.thelunaris.TheLunaris;
 import net.ttttoooo.thelunaris.block.ModBlocks;
+import net.ttttoooo.thelunaris.item.ModItems;
+import net.ttttoooo.thelunaris.util.ModTags;
 
 public class ModItemTagGenerator extends ItemTagsProvider {
 
@@ -39,6 +41,9 @@ public class ModItemTagGenerator extends ItemTagsProvider {
 				ModBlocks.SKYOAK_WOOD.get().asItem(),
 				ModBlocks.STRIPPED_SKYOAK_LOG.get().asItem(),
 				ModBlocks.STRIPPED_SKYOAK_WOOD.get().asItem());
+		
+		this.tag(ModTags.Items.MOONCOW_TEMP_ITEMS)
+		.add(ModItems.LUNAR_WHEAT.get());
 	}
 
 }

@@ -6,11 +6,13 @@ import net.minecraft.world.item.Item;
 import net.minecraft.world.item.PickaxeItem;
 import net.minecraft.world.item.ShovelItem;
 import net.minecraft.world.item.SwordItem;
+import net.minecraftforge.common.ForgeSpawnEggItem;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
 import net.ttttoooo.thelunaris.TheLunaris;
+import net.ttttoooo.thelunaris.entity.ModEntities;
 
 public class ModItems {
 	public static final DeferredRegister<Item> ITEMS =
@@ -95,6 +97,11 @@ public class ModItems {
 			() -> new AxeItem(ModToolTiers.LUNARITE, 5, 1, new Item.Properties()));
 	public static final RegistryObject<Item> LUNARITE_HOE = ITEMS.register("lunarite_hoe", 
 			() -> new HoeItem(ModToolTiers.LUNARITE, 0, 0, new Item.Properties()));
+	
+	//SpawnEggs
+	public static final RegistryObject<Item> MOONCOW_SPANW_EGG = ITEMS.register("mooncow_spawn_egg",
+            () -> new ForgeSpawnEggItem(ModEntities.MOONCOW, 0x7e9680, 0xc5d1c5, new Item.Properties()));
+
 	
 	
 	public static void register(IEventBus eventBus) {

@@ -114,6 +114,7 @@ public class ModCreativeTabs {
 				pOutput.accept(ModItems.SARROT.get());
 				pOutput.accept(ModItems.COOKED_ARCHFISH.get());
 				pOutput.accept(ModItems.LOONBERRY_PIE.get());
+				pOutput.accept(ModItems.LUNAR_WHEAT.get());
 				
 				//Tool Entry
 				pOutput.accept(ModItems.VAILSTONE_SWORD.get());
@@ -136,6 +137,9 @@ public class ModCreativeTabs {
 				pOutput.accept(ModItems.LUNARITE_AXE.get());
 				pOutput.accept(ModItems.LUNARITE_SHOVEL.get());
 				pOutput.accept(ModItems.LUNARITE_HOE.get());
+				
+				//SpawnEggs
+				pOutput.accept(ModItems.MOONCOW_SPANW_EGG.get());
 				
 			})
 			.build());
