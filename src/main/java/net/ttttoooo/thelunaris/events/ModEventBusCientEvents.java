@@ -8,6 +8,7 @@ import net.minecraftforge.fml.common.Mod;
 
 import net.ttttoooo.thelunaris.TheLunaris;
 import net.ttttoooo.thelunaris.entity.ModEntities;
+import net.ttttoooo.thelunaris.entity.client.ArchfishModel;
 import net.ttttoooo.thelunaris.entity.client.ModModelLayers;
 import net.ttttoooo.thelunaris.entity.client.MooncowModel;
 import net.ttttoooo.thelunaris.entity.custom.MooncowEntity;
@@ -17,5 +18,6 @@ public class ModEventBusCientEvents {
 	@SubscribeEvent
     public static void registerLayer(EntityRenderersEvent.RegisterLayerDefinitions event) {
         event.registerLayerDefinition(ModModelLayers.MOONCOW_LAYER, MooncowModel::createBodyLayer);
+        event.registerLayerDefinition(ModModelLayers.ARCHFISH_LAYER, ArchfishModel::createBodyLayer);
     }
 }

@@ -18,6 +18,7 @@ import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.ttttoooo.thelunaris.block.ModBlocks;
 import net.ttttoooo.thelunaris.entity.ModEntities;
+import net.ttttoooo.thelunaris.entity.client.ArchfishRenderer;
 import net.ttttoooo.thelunaris.entity.client.MooncowRenderer;
 import net.ttttoooo.thelunaris.item.ModCreativeTabs;
 import net.ttttoooo.thelunaris.item.ModItems;
@@ -82,6 +83,7 @@ public class TheLunaris
         public static void onClientSetup(FMLClientSetupEvent event)
         {
         	EntityRenderers.register(ModEntities.MOONCOW.get(), MooncowRenderer::new);
+        	EntityRenderers.register(ModEntities.ARCHFISH.get(), ArchfishRenderer::new);
             LOGGER.info("HELLO FROM LUNARIS CLIENT SETUP");
             LOGGER.info("MINECRAFT NAME >> {}", Minecraft.getInstance().getUser().getName());
         }

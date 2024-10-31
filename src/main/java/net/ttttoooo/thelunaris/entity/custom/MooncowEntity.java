@@ -37,7 +37,6 @@ public class MooncowEntity extends Animal {
 
 	public MooncowEntity(EntityType<? extends Animal> p_27557_, Level p_27558_) {
 		super(p_27557_, p_27558_);
-		// TODO Auto-generated constructor stub
 	}
 	
 	public final AnimationState idleAnimationState = new AnimationState();

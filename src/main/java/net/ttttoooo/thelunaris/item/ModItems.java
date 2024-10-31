@@ -100,8 +100,9 @@ public class ModItems {
 	
 	//SpawnEggs
 	public static final RegistryObject<Item> MOONCOW_SPANW_EGG = ITEMS.register("mooncow_spawn_egg",
-            () -> new ForgeSpawnEggItem(ModEntities.MOONCOW, 0x7e9680, 0xc5d1c5, new Item.Properties()));
-
+            () -> new ForgeSpawnEggItem(ModEntities.MOONCOW, 0x758db3, 0xcffffff, new Item.Properties()));
+	public static final RegistryObject<Item> ARCHFISH_SPANW_EGG = ITEMS.register("archfish_spawn_egg",
+            () -> new ForgeSpawnEggItem(ModEntities.ARCHFISH, 0x00136f, 0x00648b, new Item.Properties()));
 	
 	
 	public static void register(IEventBus eventBus) {

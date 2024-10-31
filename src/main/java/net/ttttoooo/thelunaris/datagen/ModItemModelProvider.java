@@ -17,7 +17,6 @@ public class ModItemModelProvider extends ItemModelProvider{
 
 	public ModItemModelProvider(PackOutput output, ExistingFileHelper existingFileHelper) {
 		super(output, TheLunaris.MODID, existingFileHelper);
-		// TODO Auto-generated constructor stub
 	}
 
 	@Override
@@ -38,6 +37,10 @@ public class ModItemModelProvider extends ItemModelProvider{
 		simpleItem(ModItems.COOKED_ARCHFISH);
 		simpleItem(ModItems.LOONBERRY_PIE);
 		simpleItem(ModItems.SPICY_ARCHFISH);
+		
+		//Spawn Eggs
+		withExistingParent(ModItems.MOONCOW_SPANW_EGG.getId().getPath(), mcLoc("item/template_spawn_egg"));
+		withExistingParent(ModItems.ARCHFISH_SPANW_EGG.getId().getPath(), mcLoc("item/template_spawn_egg"));
 		
 		//tools
 		handheldItem(ModItems.VAILSTONE_SWORD);

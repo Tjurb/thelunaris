@@ -33,12 +33,16 @@
     "item.thelunaris.lunarite_shovel": "Lunarite Shovel",
     "item.thelunaris.lunarite_hoe": "Lunarite Hoe",
 
+    "item.thelunaris.lunar_wheat": "Lunar Wheat",
     "item.thelunaris.loonberry": "Loonberries",
     "item.thelunaris.archfish": "Archfish",
     "item.thelunaris.sarrot": "Sarrot",
     "item.thelunaris.cooked_archfish": "Cooked Archfish",
     "item.thelunaris.loonberry_pie": "Loonberry Pie",
     "item.thelunaris.spicy_archfish": "Spicy Cooked Archfish",
+    
+    "item.thelunaris.mooncow_spawn_egg": "Mooncow Spawn Egg",
+    "item.thelunaris.archfish_spawn_egg": "Archfish Spawn Egg",
 
     "block.thelunaris.moondialblock": "Moondial",
     "block.thelunaris.lunarite_block": "Lunarite Block",
