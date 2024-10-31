@@ -1,6 +1,12 @@
 {
-  "carvers": {},
-  "downfall": 0.0,
+  "carvers": {
+    "air": [
+      "minecraft:cave",
+      "minecraft:cave_extra_underground",
+      "minecraft:canyon"
+    ]
+  },
+  "downfall": 0.3,
   "effects": {
     "fog_color": 1196646,
     "foliage_color": 1404335,
@@ -12,12 +18,15 @@
       "sound": "minecraft:music.overworld.snowy_slopes"
     },
     "sky_color": 1196646,
-    "water_color": 119,
+    "water_color": 16711680,
     "water_fog_color": 119
   },
   "features": [
     [],
-    [],
+    [
+      "minecraft:lake_lava_underground",
+      "minecraft:lake_lava_surface"
+    ],
     [],
     [],
     [],
@@ -25,7 +34,10 @@
     [
       "thelunaris:lunarite_ore_placed",
       "thelunaris:moonsteel_ore_placed",
-      "thelunaris:labradorite_ore_placed"
+      "thelunaris:labradorite_ore_placed",
+      "thelunaris:large_lunarite_ore_placed",
+      "thelunaris:large_moonsteel_ore_placed",
+      "thelunaris:large_labradorite_ore_placed"
     ],
     [],
     [],
@@ -45,5 +57,6 @@
     "water_ambient": [],
     "water_creature": []
   },
-  "temperature": 0.8
+  "temperature": 1.0,
+  "temperature_modifier": "frozen"
 }

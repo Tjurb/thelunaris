@@ -14,6 +14,7 @@ import net.minecraft.tags.BlockTags;
 import net.minecraft.util.valueproviders.ConstantInt;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.biome.Biome;
+import net.minecraft.world.level.biome.Biomes;
 import net.minecraft.world.level.biome.Climate;
 import net.minecraft.world.level.biome.MultiNoiseBiomeSource;
 import net.minecraft.world.level.dimension.BuiltinDimensionTypes;
@@ -21,6 +22,7 @@ import net.minecraft.world.level.dimension.DimensionType;
 import net.minecraft.world.level.dimension.LevelStem;
 import net.minecraft.world.level.levelgen.NoiseBasedChunkGenerator;
 import net.minecraft.world.level.levelgen.NoiseGeneratorSettings;
+import net.minecraft.world.level.levelgen.NoiseSettings;
 import net.ttttoooo.thelunaris.TheLunaris;
 import net.ttttoooo.thelunaris.datagen.builders.noises.LunarisNoiseSettings;
 import net.ttttoooo.thelunaris.worldgen.biomes.ModBiomes;
@@ -46,7 +48,7 @@ public class ModDimensions {
                 false, // respawnAnchorWorks
                 -64, // minY
                 384, // height
-                384, // logicalHeight
+                192, // logicalHeight
                 BlockTags.INFINIBURN_OVERWORLD, // infiniburn
                 BuiltinDimensionTypes.OVERWORLD_EFFECTS, // effectsLocation
                 1.0f, // ambientLight
@@ -63,16 +65,19 @@ public class ModDimensions {
         NoiseBasedChunkGenerator noiseBasedChunkGenerator = new NoiseBasedChunkGenerator(
                 MultiNoiseBiomeSource.createFromList(
                         new Climate.ParameterList<>(List.of(
+                        		//Temp,humidity,continentalness,erosion,depth,weirdness,offset
                                 Pair.of(
-                                        Climate.parameters(0.0F, 0.0F, 0.0F, 0.0F, 0.0F, 0.0F, 0.0F), biomeRegistry.getOrThrow(ModBiomes.AZUREITE_OCEAN)),
+                                        Climate.parameters(0.5F, 0.1F, 0.0F, 0.1F, 0.0F, 0.0F, 0.0F), biomeRegistry.getOrThrow(ModBiomes.AZUREITE_OCEAN)),
                                 Pair.of(
-                                        Climate.parameters(0.2F, 0.2F, 0.5F, 0.2F, 0.0F, 0.0F, 0.2F), biomeRegistry.getOrThrow(ModBiomes.LUNAR_FORESTS)),
+                                        Climate.parameters(0.7F, 0.0F, 0.0F, 0.0F, 0.0F, 0.0F, 0.0F), biomeRegistry.getOrThrow(ModBiomes.LUNAR_FORESTS)),
                                 Pair.of(
-                                        Climate.parameters(-0.5F, 0.2F, 0.5F, 0.5F, 0.0F, 0.1F, 0.2F), biomeRegistry.getOrThrow(ModBiomes.SKYWORD_MOUNTAINS)),
+                                        Climate.parameters(1.0F, 0.5F, 0.0F, 0.0F, 0.0F, 0.0F, 0.1F), biomeRegistry.getOrThrow(ModBiomes.SKYWORD_MOUNTAINS)),
                                 Pair.of(
-                                        Climate.parameters(0.5F, -0.5F, 0.5F, 0.1F, 0.0F, 0.0F, 0.5F), biomeRegistry.getOrThrow(ModBiomes.SLEEPING_SANDS))
+                                        Climate.parameters(1.0F, -0.5F, 0.1F, 0.1F, -0.03F, 0.0F, 0.0F), biomeRegistry.getOrThrow(ModBiomes.SLEEPING_SANDS))
+                                
                         ))),
                 noiseGenSettings.getOrThrow(LunarisNoiseSettings.LUNA));
+        
 
         LevelStem stem = new LevelStem(dimTypes.getOrThrow(ModDimensions.LUNARIS_DIM_TYPE), noiseBasedChunkGenerator);
 

@@ -14,14 +14,17 @@ import net.minecraft.data.worldgen.TerrainProvider;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.util.KeyDispatchDataCodec;
+import net.minecraft.util.RandomSource;
 import net.minecraft.util.StringRepresentable;
 import net.minecraft.world.level.dimension.DimensionType;
 import net.minecraft.world.level.levelgen.DensityFunction;
 import net.minecraft.world.level.levelgen.DensityFunctions;
 import net.minecraft.world.level.levelgen.NoiseRouter;
+import net.minecraft.world.level.levelgen.NoiseRouterData;
 import net.minecraft.world.level.levelgen.Noises;
 import net.minecraft.world.level.levelgen.synth.BlendedNoise;
 import net.minecraft.world.level.levelgen.synth.NormalNoise;
+import net.minecraft.world.level.levelgen.synth.NormalNoise.NoiseParameters;
 import net.ttttoooo.thelunaris.TheLunaris;
 
 public class LunarisDensityFunctions {
@@ -48,8 +51,9 @@ public class LunarisDensityFunctions {
     public static final ResourceKey<DensityFunction> ENTRANCES = createKey("lunaris_entrances");
     public static final ResourceKey<DensityFunction> NOODLE = createKey("lunaris_noodle");
     public static final ResourceKey<DensityFunction> PILLARS = createKey("lunaris_pillars");
-    public static final ResourceKey<DensityFunction> SPAGHETTI_2D_THICKNESS_MODULATOR = createKey("lunaris_spaghetti_2d_thickness_modulator");
     public static final ResourceKey<DensityFunction> SPAGHETTI_2D = createKey("lunaris_spaghetti_2d");
+    public static final ResourceKey<DensityFunction> SPAGHETTI_2D_THICKNESS_MODULATOR = createKey("lunaris_spaghetti_2d_thickness_modulator");
+    public static final ResourceKey<DensityFunction> WSSREPLACER = createKey("weird_scaled_sampler_replacr");
 
 
     private static ResourceKey<DensityFunction> createKey(String name) {
@@ -74,9 +78,9 @@ public class LunarisDensityFunctions {
 	        registerTerrainNoises(context, holdergetter1, densityfunction3, holder, holder1, OFFSET, FACTOR, JAGGEDNESS, DEPTH, SLOPED_CHEESE, false);
 	        context.register(SPAGHETTI_ROUGHNESS_FUNCTION, spaghettiRoughnessFunction(holdergetter));
 	        context.register(SPAGHETTI_2D_THICKNESS_MODULATOR, DensityFunctions.cacheOnce(DensityFunctions.mappedNoise(holdergetter.getOrThrow(Noises.SPAGHETTI_2D_THICKNESS), 2.0D, 1.0D, -0.6D, -1.3D)));
-	        context.register(SPAGHETTI_2D, spaghetti2D(holdergetter1, holdergetter));
-	        context.register(ENTRANCES, entrances(holdergetter1, holdergetter));
 	        context.register(NOODLE, noodle(holdergetter1, holdergetter));
+	        context.register(ENTRANCES, entrances(holdergetter1, holdergetter));
+	        context.register(SPAGHETTI_2D, spaghetti2D(holdergetter1, holdergetter));
 	        context.register(PILLARS, pillars(holdergetter));
 	}
     
@@ -111,22 +115,27 @@ public class LunarisDensityFunctions {
        DensityFunction densityfunction1 = DensityFunctions.mappedNoise(p_255763_.getOrThrow(Noises.SPAGHETTI_ROUGHNESS_MODULATOR), 0.0D, -0.1D);
        return DensityFunctions.cacheOnce(DensityFunctions.mul(densityfunction1, DensityFunctions.add(densityfunction.abs(), DensityFunctions.constant(-0.4D))));
     }
-
+    
     private static DensityFunction entrances(HolderGetter<DensityFunction> p_256511_, HolderGetter<NormalNoise.NoiseParameters> p_255899_) {
-       DensityFunction densityfunction = DensityFunctions.cacheOnce(DensityFunctions.noise(p_255899_.getOrThrow(Noises.SPAGHETTI_3D_RARITY), 2.0D, 1.0D));
-       DensityFunction densityfunction1 = DensityFunctions.mappedNoise(p_255899_.getOrThrow(Noises.SPAGHETTI_3D_THICKNESS), -0.065D, -0.088D);
-       DensityFunction densityfunction2 = LunarisDensityFunctions.weirdScaledSampler(densityfunction, p_255899_.getOrThrow(Noises.SPAGHETTI_3D_1), LunarisDensityFunctions.WeirdScaledSampler.RarityValueMapper.TYPE1);
-       DensityFunction densityfunction3 = LunarisDensityFunctions.weirdScaledSampler(densityfunction, p_255899_.getOrThrow(Noises.SPAGHETTI_3D_2), LunarisDensityFunctions.WeirdScaledSampler.RarityValueMapper.TYPE1);
-       DensityFunction densityfunction4 = DensityFunctions.add(DensityFunctions.max(densityfunction2, densityfunction3), densityfunction1).clamp(-1.0D, 1.0D);
-       DensityFunction densityfunction5 = getFunction(p_256511_, SPAGHETTI_ROUGHNESS_FUNCTION);
-       DensityFunction densityfunction6 = DensityFunctions.noise(p_255899_.getOrThrow(Noises.CAVE_ENTRANCE), 0.75D, 0.5D);
-       DensityFunction densityfunction7 = DensityFunctions.add(DensityFunctions.add(densityfunction6, DensityFunctions.constant(0.37D)), DensityFunctions.yClampedGradient(-10, 30, 0.3D, 0.0D));
-       return DensityFunctions.cacheOnce(DensityFunctions.min(densityfunction7, DensityFunctions.add(densityfunction5, densityfunction4)));
-    }
+        DensityFunction densityfunction = DensityFunctions.cacheOnce(DensityFunctions.noise(p_255899_.getOrThrow(Noises.SPAGHETTI_3D_RARITY), 2.0D, 1.0D));
+        DensityFunction densityfunction1 = DensityFunctions.mappedNoise(p_255899_.getOrThrow(Noises.SPAGHETTI_3D_THICKNESS), -0.065D, -0.088D);
+        //original densityfunction 2 and 3
+        //DensityFunction densityfunction2 = DensityFunctions.weirdScaledSampler(densityfunction, p_255899_.getOrThrow(Noises.SPAGHETTI_3D_1), DensityFunctions.WeirdScaledSampler.RarityValueMapper.TYPE1);
+        //DensityFunction densityfunction3 = DensityFunctions.weirdScaledSampler(densityfunction, p_255899_.getOrThrow(Noises.SPAGHETTI_3D_2), DensityFunctions.WeirdScaledSampler.RarityValueMapper.TYPE1);
+        
+        DensityFunction densityfunction2 =  DensityFunctions.mul(densityfunction, DensityFunctions.mappedNoise(p_255899_.getOrThrow(Noises.SPAGHETTI_3D_1), 0.75, 0.35));
+        DensityFunction densityfunction3 =  DensityFunctions.mul(densityfunction, DensityFunctions.mappedNoise(p_255899_.getOrThrow(Noises.SPAGHETTI_3D_2), 0.75, 0.35));
+        
+        DensityFunction densityfunction4 = DensityFunctions.add(DensityFunctions.max(densityfunction2, densityfunction3), densityfunction1).clamp(-1.0D, 1.0D);
+        DensityFunction densityfunction5 = getFunction(p_256511_, SPAGHETTI_ROUGHNESS_FUNCTION);
+        DensityFunction densityfunction6 = DensityFunctions.noise(p_255899_.getOrThrow(Noises.CAVE_ENTRANCE), 0.75D, 0.5D);
+        DensityFunction densityfunction7 = DensityFunctions.add(DensityFunctions.add(densityfunction6, DensityFunctions.constant(0.37D)), DensityFunctions.yClampedGradient(-10, 30, 0.3D, 0.0D));
+        return DensityFunctions.cacheOnce(DensityFunctions.min(densityfunction7, DensityFunctions.add(densityfunction5, densityfunction4)));
+     }
 
     private static DensityFunction noodle(HolderGetter<DensityFunction> p_256402_, HolderGetter<NormalNoise.NoiseParameters> p_255632_) {
        DensityFunction densityfunction = getFunction(p_256402_, Y);
-        DensityFunction densityfunction1 = yLimitedInterpolatable(densityfunction, DensityFunctions.noise(p_255632_.getOrThrow(Noises.NOODLE), 1.0D, 1.0D), -60, 320, -1);
+       DensityFunction densityfunction1 = yLimitedInterpolatable(densityfunction, DensityFunctions.noise(p_255632_.getOrThrow(Noises.NOODLE), 1.0D, 1.0D), -60, 320, -1);
        DensityFunction densityfunction2 = yLimitedInterpolatable(densityfunction, DensityFunctions.mappedNoise(p_255632_.getOrThrow(Noises.NOODLE_THICKNESS), 1.0D, 1.0D, -0.05D, -0.1D), -60, 320, 0);
        DensityFunction densityfunction3 = yLimitedInterpolatable(densityfunction, DensityFunctions.noise(p_255632_.getOrThrow(Noises.NOODLE_RIDGE_A), 2.6666666666666665D, 2.6666666666666665D), -60, 320, 0);
        DensityFunction densityfunction4 = yLimitedInterpolatable(densityfunction, DensityFunctions.noise(p_255632_.getOrThrow(Noises.NOODLE_RIDGE_B), 2.6666666666666665D, 2.6666666666666665D), -60, 320, 0);
@@ -141,18 +150,25 @@ public class LunarisDensityFunctions {
        DensityFunction densityfunction3 = DensityFunctions.add(DensityFunctions.mul(densityfunction, DensityFunctions.constant(2.0D)), densityfunction1);
        return DensityFunctions.cacheOnce(DensityFunctions.mul(densityfunction3, densityfunction2.cube()));
     }
-
+    
     private static DensityFunction spaghetti2D(HolderGetter<DensityFunction> p_256535_, HolderGetter<NormalNoise.NoiseParameters> p_255650_) {
-       DensityFunction densityfunction = DensityFunctions.noise(p_255650_.getOrThrow(Noises.SPAGHETTI_2D_MODULATOR), 2.0D, 1.0D);
-       DensityFunction densityfunction1 = LunarisDensityFunctions.weirdScaledSampler(densityfunction, p_255650_.getOrThrow(Noises.SPAGHETTI_2D), LunarisDensityFunctions.WeirdScaledSampler.RarityValueMapper.TYPE2);
-       DensityFunction densityfunction2 = DensityFunctions.mappedNoise(p_255650_.getOrThrow(Noises.SPAGHETTI_2D_ELEVATION), 0.0D, (double)Math.floorDiv(-64, 8), 8.0D);
-       DensityFunction densityfunction3 = getFunction(p_256535_, SPAGHETTI_2D_THICKNESS_MODULATOR);
-       DensityFunction densityfunction4 = DensityFunctions.add(densityfunction2, DensityFunctions.yClampedGradient(-64, 320, 8.0D, -40.0D)).abs();
-       DensityFunction densityfunction5 = DensityFunctions.add(densityfunction4, densityfunction3).cube();
-       DensityFunction densityfunction6 = DensityFunctions.add(densityfunction1, DensityFunctions.mul(DensityFunctions.constant(0.083D), densityfunction3));
-       return DensityFunctions.max(densityfunction6, densityfunction5).clamp(-1.0D, 1.0D);
-    }
-
+        DensityFunction densityfunction = DensityFunctions.noise(p_255650_.getOrThrow(Noises.SPAGHETTI_2D_MODULATOR), 2.0D, 1.0D);
+        
+        //old densityFunction1
+        //DensityFunction densityfunction1 = DensityFunctions.weirdScaledSampler(densityfunction, p_255650_.getOrThrow(Noises.SPAGHETTI_2D), LunarisDensityFunctions.getRarityValue(0.25D));
+        DensityFunction densityfunctionA = DensityFunctions.mappedNoise(p_255650_.getOrThrow(Noises.SPAGHETTI_2D), 0.0D, 1.1D);
+        DensityFunction densityfunctionB = DensityFunctions.add(DensityFunctions.mul(densityfunction, DensityFunctions.constant(2.0D)), densityfunctionA);
+        DensityFunction densityfunction1 = DensityFunctions.mul(densityfunctionA, densityfunctionB);
+        
+        DensityFunction densityfunction2 = DensityFunctions.mappedNoise(p_255650_.getOrThrow(Noises.SPAGHETTI_2D_ELEVATION), 0.0D, (double)Math.floorDiv(-64, 8), 8.0D);
+        DensityFunction densityfunction3 = getFunction(p_256535_, SPAGHETTI_2D_THICKNESS_MODULATOR);
+        DensityFunction densityfunction4 = DensityFunctions.add(densityfunction2, DensityFunctions.yClampedGradient(-64, 320, 8.0D, -40.0D)).abs();
+        DensityFunction densityfunction5 = DensityFunctions.add(densityfunction4, densityfunction3).cube();
+        double d0 = 0.083D;
+        DensityFunction densityfunction6 = DensityFunctions.add(densityfunction1, DensityFunctions.mul(DensityFunctions.constant(0.083D), densityfunction3));
+        return DensityFunctions.max(densityfunction6, densityfunction5).clamp(-1.0D, 1.0D);
+     }
+    
     public static DensityFunction underground(HolderGetter<DensityFunction> p_256548_, HolderGetter<NormalNoise.NoiseParameters> p_256236_, DensityFunction p_256658_) {
        DensityFunction densityfunction = getFunction(p_256548_, SPAGHETTI_2D);
        DensityFunction densityfunction1 = getFunction(p_256548_, SPAGHETTI_ROUGHNESS_FUNCTION);
@@ -196,108 +212,17 @@ public class LunarisDensityFunctions {
         return DensityFunctions.lerp(densityfunction2, p_224452_, $$9);
     }
     
-    public static DensityFunction weirdScaledSampler(DensityFunction p_208316_,
-    		Holder<NormalNoise.NoiseParameters> p_208317_,
-    		LunarisDensityFunctions.WeirdScaledSampler.RarityValueMapper p_208318_) {
-        return new LunarisDensityFunctions.WeirdScaledSampler(p_208316_, new DensityFunction.NoiseHolder(p_208317_), p_208318_);
-     }
-    
-    interface TransformerWithContext extends DensityFunction {
-        DensityFunction input();
-
-        default double compute(DensityFunction.FunctionContext p_209065_) {
-           return this.transform(p_209065_, this.input().compute(p_209065_));
+ // Define a simplified rarity mapping based on TYPE1 from QuantizedSpaghettiRarity
+    private static double getRarityValue(double input) {
+        if (input < -0.5) {
+            return 0.75;
+        } else if (input < 0.0) {
+            return 1.0;
+        } else if (input < 0.5) {
+            return 1.5;
+        } else {
+            return 2.0;
         }
-
-        default void fillArray(double[] p_209069_, DensityFunction.ContextProvider p_209070_) {
-           this.input().fillArray(p_209069_, p_209070_);
-
-           for(int i = 0; i < p_209069_.length; ++i) {
-              p_209069_[i] = this.transform(p_209070_.forIndex(i), p_209069_[i]);
-           }
-
-        }
-
-        double transform(DensityFunction.FunctionContext p_209066_, double p_209067_);
-     }
-    
-    static <O> KeyDispatchDataCodec<O> makeCodec(MapCodec<O> p_224029_) {
-        return KeyDispatchDataCodec.of(p_224029_);
-     }
-    
-    protected static record WeirdScaledSampler(DensityFunction input, DensityFunction.NoiseHolder noise, LunarisDensityFunctions.WeirdScaledSampler.RarityValueMapper rarityValueMapper) implements LunarisDensityFunctions.TransformerWithContext {
-        private static final MapCodec<LunarisDensityFunctions.WeirdScaledSampler> DATA_CODEC = RecordCodecBuilder.mapCodec((p_208438_) -> {
-           return p_208438_.group(DensityFunction.HOLDER_HELPER_CODEC.fieldOf("input").forGetter(LunarisDensityFunctions.WeirdScaledSampler::input), DensityFunction.NoiseHolder.CODEC.fieldOf("noise").forGetter(LunarisDensityFunctions.WeirdScaledSampler::noise), LunarisDensityFunctions.WeirdScaledSampler.RarityValueMapper.CODEC.fieldOf("rarity_value_mapper").forGetter(LunarisDensityFunctions.WeirdScaledSampler::rarityValueMapper)).apply(p_208438_, LunarisDensityFunctions.WeirdScaledSampler::new);
-        });
-        public static final KeyDispatchDataCodec<LunarisDensityFunctions.WeirdScaledSampler> CODEC = LunarisDensityFunctions.makeCodec(DATA_CODEC);
-
-        public double transform(DensityFunction.FunctionContext p_208440_, double p_208441_) {
-           double d0 = this.rarityValueMapper.mapper.get(p_208441_);
-           return d0 * Math.abs(this.noise.getValue((double)p_208440_.blockX() / d0, (double)p_208440_.blockY() / d0, (double)p_208440_.blockZ() / d0));
-        }
-
-        public DensityFunction mapAll(DensityFunction.Visitor p_208443_) {
-           return p_208443_.apply(new LunarisDensityFunctions.WeirdScaledSampler(this.input.mapAll(p_208443_), p_208443_.visitNoise(this.noise), this.rarityValueMapper));
-        }
-
-        public double minValue() {
-           return 0.0D;
-        }
-
-        public double maxValue() {
-           return this.rarityValueMapper.maxRarity * this.noise.maxValue();
-        }
-
-        public KeyDispatchDataCodec<? extends DensityFunction> codec() {
-           return CODEC;
-        }
-
-        public DensityFunction input() {
-           return this.input;
-        }
-
-        public static enum RarityValueMapper implements StringRepresentable {
-           TYPE1("type_1", QuantizedSpaghettiRarity::getSpaghettiRarity3D, 2.0D),
-           TYPE2("type_2", QuantizedSpaghettiRarity::getSphaghettiRarity2D, 3.0D);
-
-           public static final Codec<LunarisDensityFunctions.WeirdScaledSampler.RarityValueMapper> CODEC = StringRepresentable.fromEnum(LunarisDensityFunctions.WeirdScaledSampler.RarityValueMapper::values);
-           private final String name;
-           final Double2DoubleFunction mapper;
-           final double maxRarity;
-
-           private RarityValueMapper(String p_208470_, Double2DoubleFunction p_208471_, double p_208472_) {
-              this.name = p_208470_;
-              this.mapper = p_208471_;
-              this.maxRarity = p_208472_;
-           }
-
-           public String getSerializedName() {
-              return this.name;
-           }
-        }
-     }
-
-    protected static final class QuantizedSpaghettiRarity {
-       protected static double getSphaghettiRarity2D(double p_209564_) {
-          if (p_209564_ < -0.75D) {
-             return 0.5D;
-          } else if (p_209564_ < -0.5D) {
-             return 0.75D;
-          } else if (p_209564_ < 0.5D) {
-             return 1.0D;
-          } else {
-             return p_209564_ < 0.75D ? 2.0D : 3.0D;
-          }
-       }
-
-       protected static double getSpaghettiRarity3D(double p_209566_) {
-          if (p_209566_ < -0.5D) {
-             return 0.75D;
-          } else if (p_209566_ < 0.0D) {
-             return 1.0D;
-          } else {
-             return p_209566_ < 0.5D ? 1.5D : 2.0D;
-          }
-       }
     }
+    
  }

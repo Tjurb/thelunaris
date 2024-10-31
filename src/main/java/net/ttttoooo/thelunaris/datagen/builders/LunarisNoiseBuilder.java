@@ -7,6 +7,7 @@ import net.minecraft.resources.ResourceKey;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.state.BlockState;
+import net.minecraft.world.level.dimension.DimensionType;
 import net.minecraft.world.level.levelgen.*;
 import net.minecraft.world.level.levelgen.synth.NormalNoise;
 import net.ttttoooo.thelunaris.TheLunaris;
@@ -16,6 +17,7 @@ import net.ttttoooo.thelunaris.datagen.builders.noises.LunarisNoise;
 import net.ttttoooo.thelunaris.worldgen.dimension.ModSurfaceRules;
 
 import java.util.List;
+import java.util.stream.Stream;
 
 public class LunarisNoiseBuilder {
 
@@ -51,22 +53,24 @@ public class LunarisNoiseBuilder {
     //Logic that called {@link NoiseRouterData#postProcess(DensityFunction)} has been moved to {@link LunarisNoiseBuilder#buildFinalDensity(HolderGetter)}.
     private static NoiseRouter createNoiseRouter(HolderGetter<DensityFunction> densityFunctions, HolderGetter<NormalNoise.NoiseParameters> noise) {
 
-        DensityFunction aquiferbarrier = DensityFunctions.noise(noise.getOrThrow(LunarisNoise.AQUIFERBARRIER), 1.0, 0.5);
-        DensityFunction aquiferflood = DensityFunctions.noise(noise.getOrThrow(LunarisNoise.AQUIFERFLOOD), 1.0, 0.6);
-        DensityFunction aquiferspread = DensityFunctions.noise(noise.getOrThrow(LunarisNoise.AQUIFERSPREAD), 1.0, 0.7);
-        DensityFunction aquiferlava = DensityFunctions.noise(noise.getOrThrow(LunarisNoise.AQUIFERLAVA), 1.0, 1.0);
+    	//Disable for testing
+        DensityFunction aquiferbarrier = DensityFunctions.noise(noise.getOrThrow(LunarisNoise.AQUIFERBARRIER), 0.5);
+    	DensityFunction aquiferflood = DensityFunctions.noise(noise.getOrThrow(LunarisNoise.AQUIFERFLOOD), 0.67D);
+    	DensityFunction aquiferspread = DensityFunctions.noise(noise.getOrThrow(LunarisNoise.AQUIFERSPREAD), 0.7142857142857143D);
+    	DensityFunction aquiferlava = DensityFunctions.noise(noise.getOrThrow(LunarisNoise.AQUIFERLAVA));
         
     	DensityFunction shiftX = getFunction(densityFunctions, ResourceKey.create(Registries.DENSITY_FUNCTION, new ResourceLocation("shift_x")));
         DensityFunction shiftZ = getFunction(densityFunctions, ResourceKey.create(Registries.DENSITY_FUNCTION, new ResourceLocation("shift_z")));
        
         DensityFunction temperature = DensityFunctions.shiftedNoise2d(shiftX, shiftZ, 0.25, noise.getOrThrow(LunarisNoise.TEMPERATURE));
         DensityFunction vegetation = DensityFunctions.shiftedNoise2d(shiftX, shiftZ, 0.25, noise.getOrThrow(LunarisNoise.VEGETATION));
+
+        DensityFunction factor = DensityFunctions.noise(noise.getOrThrow(LunarisNoise.FACTOR));
+        DensityFunction depth = DensityFunctions.noise(noise.getOrThrow(LunarisNoise.DEPTH));
         
-        DensityFunction continentalness = DensityFunctions.shiftedNoise2d(shiftX, shiftZ, 0.25, noise.getOrThrow(LunarisNoise.CONTINENTALNESS));
-        DensityFunction erosion = DensityFunctions.shiftedNoise2d(shiftX, shiftZ, 0.25, noise.getOrThrow(LunarisNoise.EROSION));
-        DensityFunction depth = DensityFunctions.shiftedNoise2d(shiftX, shiftZ, 0.25, noise.getOrThrow(LunarisNoise.DEPTH));
-        DensityFunction ridges = DensityFunctions.shiftedNoise2d(shiftX, shiftZ, 0.25, noise.getOrThrow(LunarisNoise.RIDGE));
-        DensityFunction factor = DensityFunctions.shiftedNoise2d(shiftX, shiftZ, 0.25, noise.getOrThrow(LunarisNoise.RIDGE));
+        DensityFunction continentalness = DensityFunctions.noise(noise.getOrThrow(LunarisNoise.CONTINENTALNESS));
+        DensityFunction erosion = DensityFunctions.noise( noise.getOrThrow(LunarisNoise.EROSION));
+        DensityFunction ridges = DensityFunctions.noise(noise.getOrThrow(LunarisNoise.RIDGE));
         
         DensityFunction densityfunction10 = LunarisDensityFunctions.noiseGradientDensity(DensityFunctions.cache2d(factor), depth);
         
@@ -77,7 +81,7 @@ public class LunarisNoiseBuilder {
         
         DensityFunction densityfunction15 = getFunction(densityFunctions, LunarisDensityFunctions.Y);
 
-        int i = 4;
+        int i = 192;
         int j = -60;
         
         DensityFunction oreveins = LunarisDensityFunctions.yLimitedInterpolatable(densityfunction15, DensityFunctions.noise(noise.getOrThrow(Noises.ORE_VEININESS), 1.5D, 1.5D), i, j, 0);

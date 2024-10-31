@@ -23,6 +23,9 @@ public class ModPlacedFeatures {
 	public static final ResourceKey<PlacedFeature> LUNARIS_MOONSTEEL_ORE_PLACED_KEY = registerKey("moonsteel_ore_placed");
 	public static final ResourceKey<PlacedFeature> LUNARIS_LABRADORITE_ORE_PLACED_KEY = registerKey("labradorite_ore_placed");
 	public static final ResourceKey<PlacedFeature> LUNARIS_LUNARITE_ORE_PLACED_KEY = registerKey("lunarite_ore_placed");
+	public static final ResourceKey<PlacedFeature> LUNARIS_LARGE_MOONSTEEL_ORE_PLACED_KEY = registerKey("large_moonsteel_ore_placed");
+	public static final ResourceKey<PlacedFeature> LUNARIS_LARGE_LABRADORITE_ORE_PLACED_KEY = registerKey("large_labradorite_ore_placed");
+	public static final ResourceKey<PlacedFeature> LUNARIS_LARGE_LUNARITE_ORE_PLACED_KEY = registerKey("large_lunarite_ore_placed");
 	
 	//tree keys
 	public static final ResourceKey<PlacedFeature> CELEST_PLACED_KEY = registerKey("celest_placed");
@@ -33,24 +36,33 @@ public class ModPlacedFeatures {
         HolderGetter<ConfiguredFeature<?, ?>> configuredFeatures = context.lookup(Registries.CONFIGURED_FEATURE);
         //ore register
         register(context, LUNARIS_MOONSTEEL_ORE_PLACED_KEY, configuredFeatures.getOrThrow(ModConfiguredFeatures.LUNARIS_MOONSTEEL_ORE_KEY),
-                ModOrePlacement.commonOrePlacement(15,
+                ModOrePlacement.commonOrePlacement(20,
                         HeightRangePlacement.uniform(VerticalAnchor.absolute(-64), VerticalAnchor.absolute(80))));
         register(context, LUNARIS_LABRADORITE_ORE_PLACED_KEY, configuredFeatures.getOrThrow(ModConfiguredFeatures.LUNARIS_LABRADORITE_ORE_KEY),
-                ModOrePlacement.rareOrePlacement(5,
+                ModOrePlacement.commonOrePlacement(10,
                         HeightRangePlacement.uniform(VerticalAnchor.absolute(-64), VerticalAnchor.absolute(80))));
         register(context, LUNARIS_LUNARITE_ORE_PLACED_KEY, configuredFeatures.getOrThrow(ModConfiguredFeatures.LUNARIS_LUNARITE_ORE_KEY),
-                ModOrePlacement.rareOrePlacement(5,
+                ModOrePlacement.commonOrePlacement(10,
                         HeightRangePlacement.uniform(VerticalAnchor.absolute(-64), VerticalAnchor.absolute(80))));
+        register(context, LUNARIS_LARGE_MOONSTEEL_ORE_PLACED_KEY, configuredFeatures.getOrThrow(ModConfiguredFeatures.LUNARIS_LARGE_MOONSTEEL_ORE_KEY),
+                ModOrePlacement.rareOrePlacement(10,
+                        HeightRangePlacement.uniform(VerticalAnchor.absolute(-64), VerticalAnchor.absolute(40))));
+        register(context, LUNARIS_LARGE_LABRADORITE_ORE_PLACED_KEY, configuredFeatures.getOrThrow(ModConfiguredFeatures.LUNARIS_LARGE_LABRADORITE_ORE_KEY),
+                ModOrePlacement.rareOrePlacement(5,
+                        HeightRangePlacement.uniform(VerticalAnchor.absolute(-64), VerticalAnchor.absolute(40))));
+        register(context, LUNARIS_LARGE_LUNARITE_ORE_PLACED_KEY, configuredFeatures.getOrThrow(ModConfiguredFeatures.LUNARIS_LARGE_LUNARITE_ORE_KEY),
+                ModOrePlacement.rareOrePlacement(5,
+                        HeightRangePlacement.uniform(VerticalAnchor.absolute(-64), VerticalAnchor.absolute(40))));
         
         //tree register
         register(context, CELEST_PLACED_KEY, configuredFeatures.getOrThrow(ModConfiguredFeatures.CELEST_KEY),
-                VegetationPlacements.treePlacement(PlacementUtils.countExtra(3, 0.1f, 3),
+                VegetationPlacements.treePlacement(PlacementUtils.countExtra(3, 0.1f, 2),
                         ModBlocks.CELEST_SAPLING.get()));
         register(context, STELLAR_PLACED_KEY, configuredFeatures.getOrThrow(ModConfiguredFeatures.STELLAR_KEY),
                 VegetationPlacements.treePlacement(PlacementUtils.countExtra(2, 0.2f, 2),
                         ModBlocks.STELLAR_SAPLING.get()));
         register(context, SKYOAK_PLACED_KEY, configuredFeatures.getOrThrow(ModConfiguredFeatures.SKYOAK_KEY),
-                VegetationPlacements.treePlacement(PlacementUtils.countExtra(1, 0.2f, 4),
+                VegetationPlacements.treePlacement(PlacementUtils.countExtra(1, 0.2f, 2),
                         ModBlocks.SKYOAK_SAPLING.get()));
     }
 	

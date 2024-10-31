@@ -25,31 +25,22 @@
       "y_scale": 0.5
     },
     "continents": {
-      "type": "minecraft:shifted_noise",
+      "type": "minecraft:noise",
       "noise": "thelunaris:luna_continentalness",
-      "shift_x": "minecraft:shift_x",
-      "shift_y": 0.0,
-      "shift_z": "minecraft:shift_z",
-      "xz_scale": 0.25,
-      "y_scale": 0.0
+      "xz_scale": 1.0,
+      "y_scale": 1.0
     },
     "depth": {
-      "type": "minecraft:shifted_noise",
+      "type": "minecraft:noise",
       "noise": "thelunaris:luna_depth",
-      "shift_x": "minecraft:shift_x",
-      "shift_y": 0.0,
-      "shift_z": "minecraft:shift_z",
-      "xz_scale": 0.25,
-      "y_scale": 0.0
+      "xz_scale": 1.0,
+      "y_scale": 1.0
     },
     "erosion": {
-      "type": "minecraft:shifted_noise",
+      "type": "minecraft:noise",
       "noise": "thelunaris:luna_erosion",
-      "shift_x": "minecraft:shift_x",
-      "shift_y": 0.0,
-      "shift_z": "minecraft:shift_z",
-      "xz_scale": 0.25,
-      "y_scale": 0.0
+      "xz_scale": 1.0,
+      "y_scale": 1.0
     },
     "final_density": {
       "type": "minecraft:min",
@@ -195,13 +186,13 @@
       "type": "minecraft:noise",
       "noise": "thelunaris:luna_aquiferflood",
       "xz_scale": 1.0,
-      "y_scale": 0.6
+      "y_scale": 0.67
     },
     "fluid_level_spread": {
       "type": "minecraft:noise",
       "noise": "thelunaris:luna_aquiferspread",
       "xz_scale": 1.0,
-      "y_scale": 0.7
+      "y_scale": 0.7142857142857143
     },
     "initial_density_without_jaggedness": {
       "type": "minecraft:add",
@@ -246,24 +237,18 @@
                         "argument": {
                           "type": "minecraft:mul",
                           "argument1": {
-                            "type": "minecraft:shifted_noise",
+                            "type": "minecraft:noise",
                             "noise": "thelunaris:luna_depth",
-                            "shift_x": "minecraft:shift_x",
-                            "shift_y": 0.0,
-                            "shift_z": "minecraft:shift_z",
-                            "xz_scale": 0.25,
-                            "y_scale": 0.0
+                            "xz_scale": 1.0,
+                            "y_scale": 1.0
                           },
                           "argument2": {
                             "type": "minecraft:cache_2d",
                             "argument": {
-                              "type": "minecraft:shifted_noise",
-                              "noise": "thelunaris:luna_ridge",
-                              "shift_x": "minecraft:shift_x",
-                              "shift_y": 0.0,
-                              "shift_z": "minecraft:shift_z",
-                              "xz_scale": 0.25,
-                              "y_scale": 0.0
+                              "type": "minecraft:noise",
+                              "noise": "thelunaris:luna_factor",
+                              "xz_scale": 1.0,
+                              "y_scale": 1.0
                             }
                           }
                         }
@@ -286,13 +271,10 @@
       "y_scale": 1.0
     },
     "ridges": {
-      "type": "minecraft:shifted_noise",
+      "type": "minecraft:noise",
       "noise": "thelunaris:luna_ridge",
-      "shift_x": "minecraft:shift_x",
-      "shift_y": 0.0,
-      "shift_z": "minecraft:shift_z",
-      "xz_scale": 0.25,
-      "y_scale": 0.0
+      "xz_scale": 1.0,
+      "y_scale": 1.0
     },
     "temperature": {
       "type": "minecraft:shifted_noise",
@@ -331,7 +313,7 @@
               "type": "minecraft:range_choice",
               "input": "thelunaris:lunaris_y",
               "max_exclusive": -59.0,
-              "min_inclusive": 4.0,
+              "min_inclusive": 192.0,
               "when_in_range": {
                 "type": "minecraft:noise",
                 "noise": "minecraft:ore_vein_a",
@@ -350,7 +332,7 @@
               "type": "minecraft:range_choice",
               "input": "thelunaris:lunaris_y",
               "max_exclusive": -59.0,
-              "min_inclusive": 4.0,
+              "min_inclusive": 192.0,
               "when_in_range": {
                 "type": "minecraft:noise",
                 "noise": "minecraft:ore_vein_b",
@@ -369,7 +351,7 @@
         "type": "minecraft:range_choice",
         "input": "thelunaris:lunaris_y",
         "max_exclusive": -59.0,
-        "min_inclusive": 4.0,
+        "min_inclusive": 192.0,
         "when_in_range": {
           "type": "minecraft:noise",
           "noise": "minecraft:ore_veininess",

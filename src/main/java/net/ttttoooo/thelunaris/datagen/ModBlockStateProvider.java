@@ -26,7 +26,7 @@ public class ModBlockStateProvider extends BlockStateProvider{
 		blockWithItem(ModBlocks.MOONDIALBLOCK);
 		blockWithItem(ModBlocks.LUNAR_CRAFTER);
 		blockWithItem(ModBlocks.LUNARIS_BEDROCK);
-		
+
 		blockWithItem(ModBlocks.LUNARITE_BLOCK);
 		blockWithItem(ModBlocks.EMOONSTEEL_BLOCK);
 		blockWithItem(ModBlocks.MOONSTEEL_BLOCK);
@@ -125,15 +125,18 @@ public class ModBlockStateProvider extends BlockStateProvider{
 		blockWithItem(ModBlocks.MOONSTEEL_ORE);
 		blockWithItem(ModBlocks.LABRADORITE_ORE);
 		
-		//portal block
-		blockWithItem(ModBlocks.LUNARPORTAL_BLOCK);
 		
 	}
+	
 	
 	private void saplingBlock(RegistryObject<Block> blockRegistryObject) {
         simpleBlock(blockRegistryObject.get(),
                 models().cross(ForgeRegistries.BLOCKS.getKey(blockRegistryObject.get()).getPath(), blockTexture(blockRegistryObject.get())).renderType("cutout"));
     }
+	
+	private void portal(RegistryObject<Block> blockRegistryObject) {
+		simpleBlockWithItem(blockRegistryObject.get(), cubeAll(blockRegistryObject.get()));
+	}
 	
 	private void blockWithItem(RegistryObject<Block> blockRegistryObject) {
 		simpleBlockWithItem(blockRegistryObject.get(), cubeAll(blockRegistryObject.get()));

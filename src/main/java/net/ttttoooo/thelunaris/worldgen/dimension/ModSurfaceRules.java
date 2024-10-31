@@ -27,11 +27,17 @@ public class ModSurfaceRules {
                 	SurfaceRules.ifTrue(SurfaceRules.ON_FLOOR, grassSurface)
                 )),
         		SurfaceRules.sequence(SurfaceRules.ifTrue(SurfaceRules.isBiome(ModBiomes.LUNAR_FORESTS), 
+                    	SurfaceRules.ifTrue(SurfaceRules.UNDER_FLOOR, grassSurface)
+                    )),
+        		SurfaceRules.sequence(SurfaceRules.ifTrue(SurfaceRules.isBiome(ModBiomes.LUNAR_FORESTS), 
                     	SurfaceRules.ifTrue(SurfaceRules.DEEP_UNDER_FLOOR, bedrockFill)
                     )),
         		SurfaceRules.sequence(SurfaceRules.ifTrue(SurfaceRules.isBiome(ModBiomes.AZUREITE_OCEAN), 
                     SurfaceRules.ifTrue(SurfaceRules.ON_FLOOR, sandOcean)
                 )),
+        		SurfaceRules.sequence(SurfaceRules.ifTrue(SurfaceRules.isBiome(ModBiomes.AZUREITE_OCEAN), 
+                    	SurfaceRules.ifTrue(SurfaceRules.UNDER_FLOOR, sandOcean)
+                    )),
         		SurfaceRules.sequence(SurfaceRules.ifTrue(SurfaceRules.isBiome(ModBiomes.AZUREITE_OCEAN), 
                         SurfaceRules.ifTrue(SurfaceRules.DEEP_UNDER_FLOOR, bedrockFill)
                     )),
@@ -39,11 +45,17 @@ public class ModSurfaceRules {
                     SurfaceRules.ifTrue(SurfaceRules.ON_FLOOR, grassSurface)
                 )),
         		SurfaceRules.sequence(SurfaceRules.ifTrue(SurfaceRules.isBiome(ModBiomes.SKYWORD_MOUNTAINS), 
+                        SurfaceRules.ifTrue(SurfaceRules.UNDER_FLOOR, grassSurface)
+                    )),
+        		SurfaceRules.sequence(SurfaceRules.ifTrue(SurfaceRules.isBiome(ModBiomes.SKYWORD_MOUNTAINS), 
                         SurfaceRules.ifTrue(SurfaceRules.DEEP_UNDER_FLOOR, bedrockFill)
                     )),
         		SurfaceRules.sequence(SurfaceRules.ifTrue(SurfaceRules.isBiome(ModBiomes.SLEEPING_SANDS), 
                     SurfaceRules.ifTrue(SurfaceRules.ON_FLOOR, sandSurface)
                 )),
+        		SurfaceRules.sequence(SurfaceRules.ifTrue(SurfaceRules.isBiome(ModBiomes.SLEEPING_SANDS), 
+                        SurfaceRules.ifTrue(SurfaceRules.UNDER_FLOOR, sandSurface)
+                    )),
         		SurfaceRules.sequence(SurfaceRules.ifTrue(SurfaceRules.isBiome(ModBiomes.SLEEPING_SANDS), 
                         SurfaceRules.ifTrue(SurfaceRules.DEEP_UNDER_FLOOR, bedrockFill)
                     ))
