@@ -21,18 +21,17 @@ public class DataGenerators {
 		CompletableFuture<HolderLookup.Provider> lookupProvider = event.getLookupProvider();
 		
 		//client side
-		generator.addProvider(event.includeServer(), new ModRecipeProvider(packOutput));
-		generator.addProvider(event.includeServer(), ModLootTableProvider.create(packOutput));
 		generator.addProvider(event.includeClient(), new ModBlockStateProvider(packOutput, existingFileHelper));
 		generator.addProvider(event.includeClient(), new ModItemModelProvider(packOutput, existingFileHelper));		
 
 		//server and tags
+		generator.addProvider(event.includeServer(), new ModRecipeProvider(packOutput));
+		generator.addProvider(event.includeServer(), ModLootTableProvider.create(packOutput));
 		ModBlockTagGenerator blockTagGenerator = generator.addProvider(event.includeServer(),
 				new ModBlockTagGenerator(packOutput, lookupProvider, existingFileHelper));
 		generator.addProvider(event.includeServer(), new ModItemTagGenerator(packOutput, lookupProvider,
 				blockTagGenerator.contentsGetter(), existingFileHelper));
-        //generator.addProvider(event.includeServer(), new ModBiomeTagProvider(packOutput, lookupProvider, existingFileHelper));
-		//currently missing references
+
 		
         generator.addProvider(event.includeServer(), new ModWorldGenProvider(packOutput, lookupProvider));
 	}

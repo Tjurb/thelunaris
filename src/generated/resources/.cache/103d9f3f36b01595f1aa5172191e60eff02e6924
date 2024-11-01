@@ -1,10 +1,10 @@
-// 1.20.1	2024-10-31T10:52:03.4001791	Registries
+// 1.20.1	2024-10-31T18:10:53.9684128	Registries
 5de8d0b0fb695becfb4defbe506179777aef7a34 data/thelunaris/dimension/lunarisdim.json
 f6e871c13f59a845ba81f83665f9554b93d51595 data/thelunaris/dimension_type/lunarisdim_type.json
-0e5fff52430273499817f9f0778d65f2bc7eca00 data/thelunaris/worldgen/biome/azureite_ocean.json
-1dd165e592cfa3697435da25cebfb4d1ef637014 data/thelunaris/worldgen/biome/lunar_forests.json
-ff6dfd10db5a4556a0d08c0438d187a345059ac4 data/thelunaris/worldgen/biome/skyword_mountains.json
-193872af13bf6a7ae5dbc057b60baca694a1aabf data/thelunaris/worldgen/biome/sleeping_sands.json
+f34e839996525f8ed1775d074f62f6ee94198497 data/thelunaris/worldgen/biome/azureite_ocean.json
+40e4a269ca8e1e6996afe20aba05248445cdd61a data/thelunaris/worldgen/biome/lunar_forests.json
+cc667fb6ef86bd1840417f8edda726e81e885adf data/thelunaris/worldgen/biome/skyword_mountains.json
+8e901ec2c77962e035a05d9f268acf281eb28fab data/thelunaris/worldgen/biome/sleeping_sands.json
 ee0b8a2508e35d922f8123665ec51a539e28d28e data/thelunaris/worldgen/configured_feature/celest.json
 a772d44b7723e5989003aaeac4f106c3cb159950 data/thelunaris/worldgen/configured_feature/labradorite_ore.json
 a772d44b7723e5989003aaeac4f106c3cb159950 data/thelunaris/worldgen/configured_feature/large_labradorite_ore.json

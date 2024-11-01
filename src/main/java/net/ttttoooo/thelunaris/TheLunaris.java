@@ -40,6 +40,7 @@ public class TheLunaris
 
         ModItems.register(modEventBus);
         ModBlocks.register(modEventBus);
+        
         ModEntities.register(modEventBus);
         
         modEventBus.addListener(this::commonSetup);

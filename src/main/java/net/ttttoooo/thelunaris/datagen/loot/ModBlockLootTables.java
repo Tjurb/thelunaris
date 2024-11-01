@@ -143,7 +143,6 @@ public class ModBlockLootTables extends BlockLootSubProvider{
 						.apply(SetItemCountFunction.setCount(UniformGenerator.between(1.0f, 1.0f)))));
 	}
 	
-	@Override
 	protected Iterable<Block> getKnownBlocks(){
 		return ModBlocks.BLOCKS.getEntries().stream().map(RegistryObject::get)::iterator;
 	}

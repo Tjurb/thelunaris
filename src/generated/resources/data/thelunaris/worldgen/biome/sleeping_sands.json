@@ -6,6 +6,7 @@
       "minecraft:canyon"
     ]
   },
+  "creature_spawn_probability": 0.25,
   "downfall": 0.0,
   "effects": {
     "fog_color": 1196646,
@@ -41,7 +42,14 @@
   "spawners": {
     "ambient": [],
     "axolotls": [],
-    "creature": [],
+    "creature": [
+      {
+        "type": "thelunaris:mooncow",
+        "maxCount": 4,
+        "minCount": 3,
+        "weight": 10
+      }
+    ],
     "misc": [],
     "monster": [],
     "underground_water_creature": [],

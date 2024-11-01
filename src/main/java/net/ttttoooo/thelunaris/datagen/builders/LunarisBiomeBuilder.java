@@ -5,10 +5,12 @@ import net.minecraft.data.worldgen.Carvers;
 import net.minecraft.data.worldgen.placement.MiscOverworldPlacements;
 import net.minecraft.sounds.Musics;
 import net.minecraft.sounds.SoundEvents;
+import net.minecraft.world.entity.MobCategory;
 import net.minecraft.world.level.biome.*;
 import net.minecraft.world.level.levelgen.GenerationStep;
 import net.minecraft.world.level.levelgen.carver.ConfiguredWorldCarver;
 import net.minecraft.world.level.levelgen.placement.PlacedFeature;
+import net.ttttoooo.thelunaris.entity.ModEntities;
 import net.ttttoooo.thelunaris.worldgen.ModPlacedFeatures;
 
 
@@ -85,6 +87,9 @@ public class LunarisBiomeBuilder {
                     .backgroundMusic(Musics.createGameMusic(SoundEvents.MUSIC_GAME))
                     .build(),
                 new MobSpawnSettings.Builder()
+            	.creatureGenerationProbability(0.25F)
+            	.addSpawn(MobCategory.CREATURE, new MobSpawnSettings.SpawnerData(ModEntities.ARCHFISH.get(), 10, 3, 4))
+            
                         .build(),
                         builder 
                         .build(),
@@ -108,7 +113,10 @@ public class LunarisBiomeBuilder {
                     .backgroundMusic(Musics.createGameMusic(SoundEvents.MUSIC_BIOME_FOREST))
                     .build(),
                 new MobSpawnSettings.Builder()
-                        .build(),
+                	.creatureGenerationProbability(0.25F)
+                	.addSpawn(MobCategory.CREATURE, new MobSpawnSettings.SpawnerData(ModEntities.MOONCOW.get(), 10, 3, 4))
+                
+                	.build(),
                         builder 
                         .build(),
                 Biome.TemperatureModifier.NONE
@@ -131,6 +139,9 @@ public class LunarisBiomeBuilder {
                     .backgroundMusic(Musics.createGameMusic(SoundEvents.MUSIC_BIOME_DESERT))
                     .build(),
                 new MobSpawnSettings.Builder()
+            	.creatureGenerationProbability(0.25F)
+            	.addSpawn(MobCategory.CREATURE, new MobSpawnSettings.SpawnerData(ModEntities.MOONCOW.get(), 10, 3, 4))
+            
                         .build(),
                         builder 
                         .build(),
@@ -154,6 +165,9 @@ public class LunarisBiomeBuilder {
                     .backgroundMusic(Musics.createGameMusic(SoundEvents.MUSIC_BIOME_SNOWY_SLOPES))
                     .build(),
                 new MobSpawnSettings.Builder()
+            	.creatureGenerationProbability(0.25F)
+            	.addSpawn(MobCategory.CREATURE, new MobSpawnSettings.SpawnerData(ModEntities.MOONCOW.get(), 10, 3, 4))
+            
                         .build(),
                         builder 
                         .build(),

@@ -1,19 +1,28 @@
 package net.ttttoooo.thelunaris.datagen;
 
+import java.util.Locale;
+
+import net.minecraft.core.Direction;
+import net.minecraft.core.Direction.Axis;
 import net.minecraft.data.PackOutput;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.block.IronBarsBlock;
+import net.minecraft.world.level.block.PipeBlock;
 import net.minecraft.world.level.block.RotatedPillarBlock;
 import net.minecraft.world.level.block.SlabBlock;
 import net.minecraft.world.level.block.StairBlock;
 import net.minecraft.world.level.block.WallBlock;
 import net.minecraftforge.client.model.generators.BlockStateProvider;
+import net.minecraftforge.client.model.generators.ConfiguredModel;
 import net.minecraftforge.client.model.generators.ModelFile;
+import net.minecraftforge.client.model.generators.MultiPartBlockStateBuilder;
 import net.minecraftforge.common.data.ExistingFileHelper;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
 import net.ttttoooo.thelunaris.TheLunaris;
 import net.ttttoooo.thelunaris.block.ModBlocks;
+import net.ttttoooo.thelunaris.block.custom.portal.ModPortalBlock;
 
 public class ModBlockStateProvider extends BlockStateProvider{
 	public ModBlockStateProvider(PackOutput output, ExistingFileHelper exFileHelper) {
@@ -27,7 +36,7 @@ public class ModBlockStateProvider extends BlockStateProvider{
 		blockWithItem(ModBlocks.LUNAR_CRAFTER);
 		blockWithItem(ModBlocks.LUNARIS_BEDROCK);
 
-		//blockWithItem(ModBlocks.LUNARITE_BLOCK);
+		simpleBlockExisting(ModBlocks.LUNARITE_BLOCK.get());
 		blockWithItem(ModBlocks.EMOONSTEEL_BLOCK);
 		blockWithItem(ModBlocks.MOONSTEEL_BLOCK);
 		blockWithItem(ModBlocks.RAW_MOONSTEEL_BLOCK);
@@ -125,20 +134,23 @@ public class ModBlockStateProvider extends BlockStateProvider{
 		blockWithItem(ModBlocks.MOONSTEEL_ORE);
 		blockWithItem(ModBlocks.LABRADORITE_ORE);
 		
-		//portal
-		portal(ModBlocks.LUNARPORTAL_BLOCK);
+		blockWithItem(ModBlocks.LUNARPORTAL_BLOCK);
 		
 	}
 	
+
+	protected void simpleBlockExisting(Block b) {
+		simpleBlock(b, new ConfiguredModel(models().getExistingFile(prefix(name(b)))));
+	}
+	
+	public static ResourceLocation prefix(String name) {
+		return new ResourceLocation(TheLunaris.MODID, name.toLowerCase(Locale.ROOT));
+	}
 	
 	private void saplingBlock(RegistryObject<Block> blockRegistryObject) {
         simpleBlock(blockRegistryObject.get(),
                 models().cross(ForgeRegistries.BLOCKS.getKey(blockRegistryObject.get()).getPath(), blockTexture(blockRegistryObject.get())).renderType("cutout"));
     }
-	
-	private void portal(RegistryObject<Block> blockRegistryObject) {
-		simpleBlockWithItem(blockRegistryObject.get(), cubeAll(blockRegistryObject.get()));
-	}
 	
 	private void blockWithItem(RegistryObject<Block> blockRegistryObject) {
 		simpleBlockWithItem(blockRegistryObject.get(), cubeAll(blockRegistryObject.get()));
@@ -148,4 +160,13 @@ public class ModBlockStateProvider extends BlockStateProvider{
         simpleBlockItem(blockRegistryObject.get(), new ModelFile.UncheckedModelFile(TheLunaris.MODID +
                 ":block/" + ForgeRegistries.BLOCKS.getKey(blockRegistryObject.get()).getPath()));
     }
+	
+	protected ResourceLocation key(Block block) {
+		return ForgeRegistries.BLOCKS.getKey(block);
+	}
+	
+	protected String name(Block block) {
+		return key(block).getPath();
+	}
+	
 }

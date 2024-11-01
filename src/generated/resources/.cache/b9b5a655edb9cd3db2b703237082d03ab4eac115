@@ -1,4 +1,4 @@
-// 1.20.1	2024-10-31T11:07:25.2399224	Block States: thelunaris
+// 1.20.1	2024-10-31T17:27:23.8779254	Block States: thelunaris
 7701101710fd86c18b3e85caa1cf465fa9679456 assets/thelunaris/blockstates/celest_leaves.json
 4b21cb827b472d8950e479587d423de6dd2dee5a assets/thelunaris/blockstates/celest_log.json
 980e6f13909384b17f3056d48b9ba627fcdbbf00 assets/thelunaris/blockstates/celest_planks.json
@@ -11,6 +11,7 @@ ba78a8d16f497bea7f0c4af3e5e0248fd0810339 assets/thelunaris/blockstates/celest_wo
 c59c4227bbadeebc911b40afa4b71af1f977ac31 assets/thelunaris/blockstates/labradorite_block.json
 ce9114ff0e74893fb42a4cba13769d254b0ed3ae assets/thelunaris/blockstates/labradorite_ore.json
 07cb3dfcd8dbf42d7f637bdc2d84caa836ee4462 assets/thelunaris/blockstates/lunaris_bedrock.json
+597a3977698757888e598a8ca7a6181d1e2c18af assets/thelunaris/blockstates/lunarite_block.json
 fc9b1a46f945d39173d3824e512223dc7989e558 assets/thelunaris/blockstates/lunarite_ore.json
 ffc2ae29847e26db9751bb336801d698d1daa2f9 assets/thelunaris/blockstates/lunarportal_block.json
 70b64ce25c3fb70d88bff4f06db8555548a4433d assets/thelunaris/blockstates/lunarshale.json
