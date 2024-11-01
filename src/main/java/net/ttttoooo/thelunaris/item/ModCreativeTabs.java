@@ -23,7 +23,7 @@ public class ModCreativeTabs {
 				pOutput.accept(ModBlocks.LUNAR_CRAFTER.get());
 				pOutput.accept(ModBlocks.LUNARIS_BEDROCK.get());
 				
-				pOutput.accept(ModBlocks.LUNGRASS.get());
+				pOutput.accept(ModBlocks.LUNGRASS_BLOCK.get());
 				pOutput.accept(ModBlocks.LUNDIRT.get());
 				pOutput.accept(ModBlocks.LUNSAND.get());
 				pOutput.accept(ModBlocks.LUNSANDSTONE.get());
@@ -98,6 +98,9 @@ public class ModCreativeTabs {
 				pOutput.accept(ModBlocks.EMOONSTEEL_BLOCK.get());
 				pOutput.accept(ModBlocks.MOONSTEEL_BLOCK.get());
 				pOutput.accept(ModBlocks.RAW_MOONSTEEL_BLOCK.get());
+
+				//Nature Blocks
+				pOutput.accept(ModBlocks.LUNGRASS.get());
 				
 				//Item Entry
 				pOutput.accept(ModItems.LUNAR_STICK.get());
@@ -107,6 +110,7 @@ public class ModCreativeTabs {
 				pOutput.accept(ModItems.LABRADORITE.get());
 				pOutput.accept(ModItems.EMOONSTEEL.get());
 				pOutput.accept(ModItems.LUNARITE.get());
+				pOutput.accept(ModItems.LUNAR_WHEAT_SEEDS.get());
 				
 				//Food Entry
 				pOutput.accept(ModItems.LOONBERRY.get());

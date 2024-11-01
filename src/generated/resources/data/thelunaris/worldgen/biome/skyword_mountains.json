@@ -43,7 +43,8 @@
     [],
     [],
     [
-      "thelunaris:skyoak_placed"
+      "thelunaris:skyoak_placed",
+      "thelunaris:lunaris_grass_patch_placed"
     ]
   ],
   "has_precipitation": false,

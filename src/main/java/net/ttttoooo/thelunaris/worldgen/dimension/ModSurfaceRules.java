@@ -8,7 +8,7 @@ import net.minecraft.world.level.block.Block;
 
 public class ModSurfaceRules {
 	private static final SurfaceRules.RuleSource LUNDIRT = makeStateRule(ModBlocks.LUNDIRT.get());
-    private static final SurfaceRules.RuleSource LUNGRASS = makeStateRule(ModBlocks.LUNGRASS.get());
+    private static final SurfaceRules.RuleSource LUNGRASS_BLOCK = makeStateRule(ModBlocks.LUNGRASS_BLOCK.get());
 	private static final SurfaceRules.RuleSource LUNSAND = makeStateRule(ModBlocks.LUNSAND.get());
     private static final SurfaceRules.RuleSource LUNSANDSTONE = makeStateRule(ModBlocks.LUNSANDSTONE.get());
     private static final SurfaceRules.RuleSource LUNARBEDROCK = makeStateRule(ModBlocks.LUNARIS_BEDROCK.get());
@@ -19,7 +19,9 @@ public class ModSurfaceRules {
 
         SurfaceRules.RuleSource sandOcean = SurfaceRules.sequence(SurfaceRules.ifTrue(isAtOrAboveWaterLevel, LUNSAND), LUNDIRT);
         SurfaceRules.RuleSource sandSurface = SurfaceRules.sequence(SurfaceRules.ifTrue(isAtOrAboveWaterLevel, LUNSAND), LUNSANDSTONE);
-        SurfaceRules.RuleSource grassSurface = SurfaceRules.sequence(SurfaceRules.ifTrue(isAtOrAboveWaterLevel, LUNGRASS), LUNDIRT);
+        SurfaceRules.RuleSource sandstoneSurface = SurfaceRules.sequence(SurfaceRules.ifTrue(isAtOrAboveWaterLevel, LUNSANDSTONE), LUNSAND);
+        SurfaceRules.RuleSource grassSurface = SurfaceRules.sequence(SurfaceRules.ifTrue(isAtOrAboveWaterLevel, LUNGRASS_BLOCK), LUNDIRT);
+        SurfaceRules.RuleSource dirtSurface = SurfaceRules.sequence(SurfaceRules.ifTrue(isAtOrAboveWaterLevel, LUNDIRT), LUNGRASS_BLOCK);
         SurfaceRules.RuleSource bedrockFill = SurfaceRules.sequence(SurfaceRules.ifTrue(isAtBedrockLevel, LUNARBEDROCK));
         
         return SurfaceRules.sequence(
@@ -27,7 +29,7 @@ public class ModSurfaceRules {
                 	SurfaceRules.ifTrue(SurfaceRules.ON_FLOOR, grassSurface)
                 )),
         		SurfaceRules.sequence(SurfaceRules.ifTrue(SurfaceRules.isBiome(ModBiomes.LUNAR_FORESTS), 
-                    	SurfaceRules.ifTrue(SurfaceRules.UNDER_FLOOR, grassSurface)
+                    	SurfaceRules.ifTrue(SurfaceRules.UNDER_FLOOR, dirtSurface)
                     )),
         		SurfaceRules.sequence(SurfaceRules.ifTrue(SurfaceRules.isBiome(ModBiomes.LUNAR_FORESTS), 
                     	SurfaceRules.ifTrue(SurfaceRules.DEEP_UNDER_FLOOR, bedrockFill)
@@ -45,7 +47,7 @@ public class ModSurfaceRules {
                     SurfaceRules.ifTrue(SurfaceRules.ON_FLOOR, grassSurface)
                 )),
         		SurfaceRules.sequence(SurfaceRules.ifTrue(SurfaceRules.isBiome(ModBiomes.SKYWORD_MOUNTAINS), 
-                        SurfaceRules.ifTrue(SurfaceRules.UNDER_FLOOR, grassSurface)
+                        SurfaceRules.ifTrue(SurfaceRules.UNDER_FLOOR, dirtSurface)
                     )),
         		SurfaceRules.sequence(SurfaceRules.ifTrue(SurfaceRules.isBiome(ModBiomes.SKYWORD_MOUNTAINS), 
                         SurfaceRules.ifTrue(SurfaceRules.DEEP_UNDER_FLOOR, bedrockFill)
@@ -54,7 +56,7 @@ public class ModSurfaceRules {
                     SurfaceRules.ifTrue(SurfaceRules.ON_FLOOR, sandSurface)
                 )),
         		SurfaceRules.sequence(SurfaceRules.ifTrue(SurfaceRules.isBiome(ModBiomes.SLEEPING_SANDS), 
-                        SurfaceRules.ifTrue(SurfaceRules.UNDER_FLOOR, sandSurface)
+                        SurfaceRules.ifTrue(SurfaceRules.UNDER_FLOOR, sandstoneSurface)
                     )),
         		SurfaceRules.sequence(SurfaceRules.ifTrue(SurfaceRules.isBiome(ModBiomes.SLEEPING_SANDS), 
                         SurfaceRules.ifTrue(SurfaceRules.DEEP_UNDER_FLOOR, bedrockFill)

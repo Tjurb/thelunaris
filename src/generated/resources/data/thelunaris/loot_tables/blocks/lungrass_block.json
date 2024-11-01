@@ -13,36 +13,36 @@
                 {
                   "condition": "minecraft:match_tool",
                   "predicate": {
-                    "items": [
-                      "minecraft:shears"
+                    "enchantments": [
+                      {
+                        "enchantment": "minecraft:silk_touch",
+                        "levels": {
+                          "min": 1
+                        }
+                      }
                     ]
                   }
                 }
               ],
-              "name": "thelunaris:lungrass"
+              "name": "thelunaris:lungrass_block"
             },
             {
               "type": "minecraft:item",
-              "conditions": [
-                {
-                  "chance": 0.125,
-                  "condition": "minecraft:random_chance"
-                }
-              ],
               "functions": [
                 {
-                  "enchantment": "minecraft:fortune",
-                  "formula": "minecraft:uniform_bonus_count",
-                  "function": "minecraft:apply_bonus",
-                  "parameters": {
-                    "bonusMultiplier": 2
-                  }
+                  "add": false,
+                  "count": {
+                    "type": "minecraft:uniform",
+                    "max": 1.0,
+                    "min": 1.0
+                  },
+                  "function": "minecraft:set_count"
                 },
                 {
                   "function": "minecraft:explosion_decay"
                 }
               ],
-              "name": "thelunaris:lunar_wheat_seeds"
+              "name": "thelunaris:lundirt"
             }
           ]
         }
@@ -50,5 +50,5 @@
       "rolls": 1.0
     }
   ],
-  "random_sequence": "thelunaris:blocks/lungrass"
+  "random_sequence": "thelunaris:blocks/lungrass_block"
 }

@@ -4,18 +4,24 @@ import java.util.List;
 
 import net.minecraft.core.registries.Registries;
 import net.minecraft.data.worldgen.BootstapContext;
+import net.minecraft.data.worldgen.features.FeatureUtils;
+import net.minecraft.data.worldgen.placement.PlacementUtils;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.util.valueproviders.ConstantInt;
+import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.levelgen.feature.ConfiguredFeature;
 import net.minecraft.world.level.levelgen.feature.Feature;
 import net.minecraft.world.level.levelgen.feature.configurations.FeatureConfiguration;
 import net.minecraft.world.level.levelgen.feature.configurations.OreConfiguration;
+import net.minecraft.world.level.levelgen.feature.configurations.RandomPatchConfiguration;
+import net.minecraft.world.level.levelgen.feature.configurations.SimpleBlockConfiguration;
 import net.minecraft.world.level.levelgen.feature.configurations.TreeConfiguration;
 import net.minecraft.world.level.levelgen.feature.featuresize.TwoLayersFeatureSize;
 import net.minecraft.world.level.levelgen.feature.foliageplacers.BlobFoliagePlacer;
 import net.minecraft.world.level.levelgen.feature.stateproviders.BlockStateProvider;
 import net.minecraft.world.level.levelgen.feature.trunkplacers.StraightTrunkPlacer;
+import net.minecraft.world.level.levelgen.placement.PlacedFeature;
 import net.minecraft.world.level.levelgen.structure.templatesystem.RuleTest;
 import net.minecraft.world.level.levelgen.structure.templatesystem.TagMatchTest;
 import net.ttttoooo.thelunaris.TheLunaris;
@@ -35,6 +41,10 @@ public class ModConfiguredFeatures {
 	public static final ResourceKey<ConfiguredFeature<?, ?>> CELEST_KEY = registerKey("celest");
 	public static final ResourceKey<ConfiguredFeature<?, ?>> STELLAR_KEY = registerKey("stellar");
 	public static final ResourceKey<ConfiguredFeature<?, ?>> SKYOAK_KEY = registerKey("skyoak");
+	
+	//vegetation keys
+	public static final ResourceKey<ConfiguredFeature<?, ?>> LUNARIS_GRASS_PATCH_KEY = registerKey("lunaris_lungrass_patch");
+	public static final ResourceKey<ConfiguredFeature<?, ?>> SINGLE_PIECE_OF_LUNGRASS = registerKey("lunaris_lungrass_single");
 	
 	public static void bootstrap(BootstapContext<ConfiguredFeature<?, ?>> context) {
 		//ore register
@@ -76,10 +86,21 @@ public class ModConfiguredFeatures {
         		BlockStateProvider.simple(ModBlocks.SKYOAK_LEAVES.get()),
         		new BlobFoliagePlacer(ConstantInt.of(3), ConstantInt.of(2), 4),
         		new TwoLayersFeatureSize(2, 0, 2)).build());
-    }
+        
+        //vegetation register
+        register(context, LUNARIS_GRASS_PATCH_KEY, Feature.RANDOM_PATCH,
+        		grassPatch(BlockStateProvider.simple(ModBlocks.LUNGRASS.get()), 32));
+
+        register(context, SINGLE_PIECE_OF_LUNGRASS, Feature.SIMPLE_BLOCK, 
+        		new SimpleBlockConfiguration(BlockStateProvider.simple(ModBlocks.LUNGRASS.get().defaultBlockState())));
+        }
 
 	public static ResourceKey<ConfiguredFeature<?, ?>> registerKey(String name) {
 		return ResourceKey.create(Registries.CONFIGURED_FEATURE, new ResourceLocation(TheLunaris.MODID, name));
+	}
+
+	private static RandomPatchConfiguration grassPatch(BlockStateProvider p_195203_, int p_195204_) {
+	      return FeatureUtils.simpleRandomPatchConfiguration(p_195204_, PlacementUtils.onlyWhenEmpty(Feature.SIMPLE_BLOCK, new SimpleBlockConfiguration(p_195203_)));
 	}
 	   
 	private static <FC extends FeatureConfiguration, F extends Feature<FC>> void register(BootstapContext<ConfiguredFeature<?, ?>> context,

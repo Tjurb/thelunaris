@@ -5,12 +5,14 @@ import java.util.Set;
 import net.minecraft.data.loot.BlockLootSubProvider;
 import net.minecraft.world.flag.FeatureFlags;
 import net.minecraft.world.item.Item;
+import net.minecraft.world.item.Items;
 import net.minecraft.world.item.enchantment.Enchantments;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.storage.loot.LootTable;
 import net.minecraft.world.level.storage.loot.entries.LootItem;
 import net.minecraft.world.level.storage.loot.functions.ApplyBonusCount;
 import net.minecraft.world.level.storage.loot.functions.SetItemCountFunction;
+import net.minecraft.world.level.storage.loot.predicates.LootItemRandomChanceCondition;
 import net.minecraft.world.level.storage.loot.providers.number.UniformGenerator;
 import net.minecraftforge.registries.RegistryObject;
 import net.ttttoooo.thelunaris.block.ModBlocks;
@@ -52,8 +54,8 @@ public class ModBlockLootTables extends BlockLootSubProvider{
 		this.dropSelf(ModBlocks.SMOOTHMARBLE_WALL.get());
 		
 
-		this.add(ModBlocks.LUNGRASS.get(),
-				block -> createGrassLikeDrops(ModBlocks.LUNGRASS.get(), ModBlocks.LUNDIRT.get()));
+		this.add(ModBlocks.LUNGRASS_BLOCK.get(),
+				block -> createGrassBlockLikeDrops(ModBlocks.LUNGRASS_BLOCK.get(), ModBlocks.LUNDIRT.get()));
 		this.dropSelf(ModBlocks.LUNDIRT.get());
 		this.dropSelf(ModBlocks.LUNSAND.get());
 		this.dropSelf(ModBlocks.LUNSANDSTONE.get());
@@ -110,15 +112,26 @@ public class ModBlockLootTables extends BlockLootSubProvider{
 		this.add(ModBlocks.LUNSANDSTONE_SLAB.get(),
 				block -> createSlabItemTable(ModBlocks.LUNSANDSTONE_SLAB.get()));
 		
-		//Leaf Blocks || TO DO CHANGE TO SAPLINGS
+		//Leaf Blocks
 		this.add(ModBlocks.STELLAR_LEAVES.get(), block ->
 			createLeavesDrops(block, ModBlocks.STELLAR_SAPLING.get(), NORMAL_LEAVES_SAPLING_CHANCES));
 		this.add(ModBlocks.CELEST_LEAVES.get(), block ->
 			createLeavesDrops(block, ModBlocks.CELEST_SAPLING.get(), NORMAL_LEAVES_SAPLING_CHANCES));
 		this.add(ModBlocks.SKYOAK_LEAVES.get(), block ->
 			createLeavesDrops(block, ModBlocks.SKYOAK_SAPLING.get(), NORMAL_LEAVES_SAPLING_CHANCES));
+		
+		//Nature Blocks
+		this.add(ModBlocks.LUNGRASS.get(), block ->
+			createGrassLikeDrops(block));
 
 	}
+	
+	protected LootTable.Builder createGrassLikeDrops(Block p_252139_) {
+	      return createShearsDispatchTable(p_252139_, 
+	    		  this.applyExplosionDecay(p_252139_, 
+	    				  LootItem.lootTableItem(ModItems.LUNAR_WHEAT_SEEDS.get()).when(LootItemRandomChanceCondition.randomChance(0.125F))
+	    				  .apply(ApplyBonusCount.addUniformBonusCount(Enchantments.BLOCK_FORTUNE, 2))));
+	   }
 	
 	protected LootTable.Builder createDiamondLikeOreDrops(Block pBlock, Item item){
 		return createSilkTouchDispatchTable(pBlock,
@@ -136,7 +149,7 @@ public class ModBlockLootTables extends BlockLootSubProvider{
 						.apply(ApplyBonusCount.addOreBonusCount(Enchantments.BLOCK_FORTUNE))));
 	}
 	
-	protected LootTable.Builder createGrassLikeDrops(Block pBlock, Block Block){
+	protected LootTable.Builder createGrassBlockLikeDrops(Block pBlock, Block Block){
 		return createSilkTouchDispatchTable(pBlock,
 				this.applyExplosionDecay(pBlock,
 						LootItem.lootTableItem(Block)

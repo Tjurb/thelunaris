@@ -42,7 +42,8 @@
     [],
     [
       "thelunaris:celest_placed",
-      "thelunaris:stellar_placed"
+      "thelunaris:stellar_placed",
+      "thelunaris:lunaris_grass_patch_placed"
     ]
   ],
   "has_precipitation": false,

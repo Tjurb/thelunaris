@@ -35,6 +35,7 @@ public class ModBlockStateProvider extends BlockStateProvider{
 		blockWithItem(ModBlocks.MOONDIALBLOCK);
 		blockWithItem(ModBlocks.LUNAR_CRAFTER);
 		blockWithItem(ModBlocks.LUNARIS_BEDROCK);
+		blockWithItem(ModBlocks.LUNARPORTAL_BLOCK);
 
 		simpleBlockExisting(ModBlocks.LUNARITE_BLOCK.get());
 		blockWithItem(ModBlocks.EMOONSTEEL_BLOCK);
@@ -44,7 +45,7 @@ public class ModBlockStateProvider extends BlockStateProvider{
 		
 		//terrain blocks
 		blockWithItem(ModBlocks.LUNDIRT);
-		blockWithItem(ModBlocks.LUNGRASS);
+		blockWithItem(ModBlocks.LUNGRASS_BLOCK);
 		blockWithItem(ModBlocks.LUNSAND);
 		blockWithItem(ModBlocks.LUNSANDSTONE);
 		stairsBlock(((StairBlock) ModBlocks.LUNSANDSTONE_STAIRS.get()), blockTexture(ModBlocks.LUNSANDSTONE.get()));
@@ -134,7 +135,9 @@ public class ModBlockStateProvider extends BlockStateProvider{
 		blockWithItem(ModBlocks.MOONSTEEL_ORE);
 		blockWithItem(ModBlocks.LABRADORITE_ORE);
 		
-		blockWithItem(ModBlocks.LUNARPORTAL_BLOCK);
+		//nature blocks
+		saplingBlock(ModBlocks.LUNGRASS);
+		
 		
 	}
 	

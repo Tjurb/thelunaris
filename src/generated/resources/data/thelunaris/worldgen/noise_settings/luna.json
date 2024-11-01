@@ -402,7 +402,7 @@
                     "then_run": {
                       "type": "minecraft:block",
                       "result_state": {
-                        "Name": "thelunaris:lungrass",
+                        "Name": "thelunaris:lungrass_block",
                         "Properties": {
                           "snowy": "false"
                         }
@@ -455,17 +455,17 @@
                     "then_run": {
                       "type": "minecraft:block",
                       "result_state": {
-                        "Name": "thelunaris:lungrass",
-                        "Properties": {
-                          "snowy": "false"
-                        }
+                        "Name": "thelunaris:lundirt"
                       }
                     }
                   },
                   {
                     "type": "minecraft:block",
                     "result_state": {
-                      "Name": "thelunaris:lundirt"
+                      "Name": "thelunaris:lungrass_block",
+                      "Properties": {
+                        "snowy": "false"
+                      }
                     }
                   }
                 ]
@@ -704,7 +704,7 @@
                     "then_run": {
                       "type": "minecraft:block",
                       "result_state": {
-                        "Name": "thelunaris:lungrass",
+                        "Name": "thelunaris:lungrass_block",
                         "Properties": {
                           "snowy": "false"
                         }
@@ -757,17 +757,17 @@
                     "then_run": {
                       "type": "minecraft:block",
                       "result_state": {
-                        "Name": "thelunaris:lungrass",
-                        "Properties": {
-                          "snowy": "false"
-                        }
+                        "Name": "thelunaris:lundirt"
                       }
                     }
                   },
                   {
                     "type": "minecraft:block",
                     "result_state": {
-                      "Name": "thelunaris:lundirt"
+                      "Name": "thelunaris:lungrass_block",
+                      "Properties": {
+                        "snowy": "false"
+                      }
                     }
                   }
                 ]
@@ -908,14 +908,14 @@
                     "then_run": {
                       "type": "minecraft:block",
                       "result_state": {
-                        "Name": "thelunaris:lunsand"
+                        "Name": "thelunaris:lunsandstone"
                       }
                     }
                   },
                   {
                     "type": "minecraft:block",
                     "result_state": {
-                      "Name": "thelunaris:lunsandstone"
+                      "Name": "thelunaris:lunsand"
                     }
                   }
                 ]

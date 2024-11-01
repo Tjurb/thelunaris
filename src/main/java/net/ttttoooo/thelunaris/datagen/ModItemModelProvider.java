@@ -30,6 +30,7 @@ public class ModItemModelProvider extends ItemModelProvider{
 		simpleItem(ModItems.EMOONSTEEL);
 		simpleItem(ModItems.LUNARITE);
 		simpleItem(ModItems.LUNAR_WHEAT);
+		simpleItem(ModItems.LUNAR_WHEAT_SEEDS);
 		
 		simpleItem(ModItems.LOONBERRY);
 		simpleItem(ModItems.ARCHFISH);
@@ -98,6 +99,9 @@ public class ModItemModelProvider extends ItemModelProvider{
 		saplingItem(ModBlocks.CELEST_SAPLING);
 		saplingItem(ModBlocks.STELLAR_SAPLING);
 		saplingItem(ModBlocks.SKYOAK_SAPLING);
+		
+		//nature
+		saplingItem(ModBlocks.LUNGRASS);
 	}
 	
 	private ItemModelBuilder saplingItem(RegistryObject<Block> item) {

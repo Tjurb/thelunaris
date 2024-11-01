@@ -34,6 +34,7 @@
     "item.thelunaris.lunarite_hoe": "Lunarite Hoe",
 
     "item.thelunaris.lunar_wheat": "Lunar Wheat",
+    "item.thelunaris.lunar_wheat_seeds": "Lunar Wheat Seeds",
     "item.thelunaris.loonberry": "Loonberries",
     "item.thelunaris.archfish": "Archfish",
     "item.thelunaris.sarrot": "Sarrot",
@@ -45,6 +46,7 @@
     "item.thelunaris.archfish_spawn_egg": "Archfish Spawn Egg",
 
     "block.thelunaris.moondialblock": "Moondial",
+    "block.thelunaris.lunar_crafter": "Lunar Crafter",
     "block.thelunaris.lunarite_block": "Lunarite Block",
     "block.thelunaris.emoonsteel_block": "Ethereal Moon Steel Block",
     "block.thelunaris.moonsteel_block": "Moon Steel Block",
@@ -86,6 +88,7 @@
     "block.thelunaris.skyoak_planks": "Skyoak Planks",
     
     "block.thelunaris.lunsgrass": "Lun Grass",
+    "block.thelunaris.lunsgrass_block": "Lun Grass Block",
     "block.thelunaris.lundirt": "Lun Dirt",
     "block.thelunaris.lunsand": "Lun Sand",
     "block.thelunaris.lunsandstone": "Lun Sandstone",
@@ -93,6 +96,7 @@
     "block.thelunaris.lunsandstone_slab": "Lun Sandstone Slab",
     "block.thelunaris.lunsandstone_wall": "Lun Sandstone Wall",
 
+    "block.thelunaris.lunaris_bedrock": "Lunaris Bedrock",
     "block.thelunaris.vailstone": "Vailstone",
     "block.thelunaris.vailstonebrick_stairs": "Vailstone Bricks Stairs",
     "block.thelunaris.vailstonebrick_slab": "Vailstone Bricks Slab",

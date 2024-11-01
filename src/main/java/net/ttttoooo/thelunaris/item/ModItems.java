@@ -36,6 +36,8 @@ public class ModItems {
 			() -> new Item(new Item.Properties()));
 	public static final RegistryObject<Item> LUNAR_WHEAT = ITEMS.register("lunar_wheat", 
 			() -> new Item(new Item.Properties()));
+	public static final RegistryObject<Item> LUNAR_WHEAT_SEEDS = ITEMS.register("lunar_wheat_seeds", 
+			() -> new Item(new Item.Properties()));
 	
 	//foods
 	public static final RegistryObject<Item> LOONBERRY = ITEMS.register("loonberry", 

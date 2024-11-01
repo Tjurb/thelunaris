@@ -65,7 +65,7 @@ public class ModBlockTagGenerator extends BlockTagsProvider{
 		
 		this.tag(BlockTags.DIRT)
 			.add(ModBlocks.LUNDIRT.get(),
-					ModBlocks.LUNGRASS.get());
+					ModBlocks.LUNGRASS_BLOCK.get());
 		
 		this.tag(BlockTags.SAND)
 			.add(ModBlocks.LUNSAND.get());
@@ -79,7 +79,7 @@ public class ModBlockTagGenerator extends BlockTagsProvider{
 		this.tag(BlockTags.MINEABLE_WITH_SHOVEL)
 			.add(ModBlocks.LUNDIRT.get(),
 					ModBlocks.LUNSAND.get(),
-					ModBlocks.LUNGRASS.get());
+					ModBlocks.LUNGRASS_BLOCK.get());
 		
 		this.tag(ModTags.Blocks.NEEDS_MOONSTEEL_TOOL)
 			.add(ModBlocks.MOONDIALBLOCK.get(),

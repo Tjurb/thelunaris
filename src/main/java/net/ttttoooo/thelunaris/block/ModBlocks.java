@@ -11,21 +11,26 @@ import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
+import net.minecraft.world.level.block.BushBlock;
 import net.minecraft.world.level.block.DropExperienceBlock;
+import net.minecraft.world.level.block.FlowerBlock;
 import net.minecraft.world.level.block.GrassBlock;
 import net.minecraft.world.level.block.LeavesBlock;
 import net.minecraft.world.level.block.SaplingBlock;
 import net.minecraft.world.level.block.SlabBlock;
 import net.minecraft.world.level.block.SoundType;
 import net.minecraft.world.level.block.StairBlock;
+import net.minecraft.world.level.block.TallGrassBlock;
 import net.minecraft.world.level.block.WallBlock;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.block.state.BlockState;
+import net.minecraft.world.level.material.MapColor;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
 import net.ttttoooo.thelunaris.TheLunaris;
+import net.ttttoooo.thelunaris.block.custom.LunGrassBlock;
 import net.ttttoooo.thelunaris.block.custom.ModFlammableRotatedPillarBlock;
 import net.ttttoooo.thelunaris.block.custom.portal.ModPortalBlock;
 import net.ttttoooo.thelunaris.item.ModItems;
@@ -37,7 +42,7 @@ public class ModBlocks {
 	public static final DeferredRegister<Block> BLOCKS =
 			DeferredRegister.create(ForgeRegistries.BLOCKS, TheLunaris.MODID);
 	
-//Special Blocks
+	//Special Blocks
 	public static final RegistryObject<Block> MOONDIALBLOCK = registerBlock("moondialblock", 
 			() -> new Block(BlockBehaviour.Properties.copy(Blocks.IRON_BLOCK).sound(SoundType.ANCIENT_DEBRIS)));
 	public static final RegistryObject<Block> LUNAR_CRAFTER = registerBlock("lunar_crafter", 
@@ -48,7 +53,7 @@ public class ModBlocks {
 	public static final RegistryObject<Block> LUNARIS_BEDROCK = registerBlock("lunaris_bedrock", 
 			() -> new Block(BlockBehaviour.Properties.copy(Blocks.BEDROCK).sound(SoundType.ANCIENT_DEBRIS).noLootTable()));
 	
-//Condensed Blocks	
+	//Condensed Blocks	
 	public static final RegistryObject<Block> RAW_MOONSTEEL_BLOCK = registerBlock("raw_moonsteel_block", 
 			() -> new Block(BlockBehaviour.Properties.copy(Blocks.RAW_IRON_BLOCK).sound(SoundType.METAL)));
 	public static final RegistryObject<Block> MOONSTEEL_BLOCK = registerBlock("moonsteel_block", 
@@ -60,11 +65,11 @@ public class ModBlocks {
 	public static final RegistryObject<Block> LABRADORITE_BLOCK = registerBlock("labradorite_block", 
 			() -> new Block(BlockBehaviour.Properties.copy(Blocks.IRON_BLOCK).sound(SoundType.STONE)));
 	
-//Dirt and Sand Blocks	
+	//Dirt and Sand Blocks	
 	public static final RegistryObject<Block> LUNDIRT = registerBlock("lundirt", 
 			() -> new Block(BlockBehaviour.Properties.copy(Blocks.DIRT).sound(SoundType.GRAVEL)));
-	public static final RegistryObject<Block> LUNGRASS = registerBlock("lungrass", 
-			() -> new GrassBlock(BlockBehaviour.Properties.copy(Blocks.GRASS_BLOCK).sound(SoundType.GRASS)));
+	public static final RegistryObject<Block> LUNGRASS_BLOCK = registerBlock("lungrass_block", 
+			() -> new LunGrassBlock(BlockBehaviour.Properties.copy(Blocks.GRASS_BLOCK).sound(SoundType.GRASS)));
 	public static final RegistryObject<Block> LUNSAND = registerBlock("lunsand", 
 			() -> new Block(BlockBehaviour.Properties.copy(Blocks.SAND).sound(SoundType.SAND)));
 	public static final RegistryObject<Block> LUNSANDSTONE = registerBlock("lunsandstone", 
@@ -300,7 +305,7 @@ public class ModBlocks {
                 }
 			});
 	
-//Sapling Blocks
+	//Sapling Blocks
 	public static final RegistryObject<Block> CELEST_SAPLING = registerBlock("celest_sapling", 
 			() -> new SaplingBlock(new CelestTreeGrower(), BlockBehaviour.Properties.copy(Blocks.OAK_SAPLING)));
 	public static final RegistryObject<Block> STELLAR_SAPLING = registerBlock("stellar_sapling", 
@@ -308,7 +313,7 @@ public class ModBlocks {
 	public static final RegistryObject<Block> SKYOAK_SAPLING = registerBlock("skyoak_sapling", 
 			() -> new SaplingBlock(new SkyoakTreeGrower(), BlockBehaviour.Properties.copy(Blocks.OAK_SAPLING)));
 	
-//Stripped Logs
+	//Stripped Logs
 	public static final RegistryObject<Block> STRIPPED_CELEST_LOG = registerBlock("stripped_celest_log", 
 			() -> new ModFlammableRotatedPillarBlock(BlockBehaviour.Properties.copy(Blocks.OAK_LOG).sound(SoundType.WOOD).strength(3f)));
 	public static final RegistryObject<Block> STRIPPED_CELEST_WOOD = registerBlock("stripped_celest_wood", 
@@ -324,7 +329,7 @@ public class ModBlocks {
 	public static final RegistryObject<Block> STRIPPED_SKYOAK_WOOD = registerBlock("stripped_skyoak_wood", 
 			() -> new ModFlammableRotatedPillarBlock(BlockBehaviour.Properties.copy(Blocks.OAK_WOOD).sound(SoundType.WOOD).strength(3f)));
 	
-//Vailstone Blocks
+	//Vailstone Blocks
 	public static final RegistryObject<Block> VAILSTONE = registerBlock("vailstone", 
 			() -> new Block(BlockBehaviour.Properties.copy(Blocks.STONE).sound(SoundType.STONE)));
 	public static final RegistryObject<Block> VAILSTONEBRICK = registerBlock("vailstonebrick", 
@@ -337,7 +342,7 @@ public class ModBlocks {
 	public static final RegistryObject<Block> VAILSTONEBRICK_WALL = registerBlock("vailstonebrick_wall", 
 			() -> new WallBlock(BlockBehaviour.Properties.copy(Blocks.STONE_BRICKS).sound(SoundType.STONE)));
 	
-//Additional Stone Blocks
+	//Additional Stone Blocks
 	public static final RegistryObject<Block> LUNARSHALE = registerBlock("lunarshale", 
 			() -> new Block(BlockBehaviour.Properties.copy(Blocks.STONE).sound(SoundType.STONE)));
 	public static final RegistryObject<Block> LUNARSLATE = registerBlock("lunarslate", 
@@ -376,7 +381,7 @@ public class ModBlocks {
 	public static final RegistryObject<Block> SMOOTHMARBLE_WALL = registerBlock("smoothmarble_wall", 
 			() -> new WallBlock(BlockBehaviour.Properties.copy(Blocks.STONE).sound(SoundType.STONE)));	
 	
-//Ore Blocks
+	//Ore Blocks
 	public static final RegistryObject<Block> LUNARITE_ORE = registerBlock("lunarite_ore", 
 			() -> new DropExperienceBlock(BlockBehaviour.Properties.copy(Blocks.STONE).strength(3f)
 					.requiresCorrectToolForDrops(), UniformInt.of(3, 7)));
@@ -386,6 +391,10 @@ public class ModBlocks {
 	public static final RegistryObject<Block> LABRADORITE_ORE = registerBlock("labradorite_ore", 
 			() -> new DropExperienceBlock(BlockBehaviour.Properties.copy(Blocks.STONE).strength(2f)
 					.requiresCorrectToolForDrops(), UniformInt.of(2, 5)));
+	
+	//vegetation blocks
+	public static final RegistryObject<Block> LUNGRASS = registerBlock("lungrass",
+            () -> new TallGrassBlock(BlockBehaviour.Properties.copy(Blocks.GRASS)));
 	
 	private static <T extends Block> RegistryObject<T> registerBlock(String name, Supplier<T> block){
 		RegistryObject<T> toReturn = BLOCKS.register(name, block);
