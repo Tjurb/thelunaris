@@ -42,11 +42,16 @@ public class LunarisNoiseBuilder {
         return createNoiseRouter(densityFunctions, noise);
     }
 
-    private static DensityFunction buildFinalDensity(HolderGetter<DensityFunction> densityFunctions, DensityFunction densityFunction) {
+    private static DensityFunction oldbuildFinalDensity(HolderGetter<DensityFunction> densityFunctions, DensityFunction densityFunction) {
         DensityFunction density = getFunction(densityFunctions, ResourceKey.create(Registries.DENSITY_FUNCTION, new ResourceLocation(TheLunaris.MODID,"base_3d_noise_lunaris")));
         density = DensityFunctions.add(densityFunction, density);
         return density = DensityFunctions.mul(DensityFunctions.interpolated(density),
         		DensityFunctions.constant(0.62D)).squeeze();
+    }
+    
+    private static DensityFunction buildFinalDensity(DensityFunction p_224493_) {
+       DensityFunction densityfunction = DensityFunctions.blendDensity(p_224493_);
+       return DensityFunctions.mul(DensityFunctions.interpolated(densityfunction), DensityFunctions.constant(0.64D)).squeeze();
     }
     
     //[CODE COPY] - {@link NoiseRouterData#overworld(HolderGetter, HolderGetter, DensityFunction)}.<br><br>
@@ -77,7 +82,7 @@ public class LunarisNoiseBuilder {
         DensityFunction slopedcheese = getFunction(densityFunctions, LunarisDensityFunctions.SLOPED_CHEESE);
         DensityFunction densityfunction12 = DensityFunctions.min(slopedcheese, DensityFunctions.mul(DensityFunctions.constant(5.0D), getFunction(densityFunctions, LunarisDensityFunctions.ENTRANCES)));
         DensityFunction densityfunction13 = DensityFunctions.rangeChoice(slopedcheese, -1000000.0D, 1.5625D, densityfunction12, LunarisDensityFunctions.underground(densityFunctions, noise, slopedcheese));
-        DensityFunction finaldensity = DensityFunctions.min(buildFinalDensity(densityFunctions ,LunarisDensityFunctions.slideLunaris(densityfunction13)), getFunction(densityFunctions, LunarisDensityFunctions.NOODLE));
+        DensityFunction finaldensity = DensityFunctions.min(buildFinalDensity(LunarisDensityFunctions.slideLunaris(densityfunction13)), getFunction(densityFunctions, LunarisDensityFunctions.NOODLE));
         
         DensityFunction densityfunction15 = getFunction(densityFunctions, LunarisDensityFunctions.Y);
 

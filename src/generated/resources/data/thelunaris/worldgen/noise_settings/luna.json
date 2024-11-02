@@ -48,12 +48,12 @@
         "type": "minecraft:squeeze",
         "argument": {
           "type": "minecraft:mul",
-          "argument1": 0.62,
+          "argument1": 0.64,
           "argument2": {
             "type": "minecraft:interpolated",
             "argument": {
-              "type": "minecraft:add",
-              "argument1": {
+              "type": "minecraft:blend_density",
+              "argument": {
                 "type": "minecraft:add",
                 "argument1": 0.1171875,
                 "argument2": {
@@ -174,8 +174,7 @@
                     }
                   }
                 }
-              },
-              "argument2": "thelunaris:base_3d_noise_lunaris"
+              }
             }
           }
         }
@@ -374,6 +373,48 @@
           {
             "type": "minecraft:condition",
             "if_true": {
+              "type": "minecraft:vertical_gradient",
+              "false_at_and_above": {
+                "above_bottom": 5
+              },
+              "random_name": "minecraft:bedrock_floor",
+              "true_at_and_below": {
+                "above_bottom": 0
+              }
+            },
+            "then_run": {
+              "type": "minecraft:sequence",
+              "sequence": [
+                {
+                  "type": "minecraft:condition",
+                  "if_true": {
+                    "type": "minecraft:vertical_gradient",
+                    "false_at_and_above": {
+                      "above_bottom": 5
+                    },
+                    "random_name": "minecraft:bedrock_floor",
+                    "true_at_and_below": {
+                      "above_bottom": 0
+                    }
+                  },
+                  "then_run": {
+                    "type": "minecraft:block",
+                    "result_state": {
+                      "Name": "thelunaris:lunaris_bedrock"
+                    }
+                  }
+                }
+              ]
+            }
+          }
+        ]
+      },
+      {
+        "type": "minecraft:sequence",
+        "sequence": [
+          {
+            "type": "minecraft:condition",
+            "if_true": {
               "type": "minecraft:biome",
               "biome_is": [
                 "thelunaris:lunar_forests"
@@ -462,58 +503,7 @@
                   {
                     "type": "minecraft:block",
                     "result_state": {
-                      "Name": "thelunaris:lungrass_block",
-                      "Properties": {
-                        "snowy": "false"
-                      }
-                    }
-                  }
-                ]
-              }
-            }
-          }
-        ]
-      },
-      {
-        "type": "minecraft:sequence",
-        "sequence": [
-          {
-            "type": "minecraft:condition",
-            "if_true": {
-              "type": "minecraft:biome",
-              "biome_is": [
-                "thelunaris:lunar_forests"
-              ]
-            },
-            "then_run": {
-              "type": "minecraft:condition",
-              "if_true": {
-                "type": "minecraft:stone_depth",
-                "add_surface_depth": true,
-                "offset": 0,
-                "secondary_depth_range": 6,
-                "surface_type": "floor"
-              },
-              "then_run": {
-                "type": "minecraft:sequence",
-                "sequence": [
-                  {
-                    "type": "minecraft:condition",
-                    "if_true": {
-                      "type": "minecraft:vertical_gradient",
-                      "false_at_and_above": {
-                        "above_bottom": 5
-                      },
-                      "random_name": "minecraft:bedrock_floor",
-                      "true_at_and_below": {
-                        "above_bottom": 0
-                      }
-                    },
-                    "then_run": {
-                      "type": "minecraft:block",
-                      "result_state": {
-                        "Name": "thelunaris:lunaris_bedrock"
-                      }
+                      "Name": "thelunaris:lundirt"
                     }
                   }
                 ]
@@ -630,54 +620,6 @@
             "if_true": {
               "type": "minecraft:biome",
               "biome_is": [
-                "thelunaris:azureite_ocean"
-              ]
-            },
-            "then_run": {
-              "type": "minecraft:condition",
-              "if_true": {
-                "type": "minecraft:stone_depth",
-                "add_surface_depth": true,
-                "offset": 0,
-                "secondary_depth_range": 6,
-                "surface_type": "floor"
-              },
-              "then_run": {
-                "type": "minecraft:sequence",
-                "sequence": [
-                  {
-                    "type": "minecraft:condition",
-                    "if_true": {
-                      "type": "minecraft:vertical_gradient",
-                      "false_at_and_above": {
-                        "above_bottom": 5
-                      },
-                      "random_name": "minecraft:bedrock_floor",
-                      "true_at_and_below": {
-                        "above_bottom": 0
-                      }
-                    },
-                    "then_run": {
-                      "type": "minecraft:block",
-                      "result_state": {
-                        "Name": "thelunaris:lunaris_bedrock"
-                      }
-                    }
-                  }
-                ]
-              }
-            }
-          }
-        ]
-      },
-      {
-        "type": "minecraft:sequence",
-        "sequence": [
-          {
-            "type": "minecraft:condition",
-            "if_true": {
-              "type": "minecraft:biome",
-              "biome_is": [
                 "thelunaris:skyword_mountains"
               ]
             },
@@ -764,58 +706,7 @@
                   {
                     "type": "minecraft:block",
                     "result_state": {
-                      "Name": "thelunaris:lungrass_block",
-                      "Properties": {
-                        "snowy": "false"
-                      }
-                    }
-                  }
-                ]
-              }
-            }
-          }
-        ]
-      },
-      {
-        "type": "minecraft:sequence",
-        "sequence": [
-          {
-            "type": "minecraft:condition",
-            "if_true": {
-              "type": "minecraft:biome",
-              "biome_is": [
-                "thelunaris:skyword_mountains"
-              ]
-            },
-            "then_run": {
-              "type": "minecraft:condition",
-              "if_true": {
-                "type": "minecraft:stone_depth",
-                "add_surface_depth": true,
-                "offset": 0,
-                "secondary_depth_range": 6,
-                "surface_type": "floor"
-              },
-              "then_run": {
-                "type": "minecraft:sequence",
-                "sequence": [
-                  {
-                    "type": "minecraft:condition",
-                    "if_true": {
-                      "type": "minecraft:vertical_gradient",
-                      "false_at_and_above": {
-                        "above_bottom": 5
-                      },
-                      "random_name": "minecraft:bedrock_floor",
-                      "true_at_and_below": {
-                        "above_bottom": 0
-                      }
-                    },
-                    "then_run": {
-                      "type": "minecraft:block",
-                      "result_state": {
-                        "Name": "thelunaris:lunaris_bedrock"
-                      }
+                      "Name": "thelunaris:lundirt"
                     }
                   }
                 ]
@@ -915,55 +806,7 @@
                   {
                     "type": "minecraft:block",
                     "result_state": {
-                      "Name": "thelunaris:lunsand"
-                    }
-                  }
-                ]
-              }
-            }
-          }
-        ]
-      },
-      {
-        "type": "minecraft:sequence",
-        "sequence": [
-          {
-            "type": "minecraft:condition",
-            "if_true": {
-              "type": "minecraft:biome",
-              "biome_is": [
-                "thelunaris:sleeping_sands"
-              ]
-            },
-            "then_run": {
-              "type": "minecraft:condition",
-              "if_true": {
-                "type": "minecraft:stone_depth",
-                "add_surface_depth": true,
-                "offset": 0,
-                "secondary_depth_range": 6,
-                "surface_type": "floor"
-              },
-              "then_run": {
-                "type": "minecraft:sequence",
-                "sequence": [
-                  {
-                    "type": "minecraft:condition",
-                    "if_true": {
-                      "type": "minecraft:vertical_gradient",
-                      "false_at_and_above": {
-                        "above_bottom": 5
-                      },
-                      "random_name": "minecraft:bedrock_floor",
-                      "true_at_and_below": {
-                        "above_bottom": 0
-                      }
-                    },
-                    "then_run": {
-                      "type": "minecraft:block",
-                      "result_state": {
-                        "Name": "thelunaris:lunaris_bedrock"
-                      }
+                      "Name": "thelunaris:lunsandstone"
                     }
                   }
                 ]

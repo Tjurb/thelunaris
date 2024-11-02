@@ -30,7 +30,7 @@ public class ModEntities {
     //sea animals
     public static final RegistryObject<EntityType<ArchfishEntity>> ARCHFISH =
             ENTITY_TYPES.register("archfish", () -> EntityType.Builder.of(ArchfishEntity:: new, MobCategory.CREATURE)
-            		.sized(0.5F, 0.5F).build("archfish"));
+            		.sized(0.5F, 1.0F).build("archfish"));
 
     
 

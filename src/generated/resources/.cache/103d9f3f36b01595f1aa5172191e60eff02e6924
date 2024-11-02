@@ -1,8 +1,10 @@
-// 1.20.1	2024-11-01T21:16:30.7428967	Registries
+// 1.20.1	2024-11-01T23:42:20.5772871	Registries
 5de8d0b0fb695becfb4defbe506179777aef7a34 data/thelunaris/dimension/lunarisdim.json
 f6e871c13f59a845ba81f83665f9554b93d51595 data/thelunaris/dimension_type/lunarisdim_type.json
-b49b3f62eb938df9690e4f0afa2328099f654480 data/thelunaris/worldgen/biome/skyword_mountains.json
-8e901ec2c77962e035a05d9f268acf281eb28fab data/thelunaris/worldgen/biome/sleeping_sands.json
+4e4991b9e0ebdde86ce3286d221a6eb569a47b8f data/thelunaris/worldgen/biome/azureite_ocean.json
+389be74127d8899b78c98299f4c2e0129adbd525 data/thelunaris/worldgen/biome/lunar_forests.json
+369cfb094033830b88535be85cebd1076fe2a341 data/thelunaris/worldgen/biome/skyword_mountains.json
+5f75b254184807b10baa07a3d7e448a46068f23c data/thelunaris/worldgen/biome/sleeping_sands.json
 ee0b8a2508e35d922f8123665ec51a539e28d28e data/thelunaris/worldgen/configured_feature/celest.json
 a772d44b7723e5989003aaeac4f106c3cb159950 data/thelunaris/worldgen/configured_feature/labradorite_ore.json
 a772d44b7723e5989003aaeac4f106c3cb159950 data/thelunaris/worldgen/configured_feature/large_labradorite_ore.json
@@ -46,7 +48,7 @@ fb542cb5b2b090c0cae21e7e3f7be8b0ce5718e9 data/thelunaris/worldgen/noise/luna_jag
 345dc2d3a89e9032f123e13e8792e1ad3877907c data/thelunaris/worldgen/noise/luna_ridge.json
 44cb1ffa3023d6dcc48d1077ee9149eb453ac684 data/thelunaris/worldgen/noise/luna_temperature.json
 29fa7ffc0e32e1a570611169c13856a1c936214e data/thelunaris/worldgen/noise/luna_vegetation.json
-181ef371d53666fcc12b986b05bce8934c57c51b data/thelunaris/worldgen/noise_settings/luna.json
+2cad3534332becd86a0133b927aaad981a8a5c9e data/thelunaris/worldgen/noise_settings/luna.json
 68a4b1533b5ecfb6a0b42dd5ec69a5bd98d76a48 data/thelunaris/worldgen/placed_feature/celest_placed.json
 5d14d220daaddc00721a0aa5bfe8cd18fbef65bd data/thelunaris/worldgen/placed_feature/labradorite_ore_placed.json
 7a257b2d0e36e45fe449980956906398f6002b55 data/thelunaris/worldgen/placed_feature/large_labradorite_ore_placed.json
