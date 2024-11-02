@@ -145,6 +145,7 @@ public class ModCreativeTabs {
 				//SpawnEggs
 				pOutput.accept(ModItems.MOONCOW_SPANW_EGG.get());
 				pOutput.accept(ModItems.ARCHFISH_SPANW_EGG.get());
+				pOutput.accept(ModItems.MOONSNAIL_SPANW_EGG.get());
 				
 			})
 			.build());

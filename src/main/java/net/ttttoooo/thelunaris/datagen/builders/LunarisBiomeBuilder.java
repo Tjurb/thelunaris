@@ -91,6 +91,7 @@ public class LunarisBiomeBuilder {
                 new MobSpawnSettings.Builder()
             	.creatureGenerationProbability(0.25F)
             	.addSpawn(MobCategory.CREATURE, new MobSpawnSettings.SpawnerData(ModEntities.ARCHFISH.get(), 10, 3, 4))
+            	.addSpawn(MobCategory.CREATURE, new MobSpawnSettings.SpawnerData(ModEntities.MOONSNAIL.get(), 4, 2, 1))
             
                         .build(),
                         builder 
@@ -117,6 +118,7 @@ public class LunarisBiomeBuilder {
                 new MobSpawnSettings.Builder()
                 	.creatureGenerationProbability(0.25F)
                 	.addSpawn(MobCategory.CREATURE, new MobSpawnSettings.SpawnerData(ModEntities.MOONCOW.get(), 10, 3, 4))
+                	.addSpawn(MobCategory.CREATURE, new MobSpawnSettings.SpawnerData(ModEntities.MOONSNAIL.get(), 4, 2, 1))
                 
                 	.build(),
                         builder 

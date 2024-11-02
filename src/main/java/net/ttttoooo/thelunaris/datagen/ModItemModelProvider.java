@@ -42,6 +42,7 @@ public class ModItemModelProvider extends ItemModelProvider{
 		//Spawn Eggs
 		withExistingParent(ModItems.MOONCOW_SPANW_EGG.getId().getPath(), mcLoc("item/template_spawn_egg"));
 		withExistingParent(ModItems.ARCHFISH_SPANW_EGG.getId().getPath(), mcLoc("item/template_spawn_egg"));
+		withExistingParent(ModItems.MOONSNAIL_SPANW_EGG.getId().getPath(), mcLoc("item/template_spawn_egg"));
 		
 		//tools
 		handheldItem(ModItems.VAILSTONE_SWORD);

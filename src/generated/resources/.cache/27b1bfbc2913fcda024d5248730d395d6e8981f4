@@ -1,4 +1,4 @@
-// 1.20.1	2024-11-01T17:22:53.3868859	Item Models: thelunaris
+// 1.20.1	2024-11-01T21:28:13.1304332	Item Models: thelunaris
 b7176a2f31e02ede645f754b6b7dd43a1b142ecc assets/thelunaris/models/item/archfish.json
 63ec6c618a3a23eab4cab9c52d7d3250de9b516e assets/thelunaris/models/item/archfish_spawn_egg.json
 4859e1cbbad8939f755f19c212619cb750a0ba53 assets/thelunaris/models/item/celest_sapling.json
@@ -29,6 +29,7 @@ ee055d692d134558cc4b3dd88840b904ee5e1735 assets/thelunaris/models/item/lunsandst
 078bb8e3666fe30bd894dfc4b25c418de058f8f5 assets/thelunaris/models/item/lunsandstone_wall.json
 63ec6c618a3a23eab4cab9c52d7d3250de9b516e assets/thelunaris/models/item/mooncow_spawn_egg.json
 1e1b006d1470092ca23c87593b0847e6dbefd0a7 assets/thelunaris/models/item/moondial.json
+63ec6c618a3a23eab4cab9c52d7d3250de9b516e assets/thelunaris/models/item/moonsnail_spawn_egg.json
 1631c2ef1b5f64ba53fba49e3c86ea97309bd849 assets/thelunaris/models/item/moonsteel.json
 55b824f5b699d0143ae8a80cb5eadf755c7e5128 assets/thelunaris/models/item/moonsteel_axe.json
 e33bb0cdc425040189ba846a5b4593924e56d7c1 assets/thelunaris/models/item/moonsteel_hoe.json

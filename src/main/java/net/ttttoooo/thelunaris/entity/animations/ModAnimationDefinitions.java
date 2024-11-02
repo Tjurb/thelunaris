@@ -7,6 +7,26 @@ import net.minecraft.client.animation.Keyframe;
 import net.minecraft.client.animation.KeyframeAnimations;
 public class ModAnimationDefinitions {
 
+	//Moonsnail Animations
+	public static final AnimationDefinition MOONSNAIL_IDLE = AnimationDefinition.Builder.withLength(0f).build();
+	public static final AnimationDefinition MOONSNAIL_WALKING = AnimationDefinition.Builder.withLength(4f).looping()
+	.addAnimation("head",
+		new AnimationChannel(AnimationChannel.Targets.POSITION, 
+			new Keyframe(0f, KeyframeAnimations.posVec(0f, 0f, 0f),
+				AnimationChannel.Interpolations.LINEAR), 
+			new Keyframe(2f, KeyframeAnimations.posVec(0f, 0f, -0.5f),
+				AnimationChannel.Interpolations.LINEAR), 
+			new Keyframe(4f, KeyframeAnimations.posVec(0f, 0f, 0f),
+				AnimationChannel.Interpolations.LINEAR)))
+	.addAnimation("mantle",
+		new AnimationChannel(AnimationChannel.Targets.SCALE,
+			new Keyframe(0f, KeyframeAnimations.scaleVec(1f, 1f, 1f),
+				AnimationChannel.Interpolations.LINEAR),
+			new Keyframe(2f, KeyframeAnimations.scaleVec(1f, 1f, 1.2f),
+				AnimationChannel.Interpolations.LINEAR),
+			new Keyframe(4f, KeyframeAnimations.scaleVec(1f, 1f, 1f),
+				AnimationChannel.Interpolations.LINEAR))).build();
+	
 	//Archfish Animations
 public static final AnimationDefinition ARCHFISH_SWIM = AnimationDefinition.Builder.withLength(2f).looping()
 .addAnimation("head",

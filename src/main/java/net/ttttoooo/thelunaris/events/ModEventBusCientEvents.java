@@ -11,6 +11,7 @@ import net.ttttoooo.thelunaris.entity.ModEntities;
 import net.ttttoooo.thelunaris.entity.client.ArchfishModel;
 import net.ttttoooo.thelunaris.entity.client.ModModelLayers;
 import net.ttttoooo.thelunaris.entity.client.MooncowModel;
+import net.ttttoooo.thelunaris.entity.client.MoonsnailModel;
 import net.ttttoooo.thelunaris.entity.custom.MooncowEntity;
 
 @Mod.EventBusSubscriber(modid = TheLunaris.MODID, bus = Mod.EventBusSubscriber.Bus.MOD, value = Dist.CLIENT)
@@ -19,5 +20,6 @@ public class ModEventBusCientEvents {
     public static void registerLayer(EntityRenderersEvent.RegisterLayerDefinitions event) {
         event.registerLayerDefinition(ModModelLayers.MOONCOW_LAYER, MooncowModel::createBodyLayer);
         event.registerLayerDefinition(ModModelLayers.ARCHFISH_LAYER, ArchfishModel::createBodyLayer);
+        event.registerLayerDefinition(ModModelLayers.MOONSNAIL_LAYER, MoonsnailModel::createBodyLayer);
     }
 }

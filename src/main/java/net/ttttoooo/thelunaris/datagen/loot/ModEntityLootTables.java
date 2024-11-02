@@ -33,6 +33,10 @@ public class ModEntityLootTables extends EntityLootSubProvider {
 				.setRolls(ConstantValue.exactly(1.0F)).add(LootItem.lootTableItem(ModItems.ARCHFISH.get())
 						.when(LootItemRandomChanceCondition.randomChance(0.5F)))));
 		
+		this.add(ModEntities.MOONSNAIL.get(), LootTable.lootTable().withPool(LootPool.lootPool()
+				.setRolls(ConstantValue.exactly(1.0F)).add(LootItem.lootTableItem(ModItems.LUNAR_WHEAT_SEEDS.get())
+						.when(LootItemRandomChanceCondition.randomChance(0.5F)))));
+		
 		this.add(ModEntities.MOONCOW.get(), LootTable.lootTable().withPool(LootPool.lootPool()
 				.setRolls(ConstantValue.exactly(1.0F)).add(LootItem.lootTableItem(Items.LEATHER)
 						.apply(SetItemCountFunction.setCount(UniformGenerator.between(0.0F, 2.0F)))

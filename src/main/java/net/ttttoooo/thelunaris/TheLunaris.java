@@ -20,6 +20,7 @@ import net.ttttoooo.thelunaris.block.ModBlocks;
 import net.ttttoooo.thelunaris.entity.ModEntities;
 import net.ttttoooo.thelunaris.entity.client.ArchfishRenderer;
 import net.ttttoooo.thelunaris.entity.client.MooncowRenderer;
+import net.ttttoooo.thelunaris.entity.client.MoonsnailRenderer;
 import net.ttttoooo.thelunaris.item.ModCreativeTabs;
 import net.ttttoooo.thelunaris.item.ModItems;
 
@@ -85,6 +86,7 @@ public class TheLunaris
         {
         	EntityRenderers.register(ModEntities.MOONCOW.get(), MooncowRenderer::new);
         	EntityRenderers.register(ModEntities.ARCHFISH.get(), ArchfishRenderer::new);
+        	EntityRenderers.register(ModEntities.MOONSNAIL.get(), MoonsnailRenderer::new);
             LOGGER.info("HELLO FROM LUNARIS CLIENT SETUP");
             LOGGER.info("MINECRAFT NAME >> {}", Minecraft.getInstance().getUser().getName());
         }
