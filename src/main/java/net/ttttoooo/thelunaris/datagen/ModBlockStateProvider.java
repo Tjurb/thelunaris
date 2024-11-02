@@ -45,7 +45,7 @@ public class ModBlockStateProvider extends BlockStateProvider{
 		
 		//terrain blocks
 		blockWithItem(ModBlocks.LUNDIRT);
-		blockWithItem(ModBlocks.LUNGRASS_BLOCK);
+		simpleBlockExisting(ModBlocks.LUNGRASS_BLOCK.get());
 		blockWithItem(ModBlocks.LUNSAND);
 		blockWithItem(ModBlocks.LUNSANDSTONE);
 		stairsBlock(((StairBlock) ModBlocks.LUNSANDSTONE_STAIRS.get()), blockTexture(ModBlocks.LUNSANDSTONE.get()));
