@@ -45,6 +45,9 @@
     "item.thelunaris.mooncow_spawn_egg": "Mooncow Spawn Egg",
     "item.thelunaris.archfish_spawn_egg": "Archfish Spawn Egg",
     "item.thelunaris.moonsnail_spawn_egg": "Moonsnail Spawn Egg",
+    "item.thelunaris.phyrex_spawn_egg": "Phyrex Spawn Egg",
+    "item.thelunaris.lunarsleeper_spawn_egg": "Lunarsleeper Spawn Egg",
+    "item.thelunaris.hex_spawn_egg": "Hex Spawn Egg",
 
     "block.thelunaris.moondialblock": "Moondial",
     "block.thelunaris.lunar_crafter": "Lunar Crafter",

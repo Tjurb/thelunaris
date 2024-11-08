@@ -111,6 +111,7 @@ public class ModCreativeTabs {
 				pOutput.accept(ModItems.EMOONSTEEL.get());
 				pOutput.accept(ModItems.LUNARITE.get());
 				pOutput.accept(ModItems.LUNAR_WHEAT_SEEDS.get());
+				pOutput.accept(ModItems.HEXDUST.get());
 				
 				//Food Entry
 				pOutput.accept(ModItems.LOONBERRY.get());
@@ -146,6 +147,9 @@ public class ModCreativeTabs {
 				pOutput.accept(ModItems.MOONCOW_SPANW_EGG.get());
 				pOutput.accept(ModItems.ARCHFISH_SPANW_EGG.get());
 				pOutput.accept(ModItems.MOONSNAIL_SPANW_EGG.get());
+				pOutput.accept(ModItems.PHYREX_SPANW_EGG.get());
+				pOutput.accept(ModItems.LUNARSLEEPER_SPANW_EGG.get());
+				pOutput.accept(ModItems.HEX_SPANW_EGG.get());
 				
 			})
 			.build());

@@ -47,6 +47,18 @@ public class ModEntityLootTables extends EntityLootSubProvider {
 								.hasProperties(LootContext.EntityTarget.THIS, ENTITY_ON_FIRE)))
 						.apply(LootingEnchantFunction.lootingMultiplier(UniformGenerator.between(0.0F, 1.0F))))));
 	      
+		this.add(ModEntities.PHYREX.get(), LootTable.lootTable().withPool(LootPool.lootPool()
+				.setRolls(ConstantValue.exactly(1.0F)).add(LootItem.lootTableItem(Items.FEATHER)
+						.when(LootItemRandomChanceCondition.randomChance(0.5F)))));
+		
+		this.add(ModEntities.LUNARSLEEPER.get(), LootTable.lootTable().withPool(LootPool.lootPool()
+				.setRolls(ConstantValue.exactly(1.0F)).add(LootItem.lootTableItem(Items.FEATHER)
+						.when(LootItemRandomChanceCondition.randomChance(0.5F)))));
+		
+		this.add(ModEntities.HEX.get(), LootTable.lootTable().withPool(LootPool.lootPool()
+				.setRolls(ConstantValue.exactly(1.0F)).add(LootItem.lootTableItem(ModItems.HEXDUST.get())
+						.when(LootItemRandomChanceCondition.randomChance(0.5F)))));
+		
 	}
 	
 	@Override

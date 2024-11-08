@@ -1,4 +1,4 @@
-// 1.20.1	2024-11-01T21:28:13.1304332	Item Models: thelunaris
+// 1.20.1	2024-11-08T09:19:55.3285504	Item Models: thelunaris
 b7176a2f31e02ede645f754b6b7dd43a1b142ecc assets/thelunaris/models/item/archfish.json
 63ec6c618a3a23eab4cab9c52d7d3250de9b516e assets/thelunaris/models/item/archfish_spawn_egg.json
 4859e1cbbad8939f755f19c212619cb750a0ba53 assets/thelunaris/models/item/celest_sapling.json
@@ -11,6 +11,8 @@ bcea65955536a9c7105ba8924a653ea35db48470 assets/thelunaris/models/item/celest_st
 179f95a08d568a4fceef6eae3c94895f46d957b7 assets/thelunaris/models/item/emoonsteel_pickaxe.json
 44aa0834e8277df319ce5372031e3dc27e3006f2 assets/thelunaris/models/item/emoonsteel_shovel.json
 62c6389073c679d65c9d3ee9adfda2ccea62419f assets/thelunaris/models/item/emoonsteel_sword.json
+91e2c53b7662326e9ee7739df753ea656091522a assets/thelunaris/models/item/hex_dust.json
+63ec6c618a3a23eab4cab9c52d7d3250de9b516e assets/thelunaris/models/item/hex_spawn_egg.json
 cd8161acf28a94464e953dc839c7f39832cc2d32 assets/thelunaris/models/item/labradorite.json
 e5c1a8cba13f83b6b236fe51e4fd66aab34ab1c7 assets/thelunaris/models/item/loonberry.json
 542b4cfa98097c063394d7a15d751a52edffeff9 assets/thelunaris/models/item/loonberry_pie.json
@@ -20,6 +22,7 @@ fed76f0e872ca8c7cf225af0177fae41d4dcf6c4 assets/thelunaris/models/item/lunarite_
 911434efb5f269a824f85b513d1867bf00f3fb0a assets/thelunaris/models/item/lunarite_pickaxe.json
 17e92add915110a59805f7a901900e054ac41127 assets/thelunaris/models/item/lunarite_shovel.json
 5c76fa0d524f19f8d6b5586ca1fa8e723cc8ad21 assets/thelunaris/models/item/lunarite_sword.json
+63ec6c618a3a23eab4cab9c52d7d3250de9b516e assets/thelunaris/models/item/lunarsleeper_spawn_egg.json
 d36348d59489c028f8a38789d89b0ceefa2d3fd5 assets/thelunaris/models/item/lunar_stick.json
 ef203815016d8e4e0a776470e0fc105abf381a11 assets/thelunaris/models/item/lunar_wheat.json
 158cfc1e0969095e122f914470b41faaf7a7a230 assets/thelunaris/models/item/lunar_wheat_seeds.json
@@ -36,6 +39,7 @@ e33bb0cdc425040189ba846a5b4593924e56d7c1 assets/thelunaris/models/item/moonsteel
 0ad6e050af304a8e7893164919019dde64f77e9e assets/thelunaris/models/item/moonsteel_pickaxe.json
 0033ed9e3f71edd9ebdf5e6543d58a650ee0f5a4 assets/thelunaris/models/item/moonsteel_shovel.json
 ba0e17e8f6d21bc008055f43029abe546dd4860b assets/thelunaris/models/item/moonsteel_sword.json
+63ec6c618a3a23eab4cab9c52d7d3250de9b516e assets/thelunaris/models/item/phyrex_spawn_egg.json
 74057bbfb84e69d071110b1d6026f2052e167b10 assets/thelunaris/models/item/raw_moonsteel.json
 cf9aba9e924d344246a892ab35c6f391ac94d2af assets/thelunaris/models/item/sarrot.json
 d9eb374bd54157c285223c07326722559b959e26 assets/thelunaris/models/item/skyoak_sapling.json

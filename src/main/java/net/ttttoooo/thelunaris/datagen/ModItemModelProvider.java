@@ -31,6 +31,7 @@ public class ModItemModelProvider extends ItemModelProvider{
 		simpleItem(ModItems.LUNARITE);
 		simpleItem(ModItems.LUNAR_WHEAT);
 		simpleItem(ModItems.LUNAR_WHEAT_SEEDS);
+		simpleItem(ModItems.HEXDUST);
 		
 		simpleItem(ModItems.LOONBERRY);
 		simpleItem(ModItems.ARCHFISH);
@@ -43,6 +44,9 @@ public class ModItemModelProvider extends ItemModelProvider{
 		withExistingParent(ModItems.MOONCOW_SPANW_EGG.getId().getPath(), mcLoc("item/template_spawn_egg"));
 		withExistingParent(ModItems.ARCHFISH_SPANW_EGG.getId().getPath(), mcLoc("item/template_spawn_egg"));
 		withExistingParent(ModItems.MOONSNAIL_SPANW_EGG.getId().getPath(), mcLoc("item/template_spawn_egg"));
+		withExistingParent(ModItems.PHYREX_SPANW_EGG.getId().getPath(), mcLoc("item/template_spawn_egg"));
+		withExistingParent(ModItems.LUNARSLEEPER_SPANW_EGG.getId().getPath(), mcLoc("item/template_spawn_egg"));
+		withExistingParent(ModItems.HEX_SPANW_EGG.getId().getPath(), mcLoc("item/template_spawn_egg"));
 		
 		//tools
 		handheldItem(ModItems.VAILSTONE_SWORD);

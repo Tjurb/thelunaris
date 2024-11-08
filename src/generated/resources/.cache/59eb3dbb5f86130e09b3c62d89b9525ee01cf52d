@@ -1,4 +1,4 @@
-// 1.20.1	2024-11-01T21:14:00.5394552	Loot Tables
+// 1.20.1	2024-11-07T22:20:57.3776671	Loot Tables
 78efe6f625c45e18b63e1db6f41f7d90ea90ad9b data/thelunaris/loot_tables/blocks/celest_leaves.json
 d22a5ade4901f802496a8d704d22611cbaa61302 data/thelunaris/loot_tables/blocks/celest_log.json
 90082787e0587990d18a7d5804e5014715ec7540 data/thelunaris/loot_tables/blocks/celest_planks.json
@@ -66,5 +66,8 @@ b4f8f51358de14b09730649318523312951cfd10 data/thelunaris/loot_tables/blocks/vail
 191fd76e7ad5188ad875f4f3aff59f33ae528562 data/thelunaris/loot_tables/blocks/vailstonebrick_stairs.json
 f7f3f1aa44aadb2d46310d87c29e4cd1cfdd7d6f data/thelunaris/loot_tables/blocks/vailstonebrick_wall.json
 131d1455943580d04f9876efa13e529b0daccda0 data/thelunaris/loot_tables/entities/archfish.json
+9eb7fbfb65806900c2427bf80b983a214eab80ab data/thelunaris/loot_tables/entities/hex.json
+850c146a4d6459490831f5459a5355b13ced64fe data/thelunaris/loot_tables/entities/lunarsleeper.json
 3e4778504ad58e536eff42766e427cf13e74e329 data/thelunaris/loot_tables/entities/mooncow.json
 e450221593f5d1584e1437c5327354781cde3553 data/thelunaris/loot_tables/entities/moonsnail.json
+64ad4301f14930bb636fd8022e41b15e123adc0c data/thelunaris/loot_tables/entities/phyrex.json

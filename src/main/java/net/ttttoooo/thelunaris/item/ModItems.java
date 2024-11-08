@@ -38,6 +38,8 @@ public class ModItems {
 			() -> new Item(new Item.Properties()));
 	public static final RegistryObject<Item> LUNAR_WHEAT_SEEDS = ITEMS.register("lunar_wheat_seeds", 
 			() -> new Item(new Item.Properties()));
+	public static final RegistryObject<Item> HEXDUST = ITEMS.register("hex_dust", 
+			() -> new Item(new Item.Properties()));
 	
 	//foods
 	public static final RegistryObject<Item> LOONBERRY = ITEMS.register("loonberry", 
@@ -107,6 +109,12 @@ public class ModItems {
             () -> new ForgeSpawnEggItem(ModEntities.ARCHFISH, 0x00136f, 0x00648b, new Item.Properties()));
 	public static final RegistryObject<Item> MOONSNAIL_SPANW_EGG = ITEMS.register("moonsnail_spawn_egg",
             () -> new ForgeSpawnEggItem(ModEntities.MOONSNAIL, 0x758db3, 0x837650, new Item.Properties()));
+	public static final RegistryObject<Item> PHYREX_SPANW_EGG = ITEMS.register("phyrex_spawn_egg",
+            () -> new ForgeSpawnEggItem(ModEntities.PHYREX, 0xff6500, 0x001ed3, new Item.Properties()));
+	public static final RegistryObject<Item> LUNARSLEEPER_SPANW_EGG = ITEMS.register("lunarsleeper_spawn_egg",
+            () -> new ForgeSpawnEggItem(ModEntities.LUNARSLEEPER, 0x5c3d80, 0xe41a3e, new Item.Properties()));
+	public static final RegistryObject<Item> HEX_SPANW_EGG = ITEMS.register("hex_spawn_egg",
+            () -> new ForgeSpawnEggItem(ModEntities.HEX, 0xff0079, 0xff67cf, new Item.Properties()));
 	
 	
 	public static void register(IEventBus eventBus) {
