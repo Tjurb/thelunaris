@@ -3,6 +3,8 @@ package net.ttttoooo.thelunaris;
 import com.mojang.logging.LogUtils;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.renderer.entity.EntityRenderers;
+import net.minecraft.client.renderer.entity.ThrownItemRenderer;
+import net.minecraft.world.entity.projectile.Fireball;
 import net.minecraft.world.item.CreativeModeTabs;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraftforge.api.distmarker.Dist;
@@ -93,6 +95,7 @@ public class TheLunaris
         	EntityRenderers.register(ModEntities.PHYREX.get(), PhyrexRenderer::new);
         	EntityRenderers.register(ModEntities.LUNARSLEEPER.get(), LunarsleeperRenderer::new);
         	EntityRenderers.register(ModEntities.HEX.get(), HexRenderer::new);
+        	EntityRenderers.register(ModEntities.HEX_PROJECTILE.get(), ThrownItemRenderer::new);
             LOGGER.info("HELLO FROM LUNARIS CLIENT SETUP");
             LOGGER.info("MINECRAFT NAME >> {}", Minecraft.getInstance().getUser().getName());
         }

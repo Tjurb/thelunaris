@@ -20,5 +20,4 @@ public class ModModelLayers {
             new ResourceLocation(TheLunaris.MODID, "lunarsleeper_layer"), "main");
 	public static final ModelLayerLocation HEX_LAYER = new ModelLayerLocation(
             new ResourceLocation(TheLunaris.MODID, "hex_layer"), "main");
-
 }

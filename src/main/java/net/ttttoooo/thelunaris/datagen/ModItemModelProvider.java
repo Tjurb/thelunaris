@@ -32,6 +32,7 @@ public class ModItemModelProvider extends ItemModelProvider{
 		simpleItem(ModItems.LUNAR_WHEAT);
 		simpleItem(ModItems.LUNAR_WHEAT_SEEDS);
 		simpleItem(ModItems.HEXDUST);
+		simpleItem(ModItems.HEXCHARGE);
 		
 		simpleItem(ModItems.LOONBERRY);
 		simpleItem(ModItems.ARCHFISH);

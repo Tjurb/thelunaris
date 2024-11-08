@@ -11,6 +11,7 @@ import net.minecraftforge.registries.RegistryObject;
 import net.ttttoooo.thelunaris.TheLunaris;
 import net.ttttoooo.thelunaris.entity.custom.ArchfishEntity;
 import net.ttttoooo.thelunaris.entity.custom.HexEntity;
+import net.ttttoooo.thelunaris.entity.custom.HexProjectile;
 import net.ttttoooo.thelunaris.entity.custom.LunarsleeperEntity;
 import net.ttttoooo.thelunaris.entity.custom.MooncowEntity;
 import net.ttttoooo.thelunaris.entity.custom.MoonsnailEntity;
@@ -41,10 +42,15 @@ public class ModEntities {
             		.sized(2.0F, 1.0F).build("phyrex"));
     public static final RegistryObject<EntityType<LunarsleeperEntity>> LUNARSLEEPER =
             ENTITY_TYPES.register("lunarsleeper", () -> EntityType.Builder.of(LunarsleeperEntity:: new, MobCategory.MONSTER)
-            		.sized(2.0F, 1.0F).build("lunarsleeper"));
+            		.sized(1.0F, 2.0F).build("lunarsleeper"));
     public static final RegistryObject<EntityType<HexEntity>> HEX =
             ENTITY_TYPES.register("hex", () -> EntityType.Builder.of(HexEntity:: new, MobCategory.MONSTER)
             		.sized(2.0F, 1.0F).build("hex"));
+    
+    //projectiles
+    public static final RegistryObject<EntityType<HexProjectile>> HEX_PROJECTILE =
+            ENTITY_TYPES.register("hex_projectile", () -> EntityType.Builder.<HexProjectile>of(HexProjectile:: new, MobCategory.MISC)
+            		.sized(0.5F, 0.5F).build("hex_projectile"));
     
 
     public static void register(IEventBus eventBus) {

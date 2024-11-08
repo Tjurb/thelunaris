@@ -40,6 +40,8 @@ public class ModItems {
 			() -> new Item(new Item.Properties()));
 	public static final RegistryObject<Item> HEXDUST = ITEMS.register("hex_dust", 
 			() -> new Item(new Item.Properties()));
+	public static final RegistryObject<Item> HEXCHARGE = ITEMS.register("hex_charge", 
+			() -> new Item(new Item.Properties()));
 	
 	//foods
 	public static final RegistryObject<Item> LOONBERRY = ITEMS.register("loonberry", 

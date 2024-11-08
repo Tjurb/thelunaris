@@ -1,5 +1,7 @@
 package net.ttttoooo.thelunaris.entity.custom;
 
+import java.util.EnumSet;
+
 import net.minecraft.core.particles.ParticleTypes;
 import net.minecraft.network.syncher.EntityDataAccessor;
 import net.minecraft.network.syncher.EntityDataSerializers;
@@ -9,27 +11,32 @@ import net.minecraft.sounds.SoundEvents;
 import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.world.entity.AnimationState;
 import net.minecraft.world.entity.EntityType;
+import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.Pose;
 import net.minecraft.world.entity.ai.attributes.AttributeSupplier;
 import net.minecraft.world.entity.ai.attributes.Attributes;
 import net.minecraft.world.entity.ai.goal.FloatGoal;
+import net.minecraft.world.entity.ai.goal.Goal;
 import net.minecraft.world.entity.ai.goal.LookAtPlayerGoal;
 import net.minecraft.world.entity.ai.goal.RandomLookAroundGoal;
 import net.minecraft.world.entity.ai.goal.WaterAvoidingRandomStrollGoal;
 import net.minecraft.world.entity.ai.goal.target.HurtByTargetGoal;
 import net.minecraft.world.entity.ai.goal.target.NearestAttackableTargetGoal;
 import net.minecraft.world.entity.animal.IronGolem;
+import net.minecraft.world.entity.monster.Blaze;
 import net.minecraft.world.entity.monster.Monster;
 import net.minecraft.world.entity.player.Player;
+import net.minecraft.world.entity.projectile.SmallFireball;
 import net.minecraft.world.level.Level;
 import net.ttttoooo.thelunaris.entity.ai.PhyrexAttackGoal;
 
 public class HexEntity extends Monster {
-    private static final EntityDataAccessor<Boolean> ATTACKING =
+	private static final EntityDataAccessor<Boolean> ATTACKING =
             SynchedEntityData.defineId(HexEntity.class, EntityDataSerializers.BOOLEAN);
     
 	public HexEntity(EntityType<? extends Monster> p_27557_, Level p_27558_) {
 		super(p_27557_, p_27558_);
+	      this.xpReward = 10;
 	}
 	
 	public final AnimationState idleAnimationState = new AnimationState();
@@ -84,7 +91,7 @@ public class HexEntity extends Monster {
 	protected void registerGoals() {
         this.goalSelector.addGoal(0, new FloatGoal(this));
         
-        //this.goalSelector.addGoal(1, new PhyrexAttackGoal(this, 1.0D, true));
+        this.goalSelector.addGoal(1, new HexAttackGoal(this));
 
         this.goalSelector.addGoal(2, new WaterAvoidingRandomStrollGoal(this, 1.1D));
         this.goalSelector.addGoal(3, new LookAtPlayerGoal(this, Player.class, 3f));
@@ -127,16 +134,16 @@ public class HexEntity extends Monster {
 
 	      if (this.level().isClientSide) {
 	         if (this.random.nextInt(24) == 0 && !this.isSilent()) {
-	            this.level().playLocalSound(this.getX() + 0.5D, this.getY() + 0.5D, this.getZ() + 0.5D, SoundEvents.BLAZE_BURN, this.getSoundSource(), 1.0F + this.random.nextFloat(), this.random.nextFloat() * 0.7F + 0.3F, false);
+	            this.level().playLocalSound(this.getX() + 0.5D, this.getY() + 0.5D, this.getZ() + 0.5D, SoundEvents.ENDERMAN_AMBIENT, this.getSoundSource(), 1.0F + this.random.nextFloat(), this.random.nextFloat() * 0.7F + 0.3F, false);
 	         }
 
 	         for(int i = 0; i < 2; ++i) {
-	            this.level().addParticle(ParticleTypes.BUBBLE, this.getRandomX(0.5D), this.getRandomY(), this.getRandomZ(0.5D), 0.0D, 0.0D, 0.0D);
+	            this.level().addParticle(ParticleTypes.ENCHANT, this.getRandomX(0.5D), this.getRandomY(), this.getRandomZ(0.5D), 0.0D, 0.0D, 0.0D);
 	         }
 	      }
 
 	      super.aiStep();
-	   }
+	}
 	
     @Override
     protected SoundEvent getAmbientSound() {
@@ -157,4 +164,98 @@ public class HexEntity extends Monster {
     protected float getSoundVolume() {
         return 0.4F;
     }
-}
+
+     static class HexAttackGoal extends Goal {
+        private final HexEntity hex;
+        private int attackStep;
+        private int attackTime;
+        private int lastSeen;
+
+        public HexAttackGoal(HexEntity p_32247_) {
+           this.hex = p_32247_;
+           this.setFlags(EnumSet.of(Goal.Flag.MOVE, Goal.Flag.LOOK));
+        }
+
+        public boolean canUse() {
+           LivingEntity livingentity = this.hex.getTarget();
+           return livingentity != null && livingentity.isAlive() && this.hex.canAttack(livingentity);
+        }
+
+        public void start() {
+           this.attackStep = 0;
+        }
+
+        public void stop() {
+           this.lastSeen = 0;
+        }
+
+        public boolean requiresUpdateEveryTick() {
+           return true;
+        }
+
+        public void tick() {
+           --this.attackTime;
+           LivingEntity livingentity = this.hex.getTarget();
+           if (livingentity != null) {
+              boolean flag = this.hex.getSensing().hasLineOfSight(livingentity);
+              if (flag) {
+                 this.lastSeen = 0;
+              } else {
+                 ++this.lastSeen;
+              }
+
+              double d0 = this.hex.distanceToSqr(livingentity);
+              if (d0 < 4.0D) {
+                 if (!flag) {
+                    return;
+                 }
+
+                 if (this.attackTime <= 0) {
+                    this.attackTime = 20;
+                    this.hex.doHurtTarget(livingentity);
+                 }
+
+                 this.hex.getMoveControl().setWantedPosition(livingentity.getX(), livingentity.getY(), livingentity.getZ(), 1.0D);
+              } else if (d0 < this.getFollowDistance() * this.getFollowDistance() && flag) {
+                 double d1 = livingentity.getX() - this.hex.getX();
+                 double d2 = livingentity.getY(0.5D) - this.hex.getY(0.5D);
+                 double d3 = livingentity.getZ() - this.hex.getZ();
+                 if (this.attackTime <= 0) {
+                    ++this.attackStep;
+                    if (this.attackStep == 1) {
+                       this.attackTime = 60;
+                    } else if (this.attackStep <= 4) {
+                       this.attackTime = 6;
+                    } else {
+                       this.attackTime = 100;
+                       this.attackStep = 0;
+                    }
+
+                    if (this.attackStep > 1) {
+                       double d4 = Math.sqrt(Math.sqrt(d0)) * 0.5D;
+                       if (!this.hex.isSilent()) {
+                          this.hex.level().levelEvent((Player)null, 1018, this.hex.blockPosition(), 0);
+                       }
+
+                       for(int i = 0; i < 1; ++i) {
+                    	  HexProjectile hexProjectile = new HexProjectile(this.hex.level(), this.hex, this.hex.getRandom().triangle(d1, 2.297D * d4), d2, this.hex.getRandom().triangle(d3, 2.297D * d4));
+                    	  hexProjectile.setPos(hexProjectile.getX(), this.hex.getY(0.5D) + 0.5D, hexProjectile.getZ());
+                          this.hex.level().addFreshEntity(hexProjectile);
+                       }
+                    }
+                 }
+
+                 this.hex.getLookControl().setLookAt(livingentity, 10.0F, 10.0F);
+              } else if (this.lastSeen < 5) {
+                 this.hex.getMoveControl().setWantedPosition(livingentity.getX(), livingentity.getY(), livingentity.getZ(), 1.0D);
+              }
+
+              super.tick();
+           }
+        }
+
+        private double getFollowDistance() {
+           return this.hex.getAttributeValue(Attributes.FOLLOW_RANGE);
+        }
+     }
+  }

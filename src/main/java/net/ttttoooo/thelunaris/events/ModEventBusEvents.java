@@ -8,6 +8,7 @@ import net.ttttoooo.thelunaris.TheLunaris;
 import net.ttttoooo.thelunaris.entity.ModEntities;
 import net.ttttoooo.thelunaris.entity.custom.ArchfishEntity;
 import net.ttttoooo.thelunaris.entity.custom.HexEntity;
+import net.ttttoooo.thelunaris.entity.custom.HexProjectile;
 import net.ttttoooo.thelunaris.entity.custom.LunarsleeperEntity;
 import net.ttttoooo.thelunaris.entity.custom.MooncowEntity;
 import net.ttttoooo.thelunaris.entity.custom.MoonsnailEntity;

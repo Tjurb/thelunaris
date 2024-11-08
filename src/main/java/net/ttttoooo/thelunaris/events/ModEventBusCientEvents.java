@@ -21,6 +21,7 @@ import net.ttttoooo.thelunaris.entity.custom.MooncowEntity;
 public class ModEventBusCientEvents {
 	@SubscribeEvent
     public static void registerLayer(EntityRenderersEvent.RegisterLayerDefinitions event) {
+		//entities
         event.registerLayerDefinition(ModModelLayers.MOONCOW_LAYER, MooncowModel::createBodyLayer);
         event.registerLayerDefinition(ModModelLayers.ARCHFISH_LAYER, ArchfishModel::createBodyLayer);
         event.registerLayerDefinition(ModModelLayers.MOONSNAIL_LAYER, MoonsnailModel::createBodyLayer);

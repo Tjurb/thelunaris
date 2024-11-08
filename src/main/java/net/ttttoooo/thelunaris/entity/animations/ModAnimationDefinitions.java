@@ -7,8 +7,21 @@ import net.minecraft.client.animation.Keyframe;
 import net.minecraft.client.animation.KeyframeAnimations;
 public class ModAnimationDefinitions {
 
+	//Hex Projectile Animations
+public static final AnimationDefinition HEX_PROJECTILE_ANIMATION = AnimationDefinition.Builder.withLength(0.5f).looping()
+.addAnimation("hexprojectile",
+	new AnimationChannel(AnimationChannel.Targets.ROTATION,
+		new Keyframe(0f, KeyframeAnimations.degreeVec(0f, 0f, 0f),
+			AnimationChannel.Interpolations.LINEAR),
+		new Keyframe(0.125f, KeyframeAnimations.degreeVec(90f, 0f, 0f),
+			AnimationChannel.Interpolations.LINEAR),
+		new Keyframe(0.25f, KeyframeAnimations.degreeVec(180f, 0f, 0f),
+			AnimationChannel.Interpolations.LINEAR),
+		new Keyframe(0.375f, KeyframeAnimations.degreeVec(270f, 0f, 0f),
+			AnimationChannel.Interpolations.LINEAR),
+		new Keyframe(0.5f, KeyframeAnimations.degreeVec(360f, 0f, 0f),
+			AnimationChannel.Interpolations.LINEAR))).build();
 	//Hex Animations
-
 public static final AnimationDefinition HEX_IDLE = AnimationDefinition.Builder.withLength(1f).looping()
 .addAnimation("limb1",
 	new AnimationChannel(AnimationChannel.Targets.ROTATION,

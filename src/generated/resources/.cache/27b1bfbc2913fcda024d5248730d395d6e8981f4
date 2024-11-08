@@ -1,4 +1,4 @@
-// 1.20.1	2024-11-08T09:19:55.3285504	Item Models: thelunaris
+// 1.20.1	2024-11-08T14:26:52.5462855	Item Models: thelunaris
 b7176a2f31e02ede645f754b6b7dd43a1b142ecc assets/thelunaris/models/item/archfish.json
 63ec6c618a3a23eab4cab9c52d7d3250de9b516e assets/thelunaris/models/item/archfish_spawn_egg.json
 4859e1cbbad8939f755f19c212619cb750a0ba53 assets/thelunaris/models/item/celest_sapling.json
@@ -11,6 +11,7 @@ bcea65955536a9c7105ba8924a653ea35db48470 assets/thelunaris/models/item/celest_st
 179f95a08d568a4fceef6eae3c94895f46d957b7 assets/thelunaris/models/item/emoonsteel_pickaxe.json
 44aa0834e8277df319ce5372031e3dc27e3006f2 assets/thelunaris/models/item/emoonsteel_shovel.json
 62c6389073c679d65c9d3ee9adfda2ccea62419f assets/thelunaris/models/item/emoonsteel_sword.json
+9caf1fb7e0fae73f5cef0f4f2410df7fd9b26a4e assets/thelunaris/models/item/hex_charge.json
 91e2c53b7662326e9ee7739df753ea656091522a assets/thelunaris/models/item/hex_dust.json
 63ec6c618a3a23eab4cab9c52d7d3250de9b516e assets/thelunaris/models/item/hex_spawn_egg.json
 cd8161acf28a94464e953dc839c7f39832cc2d32 assets/thelunaris/models/item/labradorite.json
