@@ -1,0 +1,48 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_cooked_archfish": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "thelunaris:cooked_archfish"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_sarrot": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "thelunaris:sarrot"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "thelunaris:spicy_archfish"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_sarrot",
+      "has_cooked_archfish",
+      "has_the_recipe"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "thelunaris:spicy_archfish"
+    ]
+  },
+  "sends_telemetry_event": false
+}

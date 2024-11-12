@@ -22,6 +22,7 @@ import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
 import net.ttttoooo.thelunaris.TheLunaris;
 import net.ttttoooo.thelunaris.block.ModBlocks;
+import net.ttttoooo.thelunaris.block.custom.LunFarmland;
 import net.ttttoooo.thelunaris.block.custom.portal.ModPortalBlock;
 
 public class ModBlockStateProvider extends BlockStateProvider{
@@ -45,6 +46,7 @@ public class ModBlockStateProvider extends BlockStateProvider{
 		
 		//terrain blocks
 		blockWithItem(ModBlocks.LUNDIRT);
+		farmland(ModBlocks.LUNDIRT_FARMLAND.get(),ModBlocks.LUNDIRT.get());
 		simpleBlockExisting(ModBlocks.LUNGRASS_BLOCK.get());
 		blockWithItem(ModBlocks.LUNSAND);
 		blockWithItem(ModBlocks.LUNSANDSTONE);
@@ -110,6 +112,11 @@ public class ModBlockStateProvider extends BlockStateProvider{
 		stairsBlock(((StairBlock) ModBlocks.VAILSTONEBRICK_STAIRS.get()), blockTexture(ModBlocks.VAILSTONEBRICK.get()));
 		slabBlock(((SlabBlock) ModBlocks.VAILSTONEBRICK_SLAB.get()), blockTexture(ModBlocks.VAILSTONEBRICK.get()), blockTexture(ModBlocks.VAILSTONEBRICK.get()));
 		wallBlock(((WallBlock) ModBlocks.VAILSTONEBRICK_WALL.get()), blockTexture(ModBlocks.VAILSTONEBRICK.get()));
+
+		blockWithItem(ModBlocks.COBBLED_VAILSTONE);
+		stairsBlock(((StairBlock) ModBlocks.COBBLED_VAILSTONE_STAIRS.get()), blockTexture(ModBlocks.COBBLED_VAILSTONE.get()));
+		slabBlock(((SlabBlock) ModBlocks.COBBLED_VAILSTONE_SLAB.get()), blockTexture(ModBlocks.COBBLED_VAILSTONE.get()), blockTexture(ModBlocks.COBBLED_VAILSTONE.get()));
+		wallBlock(((WallBlock) ModBlocks.COBBLED_VAILSTONE_WALL.get()), blockTexture(ModBlocks.COBBLED_VAILSTONE.get()));
 		
 		blockWithItem(ModBlocks.LUNARSHALE);
 		blockWithItem(ModBlocks.LUNARSLATE);
@@ -137,10 +144,22 @@ public class ModBlockStateProvider extends BlockStateProvider{
 		
 		//nature blocks
 		saplingBlock(ModBlocks.LUNGRASS);
-		
-		
 	}
 	
+	public void farmland(Block block, Block dirtBlock) {
+        ModelFile farmland = this.models().withExistingParent(this.name(block), this.mcLoc("block/template_farmland"))
+                .texture("dirt", this.modLoc("block/" + this.name(dirtBlock)))
+                .texture("top", this.modLoc("block/" + this.name(block)));
+        ModelFile moist = this.models().withExistingParent(this.name(block) + "_moist", mcLoc("block/template_farmland"))
+                .texture("dirt", this.modLoc("block/" + this.name(dirtBlock)))
+                .texture("top", this.modLoc("block/" + this.name(block) + "_moist"));
+        this.getVariantBuilder(block).forAllStatesExcept(state -> {
+            int moisture = state.getValue(LunFarmland.MOISTURE);
+            return ConfiguredModel.builder()
+                    .modelFile(moisture < LunFarmland.MAX_MOISTURE ? farmland : moist)
+                    .build();
+        });
+    }
 
 	protected void simpleBlockExisting(Block b) {
 		simpleBlock(b, new ConfiguredModel(models().getExistingFile(prefix(name(b)))));

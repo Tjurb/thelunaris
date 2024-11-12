@@ -68,12 +68,12 @@ public class ModDimensions {
                         		//Depth = 0
                                 Pair.of(
                                         Climate.parameters(
-                                        		Climate.Parameter.span(-0.5F, 0.5F), //Temp
+                                        		Climate.Parameter.span(-1F, 1F), //Temp
                                         		Climate.Parameter.span(-0.5F, 0.5F), //Humidity
                                         		Climate.Parameter.span(-1.05F, -0.19F), //Continentalness
                                         		Climate.Parameter.span(0F, 0.5F), //Erosion
                                         		Climate.Parameter.span(0F, 0F), //Depth
-                                        		Climate.Parameter.span(-1F, 1F), //Weirdness
+                                        		Climate.Parameter.span(-1F, 0.6F), //Weirdness
                                         		0.0F), biomeRegistry.getOrThrow(ModBiomes.AZUREITE_OCEAN)),
                                 Pair.of(
                                         Climate.parameters(
@@ -178,12 +178,12 @@ public class ModDimensions {
                                 //Depth = 1
                                 Pair.of(
                                         Climate.parameters(
-                                        		Climate.Parameter.span(-0.5F, 0.5F), //Temp
+                                        		Climate.Parameter.span(-1F, 1F), //Temp
                                         		Climate.Parameter.span(-0.5F, 0.5F), //Humidity
                                         		Climate.Parameter.span(-1.05F, -0.19F), //Continentalness
                                         		Climate.Parameter.span(0F, 0.5F), //Erosion
                                         		Climate.Parameter.span(1F, 1F), //Depth
-                                        		Climate.Parameter.span(-1F, 1F), //Weirdness
+                                        		Climate.Parameter.span(-1F, 0.6F), //Weirdness
                                         		0.0F), biomeRegistry.getOrThrow(ModBiomes.AZUREITE_OCEAN)),
                                 Pair.of(
                                         Climate.parameters(

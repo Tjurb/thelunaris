@@ -34,11 +34,15 @@ public class ModBlockLootTables extends BlockLootSubProvider{
 		this.dropSelf(ModBlocks.EMOONSTEEL_BLOCK.get());
 		this.dropSelf(ModBlocks.MOONSTEEL_BLOCK.get());
 		this.dropSelf(ModBlocks.RAW_MOONSTEEL_BLOCK.get());
-		
-		this.dropSelf(ModBlocks.VAILSTONE.get());
+
+		this.add(ModBlocks.VAILSTONE.get(),
+				block -> createGrassBlockLikeDrops(ModBlocks.VAILSTONE.get(), ModBlocks.COBBLED_VAILSTONE.get()));
 		this.dropSelf(ModBlocks.VAILSTONEBRICK.get());
 		this.dropSelf(ModBlocks.VAILSTONEBRICK_STAIRS.get());
 		this.dropSelf(ModBlocks.VAILSTONEBRICK_WALL.get());
+		this.dropSelf(ModBlocks.COBBLED_VAILSTONE.get());
+		this.dropSelf(ModBlocks.COBBLED_VAILSTONE_STAIRS.get());
+		this.dropSelf(ModBlocks.COBBLED_VAILSTONE_WALL.get());
 		this.dropSelf(ModBlocks.LUNARSHALE.get());
 		this.dropSelf(ModBlocks.LUNARSLATE.get());
 		this.dropSelf(ModBlocks.SMOOTHLUNARSLATE.get());
@@ -57,6 +61,8 @@ public class ModBlockLootTables extends BlockLootSubProvider{
 		this.add(ModBlocks.LUNGRASS_BLOCK.get(),
 				block -> createGrassBlockLikeDrops(ModBlocks.LUNGRASS_BLOCK.get(), ModBlocks.LUNDIRT.get()));
 		this.dropSelf(ModBlocks.LUNDIRT.get());
+		this.add(ModBlocks.LUNDIRT_FARMLAND.get(),
+			block -> createGrassBlockLikeDrops(ModBlocks.LUNDIRT.get(), ModBlocks.LUNDIRT.get()));
 		this.dropSelf(ModBlocks.LUNSAND.get());
 		this.dropSelf(ModBlocks.LUNSANDSTONE.get());
 		this.dropSelf(ModBlocks.LUNSANDSTONE_STAIRS.get());
@@ -92,7 +98,9 @@ public class ModBlockLootTables extends BlockLootSubProvider{
 				block -> createIronLikeOreDrops(ModBlocks.MOONSTEEL_ORE.get(), ModItems.RAW_MOONSTEEL.get()));
 		this.add(ModBlocks.LABRADORITE_ORE.get(),
 				block -> createDiamondLikeOreDrops(ModBlocks.LABRADORITE_ORE.get(), ModItems.LABRADORITE.get()));
-		
+
+		this.add(ModBlocks.COBBLED_VAILSTONE_SLAB.get(),
+				block -> createSlabItemTable(ModBlocks.COBBLED_VAILSTONE_SLAB.get()));
 		this.add(ModBlocks.VAILSTONEBRICK_SLAB.get(),
 				block -> createSlabItemTable(ModBlocks.VAILSTONEBRICK_SLAB.get()));
 		this.add(ModBlocks.SMOOTHLUNARSLATE_SLAB.get(),

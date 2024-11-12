@@ -75,6 +75,7 @@ public class ModItemModelProvider extends ItemModelProvider{
 		handheldItem(ModItems.LUNARITE_HOE);
 		
 		//walls
+		wallItem(ModBlocks.COBBLED_VAILSTONE_WALL, ModBlocks.COBBLED_VAILSTONE);
 		wallItem(ModBlocks.VAILSTONEBRICK_WALL, ModBlocks.VAILSTONEBRICK);
 		wallItem(ModBlocks.SMOOTHGNEISS_WALL, ModBlocks.SMOOTHGNEISS);
 		wallItem(ModBlocks.SMOOTHLUNARSLATE_WALL, ModBlocks.SMOOTHLUNARSLATE);
@@ -82,6 +83,7 @@ public class ModItemModelProvider extends ItemModelProvider{
 		wallItem(ModBlocks.LUNSANDSTONE_WALL, ModBlocks.LUNSANDSTONE);
 		
 		//stairs
+		evenSimplerBlockItem(ModBlocks.COBBLED_VAILSTONE_STAIRS);
 		evenSimplerBlockItem(ModBlocks.VAILSTONEBRICK_STAIRS);
 		evenSimplerBlockItem(ModBlocks.SMOOTHGNEISS_STAIRS);
 		evenSimplerBlockItem(ModBlocks.SMOOTHLUNARSLATE_STAIRS);
@@ -92,6 +94,7 @@ public class ModItemModelProvider extends ItemModelProvider{
 		evenSimplerBlockItem(ModBlocks.LUNSANDSTONE_STAIRS);
 		
 		//slabs
+		evenSimplerBlockItem(ModBlocks.COBBLED_VAILSTONE_SLAB);
 		evenSimplerBlockItem(ModBlocks.VAILSTONEBRICK_SLAB);
 		evenSimplerBlockItem(ModBlocks.SMOOTHGNEISS_SLAB);
 		evenSimplerBlockItem(ModBlocks.SMOOTHLUNARSLATE_SLAB);

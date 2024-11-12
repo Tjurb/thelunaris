@@ -1,0 +1,35 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "thelunaris:vailstonebrick_wall"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    },
+    "has_vailstonebrick": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "thelunaris:vailstonebrick"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "requirements": [
+    [
+      "has_vailstonebrick",
+      "has_the_recipe"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "thelunaris:vailstonebrick_wall"
+    ]
+  },
+  "sends_telemetry_event": false
+}

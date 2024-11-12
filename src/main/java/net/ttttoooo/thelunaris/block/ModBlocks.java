@@ -30,6 +30,7 @@ import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
 import net.ttttoooo.thelunaris.TheLunaris;
+import net.ttttoooo.thelunaris.block.custom.LunFarmland;
 import net.ttttoooo.thelunaris.block.custom.LunGrassBlock;
 import net.ttttoooo.thelunaris.block.custom.ModFlammableRotatedPillarBlock;
 import net.ttttoooo.thelunaris.block.custom.portal.ModPortalBlock;
@@ -70,6 +71,8 @@ public class ModBlocks {
 			() -> new Block(BlockBehaviour.Properties.copy(Blocks.DIRT).sound(SoundType.GRAVEL)));
 	public static final RegistryObject<Block> LUNGRASS_BLOCK = registerBlock("lungrass_block", 
 			() -> new LunGrassBlock(BlockBehaviour.Properties.copy(Blocks.GRASS_BLOCK).sound(SoundType.GRASS)));
+	public static final RegistryObject<Block> LUNDIRT_FARMLAND = registerBlock("lundirt_farmland", 
+			() -> new LunFarmland(BlockBehaviour.Properties.copy(Blocks.FARMLAND).sound(SoundType.GRAVEL)));
 	public static final RegistryObject<Block> LUNSAND = registerBlock("lunsand", 
 			() -> new Block(BlockBehaviour.Properties.copy(Blocks.SAND).sound(SoundType.SAND)));
 	public static final RegistryObject<Block> LUNSANDSTONE = registerBlock("lunsandstone", 
@@ -341,6 +344,17 @@ public class ModBlocks {
 			() -> new SlabBlock(BlockBehaviour.Properties.copy(Blocks.STONE_BRICKS).sound(SoundType.STONE)));
 	public static final RegistryObject<Block> VAILSTONEBRICK_WALL = registerBlock("vailstonebrick_wall", 
 			() -> new WallBlock(BlockBehaviour.Properties.copy(Blocks.STONE_BRICKS).sound(SoundType.STONE)));
+	
+	//Cobbled Vailstone Blocks
+	public static final RegistryObject<Block> COBBLED_VAILSTONE = registerBlock("cobbled_vailstone", 
+			() -> new Block(BlockBehaviour.Properties.copy(Blocks.COBBLESTONE).sound(SoundType.STONE)));
+	public static final RegistryObject<Block> COBBLED_VAILSTONE_STAIRS = registerBlock("cobbled_vailstonebrick_stairs", 
+			() -> new StairBlock(() -> ModBlocks.COBBLED_VAILSTONE.get().defaultBlockState(),
+			BlockBehaviour.Properties.copy(Blocks.COBBLESTONE).sound(SoundType.STONE)));
+	public static final RegistryObject<Block> COBBLED_VAILSTONE_SLAB = registerBlock("cobbled_vailstonebrick_slab", 
+			() -> new SlabBlock(BlockBehaviour.Properties.copy(Blocks.COBBLESTONE).sound(SoundType.STONE)));
+	public static final RegistryObject<Block> COBBLED_VAILSTONE_WALL = registerBlock("cobbled_vailstonebrick_wall", 
+			() -> new WallBlock(BlockBehaviour.Properties.copy(Blocks.COBBLESTONE).sound(SoundType.STONE)));
 	
 	//Additional Stone Blocks
 	public static final RegistryObject<Block> LUNARSHALE = registerBlock("lunarshale", 

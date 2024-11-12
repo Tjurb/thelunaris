@@ -63,12 +63,12 @@ public class LunarisNoiseBuilder {
         DensityFunction temperature = DensityFunctions.shiftedNoise2d(shiftX, shiftZ, 0.25, noise.getOrThrow(Noises.TEMPERATURE));
         DensityFunction vegetation = DensityFunctions.shiftedNoise2d(shiftX, shiftZ, 0.25, noise.getOrThrow(Noises.VEGETATION));
 
-        DensityFunction factor = getFunction(densityFunctions, LunarisDensityFunctions.FACTOR);
-        DensityFunction depth = getFunction(densityFunctions, LunarisDensityFunctions.DEPTH);
+        DensityFunction factor = getFunction(densityFunctions, NoiseRouterData.FACTOR);
+        DensityFunction depth = getFunction(densityFunctions, NoiseRouterData.DEPTH);
         
-        DensityFunction continentalness = DensityFunctions.noise(noise.getOrThrow(Noises.CONTINENTALNESS));
-        DensityFunction erosion = DensityFunctions.noise( noise.getOrThrow(Noises.EROSION));
-        DensityFunction ridges = DensityFunctions.noise(noise.getOrThrow(Noises.RIDGE));
+        DensityFunction continentalness = getFunction(densityFunctions, NoiseRouterData.CONTINENTS);
+        DensityFunction erosion = getFunction(densityFunctions, NoiseRouterData.EROSION);
+        DensityFunction ridges = getFunction(densityFunctions, NoiseRouterData.RIDGES);
         
         DensityFunction densityfunction10 = LunarisDensityFunctions.noiseGradientDensity(DensityFunctions.cache2d(factor), depth);
         

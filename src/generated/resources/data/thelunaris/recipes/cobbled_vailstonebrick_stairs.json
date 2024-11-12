@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "S": {
+      "item": "thelunaris:cobbled_vailstone"
+    }
+  },
+  "pattern": [
+    "  S",
+    " SS",
+    "SSS"
+  ],
+  "result": {
+    "count": 4,
+    "item": "thelunaris:cobbled_vailstonebrick_stairs"
+  },
+  "show_notification": true
+}

@@ -4,6 +4,7 @@ import net.minecraft.core.registries.Registries;
 import net.minecraft.data.worldgen.BootstapContext;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.resources.ResourceLocation;
+import net.minecraft.world.level.levelgen.Noises;
 import net.minecraft.world.level.levelgen.synth.NormalNoise;
 import net.minecraft.world.level.levelgen.synth.NormalNoise.NoiseParameters;
 import net.ttttoooo.thelunaris.TheLunaris;
@@ -38,8 +39,8 @@ public class LunarisNoise {
 		
 		register(context, CONTINENTALNESS, -9, 1.0, 1.0, 2.0, 2.0, 2.0, 1.0, 1.0, 1.0, 1.0);
 		register(context, EROSION, -9, 1.0, 1.0, 0.0, 1.0, 1.0);
-		
-		register(context, RIDGE, -7, 1.0, 2.0, 1.0, 0.0, 0.0, 0.0);
+
+	    register(context, RIDGE, -7, 1.0D, 2.0D, 1.0D, 0.0D, 0.0D, 0.0D);
 		register(context, JAGGED, -16, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0);
 		register(context, NOODLE, -8, 1);
 		

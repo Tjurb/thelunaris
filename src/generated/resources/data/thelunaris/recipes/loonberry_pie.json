@@ -1,0 +1,22 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "L": {
+      "item": "thelunaris:loonberry"
+    },
+    "W": {
+      "item": "thelunaris:lunar_wheat"
+    }
+  },
+  "pattern": [
+    "   ",
+    "LLL",
+    "WWW"
+  ],
+  "result": {
+    "count": 4,
+    "item": "thelunaris:loonberry_pie"
+  },
+  "show_notification": true
+}

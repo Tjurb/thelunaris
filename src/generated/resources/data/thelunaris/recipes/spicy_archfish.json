@@ -1,0 +1,22 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "A": {
+      "item": "thelunaris:cooked_archfish"
+    },
+    "S": {
+      "item": "thelunaris:sarrot"
+    }
+  },
+  "pattern": [
+    "   ",
+    "SAS",
+    "SSS"
+  ],
+  "result": {
+    "count": 4,
+    "item": "thelunaris:spicy_archfish"
+  },
+  "show_notification": true
+}

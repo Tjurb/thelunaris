@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/template_farmland",
+  "textures": {
+    "dirt": "thelunaris:block/lundirt",
+    "top": "thelunaris:block/lundirt_farmland_moist"
+  }
+}

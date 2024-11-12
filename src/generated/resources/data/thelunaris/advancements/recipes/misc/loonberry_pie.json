@@ -1,0 +1,48 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_loonberry": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "thelunaris:loonberry"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_lunar_wheat": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "thelunaris:lunar_wheat"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "thelunaris:loonberry_pie"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_loonberry",
+      "has_lunar_wheat",
+      "has_the_recipe"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "thelunaris:loonberry_pie"
+    ]
+  },
+  "sends_telemetry_event": false
+}

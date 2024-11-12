@@ -31,6 +31,10 @@ public class ModBlockTagGenerator extends BlockTagsProvider{
 					ModBlocks.VAILSTONEBRICK_STAIRS.get(),
 					ModBlocks.VAILSTONEBRICK_SLAB.get(),
 					ModBlocks.VAILSTONEBRICK_WALL.get(),
+					ModBlocks.COBBLED_VAILSTONE.get(),
+					ModBlocks.COBBLED_VAILSTONE_STAIRS.get(),
+					ModBlocks.COBBLED_VAILSTONE_SLAB.get(),
+					ModBlocks.COBBLED_VAILSTONE_WALL.get(),
 					ModBlocks.LUNARSHALE.get(),
 					ModBlocks.LUNARSLATE.get(),
 					ModBlocks.SMOOTHLUNARSLATE.get(),
@@ -78,6 +82,7 @@ public class ModBlockTagGenerator extends BlockTagsProvider{
 		
 		this.tag(BlockTags.MINEABLE_WITH_SHOVEL)
 			.add(ModBlocks.LUNDIRT.get(),
+					ModBlocks.LUNDIRT_FARMLAND.get(),
 					ModBlocks.LUNSAND.get(),
 					ModBlocks.LUNGRASS_BLOCK.get());
 		

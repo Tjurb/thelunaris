@@ -24,19 +24,9 @@
       "xz_scale": 1.0,
       "y_scale": 0.5
     },
-    "continents": {
-      "type": "minecraft:noise",
-      "noise": "minecraft:continentalness",
-      "xz_scale": 1.0,
-      "y_scale": 1.0
-    },
-    "depth": "thelunaris:lunaris_depth",
-    "erosion": {
-      "type": "minecraft:noise",
-      "noise": "minecraft:erosion",
-      "xz_scale": 1.0,
-      "y_scale": 1.0
-    },
+    "continents": "minecraft:overworld/continents",
+    "depth": "minecraft:overworld/depth",
+    "erosion": "minecraft:overworld/erosion",
     "final_density": {
       "type": "minecraft:min",
       "argument1": {
@@ -230,10 +220,10 @@
                         "type": "minecraft:quarter_negative",
                         "argument": {
                           "type": "minecraft:mul",
-                          "argument1": "thelunaris:lunaris_depth",
+                          "argument1": "minecraft:overworld/depth",
                           "argument2": {
                             "type": "minecraft:cache_2d",
-                            "argument": "thelunaris:lunaris_factor"
+                            "argument": "minecraft:overworld/factor"
                           }
                         }
                       }
@@ -254,12 +244,7 @@
       "xz_scale": 1.0,
       "y_scale": 1.0
     },
-    "ridges": {
-      "type": "minecraft:noise",
-      "noise": "minecraft:ridge",
-      "xz_scale": 1.0,
-      "y_scale": 1.0
-    },
+    "ridges": "minecraft:overworld/ridges",
     "temperature": {
       "type": "minecraft:shifted_noise",
       "noise": "minecraft:temperature",

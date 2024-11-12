@@ -23,6 +23,8 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
 	public static final List<ItemLike> MOONSTEEL_SMELTABLES = List.of(ModBlocks.MOONSTEEL_ORE.get(),
 			ModItems.RAW_MOONSTEEL.get());
 	public static final List<ItemLike> LABRADORITE_SMELTABLES = List.of(ModBlocks.LABRADORITE_ORE.get());
+	public static final List<ItemLike> STONELIKE_SMELTABLES = List.of(ModBlocks.COBBLED_VAILSTONE.get());
+	public static final List<ItemLike> ARCHFISH_COOKING = List.of(ModItems.ARCHFISH.get());
 
 	public ModRecipeProvider(PackOutput pOutput) {
 		super(pOutput);
@@ -36,7 +38,31 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
 		oreBlasting(pWriter, MOONSTEEL_SMELTABLES, RecipeCategory.MISC, ModItems.MOONSTEEL.get(), 0.15f, 90, "moonsteel" );
 		oreSmelting(pWriter, LABRADORITE_SMELTABLES, RecipeCategory.MISC, ModItems.LABRADORITE.get(), 0.10f, 100, "labradorite" );
 		oreBlasting(pWriter, LABRADORITE_SMELTABLES, RecipeCategory.MISC, ModItems.LABRADORITE.get(), 0.10f, 90, "labradorite" );
+		
+		oreSmelting(pWriter, STONELIKE_SMELTABLES, RecipeCategory.MISC, ModBlocks.VAILSTONE.get(), 0.10f, 50, "vailstone" );
+		
+		oreSmelting(pWriter, ARCHFISH_COOKING, RecipeCategory.MISC, ModItems.COOKED_ARCHFISH.get(), 0.10f, 80, "archfish" );
 	
+		//High level Foods
+		ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModItems.SPICY_ARCHFISH.get(),4 )
+			.pattern("   ")
+			.pattern("SAS")
+			.pattern("SSS")
+			.define('A', ModItems.COOKED_ARCHFISH.get())
+			.define('S', ModItems.SARROT.get())
+			.unlockedBy(getHasName(ModItems.SARROT.get()), has(ModItems.SARROT.get()))
+			.unlockedBy(getHasName(ModItems.COOKED_ARCHFISH.get()), has(ModItems.COOKED_ARCHFISH.get()))
+			.save(pWriter);
+		ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModItems.LOONBERRY_PIE.get(),4 )
+			.pattern("   ")
+			.pattern("LLL")
+			.pattern("WWW")
+			.define('L', ModItems.LOONBERRY.get())
+			.define('W', ModItems.LUNAR_WHEAT.get())
+			.unlockedBy(getHasName(ModItems.LOONBERRY.get()), has(ModItems.LOONBERRY.get()))
+			.unlockedBy(getHasName(ModItems.LUNAR_WHEAT.get()), has(ModItems.LUNAR_WHEAT.get()))
+			.save(pWriter);
+		
 		//Stairs
 		ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModBlocks.CELEST_STAIRS.get(),4 )
 			.pattern("  P")
@@ -59,7 +85,21 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
 			.define('P', ModBlocks.SKYOAK_PLANKS.get())
 			.unlockedBy(getHasName(ModBlocks.SKYOAK_PLANKS.get()), has(ModBlocks.SKYOAK_PLANKS.get()))
 			.save(pWriter);
-		
+
+		ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModBlocks.VAILSTONEBRICK_STAIRS.get(), 4)
+			.pattern("  S")
+			.pattern(" SS")
+			.pattern("SSS")
+			.define('S', ModBlocks.VAILSTONEBRICK.get())
+			.unlockedBy(getHasName(ModBlocks.VAILSTONEBRICK.get()), has(ModBlocks.VAILSTONEBRICK.get()))
+			.save(pWriter);	
+		ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModBlocks.COBBLED_VAILSTONE_STAIRS.get(), 4)
+			.pattern("  S")
+			.pattern(" SS")
+			.pattern("SSS")
+			.define('S', ModBlocks.COBBLED_VAILSTONE.get())
+			.unlockedBy(getHasName(ModBlocks.COBBLED_VAILSTONE.get()), has(ModBlocks.COBBLED_VAILSTONE.get()))
+			.save(pWriter);	
 		ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModBlocks.SMOOTHGNEISS_STAIRS.get(), 4)
 			.pattern("  S")
 			.pattern(" SS")
@@ -104,7 +144,21 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
 			.define('P', ModBlocks.SKYOAK_PLANKS.get())
 			.unlockedBy(getHasName(ModBlocks.SKYOAK_PLANKS.get()), has(ModBlocks.SKYOAK_PLANKS.get()))
 			.save(pWriter);
-	
+
+		ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModBlocks.COBBLED_VAILSTONE_SLAB.get(), 6)
+			.pattern("   ")
+			.pattern("   ")
+			.pattern("SSS")
+			.define('S', ModBlocks.COBBLED_VAILSTONE.get())
+			.unlockedBy(getHasName(ModBlocks.COBBLED_VAILSTONE.get()), has(ModBlocks.COBBLED_VAILSTONE.get()))
+			.save(pWriter);	
+		ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModBlocks.VAILSTONEBRICK_SLAB.get(), 6)
+			.pattern("   ")
+			.pattern("   ")
+			.pattern("SSS")
+			.define('S', ModBlocks.VAILSTONEBRICK.get())
+			.unlockedBy(getHasName(ModBlocks.VAILSTONEBRICK.get()), has(ModBlocks.VAILSTONEBRICK.get()))
+			.save(pWriter);	
 		ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModBlocks.SMOOTHGNEISS_SLAB.get(), 6)
 			.pattern("   ")
 			.pattern("   ")
@@ -128,6 +182,20 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
 			.save(pWriter);	
 	
 		//walls
+		ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModBlocks.COBBLED_VAILSTONE_WALL.get(), 6)
+			.pattern("   ")
+			.pattern("SSS")
+			.pattern("SSS")
+			.define('S', ModBlocks.COBBLED_VAILSTONE.get())
+			.unlockedBy(getHasName(ModBlocks.COBBLED_VAILSTONE.get()), has(ModBlocks.COBBLED_VAILSTONE.get()))
+			.save(pWriter);
+		ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModBlocks.VAILSTONEBRICK_WALL.get(), 6)
+			.pattern("   ")
+			.pattern("SSS")
+			.pattern("SSS")
+			.define('S', ModBlocks.VAILSTONEBRICK.get())
+			.unlockedBy(getHasName(ModBlocks.VAILSTONEBRICK.get()), has(ModBlocks.VAILSTONEBRICK.get()))
+			.save(pWriter);	
 		ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModBlocks.SMOOTHGNEISS_WALL.get(), 6)
 			.pattern("   ")
 			.pattern("SSS")

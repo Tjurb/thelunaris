@@ -1,9 +1,12 @@
-// 1.20.1	2024-11-08T14:26:52.5462855	Item Models: thelunaris
+// 1.20.1	2024-11-12T12:13:26.7436725	Item Models: thelunaris
 b7176a2f31e02ede645f754b6b7dd43a1b142ecc assets/thelunaris/models/item/archfish.json
 63ec6c618a3a23eab4cab9c52d7d3250de9b516e assets/thelunaris/models/item/archfish_spawn_egg.json
 4859e1cbbad8939f755f19c212619cb750a0ba53 assets/thelunaris/models/item/celest_sapling.json
 96fa6f9c7db59f40a706bbc159fbed773ee508c3 assets/thelunaris/models/item/celest_slab.json
 bcea65955536a9c7105ba8924a653ea35db48470 assets/thelunaris/models/item/celest_stairs.json
+be69dbf810598ad5a7fed3beec974d6ffacf0cd4 assets/thelunaris/models/item/cobbled_vailstonebrick_slab.json
+67ca38ef0534f0d8144678441e70b5c3e5895824 assets/thelunaris/models/item/cobbled_vailstonebrick_stairs.json
+b3abd4ad0dc272a6a884012c782f213d09e95cce assets/thelunaris/models/item/cobbled_vailstonebrick_wall.json
 9120ca205b5c0208a34a3a425218d0a9309d086b assets/thelunaris/models/item/cooked_archfish.json
 0414281635d08f78f0de15b50fdf44888b1001ee assets/thelunaris/models/item/emoonsteel.json
 733ec8c997ecf5c63c7291cb7663168feb25f733 assets/thelunaris/models/item/emoonsteel_axe.json

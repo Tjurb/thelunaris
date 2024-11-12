@@ -1,5 +1,5 @@
-// 1.20.1	2024-11-09T07:03:33.520406	Registries
-39e2df6de57fc311711b64b2b4b983c40304e9fc data/thelunaris/dimension/lunarisdim.json
+// 1.20.1	2024-11-12T13:39:17.7421397	Registries
+9d608e2cbb398a7a246b2208a469506befd063bd data/thelunaris/dimension/lunarisdim.json
 f6e871c13f59a845ba81f83665f9554b93d51595 data/thelunaris/dimension_type/lunarisdim_type.json
 4e4991b9e0ebdde86ce3286d221a6eb569a47b8f data/thelunaris/worldgen/biome/azureite_ocean.json
 0dcc16ba7c0be69ecbc7bf46157866af306980cf data/thelunaris/worldgen/biome/lunar_forests.json
@@ -49,7 +49,7 @@ dee3d1cb549513644a534b3d41b89380ace745a2 data/thelunaris/worldgen/noise/luna_noo
 7ee30d29ad8335dd8c715f538c2fe86bed46dbb0 data/thelunaris/worldgen/noise/luna_ridge.json
 0b9f654b23136a3c52ef8b00e58fc4cc0ecda41a data/thelunaris/worldgen/noise/luna_temperature.json
 144e6875c7c48ab4b4a0717436536cc121dc62da data/thelunaris/worldgen/noise/luna_vegetation.json
-fe7c8f5c1de43684ce72b6280fd443807f770a4b data/thelunaris/worldgen/noise_settings/luna.json
+ec783911eedc3632016900689ce8cfa301589421 data/thelunaris/worldgen/noise_settings/luna.json
 68a4b1533b5ecfb6a0b42dd5ec69a5bd98d76a48 data/thelunaris/worldgen/placed_feature/celest_placed.json
 5d14d220daaddc00721a0aa5bfe8cd18fbef65bd data/thelunaris/worldgen/placed_feature/labradorite_ore_placed.json
 7a257b2d0e36e45fe449980956906398f6002b55 data/thelunaris/worldgen/placed_feature/large_labradorite_ore_placed.json

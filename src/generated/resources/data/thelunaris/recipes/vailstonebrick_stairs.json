@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "S": {
+      "item": "thelunaris:vailstonebrick"
+    }
+  },
+  "pattern": [
+    "  S",
+    " SS",
+    "SSS"
+  ],
+  "result": {
+    "count": 4,
+    "item": "thelunaris:vailstonebrick_stairs"
+  },
+  "show_notification": true
+}
