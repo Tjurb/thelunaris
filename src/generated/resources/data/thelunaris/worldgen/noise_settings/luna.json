@@ -26,19 +26,14 @@
     },
     "continents": {
       "type": "minecraft:noise",
-      "noise": "thelunaris:luna_continentalness",
+      "noise": "minecraft:continentalness",
       "xz_scale": 1.0,
       "y_scale": 1.0
     },
-    "depth": {
-      "type": "minecraft:noise",
-      "noise": "thelunaris:luna_depth",
-      "xz_scale": 1.0,
-      "y_scale": 1.0
-    },
+    "depth": "thelunaris:lunaris_depth",
     "erosion": {
       "type": "minecraft:noise",
-      "noise": "thelunaris:luna_erosion",
+      "noise": "minecraft:erosion",
       "xz_scale": 1.0,
       "y_scale": 1.0
     },
@@ -235,20 +230,10 @@
                         "type": "minecraft:quarter_negative",
                         "argument": {
                           "type": "minecraft:mul",
-                          "argument1": {
-                            "type": "minecraft:noise",
-                            "noise": "thelunaris:luna_depth",
-                            "xz_scale": 1.0,
-                            "y_scale": 1.0
-                          },
+                          "argument1": "thelunaris:lunaris_depth",
                           "argument2": {
                             "type": "minecraft:cache_2d",
-                            "argument": {
-                              "type": "minecraft:noise",
-                              "noise": "thelunaris:luna_factor",
-                              "xz_scale": 1.0,
-                              "y_scale": 1.0
-                            }
+                            "argument": "thelunaris:lunaris_factor"
                           }
                         }
                       }
@@ -271,13 +256,13 @@
     },
     "ridges": {
       "type": "minecraft:noise",
-      "noise": "thelunaris:luna_ridge",
+      "noise": "minecraft:ridge",
       "xz_scale": 1.0,
       "y_scale": 1.0
     },
     "temperature": {
       "type": "minecraft:shifted_noise",
-      "noise": "thelunaris:luna_temperature",
+      "noise": "minecraft:temperature",
       "shift_x": "minecraft:shift_x",
       "shift_y": 0.0,
       "shift_z": "minecraft:shift_z",
@@ -286,7 +271,7 @@
     },
     "vegetation": {
       "type": "minecraft:shifted_noise",
-      "noise": "thelunaris:luna_vegetation",
+      "noise": "minecraft:vegetation",
       "shift_x": "minecraft:shift_x",
       "shift_y": 0.0,
       "shift_z": "minecraft:shift_z",

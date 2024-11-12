@@ -41,13 +41,6 @@ public class LunarisNoiseBuilder {
     private static NoiseRouter makeNoiseRouter(BootstapContext<NoiseGeneratorSettings> context, HolderGetter<DensityFunction> densityFunctions, HolderGetter<NormalNoise.NoiseParameters> noise) {
         return createNoiseRouter(densityFunctions, noise);
     }
-
-    private static DensityFunction oldbuildFinalDensity(HolderGetter<DensityFunction> densityFunctions, DensityFunction densityFunction) {
-        DensityFunction density = getFunction(densityFunctions, ResourceKey.create(Registries.DENSITY_FUNCTION, new ResourceLocation(TheLunaris.MODID,"base_3d_noise_lunaris")));
-        density = DensityFunctions.add(densityFunction, density);
-        return density = DensityFunctions.mul(DensityFunctions.interpolated(density),
-        		DensityFunctions.constant(0.62D)).squeeze();
-    }
     
     private static DensityFunction buildFinalDensity(DensityFunction p_224493_) {
        DensityFunction densityfunction = DensityFunctions.blendDensity(p_224493_);
@@ -55,7 +48,7 @@ public class LunarisNoiseBuilder {
     }
     
     //[CODE COPY] - {@link NoiseRouterData#overworld(HolderGetter, HolderGetter, DensityFunction)}.<br><br>
-    //Logic that called {@link NoiseRouterData#postProcess(DensityFunction)} has been moved to {@link LunarisNoiseBuilder#buildFinalDensity(HolderGetter)}.
+    //Logic that called {@link NoiseRouterData#postProcess(DensityFunction)} has been moved to {@link NoisesBuilder#buildFinalDensity(HolderGetter)}.
     private static NoiseRouter createNoiseRouter(HolderGetter<DensityFunction> densityFunctions, HolderGetter<NormalNoise.NoiseParameters> noise) {
 
     	//Disable for testing
@@ -67,15 +60,15 @@ public class LunarisNoiseBuilder {
     	DensityFunction shiftX = getFunction(densityFunctions, ResourceKey.create(Registries.DENSITY_FUNCTION, new ResourceLocation("shift_x")));
         DensityFunction shiftZ = getFunction(densityFunctions, ResourceKey.create(Registries.DENSITY_FUNCTION, new ResourceLocation("shift_z")));
        
-        DensityFunction temperature = DensityFunctions.shiftedNoise2d(shiftX, shiftZ, 0.25, noise.getOrThrow(LunarisNoise.TEMPERATURE));
-        DensityFunction vegetation = DensityFunctions.shiftedNoise2d(shiftX, shiftZ, 0.25, noise.getOrThrow(LunarisNoise.VEGETATION));
+        DensityFunction temperature = DensityFunctions.shiftedNoise2d(shiftX, shiftZ, 0.25, noise.getOrThrow(Noises.TEMPERATURE));
+        DensityFunction vegetation = DensityFunctions.shiftedNoise2d(shiftX, shiftZ, 0.25, noise.getOrThrow(Noises.VEGETATION));
 
-        DensityFunction factor = DensityFunctions.noise(noise.getOrThrow(LunarisNoise.FACTOR));
-        DensityFunction depth = DensityFunctions.noise(noise.getOrThrow(LunarisNoise.DEPTH));
+        DensityFunction factor = getFunction(densityFunctions, LunarisDensityFunctions.FACTOR);
+        DensityFunction depth = getFunction(densityFunctions, LunarisDensityFunctions.DEPTH);
         
-        DensityFunction continentalness = DensityFunctions.noise(noise.getOrThrow(LunarisNoise.CONTINENTALNESS));
-        DensityFunction erosion = DensityFunctions.noise( noise.getOrThrow(LunarisNoise.EROSION));
-        DensityFunction ridges = DensityFunctions.noise(noise.getOrThrow(LunarisNoise.RIDGE));
+        DensityFunction continentalness = DensityFunctions.noise(noise.getOrThrow(Noises.CONTINENTALNESS));
+        DensityFunction erosion = DensityFunctions.noise( noise.getOrThrow(Noises.EROSION));
+        DensityFunction ridges = DensityFunctions.noise(noise.getOrThrow(Noises.RIDGE));
         
         DensityFunction densityfunction10 = LunarisDensityFunctions.noiseGradientDensity(DensityFunctions.cache2d(factor), depth);
         

@@ -61,7 +61,14 @@
       }
     ],
     "misc": [],
-    "monster": [],
+    "monster": [
+      {
+        "type": "thelunaris:hex",
+        "maxCount": 3,
+        "minCount": 2,
+        "weight": 8
+      }
+    ],
     "underground_water_creature": [],
     "water_ambient": [],
     "water_creature": []

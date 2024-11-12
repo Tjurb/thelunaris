@@ -21,6 +21,7 @@ public class LunarisNoise {
 	public static final ResourceKey<NoiseParameters> RIDGE = createKey("luna_ridge");
 	public static final ResourceKey<NoiseParameters> FACTOR = createKey("luna_factor");
 	public static final ResourceKey<NoiseParameters> JAGGED = createKey("luna_jagged");
+	public static final ResourceKey<NoiseParameters> NOODLE = createKey("luna_noodle");
 	
 	private static ResourceKey<NoiseParameters> createKey(String name) {
         return ResourceKey.create(Registries.NOISE, new ResourceLocation(TheLunaris.MODID, name));
@@ -31,14 +32,19 @@ public class LunarisNoise {
 		register(context, AQUIFERFLOOD, -7, 1);
 		register(context, AQUIFERSPREAD, -5, 1);
 		register(context, AQUIFERLAVA, -1, 1);
-		register(context, TEMPERATURE, -8, 5.0, 4.0, 4.0, 9.0, 20.0, 17.0);
-		register(context, VEGETATION, -7, 1.0, 2.0, 3.0, 4.0, 5.0, 6.0);
-		register(context, CONTINENTALNESS, -6, -5.0, 4.0, -4.0, 9.0, 0.0, -17.0);
-		register(context, EROSION, -4, -10.0, 9.0, -5.0, 4.0, 0.0, 0.0);
-		register(context, DEPTH, -4, 5.0, 4.0, 4.0, 9.0, 4.0, 4.0);
-		register(context, RIDGE, -7, -1.0, 5.0, 4.0, -4.0, 5.0, 6.0);
-		register(context, FACTOR, -7, -1.0, 5.0, 4.0, -4.0, 5.0, 6.0);
+		
+		register(context, TEMPERATURE, -10, 1.5, 0.0, 1.0, 0.0, 0.0, 0.0);
+		register(context, VEGETATION, -8, 1.0, 1.0, 0.0, 0.0, 0.0, 0.0);
+		
+		register(context, CONTINENTALNESS, -9, 1.0, 1.0, 2.0, 2.0, 2.0, 1.0, 1.0, 1.0, 1.0);
+		register(context, EROSION, -9, 1.0, 1.0, 0.0, 1.0, 1.0);
+		
+		register(context, RIDGE, -7, 1.0, 2.0, 1.0, 0.0, 0.0, 0.0);
 		register(context, JAGGED, -16, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0);
+		register(context, NOODLE, -8, 1);
+		
+		register(context, DEPTH, -4, 5.0, 4.0, 4.0, 9.0, 4.0, 4.0);
+		register(context, FACTOR, -7, -1.0, 5.0, 4.0, -4.0, 5.0, 6.0);
 	    }
 	
 	public static void register(BootstapContext<NoiseParameters> context, ResourceKey<NormalNoise.NoiseParameters> key, int firstOctave, double firstAmplitude, double... amplitudes) {

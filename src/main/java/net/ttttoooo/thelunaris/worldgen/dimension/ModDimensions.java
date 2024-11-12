@@ -65,15 +65,225 @@ public class ModDimensions {
         NoiseBasedChunkGenerator noiseBasedChunkGenerator = new NoiseBasedChunkGenerator(
                 MultiNoiseBiomeSource.createFromList(
                         new Climate.ParameterList<>(List.of(
-                        		//Temp,humidity,continentalness,erosion,depth,weirdness,offset
+                        		//Depth = 0
                                 Pair.of(
-                                        Climate.parameters(0.5F, 0.1F, 0.0F, 0.1F, 0.0F, 0.0F, 0.0F), biomeRegistry.getOrThrow(ModBiomes.AZUREITE_OCEAN)),
+                                        Climate.parameters(
+                                        		Climate.Parameter.span(-0.5F, 0.5F), //Temp
+                                        		Climate.Parameter.span(-0.5F, 0.5F), //Humidity
+                                        		Climate.Parameter.span(-1.05F, -0.19F), //Continentalness
+                                        		Climate.Parameter.span(0F, 0.5F), //Erosion
+                                        		Climate.Parameter.span(0F, 0F), //Depth
+                                        		Climate.Parameter.span(-1F, 1F), //Weirdness
+                                        		0.0F), biomeRegistry.getOrThrow(ModBiomes.AZUREITE_OCEAN)),
                                 Pair.of(
-                                        Climate.parameters(0.7F, 0.0F, 0.0F, 0.0F, 0.0F, 0.0F, 0.0F), biomeRegistry.getOrThrow(ModBiomes.LUNAR_FORESTS)),
+                                        Climate.parameters(
+                                        		Climate.Parameter.span(-0.45F, 0.2F), //Temp
+                                        		Climate.Parameter.span(-0.1F, 0.1F), //Humidity
+                                        		Climate.Parameter.span(0F, 1F), //Continentalness
+                                        		Climate.Parameter.span(-1F, 1F), //Erosion
+                                        		Climate.Parameter.span(0F, 0F), //Depth
+                                        		Climate.Parameter.span(0F, 1F), //Weirdness
+                                        		0.0F), biomeRegistry.getOrThrow(ModBiomes.LUNAR_FORESTS)),
                                 Pair.of(
-                                        Climate.parameters(1.0F, 0.5F, 0.0F, 0.0F, 0.0F, 0.0F, 0.1F), biomeRegistry.getOrThrow(ModBiomes.SKYWORD_MOUNTAINS)),
+                                        Climate.parameters(
+                                        		Climate.Parameter.span(0.2F, 0.55F), //Temp
+                                        		Climate.Parameter.span(-0.1F, 0.1F), //Humidity
+                                        		Climate.Parameter.span(0F, 1F), //Continentalness
+                                        		Climate.Parameter.span(-1F, 1F), //Erosion
+                                        		Climate.Parameter.span(0F, 0F), //Depth
+                                        		Climate.Parameter.span(-1F, 0F), //Weirdness
+                                        		0.0F), biomeRegistry.getOrThrow(ModBiomes.LUNAR_FORESTS)),
                                 Pair.of(
-                                        Climate.parameters(1.0F, -0.5F, 0.1F, 0.1F, -0.03F, 0.0F, 0.0F), biomeRegistry.getOrThrow(ModBiomes.SLEEPING_SANDS))
+                                        Climate.parameters(
+                                        		Climate.Parameter.span(-0.45F, -0.15F), //Temp
+                                        		Climate.Parameter.span(-0.1F, 0.1F), //Humidity
+                                        		Climate.Parameter.span(0F, 1F), //Continentalness
+                                        		Climate.Parameter.span(-1F, 1F), //Erosion
+                                        		Climate.Parameter.span(0F, 0F), //Depth
+                                        		Climate.Parameter.span(-1F, 0F), //Weirdness
+                                        		0.0F), biomeRegistry.getOrThrow(ModBiomes.LUNAR_FORESTS)),
+                                Pair.of(
+                                        Climate.parameters(
+                                        		Climate.Parameter.span(-0.15F, 0.2F), //Temp
+                                        		Climate.Parameter.span(-0.1F, 0.1F), //Humidity
+                                        		Climate.Parameter.span(0F, 1F), //Continentalness
+                                        		Climate.Parameter.span(-1F, 1F), //Erosion
+                                        		Climate.Parameter.span(0F, 0F), //Depth
+                                        		Climate.Parameter.span(0F, 1F), //Weirdness
+                                        		0.0F), biomeRegistry.getOrThrow(ModBiomes.LUNAR_FORESTS)),
+                                Pair.of(
+                                        Climate.parameters(
+                                        		Climate.Parameter.span(0.2F, 0.55F), //Temp
+                                        		Climate.Parameter.span(-0.1F, 0.3F), //Humidity
+                                        		Climate.Parameter.span(0F, 1F), //Continentalness
+                                        		Climate.Parameter.span(-1F, 1F), //Erosion
+                                        		Climate.Parameter.span(0F, 0F), //Depth
+                                        		Climate.Parameter.span(-1F, 1F), //Weirdness
+                                        		0.0F), biomeRegistry.getOrThrow(ModBiomes.LUNAR_FORESTS)),
+                                Pair.of(
+                                        Climate.parameters(
+                                        		Climate.Parameter.span(0.2F, 0.55F), //Temp
+                                        		Climate.Parameter.span(-0.1F, 0.1F), //Humidity
+                                        		Climate.Parameter.span(0F, 1F), //Continentalness
+                                        		Climate.Parameter.span(-1F, 1F), //Erosion
+                                        		Climate.Parameter.span(0F, 0F), //Depth
+                                        		Climate.Parameter.span(-1F, 0F), //Weirdness
+                                        		0.0F), biomeRegistry.getOrThrow(ModBiomes.LUNAR_FORESTS)),
+                                Pair.of(
+                                        Climate.parameters(
+                                        		Climate.Parameter.span(-1F, 1F), //Temp
+                                        		Climate.Parameter.span(0F, 1F), //Humidity
+                                        		Climate.Parameter.span(0F, 1F), //Continentalness
+                                        		Climate.Parameter.span(-1F, -0.375F), //Erosion
+                                        		Climate.Parameter.span(0F, 0F), //Depth
+                                        		Climate.Parameter.span(0.7F, 1F), //Weirdness
+                                        		0.1F), biomeRegistry.getOrThrow(ModBiomes.SKYWORD_MOUNTAINS)),
+                                Pair.of(
+                                        Climate.parameters(
+                                        		Climate.Parameter.span(-1F, 1F), //Temp
+                                        		Climate.Parameter.span(0F, 1F), //Humidity
+                                        		Climate.Parameter.span(-0.15F, 1F), //Continentalness
+                                        		Climate.Parameter.span(-1F, -0.375F), //Erosion
+                                        		Climate.Parameter.span(0F, 0F), //Depth
+                                        		Climate.Parameter.span(-0.6F, 0.7F), //Weirdness
+                                        		0.1F), biomeRegistry.getOrThrow(ModBiomes.SKYWORD_MOUNTAINS)),
+                                Pair.of(
+                                        Climate.parameters(
+                                        		Climate.Parameter.span(0.55F, 1F), //Temp
+                                        		Climate.Parameter.span(-1F, 1F), //Humidity
+                                        		Climate.Parameter.span(-0.19F, 1F), //Continentalness
+                                        		Climate.Parameter.span(0F, 1F), //Erosion
+                                        		Climate.Parameter.span(0F, 0F), //Depth
+                                        		Climate.Parameter.span(-1F, 1F), //Weirdness
+                                        		0.0F), biomeRegistry.getOrThrow(ModBiomes.SLEEPING_SANDS)),
+                                Pair.of(
+                                        Climate.parameters(
+                                        		Climate.Parameter.span(0.55F, 1F), //Temp
+                                        		Climate.Parameter.span(-1F, 1F), //Humidity
+                                        		Climate.Parameter.span(-0.19F, 1F), //Continentalness
+                                        		Climate.Parameter.span(0F, 1F), //Erosion
+                                        		Climate.Parameter.span(0F, 0F), //Depth
+                                        		Climate.Parameter.span(-1F, 1F), //Weirdness
+                                        		0.0F), biomeRegistry.getOrThrow(ModBiomes.SLEEPING_SANDS)),
+                                Pair.of(
+                                        Climate.parameters(
+                                        		Climate.Parameter.span(0.55F, 1F), //Temp
+                                        		Climate.Parameter.span(-1F, 1F), //Humidity
+                                        		Climate.Parameter.span(-0.19F, 1F), //Continentalness
+                                        		Climate.Parameter.span(0F, 1F), //Erosion
+                                        		Climate.Parameter.span(0F, 0F), //Depth
+                                        		Climate.Parameter.span(-1F, 1F), //Weirdness
+                                        		0.0F), biomeRegistry.getOrThrow(ModBiomes.SLEEPING_SANDS)),
+                                
+                                //Depth = 1
+                                Pair.of(
+                                        Climate.parameters(
+                                        		Climate.Parameter.span(-0.5F, 0.5F), //Temp
+                                        		Climate.Parameter.span(-0.5F, 0.5F), //Humidity
+                                        		Climate.Parameter.span(-1.05F, -0.19F), //Continentalness
+                                        		Climate.Parameter.span(0F, 0.5F), //Erosion
+                                        		Climate.Parameter.span(1F, 1F), //Depth
+                                        		Climate.Parameter.span(-1F, 1F), //Weirdness
+                                        		0.0F), biomeRegistry.getOrThrow(ModBiomes.AZUREITE_OCEAN)),
+                                Pair.of(
+                                        Climate.parameters(
+                                        		Climate.Parameter.span(-0.45F, 0.2F), //Temp
+                                        		Climate.Parameter.span(-0.1F, 0.1F), //Humidity
+                                        		Climate.Parameter.span(0F, 1F), //Continentalness
+                                        		Climate.Parameter.span(-1F, 1F), //Erosion
+                                        		Climate.Parameter.span(1F, 1F), //Depth
+                                        		Climate.Parameter.span(0F, 1F), //Weirdness
+                                        		0.0F), biomeRegistry.getOrThrow(ModBiomes.LUNAR_FORESTS)),
+                                Pair.of(
+                                        Climate.parameters(
+                                        		Climate.Parameter.span(0.2F, 0.55F), //Temp
+                                        		Climate.Parameter.span(-0.1F, 0.1F), //Humidity
+                                        		Climate.Parameter.span(0F, 1F), //Continentalness
+                                        		Climate.Parameter.span(-1F, 1F), //Erosion
+                                        		Climate.Parameter.span(1F, 1F), //Depth
+                                        		Climate.Parameter.span(-1F, 0F), //Weirdness
+                                        		0.0F), biomeRegistry.getOrThrow(ModBiomes.LUNAR_FORESTS)),
+                                Pair.of(
+                                        Climate.parameters(
+                                        		Climate.Parameter.span(-0.45F, -0.15F), //Temp
+                                        		Climate.Parameter.span(-0.1F, 0.1F), //Humidity
+                                        		Climate.Parameter.span(0F, 1F), //Continentalness
+                                        		Climate.Parameter.span(-1F, 1F), //Erosion
+                                        		Climate.Parameter.span(1F, 1F), //Depth
+                                        		Climate.Parameter.span(-1F, 0F), //Weirdness
+                                        		0.0F), biomeRegistry.getOrThrow(ModBiomes.LUNAR_FORESTS)),
+                                Pair.of(
+                                        Climate.parameters(
+                                        		Climate.Parameter.span(-0.15F, 0.2F), //Temp
+                                        		Climate.Parameter.span(-0.1F, 0.1F), //Humidity
+                                        		Climate.Parameter.span(0F, 1F), //Continentalness
+                                        		Climate.Parameter.span(-1F, 1F), //Erosion
+                                        		Climate.Parameter.span(1F, 1F), //Depth
+                                        		Climate.Parameter.span(0F, 1F), //Weirdness
+                                        		0.0F), biomeRegistry.getOrThrow(ModBiomes.LUNAR_FORESTS)),
+                                Pair.of(
+                                        Climate.parameters(
+                                        		Climate.Parameter.span(0.2F, 0.55F), //Temp
+                                        		Climate.Parameter.span(-0.1F, 0.3F), //Humidity
+                                        		Climate.Parameter.span(0F, 1F), //Continentalness
+                                        		Climate.Parameter.span(-1F, 1F), //Erosion
+                                        		Climate.Parameter.span(1F, 1F), //Depth
+                                        		Climate.Parameter.span(-1F, 1F), //Weirdness
+                                        		0.0F), biomeRegistry.getOrThrow(ModBiomes.LUNAR_FORESTS)),
+                                Pair.of(
+                                        Climate.parameters(
+                                        		Climate.Parameter.span(0.2F, 0.55F), //Temp
+                                        		Climate.Parameter.span(-0.1F, 0.1F), //Humidity
+                                        		Climate.Parameter.span(0F, 1F), //Continentalness
+                                        		Climate.Parameter.span(-1F, 1F), //Erosion
+                                        		Climate.Parameter.span(1F, 1F), //Depth
+                                        		Climate.Parameter.span(-1F, 0F), //Weirdness
+                                        		0.0F), biomeRegistry.getOrThrow(ModBiomes.LUNAR_FORESTS)),
+                                Pair.of(
+                                        Climate.parameters(
+                                        		Climate.Parameter.span(-1F, 1F), //Temp
+                                        		Climate.Parameter.span(0F, 1F), //Humidity
+                                        		Climate.Parameter.span(0F, 1F), //Continentalness
+                                        		Climate.Parameter.span(-1F, -0.375F), //Erosion
+                                        		Climate.Parameter.span(1F, 1F), //Depth
+                                        		Climate.Parameter.span(0.7F, 1F), //Weirdness
+                                        		0.1F), biomeRegistry.getOrThrow(ModBiomes.SKYWORD_MOUNTAINS)),
+                                Pair.of(
+                                        Climate.parameters(
+                                        		Climate.Parameter.span(-1F, 1F), //Temp
+                                        		Climate.Parameter.span(0F, 1F), //Humidity
+                                        		Climate.Parameter.span(-0.15F, 1F), //Continentalness
+                                        		Climate.Parameter.span(-1F, -0.375F), //Erosion
+                                        		Climate.Parameter.span(1F, 1F), //Depth
+                                        		Climate.Parameter.span(-0.6F, 0.7F), //Weirdness
+                                        		0.1F), biomeRegistry.getOrThrow(ModBiomes.SKYWORD_MOUNTAINS)),
+                                Pair.of(
+                                        Climate.parameters(
+                                        		Climate.Parameter.span(0.55F, 1F), //Temp
+                                        		Climate.Parameter.span(-1F, 1F), //Humidity
+                                        		Climate.Parameter.span(-0.19F, 1F), //Continentalness
+                                        		Climate.Parameter.span(0F, 1F), //Erosion
+                                        		Climate.Parameter.span(1F, 1F), //Depth
+                                        		Climate.Parameter.span(-1F, 1F), //Weirdness
+                                        		0.0F), biomeRegistry.getOrThrow(ModBiomes.SLEEPING_SANDS)),
+                                Pair.of(
+                                        Climate.parameters(
+                                        		Climate.Parameter.span(0.55F, 1F), //Temp
+                                        		Climate.Parameter.span(-1F, 1F), //Humidity
+                                        		Climate.Parameter.span(-0.19F, 1F), //Continentalness
+                                        		Climate.Parameter.span(0F, 1F), //Erosion
+                                        		Climate.Parameter.span(1F, 1F), //Depth
+                                        		Climate.Parameter.span(-1F, 1F), //Weirdness
+                                        		0.0F), biomeRegistry.getOrThrow(ModBiomes.SLEEPING_SANDS)),
+                                Pair.of(
+                                        Climate.parameters(
+                                        		Climate.Parameter.span(0.55F, 1F), //Temp
+                                        		Climate.Parameter.span(-1F, 1F), //Humidity
+                                        		Climate.Parameter.span(-0.19F, 1F), //Continentalness
+                                        		Climate.Parameter.span(0F, 1F), //Erosion
+                                        		Climate.Parameter.span(1F, 1F), //Depth
+                                        		Climate.Parameter.span(-1F, 1F), //Weirdness
+                                        		0.0F), biomeRegistry.getOrThrow(ModBiomes.SLEEPING_SANDS))
                                 
                         ))),
                 noiseGenSettings.getOrThrow(LunarisNoiseSettings.LUNA));
