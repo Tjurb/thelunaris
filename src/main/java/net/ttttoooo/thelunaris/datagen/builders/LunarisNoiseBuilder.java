@@ -33,7 +33,7 @@ public class LunarisNoiseBuilder {
                 63, // seaLevel
                 false, // disableMobGeneration
                 true, // aquifersEnabled
-                false, // oreVeinsEnabled
+                true, // oreVeinsEnabled
                 false  // useLegacyRandomSource
         );
     }
