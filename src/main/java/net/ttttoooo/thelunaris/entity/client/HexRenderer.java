@@ -12,7 +12,7 @@ import net.ttttoooo.thelunaris.entity.custom.LunarsleeperEntity;
 
 public class HexRenderer extends MobRenderer<HexEntity, HexModel<HexEntity>> {
     public HexRenderer(EntityRendererProvider.Context pContext) {
-        super(pContext, new HexModel<>(pContext.bakeLayer(ModModelLayers.HEX_LAYER)), 0.5f);
+        super(pContext, new HexModel<>(pContext.bakeLayer(ModModelLayers.HEX_LAYER)), 0.9f);
     }
 
 	@Override

@@ -19,15 +19,12 @@
       "sound": "minecraft:music.overworld.forest"
     },
     "sky_color": 1196646,
-    "water_color": 255,
-    "water_fog_color": 119
+    "water_color": 1118549,
+    "water_fog_color": 1118549
   },
   "features": [
     [],
-    [
-      "minecraft:lake_lava_underground",
-      "minecraft:lake_lava_surface"
-    ],
+    [],
     [],
     [],
     [],
@@ -43,7 +40,8 @@
     [
       "thelunaris:celest_placed",
       "thelunaris:stellar_placed",
-      "thelunaris:lunaris_grass_patch_placed"
+      "thelunaris:lunaris_grass_patch_placed",
+      "thelunaris:lunaris_sarrot_patch_placed"
     ]
   ],
   "has_precipitation": false,

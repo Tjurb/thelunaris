@@ -19,15 +19,12 @@
       "sound": "minecraft:music.overworld.snowy_slopes"
     },
     "sky_color": 1196646,
-    "water_color": 16711680,
-    "water_fog_color": 119
+    "water_color": 4454,
+    "water_fog_color": 4454
   },
   "features": [
     [],
-    [
-      "minecraft:lake_lava_underground",
-      "minecraft:lake_lava_surface"
-    ],
+    [],
     [],
     [],
     [],
@@ -44,7 +41,8 @@
     [],
     [
       "thelunaris:skyoak_placed",
-      "thelunaris:lunaris_grass_patch_placed"
+      "thelunaris:lunaris_grass_patch_placed",
+      "thelunaris:lunaris_berry_patch_placed"
     ]
   ],
   "has_precipitation": false,

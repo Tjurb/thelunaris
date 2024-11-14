@@ -44,29 +44,33 @@ public class ModPlacedFeatures {
 	
 	//ground vegetation key
 	public static final ResourceKey<PlacedFeature> LUNARIS_GRASS_PATCH_PLACED_KEY = registerKey("lunaris_grass_patch_placed");
+	public static final ResourceKey<PlacedFeature> LUNARIS_SARROT_PATCH_PLACED_KEY = registerKey("lunaris_sarrot_patch_placed");
+	public static final ResourceKey<PlacedFeature> LUNARIS_BERRY_PATCH_PLACED_KEY = registerKey("lunaris_berry_patch_placed");
 	public static final ResourceKey<PlacedFeature> LUNARIS_BONEMEAL_KEY = registerKey("lunaris_vegetation_placed");
+	public static final ResourceKey<PlacedFeature> LUNARIS_BONEMEAL_BERRY_KEY = registerKey("lunaris_vegitation_berry_placed");
+	public static final ResourceKey<PlacedFeature> LUNARIS_BONEMEAL_SARROT_KEY = registerKey("lunaris_vegitation_sarrot_placed");
 
 	public static void bootstrap(BootstapContext<PlacedFeature> context) {
         HolderGetter<ConfiguredFeature<?, ?>> configuredFeatures = context.lookup(Registries.CONFIGURED_FEATURE);
         //ore register
         register(context, LUNARIS_MOONSTEEL_ORE_PLACED_KEY, configuredFeatures.getOrThrow(ModConfiguredFeatures.LUNARIS_MOONSTEEL_ORE_KEY),
                 ModOrePlacement.commonOrePlacement(20,
-                        HeightRangePlacement.uniform(VerticalAnchor.absolute(-64), VerticalAnchor.absolute(80))));
+                        HeightRangePlacement.uniform(VerticalAnchor.absolute(-32), VerticalAnchor.absolute(80))));
         register(context, LUNARIS_LABRADORITE_ORE_PLACED_KEY, configuredFeatures.getOrThrow(ModConfiguredFeatures.LUNARIS_LABRADORITE_ORE_KEY),
                 ModOrePlacement.commonOrePlacement(10,
-                        HeightRangePlacement.uniform(VerticalAnchor.absolute(-64), VerticalAnchor.absolute(80))));
+                        HeightRangePlacement.uniform(VerticalAnchor.absolute(-32), VerticalAnchor.absolute(16))));
         register(context, LUNARIS_LUNARITE_ORE_PLACED_KEY, configuredFeatures.getOrThrow(ModConfiguredFeatures.LUNARIS_LUNARITE_ORE_KEY),
                 ModOrePlacement.commonOrePlacement(10,
-                        HeightRangePlacement.uniform(VerticalAnchor.absolute(-64), VerticalAnchor.absolute(80))));
+                        HeightRangePlacement.uniform(VerticalAnchor.absolute(-64), VerticalAnchor.absolute(0))));
         register(context, LUNARIS_LARGE_MOONSTEEL_ORE_PLACED_KEY, configuredFeatures.getOrThrow(ModConfiguredFeatures.LUNARIS_LARGE_MOONSTEEL_ORE_KEY),
                 ModOrePlacement.rareOrePlacement(10,
-                        HeightRangePlacement.uniform(VerticalAnchor.absolute(-64), VerticalAnchor.absolute(40))));
+                        HeightRangePlacement.uniform(VerticalAnchor.absolute(-32), VerticalAnchor.absolute(40))));
         register(context, LUNARIS_LARGE_LABRADORITE_ORE_PLACED_KEY, configuredFeatures.getOrThrow(ModConfiguredFeatures.LUNARIS_LARGE_LABRADORITE_ORE_KEY),
                 ModOrePlacement.rareOrePlacement(5,
-                        HeightRangePlacement.uniform(VerticalAnchor.absolute(-64), VerticalAnchor.absolute(40))));
+                        HeightRangePlacement.uniform(VerticalAnchor.absolute(-32), VerticalAnchor.absolute(32))));
         register(context, LUNARIS_LARGE_LUNARITE_ORE_PLACED_KEY, configuredFeatures.getOrThrow(ModConfiguredFeatures.LUNARIS_LARGE_LUNARITE_ORE_KEY),
                 ModOrePlacement.rareOrePlacement(5,
-                        HeightRangePlacement.uniform(VerticalAnchor.absolute(-64), VerticalAnchor.absolute(40))));
+                        HeightRangePlacement.uniform(VerticalAnchor.absolute(-32), VerticalAnchor.absolute(16))));
         
         //tree register
         register(context, CELEST_PLACED_KEY, configuredFeatures.getOrThrow(ModConfiguredFeatures.CELEST_KEY),
@@ -82,7 +86,15 @@ public class ModPlacedFeatures {
         //vegetation register
         register(context, LUNARIS_GRASS_PATCH_PLACED_KEY, configuredFeatures.getOrThrow(ModConfiguredFeatures.LUNARIS_GRASS_PATCH_KEY),
         		VegetationPlacements.worldSurfaceSquaredWithCount(5));
+        register(context, LUNARIS_SARROT_PATCH_PLACED_KEY, configuredFeatures.getOrThrow(ModConfiguredFeatures.LUNARIS_SARROT_PATCH_KEY),
+        		VegetationPlacements.worldSurfaceSquaredWithCount(2));
+        register(context, LUNARIS_BERRY_PATCH_PLACED_KEY, configuredFeatures.getOrThrow(ModConfiguredFeatures.LUNARIS_BERRY_PATCH_KEY),
+        		VegetationPlacements.worldSurfaceSquaredWithCount(2));
         register(context, LUNARIS_BONEMEAL_KEY, configuredFeatures.getOrThrow(ModConfiguredFeatures.SINGLE_PIECE_OF_LUNGRASS),
+        		VegetationPlacements.worldSurfaceSquaredWithCount(1));
+        register(context, LUNARIS_BONEMEAL_BERRY_KEY, configuredFeatures.getOrThrow(ModConfiguredFeatures.SINGLE_PIECE_OF_BERRY),
+        		VegetationPlacements.worldSurfaceSquaredWithCount(1));
+        register(context, LUNARIS_BONEMEAL_SARROT_KEY, configuredFeatures.getOrThrow(ModConfiguredFeatures.SINGLE_PIECE_OF_SARROT),
         		VegetationPlacements.worldSurfaceSquaredWithCount(1));
     }
 	

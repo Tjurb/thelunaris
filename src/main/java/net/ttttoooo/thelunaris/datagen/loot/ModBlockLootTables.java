@@ -2,6 +2,7 @@ package net.ttttoooo.thelunaris.datagen.loot;
 
 import java.util.Set;
 
+import net.minecraft.advancements.critereon.StatePropertiesPredicate;
 import net.minecraft.data.loot.BlockLootSubProvider;
 import net.minecraft.world.flag.FeatureFlags;
 import net.minecraft.world.item.Item;
@@ -12,10 +13,15 @@ import net.minecraft.world.level.storage.loot.LootTable;
 import net.minecraft.world.level.storage.loot.entries.LootItem;
 import net.minecraft.world.level.storage.loot.functions.ApplyBonusCount;
 import net.minecraft.world.level.storage.loot.functions.SetItemCountFunction;
+import net.minecraft.world.level.storage.loot.predicates.LootItemBlockStatePropertyCondition;
+import net.minecraft.world.level.storage.loot.predicates.LootItemCondition;
 import net.minecraft.world.level.storage.loot.predicates.LootItemRandomChanceCondition;
 import net.minecraft.world.level.storage.loot.providers.number.UniformGenerator;
 import net.minecraftforge.registries.RegistryObject;
 import net.ttttoooo.thelunaris.block.ModBlocks;
+import net.ttttoooo.thelunaris.block.custom.LoonBerryCropBlock;
+import net.ttttoooo.thelunaris.block.custom.LunWheatCropBlock;
+import net.ttttoooo.thelunaris.block.custom.SarrotCropBlock;
 import net.ttttoooo.thelunaris.item.ModItems;
 
 public class ModBlockLootTables extends BlockLootSubProvider{
@@ -57,12 +63,30 @@ public class ModBlockLootTables extends BlockLootSubProvider{
 		this.dropSelf(ModBlocks.SMOOTHMARBLE_STAIRS.get());
 		this.dropSelf(ModBlocks.SMOOTHMARBLE_WALL.get());
 		
+        LootItemCondition.Builder wheatCropLootContition$builder = LootItemBlockStatePropertyCondition
+                .hasBlockStateProperties(ModBlocks.LUNWHEAT_CROP.get())
+                .setProperties(StatePropertiesPredicate.Builder.properties().hasProperty(LunWheatCropBlock.AGE, 5));
+
+        this.add(ModBlocks.LUNWHEAT_CROP.get(), createCropDrops(ModBlocks.LUNWHEAT_CROP.get(), ModItems.LUNAR_WHEAT.get(),
+                ModItems.LUNAR_WHEAT_SEEDS.get(), wheatCropLootContition$builder));
+        
+        LootItemCondition.Builder sarrotCropLootContition$builder = LootItemBlockStatePropertyCondition
+                .hasBlockStateProperties(ModBlocks.SARROT_CROP.get())
+                .setProperties(StatePropertiesPredicate.Builder.properties().hasProperty(SarrotCropBlock.AGE, 5));
+
+        this.add(ModBlocks.SARROT_CROP.get(), createCropDrops(ModBlocks.SARROT_CROP.get(), ModItems.SARROT.get(),
+                ModItems.SARROT.get(), sarrotCropLootContition$builder));
+		
+        LootItemCondition.Builder loonBerryCropLootContition$builder = LootItemBlockStatePropertyCondition
+                .hasBlockStateProperties(ModBlocks.LOONBERRY_CROP.get())
+                .setProperties(StatePropertiesPredicate.Builder.properties().hasProperty(LoonBerryCropBlock.AGE, 3));
+
+        this.add(ModBlocks.LOONBERRY_CROP.get(), createCropDrops(ModBlocks.LOONBERRY_CROP.get(), ModItems.LOONBERRY.get(),
+                ModItems.LOONBERRY.get(), loonBerryCropLootContition$builder));
 
 		this.add(ModBlocks.LUNGRASS_BLOCK.get(),
 				block -> createGrassBlockLikeDrops(ModBlocks.LUNGRASS_BLOCK.get(), ModBlocks.LUNDIRT.get()));
 		this.dropSelf(ModBlocks.LUNDIRT.get());
-		this.add(ModBlocks.LUNDIRT_FARMLAND.get(),
-			block -> createGrassBlockLikeDrops(ModBlocks.LUNDIRT.get(), ModBlocks.LUNDIRT.get()));
 		this.dropSelf(ModBlocks.LUNSAND.get());
 		this.dropSelf(ModBlocks.LUNSANDSTONE.get());
 		this.dropSelf(ModBlocks.LUNSANDSTONE_STAIRS.get());
@@ -131,7 +155,10 @@ public class ModBlockLootTables extends BlockLootSubProvider{
 		//Nature Blocks
 		this.add(ModBlocks.LUNGRASS.get(), block ->
 			createGrassLikeDrops(block));
-
+		this.add(ModBlocks.WILD_LOONBERRY.get(), block ->
+			createWildLoonberryDrops(block));
+		this.add(ModBlocks.WILD_SARROT.get(), block ->
+			createWildSarrotDrops(block));
 	}
 	
 	protected LootTable.Builder createGrassLikeDrops(Block p_252139_) {
@@ -139,7 +166,21 @@ public class ModBlockLootTables extends BlockLootSubProvider{
 	    		  this.applyExplosionDecay(p_252139_, 
 	    				  LootItem.lootTableItem(ModItems.LUNAR_WHEAT_SEEDS.get()).when(LootItemRandomChanceCondition.randomChance(0.125F))
 	    				  .apply(ApplyBonusCount.addUniformBonusCount(Enchantments.BLOCK_FORTUNE, 2))));
-	   }
+	}
+	
+	protected LootTable.Builder createWildLoonberryDrops(Block p_252139_) {
+	      return createShearsDispatchTable(p_252139_, 
+	    		  this.applyExplosionDecay(p_252139_, 
+	    				  LootItem.lootTableItem(ModItems.LOONBERRY.get()).when(LootItemRandomChanceCondition.randomChance(0.125F))
+	    				  .apply(ApplyBonusCount.addUniformBonusCount(Enchantments.BLOCK_FORTUNE, 2))));
+	}
+	
+	protected LootTable.Builder createWildSarrotDrops(Block p_252139_) {
+	      return createShearsDispatchTable(p_252139_, 
+	    		  this.applyExplosionDecay(p_252139_, 
+	    				  LootItem.lootTableItem(ModItems.SARROT.get()).when(LootItemRandomChanceCondition.randomChance(0.125F))
+	    				  .apply(ApplyBonusCount.addUniformBonusCount(Enchantments.BLOCK_FORTUNE, 2))));
+	}
 	
 	protected LootTable.Builder createDiamondLikeOreDrops(Block pBlock, Item item){
 		return createSilkTouchDispatchTable(pBlock,

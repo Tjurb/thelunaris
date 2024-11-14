@@ -1,11 +1,5 @@
 package net.ttttoooo.thelunaris.datagen.builders.noises;
 
-
-import com.mojang.serialization.Codec;
-import com.mojang.serialization.MapCodec;
-import com.mojang.serialization.codecs.RecordCodecBuilder;
-
-import it.unimi.dsi.fastutil.doubles.Double2DoubleFunction;
 import net.minecraft.core.Holder;
 import net.minecraft.core.HolderGetter;
 import net.minecraft.core.registries.Registries;
@@ -13,18 +7,13 @@ import net.minecraft.data.worldgen.BootstapContext;
 import net.minecraft.data.worldgen.TerrainProvider;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.resources.ResourceLocation;
-import net.minecraft.util.KeyDispatchDataCodec;
-import net.minecraft.util.RandomSource;
-import net.minecraft.util.StringRepresentable;
 import net.minecraft.world.level.dimension.DimensionType;
 import net.minecraft.world.level.levelgen.DensityFunction;
 import net.minecraft.world.level.levelgen.DensityFunctions;
 import net.minecraft.world.level.levelgen.NoiseRouter;
-import net.minecraft.world.level.levelgen.NoiseRouterData;
 import net.minecraft.world.level.levelgen.Noises;
 import net.minecraft.world.level.levelgen.synth.BlendedNoise;
 import net.minecraft.world.level.levelgen.synth.NormalNoise;
-import net.minecraft.world.level.levelgen.synth.NormalNoise.NoiseParameters;
 import net.ttttoooo.thelunaris.TheLunaris;
 
 public class LunarisDensityFunctions {
@@ -34,8 +23,8 @@ public class LunarisDensityFunctions {
 	private static final DensityFunction BLENDING_FACTOR = DensityFunctions.constant(10.0D);
 	private static final DensityFunction BLENDING_JAGGEDNESS = DensityFunctions.zero();
 	private static final ResourceKey<DensityFunction> ZERO = createKey("lunaris_zero");
-	private static final ResourceKey<DensityFunction> SHIFT_X = createKey("lunaris_shift_x");
-	private static final ResourceKey<DensityFunction> SHIFT_Z = createKey("lunaris_shift_z");
+	public static final ResourceKey<DensityFunction> SHIFT_X = createKey("lunaris_shift_x");
+	public static final ResourceKey<DensityFunction> SHIFT_Z = createKey("lunaris_shift_z");
     public static final ResourceKey<DensityFunction> BASE_3D_NOISE_LUNARIS = createKey("base_3d_noise_lunaris");
     public static final ResourceKey<DensityFunction> Y = createKey("lunaris_y");
     public static final ResourceKey<DensityFunction> CONTINENTS = createKey("lunaris_continents");
@@ -53,14 +42,13 @@ public class LunarisDensityFunctions {
     public static final ResourceKey<DensityFunction> PILLARS = createKey("lunaris_pillars");
     public static final ResourceKey<DensityFunction> SPAGHETTI_2D = createKey("lunaris_spaghetti_2d");
     public static final ResourceKey<DensityFunction> SPAGHETTI_2D_THICKNESS_MODULATOR = createKey("lunaris_spaghetti_2d_thickness_modulator");
-    public static final ResourceKey<DensityFunction> WSSREPLACER = createKey("weird_scaled_sampler_replacr");
 
 
     private static ResourceKey<DensityFunction> createKey(String name) {
         return ResourceKey.create(Registries.DENSITY_FUNCTION, new ResourceLocation(TheLunaris.MODID, name));
     }
 
-    public static void bootstrap(BootstapContext<DensityFunction> context) {
+    public static Holder<? extends DensityFunction> bootstrap(BootstapContext<DensityFunction> context) {
         HolderGetter<NormalNoise.NoiseParameters> holdergetter = context.lookup(Registries.NOISE);
         HolderGetter<DensityFunction> holdergetter1 = context.lookup(Registries.DENSITY_FUNCTION);
         context.register(ZERO, DensityFunctions.zero());
@@ -81,7 +69,7 @@ public class LunarisDensityFunctions {
 	        context.register(NOODLE, noodle(holdergetter1, holdergetter));
 	        context.register(ENTRANCES, entrances(holdergetter1, holdergetter));
 	        context.register(SPAGHETTI_2D, spaghetti2D(holdergetter1, holdergetter));
-	        context.register(PILLARS, pillars(holdergetter));
+	        return context.register(PILLARS, pillars(holdergetter));
 	}
     
     private static void registerTerrainNoises(BootstapContext<DensityFunction> p_256336_, HolderGetter<DensityFunction> p_256393_, DensityFunction p_224476_, Holder<DensityFunction> p_224477_, Holder<DensityFunction> p_224478_, ResourceKey<DensityFunction> p_224479_, ResourceKey<DensityFunction> p_224480_, ResourceKey<DensityFunction> p_224481_, ResourceKey<DensityFunction> p_224482_, ResourceKey<DensityFunction> p_224483_, boolean p_224484_) {
@@ -117,14 +105,11 @@ public class LunarisDensityFunctions {
     }
     
     private static DensityFunction entrances(HolderGetter<DensityFunction> p_256511_, HolderGetter<NormalNoise.NoiseParameters> p_255899_) {
-        DensityFunction densityfunction = DensityFunctions.cacheOnce(DensityFunctions.noise(p_255899_.getOrThrow(Noises.SPAGHETTI_3D_RARITY), 2.0D, 1.0D));
+        DensityFunction rarity = DensityFunctions.cacheOnce(DensityFunctions.noise(p_255899_.getOrThrow(Noises.SPAGHETTI_3D_RARITY), 2.0D, 1.0D));
         DensityFunction densityfunction1 = DensityFunctions.mappedNoise(p_255899_.getOrThrow(Noises.SPAGHETTI_3D_THICKNESS), -0.065D, -0.088D);
-        //original densityfunction 2 and 3
-        //DensityFunction densityfunction2 = DensityFunctions.weirdScaledSampler(densityfunction, p_255899_.getOrThrow(Noises.SPAGHETTI_3D_1), DensityFunctions.WeirdScaledSampler.RarityValueMapper.TYPE1);
-        //DensityFunction densityfunction3 = DensityFunctions.weirdScaledSampler(densityfunction, p_255899_.getOrThrow(Noises.SPAGHETTI_3D_2), DensityFunctions.WeirdScaledSampler.RarityValueMapper.TYPE1);
         
-        DensityFunction densityfunction2 =  DensityFunctions.mul(densityfunction, DensityFunctions.mappedNoise(p_255899_.getOrThrow(Noises.SPAGHETTI_3D_1), 0.75, 0.35));
-        DensityFunction densityfunction3 =  DensityFunctions.mul(densityfunction, DensityFunctions.mappedNoise(p_255899_.getOrThrow(Noises.SPAGHETTI_3D_2), 0.75, 0.35));
+        DensityFunction densityfunction2 =  DensityFunctions.mul(DensityFunctions.mappedNoise(p_255899_.getOrThrow(Noises.SPAGHETTI_3D_1), -2.0, 0.35), rarity);
+        DensityFunction densityfunction3 =  DensityFunctions.mul(DensityFunctions.mappedNoise(p_255899_.getOrThrow(Noises.SPAGHETTI_3D_2), 2.0, -0.35), rarity);
         
         DensityFunction densityfunction4 = DensityFunctions.add(DensityFunctions.max(densityfunction2, densityfunction3), densityfunction1).clamp(-1.0D, 1.0D);
         DensityFunction densityfunction5 = getFunction(p_256511_, SPAGHETTI_ROUGHNESS_FUNCTION);
@@ -154,9 +139,7 @@ public class LunarisDensityFunctions {
     private static DensityFunction spaghetti2D(HolderGetter<DensityFunction> p_256535_, HolderGetter<NormalNoise.NoiseParameters> p_255650_) {
         DensityFunction densityfunction = DensityFunctions.noise(p_255650_.getOrThrow(Noises.SPAGHETTI_2D_MODULATOR), 2.0D, 1.0D);
         
-        //old densityFunction1
-        //DensityFunction densityfunction1 = DensityFunctions.weirdScaledSampler(densityfunction, p_255650_.getOrThrow(Noises.SPAGHETTI_2D), LunarisDensityFunctions.getRarityValue(0.25D));
-        DensityFunction densityfunctionA = DensityFunctions.mappedNoise(p_255650_.getOrThrow(Noises.SPAGHETTI_2D), 0.0D, 1.1D);
+        DensityFunction densityfunctionA = DensityFunctions.mul(DensityFunctions.mappedNoise(p_255650_.getOrThrow(Noises.SPAGHETTI_2D), 0.0D, 1.1D), DensityFunctions.constant(0.25D));
         DensityFunction densityfunctionB = DensityFunctions.add(DensityFunctions.mul(densityfunction, DensityFunctions.constant(2.0D)), densityfunctionA);
         DensityFunction densityfunction1 = DensityFunctions.mul(densityfunctionA, densityfunctionB);
         
@@ -211,18 +194,4 @@ public class LunarisDensityFunctions {
         DensityFunction densityfunction2 = DensityFunctions.yClampedGradient(p_224445_ + p_224450_, p_224445_ + p_224451_, 0.0D, 1.0D);
         return DensityFunctions.lerp(densityfunction2, p_224452_, $$9);
     }
-    
- // Define a simplified rarity mapping based on TYPE1 from QuantizedSpaghettiRarity
-    private static double getRarityValue(double input) {
-        if (input < -0.5) {
-            return 0.75;
-        } else if (input < 0.0) {
-            return 1.0;
-        } else if (input < 0.5) {
-            return 1.5;
-        } else {
-            return 2.0;
-        }
-    }
-    
  }

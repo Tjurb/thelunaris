@@ -11,7 +11,7 @@ import net.ttttoooo.thelunaris.entity.custom.PhyrexEntity;
 
 public class PhyrexRenderer extends MobRenderer<PhyrexEntity, PhyrexModel<PhyrexEntity>> {
     public PhyrexRenderer(EntityRendererProvider.Context pContext) {
-        super(pContext, new PhyrexModel<>(pContext.bakeLayer(ModModelLayers.PHYREX_LAYER)), 0.5f);
+        super(pContext, new PhyrexModel<>(pContext.bakeLayer(ModModelLayers.PHYREX_LAYER)), 1.0f);
     }
 
     @Override

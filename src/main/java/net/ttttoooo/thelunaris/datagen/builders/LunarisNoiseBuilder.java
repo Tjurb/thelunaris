@@ -32,8 +32,8 @@ public class LunarisNoiseBuilder {
                 List.of(), // spawnTarget
                 63, // seaLevel
                 false, // disableMobGeneration
-                false, // aquifersEnabled
-                true, // oreVeinsEnabled
+                true, // aquifersEnabled
+                false, // oreVeinsEnabled
                 false  // useLegacyRandomSource
         );
     }
@@ -57,8 +57,8 @@ public class LunarisNoiseBuilder {
     	DensityFunction aquiferspread = DensityFunctions.noise(noise.getOrThrow(LunarisNoise.AQUIFERSPREAD), 0.7142857142857143D);
     	DensityFunction aquiferlava = DensityFunctions.noise(noise.getOrThrow(LunarisNoise.AQUIFERLAVA));
         
-    	DensityFunction shiftX = getFunction(densityFunctions, ResourceKey.create(Registries.DENSITY_FUNCTION, new ResourceLocation("shift_x")));
-        DensityFunction shiftZ = getFunction(densityFunctions, ResourceKey.create(Registries.DENSITY_FUNCTION, new ResourceLocation("shift_z")));
+    	DensityFunction shiftX = getFunction(densityFunctions, LunarisDensityFunctions.SHIFT_X);
+        DensityFunction shiftZ = getFunction(densityFunctions, LunarisDensityFunctions.SHIFT_Z);
        
         DensityFunction temperature = DensityFunctions.shiftedNoise2d(shiftX, shiftZ, 0.25, noise.getOrThrow(Noises.TEMPERATURE));
         DensityFunction vegetation = DensityFunctions.shiftedNoise2d(shiftX, shiftZ, 0.25, noise.getOrThrow(Noises.VEGETATION));
@@ -73,21 +73,17 @@ public class LunarisNoiseBuilder {
         DensityFunction densityfunction10 = LunarisDensityFunctions.noiseGradientDensity(DensityFunctions.cache2d(factor), depth);
         
         DensityFunction slopedcheese = getFunction(densityFunctions, LunarisDensityFunctions.SLOPED_CHEESE);
-        DensityFunction densityfunction12 = DensityFunctions.min(slopedcheese, DensityFunctions.mul(DensityFunctions.constant(5.0D), getFunction(densityFunctions, LunarisDensityFunctions.ENTRANCES)));
-        DensityFunction densityfunction13 = DensityFunctions.rangeChoice(slopedcheese, -1000000.0D, 1.5625D, densityfunction12, LunarisDensityFunctions.underground(densityFunctions, noise, slopedcheese));
-        DensityFunction finaldensity = DensityFunctions.min(buildFinalDensity(LunarisDensityFunctions.slideLunaris(densityfunction13)), getFunction(densityFunctions, LunarisDensityFunctions.NOODLE));
-        
-        DensityFunction densityfunction15 = getFunction(densityFunctions, LunarisDensityFunctions.Y);
+        DensityFunction entrances = DensityFunctions.min(slopedcheese, DensityFunctions.mul(DensityFunctions.constant(5.0D), getFunction(densityFunctions, LunarisDensityFunctions.ENTRANCES)));
+        DensityFunction underground = DensityFunctions.rangeChoice(slopedcheese, -1000000.0D, 1.5625D, entrances, LunarisDensityFunctions.underground(densityFunctions, noise, slopedcheese));
+        DensityFunction finaldensity = DensityFunctions.min(buildFinalDensity(LunarisDensityFunctions.slideLunaris(underground)), getFunction(densityFunctions, LunarisDensityFunctions.NOODLE));
 
         int i = 192;
         int j = -60;
         
-        DensityFunction oreveins = LunarisDensityFunctions.yLimitedInterpolatable(densityfunction15, DensityFunctions.noise(noise.getOrThrow(Noises.ORE_VEININESS), 1.5D, 1.5D), i, j, 0);
+        DensityFunction oreveins = DensityFunctions.zero();
         float f = 4.0F;
-        DensityFunction oreveinA = LunarisDensityFunctions.yLimitedInterpolatable(densityfunction15, DensityFunctions.noise(noise.getOrThrow(Noises.ORE_VEIN_A), 4.0D, 4.0D), i, j, 0).abs();
-        DensityFunction oreveinB = LunarisDensityFunctions.yLimitedInterpolatable(densityfunction15, DensityFunctions.noise(noise.getOrThrow(Noises.ORE_VEIN_B), 4.0D, 4.0D), i, j, 0).abs();
-        DensityFunction oreveinAB = DensityFunctions.add(DensityFunctions.constant((double)-0.08F), DensityFunctions.max(oreveinA, oreveinB));
-        DensityFunction oregap = DensityFunctions.noise(noise.getOrThrow(Noises.ORE_GAP));
+        DensityFunction oreveinAB = DensityFunctions.zero();
+        DensityFunction oregap = DensityFunctions.zero();
         
         return new NoiseRouter(
         		aquiferbarrier, // barrier noise

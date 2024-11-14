@@ -30,6 +30,11 @@ public class ModCreativeTabs {
 				pOutput.accept(ModBlocks.LUNSANDSTONE_STAIRS.get());
 				pOutput.accept(ModBlocks.LUNSANDSTONE_SLAB.get());
 				pOutput.accept(ModBlocks.LUNSANDSTONE_WALL.get());
+
+				pOutput.accept(ModBlocks.COBBLED_VAILSTONE.get());
+				pOutput.accept(ModBlocks.COBBLED_VAILSTONE_STAIRS.get());
+				pOutput.accept(ModBlocks.COBBLED_VAILSTONE_SLAB.get());
+				pOutput.accept(ModBlocks.COBBLED_VAILSTONE_WALL.get());
 				
 				pOutput.accept(ModBlocks.VAILSTONE.get());
 				pOutput.accept(ModBlocks.VAILSTONEBRICK.get());

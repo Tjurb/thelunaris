@@ -39,7 +39,7 @@ public class ModDimensions {
     public static void bootstrapType(BootstapContext<DimensionType> context) {
         context.register(LUNARIS_DIM_TYPE, new DimensionType(
                 OptionalLong.of(12000), // fixedTime
-                false, // hasSkylight
+                true, // hasSkylight
                 false, // hasCeiling
                 false, // ultraWarm
                 false, // natural
@@ -51,7 +51,7 @@ public class ModDimensions {
                 192, // logicalHeight
                 BlockTags.INFINIBURN_OVERWORLD, // infiniburn
                 BuiltinDimensionTypes.OVERWORLD_EFFECTS, // effectsLocation
-                1.0f, // ambientLight
+                0.2f, // ambientLight
                 new DimensionType.MonsterSettings(false, false, ConstantInt.of(0), 0)));
     }
 
@@ -66,6 +66,24 @@ public class ModDimensions {
                 MultiNoiseBiomeSource.createFromList(
                         new Climate.ParameterList<>(List.of(
                         		//Depth = 0
+                                Pair.of(
+                                        Climate.parameters(
+                                        		Climate.Parameter.span(-1F, 1F), //Temp
+                                        		Climate.Parameter.span(-0.5F, 0.5F), //Humidity
+                                        		Climate.Parameter.span(-0.19F, 1F), //Continentalness
+                                        		Climate.Parameter.span(0F, 0.5F), //Erosion
+                                        		Climate.Parameter.span(0F, 0F), //Depth
+                                        		Climate.Parameter.span(-1F, -0.85F), //Weirdness
+                                        		0.0F), biomeRegistry.getOrThrow(ModBiomes.SAPPHIRE_RIVER)),
+                                Pair.of(
+                                        Climate.parameters(
+                                        		Climate.Parameter.span(-1F, 1F), //Temp
+                                        		Climate.Parameter.span(-0.5F, 0.5F), //Humidity
+                                        		Climate.Parameter.span(-0.19F, -0.11F), //Continentalness
+                                        		Climate.Parameter.span(0F, 0.5F), //Erosion
+                                        		Climate.Parameter.span(0F, 0F), //Depth
+                                        		Climate.Parameter.span(-0.6F, 0.2F), //Weirdness
+                                        		0.0F), biomeRegistry.getOrThrow(ModBiomes.SHIMMERING_COAST)),
                                 Pair.of(
                                         Climate.parameters(
                                         		Climate.Parameter.span(-1F, 1F), //Temp
@@ -176,6 +194,24 @@ public class ModDimensions {
                                         		0.0F), biomeRegistry.getOrThrow(ModBiomes.SLEEPING_SANDS)),
                                 
                                 //Depth = 1
+                                Pair.of(
+                                        Climate.parameters(
+                                        		Climate.Parameter.span(-1F, 1F), //Temp
+                                        		Climate.Parameter.span(-0.5F, 0.5F), //Humidity
+                                        		Climate.Parameter.span(-0.19F, 1F), //Continentalness
+                                        		Climate.Parameter.span(0F, 0.5F), //Erosion
+                                        		Climate.Parameter.span(1F, 1F), //Depth
+                                        		Climate.Parameter.span(-1F, -0.85F), //Weirdness
+                                        		0.0F), biomeRegistry.getOrThrow(ModBiomes.SAPPHIRE_RIVER)),
+                                Pair.of(
+                                        Climate.parameters(
+                                        		Climate.Parameter.span(-1F, 1F), //Temp
+                                        		Climate.Parameter.span(-0.5F, 0.5F), //Humidity
+                                        		Climate.Parameter.span(-0.19F, -0.11F), //Continentalness
+                                        		Climate.Parameter.span(0F, 0.5F), //Erosion
+                                        		Climate.Parameter.span(1F, 1F), //Depth
+                                        		Climate.Parameter.span(-0.6F, 0.2F), //Weirdness
+                                        		0.0F), biomeRegistry.getOrThrow(ModBiomes.SHIMMERING_COAST)),
                                 Pair.of(
                                         Climate.parameters(
                                         		Climate.Parameter.span(-1F, 1F), //Temp

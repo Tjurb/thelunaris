@@ -30,6 +30,7 @@ public class ModTags {
 	    public static final TagKey<Biome> IS_LUNARIS_BIOME = tag("is_lunaris_biome");
 	    public static final TagKey<Biome> IS_LUNARIS_MOUNTAIN = tag("is_lunaris_mountian");
 	    public static final TagKey<Biome> IS_LUNARIS_OCEAN = tag("is_lunaris_ocean");
+	    public static final TagKey<Biome> IS_LUNARIS_COAST = tag("is_lunaris_coast");
 
 	    private static TagKey<Biome> tag(String name) {
 	        return TagKey.create(Registries.BIOME, new ResourceLocation(TheLunaris.MODID, name));

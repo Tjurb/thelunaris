@@ -13,36 +13,36 @@
                 {
                   "condition": "minecraft:match_tool",
                   "predicate": {
-                    "enchantments": [
-                      {
-                        "enchantment": "minecraft:silk_touch",
-                        "levels": {
-                          "min": 1
-                        }
-                      }
+                    "items": [
+                      "minecraft:shears"
                     ]
                   }
                 }
               ],
-              "name": "thelunaris:lundirt"
+              "name": "thelunaris:wild_loonberry"
             },
             {
               "type": "minecraft:item",
+              "conditions": [
+                {
+                  "chance": 0.125,
+                  "condition": "minecraft:random_chance"
+                }
+              ],
               "functions": [
                 {
-                  "add": false,
-                  "count": {
-                    "type": "minecraft:uniform",
-                    "max": 1.0,
-                    "min": 1.0
-                  },
-                  "function": "minecraft:set_count"
+                  "enchantment": "minecraft:fortune",
+                  "formula": "minecraft:uniform_bonus_count",
+                  "function": "minecraft:apply_bonus",
+                  "parameters": {
+                    "bonusMultiplier": 2
+                  }
                 },
                 {
                   "function": "minecraft:explosion_decay"
                 }
               ],
-              "name": "thelunaris:lundirt"
+              "name": "thelunaris:loonberry"
             }
           ]
         }
@@ -50,5 +50,5 @@
       "rolls": 1.0
     }
   ],
-  "random_sequence": "thelunaris:blocks/lundirt_farmland"
+  "random_sequence": "thelunaris:blocks/wild_loonberry"
 }

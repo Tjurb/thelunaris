@@ -44,7 +44,11 @@ public class ModConfiguredFeatures {
 	
 	//vegetation keys
 	public static final ResourceKey<ConfiguredFeature<?, ?>> LUNARIS_GRASS_PATCH_KEY = registerKey("lunaris_lungrass_patch");
+	public static final ResourceKey<ConfiguredFeature<?, ?>> LUNARIS_SARROT_PATCH_KEY = registerKey("lunaris_sarrot_patch");
+	public static final ResourceKey<ConfiguredFeature<?, ?>> LUNARIS_BERRY_PATCH_KEY = registerKey("lunaris_berry_patch");
 	public static final ResourceKey<ConfiguredFeature<?, ?>> SINGLE_PIECE_OF_LUNGRASS = registerKey("lunaris_lungrass_single");
+	public static final ResourceKey<ConfiguredFeature<?, ?>> SINGLE_PIECE_OF_SARROT = registerKey("lunaris_sarrot_single");
+	public static final ResourceKey<ConfiguredFeature<?, ?>> SINGLE_PIECE_OF_BERRY = registerKey("lunaris_berry_single");
 	
 	public static void bootstrap(BootstapContext<ConfiguredFeature<?, ?>> context) {
 		//ore register
@@ -90,9 +94,17 @@ public class ModConfiguredFeatures {
         //vegetation register
         register(context, LUNARIS_GRASS_PATCH_KEY, Feature.RANDOM_PATCH,
         		grassPatch(BlockStateProvider.simple(ModBlocks.LUNGRASS.get()), 32));
+        register(context, LUNARIS_SARROT_PATCH_KEY, Feature.RANDOM_PATCH,
+        		grassPatch(BlockStateProvider.simple(ModBlocks.WILD_SARROT.get()), 32));
+        register(context, LUNARIS_BERRY_PATCH_KEY, Feature.RANDOM_PATCH,
+        		grassPatch(BlockStateProvider.simple(ModBlocks.WILD_LOONBERRY.get()), 32));
 
         register(context, SINGLE_PIECE_OF_LUNGRASS, Feature.SIMPLE_BLOCK, 
         		new SimpleBlockConfiguration(BlockStateProvider.simple(ModBlocks.LUNGRASS.get().defaultBlockState())));
+        register(context, SINGLE_PIECE_OF_SARROT, Feature.SIMPLE_BLOCK, 
+        		new SimpleBlockConfiguration(BlockStateProvider.simple(ModBlocks.WILD_SARROT.get().defaultBlockState())));
+        register(context, SINGLE_PIECE_OF_BERRY, Feature.SIMPLE_BLOCK, 
+        		new SimpleBlockConfiguration(BlockStateProvider.simple(ModBlocks.WILD_LOONBERRY.get().defaultBlockState())));
         }
 
 	public static ResourceKey<ConfiguredFeature<?, ?>> registerKey(String name) {

@@ -24,15 +24,16 @@ import net.minecraft.world.level.block.TallGrassBlock;
 import net.minecraft.world.level.block.WallBlock;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.block.state.BlockState;
-import net.minecraft.world.level.material.MapColor;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
 import net.ttttoooo.thelunaris.TheLunaris;
-import net.ttttoooo.thelunaris.block.custom.LunFarmland;
+import net.ttttoooo.thelunaris.block.custom.LoonBerryCropBlock;
 import net.ttttoooo.thelunaris.block.custom.LunGrassBlock;
+import net.ttttoooo.thelunaris.block.custom.LunWheatCropBlock;
 import net.ttttoooo.thelunaris.block.custom.ModFlammableRotatedPillarBlock;
+import net.ttttoooo.thelunaris.block.custom.SarrotCropBlock;
 import net.ttttoooo.thelunaris.block.custom.portal.ModPortalBlock;
 import net.ttttoooo.thelunaris.item.ModItems;
 import net.ttttoooo.thelunaris.worldgen.tree.CelestTreeGrower;
@@ -54,6 +55,14 @@ public class ModBlocks {
 	public static final RegistryObject<Block> LUNARIS_BEDROCK = registerBlock("lunaris_bedrock", 
 			() -> new Block(BlockBehaviour.Properties.copy(Blocks.BEDROCK).sound(SoundType.ANCIENT_DEBRIS).noLootTable()));
 	
+	//Crop Blocks
+    public static final RegistryObject<Block> LUNWHEAT_CROP = BLOCKS.register("lunwheat_crop",
+            () -> new LunWheatCropBlock(BlockBehaviour.Properties.copy(Blocks.WHEAT).noOcclusion().noCollission()));
+    public static final RegistryObject<Block> SARROT_CROP = BLOCKS.register("sarrot_crop",
+            () -> new SarrotCropBlock(BlockBehaviour.Properties.copy(Blocks.WHEAT).noOcclusion().noCollission()));
+    public static final RegistryObject<Block> LOONBERRY_CROP = BLOCKS.register("loonberry_crop",
+            () -> new LoonBerryCropBlock(BlockBehaviour.Properties.copy(Blocks.SWEET_BERRY_BUSH).noOcclusion().noCollission()));
+	
 	//Condensed Blocks	
 	public static final RegistryObject<Block> RAW_MOONSTEEL_BLOCK = registerBlock("raw_moonsteel_block", 
 			() -> new Block(BlockBehaviour.Properties.copy(Blocks.RAW_IRON_BLOCK).sound(SoundType.METAL)));
@@ -71,8 +80,6 @@ public class ModBlocks {
 			() -> new Block(BlockBehaviour.Properties.copy(Blocks.DIRT).sound(SoundType.GRAVEL)));
 	public static final RegistryObject<Block> LUNGRASS_BLOCK = registerBlock("lungrass_block", 
 			() -> new LunGrassBlock(BlockBehaviour.Properties.copy(Blocks.GRASS_BLOCK).sound(SoundType.GRASS)));
-	public static final RegistryObject<Block> LUNDIRT_FARMLAND = registerBlock("lundirt_farmland", 
-			() -> new LunFarmland(BlockBehaviour.Properties.copy(Blocks.FARMLAND).sound(SoundType.GRAVEL)));
 	public static final RegistryObject<Block> LUNSAND = registerBlock("lunsand", 
 			() -> new Block(BlockBehaviour.Properties.copy(Blocks.SAND).sound(SoundType.SAND)));
 	public static final RegistryObject<Block> LUNSANDSTONE = registerBlock("lunsandstone", 
@@ -408,6 +415,10 @@ public class ModBlocks {
 	
 	//vegetation blocks
 	public static final RegistryObject<Block> LUNGRASS = registerBlock("lungrass",
+            () -> new TallGrassBlock(BlockBehaviour.Properties.copy(Blocks.GRASS)));
+	public static final RegistryObject<Block> WILD_LOONBERRY = registerBlock("wild_loonberry",
+            () -> new TallGrassBlock(BlockBehaviour.Properties.copy(Blocks.GRASS)));
+	public static final RegistryObject<Block> WILD_SARROT = registerBlock("wild_sarrot",
             () -> new TallGrassBlock(BlockBehaviour.Properties.copy(Blocks.GRASS)));
 	
 	private static <T extends Block> RegistryObject<T> registerBlock(String name, Supplier<T> block){

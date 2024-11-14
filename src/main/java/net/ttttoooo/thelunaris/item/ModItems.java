@@ -3,6 +3,7 @@ package net.ttttoooo.thelunaris.item;
 import net.minecraft.world.item.AxeItem;
 import net.minecraft.world.item.HoeItem;
 import net.minecraft.world.item.Item;
+import net.minecraft.world.item.ItemNameBlockItem;
 import net.minecraft.world.item.PickaxeItem;
 import net.minecraft.world.item.ShovelItem;
 import net.minecraft.world.item.SwordItem;
@@ -12,6 +13,7 @@ import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
 import net.ttttoooo.thelunaris.TheLunaris;
+import net.ttttoooo.thelunaris.block.ModBlocks;
 import net.ttttoooo.thelunaris.entity.ModEntities;
 
 public class ModItems {
@@ -34,22 +36,22 @@ public class ModItems {
 			() -> new Item(new Item.Properties()));
 	public static final RegistryObject<Item> LUNAR_STICK = ITEMS.register("lunar_stick", 
 			() -> new Item(new Item.Properties()));
-	public static final RegistryObject<Item> LUNAR_WHEAT = ITEMS.register("lunar_wheat", 
-			() -> new Item(new Item.Properties()));
-	public static final RegistryObject<Item> LUNAR_WHEAT_SEEDS = ITEMS.register("lunar_wheat_seeds", 
-			() -> new Item(new Item.Properties()));
 	public static final RegistryObject<Item> HEXDUST = ITEMS.register("hex_dust", 
 			() -> new Item(new Item.Properties()));
 	public static final RegistryObject<Item> HEXCHARGE = ITEMS.register("hex_charge", 
 			() -> new Item(new Item.Properties()));
 	
 	//foods
+	public static final RegistryObject<Item> LUNAR_WHEAT = ITEMS.register("lunar_wheat", 
+			() -> new Item(new Item.Properties()));
+    public static final RegistryObject<Item> LUNAR_WHEAT_SEEDS = ITEMS.register("lunar_wheat_seeds",
+            () -> new ItemNameBlockItem(ModBlocks.LUNWHEAT_CROP.get(), new Item.Properties()));
 	public static final RegistryObject<Item> LOONBERRY = ITEMS.register("loonberry", 
-			() -> new Item(new Item.Properties().food(ModFoods.LOONBERRY)));
+			() -> new ItemNameBlockItem(ModBlocks.LOONBERRY_CROP.get(), new Item.Properties().food(ModFoods.LOONBERRY)));
 	public static final RegistryObject<Item> ARCHFISH = ITEMS.register("archfish", 
 			() -> new Item(new Item.Properties().food(ModFoods.ARCHFISH)));
 	public static final RegistryObject<Item> SARROT = ITEMS.register("sarrot", 
-			() -> new Item(new Item.Properties().food(ModFoods.SARROT)));
+			() -> new ItemNameBlockItem(ModBlocks.SARROT_CROP.get(), new Item.Properties().food(ModFoods.SARROT)));
 	public static final RegistryObject<Item> COOKED_ARCHFISH = ITEMS.register("cooked_archfish", 
 			() -> new Item(new Item.Properties().food(ModFoods.COOKED_ARCHFISH)));
 	public static final RegistryObject<Item> LOONBERRY_PIE = ITEMS.register("loonberry_pie", 

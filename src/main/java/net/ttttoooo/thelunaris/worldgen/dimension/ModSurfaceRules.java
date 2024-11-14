@@ -33,6 +33,18 @@ public class ModSurfaceRules {
         		SurfaceRules.sequence(SurfaceRules.ifTrue(SurfaceRules.isBiome(ModBiomes.LUNAR_FORESTS), 
                     	SurfaceRules.ifTrue(SurfaceRules.UNDER_FLOOR, dirtSurface)
                     )),
+        		SurfaceRules.sequence(SurfaceRules.ifTrue(SurfaceRules.isBiome(ModBiomes.SAPPHIRE_RIVER), 
+                    SurfaceRules.ifTrue(SurfaceRules.ON_FLOOR, dirtSurface)
+                )),
+        		SurfaceRules.sequence(SurfaceRules.ifTrue(SurfaceRules.isBiome(ModBiomes.SAPPHIRE_RIVER), 
+                        SurfaceRules.ifTrue(SurfaceRules.UNDER_FLOOR, dirtSurface)
+                    )),
+        		SurfaceRules.sequence(SurfaceRules.ifTrue(SurfaceRules.isBiome(ModBiomes.SHIMMERING_COAST), 
+                    SurfaceRules.ifTrue(SurfaceRules.ON_FLOOR, sandSurface)
+                )),
+        		SurfaceRules.sequence(SurfaceRules.ifTrue(SurfaceRules.isBiome(ModBiomes.SHIMMERING_COAST), 
+                    	SurfaceRules.ifTrue(SurfaceRules.UNDER_FLOOR, sandstoneSurface)
+                    )),
         		SurfaceRules.sequence(SurfaceRules.ifTrue(SurfaceRules.isBiome(ModBiomes.AZUREITE_OCEAN), 
                     SurfaceRules.ifTrue(SurfaceRules.ON_FLOOR, sandOcean)
                 )),

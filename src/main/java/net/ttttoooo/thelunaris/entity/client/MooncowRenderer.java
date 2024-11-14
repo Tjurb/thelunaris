@@ -11,7 +11,7 @@ import net.ttttoooo.thelunaris.entity.custom.MooncowEntity;
 
 public class MooncowRenderer extends MobRenderer<MooncowEntity, MooncowModel<MooncowEntity>> {
     public MooncowRenderer(EntityRendererProvider.Context pContext) {
-        super(pContext, new MooncowModel<>(pContext.bakeLayer(ModModelLayers.MOONCOW_LAYER)), 2f);
+        super(pContext, new MooncowModel<>(pContext.bakeLayer(ModModelLayers.MOONCOW_LAYER)), 1.5f);
     }
 
     @Override

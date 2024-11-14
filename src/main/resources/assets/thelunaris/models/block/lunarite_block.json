@@ -1,5 +1,6 @@
 {
 	"credit": "Made with Blockbench",
+  	"parent": "minecraft:block/cube_all",
 	"textures": {
 		"0": "thelunaris:block/lunarite_block",
 		"particle": "thelunaris:block/lunarite_block"
@@ -44,31 +45,5 @@
 				"down": {"uv": [2, 2, 14, 14], "texture": "#0"}
 			}
 		}
-	],
-	"display": {
-		"thirdperson_righthand": {
-			"rotation": [75, 45, 0],
-			"scale": [0.3, 0.3, 0.3]
-		},
-		"thirdperson_lefthand": {
-			"rotation": [75, 45, 0],
-			"scale": [0.3, 0.3, 0.3]
-		},
-		"firstperson_righthand": {
-			"scale": [0.3, 0.3, 0.3]
-		},
-		"firstperson_lefthand": {
-			"scale": [0.3, 0.3, 0.3]
-		},
-		"ground": {
-			"scale": [0.2, 0.2, 0.2]
-		},
-		"gui": {
-			"rotation": [34, 45, 0],
-			"scale": [0.6, 0.6, 0.6]
-		},
-		"fixed": {
-			"scale": [0.6, 0.6, 0.6]
-		}
-	}
+	]
 }

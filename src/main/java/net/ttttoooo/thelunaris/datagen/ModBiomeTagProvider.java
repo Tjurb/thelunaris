@@ -27,13 +27,18 @@ public class ModBiomeTagProvider extends BiomeTagsProvider{
         	.add(ModBiomes.AZUREITE_OCEAN,
         			ModBiomes.LUNAR_FORESTS,
         			ModBiomes.SKYWORD_MOUNTAINS,
-        			ModBiomes.SLEEPING_SANDS);
+        			ModBiomes.SLEEPING_SANDS,
+        			ModBiomes.SHIMMERING_COAST,
+        			ModBiomes.SAPPHIRE_RIVER);
         
         this.tag(ModTags.Biomes.IS_LUNARIS_MOUNTAIN)
         	.add(ModBiomes.SKYWORD_MOUNTAINS);
         
         this.tag(ModTags.Biomes.IS_LUNARIS_OCEAN)
         	.add(ModBiomes.AZUREITE_OCEAN);
+        
+        this.tag(ModTags.Biomes.IS_LUNARIS_COAST)
+        	.add(ModBiomes.SHIMMERING_COAST);
 	}
 
 }

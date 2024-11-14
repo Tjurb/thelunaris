@@ -1,29 +1,28 @@
 package net.ttttoooo.thelunaris.datagen;
 
 import java.util.Locale;
+import java.util.function.Function;
 
-import net.minecraft.core.Direction;
-import net.minecraft.core.Direction.Axis;
 import net.minecraft.data.PackOutput;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.level.block.Block;
-import net.minecraft.world.level.block.IronBarsBlock;
-import net.minecraft.world.level.block.PipeBlock;
+import net.minecraft.world.level.block.CropBlock;
 import net.minecraft.world.level.block.RotatedPillarBlock;
 import net.minecraft.world.level.block.SlabBlock;
 import net.minecraft.world.level.block.StairBlock;
 import net.minecraft.world.level.block.WallBlock;
+import net.minecraft.world.level.block.state.BlockState;
 import net.minecraftforge.client.model.generators.BlockStateProvider;
 import net.minecraftforge.client.model.generators.ConfiguredModel;
 import net.minecraftforge.client.model.generators.ModelFile;
-import net.minecraftforge.client.model.generators.MultiPartBlockStateBuilder;
 import net.minecraftforge.common.data.ExistingFileHelper;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
 import net.ttttoooo.thelunaris.TheLunaris;
 import net.ttttoooo.thelunaris.block.ModBlocks;
-import net.ttttoooo.thelunaris.block.custom.LunFarmland;
-import net.ttttoooo.thelunaris.block.custom.portal.ModPortalBlock;
+import net.ttttoooo.thelunaris.block.custom.LoonBerryCropBlock;
+import net.ttttoooo.thelunaris.block.custom.LunWheatCropBlock;
+import net.ttttoooo.thelunaris.block.custom.SarrotCropBlock;
 
 public class ModBlockStateProvider extends BlockStateProvider{
 	public ModBlockStateProvider(PackOutput output, ExistingFileHelper exFileHelper) {
@@ -44,9 +43,13 @@ public class ModBlockStateProvider extends BlockStateProvider{
 		blockWithItem(ModBlocks.RAW_MOONSTEEL_BLOCK);
 		blockWithItem(ModBlocks.LABRADORITE_BLOCK);
 		
+		//crops
+		makeLunWheatCrop((CropBlock) ModBlocks.LUNWHEAT_CROP.get(), "lunar_wheat_stage", "lunar_wheat_stage");
+		makeSarrotCrop((CropBlock) ModBlocks.SARROT_CROP.get(), "sarrot_stage", "sarrot_stage");
+		makeLoonBerryCrop((CropBlock) ModBlocks.LOONBERRY_CROP.get(), "loonberry_stage", "loonberry_stage");
+		
 		//terrain blocks
 		blockWithItem(ModBlocks.LUNDIRT);
-		farmland(ModBlocks.LUNDIRT_FARMLAND.get(),ModBlocks.LUNDIRT.get());
 		simpleBlockExisting(ModBlocks.LUNGRASS_BLOCK.get());
 		blockWithItem(ModBlocks.LUNSAND);
 		blockWithItem(ModBlocks.LUNSANDSTONE);
@@ -144,22 +147,9 @@ public class ModBlockStateProvider extends BlockStateProvider{
 		
 		//nature blocks
 		saplingBlock(ModBlocks.LUNGRASS);
+		saplingBlock(ModBlocks.WILD_LOONBERRY);
+		saplingBlock(ModBlocks.WILD_SARROT);
 	}
-	
-	public void farmland(Block block, Block dirtBlock) {
-        ModelFile farmland = this.models().withExistingParent(this.name(block), this.mcLoc("block/template_farmland"))
-                .texture("dirt", this.modLoc("block/" + this.name(dirtBlock)))
-                .texture("top", this.modLoc("block/" + this.name(block)));
-        ModelFile moist = this.models().withExistingParent(this.name(block) + "_moist", mcLoc("block/template_farmland"))
-                .texture("dirt", this.modLoc("block/" + this.name(dirtBlock)))
-                .texture("top", this.modLoc("block/" + this.name(block) + "_moist"));
-        this.getVariantBuilder(block).forAllStatesExcept(state -> {
-            int moisture = state.getValue(LunFarmland.MOISTURE);
-            return ConfiguredModel.builder()
-                    .modelFile(moisture < LunFarmland.MAX_MOISTURE ? farmland : moist)
-                    .build();
-        });
-    }
 
 	protected void simpleBlockExisting(Block b) {
 		simpleBlock(b, new ConfiguredModel(models().getExistingFile(prefix(name(b)))));
@@ -181,6 +171,51 @@ public class ModBlockStateProvider extends BlockStateProvider{
 	private void blockItem(RegistryObject<Block> blockRegistryObject) {
         simpleBlockItem(blockRegistryObject.get(), new ModelFile.UncheckedModelFile(TheLunaris.MODID +
                 ":block/" + ForgeRegistries.BLOCKS.getKey(blockRegistryObject.get()).getPath()));
+    }
+	
+
+    public void makeLunWheatCrop(CropBlock block, String modelName, String textureName) {
+        Function<BlockState, ConfiguredModel[]> function = state -> lunWheatStates(state, block, modelName, textureName);
+
+        getVariantBuilder(block).forAllStates(function);
+    }
+
+    private ConfiguredModel[] lunWheatStates(BlockState state, CropBlock block, String modelName, String textureName) {
+        ConfiguredModel[] models = new ConfiguredModel[1];
+        models[0] = new ConfiguredModel(models().crop(modelName + state.getValue(((LunWheatCropBlock) block).getAgeProperty()),
+                new ResourceLocation(TheLunaris.MODID, "block/" + textureName + state.getValue(((LunWheatCropBlock) block).getAgeProperty()))).renderType("cutout"));
+
+        return models;
+    }
+    
+
+    public void makeLoonBerryCrop(CropBlock block, String modelName, String textureName) {
+        Function<BlockState, ConfiguredModel[]> function = state -> loonBerryStates(state, block, modelName, textureName);
+
+        getVariantBuilder(block).forAllStates(function);
+    }
+
+    private ConfiguredModel[] loonBerryStates(BlockState state, CropBlock block, String modelName, String textureName) {
+        ConfiguredModel[] models = new ConfiguredModel[1];
+        models[0] = new ConfiguredModel(models().crop(modelName + state.getValue(((LoonBerryCropBlock) block).getAgeProperty()),
+                new ResourceLocation(TheLunaris.MODID, "block/" + textureName + state.getValue(((LoonBerryCropBlock) block).getAgeProperty()))).renderType("cutout"));
+
+        return models;
+    }
+    
+
+    public void makeSarrotCrop(CropBlock block, String modelName, String textureName) {
+        Function<BlockState, ConfiguredModel[]> function = state -> sarrotStates(state, block, modelName, textureName);
+
+        getVariantBuilder(block).forAllStates(function);
+    }
+
+    private ConfiguredModel[] sarrotStates(BlockState state, CropBlock block, String modelName, String textureName) {
+        ConfiguredModel[] models = new ConfiguredModel[1];
+        models[0] = new ConfiguredModel(models().crop(modelName + state.getValue(((SarrotCropBlock) block).getAgeProperty()),
+                new ResourceLocation(TheLunaris.MODID, "block/" + textureName + state.getValue(((SarrotCropBlock) block).getAgeProperty()))).renderType("cutout"));
+
+        return models;
     }
 	
 	protected ResourceLocation key(Block block) {
