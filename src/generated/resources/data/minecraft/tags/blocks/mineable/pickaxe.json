@@ -29,7 +29,7 @@
     "thelunaris:lunsandstone_stairs",
     "thelunaris:lunsandstone_slab",
     "thelunaris:moondialblock",
-    "thelunaris:lunar_crafter",
+    "thelunaris:vailstone_furnace",
     "thelunaris:lunarite_block",
     "thelunaris:labradorite_block",
     "thelunaris:emoonsteel_block",
@@ -37,6 +37,7 @@
     "thelunaris:raw_moonsteel_block",
     "thelunaris:labradorite_ore",
     "thelunaris:moonsteel_ore",
-    "thelunaris:lunarite_ore"
+    "thelunaris:lunarite_ore",
+    "thelunaris:vailstone_furnace"
   ]
 }

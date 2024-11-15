@@ -1,12 +1,13 @@
-// 1.20.1	2024-11-12T23:27:29.7945068	Tags for minecraft:block mod id thelunaris
+// 1.20.1	2024-11-14T22:17:28.0182335	Tags for minecraft:block mod id thelunaris
 a9529e69c42038cf07e8e32687b8b1534d73bceb data/minecraft/tags/blocks/dirt.json
 d607f02152b453bab537280ef438830cb97e631e data/minecraft/tags/blocks/logs_that_burn.json
-db7a5d902812536836217fbd3a45c1ae5ac687ce data/minecraft/tags/blocks/mineable/axe.json
-f69d2fd7ac8a942bea8cf3b419946aad9fe296ab data/minecraft/tags/blocks/mineable/pickaxe.json
+555328ec983d64cb416f77100faa007ce81e1dd5 data/minecraft/tags/blocks/mineable/axe.json
+c460522a5d088f9767d7a578d6151b1c50ac980a data/minecraft/tags/blocks/mineable/pickaxe.json
 aec2dfb3d7ff8004f3ce8029dfbac22db66e75a6 data/minecraft/tags/blocks/mineable/shovel.json
-84d0bc08e0d868a2d590235e965dbc0dacfb7628 data/minecraft/tags/blocks/planks.json
 723ff3c7b1afb89852189905785c5169d3d5b80f data/minecraft/tags/blocks/sand.json
 c0366c64ebe240c9c4b4a6ab8b3b8d91e8557f77 data/minecraft/tags/blocks/walls.json
+10f190469d669fed0fe54b63ce69f2fd97da8aaf data/thelunaris/tags/blocks/gneiss_ore_replaceables.json
+2eab7252c9bde4498e0bbccb56dff2015ff1fe7d data/thelunaris/tags/blocks/lunar_planks.json
 318bedd6d4903150b717022bc6cad9982e2bb01e data/thelunaris/tags/blocks/lunar_portal_blocks.json
 76ca1fd9ede275cc9c57e4369bd5bb19bb3f2a94 data/thelunaris/tags/blocks/needs_emoonsteel_tool.json
 f521827b5e1992533887eaa3f20539414326532a data/thelunaris/tags/blocks/needs_moonsteel_tool.json

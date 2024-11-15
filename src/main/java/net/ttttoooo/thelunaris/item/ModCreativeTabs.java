@@ -21,6 +21,8 @@ public class ModCreativeTabs {
 				//Block Entry
 				pOutput.accept(ModBlocks.MOONDIALBLOCK.get());
 				pOutput.accept(ModBlocks.LUNAR_CRAFTER.get());
+				pOutput.accept(ModBlocks.VAILSTONE_FURNACE.get());
+				pOutput.accept(ModBlocks.LUNARIS_CRAFTING_TABLE.get());
 				pOutput.accept(ModBlocks.LUNARIS_BEDROCK.get());
 				
 				pOutput.accept(ModBlocks.LUNGRASS_BLOCK.get());

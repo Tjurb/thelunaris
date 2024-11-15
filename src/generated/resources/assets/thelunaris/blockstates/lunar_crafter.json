@@ -1,7 +1,7 @@
 {
   "variants": {
     "": {
-      "model": "thelunaris:block/lunar_crafter"
+      "model": "thelunaris:block/lunarcrafter"
     }
   }
 }

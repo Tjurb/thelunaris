@@ -56,7 +56,7 @@ public class ModBlockTagGenerator extends BlockTagsProvider{
 					ModBlocks.LUNSANDSTONE_SLAB.get(),
 					
 					ModBlocks.MOONDIALBLOCK.get(),
-					ModBlocks.LUNAR_CRAFTER.get(),
+					ModBlocks.VAILSTONE_FURNACE.get(),
 					ModBlocks.LUNARITE_BLOCK.get(),
 					ModBlocks.LABRADORITE_BLOCK.get(),
 					ModBlocks.EMOONSTEEL_BLOCK.get(),
@@ -65,7 +65,14 @@ public class ModBlockTagGenerator extends BlockTagsProvider{
 
 					ModBlocks.LABRADORITE_ORE.get(),
 					ModBlocks.MOONSTEEL_ORE.get(),
-					ModBlocks.LUNARITE_ORE.get());
+					ModBlocks.LUNARITE_ORE.get(),
+					
+					ModBlocks.VAILSTONE_FURNACE.get());
+		
+		this.tag(ModTags.Blocks.LUNAR_PLANKS)
+			.add(ModBlocks.CELEST_PLANKS.get(),
+					ModBlocks.STELLAR_PLANKS.get(),
+					ModBlocks.SKYOAK_PLANKS.get());
 		
 		this.tag(BlockTags.DIRT)
 			.add(ModBlocks.LUNDIRT.get(),
@@ -79,6 +86,9 @@ public class ModBlockTagGenerator extends BlockTagsProvider{
 
 		this.tag(ModTags.Blocks.VAILSTONE_ORE_REPLACEABLES)
 			.add(ModBlocks.VAILSTONE.get());
+
+		this.tag(ModTags.Blocks.GNEISS_ORE_REPLACEABLES)
+			.add(ModBlocks.GNEISS.get());
 		
 		this.tag(BlockTags.MINEABLE_WITH_SHOVEL)
 			.add(ModBlocks.LUNDIRT.get(),
@@ -124,7 +134,10 @@ public class ModBlockTagGenerator extends BlockTagsProvider{
 					ModBlocks.STRIPPED_SKYOAK_WOOD.get(),
 					ModBlocks.SKYOAK_PLANKS.get(),
 					ModBlocks.SKYOAK_STAIRS.get(),
-					ModBlocks.SKYOAK_SLAB.get());
+					ModBlocks.SKYOAK_SLAB.get(),
+					
+					ModBlocks.LUNAR_CRAFTER.get(),
+					ModBlocks.LUNARIS_CRAFTING_TABLE.get());
 		
 		this.tag(BlockTags.LOGS_THAT_BURN)
 			.add(ModBlocks.CELEST_LOG.get(),
@@ -141,19 +154,5 @@ public class ModBlockTagGenerator extends BlockTagsProvider{
 					ModBlocks.SKYOAK_WOOD.get(),
 					ModBlocks.STRIPPED_SKYOAK_LOG.get(),
 					ModBlocks.STRIPPED_SKYOAK_WOOD.get());
-		
-		this.tag(BlockTags.PLANKS)
-			.add(ModBlocks.CELEST_PLANKS.get(),
-					ModBlocks.CELEST_STAIRS.get(),
-					ModBlocks.CELEST_SLAB.get(),
-
-					ModBlocks.STELLAR_PLANKS.get(),
-					ModBlocks.STELLAR_STAIRS.get(),
-					ModBlocks.STELLAR_SLAB.get(),
-
-					ModBlocks.SKYOAK_PLANKS.get(),
-					ModBlocks.SKYOAK_STAIRS.get(),
-					ModBlocks.SKYOAK_SLAB.get());
-		
 	}
 }

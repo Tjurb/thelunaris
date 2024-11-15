@@ -34,6 +34,8 @@ public class ModBlockLootTables extends BlockLootSubProvider{
 	protected void generate() {
 		this.dropSelf(ModBlocks.MOONDIALBLOCK.get());
 		this.dropSelf(ModBlocks.LUNAR_CRAFTER.get());
+		this.dropSelf(ModBlocks.VAILSTONE_FURNACE.get());
+		this.dropSelf(ModBlocks.LUNARIS_CRAFTING_TABLE.get());
 		
 		this.dropSelf(ModBlocks.LUNARITE_BLOCK.get());
 		this.dropSelf(ModBlocks.LABRADORITE_BLOCK.get());

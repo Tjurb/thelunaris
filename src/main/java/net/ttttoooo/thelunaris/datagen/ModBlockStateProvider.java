@@ -33,11 +33,18 @@ public class ModBlockStateProvider extends BlockStateProvider{
 	protected void registerStatesAndModels() {
 		//special blocks
 		blockWithItem(ModBlocks.MOONDIALBLOCK);
-		blockWithItem(ModBlocks.LUNAR_CRAFTER);
+        simpleBlockWithItem(ModBlocks.LUNAR_CRAFTER.get(),
+                new ModelFile.UncheckedModelFile(modLoc("block/lunarcrafter")));
+        simpleBlockWithItem(ModBlocks.VAILSTONE_FURNACE.get(),
+                new ModelFile.UncheckedModelFile(modLoc("block/vailstonefurnace")));
 		blockWithItem(ModBlocks.LUNARIS_BEDROCK);
 		blockWithItem(ModBlocks.LUNARPORTAL_BLOCK);
+        simpleBlockWithItem(ModBlocks.LUNARIS_CRAFTING_TABLE.get(),
+                new ModelFile.UncheckedModelFile(modLoc("block/lunaris_crafting_table")));
 
-		simpleBlockExisting(ModBlocks.LUNARITE_BLOCK.get());
+
+        simpleBlockWithItem(ModBlocks.LUNARITE_BLOCK.get(),
+                new ModelFile.UncheckedModelFile(modLoc("block/lunarite_block")));
 		blockWithItem(ModBlocks.EMOONSTEEL_BLOCK);
 		blockWithItem(ModBlocks.MOONSTEEL_BLOCK);
 		blockWithItem(ModBlocks.RAW_MOONSTEEL_BLOCK);
@@ -50,7 +57,8 @@ public class ModBlockStateProvider extends BlockStateProvider{
 		
 		//terrain blocks
 		blockWithItem(ModBlocks.LUNDIRT);
-		simpleBlockExisting(ModBlocks.LUNGRASS_BLOCK.get());
+        simpleBlockWithItem(ModBlocks.LUNGRASS_BLOCK.get(),
+                new ModelFile.UncheckedModelFile(modLoc("block/lungrass_block")));
 		blockWithItem(ModBlocks.LUNSAND);
 		blockWithItem(ModBlocks.LUNSANDSTONE);
 		stairsBlock(((StairBlock) ModBlocks.LUNSANDSTONE_STAIRS.get()), blockTexture(ModBlocks.LUNSANDSTONE.get()));
@@ -149,6 +157,7 @@ public class ModBlockStateProvider extends BlockStateProvider{
 		saplingBlock(ModBlocks.LUNGRASS);
 		saplingBlock(ModBlocks.WILD_LOONBERRY);
 		saplingBlock(ModBlocks.WILD_SARROT);
+		
 	}
 
 	protected void simpleBlockExisting(Block b) {

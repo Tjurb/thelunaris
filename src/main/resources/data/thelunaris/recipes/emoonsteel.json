@@ -1,0 +1,15 @@
+{
+  "type": "thelunaris:moonsteel_enriching",
+  "ingredients": [
+    {
+      "item": "thelunaris:moonsteel"
+    },
+    {
+      "item": "thelunaris:labradorite"
+    }
+  ],
+  "output": {
+    "count": 1,
+    "item": "thelunaris:emoonsteel"
+  }
+}

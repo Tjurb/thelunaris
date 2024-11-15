@@ -2,6 +2,7 @@ package net.ttttoooo.thelunaris;
 
 import com.mojang.logging.LogUtils;
 import net.minecraft.client.Minecraft;
+import net.minecraft.client.gui.screens.MenuScreens;
 import net.minecraft.client.renderer.entity.EntityRenderers;
 import net.minecraft.client.renderer.entity.ThrownItemRenderer;
 import net.minecraft.world.entity.projectile.Fireball;
@@ -19,6 +20,7 @@ import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.ttttoooo.thelunaris.block.ModBlocks;
+import net.ttttoooo.thelunaris.block.entitiy.ModBlockEntities;
 import net.ttttoooo.thelunaris.entity.ModEntities;
 import net.ttttoooo.thelunaris.entity.client.ArchfishRenderer;
 import net.ttttoooo.thelunaris.entity.client.HexRenderer;
@@ -28,6 +30,9 @@ import net.ttttoooo.thelunaris.entity.client.MoonsnailRenderer;
 import net.ttttoooo.thelunaris.entity.client.PhyrexRenderer;
 import net.ttttoooo.thelunaris.item.ModCreativeTabs;
 import net.ttttoooo.thelunaris.item.ModItems;
+import net.ttttoooo.thelunaris.screen.LunarCrafterScreen;
+import net.ttttoooo.thelunaris.screen.ModMenuTypes;
+import net.ttttoooo.thelunaris.screen.VailstoneFurnaceScreen;
 
 import org.slf4j.Logger;
 
@@ -48,6 +53,9 @@ public class TheLunaris
         ModBlocks.register(modEventBus);
         
         ModEntities.register(modEventBus);
+        
+        ModBlockEntities.register(modEventBus);
+        ModMenuTypes.register(modEventBus);
         
         modEventBus.addListener(this::commonSetup);
 
@@ -96,6 +104,10 @@ public class TheLunaris
         	EntityRenderers.register(ModEntities.LUNARSLEEPER.get(), LunarsleeperRenderer::new);
         	EntityRenderers.register(ModEntities.HEX.get(), HexRenderer::new);
         	EntityRenderers.register(ModEntities.HEX_PROJECTILE.get(), ThrownItemRenderer::new);
+
+            MenuScreens.register(ModMenuTypes.LUNAR_CRAFTING_MENU.get(), LunarCrafterScreen::new);
+            MenuScreens.register(ModMenuTypes.VAILSTONE_FURNACE_MENU.get(), VailstoneFurnaceScreen::new);
+            
             LOGGER.info("HELLO FROM LUNARIS CLIENT SETUP");
             LOGGER.info("MINECRAFT NAME >> {}", Minecraft.getInstance().getUser().getName());
         }

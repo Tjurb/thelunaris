@@ -11,10 +11,8 @@ import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
-import net.minecraft.world.level.block.BushBlock;
+import net.minecraft.world.level.block.CraftingTableBlock;
 import net.minecraft.world.level.block.DropExperienceBlock;
-import net.minecraft.world.level.block.FlowerBlock;
-import net.minecraft.world.level.block.GrassBlock;
 import net.minecraft.world.level.block.LeavesBlock;
 import net.minecraft.world.level.block.SaplingBlock;
 import net.minecraft.world.level.block.SlabBlock;
@@ -32,8 +30,11 @@ import net.ttttoooo.thelunaris.TheLunaris;
 import net.ttttoooo.thelunaris.block.custom.LoonBerryCropBlock;
 import net.ttttoooo.thelunaris.block.custom.LunGrassBlock;
 import net.ttttoooo.thelunaris.block.custom.LunWheatCropBlock;
+import net.ttttoooo.thelunaris.block.custom.LunarCrafter;
+import net.ttttoooo.thelunaris.block.custom.LunarisCraftingTable;
 import net.ttttoooo.thelunaris.block.custom.ModFlammableRotatedPillarBlock;
 import net.ttttoooo.thelunaris.block.custom.SarrotCropBlock;
+import net.ttttoooo.thelunaris.block.custom.VailstoneFurnace;
 import net.ttttoooo.thelunaris.block.custom.portal.ModPortalBlock;
 import net.ttttoooo.thelunaris.item.ModItems;
 import net.ttttoooo.thelunaris.worldgen.tree.CelestTreeGrower;
@@ -48,12 +49,16 @@ public class ModBlocks {
 	public static final RegistryObject<Block> MOONDIALBLOCK = registerBlock("moondialblock", 
 			() -> new Block(BlockBehaviour.Properties.copy(Blocks.IRON_BLOCK).sound(SoundType.ANCIENT_DEBRIS)));
 	public static final RegistryObject<Block> LUNAR_CRAFTER = registerBlock("lunar_crafter", 
-			() -> new Block(BlockBehaviour.Properties.copy(Blocks.IRON_BLOCK).sound(SoundType.ANCIENT_DEBRIS)));
+			() -> new LunarCrafter(BlockBehaviour.Properties.copy(Blocks.OAK_PLANKS).sound(SoundType.WOOD)));
+	public static final RegistryObject<Block> VAILSTONE_FURNACE = registerBlock("vailstone_furnace", 
+			() -> new VailstoneFurnace(BlockBehaviour.Properties.copy(Blocks.STONE).sound(SoundType.STONE)));
 	public static final RegistryObject<Block> LUNARPORTAL_BLOCK = registerBlock("lunarportal_block", 
 			() -> new ModPortalBlock(BlockBehaviour.Properties.copy(Blocks.STONE).sound(SoundType.GLASS)
 					.noLootTable().noOcclusion().noCollission()));
 	public static final RegistryObject<Block> LUNARIS_BEDROCK = registerBlock("lunaris_bedrock", 
 			() -> new Block(BlockBehaviour.Properties.copy(Blocks.BEDROCK).sound(SoundType.ANCIENT_DEBRIS).noLootTable()));
+	public static final RegistryObject<Block> LUNARIS_CRAFTING_TABLE = registerBlock("lunaris_crafting_table", 
+			() -> new LunarisCraftingTable(BlockBehaviour.Properties.copy(Blocks.OAK_PLANKS).sound(SoundType.WOOD)));
 	
 	//Crop Blocks
     public static final RegistryObject<Block> LUNWHEAT_CROP = BLOCKS.register("lunwheat_crop",
