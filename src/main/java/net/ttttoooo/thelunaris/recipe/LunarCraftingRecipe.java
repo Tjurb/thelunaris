@@ -32,7 +32,8 @@ public class LunarCraftingRecipe implements Recipe<SimpleContainer> {
             return false;
         }
 
-        return inputItems.get(1).test(pContainer.getItem(1)) && 
+        return inputItems.size() == pContainer.getContainerSize() &&
+        		inputItems.get(1).test(pContainer.getItem(1)) && 
         		inputItems.get(2).test(pContainer.getItem(2)) &&
         		inputItems.get(3).test(pContainer.getItem(3)) &&
         		inputItems.get(4).test(pContainer.getItem(4)) &&
@@ -87,7 +88,8 @@ public class LunarCraftingRecipe implements Recipe<SimpleContainer> {
             ItemStack output = ShapedRecipe.itemStackFromJson(GsonHelper.getAsJsonObject(pSerializedRecipe, "output"));
 
             JsonArray ingredients = GsonHelper.getAsJsonArray(pSerializedRecipe, "ingredients");
-            NonNullList<Ingredient> inputs = NonNullList.withSize(1, Ingredient.EMPTY);
+            NonNullList<Ingredient> inputs = NonNullList.withSize(ingredients.size(), Ingredient.EMPTY);
+
 
             for(int i = 0; i < inputs.size(); i++) {
                 inputs.set(i, Ingredient.fromJson(ingredients.get(i)));

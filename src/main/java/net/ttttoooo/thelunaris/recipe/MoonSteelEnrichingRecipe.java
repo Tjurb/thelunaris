@@ -12,6 +12,7 @@ import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.crafting.*;
 import net.minecraft.world.level.Level;
 import net.ttttoooo.thelunaris.TheLunaris;
+import net.ttttoooo.thelunaris.util.ModTags;
 
 import org.jetbrains.annotations.Nullable;
 
@@ -28,13 +29,29 @@ public class MoonSteelEnrichingRecipe implements Recipe<SimpleContainer> {
 
     @Override
     public boolean matches(SimpleContainer pContainer, Level pLevel) {
-        if(pLevel.isClientSide()) {
+        if (pLevel.isClientSide()) {
             return false;
         }
 
-        return inputItems.get(0).test(pContainer.getItem(0)) &&
-        		inputItems.get(1).test(pContainer.getItem(1));
+        if (pContainer.getContainerSize() < inputItems.size()) {
+            return false;
+        }
+
+        // Check first slot (input ingredient)
+        if (!inputItems.get(0).test(pContainer.getItem(0))) {
+            return false;
+        }
+
+        // Check second slot (tag-based check for ENRICHER_FUEL)
+        if (!pContainer.getItem(1).is(ModTags.Items.ENRICHER_FUEL)) {
+            return false;
+        }
+
+        return true;
     }
+
+
+
 
     @Override
     public ItemStack assemble(SimpleContainer pContainer, RegistryAccess pRegistryAccess) {
@@ -80,7 +97,7 @@ public class MoonSteelEnrichingRecipe implements Recipe<SimpleContainer> {
             ItemStack output = ShapedRecipe.itemStackFromJson(GsonHelper.getAsJsonObject(pSerializedRecipe, "output"));
 
             JsonArray ingredients = GsonHelper.getAsJsonArray(pSerializedRecipe, "ingredients");
-            NonNullList<Ingredient> inputs = NonNullList.withSize(1, Ingredient.EMPTY);
+            NonNullList<Ingredient> inputs = NonNullList.withSize(ingredients.size(), Ingredient.EMPTY);
 
             for(int i = 0; i < inputs.size(); i++) {
                 inputs.set(i, Ingredient.fromJson(ingredients.get(i)));

@@ -42,6 +42,8 @@ public class ModTags {
 
 	public static class Items {
 		public static final TagKey<Item> MOONCOW_TEMP_ITEMS = tag("mooncow_temp_items");
+
+		public static final TagKey<Item> ENRICHER_FUEL = tag("enricher_fuel");
 		
 		private static TagKey<Item> tag(String name){
 			return ItemTags.create(new ResourceLocation(TheLunaris.MODID, name));

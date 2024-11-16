@@ -5,11 +5,11 @@
       "item": "thelunaris:moonsteel"
     },
     {
-      "item": "thelunaris:labradorite"
+      "tag": "thelunaris:enricher_fuel"
     }
   ],
   "output": {
-    "count": 1,
-    "item": "thelunaris:emoonsteel"
+    "item": "thelunaris:emoonsteel",
+    "count": 1
   }
 }

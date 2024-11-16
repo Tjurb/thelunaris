@@ -30,6 +30,7 @@ import net.ttttoooo.thelunaris.entity.client.MoonsnailRenderer;
 import net.ttttoooo.thelunaris.entity.client.PhyrexRenderer;
 import net.ttttoooo.thelunaris.item.ModCreativeTabs;
 import net.ttttoooo.thelunaris.item.ModItems;
+import net.ttttoooo.thelunaris.recipe.ModRecipes;
 import net.ttttoooo.thelunaris.screen.LunarCrafterScreen;
 import net.ttttoooo.thelunaris.screen.ModMenuTypes;
 import net.ttttoooo.thelunaris.screen.VailstoneFurnaceScreen;
@@ -56,6 +57,8 @@ public class TheLunaris
         
         ModBlockEntities.register(modEventBus);
         ModMenuTypes.register(modEventBus);
+        
+        ModRecipes.register(modEventBus);
         
         modEventBus.addListener(this::commonSetup);
 

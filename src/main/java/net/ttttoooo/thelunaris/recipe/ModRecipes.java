@@ -13,6 +13,7 @@ public class ModRecipes {
 
     public static final RegistryObject<RecipeSerializer<LunarCraftingRecipe>> LUNAR_CRAFTING_SERIALIZER =
             SERIALIZERS.register("lunar_crafting", () -> LunarCraftingRecipe.Serializer.INSTANCE);
+    
     public static final RegistryObject<RecipeSerializer<MoonSteelEnrichingRecipe>> MOONSTEEL_ENRICHING_SERIALIZER =
             SERIALIZERS.register("moonsteel_enriching", () -> MoonSteelEnrichingRecipe.Serializer.INSTANCE);
 

@@ -4,7 +4,6 @@ import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.network.chat.Component;
-import net.minecraft.world.Container;
 import net.minecraft.world.Containers;
 import net.minecraft.world.MenuProvider;
 import net.minecraft.world.SimpleContainer;
@@ -16,7 +15,6 @@ import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.entity.BlockEntity;
-import net.minecraft.world.level.block.entity.BlockEntityType;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraftforge.common.capabilities.Capability;
 import net.minecraftforge.common.capabilities.ForgeCapabilities;
@@ -33,7 +31,7 @@ import java.util.Optional;
 public class VailstoneFurnaceEntity extends BlockEntity implements MenuProvider {
     private final ItemStackHandler itemHandler = new ItemStackHandler(3);
 
-    private static final int MOONSTEEL_SLOT = 0;
+    private static final int INPUT_SLOT = 0;
     private static final int ENRICHER = 1;
     private static final int OUTPUT_SLOT = 2;
 
@@ -147,7 +145,7 @@ public class VailstoneFurnaceEntity extends BlockEntity implements MenuProvider 
         Optional<MoonSteelEnrichingRecipe> recipe = getCurrentRecipe();
         ItemStack result = recipe.get().getResultItem(null);
 
-        this.itemHandler.extractItem(MOONSTEEL_SLOT, 1, false);
+        this.itemHandler.extractItem(INPUT_SLOT, 1, false);
         this.itemHandler.extractItem(ENRICHER, 1, false);
 
         this.itemHandler.setStackInSlot(OUTPUT_SLOT, new ItemStack(result.getItem(),

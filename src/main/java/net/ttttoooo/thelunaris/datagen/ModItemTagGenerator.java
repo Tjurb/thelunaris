@@ -44,6 +44,9 @@ public class ModItemTagGenerator extends ItemTagsProvider {
 		
 		this.tag(ModTags.Items.MOONCOW_TEMP_ITEMS)
 		.add(ModItems.LUNAR_WHEAT.get());
+		
+		this.tag(ModTags.Items.ENRICHER_FUEL)
+		.add(ModItems.LABRADORITE.get());
 	}
 
 }
