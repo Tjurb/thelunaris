@@ -11,7 +11,7 @@
               "add": false,
               "conditions": [
                 {
-                  "block": "thelunaris:cobbled_vailstonebrick_slab",
+                  "block": "thelunaris:cobbled_vailstone_slab",
                   "condition": "minecraft:block_state_property",
                   "properties": {
                     "type": "double"
@@ -25,11 +25,11 @@
               "function": "minecraft:explosion_decay"
             }
           ],
-          "name": "thelunaris:cobbled_vailstonebrick_slab"
+          "name": "thelunaris:cobbled_vailstone_slab"
         }
       ],
       "rolls": 1.0
     }
   ],
-  "random_sequence": "thelunaris:blocks/cobbled_vailstonebrick_slab"
+  "random_sequence": "thelunaris:blocks/cobbled_vailstone_slab"
 }

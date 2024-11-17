@@ -11,11 +11,11 @@
       "entries": [
         {
           "type": "minecraft:item",
-          "name": "thelunaris:cobbled_vailstonebrick_wall"
+          "name": "thelunaris:cobbled_vailstone_wall"
         }
       ],
       "rolls": 1.0
     }
   ],
-  "random_sequence": "thelunaris:blocks/cobbled_vailstonebrick_wall"
+  "random_sequence": "thelunaris:blocks/cobbled_vailstone_wall"
 }

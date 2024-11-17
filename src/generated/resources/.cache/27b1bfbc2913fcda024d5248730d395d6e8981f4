@@ -1,12 +1,12 @@
-// 1.20.1	2024-11-12T12:13:26.7436725	Item Models: thelunaris
+// 1.20.1	2024-11-16T22:32:51.8029758	Item Models: thelunaris
 b7176a2f31e02ede645f754b6b7dd43a1b142ecc assets/thelunaris/models/item/archfish.json
 63ec6c618a3a23eab4cab9c52d7d3250de9b516e assets/thelunaris/models/item/archfish_spawn_egg.json
 4859e1cbbad8939f755f19c212619cb750a0ba53 assets/thelunaris/models/item/celest_sapling.json
 96fa6f9c7db59f40a706bbc159fbed773ee508c3 assets/thelunaris/models/item/celest_slab.json
 bcea65955536a9c7105ba8924a653ea35db48470 assets/thelunaris/models/item/celest_stairs.json
-be69dbf810598ad5a7fed3beec974d6ffacf0cd4 assets/thelunaris/models/item/cobbled_vailstonebrick_slab.json
-67ca38ef0534f0d8144678441e70b5c3e5895824 assets/thelunaris/models/item/cobbled_vailstonebrick_stairs.json
-b3abd4ad0dc272a6a884012c782f213d09e95cce assets/thelunaris/models/item/cobbled_vailstonebrick_wall.json
+0206a73b1f8051dfb8b88e048f34321617dfd0ce assets/thelunaris/models/item/cobbled_vailstone_slab.json
+4a7502dfd5a601089c73bce954e0e68423289157 assets/thelunaris/models/item/cobbled_vailstone_stairs.json
+b3abd4ad0dc272a6a884012c782f213d09e95cce assets/thelunaris/models/item/cobbled_vailstone_wall.json
 9120ca205b5c0208a34a3a425218d0a9309d086b assets/thelunaris/models/item/cooked_archfish.json
 0414281635d08f78f0de15b50fdf44888b1001ee assets/thelunaris/models/item/emoonsteel.json
 733ec8c997ecf5c63c7291cb7663168feb25f733 assets/thelunaris/models/item/emoonsteel_axe.json
@@ -70,3 +70,5 @@ aec6995ae8a746c2d7676077f11d8bd00cd29e9e assets/thelunaris/models/item/vailstone
 73646ef3184ef78921b8e10dae7c9e4f79cecacb assets/thelunaris/models/item/vailstone_pickaxe.json
 dc7b5d7059b10d7ac56552d44cf3dd5bb2ae9434 assets/thelunaris/models/item/vailstone_shovel.json
 63d0c3461611dad6c28e74ccd0d790c6662d9178 assets/thelunaris/models/item/vailstone_sword.json
+6abed2402894136a183a567e8b6ce2eb3804c545 assets/thelunaris/models/item/wild_loonberry.json
+fc59b23818f3b85285fd09fbda316a813ce07f9e assets/thelunaris/models/item/wild_sarrot.json

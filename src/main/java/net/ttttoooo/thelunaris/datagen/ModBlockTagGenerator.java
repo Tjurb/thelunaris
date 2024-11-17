@@ -154,5 +154,10 @@ public class ModBlockTagGenerator extends BlockTagsProvider{
 					ModBlocks.SKYOAK_WOOD.get(),
 					ModBlocks.STRIPPED_SKYOAK_LOG.get(),
 					ModBlocks.STRIPPED_SKYOAK_WOOD.get());
+		
+		this.tag(ModTags.Blocks.LUNAR_PLANKS)
+			.add(ModBlocks.CELEST_PLANKS.get(),
+					ModBlocks.SKYOAK_PLANKS.get(),
+					ModBlocks.STELLAR_PLANKS.get());
 	}
 }

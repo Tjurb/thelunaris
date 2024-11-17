@@ -1,0 +1,23 @@
+{
+    "type": "minecraft:crafting_shaped",
+    "catagory": "misc",
+    "pattern": [
+        "   ",
+        "WHW",
+        "v v"
+    ],
+    "key": {
+        "H": {
+            "item":"thelunaris:hex_dust"
+        },
+        "W": {
+            "tag": "thelunaris:lunar_planks"
+        },
+        "v": {
+            "item":"thelunaris:vailstone"
+        }
+    },
+    "result": {
+        "item": "thelunaris:lunar_crafter"
+    }
+}

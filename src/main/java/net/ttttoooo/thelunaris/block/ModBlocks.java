@@ -360,12 +360,12 @@ public class ModBlocks {
 	//Cobbled Vailstone Blocks
 	public static final RegistryObject<Block> COBBLED_VAILSTONE = registerBlock("cobbled_vailstone", 
 			() -> new Block(BlockBehaviour.Properties.copy(Blocks.COBBLESTONE).sound(SoundType.STONE)));
-	public static final RegistryObject<Block> COBBLED_VAILSTONE_STAIRS = registerBlock("cobbled_vailstonebrick_stairs", 
+	public static final RegistryObject<Block> COBBLED_VAILSTONE_STAIRS = registerBlock("cobbled_vailstone_stairs", 
 			() -> new StairBlock(() -> ModBlocks.COBBLED_VAILSTONE.get().defaultBlockState(),
 			BlockBehaviour.Properties.copy(Blocks.COBBLESTONE).sound(SoundType.STONE)));
-	public static final RegistryObject<Block> COBBLED_VAILSTONE_SLAB = registerBlock("cobbled_vailstonebrick_slab", 
+	public static final RegistryObject<Block> COBBLED_VAILSTONE_SLAB = registerBlock("cobbled_vailstone_slab", 
 			() -> new SlabBlock(BlockBehaviour.Properties.copy(Blocks.COBBLESTONE).sound(SoundType.STONE)));
-	public static final RegistryObject<Block> COBBLED_VAILSTONE_WALL = registerBlock("cobbled_vailstonebrick_wall", 
+	public static final RegistryObject<Block> COBBLED_VAILSTONE_WALL = registerBlock("cobbled_vailstone_wall", 
 			() -> new WallBlock(BlockBehaviour.Properties.copy(Blocks.COBBLESTONE).sound(SoundType.STONE)));
 	
 	//Additional Stone Blocks

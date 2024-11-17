@@ -1,7 +1,19 @@
 {
   "variants": {
-    "": {
+    "facing=east": {
+      "model": "thelunaris:block/vailstonefurnace",
+      "y": 90
+    },
+    "facing=north": {
       "model": "thelunaris:block/vailstonefurnace"
+    },
+    "facing=south": {
+      "model": "thelunaris:block/vailstonefurnace",
+      "y": 180
+    },
+    "facing=west": {
+      "model": "thelunaris:block/vailstonefurnace",
+      "y": 270
     }
   }
 }

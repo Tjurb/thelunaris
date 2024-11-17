@@ -15,7 +15,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "thelunaris:cobbled_vailstonebrick_wall"
+        "recipe": "thelunaris:cobbled_vailstone_wall"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
@@ -28,7 +28,7 @@
   ],
   "rewards": {
     "recipes": [
-      "thelunaris:cobbled_vailstonebrick_wall"
+      "thelunaris:cobbled_vailstone_wall"
     ]
   },
   "sends_telemetry_event": false

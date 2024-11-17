@@ -8,12 +8,12 @@
   },
   "pattern": [
     "   ",
-    "   ",
+    "SSS",
     "SSS"
   ],
   "result": {
     "count": 6,
-    "item": "thelunaris:cobbled_vailstonebrick_slab"
+    "item": "thelunaris:cobbled_vailstone_wall"
   },
   "show_notification": true
 }

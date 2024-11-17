@@ -1,13 +1,13 @@
 {
   "variants": {
     "type=bottom": {
-      "model": "thelunaris:block/cobbled_vailstonebrick_slab"
+      "model": "thelunaris:block/cobbled_vailstone_slab"
     },
     "type=double": {
       "model": "thelunaris:block/cobbled_vailstone"
     },
     "type=top": {
-      "model": "thelunaris:block/cobbled_vailstonebrick_slab_top"
+      "model": "thelunaris:block/cobbled_vailstone_slab_top"
     }
   }
 }

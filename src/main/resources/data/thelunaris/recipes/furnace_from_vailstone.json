@@ -3,19 +3,16 @@
     "catagory": "misc",
     "pattern": [
         "mmm",
-        "mlm",
+        "m m",
         "mmm"
     ],
     "key": {
         "m": {
             "item":"thelunaris:cobbled_vailstone"
-        },
-        "l": {
-            "item":"thelunaris:labradorite"
         }
         
     },
     "result": {
-        "item": "thelunaris:vailstone_furnace"
+        "item": "minecraft:furnace"
     }
 }
