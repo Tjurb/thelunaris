@@ -1,0 +1,35 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_deep_labradorite_ore": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "thelunaris:deep_labradorite_ore"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "thelunaris:labradorite_from_smelting_deep_labradorite_ore"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_deep_labradorite_ore",
+      "has_the_recipe"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "thelunaris:labradorite_from_smelting_deep_labradorite_ore"
+    ]
+  },
+  "sends_telemetry_event": false
+}

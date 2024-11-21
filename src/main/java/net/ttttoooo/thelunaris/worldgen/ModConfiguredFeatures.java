@@ -33,9 +33,21 @@ public class ModConfiguredFeatures {
 	public static final ResourceKey<ConfiguredFeature<?,?>> LUNARIS_MOONSTEEL_ORE_KEY = registerKey("moonsteel_ore");
 	public static final ResourceKey<ConfiguredFeature<?,?>> LUNARIS_LABRADORITE_ORE_KEY = registerKey("labradorite_ore");
 	public static final ResourceKey<ConfiguredFeature<?,?>> LUNARIS_LUNARITE_ORE_KEY = registerKey("lunarite_ore");
+	public static final ResourceKey<ConfiguredFeature<?,?>> LUNARIS_COAL_ORE_KEY = registerKey("lunaris_coal_ore");
 	public static final ResourceKey<ConfiguredFeature<?,?>> LUNARIS_LARGE_MOONSTEEL_ORE_KEY = registerKey("large_moonsteel_ore");
 	public static final ResourceKey<ConfiguredFeature<?,?>> LUNARIS_LARGE_LABRADORITE_ORE_KEY = registerKey("large_labradorite_ore");
 	public static final ResourceKey<ConfiguredFeature<?,?>> LUNARIS_LARGE_LUNARITE_ORE_KEY = registerKey("large_lunarite_ore");
+	public static final ResourceKey<ConfiguredFeature<?,?>> LUNARIS_LARGE_COAL_ORE_KEY = registerKey("large_lunaris_coal_ore");
+	
+	//deep ore keys
+	public static final ResourceKey<ConfiguredFeature<?,?>> LUNARIS_DEEP_MOONSTEEL_ORE_KEY = registerKey("deep_moonsteel_ore");
+	public static final ResourceKey<ConfiguredFeature<?,?>> LUNARIS_DEEP_LABRADORITE_ORE_KEY = registerKey("deep_labradorite_ore");
+	public static final ResourceKey<ConfiguredFeature<?,?>> LUNARIS_DEEP_LUNARITE_ORE_KEY = registerKey("deep_lunarite_ore");
+	public static final ResourceKey<ConfiguredFeature<?,?>> LUNARIS_DEEP_COAL_ORE_KEY = registerKey("deep_lunaris_coal_ore");
+	public static final ResourceKey<ConfiguredFeature<?,?>> LUNARIS_DEEP_LARGE_MOONSTEEL_ORE_KEY = registerKey("large_deep_moonsteel_ore");
+	public static final ResourceKey<ConfiguredFeature<?,?>> LUNARIS_DEEP_LARGE_LABRADORITE_ORE_KEY = registerKey("large_deep_labradorite_ore");
+	public static final ResourceKey<ConfiguredFeature<?,?>> LUNARIS_DEEP_LARGE_LUNARITE_ORE_KEY = registerKey("large_deep_lunarite_ore");
+	public static final ResourceKey<ConfiguredFeature<?,?>> LUNARIS_DEEP_LARGE_COAL_ORE_KEY = registerKey("large_deep_lunaris_coal_ore");
 	
 	//tree keys
 	public static final ResourceKey<ConfiguredFeature<?, ?>> CELEST_KEY = registerKey("celest");
@@ -53,20 +65,45 @@ public class ModConfiguredFeatures {
 	public static void bootstrap(BootstapContext<ConfiguredFeature<?, ?>> context) {
 		//ore register
 		RuleTest vstoneReplaceable = new TagMatchTest(ModTags.Blocks.VAILSTONE_ORE_REPLACEABLES);
+		RuleTest gneissReplaceable = new TagMatchTest(ModTags.Blocks.GNEISS_ORE_REPLACEABLES);
 		
+		//ores
         List<OreConfiguration.TargetBlockState> lunarismoonsteelore = List.of(OreConfiguration.target(vstoneReplaceable,
                 ModBlocks.MOONSTEEL_ORE.get().defaultBlockState()));
         List<OreConfiguration.TargetBlockState> lunarislabradoriteore = List.of(OreConfiguration.target(vstoneReplaceable,
                 ModBlocks.LABRADORITE_ORE.get().defaultBlockState()));
         List<OreConfiguration.TargetBlockState> lunarislunariteore = List.of(OreConfiguration.target(vstoneReplaceable,
                 ModBlocks.LUNARITE_ORE.get().defaultBlockState()));
+        List<OreConfiguration.TargetBlockState> lunariscoalore = List.of(OreConfiguration.target(vstoneReplaceable,
+                ModBlocks.LUNARIS_COAL_ORE.get().defaultBlockState()));
         
         register(context, LUNARIS_MOONSTEEL_ORE_KEY, Feature.ORE, new OreConfiguration(lunarismoonsteelore, 9));
         register(context, LUNARIS_LABRADORITE_ORE_KEY, Feature.ORE, new OreConfiguration(lunarislabradoriteore, 9));
         register(context, LUNARIS_LUNARITE_ORE_KEY, Feature.ORE, new OreConfiguration(lunarislunariteore, 9));
+        register(context, LUNARIS_COAL_ORE_KEY, Feature.ORE, new OreConfiguration(lunariscoalore, 9));
         register(context, LUNARIS_LARGE_MOONSTEEL_ORE_KEY, Feature.ORE, new OreConfiguration(lunarismoonsteelore, 9));
         register(context, LUNARIS_LARGE_LABRADORITE_ORE_KEY, Feature.ORE, new OreConfiguration(lunarislabradoriteore, 9));
         register(context, LUNARIS_LARGE_LUNARITE_ORE_KEY, Feature.ORE, new OreConfiguration(lunarislunariteore, 9));
+        register(context, LUNARIS_LARGE_COAL_ORE_KEY, Feature.ORE, new OreConfiguration(lunariscoalore, 9));
+        
+		//deep ores
+        List<OreConfiguration.TargetBlockState> deeplunarismoonsteelore = List.of(OreConfiguration.target(gneissReplaceable,
+                ModBlocks.DEEP_MOONSTEEL_ORE.get().defaultBlockState()));
+        List<OreConfiguration.TargetBlockState> deeplunarislabradoriteore = List.of(OreConfiguration.target(gneissReplaceable,
+                ModBlocks.DEEP_LABRADORITE_ORE.get().defaultBlockState()));
+        List<OreConfiguration.TargetBlockState> deeplunarislunariteore = List.of(OreConfiguration.target(gneissReplaceable,
+                ModBlocks.DEEP_LUNARITE_ORE.get().defaultBlockState()));
+        List<OreConfiguration.TargetBlockState> deeplunariscoalore = List.of(OreConfiguration.target(gneissReplaceable,
+                ModBlocks.DEEP_LUNARIS_COAL_ORE.get().defaultBlockState()));
+        
+        register(context, LUNARIS_DEEP_MOONSTEEL_ORE_KEY, Feature.ORE, new OreConfiguration(deeplunarismoonsteelore, 9));
+        register(context, LUNARIS_DEEP_LABRADORITE_ORE_KEY, Feature.ORE, new OreConfiguration(deeplunarislabradoriteore, 9));
+        register(context, LUNARIS_DEEP_LUNARITE_ORE_KEY, Feature.ORE, new OreConfiguration(deeplunarislunariteore, 9));
+        register(context, LUNARIS_DEEP_COAL_ORE_KEY, Feature.ORE, new OreConfiguration(deeplunariscoalore, 9));
+        register(context, LUNARIS_DEEP_LARGE_MOONSTEEL_ORE_KEY, Feature.ORE, new OreConfiguration(deeplunarismoonsteelore, 9));
+        register(context, LUNARIS_DEEP_LARGE_LABRADORITE_ORE_KEY, Feature.ORE, new OreConfiguration(deeplunarislabradoriteore, 9));
+        register(context, LUNARIS_DEEP_LARGE_LUNARITE_ORE_KEY, Feature.ORE, new OreConfiguration(deeplunarislunariteore, 9));
+        register(context, LUNARIS_DEEP_LARGE_COAL_ORE_KEY, Feature.ORE, new OreConfiguration(deeplunariscoalore, 9));
 
 		
         //tree register

@@ -153,6 +153,12 @@ public class ModBlockStateProvider extends BlockStateProvider{
 		blockWithItem(ModBlocks.LUNARITE_ORE);
 		blockWithItem(ModBlocks.MOONSTEEL_ORE);
 		blockWithItem(ModBlocks.LABRADORITE_ORE);
+		blockWithItem(ModBlocks.LUNARIS_COAL_ORE);
+
+		blockWithItem(ModBlocks.DEEP_LUNARITE_ORE);
+		blockWithItem(ModBlocks.DEEP_MOONSTEEL_ORE);
+		blockWithItem(ModBlocks.DEEP_LABRADORITE_ORE);
+		blockWithItem(ModBlocks.DEEP_LUNARIS_COAL_ORE);
 		
 		//nature blocks
 		saplingBlock(ModBlocks.LUNGRASS);

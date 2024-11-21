@@ -1,0 +1,20 @@
+{
+  "type": "thelunaris:lunar_crafting",
+  "catalyst": {
+    "item": "thelunaris:emoonsteel_axe"
+  },
+  "ingredients": [
+    { "item": "thelunaris:lunarite" },
+    { "item": "thelunaris:lunarite" },
+    { "item": "minecraft:air" },
+    { "item": "thelunaris:lunarite" },
+    { "item": "minecraft:air" },
+    { "item": "minecraft:air" },
+    { "item": "thelunaris:lunar_stick" },
+    { "item": "minecraft:air" }
+  ],
+  "output": {
+    "item": "thelunaris:lunarite_axe",
+    "count": 1
+  }
+}

@@ -2,7 +2,6 @@ package net.ttttoooo.thelunaris.datagen.builders;
 
 import net.minecraft.core.HolderGetter;
 import net.minecraft.data.worldgen.Carvers;
-import net.minecraft.data.worldgen.placement.MiscOverworldPlacements;
 import net.minecraft.sounds.Musics;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.world.entity.MobCategory;
@@ -22,6 +21,8 @@ public class LunarisBiomeBuilder {
                 .addFeature(GenerationStep.Decoration.UNDERGROUND_ORES, ModPlacedFeatures.LUNARIS_MOONSTEEL_ORE_PLACED_KEY)
                 .addFeature(GenerationStep.Decoration.UNDERGROUND_ORES, ModPlacedFeatures.LUNARIS_LARGE_LUNARITE_ORE_PLACED_KEY)
                 .addFeature(GenerationStep.Decoration.UNDERGROUND_ORES, ModPlacedFeatures.LUNARIS_LARGE_MOONSTEEL_ORE_PLACED_KEY)
+                .addFeature(GenerationStep.Decoration.UNDERGROUND_ORES, ModPlacedFeatures.LUNARIS_COAL_ORE_PLACED_KEY)
+                .addFeature(GenerationStep.Decoration.UNDERGROUND_ORES, ModPlacedFeatures.LUNARIS_LARGE_COAL_ORE_PLACED_KEY)
                 .addCarver(GenerationStep.Carving.AIR, Carvers.CAVE)
                 .addCarver(GenerationStep.Carving.AIR, Carvers.CAVE_EXTRA_UNDERGROUND)
                 .addCarver(GenerationStep.Carving.AIR, Carvers.CANYON));
@@ -33,6 +34,8 @@ public class LunarisBiomeBuilder {
                 .addFeature(GenerationStep.Decoration.UNDERGROUND_ORES, ModPlacedFeatures.LUNARIS_MOONSTEEL_ORE_PLACED_KEY)
                 .addFeature(GenerationStep.Decoration.UNDERGROUND_ORES, ModPlacedFeatures.LUNARIS_LARGE_LUNARITE_ORE_PLACED_KEY)
                 .addFeature(GenerationStep.Decoration.UNDERGROUND_ORES, ModPlacedFeatures.LUNARIS_LARGE_MOONSTEEL_ORE_PLACED_KEY)
+                .addFeature(GenerationStep.Decoration.UNDERGROUND_ORES, ModPlacedFeatures.LUNARIS_COAL_ORE_PLACED_KEY)
+                .addFeature(GenerationStep.Decoration.UNDERGROUND_ORES, ModPlacedFeatures.LUNARIS_LARGE_COAL_ORE_PLACED_KEY)
                 .addCarver(GenerationStep.Carving.AIR, Carvers.CAVE)
                 .addCarver(GenerationStep.Carving.AIR, Carvers.CAVE_EXTRA_UNDERGROUND)
                 .addCarver(GenerationStep.Carving.AIR, Carvers.CANYON));
@@ -45,6 +48,8 @@ public class LunarisBiomeBuilder {
                 .addFeature(GenerationStep.Decoration.UNDERGROUND_ORES, ModPlacedFeatures.LUNARIS_MOONSTEEL_ORE_PLACED_KEY)
                 .addFeature(GenerationStep.Decoration.UNDERGROUND_ORES, ModPlacedFeatures.LUNARIS_LARGE_LUNARITE_ORE_PLACED_KEY)
                 .addFeature(GenerationStep.Decoration.UNDERGROUND_ORES, ModPlacedFeatures.LUNARIS_LARGE_MOONSTEEL_ORE_PLACED_KEY)
+                .addFeature(GenerationStep.Decoration.UNDERGROUND_ORES, ModPlacedFeatures.LUNARIS_COAL_ORE_PLACED_KEY)
+                .addFeature(GenerationStep.Decoration.UNDERGROUND_ORES, ModPlacedFeatures.LUNARIS_LARGE_COAL_ORE_PLACED_KEY)
                 .addCarver(GenerationStep.Carving.AIR, Carvers.CAVE)
                 .addCarver(GenerationStep.Carving.AIR, Carvers.CAVE_EXTRA_UNDERGROUND)
                 .addCarver(GenerationStep.Carving.AIR, Carvers.CANYON));
@@ -60,6 +65,8 @@ public class LunarisBiomeBuilder {
                 .addFeature(GenerationStep.Decoration.UNDERGROUND_ORES, ModPlacedFeatures.LUNARIS_MOONSTEEL_ORE_PLACED_KEY)
                 .addFeature(GenerationStep.Decoration.UNDERGROUND_ORES, ModPlacedFeatures.LUNARIS_LARGE_LUNARITE_ORE_PLACED_KEY)
                 .addFeature(GenerationStep.Decoration.UNDERGROUND_ORES, ModPlacedFeatures.LUNARIS_LARGE_MOONSTEEL_ORE_PLACED_KEY)
+                .addFeature(GenerationStep.Decoration.UNDERGROUND_ORES, ModPlacedFeatures.LUNARIS_COAL_ORE_PLACED_KEY)
+                .addFeature(GenerationStep.Decoration.UNDERGROUND_ORES, ModPlacedFeatures.LUNARIS_LARGE_COAL_ORE_PLACED_KEY)
                 .addCarver(GenerationStep.Carving.AIR, Carvers.CAVE)
                 .addCarver(GenerationStep.Carving.AIR, Carvers.CAVE_EXTRA_UNDERGROUND)
                 .addCarver(GenerationStep.Carving.AIR, Carvers.CANYON));
@@ -69,6 +76,8 @@ public class LunarisBiomeBuilder {
         return makeDesertBiome(new BiomeGenerationSettings.Builder(placedFeatures, worldCarvers)
                 .addFeature(GenerationStep.Decoration.UNDERGROUND_ORES, ModPlacedFeatures.LUNARIS_MOONSTEEL_ORE_PLACED_KEY)
                 .addFeature(GenerationStep.Decoration.UNDERGROUND_ORES, ModPlacedFeatures.LUNARIS_LARGE_MOONSTEEL_ORE_PLACED_KEY)
+                .addFeature(GenerationStep.Decoration.UNDERGROUND_ORES, ModPlacedFeatures.LUNARIS_COAL_ORE_PLACED_KEY)
+                .addFeature(GenerationStep.Decoration.UNDERGROUND_ORES, ModPlacedFeatures.LUNARIS_LARGE_COAL_ORE_PLACED_KEY)
                 .addCarver(GenerationStep.Carving.AIR, Carvers.CAVE)
                 .addCarver(GenerationStep.Carving.AIR, Carvers.CAVE_EXTRA_UNDERGROUND)
                 .addCarver(GenerationStep.Carving.AIR, Carvers.CANYON));
@@ -85,6 +94,8 @@ public class LunarisBiomeBuilder {
                 .addFeature(GenerationStep.Decoration.UNDERGROUND_ORES, ModPlacedFeatures.LUNARIS_LARGE_LUNARITE_ORE_PLACED_KEY)
                 .addFeature(GenerationStep.Decoration.UNDERGROUND_ORES, ModPlacedFeatures.LUNARIS_LARGE_MOONSTEEL_ORE_PLACED_KEY)
                 .addFeature(GenerationStep.Decoration.UNDERGROUND_ORES, ModPlacedFeatures.LUNARIS_LARGE_LABRADORITE_ORE_PLACED_KEY)
+                .addFeature(GenerationStep.Decoration.UNDERGROUND_ORES, ModPlacedFeatures.LUNARIS_COAL_ORE_PLACED_KEY)
+                .addFeature(GenerationStep.Decoration.UNDERGROUND_ORES, ModPlacedFeatures.LUNARIS_LARGE_COAL_ORE_PLACED_KEY)
                 .addCarver(GenerationStep.Carving.AIR, Carvers.CAVE)
                 .addCarver(GenerationStep.Carving.AIR, Carvers.CAVE_EXTRA_UNDERGROUND)
                 .addCarver(GenerationStep.Carving.AIR, Carvers.CANYON));

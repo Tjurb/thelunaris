@@ -38,6 +38,11 @@
     "thelunaris:labradorite_ore",
     "thelunaris:moonsteel_ore",
     "thelunaris:lunarite_ore",
+    "thelunaris:lunaris_coal_ore",
+    "thelunaris:deep_labradorite_ore",
+    "thelunaris:deep_moonsteel_ore",
+    "thelunaris:deep_lunarite_ore",
+    "thelunaris:deep_lunaris_coal_ore",
     "thelunaris:vailstone_furnace"
   ]
 }

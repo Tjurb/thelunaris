@@ -19,67 +19,60 @@ import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraft.world.phys.shapes.VoxelShape;
 import net.minecraftforge.network.NetworkHooks;
 import net.ttttoooo.thelunaris.block.entitiy.LunarCrafterEntity;
-import net.ttttoooo.thelunaris.block.entitiy.ModBlockEntities;
 
 import org.jetbrains.annotations.Nullable;
 
-public class LunarCrafter extends BaseEntityBlock{
-    public static final VoxelShape SHAPE = Block.box(0, 0, 0, 16, 12, 16);
+public class LunarCrafter extends BaseEntityBlock {
+    public static final VoxelShape SHAPE = Block.box(0, 0, 0, 16, 14, 16);
 
-    public LunarCrafter(Properties p_49224_) {
-		super(p_49224_);
-	}
-	
-	@Override
-    public VoxelShape getShape(BlockState pState, BlockGetter pLevel, BlockPos pPos, CollisionContext pContext) {
+    public LunarCrafter(Properties properties) {
+        super(properties);
+    }
+
+    @Override
+    public VoxelShape getShape(BlockState state, BlockGetter level, BlockPos pos, CollisionContext context) {
         return SHAPE;
     }
 
     @Override
-    public RenderShape getRenderShape(BlockState pState) {
+    public RenderShape getRenderShape(BlockState state) {
         return RenderShape.MODEL;
     }
 
     @Override
-    public void onRemove(BlockState pState, Level pLevel, BlockPos pPos, BlockState pNewState, boolean pIsMoving) {
-        if (pState.getBlock() != pNewState.getBlock()) {
-            BlockEntity blockEntity = pLevel.getBlockEntity(pPos);
+    public void onRemove(BlockState state, Level level, BlockPos pos, BlockState newState, boolean isMoving) {
+        if (state.getBlock() != newState.getBlock()) {
+            BlockEntity blockEntity = level.getBlockEntity(pos);
             if (blockEntity instanceof LunarCrafterEntity) {
                 ((LunarCrafterEntity) blockEntity).drops();
             }
         }
-
-        super.onRemove(pState, pLevel, pPos, pNewState, pIsMoving);
+        super.onRemove(state, level, pos, newState, isMoving);
     }
 
     @Override
-    public InteractionResult use(BlockState pState, Level pLevel, BlockPos pPos, Player pPlayer, InteractionHand pHand, BlockHitResult pHit) {
-        if (!pLevel.isClientSide()) {
-            BlockEntity entity = pLevel.getBlockEntity(pPos);
-            if(entity instanceof LunarCrafterEntity) {
-                NetworkHooks.openScreen(((ServerPlayer)pPlayer), (LunarCrafterEntity)entity, pPos);
+    public InteractionResult use(BlockState state, Level level, BlockPos pos, Player player, InteractionHand hand, BlockHitResult hit) {
+        if (!level.isClientSide()) {
+            BlockEntity entity = level.getBlockEntity(pos);
+            if (entity instanceof LunarCrafterEntity) {
+                NetworkHooks.openScreen((ServerPlayer) player, (LunarCrafterEntity) entity, pos);
             } else {
                 throw new IllegalStateException("Our Container provider is missing!");
             }
         }
-
-        return InteractionResult.sidedSuccess(pLevel.isClientSide());
+        return InteractionResult.sidedSuccess(level.isClientSide());
     }
 
     @Nullable
     @Override
-    public BlockEntity newBlockEntity(BlockPos pPos, BlockState pState) {
-        return new LunarCrafterEntity(pPos, pState);
+    public BlockEntity newBlockEntity(BlockPos pos, BlockState state) {
+        return new LunarCrafterEntity(pos, state);
     }
 
     @Nullable
     @Override
-    public <T extends BlockEntity> BlockEntityTicker<T> getTicker(Level pLevel, BlockState pState, BlockEntityType<T> pBlockEntityType) {
-        if(pLevel.isClientSide()) {
-            return null;
-        }
-
-        return createTickerHelper(pBlockEntityType, ModBlockEntities.LUNAR_CRAFTING_BE.get(),
-                (pLevel1, pPos, pState1, pBlockEntity) -> pBlockEntity.tick(pLevel1, pPos, pState1));
+    public <T extends BlockEntity> BlockEntityTicker<T> getTicker(Level level, BlockState state, BlockEntityType<T> blockEntityType) {
+        // Return null because this block doesn't require ticking
+        return null;
     }
 }

@@ -66,13 +66,14 @@ public class ModBlockTagGenerator extends BlockTagsProvider{
 					ModBlocks.LABRADORITE_ORE.get(),
 					ModBlocks.MOONSTEEL_ORE.get(),
 					ModBlocks.LUNARITE_ORE.get(),
+					ModBlocks.LUNARIS_COAL_ORE.get(),
+					
+					ModBlocks.DEEP_LABRADORITE_ORE.get(),
+					ModBlocks.DEEP_MOONSTEEL_ORE.get(),
+					ModBlocks.DEEP_LUNARITE_ORE.get(),
+					ModBlocks.DEEP_LUNARIS_COAL_ORE.get(),
 					
 					ModBlocks.VAILSTONE_FURNACE.get());
-		
-		this.tag(ModTags.Blocks.LUNAR_PLANKS)
-			.add(ModBlocks.CELEST_PLANKS.get(),
-					ModBlocks.STELLAR_PLANKS.get(),
-					ModBlocks.SKYOAK_PLANKS.get());
 		
 		this.tag(BlockTags.DIRT)
 			.add(ModBlocks.LUNDIRT.get(),
@@ -154,10 +155,5 @@ public class ModBlockTagGenerator extends BlockTagsProvider{
 					ModBlocks.SKYOAK_WOOD.get(),
 					ModBlocks.STRIPPED_SKYOAK_LOG.get(),
 					ModBlocks.STRIPPED_SKYOAK_WOOD.get());
-		
-		this.tag(ModTags.Blocks.LUNAR_PLANKS)
-			.add(ModBlocks.CELEST_PLANKS.get(),
-					ModBlocks.SKYOAK_PLANKS.get(),
-					ModBlocks.STELLAR_PLANKS.get());
 	}
 }

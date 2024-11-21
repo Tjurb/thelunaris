@@ -3,7 +3,7 @@
     "catagory": "misc",
     "ingredients": [
         {
-            "item": "thelunaris:skyoak_wood"
+            "tag": "thelunaris:skyoak_woods"
         }
     ],
     "result": {

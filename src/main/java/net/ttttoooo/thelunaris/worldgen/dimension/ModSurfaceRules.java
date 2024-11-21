@@ -12,10 +12,13 @@ public class ModSurfaceRules {
 	private static final SurfaceRules.RuleSource LUNSAND = makeStateRule(ModBlocks.LUNSAND.get());
     private static final SurfaceRules.RuleSource LUNSANDSTONE = makeStateRule(ModBlocks.LUNSANDSTONE.get());
     private static final SurfaceRules.RuleSource LUNARBEDROCK = makeStateRule(ModBlocks.LUNARIS_BEDROCK.get());
+    private static final SurfaceRules.RuleSource GNEISS = makeStateRule(ModBlocks.GNEISS.get());
 
     public static SurfaceRules.RuleSource makeRules() {
         SurfaceRules.ConditionSource isAtOrAboveWaterLevel = SurfaceRules.waterBlockCheck(-1, 0);
         SurfaceRules.ConditionSource isAtBedrockLevel = SurfaceRules.verticalGradient("bedrock_floor",VerticalAnchor.bottom(), VerticalAnchor.aboveBottom(5));
+
+        SurfaceRules.ConditionSource isAtGneissLevel = SurfaceRules.verticalGradient("gneiss_layer",VerticalAnchor.aboveBottom(5), VerticalAnchor.aboveBottom(59));
 
         SurfaceRules.RuleSource sandOcean = SurfaceRules.sequence(SurfaceRules.ifTrue(isAtOrAboveWaterLevel, LUNSAND), LUNDIRT);
         SurfaceRules.RuleSource sandSurface = SurfaceRules.sequence(SurfaceRules.ifTrue(isAtOrAboveWaterLevel, LUNSAND), LUNSANDSTONE);
@@ -23,9 +26,11 @@ public class ModSurfaceRules {
         SurfaceRules.RuleSource grassSurface = SurfaceRules.sequence(SurfaceRules.ifTrue(isAtOrAboveWaterLevel, LUNGRASS_BLOCK), LUNDIRT);
         SurfaceRules.RuleSource dirtSurface = SurfaceRules.sequence(SurfaceRules.ifTrue(isAtOrAboveWaterLevel, LUNDIRT), LUNDIRT);
         SurfaceRules.RuleSource bedrockFill = SurfaceRules.sequence(SurfaceRules.ifTrue(isAtBedrockLevel, LUNARBEDROCK));
+        SurfaceRules.RuleSource deepfill = SurfaceRules.sequence(SurfaceRules.ifTrue(isAtGneissLevel, GNEISS));
         
         return SurfaceRules.sequence(
         		SurfaceRules.sequence(SurfaceRules.ifTrue(isAtBedrockLevel, bedrockFill)),
+        		SurfaceRules.sequence(SurfaceRules.ifTrue(isAtGneissLevel, deepfill)),
         		
         		SurfaceRules.sequence(SurfaceRules.ifTrue(SurfaceRules.isBiome(ModBiomes.LUNAR_FORESTS), 
                 	SurfaceRules.ifTrue(SurfaceRules.ON_FLOOR, grassSurface)

@@ -1,18 +1,19 @@
 {
 	"credit": "Made with Blockbench",
-  	"parent": "minecraft:block/block",
+  	"parent": "minecraft:block/cube_all",
 	"textures": {
 		"0": "thelunaris:block/lunar_crafter",
 		"1": "thelunaris:block/lunar_crafter_side",
 		"2": "thelunaris:block/lunar_crafter_bottom",
 		"3": "thelunaris:block/vailstone",
+		"4": "thelunaris:block/vailstonebrick",
 		"particle": "thelunaris:block/lunar_crafter"
 	},
 	"elements": [
 		{
 			"name": "top",
-			"from": [0, 6, 0],
-			"to": [16, 12, 16],
+			"from": [0, 8, 0],
+			"to": [16, 14, 16],
 			"faces": {
 				"north": {"uv": [0, 0, 16, 6], "texture": "#1"},
 				"east": {"uv": [0, 0, 16, 6], "texture": "#1"},
@@ -24,8 +25,8 @@
 		},
 		{
 			"name": "leg",
-			"from": [2, 0, 2],
-			"to": [4, 6, 4],
+			"from": [2, 2, 2],
+			"to": [4, 8, 4],
 			"faces": {
 				"north": {"uv": [0, 0, 2, 6], "texture": "#3"},
 				"east": {"uv": [0, 0, 2, 6], "texture": "#3"},
@@ -37,8 +38,8 @@
 		},
 		{
 			"name": "leg",
-			"from": [2, 0, 12],
-			"to": [4, 6, 14],
+			"from": [2, 2, 12],
+			"to": [4, 8, 14],
 			"faces": {
 				"north": {"uv": [0, 0, 2, 6], "texture": "#3"},
 				"east": {"uv": [0, 0, 2, 6], "texture": "#3"},
@@ -50,8 +51,8 @@
 		},
 		{
 			"name": "leg",
-			"from": [12, 0, 2],
-			"to": [14, 6, 4],
+			"from": [12, 2, 2],
+			"to": [14, 8, 4],
 			"faces": {
 				"north": {"uv": [0, 0, 2, 6], "texture": "#3"},
 				"east": {"uv": [0, 0, 2, 6], "texture": "#3"},
@@ -63,8 +64,8 @@
 		},
 		{
 			"name": "leg",
-			"from": [12, 0, 12],
-			"to": [14, 6, 14],
+			"from": [12, 2, 12],
+			"to": [14, 8, 14],
 			"faces": {
 				"north": {"uv": [0, 0, 2, 6], "texture": "#3"},
 				"east": {"uv": [0, 0, 2, 6], "texture": "#3"},
@@ -76,8 +77,8 @@
 		},
 		{
 			"name": "top_detail",
-			"from": [7, 11, 7],
-			"to": [9, 13, 9],
+			"from": [7, 13, 7],
+			"to": [9, 15, 9],
 			"rotation": {"angle": 0, "axis": "y", "origin": [7, 11, 7]},
 			"faces": {
 				"north": {"uv": [7, 7, 9, 9], "texture": "#0"},
@@ -87,6 +88,19 @@
 				"up": {"uv": [7, 7, 9, 9], "texture": "#0"},
 				"down": {"uv": [7, 7, 9, 9], "texture": "#0"}
 			}
+		},
+		{
+			"name": "base",
+			"from": [0, 0, 0],
+			"to": [16, 4, 16],
+			"faces": {
+				"north": {"uv": [0, 2, 16, 6], "texture": "#4"},
+				"east": {"uv": [0, 2, 16, 6], "texture": "#4"},
+				"south": {"uv": [0, 2, 16, 6], "texture": "#4"},
+				"west": {"uv": [0, 2, 16, 6], "texture": "#4"},
+				"up": {"uv": [0, 0, 16, 16], "texture": "#4"},
+				"down": {"uv": [0, 0, 16, 16], "texture": "#4"}
+			}
 		}
 	],
 	"groups": [
@@ -94,7 +108,7 @@
 			"name": "base",
 			"origin": [0, 0, 0],
 			"color": 0,
-			"children": [0, 1, 2, 3, 4, 5]
+			"children": [0, 1, 2, 3, 4, 5, 6]
 		}
 	]
 }

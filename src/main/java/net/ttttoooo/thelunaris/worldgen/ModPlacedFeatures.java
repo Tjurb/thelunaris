@@ -33,10 +33,21 @@ public class ModPlacedFeatures {
 	public static final ResourceKey<PlacedFeature> LUNARIS_MOONSTEEL_ORE_PLACED_KEY = registerKey("moonsteel_ore_placed");
 	public static final ResourceKey<PlacedFeature> LUNARIS_LABRADORITE_ORE_PLACED_KEY = registerKey("labradorite_ore_placed");
 	public static final ResourceKey<PlacedFeature> LUNARIS_LUNARITE_ORE_PLACED_KEY = registerKey("lunarite_ore_placed");
+	public static final ResourceKey<PlacedFeature> LUNARIS_COAL_ORE_PLACED_KEY = registerKey("lunaris_coal_ore_placed");
 	public static final ResourceKey<PlacedFeature> LUNARIS_LARGE_MOONSTEEL_ORE_PLACED_KEY = registerKey("large_moonsteel_ore_placed");
 	public static final ResourceKey<PlacedFeature> LUNARIS_LARGE_LABRADORITE_ORE_PLACED_KEY = registerKey("large_labradorite_ore_placed");
 	public static final ResourceKey<PlacedFeature> LUNARIS_LARGE_LUNARITE_ORE_PLACED_KEY = registerKey("large_lunarite_ore_placed");
-	
+	public static final ResourceKey<PlacedFeature> LUNARIS_LARGE_COAL_ORE_PLACED_KEY = registerKey("large_lunaris_coal_ore_placed");
+	//orekeys
+	public static final ResourceKey<PlacedFeature> LUNARIS_DEEP_MOONSTEEL_ORE_PLACED_KEY = registerKey("deep_moonsteel_ore_placed");
+	public static final ResourceKey<PlacedFeature> LUNARIS_DEEP_LABRADORITE_ORE_PLACED_KEY = registerKey("deep_labradorite_ore_placed");
+	public static final ResourceKey<PlacedFeature> LUNARIS_DEEP_LUNARITE_ORE_PLACED_KEY = registerKey("deep_lunarite_ore_placed");
+	public static final ResourceKey<PlacedFeature> LUNARIS_DEEP_COAL_ORE_PLACED_KEY = registerKey("deep_lunaris_coal_ore_placed");
+	public static final ResourceKey<PlacedFeature> LUNARIS_DEEP_LARGE_MOONSTEEL_ORE_PLACED_KEY = registerKey("large_deep_moonsteel_ore_placed");
+	public static final ResourceKey<PlacedFeature> LUNARIS_DEEP_LARGE_LABRADORITE_ORE_PLACED_KEY = registerKey("large_deep_labradorite_ore_placed");
+	public static final ResourceKey<PlacedFeature> LUNARIS_DEEP_LARGE_LUNARITE_ORE_PLACED_KEY = registerKey("large_deep_lunarite_ore_placed");
+	public static final ResourceKey<PlacedFeature> LUNARIS_DEEP_LARGE_COAL_ORE_PLACED_KEY = registerKey("large_deep_lunaris_coal_ore_placed");
+			
 	//tree keys
 	public static final ResourceKey<PlacedFeature> CELEST_PLACED_KEY = registerKey("celest_placed");
 	public static final ResourceKey<PlacedFeature> STELLAR_PLACED_KEY = registerKey("stellar_placed");
@@ -55,22 +66,54 @@ public class ModPlacedFeatures {
         //ore register
         register(context, LUNARIS_MOONSTEEL_ORE_PLACED_KEY, configuredFeatures.getOrThrow(ModConfiguredFeatures.LUNARIS_MOONSTEEL_ORE_KEY),
                 ModOrePlacement.commonOrePlacement(20,
-                        HeightRangePlacement.uniform(VerticalAnchor.absolute(-32), VerticalAnchor.absolute(80))));
+                        HeightRangePlacement.uniform(VerticalAnchor.absolute(0), VerticalAnchor.absolute(80))));
         register(context, LUNARIS_LABRADORITE_ORE_PLACED_KEY, configuredFeatures.getOrThrow(ModConfiguredFeatures.LUNARIS_LABRADORITE_ORE_KEY),
                 ModOrePlacement.commonOrePlacement(10,
-                        HeightRangePlacement.uniform(VerticalAnchor.absolute(-32), VerticalAnchor.absolute(16))));
+                        HeightRangePlacement.uniform(VerticalAnchor.absolute(0), VerticalAnchor.absolute(16))));
         register(context, LUNARIS_LUNARITE_ORE_PLACED_KEY, configuredFeatures.getOrThrow(ModConfiguredFeatures.LUNARIS_LUNARITE_ORE_KEY),
                 ModOrePlacement.commonOrePlacement(10,
-                        HeightRangePlacement.uniform(VerticalAnchor.absolute(-64), VerticalAnchor.absolute(0))));
+                        HeightRangePlacement.uniform(VerticalAnchor.absolute(0), VerticalAnchor.absolute(8))));
+        register(context, LUNARIS_COAL_ORE_PLACED_KEY, configuredFeatures.getOrThrow(ModConfiguredFeatures.LUNARIS_COAL_ORE_KEY),
+                ModOrePlacement.commonOrePlacement(10,
+                        HeightRangePlacement.uniform(VerticalAnchor.absolute(0), VerticalAnchor.absolute(256))));
         register(context, LUNARIS_LARGE_MOONSTEEL_ORE_PLACED_KEY, configuredFeatures.getOrThrow(ModConfiguredFeatures.LUNARIS_LARGE_MOONSTEEL_ORE_KEY),
                 ModOrePlacement.rareOrePlacement(10,
-                        HeightRangePlacement.uniform(VerticalAnchor.absolute(-32), VerticalAnchor.absolute(40))));
+                        HeightRangePlacement.uniform(VerticalAnchor.absolute(0), VerticalAnchor.absolute(40))));
         register(context, LUNARIS_LARGE_LABRADORITE_ORE_PLACED_KEY, configuredFeatures.getOrThrow(ModConfiguredFeatures.LUNARIS_LARGE_LABRADORITE_ORE_KEY),
                 ModOrePlacement.rareOrePlacement(5,
-                        HeightRangePlacement.uniform(VerticalAnchor.absolute(-32), VerticalAnchor.absolute(32))));
+                        HeightRangePlacement.uniform(VerticalAnchor.absolute(0), VerticalAnchor.absolute(32))));
         register(context, LUNARIS_LARGE_LUNARITE_ORE_PLACED_KEY, configuredFeatures.getOrThrow(ModConfiguredFeatures.LUNARIS_LARGE_LUNARITE_ORE_KEY),
                 ModOrePlacement.rareOrePlacement(5,
-                        HeightRangePlacement.uniform(VerticalAnchor.absolute(-32), VerticalAnchor.absolute(16))));
+                        HeightRangePlacement.uniform(VerticalAnchor.absolute(0), VerticalAnchor.absolute(16))));
+        register(context, LUNARIS_LARGE_COAL_ORE_PLACED_KEY, configuredFeatures.getOrThrow(ModConfiguredFeatures.LUNARIS_LARGE_COAL_ORE_KEY),
+                ModOrePlacement.rareOrePlacement(5,
+                        HeightRangePlacement.uniform(VerticalAnchor.absolute(0), VerticalAnchor.absolute(16))));
+      
+        //deep ore register
+        register(context, LUNARIS_DEEP_MOONSTEEL_ORE_PLACED_KEY, configuredFeatures.getOrThrow(ModConfiguredFeatures.LUNARIS_DEEP_MOONSTEEL_ORE_KEY),
+                ModOrePlacement.commonOrePlacement(20,
+                        HeightRangePlacement.uniform(VerticalAnchor.absolute(-32), VerticalAnchor.absolute(0))));
+        register(context, LUNARIS_DEEP_LABRADORITE_ORE_PLACED_KEY, configuredFeatures.getOrThrow(ModConfiguredFeatures.LUNARIS_DEEP_LABRADORITE_ORE_KEY),
+                ModOrePlacement.commonOrePlacement(10,
+                        HeightRangePlacement.uniform(VerticalAnchor.absolute(-32), VerticalAnchor.absolute(0))));
+        register(context, LUNARIS_DEEP_LUNARITE_ORE_PLACED_KEY, configuredFeatures.getOrThrow(ModConfiguredFeatures.LUNARIS_DEEP_LUNARITE_ORE_KEY),
+                ModOrePlacement.commonOrePlacement(10,
+                        HeightRangePlacement.uniform(VerticalAnchor.absolute(-64), VerticalAnchor.absolute(0))));
+        register(context, LUNARIS_DEEP_COAL_ORE_PLACED_KEY, configuredFeatures.getOrThrow(ModConfiguredFeatures.LUNARIS_DEEP_COAL_ORE_KEY),
+                ModOrePlacement.commonOrePlacement(10,
+                        HeightRangePlacement.uniform(VerticalAnchor.absolute(-8), VerticalAnchor.absolute(0))));
+        register(context, LUNARIS_DEEP_LARGE_MOONSTEEL_ORE_PLACED_KEY, configuredFeatures.getOrThrow(ModConfiguredFeatures.LUNARIS_DEEP_LARGE_MOONSTEEL_ORE_KEY),
+                ModOrePlacement.rareOrePlacement(10,
+                        HeightRangePlacement.uniform(VerticalAnchor.absolute(-16), VerticalAnchor.absolute(0))));
+        register(context, LUNARIS_DEEP_LARGE_LABRADORITE_ORE_PLACED_KEY, configuredFeatures.getOrThrow(ModConfiguredFeatures.LUNARIS_DEEP_LARGE_LABRADORITE_ORE_KEY),
+                ModOrePlacement.rareOrePlacement(5,
+                        HeightRangePlacement.uniform(VerticalAnchor.absolute(-32), VerticalAnchor.absolute(0))));
+        register(context, LUNARIS_DEEP_LARGE_LUNARITE_ORE_PLACED_KEY, configuredFeatures.getOrThrow(ModConfiguredFeatures.LUNARIS_DEEP_LARGE_LUNARITE_ORE_KEY),
+                ModOrePlacement.rareOrePlacement(5,
+                        HeightRangePlacement.uniform(VerticalAnchor.absolute(-32), VerticalAnchor.absolute(0))));
+        register(context, LUNARIS_DEEP_LARGE_COAL_ORE_PLACED_KEY, configuredFeatures.getOrThrow(ModConfiguredFeatures.LUNARIS_DEEP_LARGE_COAL_ORE_KEY),
+                ModOrePlacement.rareOrePlacement(5,
+                        HeightRangePlacement.uniform(VerticalAnchor.absolute(-16), VerticalAnchor.absolute(0))));
         
         //tree register
         register(context, CELEST_PLACED_KEY, configuredFeatures.getOrThrow(ModConfiguredFeatures.CELEST_KEY),

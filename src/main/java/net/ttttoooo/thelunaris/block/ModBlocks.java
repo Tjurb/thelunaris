@@ -384,16 +384,16 @@ public class ModBlocks {
 			() -> new WallBlock(BlockBehaviour.Properties.copy(Blocks.STONE).sound(SoundType.STONE)));
 	
 	public static final RegistryObject<Block> GNEISS = registerBlock("gneiss", 
-			() -> new Block(BlockBehaviour.Properties.copy(Blocks.STONE).sound(SoundType.STONE)));
+			() -> new Block(BlockBehaviour.Properties.copy(Blocks.DEEPSLATE).sound(SoundType.DEEPSLATE)));
 	public static final RegistryObject<Block> SMOOTHGNEISS = registerBlock("smoothgneiss", 
-			() -> new Block(BlockBehaviour.Properties.copy(Blocks.STONE).sound(SoundType.STONE)));
+			() -> new Block(BlockBehaviour.Properties.copy(Blocks.DEEPSLATE).sound(SoundType.DEEPSLATE)));
 	public static final RegistryObject<Block> SMOOTHGNEISS_STAIRS = registerBlock("smoothgneiss_stairs", 
 			() -> new StairBlock(() -> ModBlocks.SMOOTHGNEISS.get().defaultBlockState(),
-			BlockBehaviour.Properties.copy(Blocks.STONE_BRICKS).sound(SoundType.STONE)));
+			BlockBehaviour.Properties.copy(Blocks.DEEPSLATE).sound(SoundType.DEEPSLATE_TILES)));
 	public static final RegistryObject<Block> SMOOTHGNEISS_SLAB = registerBlock("smoothgneiss_slab", 
-			() -> new SlabBlock(BlockBehaviour.Properties.copy(Blocks.STONE).sound(SoundType.STONE)));
+			() -> new SlabBlock(BlockBehaviour.Properties.copy(Blocks.DEEPSLATE).sound(SoundType.DEEPSLATE_TILES)));
 	public static final RegistryObject<Block> SMOOTHGNEISS_WALL = registerBlock("smoothgneiss_wall", 
-			() -> new WallBlock(BlockBehaviour.Properties.copy(Blocks.STONE).sound(SoundType.STONE)));
+			() -> new WallBlock(BlockBehaviour.Properties.copy(Blocks.DEEPSLATE).sound(SoundType.DEEPSLATE_TILES)));
 	
 	public static final RegistryObject<Block> MARBLE = registerBlock("marble", 
 			() -> new Block(BlockBehaviour.Properties.copy(Blocks.STONE).sound(SoundType.STONE)));
@@ -411,12 +411,29 @@ public class ModBlocks {
 	public static final RegistryObject<Block> LUNARITE_ORE = registerBlock("lunarite_ore", 
 			() -> new DropExperienceBlock(BlockBehaviour.Properties.copy(Blocks.STONE).strength(3f)
 					.requiresCorrectToolForDrops(), UniformInt.of(3, 7)));
+	public static final RegistryObject<Block> DEEP_LUNARITE_ORE = registerBlock("deep_lunarite_ore", 
+			() -> new DropExperienceBlock(BlockBehaviour.Properties.copy(Blocks.DEEPSLATE).strength(3f)
+					.requiresCorrectToolForDrops(), UniformInt.of(3, 7)));
 	public static final RegistryObject<Block> MOONSTEEL_ORE = registerBlock("moonsteel_ore", 
 			() -> new DropExperienceBlock(BlockBehaviour.Properties.copy(Blocks.STONE).strength(2f)
+					.requiresCorrectToolForDrops(), UniformInt.of(1, 4)));
+	public static final RegistryObject<Block> DEEP_MOONSTEEL_ORE = registerBlock("deep_moonsteel_ore", 
+			() -> new DropExperienceBlock(BlockBehaviour.Properties.copy(Blocks.DEEPSLATE).strength(2f)
 					.requiresCorrectToolForDrops(), UniformInt.of(1, 4)));
 	public static final RegistryObject<Block> LABRADORITE_ORE = registerBlock("labradorite_ore", 
 			() -> new DropExperienceBlock(BlockBehaviour.Properties.copy(Blocks.STONE).strength(2f)
 					.requiresCorrectToolForDrops(), UniformInt.of(2, 5)));
+	public static final RegistryObject<Block> DEEP_LABRADORITE_ORE = registerBlock("deep_labradorite_ore", 
+			() -> new DropExperienceBlock(BlockBehaviour.Properties.copy(Blocks.DEEPSLATE).strength(2f)
+					.requiresCorrectToolForDrops(), UniformInt.of(2, 5)));
+
+	//Vanilla Ore in Lunaris
+	public static final RegistryObject<Block> LUNARIS_COAL_ORE = registerBlock("lunaris_coal_ore", 
+			() -> new DropExperienceBlock(BlockBehaviour.Properties.copy(Blocks.COAL_ORE).strength(1f)
+					.requiresCorrectToolForDrops(), UniformInt.of(0, 2)));
+	public static final RegistryObject<Block> DEEP_LUNARIS_COAL_ORE = registerBlock("deep_lunaris_coal_ore", 
+			() -> new DropExperienceBlock(BlockBehaviour.Properties.copy(Blocks.DEEPSLATE_COAL_ORE).strength(3f)
+					.requiresCorrectToolForDrops(), UniformInt.of(0, 2)));
 	
 	//vegetation blocks
 	public static final RegistryObject<Block> LUNGRASS = registerBlock("lungrass",

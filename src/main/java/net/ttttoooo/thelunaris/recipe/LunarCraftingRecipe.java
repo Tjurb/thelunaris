@@ -17,32 +17,45 @@ import org.jetbrains.annotations.Nullable;
 
 public class LunarCraftingRecipe implements Recipe<SimpleContainer> {
     private final NonNullList<Ingredient> inputItems;
+    private final Ingredient catalyst; // New field for catalyst
     private final ItemStack output;
     private final ResourceLocation id;
 
-    public LunarCraftingRecipe(NonNullList<Ingredient> inputItems, ItemStack output, ResourceLocation id) {
+    public LunarCraftingRecipe(NonNullList<Ingredient> inputItems, ItemStack output, Ingredient catalyst, ResourceLocation id) {
         this.inputItems = inputItems;
         this.output = output;
+        this.catalyst = catalyst;
         this.id = id;
     }
 
     @Override
     public boolean matches(SimpleContainer pContainer, Level pLevel) {
-        if(pLevel.isClientSide()) {
+        if (pLevel.isClientSide()) {
             return false;
         }
 
-        return inputItems.size() == pContainer.getContainerSize() &&
-        		inputItems.get(1).test(pContainer.getItem(1)) && 
-        		inputItems.get(2).test(pContainer.getItem(2)) &&
-        		inputItems.get(3).test(pContainer.getItem(3)) &&
-        		inputItems.get(4).test(pContainer.getItem(4)) &&
-        		inputItems.get(5).test(pContainer.getItem(5)) &&
-        		inputItems.get(6).test(pContainer.getItem(6)) &&
-        		inputItems.get(7).test(pContainer.getItem(7)) &&
-        		inputItems.get(8).test(pContainer.getItem(8)) &&
-        		inputItems.get(0).test(pContainer.getItem(0));
+        // Validate catalyst
+        if (!catalyst.test(pContainer.getItem(0))) { // Assuming catalyst is in slot 0
+            return false;
+        }
+
+        // Validate inputs (slots 1–8 in the crafting grid)
+        for (int i = 1; i < pContainer.getContainerSize(); i++) {
+            if (!inputItems.get(i - 1).test(pContainer.getItem(i))) {
+                return false;
+            }
+        }
+
+        return true;
     }
+    
+    public boolean isValidInput(int index, ItemStack stack) {
+        if (index < 0 || index >= inputItems.size()) {
+            return false; // Invalid index
+        }
+        return inputItems.get(index).test(stack); // Check if the ingredient matches
+    }
+
 
     @Override
     public ItemStack assemble(SimpleContainer pContainer, RegistryAccess pRegistryAccess) {
@@ -54,6 +67,10 @@ public class LunarCraftingRecipe implements Recipe<SimpleContainer> {
         return true;
     }
 
+    public Ingredient getCatalyst() {
+        return catalyst;
+    }
+    
     @Override
     public ItemStack getResultItem(RegistryAccess pRegistryAccess) {
         return output.copy();
@@ -87,38 +104,45 @@ public class LunarCraftingRecipe implements Recipe<SimpleContainer> {
         public LunarCraftingRecipe fromJson(ResourceLocation pRecipeId, JsonObject pSerializedRecipe) {
             ItemStack output = ShapedRecipe.itemStackFromJson(GsonHelper.getAsJsonObject(pSerializedRecipe, "output"));
 
+            // Parse ingredients
             JsonArray ingredients = GsonHelper.getAsJsonArray(pSerializedRecipe, "ingredients");
             NonNullList<Ingredient> inputs = NonNullList.withSize(ingredients.size(), Ingredient.EMPTY);
 
-
-            for(int i = 0; i < inputs.size(); i++) {
+            for (int i = 0; i < inputs.size(); i++) {
                 inputs.set(i, Ingredient.fromJson(ingredients.get(i)));
             }
 
-            return new LunarCraftingRecipe(inputs, output, pRecipeId);
+            // Parse catalyst
+            Ingredient catalyst = Ingredient.fromJson(GsonHelper.getAsJsonObject(pSerializedRecipe, "catalyst"));
+
+            return new LunarCraftingRecipe(inputs, output, catalyst, pRecipeId);
         }
 
+
         @Override
-        public @Nullable LunarCraftingRecipe fromNetwork(ResourceLocation pRecipeId, FriendlyByteBuf pBuffer) {
+        public LunarCraftingRecipe fromNetwork(ResourceLocation pRecipeId, FriendlyByteBuf pBuffer) {
             NonNullList<Ingredient> inputs = NonNullList.withSize(pBuffer.readInt(), Ingredient.EMPTY);
 
-            for(int i = 0; i < inputs.size(); i++) {
+            for (int i = 0; i < inputs.size(); i++) {
                 inputs.set(i, Ingredient.fromNetwork(pBuffer));
             }
 
+            Ingredient catalyst = Ingredient.fromNetwork(pBuffer); // Read catalyst
             ItemStack output = pBuffer.readItem();
-            return new LunarCraftingRecipe(inputs, output, pRecipeId);
+
+            return new LunarCraftingRecipe(inputs, output, catalyst, pRecipeId);
         }
 
         @Override
         public void toNetwork(FriendlyByteBuf pBuffer, LunarCraftingRecipe pRecipe) {
             pBuffer.writeInt(pRecipe.inputItems.size());
 
-            for (Ingredient ingredient : pRecipe.getIngredients()) {
+            for (Ingredient ingredient : pRecipe.inputItems) {
                 ingredient.toNetwork(pBuffer);
             }
 
-            pBuffer.writeItemStack(pRecipe.getResultItem(null), false);
+            pRecipe.catalyst.toNetwork(pBuffer); // Write catalyst
+            pBuffer.writeItemStack(pRecipe.output, false);
         }
     }
 }

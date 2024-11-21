@@ -1,0 +1,11 @@
+{
+  "type": "minecraft:blasting",
+  "category": "misc",
+  "cookingtime": 40,
+  "experience": 0.1,
+  "group": "lunaris_coal",
+  "ingredient": {
+    "item": "thelunaris:deep_lunaris_coal_ore"
+  },
+  "result": "thelunaris:lunarite"
+}

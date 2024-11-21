@@ -124,6 +124,17 @@ public class ModBlockLootTables extends BlockLootSubProvider{
 				block -> createIronLikeOreDrops(ModBlocks.MOONSTEEL_ORE.get(), ModItems.RAW_MOONSTEEL.get()));
 		this.add(ModBlocks.LABRADORITE_ORE.get(),
 				block -> createDiamondLikeOreDrops(ModBlocks.LABRADORITE_ORE.get(), ModItems.LABRADORITE.get()));
+		this.add(ModBlocks.LUNARIS_COAL_ORE.get(),
+				block -> createIronLikeOreDrops(ModBlocks.LUNARIS_COAL_ORE.get(), Items.COAL));
+		
+		this.add(ModBlocks.DEEP_LUNARITE_ORE.get(),
+				block -> createDiamondLikeOreDrops(ModBlocks.DEEP_LUNARITE_ORE.get(), ModItems.LUNARITE.get()));
+		this.add(ModBlocks.DEEP_MOONSTEEL_ORE.get(),
+				block -> createIronLikeOreDrops(ModBlocks.DEEP_MOONSTEEL_ORE.get(), ModItems.RAW_MOONSTEEL.get()));
+		this.add(ModBlocks.DEEP_LABRADORITE_ORE.get(),
+				block -> createDiamondLikeOreDrops(ModBlocks.DEEP_LABRADORITE_ORE.get(), ModItems.LABRADORITE.get()));
+		this.add(ModBlocks.DEEP_LUNARIS_COAL_ORE.get(),
+				block -> createIronLikeOreDrops(ModBlocks.DEEP_LUNARIS_COAL_ORE.get(), Items.COAL));
 
 		this.add(ModBlocks.COBBLED_VAILSTONE_SLAB.get(),
 				block -> createSlabItemTable(ModBlocks.COBBLED_VAILSTONE_SLAB.get()));

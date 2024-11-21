@@ -22,8 +22,6 @@ public class ModTags {
 		
 		public static final TagKey<Block> LUNAR_PORTAL_BLOCKS = tag("lunar_portal_blocks");
 		
-		public static final TagKey<Block> LUNAR_PLANKS = tag("lunar_planks");
-		
 		private static TagKey<Block> tag(String name){
 			return BlockTags.create(new ResourceLocation(TheLunaris.MODID, name));
 		}
@@ -45,6 +43,12 @@ public class ModTags {
 
 		public static final TagKey<Item> ENRICHER_FUEL = tag("enricher_fuel");
 		public static final TagKey<Item> LUNAR_CATILIST = tag("lunar_catalist");
+		
+		public static final TagKey<Item> LUNAR_PLANKS = tag("lunar_planks");
+		
+		public static final TagKey<Item> CELEST_WOODS = tag("celest_woods");
+		public static final TagKey<Item> STELLAR_WOODS = tag("stellar_woods");
+		public static final TagKey<Item> SKYOAK_WOODS = tag("skyoak_woods");
 		
 		private static TagKey<Item> tag(String name){
 			return ItemTags.create(new ResourceLocation(TheLunaris.MODID, name));

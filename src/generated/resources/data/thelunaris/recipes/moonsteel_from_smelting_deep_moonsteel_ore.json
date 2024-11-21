@@ -1,0 +1,11 @@
+{
+  "type": "minecraft:smelting",
+  "category": "misc",
+  "cookingtime": 100,
+  "experience": 0.15,
+  "group": "moonsteel",
+  "ingredient": {
+    "item": "thelunaris:deep_moonsteel_ore"
+  },
+  "result": "thelunaris:moonsteel"
+}

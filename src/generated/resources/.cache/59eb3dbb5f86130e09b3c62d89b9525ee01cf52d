@@ -1,4 +1,4 @@
-// 1.20.1	2024-11-16T22:32:51.7997473	Loot Tables
+// 1.20.1	2024-11-21T01:24:16.1951781	Loot Tables
 78efe6f625c45e18b63e1db6f41f7d90ea90ad9b data/thelunaris/loot_tables/blocks/celest_leaves.json
 d22a5ade4901f802496a8d704d22611cbaa61302 data/thelunaris/loot_tables/blocks/celest_log.json
 90082787e0587990d18a7d5804e5014715ec7540 data/thelunaris/loot_tables/blocks/celest_planks.json
@@ -10,11 +10,16 @@ f77593c2ed019e771013f6e0e1c47d5d3532d8e0 data/thelunaris/loot_tables/blocks/cobb
 64fffc3d23b143010d62718249da5f93edcbdfb3 data/thelunaris/loot_tables/blocks/cobbled_vailstone_slab.json
 8323358c1dd3c53e61d3780fbe92b70b2a5675d1 data/thelunaris/loot_tables/blocks/cobbled_vailstone_stairs.json
 16d7d2741eb9c4bd4f27326f5866e9b8d409b148 data/thelunaris/loot_tables/blocks/cobbled_vailstone_wall.json
+13ffd9b0d5d1da8a0ead3b94cf8153eb78834cb9 data/thelunaris/loot_tables/blocks/deep_labradorite_ore.json
+ff74bcf896042d73fac588d09f2f8330d932ce86 data/thelunaris/loot_tables/blocks/deep_lunaris_coal_ore.json
+ea20cd35a6b0f6c77c5656e564b90946a54ab94c data/thelunaris/loot_tables/blocks/deep_lunarite_ore.json
+8b5f5627ec1252031e183822552014d5d8fa1878 data/thelunaris/loot_tables/blocks/deep_moonsteel_ore.json
 45a186dae6426145885d6bea0b211a8c421a2730 data/thelunaris/loot_tables/blocks/emoonsteel_block.json
 ca549ddea92ce96c307d9bea5cee5b5f22a81fc3 data/thelunaris/loot_tables/blocks/gneiss.json
 cc341454641140011ddf620b78f5959ac125e8cd data/thelunaris/loot_tables/blocks/labradorite_block.json
 2da2465427d2e0d298009823dbd6a3c5c36267cd data/thelunaris/loot_tables/blocks/labradorite_ore.json
 f6fddd971667796ba38e6e079e8399c0426df4b0 data/thelunaris/loot_tables/blocks/loonberry_crop.json
+b86434bdf32ec9973d1d6a1666cb3d32d5aec484 data/thelunaris/loot_tables/blocks/lunaris_coal_ore.json
 72beaea5b45657e4e2f0a245299ed820aa856d17 data/thelunaris/loot_tables/blocks/lunaris_crafting_table.json
 30b223ffbfd0c9716f0f34ec67dbe54bb86d01cc data/thelunaris/loot_tables/blocks/lunarite_block.json
 333c8f4748a64754b04a2ff57293b5dba52a38b9 data/thelunaris/loot_tables/blocks/lunarite_ore.json

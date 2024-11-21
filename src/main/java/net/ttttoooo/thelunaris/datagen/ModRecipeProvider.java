@@ -19,11 +19,22 @@ import net.ttttoooo.thelunaris.block.ModBlocks;
 import net.ttttoooo.thelunaris.item.ModItems;
 
 public class ModRecipeProvider extends RecipeProvider implements IConditionBuilder{
-	public static final List<ItemLike> LUNARITE_SMELTABLES = List.of(ModBlocks.LUNARITE_ORE.get());
+	public static final List<ItemLike> LUNARITE_SMELTABLES = List.of(ModBlocks.LUNARITE_ORE.get(),
+			ModBlocks.DEEP_LUNARITE_ORE.get());
 	public static final List<ItemLike> MOONSTEEL_SMELTABLES = List.of(ModBlocks.MOONSTEEL_ORE.get(),
+			ModBlocks.DEEP_MOONSTEEL_ORE.get(),
 			ModItems.RAW_MOONSTEEL.get());
-	public static final List<ItemLike> LABRADORITE_SMELTABLES = List.of(ModBlocks.LABRADORITE_ORE.get());
+	public static final List<ItemLike> LABRADORITE_SMELTABLES = List.of(ModBlocks.LABRADORITE_ORE.get(),
+			ModBlocks.DEEP_LABRADORITE_ORE.get());
+	public static final List<ItemLike> LUNARIS_COAL_SMELTABLES = List.of(ModBlocks.LUNARIS_COAL_ORE.get(),
+			ModBlocks.DEEP_LUNARIS_COAL_ORE.get());
+	
 	public static final List<ItemLike> STONELIKE_SMELTABLES = List.of(ModBlocks.COBBLED_VAILSTONE.get());
+	public static final List<ItemLike> GNEISS_SMELTABLES = List.of(ModBlocks.GNEISS.get());
+	public static final List<ItemLike> MARBLE_SMELTABLES = List.of(ModBlocks.MARBLE.get());
+	public static final List<ItemLike> SLATE_SMELTABLES = List.of(ModBlocks.LUNARSLATE.get());
+	public static final List<ItemLike> SHALE_SMELTABLES = List.of(ModBlocks.LUNARSHALE.get());
+	
 	public static final List<ItemLike> ARCHFISH_COOKING = List.of(ModItems.ARCHFISH.get());
 
 	public ModRecipeProvider(PackOutput pOutput) {
@@ -32,6 +43,8 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
 
 	@Override
 	protected void buildRecipes(Consumer<FinishedRecipe> pWriter) {	
+		oreSmelting(pWriter, LUNARIS_COAL_SMELTABLES, RecipeCategory.MISC, ModItems.LUNARITE.get(), 0.10f, 50, "lunaris_coal" );
+		oreBlasting(pWriter, LUNARIS_COAL_SMELTABLES, RecipeCategory.MISC, ModItems.LUNARITE.get(), 0.10f, 40, "lunaris_coal" );
 		oreSmelting(pWriter, LUNARITE_SMELTABLES, RecipeCategory.MISC, ModItems.LUNARITE.get(), 0.25f, 100, "lunarite" );
 		oreBlasting(pWriter, LUNARITE_SMELTABLES, RecipeCategory.MISC, ModItems.LUNARITE.get(), 0.25f, 90, "lunarite" );
 		oreSmelting(pWriter, MOONSTEEL_SMELTABLES, RecipeCategory.MISC, ModItems.MOONSTEEL.get(), 0.15f, 100, "moonsteel" );
@@ -40,6 +53,10 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
 		oreBlasting(pWriter, LABRADORITE_SMELTABLES, RecipeCategory.MISC, ModItems.LABRADORITE.get(), 0.10f, 90, "labradorite" );
 		
 		oreSmelting(pWriter, STONELIKE_SMELTABLES, RecipeCategory.MISC, ModBlocks.VAILSTONE.get(), 0.10f, 50, "vailstone" );
+		oreSmelting(pWriter, GNEISS_SMELTABLES, RecipeCategory.MISC, ModBlocks.SMOOTHGNEISS.get(), 0.10f, 50, "smooth_gneiss" );
+		oreSmelting(pWriter, MARBLE_SMELTABLES, RecipeCategory.MISC, ModBlocks.SMOOTHMARBLE.get(), 0.10f, 50, "smooth_marble" );
+		oreSmelting(pWriter, SLATE_SMELTABLES, RecipeCategory.MISC, ModBlocks.SMOOTHLUNARSLATE.get(), 0.10f, 50, "smooth_lunarslate" );
+		oreSmelting(pWriter, SHALE_SMELTABLES, RecipeCategory.MISC, ModBlocks.LUNARSLATE.get(), 0.10f, 50, "lunarslate" );
 		
 		oreSmelting(pWriter, ARCHFISH_COOKING, RecipeCategory.MISC, ModItems.COOKED_ARCHFISH.get(), 0.10f, 80, "archfish" );
 	

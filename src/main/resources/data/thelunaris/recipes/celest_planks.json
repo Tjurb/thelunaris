@@ -3,7 +3,7 @@
     "catagory": "misc",
     "ingredients": [
         {
-            "item": "thelunaris:celest_wood"
+            "tag": "thelunaris:celest_woods"
         }
     ],
     "result": {

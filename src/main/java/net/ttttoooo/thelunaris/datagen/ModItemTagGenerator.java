@@ -43,10 +43,32 @@ public class ModItemTagGenerator extends ItemTagsProvider {
 				ModBlocks.STRIPPED_SKYOAK_WOOD.get().asItem());
 		
 		this.tag(ModTags.Items.MOONCOW_TEMP_ITEMS)
-		.add(ModItems.LUNAR_WHEAT.get());
+			.add(ModItems.LUNAR_WHEAT.get());
 		
 		this.tag(ModTags.Items.ENRICHER_FUEL)
-		.add(ModItems.LABRADORITE.get());
-	}
+			.add(ModItems.LABRADORITE.get());		
+		
+		this.tag(ModTags.Items.LUNAR_PLANKS)
+			.add(ModBlocks.CELEST_PLANKS.get().asItem(),
+					ModBlocks.STELLAR_PLANKS.get().asItem(),
+					ModBlocks.SKYOAK_PLANKS.get().asItem());
 
+		this.tag(ModTags.Items.CELEST_WOODS)
+			.add(ModBlocks.CELEST_LOG.get().asItem(),
+					ModBlocks.CELEST_WOOD.get().asItem(),
+					ModBlocks.STRIPPED_CELEST_LOG.get().asItem(),
+					ModBlocks.STRIPPED_CELEST_WOOD.get().asItem());
+		
+		this.tag(ModTags.Items.STELLAR_WOODS)
+			.add(ModBlocks.STELLAR_LOG.get().asItem(),
+				ModBlocks.STELLAR_WOOD.get().asItem(),
+				ModBlocks.STRIPPED_STELLAR_LOG.get().asItem(),
+				ModBlocks.STRIPPED_STELLAR_WOOD.get().asItem());
+		
+		this.tag(ModTags.Items.SKYOAK_WOODS)
+			.add(ModBlocks.SKYOAK_LOG.get().asItem(),
+				ModBlocks.SKYOAK_WOOD.get().asItem(),
+				ModBlocks.STRIPPED_SKYOAK_LOG.get().asItem(),
+				ModBlocks.STRIPPED_SKYOAK_WOOD.get().asItem());
+	}
 }

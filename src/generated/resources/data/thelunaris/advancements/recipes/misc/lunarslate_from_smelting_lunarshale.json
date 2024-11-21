@@ -1,0 +1,35 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_lunarshale": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "thelunaris:lunarshale"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "thelunaris:lunarslate_from_smelting_lunarshale"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_lunarshale",
+      "has_the_recipe"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "thelunaris:lunarslate_from_smelting_lunarshale"
+    ]
+  },
+  "sends_telemetry_event": false
+}

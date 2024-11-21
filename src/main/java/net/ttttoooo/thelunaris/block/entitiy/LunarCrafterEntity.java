@@ -33,47 +33,40 @@ import java.util.Optional;
 public class LunarCrafterEntity extends BlockEntity implements MenuProvider {
     private final ItemStackHandler itemHandler = new ItemStackHandler(10);
 
-    private static final int INPUT_SLOT_TL = 1;
-    private static final int INPUT_SLOT_TM = 2;
-    private static final int INPUT_SLOT_TR = 3;
-    private static final int INPUT_SLOT_ML = 4;
-    private static final int INPUT_SLOT_CENTER = 0;
-    private static final int INPUT_SLOT_MR = 5;
-    private static final int INPUT_SLOT_BL = 6;
-    private static final int INPUT_SLOT_BM = 7;
-    private static final int INPUT_SLOT_BR = 8;
+    private static final int CATELYST = 0;
+    private static final int INPUT_SLOT_1 = 1;
+    private static final int INPUT_SLOT_2 = 2;
+    private static final int INPUT_SLOT_3 = 3;
+    private static final int INPUT_SLOT_4 = 4;
+    private static final int INPUT_SLOT_5 = 5;
+    private static final int INPUT_SLOT_6 = 6;
+    private static final int INPUT_SLOT_7 = 7;
+    private static final int INPUT_SLOT_8 = 8;
     private static final int OUTPUT_SLOT = 9;
 
     private LazyOptional<IItemHandler> lazyItemHandler = LazyOptional.empty();
 
     protected final ContainerData data;
-    private int progress = 0;
-    private int maxProgress = 78;
 
     public LunarCrafterEntity(BlockPos pPos, BlockState pBlockState) {
         super(ModBlockEntities.LUNAR_CRAFTING_BE.get(), pPos, pBlockState);
         this.data = new ContainerData() {
             @Override
-            public int get(int pIndex) {
-                return switch (pIndex) {
-                    case 0 -> LunarCrafterEntity.this.progress;
-                    case 1 -> LunarCrafterEntity.this.maxProgress;
-                    default -> 0;
-                };
-            }
-
-            @Override
-            public void set(int pIndex, int pValue) {
-                switch (pIndex) {
-                    case 0 -> LunarCrafterEntity.this.progress = pValue;
-                    case 1 -> LunarCrafterEntity.this.maxProgress = pValue;
-                }
-            }
-
-            @Override
             public int getCount() {
                 return 10;
             }
+
+			@Override
+			public int get(int p_39284_) {
+				// TODO Auto-generated method stub
+				return 0;
+			}
+
+			@Override
+			public void set(int p_39285_, int p_39286_) {
+				// TODO Auto-generated method stub
+				
+			}
         };
     }
 
@@ -120,7 +113,6 @@ public class LunarCrafterEntity extends BlockEntity implements MenuProvider {
     @Override
     protected void saveAdditional(CompoundTag pTag) {
         pTag.put("inventory", itemHandler.serializeNBT());
-        pTag.putInt("lunar_crafting.progress", progress);
 
         super.saveAdditional(pTag);
     }
@@ -129,53 +121,57 @@ public class LunarCrafterEntity extends BlockEntity implements MenuProvider {
     public void load(CompoundTag pTag) {
         super.load(pTag);
         itemHandler.deserializeNBT(pTag.getCompound("inventory"));
-        progress = pTag.getInt("lunar_crafting.progress");
-    }
-
-    public void tick(Level pLevel, BlockPos pPos, BlockState pState) {
-        if(hasRecipe()) {
-            increaseCraftingProgress();
-            setChanged(pLevel, pPos, pState);
-
-            if(hasProgressFinished()) {
-                craftItem();
-                resetProgress();
-            }
-        } else {
-            resetProgress();
-        }
-    }
-
-    private void resetProgress() {
-        progress = 0;
     }
 
     private void craftItem() {
         Optional<LunarCraftingRecipe> recipe = getCurrentRecipe();
-        ItemStack result = recipe.get().getResultItem(null);
 
-        this.itemHandler.extractItem(INPUT_SLOT_TL, 1, false);
-        this.itemHandler.extractItem(INPUT_SLOT_TM, 2, false);
-        this.itemHandler.extractItem(INPUT_SLOT_TR, 3, false);
-        this.itemHandler.extractItem(INPUT_SLOT_ML, 4, false);
-        this.itemHandler.extractItem(INPUT_SLOT_CENTER, 5, false);
-        this.itemHandler.extractItem(INPUT_SLOT_MR, 6, false);
-        this.itemHandler.extractItem(INPUT_SLOT_BL, 7, false);
-        this.itemHandler.extractItem(INPUT_SLOT_BM, 8, false);
-        this.itemHandler.extractItem(INPUT_SLOT_BR, 9, false);
+        if (recipe.isEmpty()) {
+            return;
+        }
 
-        this.itemHandler.setStackInSlot(OUTPUT_SLOT, new ItemStack(result.getItem(),
-                this.itemHandler.getStackInSlot(OUTPUT_SLOT).getCount() + result.getCount()));
+        LunarCraftingRecipe currentRecipe = recipe.get();
+        ItemStack result = currentRecipe.getResultItem(getLevel().registryAccess());
+
+        // Consume catalyst
+        itemHandler.extractItem(CATELYST, 1, false);
+
+        // Consume inputs
+        for (int i = INPUT_SLOT_1; i <= INPUT_SLOT_8; i++) {
+            itemHandler.extractItem(i, 1, false);
+        }
+
+        // Place result in output slot
+        itemHandler.setStackInSlot(OUTPUT_SLOT, new ItemStack(result.getItem(),
+                itemHandler.getStackInSlot(OUTPUT_SLOT).getCount() + result.getCount()));
     }
+
 
     private boolean hasRecipe() {
         Optional<LunarCraftingRecipe> recipe = getCurrentRecipe();
 
-        if(recipe.isEmpty()) {
+        if (recipe.isEmpty()) {
             return false;
         }
-        ItemStack result = recipe.get().getResultItem(getLevel().registryAccess());
 
+        LunarCraftingRecipe currentRecipe = recipe.get();
+
+        // Check if the catalyst matches
+        ItemStack catalystStack = itemHandler.getStackInSlot(CATELYST);
+        if (!currentRecipe.getCatalyst().test(catalystStack)) {
+            return false;
+        }
+
+        // Check if all input items match the pattern
+        for (int i = INPUT_SLOT_1; i <= INPUT_SLOT_8; i++) {
+            ItemStack inputStack = itemHandler.getStackInSlot(i);
+            if (!currentRecipe.isValidInput(i - INPUT_SLOT_1, inputStack)) {
+                return false;
+            }
+        }
+
+        // Check if the output slot can accept the result
+        ItemStack result = currentRecipe.getResultItem(getLevel().registryAccess());
         return canInsertAmountIntoOutputSlot(result.getCount()) && canInsertItemIntoOutputSlot(result.getItem());
     }
 
@@ -194,13 +190,5 @@ public class LunarCrafterEntity extends BlockEntity implements MenuProvider {
 
     private boolean canInsertAmountIntoOutputSlot(int count) {
         return this.itemHandler.getStackInSlot(OUTPUT_SLOT).getCount() + count <= this.itemHandler.getStackInSlot(OUTPUT_SLOT).getMaxStackSize();
-    }
-
-    private boolean hasProgressFinished() {
-        return progress >= maxProgress;
-    }
-
-    private void increaseCraftingProgress() {
-        progress++;
     }
 }

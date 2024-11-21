@@ -3,7 +3,7 @@
     "catagory": "misc",
     "ingredients": [
         {
-            "item": "thelunaris:stellar_wood"
+            "tag": "thelunaris:stellar_woods"
         }
     ],
     "result": {
