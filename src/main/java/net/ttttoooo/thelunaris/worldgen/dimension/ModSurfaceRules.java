@@ -16,9 +16,9 @@ public class ModSurfaceRules {
 
     public static SurfaceRules.RuleSource makeRules() {
         SurfaceRules.ConditionSource isAtOrAboveWaterLevel = SurfaceRules.waterBlockCheck(-1, 0);
+        
         SurfaceRules.ConditionSource isAtBedrockLevel = SurfaceRules.verticalGradient("bedrock_floor",VerticalAnchor.bottom(), VerticalAnchor.aboveBottom(5));
-
-        SurfaceRules.ConditionSource isAtGneissLevel = SurfaceRules.verticalGradient("gneiss_layer",VerticalAnchor.aboveBottom(5), VerticalAnchor.aboveBottom(59));
+        SurfaceRules.ConditionSource isAtGneissLevel = SurfaceRules.verticalGradient("gneiss_layer",VerticalAnchor.absolute(0), VerticalAnchor.absolute(8));
 
         SurfaceRules.RuleSource sandOcean = SurfaceRules.sequence(SurfaceRules.ifTrue(isAtOrAboveWaterLevel, LUNSAND), LUNDIRT);
         SurfaceRules.RuleSource sandSurface = SurfaceRules.sequence(SurfaceRules.ifTrue(isAtOrAboveWaterLevel, LUNSAND), LUNSANDSTONE);
@@ -30,7 +30,6 @@ public class ModSurfaceRules {
         
         return SurfaceRules.sequence(
         		SurfaceRules.sequence(SurfaceRules.ifTrue(isAtBedrockLevel, bedrockFill)),
-        		SurfaceRules.sequence(SurfaceRules.ifTrue(isAtGneissLevel, deepfill)),
         		
         		SurfaceRules.sequence(SurfaceRules.ifTrue(SurfaceRules.isBiome(ModBiomes.LUNAR_FORESTS), 
                 	SurfaceRules.ifTrue(SurfaceRules.ON_FLOOR, grassSurface)
@@ -67,7 +66,10 @@ public class ModSurfaceRules {
                 )),
         		SurfaceRules.sequence(SurfaceRules.ifTrue(SurfaceRules.isBiome(ModBiomes.SLEEPING_SANDS), 
                         SurfaceRules.ifTrue(SurfaceRules.UNDER_FLOOR, sandstoneSurface)
-                    ))
+                    )),
+        		
+
+        		SurfaceRules.sequence(SurfaceRules.ifTrue(isAtGneissLevel, deepfill))
         		
         );
     }

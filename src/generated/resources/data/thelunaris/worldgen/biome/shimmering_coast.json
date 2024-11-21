@@ -34,8 +34,15 @@
       "thelunaris:moonsteel_ore_placed",
       "thelunaris:large_lunarite_ore_placed",
       "thelunaris:large_moonsteel_ore_placed",
+      "thelunaris:deep_labradorite_ore_placed",
+      "thelunaris:deep_moonsteel_ore_placed",
+      "thelunaris:large_deep_moonsteel_ore_placed",
+      "thelunaris:deep_lunarite_ore_placed",
+      "thelunaris:large_deep_lunarite_ore_placed",
       "thelunaris:lunaris_coal_ore_placed",
-      "thelunaris:large_lunaris_coal_ore_placed"
+      "thelunaris:large_lunaris_coal_ore_placed",
+      "thelunaris:deep_lunaris_coal_ore_placed",
+      "thelunaris:large_deep_lunaris_coal_ore_placed"
     ],
     [],
     [],

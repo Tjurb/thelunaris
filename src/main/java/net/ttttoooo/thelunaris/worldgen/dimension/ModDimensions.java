@@ -12,6 +12,7 @@ import net.minecraft.resources.ResourceKey;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.tags.BlockTags;
 import net.minecraft.util.valueproviders.ConstantInt;
+import net.minecraft.util.valueproviders.UniformInt;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.biome.Biome;
 import net.minecraft.world.level.biome.Biomes;
@@ -38,7 +39,7 @@ public class ModDimensions {
     // Dimension type registration
     public static void bootstrapType(BootstapContext<DimensionType> context) {
         context.register(LUNARIS_DIM_TYPE, new DimensionType(
-                OptionalLong.of(12000), // fixedTime
+                OptionalLong.empty(), // day/night cycle
                 true, // hasSkylight
                 false, // hasCeiling
                 false, // ultraWarm
@@ -51,8 +52,8 @@ public class ModDimensions {
                 192, // logicalHeight
                 BlockTags.INFINIBURN_OVERWORLD, // infiniburn
                 BuiltinDimensionTypes.OVERWORLD_EFFECTS, // effectsLocation
-                0.2f, // ambientLight
-                new DimensionType.MonsterSettings(false, false, ConstantInt.of(0), 0)));
+                0.0f, // ambientLight
+                new DimensionType.MonsterSettings(false, true, UniformInt.of(0, 7), 0)));
     }
 
     // Register dimension stem with custom noise settings

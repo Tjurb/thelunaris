@@ -39,6 +39,27 @@ public class LunGrassBlock extends GrassBlock {
     }
 
     @Override
+    public void randomTick(BlockState state, ServerLevel level, BlockPos pos, RandomSource random) {
+        // Ensure the block is loaded
+        if (!level.isAreaLoaded(pos, 3)) return;
+
+        // Check for light level to allow spreading
+        if (level.getMaxLocalRawBrightness(pos.above()) >= 9) {
+            for (int i = 0; i < 4; ++i) {
+                // Generate a nearby position
+                BlockPos nearbyPos = pos.offset(random.nextInt(3) - 1, random.nextInt(5) - 3, random.nextInt(3) - 1);
+                BlockState nearbyState = level.getBlockState(nearbyPos);
+
+                // Check if the nearby block is dirt (or your custom dirt block)
+                if (nearbyState.is(ModBlocks.LUNDIRT.get()) && level.getMaxLocalRawBrightness(nearbyPos.above()) >= 9) {
+                    // Replace the dirt block with LunGrass
+                    level.setBlock(nearbyPos, this.defaultBlockState(), 3);
+                }
+            }
+        }
+    }
+    
+    @Override
     public void performBonemeal(ServerLevel level, RandomSource random, BlockPos pos, BlockState state) {
         BlockPos abovePos = pos.above();
         Block grass = ModBlocks.LUNGRASS_BLOCK.get();
