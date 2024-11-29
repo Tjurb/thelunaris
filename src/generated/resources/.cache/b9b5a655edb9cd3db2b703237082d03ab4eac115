@@ -1,4 +1,4 @@
-// 1.20.1	2024-11-21T01:24:16.1876893	Block States: thelunaris
+// 1.20.1	2024-11-21T18:08:43.4621153	Block States: thelunaris
 7701101710fd86c18b3e85caa1cf465fa9679456 assets/thelunaris/blockstates/celest_leaves.json
 4b21cb827b472d8950e479587d423de6dd2dee5a assets/thelunaris/blockstates/celest_log.json
 980e6f13909384b17f3056d48b9ba627fcdbbf00 assets/thelunaris/blockstates/celest_planks.json
@@ -80,7 +80,7 @@ d4282776c3d4f2082d6140c3f2f2b069f0378250 assets/thelunaris/blockstates/stripped_
 777e445ef8f3579da0954e452de70366a141df36 assets/thelunaris/blockstates/vailstonebrick_slab.json
 cd2d9792a1fc19f0a7c5ab7e69dd13bb8fca8e97 assets/thelunaris/blockstates/vailstonebrick_stairs.json
 2eb2a0e906f51d0bccc422c59b242ef36fc82088 assets/thelunaris/blockstates/vailstonebrick_wall.json
-8290e9004e2b2b8ed3da035483439af3029b1051 assets/thelunaris/blockstates/vailstone_furnace.json
+2017ed106e4d0aac581e65a83fabff2b98301989 assets/thelunaris/blockstates/vailstone_furnace.json
 62855d26ed394184f45b65d87e12f2d2800cf097 assets/thelunaris/blockstates/wild_loonberry.json
 a3b7fda4017dff5e944cad7f10ebda5c1fd0967e assets/thelunaris/blockstates/wild_sarrot.json
 8b2e86cb80530cbcaedcdfb09266f8142b6bb17a assets/thelunaris/models/block/celest_leaves.json
@@ -276,3 +276,4 @@ a21f910021d6dc0ef03d4c2a7cb971329837eb58 assets/thelunaris/models/item/stripped_
 52954a6ad7bb96eb7c0ea240e9517822dda71dbe assets/thelunaris/models/item/stripped_stellar_wood.json
 bddeb61f4327da096739bd9d4275ec3c770e21ee assets/thelunaris/models/item/vailstone.json
 cf6c2db590b0c6533114f8d72c35d2420fcb8c79 assets/thelunaris/models/item/vailstonebrick.json
+79567c6283118bbbd7604903e208354edf518996 assets/thelunaris/models/item/vailstone_furnace.json

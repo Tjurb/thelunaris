@@ -25,7 +25,7 @@ public class ModPortalFrame {
     private int height;
     private final int width;
 
-    public static Optional<ModPortalFrame> findEmptyAetherPortalShape(LevelAccessor level, BlockPos bottomLeft, Direction.Axis axis) {
+    public static Optional<ModPortalFrame> findEmptyLunarPortalShape(LevelAccessor level, BlockPos bottomLeft, Direction.Axis axis) {
         return findPortalShape(level, bottomLeft, (shape) -> shape.isValid() && shape.numPortalBlocks == 0, axis);
     }
 

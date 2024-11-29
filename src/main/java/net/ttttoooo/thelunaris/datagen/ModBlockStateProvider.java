@@ -35,9 +35,9 @@ public class ModBlockStateProvider extends BlockStateProvider{
 		blockWithItem(ModBlocks.MOONDIALBLOCK);
         simpleBlockWithItem(ModBlocks.LUNAR_CRAFTER.get(),
                 new ModelFile.UncheckedModelFile(modLoc("block/lunarcrafter")));
-        //simpleBlockWithItem(ModBlocks.VAILSTONE_FURNACE.get(),
-        horizontalBlock(ModBlocks.VAILSTONE_FURNACE.get(), 
-                new ModelFile.UncheckedModelFile(modLoc("block/vailstonefurnace")));
+        horizontalBlock(ModBlocks.VAILSTONE_FURNACE.get(),
+        		new ModelFile.UncheckedModelFile(modLoc("block/vailstone_furnace")));
+        blockItem(ModBlocks.VAILSTONE_FURNACE);
 		blockWithItem(ModBlocks.LUNARIS_BEDROCK);
 		blockWithItem(ModBlocks.LUNARPORTAL_BLOCK);
         simpleBlockWithItem(ModBlocks.LUNARIS_CRAFTING_TABLE.get(),

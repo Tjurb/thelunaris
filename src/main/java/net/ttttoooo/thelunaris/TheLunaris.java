@@ -34,6 +34,7 @@ import net.ttttoooo.thelunaris.recipe.ModRecipes;
 import net.ttttoooo.thelunaris.screen.LunarCrafterScreen;
 import net.ttttoooo.thelunaris.screen.ModMenuTypes;
 import net.ttttoooo.thelunaris.screen.VailstoneFurnaceScreen;
+import net.ttttoooo.thelunaris.worldgen.dimension.ModPoi;
 
 import org.slf4j.Logger;
 
@@ -59,6 +60,8 @@ public class TheLunaris
         ModMenuTypes.register(modEventBus);
         
         ModRecipes.register(modEventBus);
+        
+        ModPoi.register(modEventBus);
         
         modEventBus.addListener(this::commonSetup);
 
@@ -107,7 +110,7 @@ public class TheLunaris
         	EntityRenderers.register(ModEntities.LUNARSLEEPER.get(), LunarsleeperRenderer::new);
         	EntityRenderers.register(ModEntities.HEX.get(), HexRenderer::new);
         	EntityRenderers.register(ModEntities.HEX_PROJECTILE.get(), ThrownItemRenderer::new);
-
+        	
             MenuScreens.register(ModMenuTypes.LUNAR_CRAFTING_MENU.get(), LunarCrafterScreen::new);
             MenuScreens.register(ModMenuTypes.VAILSTONE_FURNACE_MENU.get(), VailstoneFurnaceScreen::new);
             
