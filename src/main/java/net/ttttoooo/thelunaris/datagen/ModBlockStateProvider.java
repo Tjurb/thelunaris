@@ -4,14 +4,25 @@ import java.util.Locale;
 import java.util.function.Function;
 
 import net.minecraft.data.PackOutput;
+import net.minecraft.data.models.blockstates.Condition;
+import net.minecraft.data.models.blockstates.MultiPartGenerator;
+import net.minecraft.data.models.blockstates.Variant;
+import net.minecraft.data.models.blockstates.VariantProperties;
+import net.minecraft.data.models.model.ModelLocationUtils;
+import net.minecraft.data.models.model.ModelTemplates;
+import net.minecraft.data.models.model.TextureMapping;
 import net.minecraft.resources.ResourceLocation;
+import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.CropBlock;
+import net.minecraft.world.level.block.GlassBlock;
+import net.minecraft.world.level.block.IronBarsBlock;
 import net.minecraft.world.level.block.RotatedPillarBlock;
 import net.minecraft.world.level.block.SlabBlock;
 import net.minecraft.world.level.block.StairBlock;
 import net.minecraft.world.level.block.WallBlock;
 import net.minecraft.world.level.block.state.BlockState;
+import net.minecraft.world.level.block.state.properties.BlockStateProperties;
 import net.minecraftforge.client.model.generators.BlockStateProvider;
 import net.minecraftforge.client.model.generators.ConfiguredModel;
 import net.minecraftforge.client.model.generators.ModelFile;
@@ -42,8 +53,14 @@ public class ModBlockStateProvider extends BlockStateProvider{
 		blockWithItem(ModBlocks.LUNARPORTAL_BLOCK);
         simpleBlockWithItem(ModBlocks.LUNARIS_CRAFTING_TABLE.get(),
                 new ModelFile.UncheckedModelFile(modLoc("block/lunaris_crafting_table")));
+        
+        //transparent blocks
+        translucentBlockWithItem(ModBlocks.LUNGLASS);
+        paneBlockWithRenderType((IronBarsBlock) ModBlocks.LUNGLASS_PANE.get(), 
+        		new ResourceLocation(TheLunaris.MODID, "block/lunglass"),
+        		new ResourceLocation(TheLunaris.MODID, "block/lunglass_pane"), "translucent");
 
-
+        //solid resources
         simpleBlockWithItem(ModBlocks.LUNARITE_BLOCK.get(),
                 new ModelFile.UncheckedModelFile(modLoc("block/lunarite_block")));
 		blockWithItem(ModBlocks.EMOONSTEEL_BLOCK);
@@ -186,6 +203,12 @@ public class ModBlockStateProvider extends BlockStateProvider{
 	
 	private void blockWithItem(RegistryObject<Block> blockRegistryObject) {
 		simpleBlockWithItem(blockRegistryObject.get(), cubeAll(blockRegistryObject.get()));
+	}
+	
+	private void translucentBlockWithItem(RegistryObject<Block> blockRegistryObject) {
+		simpleBlockWithItem(blockRegistryObject.get(), 
+				models().cubeAll(ForgeRegistries.BLOCKS.getKey(blockRegistryObject.get()).getPath(), 
+						blockTexture(blockRegistryObject.get())).renderType("translucent"));
 	}
 	
 	private void blockItem(RegistryObject<Block> blockRegistryObject) {

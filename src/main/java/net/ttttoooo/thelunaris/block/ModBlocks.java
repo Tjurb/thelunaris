@@ -13,6 +13,8 @@ import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.CraftingTableBlock;
 import net.minecraft.world.level.block.DropExperienceBlock;
+import net.minecraft.world.level.block.GlassBlock;
+import net.minecraft.world.level.block.IronBarsBlock;
 import net.minecraft.world.level.block.LeavesBlock;
 import net.minecraft.world.level.block.SaplingBlock;
 import net.minecraft.world.level.block.SlabBlock;
@@ -49,9 +51,9 @@ public class ModBlocks {
 	public static final RegistryObject<Block> MOONDIALBLOCK = registerBlock("moondialblock", 
 			() -> new Block(BlockBehaviour.Properties.copy(Blocks.IRON_BLOCK).sound(SoundType.ANCIENT_DEBRIS)));
 	public static final RegistryObject<Block> LUNAR_CRAFTER = registerBlock("lunar_crafter", 
-			() -> new LunarCrafter(BlockBehaviour.Properties.copy(Blocks.OAK_PLANKS).sound(SoundType.WOOD)));
+			() -> new LunarCrafter(BlockBehaviour.Properties.copy(Blocks.OAK_PLANKS).sound(SoundType.WOOD).noOcclusion()));
 	public static final RegistryObject<Block> VAILSTONE_FURNACE = registerBlock("vailstone_furnace", 
-			() -> new VailstoneFurnace(BlockBehaviour.Properties.copy(Blocks.STONE).sound(SoundType.STONE)));
+			() -> new VailstoneFurnace(BlockBehaviour.Properties.copy(Blocks.STONE).sound(SoundType.STONE).noOcclusion()));
 	public static final RegistryObject<Block> LUNARPORTAL_BLOCK = registerBlock("lunarportal_block", 
 			() -> new ModPortalBlock(BlockBehaviour.Properties.copy(Blocks.STONE).sound(SoundType.GLASS)
 					.noLootTable().noOcclusion().noCollission()));
@@ -96,7 +98,13 @@ public class ModBlocks {
 			() -> new SlabBlock(BlockBehaviour.Properties.copy(Blocks.SANDSTONE).sound(SoundType.STONE)));
 	public static final RegistryObject<Block> LUNSANDSTONE_WALL = registerBlock("lunsandstone_wall", 
 			() -> new WallBlock(BlockBehaviour.Properties.copy(Blocks.SANDSTONE).sound(SoundType.STONE)));
-
+	
+	//Transparent Blocks
+	public static final RegistryObject<Block> LUNGLASS = registerBlock("lunglass",
+			() -> new GlassBlock(BlockBehaviour.Properties.copy(Blocks.GLASS).noOcclusion()));
+	public static final RegistryObject<Block> LUNGLASS_PANE = registerBlock("lunglass_pane",
+			() -> new IronBarsBlock(BlockBehaviour.Properties.copy(Blocks.GLASS_PANE).noOcclusion()));
+	
 	//Tree Blocks
 	public static final RegistryObject<Block> CELEST_LOG = registerBlock("celest_log", 
 			() -> new ModFlammableRotatedPillarBlock(BlockBehaviour.Properties.copy(Blocks.OAK_LOG).sound(SoundType.WOOD).strength(3f)));

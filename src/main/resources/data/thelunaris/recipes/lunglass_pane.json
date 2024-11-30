@@ -1,0 +1,17 @@
+{
+    "type": "minecraft:crafting_shaped",
+    "catagory": "misc",
+    "pattern": [
+        "   ",
+        "ggg",
+        "ggg"
+    ],
+    "key": {
+        "g": {
+            "item":"thelunaris:lunglass"
+        }
+    },
+    "result": {
+        "item": "thelunaris:lunglass_pane"
+    }
+}

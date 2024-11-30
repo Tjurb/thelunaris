@@ -25,7 +25,7 @@ import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraft.world.phys.shapes.VoxelShape;
 import net.ttttoooo.thelunaris.worldgen.dimension.ModDimensions;
 
-public class ModPortalBlock extends Block {
+public class ModPortalBlock extends Block{
 	public static final EnumProperty<Direction.Axis> AXIS = BlockStateProperties.HORIZONTAL_AXIS;
 	   protected static final int AABB_OFFSET = 2;
 	protected static final VoxelShape X_AXIS_AABB = Block.box(0.0, 0.0, 6.0, 16.0, 16.0, 10.0);

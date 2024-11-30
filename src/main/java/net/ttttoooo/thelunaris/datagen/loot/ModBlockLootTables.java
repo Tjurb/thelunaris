@@ -42,6 +42,9 @@ public class ModBlockLootTables extends BlockLootSubProvider{
 		this.dropSelf(ModBlocks.EMOONSTEEL_BLOCK.get());
 		this.dropSelf(ModBlocks.MOONSTEEL_BLOCK.get());
 		this.dropSelf(ModBlocks.RAW_MOONSTEEL_BLOCK.get());
+		
+		this.dropWhenSilkTouch(ModBlocks.LUNGLASS.get());
+		this.dropWhenSilkTouch(ModBlocks.LUNGLASS_PANE.get());
 
 		this.add(ModBlocks.VAILSTONE.get(),
 				block -> createGrassBlockLikeDrops(ModBlocks.VAILSTONE.get(), ModBlocks.COBBLED_VAILSTONE.get()));

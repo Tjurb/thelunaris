@@ -8,7 +8,9 @@ import net.minecraft.core.HolderLookup;
 import net.minecraft.core.HolderLookup.Provider;
 import net.minecraft.data.PackOutput;
 import net.minecraft.tags.BlockTags;
+import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
+import net.minecraftforge.common.Tags;
 import net.minecraftforge.common.data.BlockTagsProvider;
 import net.minecraftforge.common.data.ExistingFileHelper;
 import net.ttttoooo.thelunaris.TheLunaris;
@@ -20,7 +22,6 @@ public class ModBlockTagGenerator extends BlockTagsProvider{
 	public ModBlockTagGenerator(PackOutput output, CompletableFuture<Provider> lookupProvider,
 			@Nullable ExistingFileHelper existingFileHelper) {
 		super(output, lookupProvider, TheLunaris.MODID, existingFileHelper);
-		// TODO Auto-generated constructor stub
 	}
 
 	@Override
@@ -73,7 +74,19 @@ public class ModBlockTagGenerator extends BlockTagsProvider{
 					ModBlocks.DEEP_LUNARITE_ORE.get(),
 					ModBlocks.DEEP_LUNARIS_COAL_ORE.get(),
 					
+					ModBlocks.LUNGLASS.get(),
+					ModBlocks.LUNGLASS_PANE.get(),
+					
 					ModBlocks.VAILSTONE_FURNACE.get());
+		
+		this.tag(BlockTags.IMPERMEABLE)
+			.add(ModBlocks.LUNGLASS.get());
+		
+		this.tag(Tags.Blocks.GLASS_COLORLESS)
+			.add(ModBlocks.LUNGLASS.get());
+		
+		this.tag(Tags.Blocks.GLASS_PANES_COLORLESS)
+			.add(ModBlocks.LUNGLASS_PANE.get());
 		
 		this.tag(BlockTags.DIRT)
 			.add(ModBlocks.LUNDIRT.get(),

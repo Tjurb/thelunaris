@@ -63,10 +63,18 @@ public class ModCreativeTabs {
 				pOutput.accept(ModBlocks.SMOOTHMARBLE_SLAB.get());
 				pOutput.accept(ModBlocks.SMOOTHMARBLE_WALL.get());
 				
+				pOutput.accept(ModBlocks.LUNGLASS.get());
+				pOutput.accept(ModBlocks.LUNGLASS_PANE.get());
+				
 				//Ore Entry
+				pOutput.accept(ModBlocks.LUNARIS_COAL_ORE.get());
 				pOutput.accept(ModBlocks.LUNARITE_ORE.get());
 				pOutput.accept(ModBlocks.MOONSTEEL_ORE.get());
 				pOutput.accept(ModBlocks.LABRADORITE_ORE.get());
+				pOutput.accept(ModBlocks.DEEP_LUNARIS_COAL_ORE.get());
+				pOutput.accept(ModBlocks.DEEP_LUNARITE_ORE.get());
+				pOutput.accept(ModBlocks.DEEP_MOONSTEEL_ORE.get());
+				pOutput.accept(ModBlocks.DEEP_LABRADORITE_ORE.get());
 				
 				//Tree Entry
 				pOutput.accept(ModBlocks.CELEST_SAPLING.get());

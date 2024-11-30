@@ -28,6 +28,8 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
 			ModBlocks.DEEP_LABRADORITE_ORE.get());
 	public static final List<ItemLike> LUNARIS_COAL_SMELTABLES = List.of(ModBlocks.LUNARIS_COAL_ORE.get(),
 			ModBlocks.DEEP_LUNARIS_COAL_ORE.get());
+
+	public static final List<ItemLike> LUNGLASS_SMELTABLES = List.of(ModBlocks.LUNSAND.get());
 	
 	public static final List<ItemLike> STONELIKE_SMELTABLES = List.of(ModBlocks.COBBLED_VAILSTONE.get());
 	public static final List<ItemLike> GNEISS_SMELTABLES = List.of(ModBlocks.GNEISS.get());
@@ -51,6 +53,8 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
 		oreBlasting(pWriter, MOONSTEEL_SMELTABLES, RecipeCategory.MISC, ModItems.MOONSTEEL.get(), 0.15f, 90, "moonsteel" );
 		oreSmelting(pWriter, LABRADORITE_SMELTABLES, RecipeCategory.MISC, ModItems.LABRADORITE.get(), 0.10f, 100, "labradorite" );
 		oreBlasting(pWriter, LABRADORITE_SMELTABLES, RecipeCategory.MISC, ModItems.LABRADORITE.get(), 0.10f, 90, "labradorite" );
+		
+		oreSmelting(pWriter, LUNGLASS_SMELTABLES, RecipeCategory.MISC, ModBlocks.LUNGLASS.get(), 0.10f, 50, "lunglass" );
 		
 		oreSmelting(pWriter, STONELIKE_SMELTABLES, RecipeCategory.MISC, ModBlocks.VAILSTONE.get(), 0.10f, 50, "vailstone" );
 		oreSmelting(pWriter, GNEISS_SMELTABLES, RecipeCategory.MISC, ModBlocks.SMOOTHGNEISS.get(), 0.10f, 50, "smooth_gneiss" );

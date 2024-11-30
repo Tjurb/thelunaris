@@ -1,8 +1,11 @@
-// 1.20.1	2024-11-21T01:37:19.3599594	Tags for minecraft:block mod id thelunaris
+// 1.20.1	2024-11-29T20:09:47.7324898	Tags for minecraft:block mod id thelunaris
+d796bc7c115044c1447d00d17046da4ac8243076 data/forge/tags/blocks/glass/colorless.json
+c9ad7cc02e0d56472ab231f3a929297143254b0c data/forge/tags/blocks/glass_panes/colorless.json
 a9529e69c42038cf07e8e32687b8b1534d73bceb data/minecraft/tags/blocks/dirt.json
+d796bc7c115044c1447d00d17046da4ac8243076 data/minecraft/tags/blocks/impermeable.json
 d607f02152b453bab537280ef438830cb97e631e data/minecraft/tags/blocks/logs_that_burn.json
 555328ec983d64cb416f77100faa007ce81e1dd5 data/minecraft/tags/blocks/mineable/axe.json
-9cb41b2d480c5f6029577a4fe3d7c3e626e607b0 data/minecraft/tags/blocks/mineable/pickaxe.json
+57062b0d610754d220d79f2b70233dbbf13d5771 data/minecraft/tags/blocks/mineable/pickaxe.json
 aec2dfb3d7ff8004f3ce8029dfbac22db66e75a6 data/minecraft/tags/blocks/mineable/shovel.json
 723ff3c7b1afb89852189905785c5169d3d5b80f data/minecraft/tags/blocks/sand.json
 7119ecebf7699542ee550432fde5f6829ec30340 data/minecraft/tags/blocks/walls.json

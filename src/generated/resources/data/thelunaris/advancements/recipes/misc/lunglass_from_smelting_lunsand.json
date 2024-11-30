@@ -1,0 +1,35 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_lunsand": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "thelunaris:lunsand"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "thelunaris:lunglass_from_smelting_lunsand"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_lunsand",
+      "has_the_recipe"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "thelunaris:lunglass_from_smelting_lunsand"
+    ]
+  },
+  "sends_telemetry_event": false
+}

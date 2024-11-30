@@ -52,7 +52,7 @@
         "type": "thelunaris:mooncow",
         "maxCount": 2,
         "minCount": 1,
-        "weight": 2
+        "weight": 10
       }
     ],
     "misc": [],
@@ -61,7 +61,7 @@
         "type": "thelunaris:lunarsleeper",
         "maxCount": 1,
         "minCount": 1,
-        "weight": 1
+        "weight": 10
       }
     ],
     "underground_water_creature": [],
