@@ -84,6 +84,142 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
 			.unlockedBy(getHasName(ModItems.LUNAR_WHEAT.get()), has(ModItems.LUNAR_WHEAT.get()))
 			.save(pWriter);
 		
+		//Moonsteel Armors
+		ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModItems.MOONSTEEL_HELMET.get(),1 )
+			.pattern("   ")
+			.pattern("MMM")
+			.pattern("M M")
+			.define('M', ModItems.MOONSTEEL.get())
+			.unlockedBy(getHasName(ModItems.MOONSTEEL.get()), has(ModItems.MOONSTEEL.get()))
+			.save(pWriter);
+		ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModItems.MOONSTEEL_CHESTPLATE.get(),1 )
+			.pattern("M M")
+			.pattern("MMM")
+			.pattern("MMM")
+			.define('M', ModItems.MOONSTEEL.get())
+			.unlockedBy(getHasName(ModItems.MOONSTEEL.get()), has(ModItems.MOONSTEEL.get()))
+			.save(pWriter);
+		ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModItems.MOONSTEEL_LEGGINGS.get(),1 )
+			.pattern("MMM")
+			.pattern("M M")
+			.pattern("M M")
+			.define('M', ModItems.MOONSTEEL.get())
+			.unlockedBy(getHasName(ModItems.MOONSTEEL.get()), has(ModItems.MOONSTEEL.get()))
+			.save(pWriter);
+		ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModItems.MOONSTEEL_BOOTS.get(),1 )
+			.pattern("   ")
+			.pattern("M M")
+			.pattern("M M")
+			.define('M', ModItems.MOONSTEEL.get())
+			.unlockedBy(getHasName(ModItems.MOONSTEEL.get()), has(ModItems.MOONSTEEL.get()))
+			.save(pWriter);
+		
+		//Ethereal Moonsteel Armor
+		ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModItems.EMOONSTEEL_HELMET.get(),1 )
+			.pattern("   ")
+			.pattern("MMM")
+			.pattern("M M")
+			.define('M', ModItems.EMOONSTEEL.get())
+			.unlockedBy(getHasName(ModItems.EMOONSTEEL.get()), has(ModItems.EMOONSTEEL.get()))
+			.save(pWriter);
+		ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModItems.EMOONSTEEL_CHESTPLATE.get(),1 )
+			.pattern("M M")
+			.pattern("MMM")
+			.pattern("MMM")
+			.define('M', ModItems.EMOONSTEEL.get())
+			.unlockedBy(getHasName(ModItems.EMOONSTEEL.get()), has(ModItems.EMOONSTEEL.get()))
+			.save(pWriter);
+		ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModItems.EMOONSTEEL_LEGGINGS.get(),1 )
+			.pattern("MMM")
+			.pattern("M M")
+			.pattern("M M")
+			.define('M', ModItems.EMOONSTEEL.get())
+			.unlockedBy(getHasName(ModItems.EMOONSTEEL.get()), has(ModItems.EMOONSTEEL.get()))
+			.save(pWriter);
+		ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModItems.EMOONSTEEL_BOOTS.get(),1 )
+			.pattern("   ")
+			.pattern("M M")
+			.pattern("M M")
+			.define('M', ModItems.EMOONSTEEL.get())
+			.unlockedBy(getHasName(ModItems.EMOONSTEEL.get()), has(ModItems.EMOONSTEEL.get()))
+			.save(pWriter);
+		
+		//Lunarite Armor
+		ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModItems.LUNARITE_HELMET.get(),1 )
+			.pattern("   ")
+			.pattern("LLL")
+			.pattern("LML")
+			.define('L', ModItems.LUNARITE.get())
+			.define('M', ModItems.EMOONSTEEL_HELMET.get())
+			.unlockedBy(getHasName(ModItems.LUNARITE.get()), has(ModItems.LUNARITE.get()))
+			.save(pWriter);
+		ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModItems.LUNARITE_CHESTPLATE.get(),1 )
+			.pattern("LML")
+			.pattern("LLL")
+			.pattern("LLL")
+			.define('L', ModItems.LUNARITE.get())
+			.define('M', ModItems.EMOONSTEEL_CHESTPLATE.get())
+			.unlockedBy(getHasName(ModItems.LUNARITE.get()), has(ModItems.LUNARITE.get()))
+			.save(pWriter);
+		ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModItems.LUNARITE_LEGGINGS.get(),1 )
+			.pattern("LLL")
+			.pattern("LML")
+			.pattern("L L")
+			.define('L', ModItems.LUNARITE.get())
+			.define('M', ModItems.EMOONSTEEL_LEGGINGS.get())
+			.unlockedBy(getHasName(ModItems.LUNARITE.get()), has(ModItems.LUNARITE.get()))
+			.save(pWriter);
+		ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModItems.LUNARITE_BOOTS.get(),1 )
+			.pattern("   ")
+			.pattern("LML")
+			.pattern("L L")
+			.define('L', ModItems.LUNARITE.get())
+			.define('M', ModItems.EMOONSTEEL_BOOTS.get())
+			.unlockedBy(getHasName(ModItems.LUNARITE.get()), has(ModItems.LUNARITE.get()))
+			.save(pWriter);
+		
+		//Lunarite Tools
+		ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModItems.LUNARITE_AXE.get(),1 )
+			.pattern("LL ")
+			.pattern("LS ")
+			.pattern(" S ")
+			.define('L', ModItems.LUNARITE.get())
+			.define('S', ModItems.LUNAR_STICK.get())
+			.unlockedBy(getHasName(ModItems.LUNARITE.get()), has(ModItems.LUNARITE.get()))
+			.save(pWriter);
+		ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModItems.LUNARITE_HOE.get(),1 )
+			.pattern("LL ")
+			.pattern(" S ")
+			.pattern(" S ")
+			.define('L', ModItems.LUNARITE.get())
+			.define('S', ModItems.LUNAR_STICK.get())
+			.unlockedBy(getHasName(ModItems.LUNARITE.get()), has(ModItems.LUNARITE.get()))
+			.save(pWriter);
+		ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModItems.LUNARITE_PICKAXE.get(),1 )
+			.pattern("LLL")
+			.pattern(" S ")
+			.pattern(" S ")
+			.define('L', ModItems.LUNARITE.get())
+			.define('S', ModItems.LUNAR_STICK.get())
+			.unlockedBy(getHasName(ModItems.LUNARITE.get()), has(ModItems.LUNARITE.get()))
+			.save(pWriter);
+		ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModItems.LUNARITE_SHOVEL.get(),1 )
+			.pattern(" L ")
+			.pattern(" S ")
+			.pattern(" S ")
+			.define('L', ModItems.LUNARITE.get())
+			.define('S', ModItems.LUNAR_STICK.get())
+			.unlockedBy(getHasName(ModItems.LUNARITE.get()), has(ModItems.LUNARITE.get()))
+			.save(pWriter);
+		ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModItems.LUNARITE_SWORD.get(),1 )
+			.pattern(" L ")
+			.pattern(" L ")
+			.pattern(" S ")
+			.define('L', ModItems.LUNARITE.get())
+			.define('S', ModItems.LUNAR_STICK.get())
+			.unlockedBy(getHasName(ModItems.LUNARITE.get()), has(ModItems.LUNARITE.get()))
+			.save(pWriter);
+	
 		//Stairs
 		ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModBlocks.CELEST_STAIRS.get(),4 )
 			.pattern("  P")

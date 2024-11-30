@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "L": {
+      "item": "thelunaris:lunarite"
+    },
+    "M": {
+      "item": "thelunaris:emoonsteel_chestplate"
+    }
+  },
+  "pattern": [
+    "LML",
+    "LLL",
+    "LLL"
+  ],
+  "result": {
+    "item": "thelunaris:lunarite_chestplate"
+  },
+  "show_notification": true
+}

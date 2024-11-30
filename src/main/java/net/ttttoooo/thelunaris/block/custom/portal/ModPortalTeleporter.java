@@ -188,12 +188,12 @@ public class ModPortalTeleporter implements ITeleporter {
 			double coordinateDifference = DimensionType.getTeleportationScale(entity.level().dimensionType(), level.dimensionType());
 			BlockPos pos = border.clampToBounds(entity.getX() * coordinateDifference, entity.getY(), entity.getZ() * coordinateDifference);
 			return this.getOrMakePortal(entity, pos).map((result) -> {
-				BlockState blockstate = entity.level().getBlockState(entity.portalEntrancePos);
+				BlockState blockstate = entity.level().getBlockState(entity.getOnPos());
 				Direction.Axis axis;
 				Vec3 vector3d;
 				if (blockstate.hasProperty(BlockStateProperties.HORIZONTAL_AXIS)) {
 					axis = blockstate.getValue(BlockStateProperties.HORIZONTAL_AXIS);
-					BlockUtil.FoundRectangle rectangle = BlockUtil.getLargestRectangleAround(entity.portalEntrancePos, axis, 21, Direction.Axis.Y, 21, blockPos -> entity.level().getBlockState(blockPos) == blockstate);
+					BlockUtil.FoundRectangle rectangle = BlockUtil.getLargestRectangleAround(entity.getOnPos(), axis, 21, Direction.Axis.Y, 21, blockPos -> entity.level().getBlockState(blockPos) == blockstate);
 					vector3d = PortalShape.getRelativePosition(rectangle, axis, entity.position(), entity.getDimensions(entity.getPose()));
 				} else {
 					axis = Direction.Axis.X;
@@ -210,7 +210,7 @@ public class ModPortalTeleporter implements ITeleporter {
 		if (existingPortal.isPresent()) {
 			return existingPortal;
 		} else {
-			Direction.Axis portalAxis = this.level.getBlockState(entity.portalEntrancePos).getOptionalValue(ModPortalBlock.AXIS).orElse(Direction.Axis.X);
+			Direction.Axis portalAxis = this.level.getBlockState(entity.getOnPos()).getOptionalValue(ModPortalBlock.AXIS).orElse(Direction.Axis.X);
 			return this.makePortal(pos, portalAxis);
 		}
 	}

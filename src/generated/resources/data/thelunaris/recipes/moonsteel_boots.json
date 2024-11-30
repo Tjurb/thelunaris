@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "M": {
+      "item": "thelunaris:moonsteel"
+    }
+  },
+  "pattern": [
+    "   ",
+    "M M",
+    "M M"
+  ],
+  "result": {
+    "item": "thelunaris:moonsteel_boots"
+  },
+  "show_notification": true
+}

@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "L": {
+      "item": "thelunaris:lunarite"
+    },
+    "S": {
+      "item": "thelunaris:lunar_stick"
+    }
+  },
+  "pattern": [
+    "LL ",
+    "LS ",
+    " S "
+  ],
+  "result": {
+    "item": "thelunaris:lunarite_axe"
+  },
+  "show_notification": true
+}
