@@ -48,6 +48,21 @@
     "item.thelunaris.phyrex_spawn_egg": "Phyrex Spawn Egg",
     "item.thelunaris.lunarsleeper_spawn_egg": "Lunarsleeper Spawn Egg",
     "item.thelunaris.hex_spawn_egg": "Hex Spawn Egg",
+    
+    "item.thelunaris.moonsteel_helmet": "Moonsteel Helmet",
+    "item.thelunaris.moonsteel_chestplate": "Moonsteel Chestplate",
+    "item.thelunaris.moonsteel_leggings": "Moonsteel Leggings",
+    "item.thelunaris.moonsteel_boots": "Moonsteel Boots",
+    
+    "item.thelunaris.emoonsteel_helmet": "Ethereal Moonsteel Helmet",
+    "item.thelunaris.emoonsteel_chestplate": "Ethereal Moonsteel Chestplate",
+    "item.thelunaris.emoonsteel_leggings": "Ethereal Moonsteel Leggings",
+    "item.thelunaris.emoonsteel_boots": "Ethereal Moonsteel Boots",
+    
+    "item.thelunaris.lunarite_helmet": "Lunarite Helmet",
+    "item.thelunaris.lunarite_chestplate": "Lunarite Chestplate",
+    "item.thelunaris.lunarite_leggings": "Lunarite Leggings",
+    "item.thelunaris.lunarite_boots": "Lunarite Boots",
 
     "block.thelunaris.moondialblock": "Moondial",
     "block.thelunaris.lunar_crafter": "Lunar Crafter",

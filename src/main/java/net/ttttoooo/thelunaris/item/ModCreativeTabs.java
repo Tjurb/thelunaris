@@ -158,7 +158,21 @@ public class ModCreativeTabs {
 				pOutput.accept(ModItems.LUNARITE_SHOVEL.get());
 				pOutput.accept(ModItems.LUNARITE_HOE.get());
 				
-				//SpawnEggs
+				//Armor Entry
+				pOutput.accept(ModItems.MOONSTEEL_HELMET.get());
+				pOutput.accept(ModItems.MOONSTEEL_CHESTPLATE.get());
+				pOutput.accept(ModItems.MOONSTEEL_LEGGINGS.get());
+				pOutput.accept(ModItems.MOONSTEEL_BOOTS.get());
+				pOutput.accept(ModItems.EMOONSTEEL_HELMET.get());
+				pOutput.accept(ModItems.EMOONSTEEL_CHESTPLATE.get());
+				pOutput.accept(ModItems.EMOONSTEEL_LEGGINGS.get());
+				pOutput.accept(ModItems.EMOONSTEEL_BOOTS.get());
+				pOutput.accept(ModItems.LUNARITE_HELMET.get());
+				pOutput.accept(ModItems.LUNARITE_CHESTPLATE.get());
+				pOutput.accept(ModItems.LUNARITE_LEGGINGS.get());
+				pOutput.accept(ModItems.LUNARITE_BOOTS.get());
+				
+				//SpawnEggs Entry
 				pOutput.accept(ModItems.MOONCOW_SPANW_EGG.get());
 				pOutput.accept(ModItems.ARCHFISH_SPANW_EGG.get());
 				pOutput.accept(ModItems.MOONSNAIL_SPANW_EGG.get());

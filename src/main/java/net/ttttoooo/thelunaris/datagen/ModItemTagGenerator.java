@@ -70,5 +70,20 @@ public class ModItemTagGenerator extends ItemTagsProvider {
 				ModBlocks.SKYOAK_WOOD.get().asItem(),
 				ModBlocks.STRIPPED_SKYOAK_LOG.get().asItem(),
 				ModBlocks.STRIPPED_SKYOAK_WOOD.get().asItem());
+		
+		this.tag(ItemTags.TRIMMABLE_ARMOR)
+			.add(ModItems.MOONSTEEL_HELMET.get(),
+					ModItems.MOONSTEEL_CHESTPLATE.get(),
+					ModItems.MOONSTEEL_LEGGINGS.get(),
+					ModItems.MOONSTEEL_BOOTS.get(),
+					ModItems.EMOONSTEEL_HELMET.get(),
+					ModItems.EMOONSTEEL_CHESTPLATE.get(),
+					ModItems.EMOONSTEEL_LEGGINGS.get(),
+					ModItems.EMOONSTEEL_BOOTS.get(),
+					ModItems.LUNARITE_HELMET.get(),
+					ModItems.LUNARITE_CHESTPLATE.get(),
+					ModItems.LUNARITE_LEGGINGS.get(),
+					ModItems.LUNARITE_BOOTS.get());
+		
 	}
 }

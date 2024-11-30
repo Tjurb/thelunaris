@@ -1,5 +1,6 @@
 package net.ttttoooo.thelunaris.item;
 
+import net.minecraft.world.item.ArmorItem;
 import net.minecraft.world.item.AxeItem;
 import net.minecraft.world.item.HoeItem;
 import net.minecraft.world.item.Item;
@@ -120,7 +121,34 @@ public class ModItems {
 	public static final RegistryObject<Item> HEX_SPANW_EGG = ITEMS.register("hex_spawn_egg",
             () -> new ForgeSpawnEggItem(ModEntities.HEX, 0xff0079, 0xff67cf, new Item.Properties()));
 	
-	
+	//Armor 
+	public static final RegistryObject<Item> MOONSTEEL_HELMET = ITEMS.register("moonsteel_helmet",
+            () -> new ArmorItem(ModArmorMaterials.MOONSTEEL, ArmorItem.Type.HELMET, new Item.Properties()));
+    public static final RegistryObject<Item> MOONSTEEL_CHESTPLATE = ITEMS.register("moonsteel_chestplate",
+            () -> new ArmorItem(ModArmorMaterials.MOONSTEEL, ArmorItem.Type.CHESTPLATE, new Item.Properties()));
+    public static final RegistryObject<Item> MOONSTEEL_LEGGINGS = ITEMS.register("moonsteel_leggings",
+            () -> new ArmorItem(ModArmorMaterials.MOONSTEEL, ArmorItem.Type.LEGGINGS, new Item.Properties()));
+    public static final RegistryObject<Item> MOONSTEEL_BOOTS = ITEMS.register("moonsteel_boots",
+            () -> new ArmorItem(ModArmorMaterials.MOONSTEEL, ArmorItem.Type.BOOTS, new Item.Properties()));
+
+	public static final RegistryObject<Item> EMOONSTEEL_HELMET = ITEMS.register("emoonsteel_helmet",
+            () -> new ArmorItem(ModArmorMaterials.EMOONSTEEL, ArmorItem.Type.HELMET, new Item.Properties()));
+    public static final RegistryObject<Item> EMOONSTEEL_CHESTPLATE = ITEMS.register("emoonsteel_chestplate",
+            () -> new ArmorItem(ModArmorMaterials.EMOONSTEEL, ArmorItem.Type.CHESTPLATE, new Item.Properties()));
+    public static final RegistryObject<Item> EMOONSTEEL_LEGGINGS = ITEMS.register("emoonsteel_leggings",
+            () -> new ArmorItem(ModArmorMaterials.EMOONSTEEL, ArmorItem.Type.LEGGINGS, new Item.Properties()));
+    public static final RegistryObject<Item> EMOONSTEEL_BOOTS = ITEMS.register("emoonsteel_boots",
+            () -> new ArmorItem(ModArmorMaterials.EMOONSTEEL, ArmorItem.Type.BOOTS, new Item.Properties()));
+
+	public static final RegistryObject<Item> LUNARITE_HELMET = ITEMS.register("lunarite_helmet",
+            () -> new ArmorItem(ModArmorMaterials.LUNARITE, ArmorItem.Type.HELMET, new Item.Properties()));
+    public static final RegistryObject<Item> LUNARITE_CHESTPLATE = ITEMS.register("lunarite_chestplate",
+            () -> new ArmorItem(ModArmorMaterials.LUNARITE, ArmorItem.Type.CHESTPLATE, new Item.Properties()));
+    public static final RegistryObject<Item> LUNARITE_LEGGINGS = ITEMS.register("lunarite_leggings",
+            () -> new ArmorItem(ModArmorMaterials.LUNARITE, ArmorItem.Type.LEGGINGS, new Item.Properties()));
+    public static final RegistryObject<Item> LUNARITE_BOOTS = ITEMS.register("lunarite_boots",
+            () -> new ArmorItem(ModArmorMaterials.LUNARITE, ArmorItem.Type.BOOTS, new Item.Properties()));
+    
 	public static void register(IEventBus eventBus) {
 		ITEMS.register(eventBus);
 	}
