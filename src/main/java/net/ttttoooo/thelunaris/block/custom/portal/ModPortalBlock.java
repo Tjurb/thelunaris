@@ -23,11 +23,15 @@ import net.minecraft.world.level.block.state.properties.BlockStateProperties;
 import net.minecraft.world.level.block.state.properties.EnumProperty;
 import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraft.world.phys.shapes.VoxelShape;
+import net.minecraftforge.common.MinecraftForge;
+import net.minecraftforge.event.level.BlockEvent;
 import net.ttttoooo.thelunaris.worldgen.dimension.ModDimensions;
 
-public class ModPortalBlock extends Block{
+import javax.annotation.Nullable;
+
+
+public class ModPortalBlock extends Block {
 	public static final EnumProperty<Direction.Axis> AXIS = BlockStateProperties.HORIZONTAL_AXIS;
-	   protected static final int AABB_OFFSET = 2;
 	protected static final VoxelShape X_AXIS_AABB = Block.box(0.0, 0.0, 6.0, 16.0, 16.0, 10.0);
 	protected static final VoxelShape Z_AXIS_AABB = Block.box(6.0, 0.0, 0.0, 10.0, 16.0, 16.0);
 
@@ -35,16 +39,43 @@ public class ModPortalBlock extends Block{
 		super(properties);
 		this.registerDefaultState(this.getStateDefinition().any().setValue(AXIS, Direction.Axis.X));
 	}
-
-    @SuppressWarnings("deprecation")
+	
     @Override
     public VoxelShape getShape(BlockState state, BlockGetter level, BlockPos pos, CollisionContext context) {
-        if (state.getValue(AXIS) == Direction.Axis.Z) {
-            return Z_AXIS_AABB;
-        } else {
-            return X_AXIS_AABB;
-        }
+    	switch (state.getValue(AXIS)) {
+			case Z:
+				return Z_AXIS_AABB;
+			case X:
+			default:
+				return X_AXIS_AABB;
+    	}
     }
+    
+
+	public boolean trySpawnPortal(LevelAccessor level, BlockPos pos) {
+		ModPortalFrame size = this.isPortal(level, pos);
+		if (size != null && !onTrySpawnPortal(level, pos, size)) {
+			size.createPortalBlocks();
+			return true;
+		} else {
+			return false;
+		}
+	}
+
+	public static boolean onTrySpawnPortal(LevelAccessor world, BlockPos pos, ModPortalFrame size) {
+		return MinecraftForge.EVENT_BUS.post(new BlockEvent.PortalSpawnEvent(world, pos, world.getBlockState(pos), size));
+	}
+
+	@Nullable
+	public ModPortalFrame isPortal(LevelAccessor level, BlockPos pos) {
+		ModPortalFrame LunarPortalBlock$size = new ModPortalFrame(level, pos, Direction.Axis.X);
+		if (LunarPortalBlock$size.isValid() && LunarPortalBlock$size.numPortalBlocks == 0) {
+			return LunarPortalBlock$size;
+		} else {
+			ModPortalFrame LunarPortalBlock$size1 = new ModPortalFrame(level, pos, Direction.Axis.Z);
+			return LunarPortalBlock$size1.isValid() && LunarPortalBlock$size1.numPortalBlocks == 0 ? LunarPortalBlock$size1 : null;
+		}
+	}
 
 	@Override
 	protected void createBlockStateDefinition(StateDefinition.Builder<Block, BlockState> builder) {
@@ -91,7 +122,6 @@ public class ModPortalBlock extends Block{
         }
     }
 	
-    @SuppressWarnings("deprecation")
     @Override
     public BlockState rotate(BlockState state, Rotation rotation) {
         return switch (rotation) {
@@ -104,7 +134,6 @@ public class ModPortalBlock extends Block{
         };
     }
 
-    @SuppressWarnings("deprecation")
     @Override
     public BlockState updateShape(BlockState state, Direction direction, BlockState facingState, LevelAccessor level, BlockPos currentPos, BlockPos facingPos) {
         Direction.Axis directionAxis = direction.getAxis();
