@@ -24,6 +24,7 @@ import net.minecraft.world.level.block.TallGrassBlock;
 import net.minecraft.world.level.block.WallBlock;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.block.state.BlockState;
+import net.minecraft.world.level.material.PushReaction;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
@@ -47,6 +48,12 @@ public class ModBlocks {
 	public static final DeferredRegister<Block> BLOCKS =
 			DeferredRegister.create(ForgeRegistries.BLOCKS, TheLunaris.MODID);
 	
+	//Portal Block
+	public static final RegistryObject<Block> LUNARPORTAL_BLOCK = registerBlock("lunarportal_block", 
+			() -> new ModPortalBlock(BlockBehaviour.Properties.copy(Blocks.STONE).sound(SoundType.GLASS)
+					.noLootTable().noOcclusion().noCollission().pushReaction(PushReaction.BLOCK)
+					.strength(-1F).lightLevel((state) -> 10)));
+	
 	//Special Blocks
 	public static final RegistryObject<Block> MOONDIALBLOCK = registerBlock("moondialblock", 
 			() -> new Block(BlockBehaviour.Properties.copy(Blocks.IRON_BLOCK).sound(SoundType.ANCIENT_DEBRIS)));
@@ -54,9 +61,6 @@ public class ModBlocks {
 			() -> new LunarCrafter(BlockBehaviour.Properties.copy(Blocks.OAK_PLANKS).sound(SoundType.WOOD).noOcclusion()));
 	public static final RegistryObject<Block> VAILSTONE_FURNACE = registerBlock("vailstone_furnace", 
 			() -> new VailstoneFurnace(BlockBehaviour.Properties.copy(Blocks.STONE).sound(SoundType.STONE).noOcclusion()));
-	public static final RegistryObject<Block> LUNARPORTAL_BLOCK = registerBlock("lunarportal_block", 
-			() -> new ModPortalBlock(BlockBehaviour.Properties.copy(Blocks.STONE).sound(SoundType.GLASS)
-					.noLootTable().noOcclusion().noCollission()));
 	public static final RegistryObject<Block> LUNARIS_BEDROCK = registerBlock("lunaris_bedrock", 
 			() -> new Block(BlockBehaviour.Properties.copy(Blocks.BEDROCK).sound(SoundType.ANCIENT_DEBRIS).noLootTable()));
 	public static final RegistryObject<Block> LUNARIS_CRAFTING_TABLE = registerBlock("lunaris_crafting_table", 

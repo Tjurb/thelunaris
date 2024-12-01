@@ -1,4 +1,4 @@
-// 1.20.1	2024-11-29T20:09:47.7324898	Tags for minecraft:block mod id thelunaris
+// 1.20.1	2024-11-30T19:17:58.9618631	Tags for minecraft:block mod id thelunaris
 d796bc7c115044c1447d00d17046da4ac8243076 data/forge/tags/blocks/glass/colorless.json
 c9ad7cc02e0d56472ab231f3a929297143254b0c data/forge/tags/blocks/glass_panes/colorless.json
 a9529e69c42038cf07e8e32687b8b1534d73bceb data/minecraft/tags/blocks/dirt.json
@@ -10,7 +10,7 @@ aec2dfb3d7ff8004f3ce8029dfbac22db66e75a6 data/minecraft/tags/blocks/mineable/sho
 723ff3c7b1afb89852189905785c5169d3d5b80f data/minecraft/tags/blocks/sand.json
 7119ecebf7699542ee550432fde5f6829ec30340 data/minecraft/tags/blocks/walls.json
 10f190469d669fed0fe54b63ce69f2fd97da8aaf data/thelunaris/tags/blocks/gneiss_ore_replaceables.json
-318bedd6d4903150b717022bc6cad9982e2bb01e data/thelunaris/tags/blocks/lunar_portal_blocks.json
+f2cdc7afb5455aaa2523dd4fbae2de104ee8042d data/thelunaris/tags/blocks/lunar_portal_blocks.json
 76ca1fd9ede275cc9c57e4369bd5bb19bb3f2a94 data/thelunaris/tags/blocks/needs_emoonsteel_tool.json
 f521827b5e1992533887eaa3f20539414326532a data/thelunaris/tags/blocks/needs_moonsteel_tool.json
 145803f43dd3969673df738d25946b2bf822b38c data/thelunaris/tags/blocks/vailstone_ore_replaceables.json

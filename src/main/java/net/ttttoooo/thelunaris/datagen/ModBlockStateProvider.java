@@ -3,6 +3,7 @@ package net.ttttoooo.thelunaris.datagen;
 import java.util.Locale;
 import java.util.function.Function;
 
+import net.minecraft.core.Direction;
 import net.minecraft.data.PackOutput;
 import net.minecraft.data.models.blockstates.Condition;
 import net.minecraft.data.models.blockstates.MultiPartGenerator;
@@ -17,6 +18,7 @@ import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.CropBlock;
 import net.minecraft.world.level.block.GlassBlock;
 import net.minecraft.world.level.block.IronBarsBlock;
+import net.minecraft.world.level.block.NetherPortalBlock;
 import net.minecraft.world.level.block.RotatedPillarBlock;
 import net.minecraft.world.level.block.SlabBlock;
 import net.minecraft.world.level.block.StairBlock;
@@ -44,13 +46,13 @@ public class ModBlockStateProvider extends BlockStateProvider{
 	protected void registerStatesAndModels() {
 		//special blocks
 		blockWithItem(ModBlocks.MOONDIALBLOCK);
+		portal(ModBlocks.LUNARPORTAL_BLOCK.get());
         simpleBlockWithItem(ModBlocks.LUNAR_CRAFTER.get(),
                 new ModelFile.UncheckedModelFile(modLoc("block/lunarcrafter")));
         horizontalBlock(ModBlocks.VAILSTONE_FURNACE.get(),
         		new ModelFile.UncheckedModelFile(modLoc("block/vailstone_furnace")));
         blockItem(ModBlocks.VAILSTONE_FURNACE);
 		blockWithItem(ModBlocks.LUNARIS_BEDROCK);
-		blockWithItem(ModBlocks.LUNARPORTAL_BLOCK);
         simpleBlockWithItem(ModBlocks.LUNARIS_CRAFTING_TABLE.get(),
                 new ModelFile.UncheckedModelFile(modLoc("block/lunaris_crafting_table")));
         
@@ -216,7 +218,23 @@ public class ModBlockStateProvider extends BlockStateProvider{
                 ":block/" + ForgeRegistries.BLOCKS.getKey(blockRegistryObject.get()).getPath()));
     }
 	
-
+	public void portal(Block block) {
+        ModelFile portal_ew = this.models().withExistingParent(this.name(block) + "_ew", this.mcLoc("block/nether_portal_ew"))
+                .texture("particle", this.modLoc("block/misc/" + this.name(block)))
+                .texture("portal", this.modLoc("block/misc/" + this.name(block)))
+                .renderType(new ResourceLocation("translucent"));
+        ModelFile portal_ns = this.models().withExistingParent(this.name(block) + "_ns", this.mcLoc("block/nether_portal_ns"))
+                .texture("particle", this.modLoc("block/misc/" + this.name(block)))
+                .texture("portal", this.modLoc("block/misc/" + this.name(block)))
+                .renderType(new ResourceLocation("translucent"));
+        this.getVariantBuilder(block).forAllStates(state -> {
+            Direction.Axis axis = state.getValue(NetherPortalBlock.AXIS);
+            return ConfiguredModel.builder()
+                    .modelFile(axis == Direction.Axis.Z ? portal_ew : portal_ns)
+                    .build();
+        });
+    }
+	
     public void makeLunWheatCrop(CropBlock block, String modelName, String textureName) {
         Function<BlockState, ConfiguredModel[]> function = state -> lunWheatStates(state, block, modelName, textureName);
 
@@ -231,7 +249,6 @@ public class ModBlockStateProvider extends BlockStateProvider{
         return models;
     }
     
-
     public void makeLoonBerryCrop(CropBlock block, String modelName, String textureName) {
         Function<BlockState, ConfiguredModel[]> function = state -> loonBerryStates(state, block, modelName, textureName);
 
@@ -246,7 +263,6 @@ public class ModBlockStateProvider extends BlockStateProvider{
         return models;
     }
     
-
     public void makeSarrotCrop(CropBlock block, String modelName, String textureName) {
         Function<BlockState, ConfiguredModel[]> function = state -> sarrotStates(state, block, modelName, textureName);
 

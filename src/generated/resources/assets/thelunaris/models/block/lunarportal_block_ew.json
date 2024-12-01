@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/nether_portal_ew",
+  "render_type": "minecraft:translucent",
+  "textures": {
+    "particle": "thelunaris:block/misc/lunarportal_block",
+    "portal": "thelunaris:block/misc/lunarportal_block"
+  }
+}

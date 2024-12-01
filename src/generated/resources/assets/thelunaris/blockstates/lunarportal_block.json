@@ -1,7 +1,10 @@
 {
   "variants": {
-    "": {
-      "model": "thelunaris:block/lunarportal_block"
+    "axis=x": {
+      "model": "thelunaris:block/lunarportal_block_ns"
+    },
+    "axis=z": {
+      "model": "thelunaris:block/lunarportal_block_ew"
     }
   }
 }

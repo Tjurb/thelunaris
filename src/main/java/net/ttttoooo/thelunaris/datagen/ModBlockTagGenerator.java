@@ -96,7 +96,7 @@ public class ModBlockTagGenerator extends BlockTagsProvider{
 			.add(ModBlocks.LUNSAND.get());
 		
 		this.tag(ModTags.Blocks.LUNAR_PORTAL_BLOCKS)
-			.add(Blocks.CHISELED_SANDSTONE);
+			.add(Blocks.CHISELED_STONE_BRICKS);
 
 		this.tag(ModTags.Blocks.VAILSTONE_ORE_REPLACEABLES)
 			.add(ModBlocks.VAILSTONE.get());

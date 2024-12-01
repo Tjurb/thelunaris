@@ -21,6 +21,7 @@ import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.StateDefinition;
 import net.minecraft.world.level.block.state.properties.BlockStateProperties;
 import net.minecraft.world.level.block.state.properties.EnumProperty;
+import net.minecraft.world.level.material.PushReaction;
 import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraft.world.phys.shapes.VoxelShape;
 import net.minecraftforge.common.MinecraftForge;
@@ -37,7 +38,7 @@ public class ModPortalBlock extends Block {
 
 	public ModPortalBlock(Properties properties) {
 		super(properties);
-		this.registerDefaultState(this.getStateDefinition().any().setValue(AXIS, Direction.Axis.X));
+		this.registerDefaultState(stateDefinition.any().setValue(AXIS, Direction.Axis.X));
 	}
 	
     @Override
@@ -54,26 +55,37 @@ public class ModPortalBlock extends Block {
 
 	public boolean trySpawnPortal(LevelAccessor level, BlockPos pos) {
 		ModPortalFrame size = this.isPortal(level, pos);
+		System.out.println(level);
+		System.out.println(pos);
+		System.out.println(size);
 		if (size != null && !onTrySpawnPortal(level, pos, size)) {
+			System.out.println("trySpawnPortal true");
 			size.createPortalBlocks();
 			return true;
 		} else {
+			System.out.println("trySpawnPortal false");
 			return false;
 		}
 	}
 
 	public static boolean onTrySpawnPortal(LevelAccessor world, BlockPos pos, ModPortalFrame size) {
+		System.out.println("onTrySpawnPortal");
 		return MinecraftForge.EVENT_BUS.post(new BlockEvent.PortalSpawnEvent(world, pos, world.getBlockState(pos), size));
 	}
 
 	@Nullable
 	public ModPortalFrame isPortal(LevelAccessor level, BlockPos pos) {
-		ModPortalFrame LunarPortalBlock$size = new ModPortalFrame(level, pos, Direction.Axis.X);
-		if (LunarPortalBlock$size.isValid() && LunarPortalBlock$size.numPortalBlocks == 0) {
-			return LunarPortalBlock$size;
+		ModPortalFrame ModPortalBlock$size = new ModPortalFrame(level, pos, Direction.Axis.X);
+		System.out.println(ModPortalBlock$size);
+		System.out.println(ModPortalBlock$size.isValid());
+		System.out.println(ModPortalBlock$size.numPortalBlocks);
+		if (ModPortalBlock$size.isValid() && ModPortalBlock$size.numPortalBlocks == 0) {
+			System.out.println("isPortal Size test");
+			return ModPortalBlock$size;
 		} else {
-			ModPortalFrame LunarPortalBlock$size1 = new ModPortalFrame(level, pos, Direction.Axis.Z);
-			return LunarPortalBlock$size1.isValid() && LunarPortalBlock$size1.numPortalBlocks == 0 ? LunarPortalBlock$size1 : null;
+			ModPortalFrame ModPortalBlock$size1 = new ModPortalFrame(level, pos, Direction.Axis.Z);
+			System.out.println("isPortal Size1 test");
+			return ModPortalBlock$size1.isValid() && ModPortalBlock$size1.numPortalBlocks == 0 ? ModPortalBlock$size1 : null;
 		}
 	}
 

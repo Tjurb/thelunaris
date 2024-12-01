@@ -1,4 +1,4 @@
-// 1.20.1	2024-11-29T20:09:47.7197584	Block States: thelunaris
+// 1.20.1	2024-11-30T20:19:13.3962422	Block States: thelunaris
 7701101710fd86c18b3e85caa1cf465fa9679456 assets/thelunaris/blockstates/celest_leaves.json
 4b21cb827b472d8950e479587d423de6dd2dee5a assets/thelunaris/blockstates/celest_log.json
 980e6f13909384b17f3056d48b9ba627fcdbbf00 assets/thelunaris/blockstates/celest_planks.json
@@ -24,7 +24,7 @@ ce9114ff0e74893fb42a4cba13769d254b0ed3ae assets/thelunaris/blockstates/labradori
 acbef8af1a52155d410af9c53671e098bfc4527c assets/thelunaris/blockstates/lunaris_crafting_table.json
 597a3977698757888e598a8ca7a6181d1e2c18af assets/thelunaris/blockstates/lunarite_block.json
 fc9b1a46f945d39173d3824e512223dc7989e558 assets/thelunaris/blockstates/lunarite_ore.json
-ffc2ae29847e26db9751bb336801d698d1daa2f9 assets/thelunaris/blockstates/lunarportal_block.json
+597fb402f156a61e7637ef7e0865080dc40d4e00 assets/thelunaris/blockstates/lunarportal_block.json
 70b64ce25c3fb70d88bff4f06db8555548a4433d assets/thelunaris/blockstates/lunarshale.json
 d050bca328b5282bb645fb6cffeb2d22ed84b2ad assets/thelunaris/blockstates/lunarslate.json
 204bb4c9bf4a562bfbfc35705d95c90b437b51d0 assets/thelunaris/blockstates/lunar_crafter.json
@@ -121,7 +121,8 @@ f5f36d84f1b9e2d1293615453ba33d0648574b19 assets/thelunaris/models/block/loonberr
 c33fe04fa43d934b832358ee92cec8e4d627bf29 assets/thelunaris/models/block/lunaris_bedrock.json
 da84e2291955a45f1d886e0bc663a79777e29f76 assets/thelunaris/models/block/lunaris_coal_ore.json
 7ccd04b79bff53f20ee4f505f579589deb06436a assets/thelunaris/models/block/lunarite_ore.json
-d4d0f920e4ebb4534e70352351ebe50caee59d72 assets/thelunaris/models/block/lunarportal_block.json
+625adf5226d843e7543681e9953b546fe77be4b6 assets/thelunaris/models/block/lunarportal_block_ew.json
+6763034e65e8059cd7414904e19398d3e4827644 assets/thelunaris/models/block/lunarportal_block_ns.json
 e8c67b8ad6cf8c9f8ee576e392f6536371aa814d assets/thelunaris/models/block/lunarshale.json
 b6247b20f5dae4a0084171ce4ae3606f8f490d5d assets/thelunaris/models/block/lunarslate.json
 d895bd81fcd7647081888a584f0826abe8be534d assets/thelunaris/models/block/lunar_wheat_stage0.json
@@ -252,7 +253,6 @@ ac9890bc9c62fccbfe60a95566725295ffb1b4ea assets/thelunaris/models/item/labradori
 472f9ef2f114c8bfb820743e9c3a29ef12f6d752 assets/thelunaris/models/item/lunaris_crafting_table.json
 c7b3f2bd323ec8dec9dae3590853085f7d247509 assets/thelunaris/models/item/lunarite_block.json
 33903813865025614fa7c96e9db2640beb7ffff4 assets/thelunaris/models/item/lunarite_ore.json
-ed197a1175aef732382d69820db0a6350065654d assets/thelunaris/models/item/lunarportal_block.json
 7b4cd1606d809e21df85081545cdfc3639d323a6 assets/thelunaris/models/item/lunarshale.json
 ed908c74d05b845122708a987444572dc99956b0 assets/thelunaris/models/item/lunarslate.json
 48646da464394792f2f7c7e22878d7012daa4f80 assets/thelunaris/models/item/lunar_crafter.json
