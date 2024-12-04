@@ -48,6 +48,14 @@ public class ModPlacedFeatures {
 	public static final ResourceKey<PlacedFeature> LUNARIS_DEEP_LARGE_LUNARITE_ORE_PLACED_KEY = registerKey("large_deep_lunarite_ore_placed");
 	public static final ResourceKey<PlacedFeature> LUNARIS_DEEP_LARGE_COAL_ORE_PLACED_KEY = registerKey("large_deep_lunaris_coal_ore_placed");
 			
+	//misc stone keys
+	public static final ResourceKey<PlacedFeature> MARBLE_PLACED_KEY = registerKey("marble_placed");
+	public static final ResourceKey<PlacedFeature> SHALE_PLACED_KEY = registerKey("shale_placed");
+	public static final ResourceKey<PlacedFeature> SLATE_PLACED_KEY = registerKey("slate_placed");
+	public static final ResourceKey<PlacedFeature> DEEP_MARBLE_PLACED_KEY = registerKey("deep_marble_placed");
+	public static final ResourceKey<PlacedFeature> DEEP_SHALE_PLACED_KEY = registerKey("deep_shale_placed");
+	public static final ResourceKey<PlacedFeature> DEEP_SLATE_PLACED_KEY = registerKey("deep_slate_placed");
+	
 	//tree keys
 	public static final ResourceKey<PlacedFeature> CELEST_PLACED_KEY = registerKey("celest_placed");
 	public static final ResourceKey<PlacedFeature> STELLAR_PLACED_KEY = registerKey("stellar_placed");
@@ -116,6 +124,26 @@ public class ModPlacedFeatures {
         register(context, LUNARIS_DEEP_LARGE_COAL_ORE_PLACED_KEY, configuredFeatures.getOrThrow(ModConfiguredFeatures.LUNARIS_DEEP_LARGE_COAL_ORE_KEY),
                 ModOrePlacement.commonOrePlacement(10,
                         HeightRangePlacement.uniform(VerticalAnchor.absolute(-16), VerticalAnchor.absolute(0))));
+        
+        //misc stone register
+        register(context, MARBLE_PLACED_KEY, configuredFeatures.getOrThrow(ModConfiguredFeatures.MARBLE_KEY),
+                ModOrePlacement.commonOrePlacement(20,
+                        HeightRangePlacement.uniform(VerticalAnchor.absolute(-8), VerticalAnchor.absolute(32))));
+        register(context, SHALE_PLACED_KEY, configuredFeatures.getOrThrow(ModConfiguredFeatures.LUNARSHALE_KEY),
+                ModOrePlacement.commonOrePlacement(20,
+                        HeightRangePlacement.uniform(VerticalAnchor.absolute(-8), VerticalAnchor.absolute(256))));
+        register(context, SLATE_PLACED_KEY, configuredFeatures.getOrThrow(ModConfiguredFeatures.LUNARSLATE_KEY),
+                ModOrePlacement.commonOrePlacement(20,
+                        HeightRangePlacement.uniform(VerticalAnchor.absolute(-8), VerticalAnchor.absolute(64))));
+        register(context, DEEP_MARBLE_PLACED_KEY, configuredFeatures.getOrThrow(ModConfiguredFeatures.DEEP_MARBLE_KEY),
+                ModOrePlacement.commonOrePlacement(20,
+                        HeightRangePlacement.uniform(VerticalAnchor.absolute(-64), VerticalAnchor.absolute(8))));
+        register(context, DEEP_SHALE_PLACED_KEY, configuredFeatures.getOrThrow(ModConfiguredFeatures.DEEP_LUNARSHALE_KEY),
+                ModOrePlacement.commonOrePlacement(20,
+                        HeightRangePlacement.uniform(VerticalAnchor.absolute(-8), VerticalAnchor.absolute(8))));
+        register(context, DEEP_SLATE_PLACED_KEY, configuredFeatures.getOrThrow(ModConfiguredFeatures.DEEP_LUNARSLATE_KEY),
+                ModOrePlacement.commonOrePlacement(20,
+                        HeightRangePlacement.uniform(VerticalAnchor.absolute(-32), VerticalAnchor.absolute(8))));
         
         //tree register
         register(context, CELEST_PLACED_KEY, configuredFeatures.getOrThrow(ModConfiguredFeatures.CELEST_KEY),

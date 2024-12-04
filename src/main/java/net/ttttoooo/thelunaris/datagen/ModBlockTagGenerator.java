@@ -125,6 +125,16 @@ public class ModBlockTagGenerator extends BlockTagsProvider{
 					ModBlocks.SMOOTHGNEISS_WALL.get(),
 					ModBlocks.SMOOTHMARBLE_WALL.get());
 		
+		this.tag(BlockTags.FENCES)
+			.add(ModBlocks.CELEST_FENCE.get(),
+					ModBlocks.STELLAR_FENCE.get(),
+					ModBlocks.SKYOAK_FENCE.get());
+
+		this.tag(BlockTags.FENCE_GATES)
+			.add(ModBlocks.CELEST_FENCE_GATE.get(),
+					ModBlocks.STELLAR_FENCE_GATE.get(),
+					ModBlocks.SKYOAK_FENCE_GATE.get());
+		
 		this.tag(BlockTags.MINEABLE_WITH_AXE)
 			.add(ModBlocks.CELEST_LOG.get(),
 					ModBlocks.CELEST_WOOD.get(),
@@ -133,6 +143,12 @@ public class ModBlockTagGenerator extends BlockTagsProvider{
 					ModBlocks.CELEST_PLANKS.get(),
 					ModBlocks.CELEST_STAIRS.get(),
 					ModBlocks.CELEST_SLAB.get(),
+					ModBlocks.CELEST_BUTTON.get(),
+					ModBlocks.CELEST_PRESSURE_PLATE.get(),
+					ModBlocks.CELEST_FENCE.get(),
+					ModBlocks.CELEST_FENCE_GATE.get(),
+					ModBlocks.CELEST_DOOR.get(),
+					ModBlocks.CELEST_TRAPDOOR.get(),
 				
 					ModBlocks.STELLAR_LOG.get(),
 					ModBlocks.STELLAR_WOOD.get(),
@@ -141,6 +157,12 @@ public class ModBlockTagGenerator extends BlockTagsProvider{
 					ModBlocks.STELLAR_PLANKS.get(),
 					ModBlocks.STELLAR_STAIRS.get(),
 					ModBlocks.STELLAR_SLAB.get(),
+					ModBlocks.STELLAR_BUTTON.get(),
+					ModBlocks.STELLAR_PRESSURE_PLATE.get(),
+					ModBlocks.STELLAR_FENCE.get(),
+					ModBlocks.STELLAR_FENCE_GATE.get(),
+					ModBlocks.STELLAR_DOOR.get(),
+					ModBlocks.STELLAR_TRAPDOOR.get(),
 				
 					ModBlocks.SKYOAK_LOG.get(),
 					ModBlocks.SKYOAK_WOOD.get(),
@@ -149,6 +171,12 @@ public class ModBlockTagGenerator extends BlockTagsProvider{
 					ModBlocks.SKYOAK_PLANKS.get(),
 					ModBlocks.SKYOAK_STAIRS.get(),
 					ModBlocks.SKYOAK_SLAB.get(),
+					ModBlocks.SKYOAK_BUTTON.get(),
+					ModBlocks.SKYOAK_PRESSURE_PLATE.get(),
+					ModBlocks.SKYOAK_FENCE.get(),
+					ModBlocks.SKYOAK_FENCE_GATE.get(),
+					ModBlocks.SKYOAK_DOOR.get(),
+					ModBlocks.SKYOAK_TRAPDOOR.get(),
 					
 					ModBlocks.LUNAR_CRAFTER.get(),
 					ModBlocks.LUNARIS_CRAFTING_TABLE.get());

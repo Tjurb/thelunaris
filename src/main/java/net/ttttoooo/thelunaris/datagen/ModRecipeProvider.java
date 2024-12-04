@@ -13,10 +13,12 @@ import net.minecraft.world.item.crafting.AbstractCookingRecipe;
 import net.minecraft.world.item.crafting.Ingredient;
 import net.minecraft.world.item.crafting.RecipeSerializer;
 import net.minecraft.world.level.ItemLike;
+import net.minecraft.world.level.block.Blocks;
 import net.minecraftforge.common.crafting.conditions.IConditionBuilder;
 import net.ttttoooo.thelunaris.TheLunaris;
 import net.ttttoooo.thelunaris.block.ModBlocks;
 import net.ttttoooo.thelunaris.item.ModItems;
+import net.ttttoooo.thelunaris.util.ModTags;
 
 public class ModRecipeProvider extends RecipeProvider implements IConditionBuilder{
 	public static final List<ItemLike> LUNARITE_SMELTABLES = List.of(ModBlocks.LUNARITE_ORE.get(),
@@ -375,12 +377,113 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
 			.unlockedBy(getHasName(ModBlocks.SMOOTHMARBLE.get()), has(ModBlocks.SMOOTHMARBLE.get()))
 			.save(pWriter);	
 		
+		//chest
+		ShapedRecipeBuilder.shaped(RecipeCategory.MISC, Blocks.CHEST, 1)
+			.pattern("WWW")
+			.pattern("W W")
+			.pattern("WWW")
+			.define('W', ModTags.Items.LUNAR_PLANKS)
+			.unlockedBy(getHasName(ModBlocks.CELEST_PLANKS.get()), has(ModTags.Items.LUNAR_PLANKS))
+			.unlockedBy(getHasName(ModBlocks.SKYOAK_PLANKS.get()), has(ModTags.Items.LUNAR_PLANKS))
+			.unlockedBy(getHasName(ModBlocks.STELLAR_PLANKS.get()), has(ModTags.Items.LUNAR_PLANKS))
+			.save(pWriter);	
+		
 		//fence
+		ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModBlocks.CELEST_FENCE_GATE.get(),1 )
+			.pattern("   ")
+			.pattern("SPS")
+			.pattern("SPS")
+			.define('P', ModBlocks.CELEST_PLANKS.get())
+			.define('S', ModItems.LUNAR_STICK.get())
+			.unlockedBy(getHasName(ModBlocks.CELEST_PLANKS.get()), has(ModBlocks.CELEST_PLANKS.get()))
+			.save(pWriter);
+		ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModBlocks.CELEST_FENCE.get(),3 )
+			.pattern("   ")
+			.pattern("PSP")
+			.pattern("PSP")
+			.define('P', ModBlocks.CELEST_PLANKS.get())
+			.define('S', ModItems.LUNAR_STICK.get())
+			.unlockedBy(getHasName(ModBlocks.CELEST_PLANKS.get()), has(ModBlocks.CELEST_PLANKS.get()))
+			.save(pWriter);
+		ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModBlocks.STELLAR_FENCE_GATE.get(),1 )
+			.pattern("   ")
+			.pattern("SPS")
+			.pattern("SPS")
+			.define('P', ModBlocks.STELLAR_PLANKS.get())
+			.define('S', ModItems.LUNAR_STICK.get())
+			.unlockedBy(getHasName(ModBlocks.STELLAR_PLANKS.get()), has(ModBlocks.STELLAR_PLANKS.get()))
+			.save(pWriter);
+		ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModBlocks.STELLAR_FENCE.get(),3 )
+			.pattern("   ")
+			.pattern("PSP")
+			.pattern("PSP")
+			.define('P', ModBlocks.STELLAR_PLANKS.get())
+			.define('S', ModItems.LUNAR_STICK.get())
+			.unlockedBy(getHasName(ModBlocks.STELLAR_PLANKS.get()), has(ModBlocks.STELLAR_PLANKS.get()))
+			.save(pWriter);
+		ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModBlocks.SKYOAK_FENCE_GATE.get(),1 )
+			.pattern("   ")
+			.pattern("SPS")
+			.pattern("SPS")
+			.define('P', ModBlocks.SKYOAK_PLANKS.get())
+			.define('S', ModItems.LUNAR_STICK.get())
+			.unlockedBy(getHasName(ModBlocks.SKYOAK_PLANKS.get()), has(ModBlocks.SKYOAK_PLANKS.get()))
+			.save(pWriter);
+		ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModBlocks.SKYOAK_FENCE.get(),3 )
+			.pattern("   ")
+			.pattern("PSP")
+			.pattern("PSP")
+			.define('P', ModBlocks.SKYOAK_PLANKS.get())
+			.define('S', ModItems.LUNAR_STICK.get())
+			.unlockedBy(getHasName(ModBlocks.SKYOAK_PLANKS.get()), has(ModBlocks.SKYOAK_PLANKS.get()))
+			.save(pWriter);
 		
 		//doors
+		ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModBlocks.CELEST_DOOR.get(),3 )
+			.pattern(" PP")
+			.pattern(" PP")
+			.pattern(" PP")
+			.define('P', ModBlocks.CELEST_PLANKS.get())
+			.unlockedBy(getHasName(ModBlocks.CELEST_PLANKS.get()), has(ModBlocks.CELEST_PLANKS.get()))
+			.save(pWriter);
+		ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModBlocks.STELLAR_DOOR.get(),3 )
+			.pattern(" PP")
+			.pattern(" PP")
+			.pattern(" PP")
+			.define('P', ModBlocks.STELLAR_PLANKS.get())
+			.unlockedBy(getHasName(ModBlocks.STELLAR_PLANKS.get()), has(ModBlocks.STELLAR_PLANKS.get()))
+			.save(pWriter);
+		ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModBlocks.SKYOAK_DOOR.get(),3 )
+			.pattern(" PP")
+			.pattern(" PP")
+			.pattern(" PP")
+			.define('P', ModBlocks.SKYOAK_PLANKS.get())
+			.unlockedBy(getHasName(ModBlocks.SKYOAK_PLANKS.get()), has(ModBlocks.SKYOAK_PLANKS.get()))
+			.save(pWriter);
 		
 		//trapdoors
-
+		ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModBlocks.CELEST_TRAPDOOR.get(),3 )
+			.pattern("   ")
+			.pattern("PPP")
+			.pattern("PPP")
+			.define('P', ModBlocks.CELEST_PLANKS.get())
+			.unlockedBy(getHasName(ModBlocks.CELEST_PLANKS.get()), has(ModBlocks.CELEST_PLANKS.get()))
+			.save(pWriter);
+		ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModBlocks.STELLAR_TRAPDOOR.get(),3 )
+			.pattern("   ")
+			.pattern("PPP")
+			.pattern("PPP")
+			.define('P', ModBlocks.STELLAR_PLANKS.get())
+			.unlockedBy(getHasName(ModBlocks.STELLAR_PLANKS.get()), has(ModBlocks.STELLAR_PLANKS.get()))
+			.save(pWriter);
+		ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModBlocks.SKYOAK_TRAPDOOR.get(),3 )
+			.pattern("   ")
+			.pattern("PPP")
+			.pattern("PPP")
+			.define('P', ModBlocks.SKYOAK_PLANKS.get())
+			.unlockedBy(getHasName(ModBlocks.SKYOAK_PLANKS.get()), has(ModBlocks.SKYOAK_PLANKS.get()))
+			.save(pWriter);
+		
 	}
 	
 	protected static void oreSmelting(Consumer<FinishedRecipe> p_250654_, List<ItemLike> p_250172_, RecipeCategory p_250588_, ItemLike p_251868_, float p_250789_, int p_252144_, String p_251687_) {

@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "P": {
+      "item": "thelunaris:celest_planks"
+    }
+  },
+  "pattern": [
+    "   ",
+    "PPP",
+    "PPP"
+  ],
+  "result": {
+    "count": 3,
+    "item": "thelunaris:celest_trapdoor"
+  },
+  "show_notification": true
+}

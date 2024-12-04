@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "W": {
+      "tag": "thelunaris:lunar_planks"
+    }
+  },
+  "pattern": [
+    "WWW",
+    "W W",
+    "WWW"
+  ],
+  "result": {
+    "item": "minecraft:chest"
+  },
+  "show_notification": true
+}

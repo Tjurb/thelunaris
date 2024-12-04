@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "P": {
+      "item": "thelunaris:celest_planks"
+    },
+    "S": {
+      "item": "thelunaris:lunar_stick"
+    }
+  },
+  "pattern": [
+    "   ",
+    "SPS",
+    "SPS"
+  ],
+  "result": {
+    "item": "thelunaris:celest_fence_gate"
+  },
+  "show_notification": true
+}

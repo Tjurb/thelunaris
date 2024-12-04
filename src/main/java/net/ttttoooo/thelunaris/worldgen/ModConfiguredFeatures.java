@@ -49,6 +49,15 @@ public class ModConfiguredFeatures {
 	public static final ResourceKey<ConfiguredFeature<?,?>> LUNARIS_DEEP_LARGE_LUNARITE_ORE_KEY = registerKey("large_deep_lunarite_ore");
 	public static final ResourceKey<ConfiguredFeature<?,?>> LUNARIS_DEEP_LARGE_COAL_ORE_KEY = registerKey("large_deep_lunaris_coal_ore");
 	
+	//misc stone generation
+	public static final ResourceKey<ConfiguredFeature<?,?>> MARBLE_KEY = registerKey("marble");
+	public static final ResourceKey<ConfiguredFeature<?,?>> LUNARSHALE_KEY = registerKey("lunarshale");
+	public static final ResourceKey<ConfiguredFeature<?,?>> LUNARSLATE_KEY = registerKey("lunarslate");
+
+	public static final ResourceKey<ConfiguredFeature<?,?>> DEEP_MARBLE_KEY = registerKey("deep_marble");
+	public static final ResourceKey<ConfiguredFeature<?,?>> DEEP_LUNARSHALE_KEY = registerKey("deep_lunarshale");
+	public static final ResourceKey<ConfiguredFeature<?,?>> DEEP_LUNARSLATE_KEY = registerKey("deep_lunarslate");
+	
 	//tree keys
 	public static final ResourceKey<ConfiguredFeature<?, ?>> CELEST_KEY = registerKey("celest");
 	public static final ResourceKey<ConfiguredFeature<?, ?>> STELLAR_KEY = registerKey("stellar");
@@ -105,6 +114,27 @@ public class ModConfiguredFeatures {
         register(context, LUNARIS_DEEP_LARGE_LUNARITE_ORE_KEY, Feature.ORE, new OreConfiguration(deeplunarislunariteore, 9));
         register(context, LUNARIS_DEEP_LARGE_COAL_ORE_KEY, Feature.ORE, new OreConfiguration(deeplunariscoalore, 9));
 
+        //misc Stone register
+        List<OreConfiguration.TargetBlockState> marble = List.of(OreConfiguration.target(vstoneReplaceable,
+                ModBlocks.MARBLE.get().defaultBlockState()));
+        List<OreConfiguration.TargetBlockState> shale = List.of(OreConfiguration.target(vstoneReplaceable,
+                ModBlocks.LUNARSHALE.get().defaultBlockState()));
+        List<OreConfiguration.TargetBlockState> slate = List.of(OreConfiguration.target(vstoneReplaceable,
+                ModBlocks.LUNARSLATE.get().defaultBlockState()));
+        List<OreConfiguration.TargetBlockState> deepMarble = List.of(OreConfiguration.target(gneissReplaceable,
+                ModBlocks.MARBLE.get().defaultBlockState()));
+        List<OreConfiguration.TargetBlockState> deepShale = List.of(OreConfiguration.target(gneissReplaceable,
+                ModBlocks.LUNARSHALE.get().defaultBlockState()));
+        List<OreConfiguration.TargetBlockState> deepSlate = List.of(OreConfiguration.target(gneissReplaceable,
+                ModBlocks.LUNARSLATE.get().defaultBlockState()));
+        
+        register(context, MARBLE_KEY, Feature.ORE, new OreConfiguration(marble, 16));
+        register(context, LUNARSHALE_KEY, Feature.ORE, new OreConfiguration(shale, 32));
+        register(context, LUNARSLATE_KEY, Feature.ORE, new OreConfiguration(slate, 16));
+
+        register(context, DEEP_MARBLE_KEY, Feature.ORE, new OreConfiguration(deepMarble, 32));
+        register(context, DEEP_LUNARSHALE_KEY, Feature.ORE, new OreConfiguration(deepShale, 8));
+        register(context, DEEP_LUNARSLATE_KEY, Feature.ORE, new OreConfiguration(deepSlate, 16));
 		
         //tree register
         register(context, CELEST_KEY, Feature.TREE, new TreeConfiguration.TreeConfigurationBuilder(

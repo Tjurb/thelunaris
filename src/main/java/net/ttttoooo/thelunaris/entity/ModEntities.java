@@ -26,7 +26,7 @@ public class ModEntities {
             ENTITY_TYPES.register("mooncow", () -> EntityType.Builder.of(MooncowEntity:: new, MobCategory.CREATURE)
             		.sized(2.0F, 2.0F).build("mooncow"));
     
-  //amphibious animals
+    //amphibious animals
     public static final RegistryObject<EntityType<MoonsnailEntity>> MOONSNAIL =
             ENTITY_TYPES.register("moonsnail", () -> EntityType.Builder.of(MoonsnailEntity:: new, MobCategory.CREATURE)
             		.sized(0.5F, 0.5F).build("moonsnail"));
@@ -39,13 +39,13 @@ public class ModEntities {
   //hostile animals
     public static final RegistryObject<EntityType<PhyrexEntity>> PHYREX =
             ENTITY_TYPES.register("phyrex", () -> EntityType.Builder.of(PhyrexEntity:: new, MobCategory.MONSTER)
-            		.sized(2.0F, 1.0F).build("phyrex"));
+            		.sized(1.5F, 2.0F).build("phyrex"));
     public static final RegistryObject<EntityType<LunarsleeperEntity>> LUNARSLEEPER =
             ENTITY_TYPES.register("lunarsleeper", () -> EntityType.Builder.of(LunarsleeperEntity:: new, MobCategory.MONSTER)
             		.sized(1.0F, 2.0F).build("lunarsleeper"));
     public static final RegistryObject<EntityType<HexEntity>> HEX =
             ENTITY_TYPES.register("hex", () -> EntityType.Builder.of(HexEntity:: new, MobCategory.MONSTER)
-            		.sized(2.0F, 1.0F).build("hex"));
+            		.sized(1.0F, 2.0F).build("hex"));
     
     //projectiles
     public static final RegistryObject<EntityType<HexProjectile>> HEX_PROJECTILE =

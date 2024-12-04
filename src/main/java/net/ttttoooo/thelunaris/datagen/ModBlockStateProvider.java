@@ -15,13 +15,19 @@ import net.minecraft.data.models.model.TextureMapping;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.block.ButtonBlock;
 import net.minecraft.world.level.block.CropBlock;
+import net.minecraft.world.level.block.DoorBlock;
+import net.minecraft.world.level.block.FenceBlock;
+import net.minecraft.world.level.block.FenceGateBlock;
 import net.minecraft.world.level.block.GlassBlock;
 import net.minecraft.world.level.block.IronBarsBlock;
 import net.minecraft.world.level.block.NetherPortalBlock;
+import net.minecraft.world.level.block.PressurePlateBlock;
 import net.minecraft.world.level.block.RotatedPillarBlock;
 import net.minecraft.world.level.block.SlabBlock;
 import net.minecraft.world.level.block.StairBlock;
+import net.minecraft.world.level.block.TrapDoorBlock;
 import net.minecraft.world.level.block.WallBlock;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.properties.BlockStateProperties;
@@ -61,7 +67,7 @@ public class ModBlockStateProvider extends BlockStateProvider{
         paneBlockWithRenderType((IronBarsBlock) ModBlocks.LUNGLASS_PANE.get(), 
         		new ResourceLocation(TheLunaris.MODID, "block/lunglass"),
         		new ResourceLocation(TheLunaris.MODID, "block/lunglass_pane"), "translucent");
-
+        
         //solid resources
         simpleBlockWithItem(ModBlocks.LUNARITE_BLOCK.get(),
                 new ModelFile.UncheckedModelFile(modLoc("block/lunarite_block")));
@@ -102,7 +108,13 @@ public class ModBlockStateProvider extends BlockStateProvider{
 		blockWithItem(ModBlocks.CELEST_PLANKS);
 		stairsBlock(((StairBlock) ModBlocks.CELEST_STAIRS.get()), blockTexture(ModBlocks.CELEST_PLANKS.get()));
 		slabBlock(((SlabBlock) ModBlocks.CELEST_SLAB.get()), blockTexture(ModBlocks.CELEST_PLANKS.get()), blockTexture(ModBlocks.CELEST_PLANKS.get()));
-
+		buttonBlock(((ButtonBlock) ModBlocks.CELEST_BUTTON.get()), blockTexture(ModBlocks.CELEST_PLANKS.get()));
+        pressurePlateBlock(((PressurePlateBlock) ModBlocks.CELEST_PRESSURE_PLATE.get()), blockTexture(ModBlocks.CELEST_PLANKS.get()));
+        fenceBlock(((FenceBlock) ModBlocks.CELEST_FENCE.get()), blockTexture(ModBlocks.CELEST_PLANKS.get()));
+        fenceGateBlock(((FenceGateBlock) ModBlocks.CELEST_FENCE_GATE.get()), blockTexture(ModBlocks.CELEST_PLANKS.get()));
+        doorBlockWithRenderType(((DoorBlock) ModBlocks.CELEST_DOOR.get()), modLoc("block/celest_door_bottom"), modLoc("block/celest_door_top"), "cutout");
+        trapdoorBlockWithRenderType(((TrapDoorBlock) ModBlocks.CELEST_TRAPDOOR.get()), modLoc("block/celest_trapdoor"), true, "cutout");
+        
 		logBlock(((RotatedPillarBlock)ModBlocks.STELLAR_LOG.get()));
 		saplingBlock(ModBlocks.STELLAR_SAPLING);
 		axisBlock(((RotatedPillarBlock)ModBlocks.STELLAR_WOOD.get()),
@@ -119,7 +131,13 @@ public class ModBlockStateProvider extends BlockStateProvider{
 		blockWithItem(ModBlocks.STELLAR_PLANKS);
 		stairsBlock(((StairBlock) ModBlocks.STELLAR_STAIRS.get()), blockTexture(ModBlocks.STELLAR_PLANKS.get()));
 		slabBlock(((SlabBlock) ModBlocks.STELLAR_SLAB.get()), blockTexture(ModBlocks.STELLAR_PLANKS.get()), blockTexture(ModBlocks.STELLAR_PLANKS.get()));
-
+		buttonBlock(((ButtonBlock) ModBlocks.STELLAR_BUTTON.get()), blockTexture(ModBlocks.STELLAR_PLANKS.get()));
+        pressurePlateBlock(((PressurePlateBlock) ModBlocks.STELLAR_PRESSURE_PLATE.get()), blockTexture(ModBlocks.STELLAR_PLANKS.get()));
+        fenceBlock(((FenceBlock) ModBlocks.STELLAR_FENCE.get()), blockTexture(ModBlocks.STELLAR_PLANKS.get()));
+        fenceGateBlock(((FenceGateBlock) ModBlocks.STELLAR_FENCE_GATE.get()), blockTexture(ModBlocks.STELLAR_PLANKS.get()));
+        doorBlockWithRenderType(((DoorBlock) ModBlocks.STELLAR_DOOR.get()), modLoc("block/stellar_door_bottom"), modLoc("block/stellar_door_top"), "cutout");
+        trapdoorBlockWithRenderType(((TrapDoorBlock) ModBlocks.STELLAR_TRAPDOOR.get()), modLoc("block/stellar_trapdoor"), true, "cutout");
+        
 		logBlock(((RotatedPillarBlock)ModBlocks.SKYOAK_LOG.get()));
 		saplingBlock(ModBlocks.SKYOAK_SAPLING);
 		axisBlock(((RotatedPillarBlock)ModBlocks.SKYOAK_WOOD.get()),
@@ -136,7 +154,13 @@ public class ModBlockStateProvider extends BlockStateProvider{
 		blockWithItem(ModBlocks.SKYOAK_PLANKS);
 		stairsBlock(((StairBlock) ModBlocks.SKYOAK_STAIRS.get()), blockTexture(ModBlocks.SKYOAK_PLANKS.get()));
 		slabBlock(((SlabBlock) ModBlocks.SKYOAK_SLAB.get()), blockTexture(ModBlocks.SKYOAK_PLANKS.get()), blockTexture(ModBlocks.SKYOAK_PLANKS.get()));
-		
+		buttonBlock(((ButtonBlock) ModBlocks.SKYOAK_BUTTON.get()), blockTexture(ModBlocks.SKYOAK_PLANKS.get()));
+        pressurePlateBlock(((PressurePlateBlock) ModBlocks.SKYOAK_PRESSURE_PLATE.get()), blockTexture(ModBlocks.SKYOAK_PLANKS.get()));
+        fenceBlock(((FenceBlock) ModBlocks.SKYOAK_FENCE.get()), blockTexture(ModBlocks.SKYOAK_PLANKS.get()));
+        fenceGateBlock(((FenceGateBlock) ModBlocks.SKYOAK_FENCE_GATE.get()), blockTexture(ModBlocks.SKYOAK_PLANKS.get()));
+        doorBlockWithRenderType(((DoorBlock) ModBlocks.SKYOAK_DOOR.get()), modLoc("block/skyoak_door_bottom"), modLoc("block/skyoak_door_top"), "cutout");
+        trapdoorBlockWithRenderType(((TrapDoorBlock) ModBlocks.SKYOAK_TRAPDOOR.get()), modLoc("block/skyoak_trapdoor"), true, "cutout");
+        
 		//stone blocks
 		blockWithItem(ModBlocks.VAILSTONE);
 		blockWithItem(ModBlocks.VAILSTONEBRICK);

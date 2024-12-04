@@ -53,7 +53,7 @@ public class ModDimensions {
                 BlockTags.INFINIBURN_OVERWORLD, // infiniburn
                 BuiltinDimensionTypes.OVERWORLD_EFFECTS, // effectsLocation
                 0.0f, // ambientLight
-                new DimensionType.MonsterSettings(false, true, UniformInt.of(0, 7), 0)));
+                new DimensionType.MonsterSettings(true, false, UniformInt.of(0, 7), 0)));
     }
 
     // Register dimension stem with custom noise settings

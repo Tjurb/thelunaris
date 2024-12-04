@@ -51,22 +51,16 @@ public class HexProjectile extends Fireball{
 
 	protected void onHitBlock(BlockHitResult p_37384_) {
 		super.onHitBlock(p_37384_);
-		      if (!this.level().isClientSide) {
-		         Entity entity = this.getOwner();
-		         if (!(entity instanceof Mob) || net.minecraftforge.event.ForgeEventFactory.getMobGriefingEvent(this.level(), entity)) {
-		            BlockPos blockpos = p_37384_.getBlockPos().relative(p_37384_.getDirection());
-		            if (this.level().isEmptyBlock(blockpos)) {
-		               this.level().setBlockAndUpdate(blockpos, BaseFireBlock.getState(this.level(), blockpos));
-		            }
-		         }
-		      }
+		if (!this.level().isClientSide) {
+	         this.discard();
+		}
 	}
 
 	protected void onHit(HitResult p_37388_) {
 		super.onHit(p_37388_);
-		      if (!this.level().isClientSide) {
-		         this.discard();
-		      }
+		if (!this.level().isClientSide) {
+			this.discard();
+		}
 	}
 	
 	public void setItem(ItemStack p_37011_) {

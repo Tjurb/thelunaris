@@ -112,6 +112,9 @@ public class ModItemModelProvider extends ItemModelProvider{
 		trimmedArmorItem(ModItems.LUNARITE_LEGGINGS);
 		trimmedArmorItem(ModItems.LUNARITE_BOOTS);
 		
+		//panes
+		panesimpleItem(ModBlocks.LUNGLASS_PANE, ModBlocks.LUNGLASS);
+		
 		//walls
 		wallItem(ModBlocks.COBBLED_VAILSTONE_WALL, ModBlocks.COBBLED_VAILSTONE);
 		wallItem(ModBlocks.VAILSTONEBRICK_WALL, ModBlocks.VAILSTONEBRICK);
@@ -141,7 +144,35 @@ public class ModItemModelProvider extends ItemModelProvider{
 		evenSimplerBlockItem(ModBlocks.STELLAR_SLAB);
 		evenSimplerBlockItem(ModBlocks.SKYOAK_SLAB);
 		evenSimplerBlockItem(ModBlocks.LUNSANDSTONE_SLAB);
+		
+		//fences
+		fenceItem(ModBlocks.CELEST_FENCE, ModBlocks.CELEST_PLANKS);
+        evenSimplerBlockItem(ModBlocks.CELEST_FENCE_GATE);
+		fenceItem(ModBlocks.STELLAR_FENCE, ModBlocks.STELLAR_PLANKS);
+        evenSimplerBlockItem(ModBlocks.STELLAR_FENCE_GATE);
+		fenceItem(ModBlocks.SKYOAK_FENCE, ModBlocks.SKYOAK_PLANKS);
+        evenSimplerBlockItem(ModBlocks.SKYOAK_FENCE_GATE);
+		
+		//pressureplates
+        evenSimplerBlockItem(ModBlocks.CELEST_PRESSURE_PLATE);
+        evenSimplerBlockItem(ModBlocks.STELLAR_PRESSURE_PLATE);
+        evenSimplerBlockItem(ModBlocks.SKYOAK_PRESSURE_PLATE);
+        
+        //buttons
+        buttonItem(ModBlocks.CELEST_BUTTON, ModBlocks.CELEST_PLANKS);
+        buttonItem(ModBlocks.STELLAR_BUTTON, ModBlocks.STELLAR_PLANKS);
+        buttonItem(ModBlocks.SKYOAK_BUTTON, ModBlocks.SKYOAK_PLANKS);
 
+        //doors
+        simpleBlockItem(ModBlocks.CELEST_DOOR);
+        simpleBlockItem(ModBlocks.STELLAR_DOOR);
+        simpleBlockItem(ModBlocks.SKYOAK_DOOR);
+        
+        //trapdoors
+        trapdoorItem(ModBlocks.CELEST_TRAPDOOR);
+        trapdoorItem(ModBlocks.STELLAR_TRAPDOOR);
+        trapdoorItem(ModBlocks.SKYOAK_TRAPDOOR);
+        
 		//saplings
 		saplingItem(ModBlocks.CELEST_SAPLING);
 		saplingItem(ModBlocks.STELLAR_SAPLING);
@@ -213,6 +244,12 @@ public class ModItemModelProvider extends ItemModelProvider{
 				new ResourceLocation(TheLunaris.MODID, "item/" + item.getId().getPath()));
 	}
 	
+	private ItemModelBuilder panesimpleItem(RegistryObject<Block> block, RegistryObject<Block> baseBlock) {
+		return withExistingParent(block.getId().getPath(),
+				new ResourceLocation("item/generated")).texture("layer0",
+				new ResourceLocation(TheLunaris.MODID, "block/" + baseBlock.getId().getPath())).renderType("translucent");
+	}
+	
 	private ItemModelBuilder handheldItem(RegistryObject<Item> item) {
 		return withExistingParent(item.getId().getPath(),
 				new ResourceLocation("item/handheld")).texture("layer0",
@@ -229,4 +266,25 @@ public class ModItemModelProvider extends ItemModelProvider{
 				.texture("wall", new ResourceLocation(TheLunaris.MODID, "block/" + ForgeRegistries.BLOCKS.getKey(baseBlock.get()).getPath()));
 	}
 	
+	public void trapdoorItem(RegistryObject<Block> block) {
+        this.withExistingParent(ForgeRegistries.BLOCKS.getKey(block.get()).getPath(),
+                modLoc("block/" + ForgeRegistries.BLOCKS.getKey(block.get()).getPath() + "_bottom"));
+    }
+
+    public void fenceItem(RegistryObject<Block> block, RegistryObject<Block> baseBlock) {
+        this.withExistingParent(ForgeRegistries.BLOCKS.getKey(block.get()).getPath(), mcLoc("block/fence_inventory"))
+                .texture("texture",  new ResourceLocation(TheLunaris.MODID, "block/" + ForgeRegistries.BLOCKS.getKey(baseBlock.get()).getPath()));
+    }
+
+    public void buttonItem(RegistryObject<Block> block, RegistryObject<Block> baseBlock) {
+        this.withExistingParent(ForgeRegistries.BLOCKS.getKey(block.get()).getPath(), mcLoc("block/button_inventory"))
+                .texture("texture",  new ResourceLocation(TheLunaris.MODID, "block/" + ForgeRegistries.BLOCKS.getKey(baseBlock.get()).getPath()));
+    }
+    
+
+    private ItemModelBuilder simpleBlockItem(RegistryObject<Block> item) {
+        return withExistingParent(item.getId().getPath(),
+                new ResourceLocation("item/generated")).texture("layer0",
+                new ResourceLocation(TheLunaris.MODID,"item/" + item.getId().getPath()));
+    }
 }

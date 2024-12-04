@@ -42,7 +42,13 @@
       "thelunaris:lunaris_coal_ore_placed",
       "thelunaris:large_lunaris_coal_ore_placed",
       "thelunaris:deep_lunaris_coal_ore_placed",
-      "thelunaris:large_deep_lunaris_coal_ore_placed"
+      "thelunaris:large_deep_lunaris_coal_ore_placed",
+      "thelunaris:marble_placed",
+      "thelunaris:shale_placed",
+      "thelunaris:slate_placed",
+      "thelunaris:deep_marble_placed",
+      "thelunaris:deep_shale_placed",
+      "thelunaris:deep_slate_placed"
     ],
     [],
     [],

@@ -104,6 +104,12 @@ public class ModBlockLootTables extends BlockLootSubProvider{
 		this.dropSelf(ModBlocks.STRIPPED_CELEST_WOOD.get());
 		this.dropSelf(ModBlocks.CELEST_PLANKS.get());
 		this.dropSelf(ModBlocks.CELEST_STAIRS.get());
+		this.dropSelf(ModBlocks.CELEST_BUTTON.get());
+		this.dropSelf(ModBlocks.CELEST_PRESSURE_PLATE.get());
+		this.dropSelf(ModBlocks.CELEST_FENCE.get());
+		this.dropSelf(ModBlocks.CELEST_FENCE_GATE.get());
+		this.dropSelf(ModBlocks.CELEST_DOOR.get());
+		this.dropSelf(ModBlocks.CELEST_TRAPDOOR.get());
 
 		this.dropSelf(ModBlocks.STELLAR_LOG.get());
 		this.dropSelf(ModBlocks.STELLAR_SAPLING.get());
@@ -112,6 +118,12 @@ public class ModBlockLootTables extends BlockLootSubProvider{
 		this.dropSelf(ModBlocks.STRIPPED_STELLAR_WOOD.get());
 		this.dropSelf(ModBlocks.STELLAR_PLANKS.get());
 		this.dropSelf(ModBlocks.STELLAR_STAIRS.get());
+		this.dropSelf(ModBlocks.STELLAR_BUTTON.get());
+		this.dropSelf(ModBlocks.STELLAR_PRESSURE_PLATE.get());
+		this.dropSelf(ModBlocks.STELLAR_FENCE.get());
+		this.dropSelf(ModBlocks.STELLAR_FENCE_GATE.get());
+		this.dropSelf(ModBlocks.STELLAR_DOOR.get());
+		this.dropSelf(ModBlocks.STELLAR_TRAPDOOR.get());
 
 		this.dropSelf(ModBlocks.SKYOAK_LOG.get());
 		this.dropSelf(ModBlocks.SKYOAK_SAPLING.get());
@@ -120,6 +132,12 @@ public class ModBlockLootTables extends BlockLootSubProvider{
 		this.dropSelf(ModBlocks.STRIPPED_SKYOAK_WOOD.get());
 		this.dropSelf(ModBlocks.SKYOAK_PLANKS.get());
 		this.dropSelf(ModBlocks.SKYOAK_STAIRS.get());
+		this.dropSelf(ModBlocks.SKYOAK_BUTTON.get());
+		this.dropSelf(ModBlocks.SKYOAK_PRESSURE_PLATE.get());
+		this.dropSelf(ModBlocks.SKYOAK_FENCE.get());
+		this.dropSelf(ModBlocks.SKYOAK_FENCE_GATE.get());
+		this.dropSelf(ModBlocks.SKYOAK_DOOR.get());
+		this.dropSelf(ModBlocks.SKYOAK_TRAPDOOR.get());
 		
 		this.add(ModBlocks.LUNARITE_ORE.get(),
 				block -> createDiamondLikeOreDrops(ModBlocks.LUNARITE_ORE.get(), ModItems.LUNARITE.get()));

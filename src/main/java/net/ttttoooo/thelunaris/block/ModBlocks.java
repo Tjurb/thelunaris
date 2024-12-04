@@ -6,24 +6,32 @@ import java.util.function.Supplier;
 
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
+import net.minecraft.sounds.SoundEvents;
 import net.minecraft.util.valueproviders.UniformInt;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
+import net.minecraft.world.level.block.ButtonBlock;
 import net.minecraft.world.level.block.CraftingTableBlock;
+import net.minecraft.world.level.block.DoorBlock;
 import net.minecraft.world.level.block.DropExperienceBlock;
+import net.minecraft.world.level.block.FenceBlock;
+import net.minecraft.world.level.block.FenceGateBlock;
 import net.minecraft.world.level.block.GlassBlock;
 import net.minecraft.world.level.block.IronBarsBlock;
 import net.minecraft.world.level.block.LeavesBlock;
+import net.minecraft.world.level.block.PressurePlateBlock;
 import net.minecraft.world.level.block.SaplingBlock;
 import net.minecraft.world.level.block.SlabBlock;
 import net.minecraft.world.level.block.SoundType;
 import net.minecraft.world.level.block.StairBlock;
 import net.minecraft.world.level.block.TallGrassBlock;
+import net.minecraft.world.level.block.TrapDoorBlock;
 import net.minecraft.world.level.block.WallBlock;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.block.state.BlockState;
+import net.minecraft.world.level.block.state.properties.BlockSetType;
 import net.minecraft.world.level.material.PushReaction;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.registries.DeferredRegister;
@@ -183,6 +191,23 @@ public class ModBlocks {
                     return 5;
                 }
 			});
+    public static final RegistryObject<Block> CELEST_BUTTON = registerBlock("celest_button",
+            () -> new ButtonBlock(BlockBehaviour.Properties.copy(Blocks.OAK_BUTTON).sound(SoundType.WOOD),
+                    BlockSetType.OAK, 10, true));
+    public static final RegistryObject<Block> CELEST_PRESSURE_PLATE = registerBlock("celest_pressure_plate",
+            () -> new PressurePlateBlock(PressurePlateBlock.Sensitivity.EVERYTHING, BlockBehaviour.Properties.copy(Blocks.OAK_PLANKS)
+            		.sound(SoundType.WOOD),BlockSetType.OAK));
+    public static final RegistryObject<Block> CELEST_FENCE = registerBlock("celest_fence",
+            () -> new FenceBlock(BlockBehaviour.Properties.copy(Blocks.OAK_PLANKS).sound(SoundType.WOOD)));
+    public static final RegistryObject<Block> CELEST_FENCE_GATE = registerBlock("celest_fence_gate",
+            () -> new FenceGateBlock(BlockBehaviour.Properties.copy(Blocks.OAK_PLANKS).sound(SoundType.WOOD),
+            		SoundEvents.FENCE_GATE_OPEN, SoundEvents.FENCE_GATE_CLOSE));
+    public static final RegistryObject<Block> CELEST_DOOR = registerBlock("celest_door",
+            () -> new DoorBlock(BlockBehaviour.Properties.copy(Blocks.OAK_PLANKS).sound(SoundType.WOOD)
+            		.noOcclusion(), BlockSetType.OAK));
+    public static final RegistryObject<Block> CELEST_TRAPDOOR = registerBlock("celest_trapdoor",
+            () -> new TrapDoorBlock(BlockBehaviour.Properties.copy(Blocks.OAK_PLANKS).sound(SoundType.WOOD)
+            		.noOcclusion(), BlockSetType.OAK));
 
 	public static final RegistryObject<Block> STELLAR_LOG = registerBlock("stellar_log", 
 			() -> new ModFlammableRotatedPillarBlock(BlockBehaviour.Properties.copy(Blocks.OAK_LOG).sound(SoundType.WOOD).strength(3f)));
@@ -257,6 +282,23 @@ public class ModBlocks {
                     return 5;
                 }
 			});
+    public static final RegistryObject<Block> STELLAR_BUTTON = registerBlock("stellar_button",
+            () -> new ButtonBlock(BlockBehaviour.Properties.copy(Blocks.OAK_BUTTON).sound(SoundType.WOOD),
+                    BlockSetType.OAK, 10, true));
+    public static final RegistryObject<Block> STELLAR_PRESSURE_PLATE = registerBlock("stellar_pressure_plate",
+            () -> new PressurePlateBlock(PressurePlateBlock.Sensitivity.EVERYTHING, BlockBehaviour.Properties.copy(Blocks.OAK_PLANKS)
+            		.sound(SoundType.WOOD),BlockSetType.OAK));
+    public static final RegistryObject<Block> STELLAR_FENCE = registerBlock("stellar_fence",
+            () -> new FenceBlock(BlockBehaviour.Properties.copy(Blocks.OAK_PLANKS).sound(SoundType.WOOD)));
+    public static final RegistryObject<Block> STELLAR_FENCE_GATE = registerBlock("stellar_fence_gate",
+            () -> new FenceGateBlock(BlockBehaviour.Properties.copy(Blocks.OAK_PLANKS).sound(SoundType.WOOD),
+            		SoundEvents.FENCE_GATE_OPEN, SoundEvents.FENCE_GATE_CLOSE));
+    public static final RegistryObject<Block> STELLAR_DOOR = registerBlock("stellar_door",
+            () -> new DoorBlock(BlockBehaviour.Properties.copy(Blocks.OAK_PLANKS).sound(SoundType.WOOD)
+            		.noOcclusion(), BlockSetType.OAK));
+    public static final RegistryObject<Block> STELLAR_TRAPDOOR = registerBlock("stellar_trapdoor",
+            () -> new TrapDoorBlock(BlockBehaviour.Properties.copy(Blocks.OAK_PLANKS).sound(SoundType.WOOD)
+            		.noOcclusion(), BlockSetType.OAK));
 
 	public static final RegistryObject<Block> SKYOAK_LOG = registerBlock("skyoak_log", 
 			() -> new ModFlammableRotatedPillarBlock(BlockBehaviour.Properties.copy(Blocks.OAK_LOG).sound(SoundType.WOOD).strength(3f)));
@@ -331,6 +373,23 @@ public class ModBlocks {
                     return 5;
                 }
 			});
+    public static final RegistryObject<Block> SKYOAK_BUTTON = registerBlock("skyoak_button",
+            () -> new ButtonBlock(BlockBehaviour.Properties.copy(Blocks.OAK_BUTTON).sound(SoundType.WOOD),
+                    BlockSetType.OAK, 10, true));
+    public static final RegistryObject<Block> SKYOAK_PRESSURE_PLATE = registerBlock("skyoak_pressure_plate",
+            () -> new PressurePlateBlock(PressurePlateBlock.Sensitivity.EVERYTHING, BlockBehaviour.Properties.copy(Blocks.OAK_PLANKS)
+            		.sound(SoundType.WOOD),BlockSetType.OAK));
+    public static final RegistryObject<Block> SKYOAK_FENCE = registerBlock("skyoak_fence",
+            () -> new FenceBlock(BlockBehaviour.Properties.copy(Blocks.OAK_PLANKS).sound(SoundType.WOOD)));
+    public static final RegistryObject<Block> SKYOAK_FENCE_GATE = registerBlock("skyoak_fence_gate",
+            () -> new FenceGateBlock(BlockBehaviour.Properties.copy(Blocks.OAK_PLANKS).sound(SoundType.WOOD),
+            		SoundEvents.FENCE_GATE_OPEN, SoundEvents.FENCE_GATE_CLOSE));
+    public static final RegistryObject<Block> SKYOAK_DOOR = registerBlock("skyoak_door",
+            () -> new DoorBlock(BlockBehaviour.Properties.copy(Blocks.OAK_PLANKS).sound(SoundType.WOOD)
+            		.noOcclusion(), BlockSetType.OAK));
+    public static final RegistryObject<Block> SKYOAK_TRAPDOOR = registerBlock("skyoak_trapdoor",
+            () -> new TrapDoorBlock(BlockBehaviour.Properties.copy(Blocks.OAK_PLANKS).sound(SoundType.WOOD)
+            		.noOcclusion(), BlockSetType.OAK));
 	
 	//Sapling Blocks
 	public static final RegistryObject<Block> CELEST_SAPLING = registerBlock("celest_sapling", 
