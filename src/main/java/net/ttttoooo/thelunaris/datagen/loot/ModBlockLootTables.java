@@ -92,6 +92,8 @@ public class ModBlockLootTables extends BlockLootSubProvider{
 		this.add(ModBlocks.LUNGRASS_BLOCK.get(),
 				block -> createGrassBlockLikeDrops(ModBlocks.LUNGRASS_BLOCK.get(), ModBlocks.LUNDIRT.get()));
 		this.dropSelf(ModBlocks.LUNDIRT.get());
+		this.add(ModBlocks.LUNDIRT_FARMLAND.get(),
+				block -> createGrassBlockLikeDrops(ModBlocks.LUNDIRT.get(), ModBlocks.LUNDIRT.get()));
 		this.dropSelf(ModBlocks.LUNSAND.get());
 		this.dropSelf(ModBlocks.LUNSANDSTONE.get());
 		this.dropSelf(ModBlocks.LUNSANDSTONE_STAIRS.get());

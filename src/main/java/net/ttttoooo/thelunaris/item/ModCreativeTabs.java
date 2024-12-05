@@ -151,6 +151,7 @@ public class ModCreativeTabs {
 				pOutput.accept(ModItems.ARCHFISH.get());
 				pOutput.accept(ModItems.SARROT.get());
 				pOutput.accept(ModItems.COOKED_ARCHFISH.get());
+				pOutput.accept(ModItems.SPICY_ARCHFISH.get());
 				pOutput.accept(ModItems.LOONBERRY_PIE.get());
 				pOutput.accept(ModItems.LUNAR_WHEAT.get());
 				

@@ -85,6 +85,7 @@ public class ModBlockStateProvider extends BlockStateProvider{
 		blockWithItem(ModBlocks.LUNDIRT);
         simpleBlockWithItem(ModBlocks.LUNGRASS_BLOCK.get(),
                 new ModelFile.UncheckedModelFile(modLoc("block/lungrass_block")));
+        blockWithItem(ModBlocks.LUNDIRT_FARMLAND);
 		blockWithItem(ModBlocks.LUNSAND);
 		blockWithItem(ModBlocks.LUNSANDSTONE);
 		stairsBlock(((StairBlock) ModBlocks.LUNSANDSTONE_STAIRS.get()), blockTexture(ModBlocks.LUNSANDSTONE.get()));

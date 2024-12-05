@@ -8,7 +8,6 @@ import net.minecraft.core.HolderLookup;
 import net.minecraft.core.HolderLookup.Provider;
 import net.minecraft.data.PackOutput;
 import net.minecraft.tags.BlockTags;
-import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraftforge.common.Tags;
 import net.minecraftforge.common.data.BlockTagsProvider;
@@ -25,7 +24,7 @@ public class ModBlockTagGenerator extends BlockTagsProvider{
 	}
 
 	@Override
-	protected void addTags(HolderLookup.Provider pProvider) {	
+	protected void addTags(HolderLookup.Provider pProvider) {
 		this.tag(BlockTags.MINEABLE_WITH_PICKAXE)
 			.add(ModBlocks.VAILSTONE.get(),
 					ModBlocks.VAILSTONEBRICK.get(),

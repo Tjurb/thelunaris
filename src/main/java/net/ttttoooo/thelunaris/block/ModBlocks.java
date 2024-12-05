@@ -43,6 +43,7 @@ import net.ttttoooo.thelunaris.block.custom.LunGrassBlock;
 import net.ttttoooo.thelunaris.block.custom.LunWheatCropBlock;
 import net.ttttoooo.thelunaris.block.custom.LunarCrafter;
 import net.ttttoooo.thelunaris.block.custom.LunarisCraftingTable;
+import net.ttttoooo.thelunaris.block.custom.LundirtFarmlandBlock;
 import net.ttttoooo.thelunaris.block.custom.ModFlammableRotatedPillarBlock;
 import net.ttttoooo.thelunaris.block.custom.SarrotCropBlock;
 import net.ttttoooo.thelunaris.block.custom.VailstoneFurnace;
@@ -97,6 +98,8 @@ public class ModBlocks {
 	//Dirt and Sand Blocks	
 	public static final RegistryObject<Block> LUNDIRT = registerBlock("lundirt", 
 			() -> new Block(BlockBehaviour.Properties.copy(Blocks.DIRT).sound(SoundType.GRAVEL)));
+	public static final RegistryObject<Block> LUNDIRT_FARMLAND = registerBlock("lundirt_farmland", 
+			() -> new LundirtFarmlandBlock(BlockBehaviour.Properties.copy(Blocks.DIRT).sound(SoundType.GRAVEL)));
 	public static final RegistryObject<Block> LUNGRASS_BLOCK = registerBlock("lungrass_block", 
 			() -> new LunGrassBlock(BlockBehaviour.Properties.copy(Blocks.GRASS_BLOCK).sound(SoundType.GRASS)));
 	public static final RegistryObject<Block> LUNSAND = registerBlock("lunsand", 
