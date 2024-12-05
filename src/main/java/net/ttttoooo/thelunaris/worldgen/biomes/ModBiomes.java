@@ -18,6 +18,8 @@ public class ModBiomes {
 	public static final ResourceKey<Biome> SKYWORD_MOUNTAINS = createKey("skyword_mountains");
 	public static final ResourceKey<Biome> SHIMMERING_COAST = createKey("shimmering_coast");
 	public static final ResourceKey<Biome> SAPPHIRE_RIVER = createKey("sapphire_river");
+	public static final ResourceKey<Biome> DUSKLIGHT_CAVES = createKey("dusklight_caves");
+	public static final ResourceKey<Biome> CRIMSON_SHELFS = createKey("crimson_shelfs");
 
 	private static ResourceKey<Biome> createKey(String name) {
         return ResourceKey.create(Registries.BIOME, new ResourceLocation(TheLunaris.MODID, name));
@@ -32,5 +34,7 @@ public class ModBiomes {
         context.register(SKYWORD_MOUNTAINS, LunarisBiomeBuilder.skymountain(placedFeatures, vanillaConfiguredCarvers));
         context.register(SHIMMERING_COAST, LunarisBiomeBuilder.shimmeringcoast(placedFeatures, vanillaConfiguredCarvers));
         context.register(SAPPHIRE_RIVER, LunarisBiomeBuilder.sapphireriver(placedFeatures, vanillaConfiguredCarvers));
+        context.register(DUSKLIGHT_CAVES, LunarisBiomeBuilder.dusklightcave(placedFeatures, vanillaConfiguredCarvers));
+        context.register(CRIMSON_SHELFS, LunarisBiomeBuilder.crimsonshelf(placedFeatures, vanillaConfiguredCarvers));
     }
 }

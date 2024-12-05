@@ -16,7 +16,7 @@
       "max_delay": 24000,
       "min_delay": 12000,
       "replace_current_music": false,
-      "sound": "minecraft:music.overworld.forest"
+      "sound": "minecraft:music.nether.crimson_forest"
     },
     "sky_color": 1196646,
     "water_color": 1118549,
@@ -49,14 +49,6 @@
       "thelunaris:deep_marble_placed",
       "thelunaris:deep_shale_placed",
       "thelunaris:deep_slate_placed"
-    ],
-    [],
-    [],
-    [
-      "thelunaris:celest_placed",
-      "thelunaris:stellar_placed",
-      "thelunaris:lunaris_grass_patch_placed",
-      "thelunaris:lunaris_sarrot_patch_placed"
     ]
   ],
   "has_precipitation": false,
@@ -65,18 +57,6 @@
     "ambient": [],
     "axolotls": [],
     "creature": [
-      {
-        "type": "thelunaris:mooncow",
-        "maxCount": 4,
-        "minCount": 2,
-        "weight": 80
-      },
-      {
-        "type": "thelunaris:moonsnail",
-        "maxCount": 2,
-        "minCount": 1,
-        "weight": 20
-      },
       {
         "type": "thelunaris:archfish",
         "maxCount": 5,
@@ -90,13 +70,13 @@
         "type": "thelunaris:phyrex",
         "maxCount": 2,
         "minCount": 1,
-        "weight": 10
+        "weight": 5
       },
       {
         "type": "thelunaris:hex",
         "maxCount": 3,
         "minCount": 2,
-        "weight": 5
+        "weight": 50
       }
     ],
     "underground_water_creature": [],

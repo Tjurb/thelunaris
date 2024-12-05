@@ -63,6 +63,12 @@
     "axolotls": [],
     "creature": [
       {
+        "type": "thelunaris:archfish",
+        "maxCount": 5,
+        "minCount": 3,
+        "weight": 40
+      },
+      {
         "type": "thelunaris:moonsnail",
         "maxCount": 3,
         "minCount": 2,

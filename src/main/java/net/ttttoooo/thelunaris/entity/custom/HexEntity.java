@@ -9,12 +9,10 @@ import net.minecraft.network.syncher.EntityDataSerializers;
 import net.minecraft.network.syncher.SynchedEntityData;
 import net.minecraft.sounds.SoundEvent;
 import net.minecraft.sounds.SoundEvents;
-import net.minecraft.util.RandomSource;
 import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.world.entity.AnimationState;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.LivingEntity;
-import net.minecraft.world.entity.MobSpawnType;
 import net.minecraft.world.entity.Pose;
 import net.minecraft.world.entity.ai.attributes.AttributeSupplier;
 import net.minecraft.world.entity.ai.attributes.Attributes;
@@ -26,15 +24,9 @@ import net.minecraft.world.entity.ai.goal.WaterAvoidingRandomStrollGoal;
 import net.minecraft.world.entity.ai.goal.target.HurtByTargetGoal;
 import net.minecraft.world.entity.ai.goal.target.NearestAttackableTargetGoal;
 import net.minecraft.world.entity.animal.IronGolem;
-import net.minecraft.world.entity.monster.Blaze;
-import net.minecraft.world.entity.monster.Husk;
 import net.minecraft.world.entity.monster.Monster;
 import net.minecraft.world.entity.player.Player;
-import net.minecraft.world.entity.projectile.SmallFireball;
 import net.minecraft.world.level.Level;
-import net.minecraft.world.level.ServerLevelAccessor;
-import net.ttttoooo.thelunaris.entity.ModEntities;
-import net.ttttoooo.thelunaris.entity.ai.PhyrexAttackGoal;
 
 public class HexEntity extends Monster {
 	private static final EntityDataAccessor<Boolean> ATTACKING =
@@ -42,6 +34,7 @@ public class HexEntity extends Monster {
     
 	public HexEntity(EntityType<? extends Monster> p_27557_, Level p_27558_) {
 		super(p_27557_, p_27558_);
+		  this.checkSlowFallDistance();;
 	      this.xpReward = 10;
 	}
 	
@@ -126,7 +119,7 @@ public class HexEntity extends Monster {
 		return createMonsterAttributes()
 				.add(Attributes.MAX_HEALTH, 20D)
 				.add(Attributes.MOVEMENT_SPEED, (double)0.2F)
-				.add(Attributes.FOLLOW_RANGE, 24D)
+				.add(Attributes.FOLLOW_RANGE, 48D)
                 .add(Attributes.ARMOR_TOUGHNESS, 0.1f)
                 .add(Attributes.ATTACK_KNOCKBACK, 0.5f)
                 .add(Attributes.ATTACK_DAMAGE, 2f);

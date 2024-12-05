@@ -320,7 +320,45 @@ public class ModDimensions {
                                         		Climate.Parameter.span(0F, 1F), //Erosion
                                         		Climate.Parameter.span(1F, 1F), //Depth
                                         		Climate.Parameter.span(-1F, 1F), //Weirdness
-                                        		0.0F), biomeRegistry.getOrThrow(ModBiomes.SLEEPING_SANDS))
+                                        		0.0F), biomeRegistry.getOrThrow(ModBiomes.SLEEPING_SANDS)),
+                                
+                                //Underground Biomes
+                                Pair.of(
+                                        Climate.parameters(
+                                        		Climate.Parameter.span(0.55F, 1F), //Temp
+                                        		Climate.Parameter.span(-1F, 1F), //Humidity
+                                        		Climate.Parameter.span(-0.19F, 1F), //Continentalness
+                                        		Climate.Parameter.span(-1F, -0.1F), //Erosion
+                                        		Climate.Parameter.span(0.2F, 0.9F), //Depth
+                                        		Climate.Parameter.span(-1F, 1F), //Weirdness
+                                        		0.0F), biomeRegistry.getOrThrow(ModBiomes.CRIMSON_SHELFS)),
+                                Pair.of(
+                                        Climate.parameters(
+                                        		Climate.Parameter.span(-1F, 1F), //Temp
+                                        		Climate.Parameter.span(-1F, 1F), //Humidity
+                                        		Climate.Parameter.span(-1F, 1F), //Continentalness
+                                        		Climate.Parameter.span(-1F, -0.1F), //Erosion
+                                        		Climate.Parameter.span(0.2F, 0.9F), //Depth
+                                        		Climate.Parameter.span(-1F, 1F), //Weirdness
+                                        		0.0F), biomeRegistry.getOrThrow(ModBiomes.CRIMSON_SHELFS)),
+                                Pair.of(
+                                        Climate.parameters(
+                                        		Climate.Parameter.span(-1F, -0.55F), //Temp
+                                        		Climate.Parameter.span(-1F, 1F), //Humidity
+                                        		Climate.Parameter.span(-0.19F, 1F), //Continentalness
+                                        		Climate.Parameter.span(-1F, -0.1F), //Erosion
+                                        		Climate.Parameter.span(1F, 1.1F), //Depth
+                                        		Climate.Parameter.span(-1F, 1F), //Weirdness
+                                        		0.0F), biomeRegistry.getOrThrow(ModBiomes.DUSKLIGHT_CAVES)),
+                                Pair.of(
+                                        Climate.parameters(
+                                        		Climate.Parameter.span(-1F, 1F), //Temp
+                                        		Climate.Parameter.span(-1F, 1F), //Humidity
+                                        		Climate.Parameter.span(-1F, 1F), //Continentalness
+                                        		Climate.Parameter.span(-1F, -0.1F), //Erosion
+                                        		Climate.Parameter.span(1F, 1.1F), //Depth
+                                        		Climate.Parameter.span(-1F, 1F), //Weirdness
+                                        		0.0F), biomeRegistry.getOrThrow(ModBiomes.DUSKLIGHT_CAVES))
                                 
                         ))),
                 noiseGenSettings.getOrThrow(LunarisNoiseSettings.LUNA));

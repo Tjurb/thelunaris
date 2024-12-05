@@ -1,21 +1,20 @@
 {
   "type": "minecraft:crafting_shaped",
-  "category": "equipment",
+  "category": "misc",
   "key": {
-    "L": {
-      "item": "thelunaris:lunarite"
+    "C": {
+      "item": "minecraft:coal"
     },
     "S": {
       "item": "thelunaris:lunar_stick"
     }
   },
   "pattern": [
-    " L ",
-    " S ",
-    " S "
+    "C",
+    "S"
   ],
   "result": {
-    "item": "thelunaris:lunarite_shovel"
+    "item": "minecraft:torch"
   },
   "show_notification": true
 }

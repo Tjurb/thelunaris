@@ -2,20 +2,20 @@
   "type": "minecraft:crafting_shaped",
   "category": "equipment",
   "key": {
-    "L": {
-      "item": "thelunaris:lunarite"
-    },
     "S": {
       "item": "thelunaris:lunar_stick"
+    },
+    "W": {
+      "tag": "thelunaris:lunar_planks"
     }
   },
   "pattern": [
-    " L ",
+    " W ",
     " S ",
     " S "
   ],
   "result": {
-    "item": "thelunaris:lunarite_shovel"
+    "item": "minecraft:wooden_shovel"
   },
   "show_notification": true
 }

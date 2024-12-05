@@ -9,6 +9,7 @@ import net.minecraft.data.recipes.RecipeCategory;
 import net.minecraft.data.recipes.RecipeProvider;
 import net.minecraft.data.recipes.ShapedRecipeBuilder;
 import net.minecraft.data.recipes.SimpleCookingRecipeBuilder;
+import net.minecraft.world.item.Items;
 import net.minecraft.world.item.crafting.AbstractCookingRecipe;
 import net.minecraft.world.item.crafting.Ingredient;
 import net.minecraft.world.item.crafting.RecipeSerializer;
@@ -181,7 +182,7 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
 			.save(pWriter);
 		
 		//Lunarite Tools
-		ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModItems.LUNARITE_AXE.get(),1 )
+		ShapedRecipeBuilder.shaped(RecipeCategory.TOOLS, ModItems.LUNARITE_AXE.get(),1 )
 			.pattern("LL ")
 			.pattern("LS ")
 			.pattern(" S ")
@@ -189,7 +190,7 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
 			.define('S', ModItems.LUNAR_STICK.get())
 			.unlockedBy(getHasName(ModItems.LUNARITE.get()), has(ModItems.LUNARITE.get()))
 			.save(pWriter);
-		ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModItems.LUNARITE_HOE.get(),1 )
+		ShapedRecipeBuilder.shaped(RecipeCategory.TOOLS, ModItems.LUNARITE_HOE.get(),1 )
 			.pattern("LL ")
 			.pattern(" S ")
 			.pattern(" S ")
@@ -197,7 +198,7 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
 			.define('S', ModItems.LUNAR_STICK.get())
 			.unlockedBy(getHasName(ModItems.LUNARITE.get()), has(ModItems.LUNARITE.get()))
 			.save(pWriter);
-		ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModItems.LUNARITE_PICKAXE.get(),1 )
+		ShapedRecipeBuilder.shaped(RecipeCategory.TOOLS, ModItems.LUNARITE_PICKAXE.get(),1 )
 			.pattern("LLL")
 			.pattern(" S ")
 			.pattern(" S ")
@@ -205,7 +206,7 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
 			.define('S', ModItems.LUNAR_STICK.get())
 			.unlockedBy(getHasName(ModItems.LUNARITE.get()), has(ModItems.LUNARITE.get()))
 			.save(pWriter);
-		ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModItems.LUNARITE_SHOVEL.get(),1 )
+		ShapedRecipeBuilder.shaped(RecipeCategory.TOOLS, ModItems.LUNARITE_SHOVEL.get(),1 )
 			.pattern(" L ")
 			.pattern(" S ")
 			.pattern(" S ")
@@ -213,7 +214,7 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
 			.define('S', ModItems.LUNAR_STICK.get())
 			.unlockedBy(getHasName(ModItems.LUNARITE.get()), has(ModItems.LUNARITE.get()))
 			.save(pWriter);
-		ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModItems.LUNARITE_SWORD.get(),1 )
+		ShapedRecipeBuilder.shaped(RecipeCategory.COMBAT, ModItems.LUNARITE_SWORD.get(),1 )
 			.pattern(" L ")
 			.pattern(" L ")
 			.pattern(" S ")
@@ -377,17 +378,6 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
 			.unlockedBy(getHasName(ModBlocks.SMOOTHMARBLE.get()), has(ModBlocks.SMOOTHMARBLE.get()))
 			.save(pWriter);	
 		
-		//chest
-		ShapedRecipeBuilder.shaped(RecipeCategory.MISC, Blocks.CHEST, 1)
-			.pattern("WWW")
-			.pattern("W W")
-			.pattern("WWW")
-			.define('W', ModTags.Items.LUNAR_PLANKS)
-			.unlockedBy(getHasName(ModBlocks.CELEST_PLANKS.get()), has(ModTags.Items.LUNAR_PLANKS))
-			.unlockedBy(getHasName(ModBlocks.SKYOAK_PLANKS.get()), has(ModTags.Items.LUNAR_PLANKS))
-			.unlockedBy(getHasName(ModBlocks.STELLAR_PLANKS.get()), has(ModTags.Items.LUNAR_PLANKS))
-			.save(pWriter);	
-		
 		//fence
 		ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModBlocks.CELEST_FENCE_GATE.get(),1 )
 			.pattern("   ")
@@ -483,7 +473,6 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
 			.define('P', ModBlocks.SKYOAK_PLANKS.get())
 			.unlockedBy(getHasName(ModBlocks.SKYOAK_PLANKS.get()), has(ModBlocks.SKYOAK_PLANKS.get()))
 			.save(pWriter);
-		
 	}
 	
 	protected static void oreSmelting(Consumer<FinishedRecipe> p_250654_, List<ItemLike> p_250172_, RecipeCategory p_250588_, ItemLike p_251868_, float p_250789_, int p_252144_, String p_251687_) {

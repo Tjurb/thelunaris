@@ -59,6 +59,12 @@
         "maxCount": 2,
         "minCount": 1,
         "weight": 10
+      },
+      {
+        "type": "thelunaris:archfish",
+        "maxCount": 5,
+        "minCount": 3,
+        "weight": 40
       }
     ],
     "misc": [],
