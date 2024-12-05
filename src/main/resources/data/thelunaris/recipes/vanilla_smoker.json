@@ -1,0 +1,21 @@
+{
+    "type": "minecraft:crafting_shaped",
+    "catagory": "misc",
+    "pattern": [
+        " W ",
+        "WFW",
+        " W "
+    ],
+    "key": {
+        "F": {
+            "item":"thelunaris:cobbled_vailstone"
+        },
+        "W": {
+            "tag":"thelunaris:lunar_logs"
+        }
+        
+    },
+    "result": {
+        "item": "minecraft:smoker"
+    }
+}

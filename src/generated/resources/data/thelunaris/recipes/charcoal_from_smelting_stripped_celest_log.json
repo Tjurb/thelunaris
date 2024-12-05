@@ -3,9 +3,9 @@
   "category": "misc",
   "cookingtime": 200,
   "experience": 0.1,
-  "group": "labradorite",
+  "group": "lunar_charcoal",
   "ingredient": {
-    "item": "thelunaris:deep_labradorite_ore"
+    "item": "thelunaris:stripped_celest_log"
   },
-  "result": "thelunaris:labradorite"
+  "result": "minecraft:charcoal"
 }

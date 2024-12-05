@@ -1,7 +1,7 @@
 {
   "type": "minecraft:blasting",
   "category": "misc",
-  "cookingtime": 90,
+  "cookingtime": 150,
   "experience": 0.25,
   "group": "lunarite",
   "ingredient": {

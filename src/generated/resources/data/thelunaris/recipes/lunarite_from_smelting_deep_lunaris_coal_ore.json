@@ -1,7 +1,7 @@
 {
   "type": "minecraft:smelting",
   "category": "misc",
-  "cookingtime": 50,
+  "cookingtime": 150,
   "experience": 0.1,
   "group": "lunaris_coal",
   "ingredient": {

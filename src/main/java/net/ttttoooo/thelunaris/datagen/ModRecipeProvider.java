@@ -14,12 +14,10 @@ import net.minecraft.world.item.crafting.AbstractCookingRecipe;
 import net.minecraft.world.item.crafting.Ingredient;
 import net.minecraft.world.item.crafting.RecipeSerializer;
 import net.minecraft.world.level.ItemLike;
-import net.minecraft.world.level.block.Blocks;
 import net.minecraftforge.common.crafting.conditions.IConditionBuilder;
 import net.ttttoooo.thelunaris.TheLunaris;
 import net.ttttoooo.thelunaris.block.ModBlocks;
 import net.ttttoooo.thelunaris.item.ModItems;
-import net.ttttoooo.thelunaris.util.ModTags;
 
 public class ModRecipeProvider extends RecipeProvider implements IConditionBuilder{
 	public static final List<ItemLike> LUNARITE_SMELTABLES = List.of(ModBlocks.LUNARITE_ORE.get(),
@@ -33,6 +31,12 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
 			ModBlocks.DEEP_LUNARIS_COAL_ORE.get());
 
 	public static final List<ItemLike> LUNGLASS_SMELTABLES = List.of(ModBlocks.LUNSAND.get());
+	public static final List<ItemLike> LUNAR_CHARCOAL = List.of(ModBlocks.CELEST_LOG.get(),
+			ModBlocks.STRIPPED_CELEST_LOG.get(),
+			ModBlocks.SKYOAK_LOG.get(),
+			ModBlocks.STRIPPED_SKYOAK_LOG.get(),
+			ModBlocks.STELLAR_LOG.get(),
+			ModBlocks.STRIPPED_STELLAR_LOG.get());
 	
 	public static final List<ItemLike> STONELIKE_SMELTABLES = List.of(ModBlocks.COBBLED_VAILSTONE.get());
 	public static final List<ItemLike> GNEISS_SMELTABLES = List.of(ModBlocks.GNEISS.get());
@@ -48,24 +52,26 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
 
 	@Override
 	protected void buildRecipes(Consumer<FinishedRecipe> pWriter) {	
-		oreSmelting(pWriter, LUNARIS_COAL_SMELTABLES, RecipeCategory.MISC, ModItems.LUNARITE.get(), 0.10f, 50, "lunaris_coal" );
+		oreSmelting(pWriter, LUNARIS_COAL_SMELTABLES, RecipeCategory.MISC, ModItems.LUNARITE.get(), 0.10f, 150, "lunaris_coal" );
 		oreBlasting(pWriter, LUNARIS_COAL_SMELTABLES, RecipeCategory.MISC, ModItems.LUNARITE.get(), 0.10f, 40, "lunaris_coal" );
-		oreSmelting(pWriter, LUNARITE_SMELTABLES, RecipeCategory.MISC, ModItems.LUNARITE.get(), 0.25f, 100, "lunarite" );
-		oreBlasting(pWriter, LUNARITE_SMELTABLES, RecipeCategory.MISC, ModItems.LUNARITE.get(), 0.25f, 90, "lunarite" );
-		oreSmelting(pWriter, MOONSTEEL_SMELTABLES, RecipeCategory.MISC, ModItems.MOONSTEEL.get(), 0.15f, 100, "moonsteel" );
-		oreBlasting(pWriter, MOONSTEEL_SMELTABLES, RecipeCategory.MISC, ModItems.MOONSTEEL.get(), 0.15f, 90, "moonsteel" );
-		oreSmelting(pWriter, LABRADORITE_SMELTABLES, RecipeCategory.MISC, ModItems.LABRADORITE.get(), 0.10f, 100, "labradorite" );
-		oreBlasting(pWriter, LABRADORITE_SMELTABLES, RecipeCategory.MISC, ModItems.LABRADORITE.get(), 0.10f, 90, "labradorite" );
+		oreSmelting(pWriter, LUNARITE_SMELTABLES, RecipeCategory.MISC, ModItems.LUNARITE.get(), 0.25f, 200, "lunarite" );
+		oreBlasting(pWriter, LUNARITE_SMELTABLES, RecipeCategory.MISC, ModItems.LUNARITE.get(), 0.25f, 150, "lunarite" );
+		oreSmelting(pWriter, MOONSTEEL_SMELTABLES, RecipeCategory.MISC, ModItems.MOONSTEEL.get(), 0.15f, 200, "moonsteel" );
+		oreBlasting(pWriter, MOONSTEEL_SMELTABLES, RecipeCategory.MISC, ModItems.MOONSTEEL.get(), 0.15f, 150, "moonsteel" );
+		oreSmelting(pWriter, LABRADORITE_SMELTABLES, RecipeCategory.MISC, ModItems.LABRADORITE.get(), 0.10f, 200, "labradorite" );
+		oreBlasting(pWriter, LABRADORITE_SMELTABLES, RecipeCategory.MISC, ModItems.LABRADORITE.get(), 0.10f, 150, "labradorite" );
 		
-		oreSmelting(pWriter, LUNGLASS_SMELTABLES, RecipeCategory.MISC, ModBlocks.LUNGLASS.get(), 0.10f, 50, "lunglass" );
+		oreSmelting(pWriter, LUNGLASS_SMELTABLES, RecipeCategory.MISC, ModBlocks.LUNGLASS.get(), 0.10f, 200, "lunglass" );
+		oreSmelting(pWriter, LUNAR_CHARCOAL, RecipeCategory.MISC, Items.CHARCOAL, 0.10f, 200, "lunar_charcoal" );
 		
-		oreSmelting(pWriter, STONELIKE_SMELTABLES, RecipeCategory.MISC, ModBlocks.VAILSTONE.get(), 0.10f, 50, "vailstone" );
-		oreSmelting(pWriter, GNEISS_SMELTABLES, RecipeCategory.MISC, ModBlocks.SMOOTHGNEISS.get(), 0.10f, 50, "smooth_gneiss" );
-		oreSmelting(pWriter, MARBLE_SMELTABLES, RecipeCategory.MISC, ModBlocks.SMOOTHMARBLE.get(), 0.10f, 50, "smooth_marble" );
-		oreSmelting(pWriter, SLATE_SMELTABLES, RecipeCategory.MISC, ModBlocks.SMOOTHLUNARSLATE.get(), 0.10f, 50, "smooth_lunarslate" );
-		oreSmelting(pWriter, SHALE_SMELTABLES, RecipeCategory.MISC, ModBlocks.LUNARSLATE.get(), 0.10f, 50, "lunarslate" );
+		oreSmelting(pWriter, STONELIKE_SMELTABLES, RecipeCategory.MISC, ModBlocks.VAILSTONE.get(), 0.10f, 200, "vailstone" );
+		oreSmelting(pWriter, GNEISS_SMELTABLES, RecipeCategory.MISC, ModBlocks.SMOOTHGNEISS.get(), 0.10f, 200, "smooth_gneiss" );
+		oreSmelting(pWriter, MARBLE_SMELTABLES, RecipeCategory.MISC, ModBlocks.SMOOTHMARBLE.get(), 0.10f, 200, "smooth_marble" );
+		oreSmelting(pWriter, SLATE_SMELTABLES, RecipeCategory.MISC, ModBlocks.SMOOTHLUNARSLATE.get(), 0.10f, 200, "smooth_lunarslate" );
+		oreSmelting(pWriter, SHALE_SMELTABLES, RecipeCategory.MISC, ModBlocks.LUNARSLATE.get(), 0.10f, 200, "lunarslate" );
 		
-		oreSmelting(pWriter, ARCHFISH_COOKING, RecipeCategory.MISC, ModItems.COOKED_ARCHFISH.get(), 0.10f, 80, "archfish" );
+		oreSmelting(pWriter, ARCHFISH_COOKING, RecipeCategory.MISC, ModItems.COOKED_ARCHFISH.get(), 0.20f, 200, "archfish" );
+		foodSmoking(pWriter, ARCHFISH_COOKING, RecipeCategory.MISC, ModItems.COOKED_ARCHFISH.get(), 0.20f, 150, "archfish" );
 	
 		//High level Foods
 		ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModItems.SPICY_ARCHFISH.get(),4 )
@@ -480,6 +486,9 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
 	}
 	protected static void oreBlasting(Consumer<FinishedRecipe> p_248775_, List<ItemLike> p_251504_, RecipeCategory p_248846_, ItemLike p_249735_, float p_248783_, int p_250303_, String p_251984_) {
 	      oreCooking(p_248775_, RecipeSerializer.BLASTING_RECIPE, p_251504_, p_248846_, p_249735_, p_248783_, p_250303_, p_251984_, "_from_blasting");
+	}
+	protected static void foodSmoking(Consumer<FinishedRecipe> p_248775_, List<ItemLike> p_251504_, RecipeCategory p_248846_, ItemLike p_249735_, float p_248783_, int p_250303_, String p_251984_) {
+	      oreCooking(p_248775_, RecipeSerializer.SMOKING_RECIPE, p_251504_, p_248846_, p_249735_, p_248783_, p_250303_, p_251984_, "_from_smoking");
 	}
 	protected static void oreCooking(Consumer<FinishedRecipe> p_250791_, RecipeSerializer<? extends AbstractCookingRecipe> p_251817_, List<ItemLike> p_249619_, RecipeCategory p_251154_, ItemLike p_250066_, float p_251871_, int p_251316_, String p_251450_, String p_249236_) {
 		for(ItemLike itemlike : p_249619_) {

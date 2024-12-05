@@ -196,5 +196,13 @@ public class ModBlockTagGenerator extends BlockTagsProvider{
 					ModBlocks.SKYOAK_WOOD.get(),
 					ModBlocks.STRIPPED_SKYOAK_LOG.get(),
 					ModBlocks.STRIPPED_SKYOAK_WOOD.get());
+		
+		this.tag(ModTags.Blocks.LUNAR_LOGS)
+			.add(ModBlocks.CELEST_LOG.get(),
+					ModBlocks.STRIPPED_CELEST_LOG.get(),
+					ModBlocks.SKYOAK_LOG.get(),
+					ModBlocks.STRIPPED_SKYOAK_LOG.get(),
+					ModBlocks.STELLAR_LOG.get(),
+					ModBlocks.STRIPPED_STELLAR_LOG.get());
 	}
 }
