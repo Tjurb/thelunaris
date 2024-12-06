@@ -195,6 +195,20 @@ public class ModBlockLootTables extends BlockLootSubProvider{
 			createWildLoonberryDrops(block));
 		this.add(ModBlocks.WILD_SARROT.get(), block ->
 			createWildSarrotDrops(block));
+		
+		//Flower Blocks
+		this.dropSelf(ModBlocks.ORANGEYE.get());
+		this.dropSelf(ModBlocks.CYANEYE.get());
+		this.dropSelf(ModBlocks.MAGENTEYE.get());
+		this.dropSelf(ModBlocks.LUN_CLOVER.get());
+		this.dropSelf(ModBlocks.BRAMBLE.get());
+		
+		//Potted Flowers
+        this.add(ModBlocks.POTTED_ORANGEYE.get(), createPotFlowerItemTable(ModBlocks.ORANGEYE.get()));
+        this.add(ModBlocks.POTTED_CYANEYE.get(), createPotFlowerItemTable(ModBlocks.CYANEYE.get()));
+        this.add(ModBlocks.POTTED_MAGENTEYE.get(), createPotFlowerItemTable(ModBlocks.MAGENTEYE.get()));
+        this.add(ModBlocks.POTTED_LUN_CLOVER.get(), createPotFlowerItemTable(ModBlocks.LUN_CLOVER.get()));
+        this.add(ModBlocks.POTTED_BRAMBLE.get(), createPotFlowerItemTable(ModBlocks.BRAMBLE.get()));
 	}
 	
 	protected LootTable.Builder createGrassLikeDrops(Block p_252139_) {

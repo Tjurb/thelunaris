@@ -1,0 +1,14 @@
+{
+    "type": "minecraft:crafting_shapeless",
+    "catagory": "misc",
+  "group": "lime_dye",
+    "ingredients": [
+        {
+            "item": "thelunaris:lun_clover"
+        }
+    ],
+    "result": {
+        "item": "minecraft:lime_dye",
+        "count": 2
+    }
+}

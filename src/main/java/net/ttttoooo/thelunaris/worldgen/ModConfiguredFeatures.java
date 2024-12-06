@@ -8,8 +8,10 @@ import net.minecraft.data.worldgen.features.FeatureUtils;
 import net.minecraft.data.worldgen.placement.PlacementUtils;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.resources.ResourceLocation;
+import net.minecraft.util.random.SimpleWeightedRandomList;
 import net.minecraft.util.valueproviders.ConstantInt;
 import net.minecraft.world.level.block.Blocks;
+import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.levelgen.feature.ConfiguredFeature;
 import net.minecraft.world.level.levelgen.feature.Feature;
 import net.minecraft.world.level.levelgen.feature.configurations.FeatureConfiguration;
@@ -20,6 +22,7 @@ import net.minecraft.world.level.levelgen.feature.configurations.TreeConfigurati
 import net.minecraft.world.level.levelgen.feature.featuresize.TwoLayersFeatureSize;
 import net.minecraft.world.level.levelgen.feature.foliageplacers.BlobFoliagePlacer;
 import net.minecraft.world.level.levelgen.feature.stateproviders.BlockStateProvider;
+import net.minecraft.world.level.levelgen.feature.stateproviders.WeightedStateProvider;
 import net.minecraft.world.level.levelgen.feature.trunkplacers.StraightTrunkPlacer;
 import net.minecraft.world.level.levelgen.placement.PlacedFeature;
 import net.minecraft.world.level.levelgen.structure.templatesystem.RuleTest;
@@ -70,6 +73,11 @@ public class ModConfiguredFeatures {
 	public static final ResourceKey<ConfiguredFeature<?, ?>> SINGLE_PIECE_OF_LUNGRASS = registerKey("lunaris_lungrass_single");
 	public static final ResourceKey<ConfiguredFeature<?, ?>> SINGLE_PIECE_OF_SARROT = registerKey("lunaris_sarrot_single");
 	public static final ResourceKey<ConfiguredFeature<?, ?>> SINGLE_PIECE_OF_BERRY = registerKey("lunaris_berry_single");
+	
+	//flower key
+	public static final ResourceKey<ConfiguredFeature<?, ?>> LUNARIS_FLOWER_DEFAULT_KEY = registerKey("lunaris_flower_defaulte");
+	public static final ResourceKey<ConfiguredFeature<?, ?>> LUNARIS_FLOWER_DESERT_KEY = registerKey("lunaris_flower_desert");
+	public static final ResourceKey<ConfiguredFeature<?, ?>> LUNARIS_FLOWER_MOUNTAIN_KEY = registerKey("lunaris_flower_moiuntain");
 	
 	public static void bootstrap(BootstapContext<ConfiguredFeature<?, ?>> context) {
 		//ore register
@@ -172,6 +180,21 @@ public class ModConfiguredFeatures {
         		new SimpleBlockConfiguration(BlockStateProvider.simple(ModBlocks.WILD_SARROT.get().defaultBlockState())));
         register(context, SINGLE_PIECE_OF_BERRY, Feature.SIMPLE_BLOCK, 
         		new SimpleBlockConfiguration(BlockStateProvider.simple(ModBlocks.WILD_LOONBERRY.get().defaultBlockState())));
+        
+        //flower register
+        register(context, LUNARIS_FLOWER_DEFAULT_KEY, Feature.FLOWER, 
+        		grassPatch(new WeightedStateProvider(SimpleWeightedRandomList.<BlockState>builder()
+        				.add(ModBlocks.ORANGEYE.get().defaultBlockState(), 2)
+        				.add(ModBlocks.CYANEYE.get().defaultBlockState(), 2)
+        				.add(ModBlocks.MAGENTEYE.get().defaultBlockState(), 2)
+        				.add(ModBlocks.WILD_LOONBERRY.get().defaultBlockState(), 1)), 64));
+        register(context, LUNARIS_FLOWER_DESERT_KEY, Feature.FLOWER, 
+        		grassPatch(BlockStateProvider.simple(ModBlocks.BRAMBLE.get()), 4));
+        register(context, LUNARIS_FLOWER_MOUNTAIN_KEY, Feature.FLOWER, 
+        		grassPatch(new WeightedStateProvider(SimpleWeightedRandomList.<BlockState>builder()
+        				.add(ModBlocks.LUN_CLOVER.get().defaultBlockState(), 3)
+        				.add(ModBlocks.WILD_SARROT.get().defaultBlockState(), 1)), 64));
+        
         }
 
 	public static ResourceKey<ConfiguredFeature<?, ?>> registerKey(String name) {

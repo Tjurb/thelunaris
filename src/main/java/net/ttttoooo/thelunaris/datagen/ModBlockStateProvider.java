@@ -210,6 +210,25 @@ public class ModBlockStateProvider extends BlockStateProvider{
 		saplingBlock(ModBlocks.WILD_LOONBERRY);
 		saplingBlock(ModBlocks.WILD_SARROT);
 		
+		//flower blocks
+		saplingBlock(ModBlocks.ORANGEYE);
+		saplingBlock(ModBlocks.CYANEYE);
+		saplingBlock(ModBlocks.MAGENTEYE);
+		saplingBlock(ModBlocks.LUN_CLOVER);
+		saplingBlock(ModBlocks.BRAMBLE);
+		
+		//potted flowers
+		simpleBlockWithItem(ModBlocks.POTTED_ORANGEYE.get(), models().singleTexture("potted_orangeye", new ResourceLocation("flower_pot_cross"), "plant",
+                blockTexture(ModBlocks.ORANGEYE.get())).renderType("cutout"));
+		simpleBlockWithItem(ModBlocks.POTTED_CYANEYE.get(), models().singleTexture("potted_cyaneye", new ResourceLocation("flower_pot_cross"), "plant",
+                blockTexture(ModBlocks.CYANEYE.get())).renderType("cutout"));
+		simpleBlockWithItem(ModBlocks.POTTED_MAGENTEYE.get(), models().singleTexture("potted_magenteye", new ResourceLocation("flower_pot_cross"), "plant",
+                blockTexture(ModBlocks.MAGENTEYE.get())).renderType("cutout"));
+		simpleBlockWithItem(ModBlocks.POTTED_LUN_CLOVER.get(), models().singleTexture("potted_lun_clover", new ResourceLocation("flower_pot_cross"), "plant",
+                blockTexture(ModBlocks.LUN_CLOVER.get())).renderType("cutout"));
+		simpleBlockWithItem(ModBlocks.POTTED_BRAMBLE.get(), models().singleTexture("potted_bramble", new ResourceLocation("flower_pot_cross"), "plant",
+                blockTexture(ModBlocks.BRAMBLE.get())).renderType("cutout"));
+		
 	}
 
 	protected void simpleBlockExisting(Block b) {
@@ -226,7 +245,8 @@ public class ModBlockStateProvider extends BlockStateProvider{
 	
 	private void saplingBlock(RegistryObject<Block> blockRegistryObject) {
         simpleBlock(blockRegistryObject.get(),
-                models().cross(ForgeRegistries.BLOCKS.getKey(blockRegistryObject.get()).getPath(), blockTexture(blockRegistryObject.get())).renderType("cutout"));
+                models().cross(ForgeRegistries.BLOCKS.getKey(blockRegistryObject.get()).getPath(), 
+                		blockTexture(blockRegistryObject.get())).renderType("cutout"));
     }
 	
 	private void blockWithItem(RegistryObject<Block> blockRegistryObject) {

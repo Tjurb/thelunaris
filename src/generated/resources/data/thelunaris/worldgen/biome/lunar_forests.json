@@ -56,7 +56,8 @@
       "thelunaris:celest_placed",
       "thelunaris:stellar_placed",
       "thelunaris:lunaris_grass_patch_placed",
-      "thelunaris:lunaris_sarrot_patch_placed"
+      "thelunaris:lunaris_sarrot_patch_placed",
+      "thelunaris:lunar_flower_default"
     ]
   ],
   "has_precipitation": false,

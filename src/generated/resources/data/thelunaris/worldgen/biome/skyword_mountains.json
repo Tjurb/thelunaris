@@ -58,7 +58,9 @@
     [
       "thelunaris:skyoak_placed",
       "thelunaris:lunaris_grass_patch_placed",
-      "thelunaris:lunaris_berry_patch_placed"
+      "thelunaris:lunaris_berry_patch_placed",
+      "thelunaris:lunar_flower_default",
+      "thelunaris:lunar_flower_mountain"
     ]
   ],
   "has_precipitation": false,

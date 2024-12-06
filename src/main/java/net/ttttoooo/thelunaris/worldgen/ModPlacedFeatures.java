@@ -25,6 +25,7 @@ import net.minecraft.world.level.levelgen.placement.InSquarePlacement;
 import net.minecraft.world.level.levelgen.placement.NoiseThresholdCountPlacement;
 import net.minecraft.world.level.levelgen.placement.PlacedFeature;
 import net.minecraft.world.level.levelgen.placement.PlacementModifier;
+import net.minecraft.world.level.levelgen.placement.RarityFilter;
 import net.ttttoooo.thelunaris.TheLunaris;
 import net.ttttoooo.thelunaris.block.ModBlocks;
 
@@ -69,6 +70,11 @@ public class ModPlacedFeatures {
 	public static final ResourceKey<PlacedFeature> LUNARIS_BONEMEAL_BERRY_KEY = registerKey("lunaris_vegitation_berry_placed");
 	public static final ResourceKey<PlacedFeature> LUNARIS_BONEMEAL_SARROT_KEY = registerKey("lunaris_vegitation_sarrot_placed");
 
+	//flower key
+	public static final ResourceKey<PlacedFeature> LUNAR_FLOWER_DEFAULT_PLACED_KEY = registerKey("lunar_flower_default");
+	public static final ResourceKey<PlacedFeature> LUNAR_FLOWER_DESERT_PLACED_KEY = registerKey("lunar_flower_desert");
+	public static final ResourceKey<PlacedFeature> LUNAR_FLOWER_MOUNTAIN_PLACED_KEY = registerKey("lunar_flower_mountain");
+	
 	public static void bootstrap(BootstapContext<PlacedFeature> context) {
         HolderGetter<ConfiguredFeature<?, ?>> configuredFeatures = context.lookup(Registries.CONFIGURED_FEATURE);
         //ore register
@@ -159,16 +165,30 @@ public class ModPlacedFeatures {
         //vegetation register
         register(context, LUNARIS_GRASS_PATCH_PLACED_KEY, configuredFeatures.getOrThrow(ModConfiguredFeatures.LUNARIS_GRASS_PATCH_KEY),
         		VegetationPlacements.worldSurfaceSquaredWithCount(5));
-        register(context, LUNARIS_SARROT_PATCH_PLACED_KEY, configuredFeatures.getOrThrow(ModConfiguredFeatures.LUNARIS_SARROT_PATCH_KEY),
-        		VegetationPlacements.worldSurfaceSquaredWithCount(2));
-        register(context, LUNARIS_BERRY_PATCH_PLACED_KEY, configuredFeatures.getOrThrow(ModConfiguredFeatures.LUNARIS_BERRY_PATCH_KEY),
-        		VegetationPlacements.worldSurfaceSquaredWithCount(2));
         register(context, LUNARIS_BONEMEAL_KEY, configuredFeatures.getOrThrow(ModConfiguredFeatures.SINGLE_PIECE_OF_LUNGRASS),
         		VegetationPlacements.worldSurfaceSquaredWithCount(1));
+        
+        //wild foods
+        register(context, LUNARIS_SARROT_PATCH_PLACED_KEY, configuredFeatures.getOrThrow(ModConfiguredFeatures.LUNARIS_SARROT_PATCH_KEY),
+        		List.of(RarityFilter.onAverageOnceEvery(64), InSquarePlacement.spread(), PlacementUtils.HEIGHTMAP, BiomeFilter.biome()));
+        register(context, LUNARIS_BERRY_PATCH_PLACED_KEY, configuredFeatures.getOrThrow(ModConfiguredFeatures.LUNARIS_BERRY_PATCH_KEY),
+        		List.of(RarityFilter.onAverageOnceEvery(64), InSquarePlacement.spread(), PlacementUtils.HEIGHTMAP, BiomeFilter.biome()));
+        
         register(context, LUNARIS_BONEMEAL_BERRY_KEY, configuredFeatures.getOrThrow(ModConfiguredFeatures.SINGLE_PIECE_OF_BERRY),
         		VegetationPlacements.worldSurfaceSquaredWithCount(1));
         register(context, LUNARIS_BONEMEAL_SARROT_KEY, configuredFeatures.getOrThrow(ModConfiguredFeatures.SINGLE_PIECE_OF_SARROT),
         		VegetationPlacements.worldSurfaceSquaredWithCount(1));
+        
+        //flower register
+        register(context, LUNAR_FLOWER_DEFAULT_PLACED_KEY, 
+        		configuredFeatures.getOrThrow(ModConfiguredFeatures.LUNARIS_FLOWER_DEFAULT_KEY),
+        		List.of(RarityFilter.onAverageOnceEvery(32), InSquarePlacement.spread(), PlacementUtils.HEIGHTMAP, BiomeFilter.biome()));
+        register(context, LUNAR_FLOWER_DESERT_PLACED_KEY, 
+        		configuredFeatures.getOrThrow(ModConfiguredFeatures.LUNARIS_FLOWER_DESERT_KEY),
+        		List.of(InSquarePlacement.spread(), PlacementUtils.HEIGHTMAP_WORLD_SURFACE, BiomeFilter.biome()));
+        register(context, LUNAR_FLOWER_MOUNTAIN_PLACED_KEY, 
+        		configuredFeatures.getOrThrow(ModConfiguredFeatures.LUNARIS_FLOWER_MOUNTAIN_KEY),
+        		List.of(RarityFilter.onAverageOnceEvery(16), InSquarePlacement.spread(), PlacementUtils.HEIGHTMAP, BiomeFilter.biome()));
     }
 	
     private static ResourceKey<PlacedFeature> registerKey(String name) {

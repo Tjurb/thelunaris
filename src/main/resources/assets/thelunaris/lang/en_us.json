@@ -43,6 +43,7 @@
     "item.thelunaris.cooked_archfish": "Cooked Archfish",
     "item.thelunaris.loonberry_pie": "Loonberry Pie",
     "item.thelunaris.spicy_archfish": "Spicy Cooked Archfish",
+    "item.thelunaris.lun_bread": "Lun Bread",
     
     "item.thelunaris.mooncow_spawn_egg": "Mooncow Spawn Egg",
     "item.thelunaris.archfish_spawn_egg": "Archfish Spawn Egg",
@@ -133,6 +134,14 @@
     "block.thelunaris.skyoak_fence_gate": "Skyoak Gate",
     "block.thelunaris.skyoak_door": "Skyoak Door",
     "block.thelunaris.skyoak_trapdoor": "Skyoak Trapdoor",
+    
+    "block.thelunaris.wild_sarrot": "Wild Sarrot",
+    "block.thelunaris.wild_loonberry": "Wild Loonberry Bush",
+    "block.thelunaris.orangeye": "Orangeye",
+    "block.thelunaris.cyaneye": "Cyaneye",
+    "block.thelunaris.magenteye": "Magenteye",
+    "block.thelunaris.lun_clover": "Lunar Clover",
+    "block.thelunaris.bramble": "Bramble Bush",
     
     "block.thelunaris.lungrass": "Lun Grass",
     "block.thelunaris.lungrass_block": "Lun Grass Block",

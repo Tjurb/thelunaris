@@ -62,6 +62,7 @@ public class ModItemModelProvider extends ItemModelProvider{
 		simpleItem(ModItems.COOKED_ARCHFISH);
 		simpleItem(ModItems.LOONBERRY_PIE);
 		simpleItem(ModItems.SPICY_ARCHFISH);
+		simpleItem(ModItems.LUN_BREAD);
 		
 		//Spawn Eggs
 		withExistingParent(ModItems.MOONCOW_SPANW_EGG.getId().getPath(), mcLoc("item/template_spawn_egg"));
@@ -182,6 +183,13 @@ public class ModItemModelProvider extends ItemModelProvider{
 		saplingItem(ModBlocks.LUNGRASS);
 		saplingItem(ModBlocks.WILD_LOONBERRY);
 		saplingItem(ModBlocks.WILD_SARROT);
+		
+		//flowers
+		saplingItem(ModBlocks.ORANGEYE);
+		saplingItem(ModBlocks.CYANEYE);
+		saplingItem(ModBlocks.MAGENTEYE);
+		saplingItem(ModBlocks.LUN_CLOVER);
+		saplingItem(ModBlocks.BRAMBLE);
 	}
 	
 	private ItemModelBuilder saplingItem(RegistryObject<Block> item) {

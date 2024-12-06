@@ -1,0 +1,14 @@
+{
+    "type": "minecraft:crafting_shapeless",
+    "catagory": "misc",
+  "group": "orange_dye",
+    "ingredients": [
+        {
+            "item": "thelunaris:orangeye"
+        }
+    ],
+    "result": {
+        "item": "minecraft:orange_dye",
+        "count": 2
+    }
+}

@@ -1,0 +1,14 @@
+{
+    "type": "minecraft:crafting_shapeless",
+    "catagory": "misc",
+  "group": "magenta_dye",
+    "ingredients": [
+        {
+            "item": "thelunaris:magenteye"
+        }
+    ],
+    "result": {
+        "item": "minecraft:magenta_dye",
+        "count": 2
+    }
+}

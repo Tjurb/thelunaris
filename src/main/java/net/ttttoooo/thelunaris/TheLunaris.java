@@ -8,6 +8,7 @@ import net.minecraft.client.renderer.entity.ThrownItemRenderer;
 import net.minecraft.world.entity.projectile.Fireball;
 import net.minecraft.world.item.CreativeModeTabs;
 import net.minecraft.world.level.block.Blocks;
+import net.minecraft.world.level.block.FlowerPotBlock;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.BuildCreativeModeTabContentsEvent;
@@ -71,9 +72,13 @@ public class TheLunaris
 
     private void commonSetup(final FMLCommonSetupEvent event)
     {
-        LOGGER.info("HELLO FROM The Lunaris");
-        LOGGER.info("DIRT BLOCK >> {}", ForgeRegistries.BLOCKS.getKey(Blocks.DIRT));
-       
+    	event.enqueueWork(() -> {
+            ((FlowerPotBlock) Blocks.FLOWER_POT).addPlant(ModBlocks.ORANGEYE.getId(), ModBlocks.POTTED_ORANGEYE);
+            ((FlowerPotBlock) Blocks.FLOWER_POT).addPlant(ModBlocks.CYANEYE.getId(), ModBlocks.POTTED_CYANEYE);
+            ((FlowerPotBlock) Blocks.FLOWER_POT).addPlant(ModBlocks.MAGENTEYE.getId(), ModBlocks.POTTED_MAGENTEYE);
+            ((FlowerPotBlock) Blocks.FLOWER_POT).addPlant(ModBlocks.LUN_CLOVER.getId(), ModBlocks.POTTED_LUN_CLOVER);
+            ((FlowerPotBlock) Blocks.FLOWER_POT).addPlant(ModBlocks.BRAMBLE.getId(), ModBlocks.POTTED_BRAMBLE);
+        });
     }
 
     private void addCreative(BuildCreativeModeTabContentsEvent event)

@@ -46,6 +46,11 @@
       "thelunaris:deep_marble_placed",
       "thelunaris:deep_shale_placed",
       "thelunaris:deep_slate_placed"
+    ],
+    [],
+    [],
+    [
+      "thelunaris:lunar_flower_desert"
     ]
   ],
   "has_precipitation": false,

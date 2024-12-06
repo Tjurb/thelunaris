@@ -134,6 +134,11 @@ public class ModCreativeTabs {
 
 				//Nature Blocks
 				pOutput.accept(ModBlocks.LUNGRASS.get());
+				pOutput.accept(ModBlocks.ORANGEYE.get());
+				pOutput.accept(ModBlocks.CYANEYE.get());
+				pOutput.accept(ModBlocks.MAGENTEYE.get());
+				pOutput.accept(ModBlocks.LUN_CLOVER.get());
+				pOutput.accept(ModBlocks.BRAMBLE.get());
 				
 				//Item Entry
 				pOutput.accept(ModItems.LUNAR_STICK.get());

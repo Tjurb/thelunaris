@@ -53,6 +53,8 @@ public class ModItems {
 			() -> new Item(new Item.Properties().food(ModFoods.ARCHFISH)));
 	public static final RegistryObject<Item> SARROT = ITEMS.register("sarrot", 
 			() -> new ItemNameBlockItem(ModBlocks.SARROT_CROP.get(), new Item.Properties().food(ModFoods.SARROT)));
+	public static final RegistryObject<Item> LUN_BREAD = ITEMS.register("lun_bread", 
+			() -> new Item(new Item.Properties().food(ModFoods.LUN_BREAD)));
 	public static final RegistryObject<Item> COOKED_ARCHFISH = ITEMS.register("cooked_archfish", 
 			() -> new Item(new Item.Properties().food(ModFoods.COOKED_ARCHFISH)));
 	public static final RegistryObject<Item> LOONBERRY_PIE = ITEMS.register("loonberry_pie", 

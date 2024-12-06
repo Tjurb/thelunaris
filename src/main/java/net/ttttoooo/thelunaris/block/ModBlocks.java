@@ -8,16 +8,20 @@ import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.util.valueproviders.UniformInt;
+import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.ButtonBlock;
 import net.minecraft.world.level.block.CraftingTableBlock;
+import net.minecraft.world.level.block.DeadBushBlock;
 import net.minecraft.world.level.block.DoorBlock;
 import net.minecraft.world.level.block.DropExperienceBlock;
 import net.minecraft.world.level.block.FenceBlock;
 import net.minecraft.world.level.block.FenceGateBlock;
+import net.minecraft.world.level.block.FlowerBlock;
+import net.minecraft.world.level.block.FlowerPotBlock;
 import net.minecraft.world.level.block.GlassBlock;
 import net.minecraft.world.level.block.IronBarsBlock;
 import net.minecraft.world.level.block.LeavesBlock;
@@ -32,6 +36,7 @@ import net.minecraft.world.level.block.WallBlock;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.properties.BlockSetType;
+import net.minecraft.world.level.material.MapColor;
 import net.minecraft.world.level.material.PushReaction;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.registries.DeferredRegister;
@@ -99,7 +104,7 @@ public class ModBlocks {
 	public static final RegistryObject<Block> LUNDIRT = registerBlock("lundirt", 
 			() -> new Block(BlockBehaviour.Properties.copy(Blocks.DIRT).sound(SoundType.GRAVEL)));
 	public static final RegistryObject<Block> LUNDIRT_FARMLAND = registerBlock("lundirt_farmland", 
-			() -> new LundirtFarmlandBlock(BlockBehaviour.Properties.copy(Blocks.DIRT).sound(SoundType.GRAVEL)));
+			() -> new LundirtFarmlandBlock(BlockBehaviour.Properties.copy(Blocks.DIRT).randomTicks().sound(SoundType.GRAVEL)));
 	public static final RegistryObject<Block> LUNGRASS_BLOCK = registerBlock("lungrass_block", 
 			() -> new LunGrassBlock(BlockBehaviour.Properties.copy(Blocks.GRASS_BLOCK).sound(SoundType.GRASS)));
 	public static final RegistryObject<Block> LUNSAND = registerBlock("lunsand", 
@@ -516,6 +521,39 @@ public class ModBlocks {
             () -> new TallGrassBlock(BlockBehaviour.Properties.copy(Blocks.GRASS)));
 	public static final RegistryObject<Block> WILD_SARROT = registerBlock("wild_sarrot",
             () -> new TallGrassBlock(BlockBehaviour.Properties.copy(Blocks.GRASS)));
+
+	//flowers
+	public static final RegistryObject<Block> ORANGEYE = registerBlock("orangeye",
+            () -> new FlowerBlock(() -> MobEffects.DAMAGE_RESISTANCE, 5,
+                    BlockBehaviour.Properties.copy(Blocks.ALLIUM).noOcclusion().noCollission()));
+	public static final RegistryObject<Block> CYANEYE = registerBlock("cyaneye",
+            () -> new FlowerBlock(() -> MobEffects.DAMAGE_BOOST, 5,
+                    BlockBehaviour.Properties.copy(Blocks.ALLIUM).noOcclusion().noCollission()));
+	public static final RegistryObject<Block> MAGENTEYE = registerBlock("magenteye",
+            () -> new FlowerBlock(() -> MobEffects.HEAL, 5,
+                    BlockBehaviour.Properties.copy(Blocks.ALLIUM).noOcclusion().noCollission()));
+	public static final RegistryObject<Block> LUN_CLOVER = registerBlock("lun_clover",
+            () -> new FlowerBlock(() -> MobEffects.POISON, 5,
+                    BlockBehaviour.Properties.copy(Blocks.ALLIUM).noOcclusion().noCollission()));
+	public static final RegistryObject<Block> BRAMBLE = registerBlock("bramble",
+            () -> new DeadBushBlock(BlockBehaviour.Properties.copy(Blocks.DEAD_BUSH).noOcclusion().noCollission()));
+	
+	//potted flowers
+	public static final RegistryObject<Block> POTTED_ORANGEYE = BLOCKS.register("potted_orangeye",
+            () -> new FlowerPotBlock(() -> ((FlowerPotBlock) Blocks.FLOWER_POT), ModBlocks.CYANEYE,
+                    BlockBehaviour.Properties.copy(Blocks.POTTED_ALLIUM).noOcclusion()));
+	public static final RegistryObject<Block> POTTED_CYANEYE = BLOCKS.register("potted_cyaneye",
+            () -> new FlowerPotBlock(() -> ((FlowerPotBlock) Blocks.FLOWER_POT), ModBlocks.CYANEYE,
+                    BlockBehaviour.Properties.copy(Blocks.POTTED_ALLIUM).noOcclusion()));
+	public static final RegistryObject<Block> POTTED_MAGENTEYE = BLOCKS.register("potted_magenteye",
+            () -> new FlowerPotBlock(() -> ((FlowerPotBlock) Blocks.FLOWER_POT), ModBlocks.MAGENTEYE,
+                    BlockBehaviour.Properties.copy(Blocks.POTTED_ALLIUM).noOcclusion()));
+	public static final RegistryObject<Block> POTTED_LUN_CLOVER = BLOCKS.register("potted_lun_clover",
+            () -> new FlowerPotBlock(() -> ((FlowerPotBlock) Blocks.FLOWER_POT), ModBlocks.LUN_CLOVER,
+                    BlockBehaviour.Properties.copy(Blocks.POTTED_ALLIUM).noOcclusion()));
+	public static final RegistryObject<Block> POTTED_BRAMBLE = BLOCKS.register("potted_bramble",
+            () -> new FlowerPotBlock(() -> ((FlowerPotBlock) Blocks.FLOWER_POT), ModBlocks.BRAMBLE,
+                    BlockBehaviour.Properties.copy(Blocks.POTTED_ALLIUM).noOcclusion()));
 	
 	private static <T extends Block> RegistryObject<T> registerBlock(String name, Supplier<T> block){
 		RegistryObject<T> toReturn = BLOCKS.register(name, block);
