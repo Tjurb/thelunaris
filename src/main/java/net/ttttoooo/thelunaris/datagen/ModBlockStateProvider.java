@@ -41,6 +41,7 @@ import net.ttttoooo.thelunaris.TheLunaris;
 import net.ttttoooo.thelunaris.block.ModBlocks;
 import net.ttttoooo.thelunaris.block.custom.LoonBerryCropBlock;
 import net.ttttoooo.thelunaris.block.custom.LunWheatCropBlock;
+import net.ttttoooo.thelunaris.block.custom.LundirtFarmlandBlock;
 import net.ttttoooo.thelunaris.block.custom.SarrotCropBlock;
 
 public class ModBlockStateProvider extends BlockStateProvider{
@@ -85,7 +86,7 @@ public class ModBlockStateProvider extends BlockStateProvider{
 		blockWithItem(ModBlocks.LUNDIRT);
         simpleBlockWithItem(ModBlocks.LUNGRASS_BLOCK.get(),
                 new ModelFile.UncheckedModelFile(modLoc("block/lungrass_block")));
-        blockWithItem(ModBlocks.LUNDIRT_FARMLAND);
+        farmland(ModBlocks.LUNDIRT_FARMLAND.get(),ModBlocks.LUNDIRT.get());
 		blockWithItem(ModBlocks.LUNSAND);
 		blockWithItem(ModBlocks.LUNSANDSTONE);
 		stairsBlock(((StairBlock) ModBlocks.LUNSANDSTONE_STAIRS.get()), blockTexture(ModBlocks.LUNSANDSTONE.get()));
@@ -300,6 +301,22 @@ public class ModBlockStateProvider extends BlockStateProvider{
                 new ResourceLocation(TheLunaris.MODID, "block/" + textureName + state.getValue(((SarrotCropBlock) block).getAgeProperty()))).renderType("cutout"));
 
         return models;
+    }
+    
+    public void farmland(Block block, Block dirtBlock) {
+        ModelFile farmland = this.models().withExistingParent(this.name(block), this.mcLoc("block/template_farmland"))
+                .texture("dirt", this.modLoc("block/" + this.name(dirtBlock)))
+                .texture("top", this.modLoc("block/" + this.name(block)));
+        ModelFile moist = this.models().withExistingParent(this.name(block) + "_moist", mcLoc("block/template_farmland"))
+                .texture("dirt", this.modLoc("block/" + this.name(dirtBlock)))
+                .texture("top", this.modLoc("block/" + this.name(block) + "_moist"));
+        this.getVariantBuilder(block).forAllStatesExcept(state -> {
+            int moisture = state.getValue(LundirtFarmlandBlock.MOISTURE);
+            return ConfiguredModel.builder()
+                    .modelFile(moisture < LundirtFarmlandBlock.MAX_MOISTURE ? farmland : moist)
+                    .build();
+        });
+        simpleBlockItem(block, farmland);
     }
 	
 	protected ResourceLocation key(Block block) {

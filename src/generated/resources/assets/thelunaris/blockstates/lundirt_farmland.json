@@ -1,0 +1,28 @@
+{
+  "variants": {
+    "moisture=0": {
+      "model": "thelunaris:block/lundirt_farmland"
+    },
+    "moisture=1": {
+      "model": "thelunaris:block/lundirt_farmland"
+    },
+    "moisture=2": {
+      "model": "thelunaris:block/lundirt_farmland"
+    },
+    "moisture=3": {
+      "model": "thelunaris:block/lundirt_farmland"
+    },
+    "moisture=4": {
+      "model": "thelunaris:block/lundirt_farmland"
+    },
+    "moisture=5": {
+      "model": "thelunaris:block/lundirt_farmland"
+    },
+    "moisture=6": {
+      "model": "thelunaris:block/lundirt_farmland"
+    },
+    "moisture=7": {
+      "model": "thelunaris:block/lundirt_farmland_moist"
+    }
+  }
+}

@@ -13,7 +13,6 @@ import net.minecraft.world.level.LevelReader;
 import net.minecraft.world.level.block.FarmBlock;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.gameevent.GameEvent;
-import net.minecraftforge.common.FarmlandWaterManager;
 import net.minecraftforge.common.ForgeHooks;
 import net.minecraftforge.common.IPlantable;
 import net.minecraftforge.common.PlantType;
@@ -29,7 +28,8 @@ public class LundirtFarmlandBlock extends FarmBlock {
 
 	@Override
 	public BlockState getStateForPlacement(BlockPlaceContext context) {
-		return !this.defaultBlockState().canSurvive(context.getLevel(), context.getClickedPos()) ? ModBlocks.LUNDIRT.get().defaultBlockState() : super.getStateForPlacement(context);
+		return !this.defaultBlockState().canSurvive(context.getLevel(), 
+				context.getClickedPos()) ? ModBlocks.LUNDIRT.get().defaultBlockState() : super.getStateForPlacement(context);
 	}
 
 	@Override
@@ -38,53 +38,56 @@ public class LundirtFarmlandBlock extends FarmBlock {
 		return type == PlantType.CROP || type == PlantType.PLAINS;
 	}
 
-	public static void turntoDirt(@Nullable Entity entity, BlockState state, Level level, BlockPos pos) {
-		level.setBlockAndUpdate(pos, pushEntitiesUp(state, ModBlocks.LUNDIRT.get().defaultBlockState(), level, pos));
-		level.gameEvent(GameEvent.BLOCK_CHANGE, pos, GameEvent.Context.of(entity, state));
+	public static void turntoLunDirt(@Nullable Entity entity, BlockState state, Level level, BlockPos pos) {
+	    BlockState blockstate = pushEntitiesUp(state, ModBlocks.LUNDIRT.get().defaultBlockState(), level, pos);
+	    level.setBlockAndUpdate(pos, blockstate);
+	    level.gameEvent(GameEvent.BLOCK_CHANGE, pos, GameEvent.Context.of(entity, blockstate));
 	}
 
-	private static boolean isNearWater(LevelReader level, BlockPos pos) {
-		BlockState state = level.getBlockState(pos);
-		for (BlockPos blockpos : BlockPos.betweenClosed(pos.offset(-4, 0, -4), pos.offset(4, 1, 4))) {
-			if (state.canBeHydrated(level, pos, level.getFluidState(blockpos), blockpos)) {
-				return true;
-			}
-		}
-		return FarmlandWaterManager.hasBlockWaterTicket(level, pos);
-	}
+	
+	private static boolean isNearWater(LevelReader p_53259_, BlockPos p_53260_) {
+	      BlockState state = p_53259_.getBlockState(p_53260_);
+	      for(BlockPos blockpos : BlockPos.betweenClosed(p_53260_.offset(-4, 0, -4), p_53260_.offset(4, 1, 4))) {
+	         if (state.canBeHydrated(p_53259_, p_53260_, p_53259_.getFluidState(blockpos), blockpos)) {
+	            return true;
+	         }
+	      }
 
-	private static boolean isUnderCrops(BlockGetter level, BlockPos pos) {
-		BlockState plant = level.getBlockState(pos.above());
-		BlockState state = level.getBlockState(pos);
-		return plant.getBlock() instanceof IPlantable && state.canSustainPlant(level, pos, Direction.UP, (IPlantable) plant.getBlock());
-	}
+	      return net.minecraftforge.common.FarmlandWaterManager.hasBlockWaterTicket(p_53259_, p_53260_);
+	   }
 
-	@Override
-	public void tick(BlockState state, ServerLevel level, BlockPos pos, RandomSource random) {
-		if (!state.canSurvive(level, pos)) {
-			turntoDirt(null, state, level, pos);
-		}
+	private static boolean shouldMaintainFarmland(BlockGetter p_279219_, BlockPos p_279209_) {
+		BlockState plant = p_279219_.getBlockState(p_279209_.above());
+	    BlockState state = p_279219_.getBlockState(p_279209_);
+	    return plant.getBlock() instanceof net.minecraftforge.common.IPlantable && state.canSustainPlant(p_279219_, p_279209_, Direction.UP, (net.minecraftforge.common.IPlantable)plant.getBlock());
 	}
 
 	@Override
-	public void randomTick(BlockState state, ServerLevel level, BlockPos pos, RandomSource random) {
-		int moistness = state.getValue(MOISTURE);
-		if (!isNearWater(level, pos) && !level.isRainingAt(pos.above())) {
-			if (moistness > 0) {
-				level.setBlock(pos, state.setValue(MOISTURE, moistness - 1), 2);
-			} else if (!isUnderCrops(level, pos)) {
-				turntoDirt(null, state, level, pos);
-			}
-		} else if (moistness < 7) {
-			level.setBlock(pos, state.setValue(MOISTURE, 7), 2);
-		}
-
+	public void tick(BlockState p_221134_, ServerLevel p_221135_, BlockPos p_221136_, RandomSource p_221137_) {
+	      if (!p_221134_.canSurvive(p_221135_, p_221136_)) {
+	    	  turntoLunDirt((Entity)null, p_221134_, p_221135_, p_221136_);
+	      }
 	}
+
+	@Override
+	public void randomTick(BlockState p_221139_, ServerLevel p_221140_, BlockPos p_221141_, RandomSource p_221142_) {
+	      int i = p_221139_.getValue(MOISTURE);
+	      if (!isNearWater(p_221140_, p_221141_) && !p_221140_.isRainingAt(p_221141_.above())) {
+	         if (i > 0) {
+	            p_221140_.setBlock(p_221141_, p_221139_.setValue(MOISTURE, Integer.valueOf(i - 1)), 2);
+	         } else if (!shouldMaintainFarmland(p_221140_, p_221141_)) {
+	        	 turntoLunDirt((Entity)null, p_221139_, p_221140_, p_221141_);
+	         }
+	      } else if (i < 7) {
+	         p_221140_.setBlock(p_221141_, p_221139_.setValue(MOISTURE, Integer.valueOf(7)), 2);
+	      }
+
+	   }
 
 	@Override
 	public void fallOn(Level level, BlockState state, BlockPos pos, Entity entity, float fallDamage) {
 		if (!level.isClientSide() && ForgeHooks.onFarmlandTrample(level, pos, ModBlocks.LUNDIRT.get().defaultBlockState(), fallDamage, entity)) {
-			turntoDirt(entity, state, level, pos);
+			turntoLunDirt(entity, state, level, pos);
 		}
 
 		entity.causeFallDamage(fallDamage, 1.0F, level.damageSources().fall());

@@ -23,6 +23,7 @@ public class ModTags {
 		public static final TagKey<Block> LUNAR_PORTAL_BLOCKS = tag("lunar_portal_blocks");
 		
 		public static final TagKey<Block> LUNAR_LOGS = tag("lunar_logs");
+		public static final TagKey<Block> LUNAR_DIRTS = tag("lunar_dirts");
 		
 		private static TagKey<Block> tag(String name){
 			return BlockTags.create(new ResourceLocation(TheLunaris.MODID, name));
