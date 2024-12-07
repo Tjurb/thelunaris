@@ -559,7 +559,7 @@
                   {
                     "type": "minecraft:block",
                     "result_state": {
-                      "Name": "thelunaris:lunsandstone"
+                      "Name": "thelunaris:lunsand"
                     }
                   }
                 ]
@@ -862,7 +862,7 @@
                   {
                     "type": "minecraft:block",
                     "result_state": {
-                      "Name": "thelunaris:lunsandstone"
+                      "Name": "thelunaris:lunsand"
                     }
                   }
                 ]

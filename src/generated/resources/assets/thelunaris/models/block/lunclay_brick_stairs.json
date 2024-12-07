@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/stairs",
+  "textures": {
+    "bottom": "thelunaris:block/lunclay_brick_block",
+    "side": "thelunaris:block/lunclay_brick_block",
+    "top": "thelunaris:block/lunclay_brick_block"
+  }
+}

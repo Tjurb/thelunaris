@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "building",
+  "key": {
+    "S": {
+      "item": "thelunaris:lunclay_brick_block"
+    }
+  },
+  "pattern": [
+    "   ",
+    "SSS",
+    "SSS"
+  ],
+  "result": {
+    "count": 3,
+    "item": "thelunaris:lunclay_brick_wall"
+  },
+  "show_notification": true
+}

@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=bottom": {
+      "model": "thelunaris:block/lunclay_brick_slab"
+    },
+    "type=double": {
+      "model": "thelunaris:block/lunclay_brick_block"
+    },
+    "type=top": {
+      "model": "thelunaris:block/lunclay_brick_slab_top"
+    }
+  }
+}

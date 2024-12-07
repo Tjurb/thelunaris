@@ -1,4 +1,4 @@
-// 1.20.1	2024-12-05T21:43:05.9092841	Loot Tables
+// 1.20.1	2024-12-07T00:45:34.1342838	Loot Tables
 92097a82c34fc961772082dd36ad27e92bbdb77e data/thelunaris/loot_tables/blocks/bramble.json
 06dc455cb1cc43492a0c8635acf08992e970dac9 data/thelunaris/loot_tables/blocks/celest_button.json
 1412bc510edd1519210cff7aaf3d5841ee4e8f4f data/thelunaris/loot_tables/blocks/celest_door.json
@@ -34,6 +34,11 @@ b86434bdf32ec9973d1d6a1666cb3d32d5aec484 data/thelunaris/loot_tables/blocks/luna
 7e957e2d343d86df3d28bf8832bb0be5a37590c9 data/thelunaris/loot_tables/blocks/lunarshale.json
 f8b7397dd45558a9ee9a47a08621ddb46a276191 data/thelunaris/loot_tables/blocks/lunarslate.json
 bb2d212f5520ee1031dbc871e7e043466aa2110d data/thelunaris/loot_tables/blocks/lunar_crafter.json
+b3a061ca0fdb088a4986df5d1cb42fbd5de44eea data/thelunaris/loot_tables/blocks/lunclay_block.json
+261fc31056d93a3600f074d8a96ef7aec723287c data/thelunaris/loot_tables/blocks/lunclay_brick_block.json
+fda8e1410ab7652e2e2061e7910847a9502849a2 data/thelunaris/loot_tables/blocks/lunclay_brick_slab.json
+e5911d908788c1732e89cbbbea06e6b34e1c8b72 data/thelunaris/loot_tables/blocks/lunclay_brick_stairs.json
+b6381bc4d7f1013789a62b94627a248c046bd5d0 data/thelunaris/loot_tables/blocks/lunclay_brick_wall.json
 aa8cdb4ea61a58f7af007f4f20f47b5f569ca037 data/thelunaris/loot_tables/blocks/lundirt.json
 56f099409af091d15529adf0739ee1426db928bd data/thelunaris/loot_tables/blocks/lundirt_farmland.json
 7252d409e1be52789bddd56350cf879922f77282 data/thelunaris/loot_tables/blocks/lunglass.json
