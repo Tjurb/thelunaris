@@ -47,10 +47,15 @@ public class ModItemModelProvider extends ItemModelProvider{
 		
 		simpleItem(ModItems.LUNAR_STICK);
 		simpleItem(ModItems.MOONSTEEL);
+		simpleItem(ModItems.MOONSTEEL_NUGGET);
 		simpleItem(ModItems.RAW_MOONSTEEL);
 		simpleItem(ModItems.LABRADORITE);
 		simpleItem(ModItems.EMOONSTEEL);
+		simpleItem(ModItems.EMOONSTEEL_NUGGET);
 		simpleItem(ModItems.LUNARITE);
+		simpleItem(ModItems.LUNAR_CLAY);
+		simpleItem(ModItems.LUNAR_CLAY_BRICK);
+		
 		simpleItem(ModItems.LUNAR_WHEAT);
 		simpleItem(ModItems.LUNAR_WHEAT_SEEDS);
 		simpleItem(ModItems.HEXDUST);
@@ -123,6 +128,7 @@ public class ModItemModelProvider extends ItemModelProvider{
 		wallItem(ModBlocks.SMOOTHLUNARSLATE_WALL, ModBlocks.SMOOTHLUNARSLATE);
 		wallItem(ModBlocks.SMOOTHMARBLE_WALL, ModBlocks.SMOOTHMARBLE);
 		wallItem(ModBlocks.LUNSANDSTONE_WALL, ModBlocks.LUNSANDSTONE);
+		wallItem(ModBlocks.LUNCLAY_BRICK_BLOCK_WALL, ModBlocks.LUNCLAY_BRICK_BLOCK);
 		
 		//stairs
 		evenSimplerBlockItem(ModBlocks.COBBLED_VAILSTONE_STAIRS);
@@ -134,6 +140,7 @@ public class ModItemModelProvider extends ItemModelProvider{
 		evenSimplerBlockItem(ModBlocks.STELLAR_STAIRS);
 		evenSimplerBlockItem(ModBlocks.SKYOAK_STAIRS);
 		evenSimplerBlockItem(ModBlocks.LUNSANDSTONE_STAIRS);
+		evenSimplerBlockItem(ModBlocks.LUNCLAY_BRICK_BLOCK_STAIRS);
 		
 		//slabs
 		evenSimplerBlockItem(ModBlocks.COBBLED_VAILSTONE_SLAB);
@@ -145,6 +152,7 @@ public class ModItemModelProvider extends ItemModelProvider{
 		evenSimplerBlockItem(ModBlocks.STELLAR_SLAB);
 		evenSimplerBlockItem(ModBlocks.SKYOAK_SLAB);
 		evenSimplerBlockItem(ModBlocks.LUNSANDSTONE_SLAB);
+		evenSimplerBlockItem(ModBlocks.LUNCLAY_BRICK_BLOCK_SLAB);
 		
 		//fences
 		fenceItem(ModBlocks.CELEST_FENCE, ModBlocks.CELEST_PLANKS);

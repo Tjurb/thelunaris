@@ -1,0 +1,48 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_cobbled_vailstone": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "thelunaris:cobbled_vailstone"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_labradorite": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "thelunaris:labradorite"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "thelunaris:vailstone_furnace"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_labradorite",
+      "has_cobbled_vailstone",
+      "has_the_recipe"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "thelunaris:vailstone_furnace"
+    ]
+  },
+  "sends_telemetry_event": false
+}

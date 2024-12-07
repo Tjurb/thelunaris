@@ -9,6 +9,7 @@ import net.minecraft.core.Direction;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.util.valueproviders.UniformInt;
 import net.minecraft.world.effect.MobEffects;
+import net.minecraft.world.flag.FeatureFlag;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.level.block.Block;
@@ -100,13 +101,26 @@ public class ModBlocks {
 	public static final RegistryObject<Block> LABRADORITE_BLOCK = registerBlock("labradorite_block", 
 			() -> new Block(BlockBehaviour.Properties.copy(Blocks.IRON_BLOCK).sound(SoundType.STONE)));
 	
-	//Dirt and Sand Blocks	
+	//Dirt, Clay, and Sand Blocks	
 	public static final RegistryObject<Block> LUNDIRT = registerBlock("lundirt", 
 			() -> new Block(BlockBehaviour.Properties.copy(Blocks.DIRT).sound(SoundType.GRAVEL)));
 	public static final RegistryObject<Block> LUNDIRT_FARMLAND = registerBlock("lundirt_farmland", 
 			() -> new LundirtFarmlandBlock(BlockBehaviour.Properties.copy(Blocks.DIRT).randomTicks().sound(SoundType.GRAVEL)));
 	public static final RegistryObject<Block> LUNGRASS_BLOCK = registerBlock("lungrass_block", 
 			() -> new LunGrassBlock(BlockBehaviour.Properties.copy(Blocks.GRASS_BLOCK).sound(SoundType.GRASS)));
+	
+	public static final RegistryObject<Block> LUNCLAY_BLOCK = registerBlock("lunclay_block", 
+			() -> new Block(BlockBehaviour.Properties.copy(Blocks.MUD).sound(SoundType.MUD)));
+	public static final RegistryObject<Block> LUNCLAY_BRICK_BLOCK = registerBlock("lunclay_brick_block", 
+			() -> new Block(BlockBehaviour.Properties.copy(Blocks.BRICKS).sound(SoundType.MUD_BRICKS)));
+	public static final RegistryObject<Block> LUNCLAY_BRICK_BLOCK_STAIRS = registerBlock("lunclay_brick_stairs", 
+			() -> new StairBlock(() -> ModBlocks.LUNCLAY_BRICK_BLOCK.get().defaultBlockState(),
+			BlockBehaviour.Properties.copy(Blocks.BRICKS).sound(SoundType.MUD_BRICKS)));
+	public static final RegistryObject<Block> LUNCLAY_BRICK_BLOCK_SLAB = registerBlock("lunclay_brick_slab", 
+			() -> new SlabBlock(BlockBehaviour.Properties.copy(Blocks.BRICKS).sound(SoundType.MUD_BRICKS)));
+	public static final RegistryObject<Block> LUNCLAY_BRICK_BLOCK_WALL = registerBlock("lunclay_brick_wall", 
+			() -> new WallBlock(BlockBehaviour.Properties.copy(Blocks.BRICKS).sound(SoundType.MUD_BRICKS)));
+	
 	public static final RegistryObject<Block> LUNSAND = registerBlock("lunsand", 
 			() -> new Block(BlockBehaviour.Properties.copy(Blocks.SAND).sound(SoundType.SAND)));
 	public static final RegistryObject<Block> LUNSANDSTONE = registerBlock("lunsandstone", 

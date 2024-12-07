@@ -21,7 +21,7 @@ public class ModSurfaceRules {
         SurfaceRules.ConditionSource isAtGneissLevel = SurfaceRules.verticalGradient("gneiss_layer",VerticalAnchor.absolute(0), VerticalAnchor.absolute(8));
 
         SurfaceRules.RuleSource sandOcean = SurfaceRules.sequence(SurfaceRules.ifTrue(isAtOrAboveWaterLevel, LUNSAND), LUNDIRT);
-        SurfaceRules.RuleSource sandSurface = SurfaceRules.sequence(SurfaceRules.ifTrue(isAtOrAboveWaterLevel, LUNSAND), LUNSANDSTONE);
+        SurfaceRules.RuleSource sandSurface = SurfaceRules.sequence(SurfaceRules.ifTrue(isAtOrAboveWaterLevel, LUNSAND), LUNSAND);
         SurfaceRules.RuleSource sandstoneSurface = SurfaceRules.sequence(SurfaceRules.ifTrue(isAtOrAboveWaterLevel, LUNSANDSTONE), LUNSANDSTONE);
         SurfaceRules.RuleSource grassSurface = SurfaceRules.sequence(SurfaceRules.ifTrue(isAtOrAboveWaterLevel, LUNGRASS_BLOCK), LUNDIRT);
         SurfaceRules.RuleSource dirtSurface = SurfaceRules.sequence(SurfaceRules.ifTrue(isAtOrAboveWaterLevel, LUNDIRT), LUNDIRT);

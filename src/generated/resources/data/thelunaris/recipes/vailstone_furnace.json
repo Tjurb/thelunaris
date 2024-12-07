@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "L": {
+      "item": "thelunaris:labradorite"
+    },
+    "V": {
+      "item": "thelunaris:cobbled_vailstone"
+    }
+  },
+  "pattern": [
+    "VVV",
+    "VLV",
+    "VVV"
+  ],
+  "result": {
+    "item": "thelunaris:vailstone_furnace"
+  },
+  "show_notification": true
+}

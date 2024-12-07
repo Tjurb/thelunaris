@@ -1,0 +1,35 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "thelunaris:vailstone_axe"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    },
+    "has_vailstone": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "thelunaris:vailstone"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "requirements": [
+    [
+      "has_vailstone",
+      "has_the_recipe"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "thelunaris:vailstone_axe"
+    ]
+  },
+  "sends_telemetry_event": false
+}

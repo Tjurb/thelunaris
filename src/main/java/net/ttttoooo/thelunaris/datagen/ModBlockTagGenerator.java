@@ -54,6 +54,11 @@ public class ModBlockTagGenerator extends BlockTagsProvider{
 					ModBlocks.LUNSANDSTONE.get(),
 					ModBlocks.LUNSANDSTONE_STAIRS.get(),
 					ModBlocks.LUNSANDSTONE_SLAB.get(),
+					ModBlocks.LUNSANDSTONE_WALL.get(),
+					ModBlocks.LUNCLAY_BRICK_BLOCK.get(),
+					ModBlocks.LUNCLAY_BRICK_BLOCK_STAIRS.get(),
+					ModBlocks.LUNCLAY_BRICK_BLOCK_SLAB.get(),
+					ModBlocks.LUNCLAY_BRICK_BLOCK_WALL.get(),
 					
 					ModBlocks.MOONDIALBLOCK.get(),
 					ModBlocks.VAILSTONE_FURNACE.get(),
@@ -107,9 +112,14 @@ public class ModBlockTagGenerator extends BlockTagsProvider{
 		this.tag(ModTags.Blocks.GNEISS_ORE_REPLACEABLES)
 			.add(ModBlocks.GNEISS.get());
 		
+		this.tag(ModTags.Blocks.SANDDIRT_REPLACEABLES)
+			.add(ModBlocks.LUNDIRT.get(),
+					ModBlocks.LUNSAND.get());
+		
 		this.tag(BlockTags.MINEABLE_WITH_SHOVEL)
 			.add(ModBlocks.LUNDIRT.get(),
 					ModBlocks.LUNSAND.get(),
+					ModBlocks.LUNCLAY_BLOCK.get(),
 					ModBlocks.LUNGRASS_BLOCK.get());
 		
 		this.tag(ModTags.Blocks.NEEDS_MOONSTEEL_TOOL)
@@ -123,6 +133,7 @@ public class ModBlockTagGenerator extends BlockTagsProvider{
 		this.tag(BlockTags.WALLS)
 			.add(ModBlocks.VAILSTONEBRICK_WALL.get(),
 					ModBlocks.COBBLED_VAILSTONE_WALL.get(),
+					ModBlocks.LUNCLAY_BRICK_BLOCK_WALL.get(),
 					ModBlocks.LUNSANDSTONE_WALL.get(),
 					ModBlocks.SMOOTHLUNARSLATE_WALL.get(),
 					ModBlocks.SMOOTHGNEISS_WALL.get(),
@@ -203,9 +214,17 @@ public class ModBlockTagGenerator extends BlockTagsProvider{
 		this.tag(ModTags.Blocks.LUNAR_LOGS)
 			.add(ModBlocks.CELEST_LOG.get(),
 					ModBlocks.STRIPPED_CELEST_LOG.get(),
+					ModBlocks.CELEST_WOOD.get(),
+					ModBlocks.STRIPPED_CELEST_WOOD.get(),
+					
 					ModBlocks.SKYOAK_LOG.get(),
 					ModBlocks.STRIPPED_SKYOAK_LOG.get(),
+					ModBlocks.SKYOAK_WOOD.get(),
+					ModBlocks.STRIPPED_SKYOAK_WOOD.get(),
+					
 					ModBlocks.STELLAR_LOG.get(),
-					ModBlocks.STRIPPED_STELLAR_LOG.get());
+					ModBlocks.STRIPPED_STELLAR_LOG.get(),
+					ModBlocks.STELLAR_WOOD.get(),
+					ModBlocks.STRIPPED_STELLAR_WOOD.get());
 	}
 }

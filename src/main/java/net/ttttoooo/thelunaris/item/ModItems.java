@@ -27,11 +27,15 @@ public class ModItems {
 	//materials
 	public static final RegistryObject<Item> MOONSTEEL = ITEMS.register("moonsteel", 
 			() -> new Item(new Item.Properties()));
+	public static final RegistryObject<Item> MOONSTEEL_NUGGET = ITEMS.register("moonsteel_nugget", 
+			() -> new Item(new Item.Properties()));
 	public static final RegistryObject<Item> RAW_MOONSTEEL = ITEMS.register("raw_moonsteel", 
 			() -> new Item(new Item.Properties()));
 	public static final RegistryObject<Item> LABRADORITE = ITEMS.register("labradorite", 
 			() -> new Item(new Item.Properties()));
 	public static final RegistryObject<Item> EMOONSTEEL = ITEMS.register("emoonsteel", 
+			() -> new Item(new Item.Properties()));
+	public static final RegistryObject<Item> EMOONSTEEL_NUGGET = ITEMS.register("emoonsteel_nugget", 
 			() -> new Item(new Item.Properties()));
 	public static final RegistryObject<Item> LUNARITE = ITEMS.register("lunarite", 
 			() -> new Item(new Item.Properties()));
@@ -40,6 +44,10 @@ public class ModItems {
 	public static final RegistryObject<Item> HEXDUST = ITEMS.register("hex_dust", 
 			() -> new Item(new Item.Properties()));
 	public static final RegistryObject<Item> HEXCHARGE = ITEMS.register("hex_charge", 
+			() -> new Item(new Item.Properties()));
+	public static final RegistryObject<Item> LUNAR_CLAY = ITEMS.register("lunar_clay", 
+			() -> new Item(new Item.Properties()));
+	public static final RegistryObject<Item> LUNAR_CLAY_BRICK = ITEMS.register("lunar_clay_brick", 
 			() -> new Item(new Item.Properties()));
 	
 	//foods

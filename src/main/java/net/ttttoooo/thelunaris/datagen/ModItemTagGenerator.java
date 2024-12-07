@@ -61,15 +61,23 @@ public class ModItemTagGenerator extends ItemTagsProvider {
 		
 		this.tag(ModTags.Items.STELLAR_WOODS)
 			.add(ModBlocks.STELLAR_LOG.get().asItem(),
-				ModBlocks.STELLAR_WOOD.get().asItem(),
-				ModBlocks.STRIPPED_STELLAR_LOG.get().asItem(),
-				ModBlocks.STRIPPED_STELLAR_WOOD.get().asItem());
+					ModBlocks.STELLAR_WOOD.get().asItem(),
+					ModBlocks.STRIPPED_STELLAR_LOG.get().asItem(),
+					ModBlocks.STRIPPED_STELLAR_WOOD.get().asItem());
 		
 		this.tag(ModTags.Items.SKYOAK_WOODS)
 			.add(ModBlocks.SKYOAK_LOG.get().asItem(),
-				ModBlocks.SKYOAK_WOOD.get().asItem(),
-				ModBlocks.STRIPPED_SKYOAK_LOG.get().asItem(),
-				ModBlocks.STRIPPED_SKYOAK_WOOD.get().asItem());
+					ModBlocks.SKYOAK_WOOD.get().asItem(),
+					ModBlocks.STRIPPED_SKYOAK_LOG.get().asItem(),
+					ModBlocks.STRIPPED_SKYOAK_WOOD.get().asItem());
+		
+		this.tag(ModTags.Items.LUNAR_LOGS_ITEM)
+			.add(ModBlocks.CELEST_LOG.get().asItem(),
+					ModBlocks.CELEST_WOOD.get().asItem(),
+					ModBlocks.STELLAR_LOG.get().asItem(),
+					ModBlocks.STELLAR_WOOD.get().asItem(),
+					ModBlocks.SKYOAK_LOG.get().asItem(),
+					ModBlocks.SKYOAK_WOOD.get().asItem());
 		
 		this.tag(ItemTags.TRIMMABLE_ARMOR)
 			.add(ModItems.MOONSTEEL_HELMET.get(),

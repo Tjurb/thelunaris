@@ -2,22 +2,31 @@ package net.ttttoooo.thelunaris.datagen;
 
 import java.util.List;
 import java.util.function.Consumer;
+import java.util.function.Supplier;
 
 import net.minecraft.data.PackOutput;
 import net.minecraft.data.recipes.FinishedRecipe;
 import net.minecraft.data.recipes.RecipeCategory;
 import net.minecraft.data.recipes.RecipeProvider;
 import net.minecraft.data.recipes.ShapedRecipeBuilder;
+import net.minecraft.data.recipes.ShapelessRecipeBuilder;
 import net.minecraft.data.recipes.SimpleCookingRecipeBuilder;
+import net.minecraft.resources.ResourceLocation;
+import net.minecraft.world.item.Item;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.item.crafting.AbstractCookingRecipe;
 import net.minecraft.world.item.crafting.Ingredient;
 import net.minecraft.world.item.crafting.RecipeSerializer;
 import net.minecraft.world.level.ItemLike;
+import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.block.Blocks;
+import net.minecraftforge.common.Tags;
 import net.minecraftforge.common.crafting.conditions.IConditionBuilder;
+import net.minecraftforge.registries.ForgeRegistries;
 import net.ttttoooo.thelunaris.TheLunaris;
 import net.ttttoooo.thelunaris.block.ModBlocks;
 import net.ttttoooo.thelunaris.item.ModItems;
+import net.ttttoooo.thelunaris.util.ModTags;
 
 public class ModRecipeProvider extends RecipeProvider implements IConditionBuilder{
 	public static final List<ItemLike> LUNARITE_SMELTABLES = List.of(ModBlocks.LUNARITE_ORE.get(),
@@ -44,7 +53,9 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
 	public static final List<ItemLike> SLATE_SMELTABLES = List.of(ModBlocks.LUNARSLATE.get());
 	public static final List<ItemLike> SHALE_SMELTABLES = List.of(ModBlocks.LUNARSHALE.get());
 	
-	public static final List<ItemLike> ARCHFISH_COOKING = List.of(ModItems.ARCHFISH.get());
+	public static final List<ItemLike> ARCHFISH_COOKING = List.of(ModItems.ARCHFISH.get());	
+	
+	public static final List<ItemLike> LUNAR_CLAY_SMELTING = List.of(ModItems.LUNAR_CLAY.get());
 
 	public ModRecipeProvider(PackOutput pOutput) {
 		super(pOutput);
@@ -61,20 +72,22 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
 		oreSmelting(pWriter, LABRADORITE_SMELTABLES, RecipeCategory.MISC, ModItems.LABRADORITE.get(), 0.10f, 200, "labradorite" );
 		oreBlasting(pWriter, LABRADORITE_SMELTABLES, RecipeCategory.MISC, ModItems.LABRADORITE.get(), 0.10f, 150, "labradorite" );
 		
-		oreSmelting(pWriter, LUNGLASS_SMELTABLES, RecipeCategory.MISC, ModBlocks.LUNGLASS.get(), 0.10f, 200, "lunglass" );
+		oreSmelting(pWriter, LUNGLASS_SMELTABLES, RecipeCategory.BUILDING_BLOCKS, ModBlocks.LUNGLASS.get(), 0.10f, 200, "lunglass" );
 		oreSmelting(pWriter, LUNAR_CHARCOAL, RecipeCategory.MISC, Items.CHARCOAL, 0.10f, 200, "lunar_charcoal" );
 		
-		oreSmelting(pWriter, STONELIKE_SMELTABLES, RecipeCategory.MISC, ModBlocks.VAILSTONE.get(), 0.10f, 200, "vailstone" );
-		oreSmelting(pWriter, GNEISS_SMELTABLES, RecipeCategory.MISC, ModBlocks.SMOOTHGNEISS.get(), 0.10f, 200, "smooth_gneiss" );
-		oreSmelting(pWriter, MARBLE_SMELTABLES, RecipeCategory.MISC, ModBlocks.SMOOTHMARBLE.get(), 0.10f, 200, "smooth_marble" );
-		oreSmelting(pWriter, SLATE_SMELTABLES, RecipeCategory.MISC, ModBlocks.SMOOTHLUNARSLATE.get(), 0.10f, 200, "smooth_lunarslate" );
-		oreSmelting(pWriter, SHALE_SMELTABLES, RecipeCategory.MISC, ModBlocks.LUNARSLATE.get(), 0.10f, 200, "lunarslate" );
+		oreSmelting(pWriter, STONELIKE_SMELTABLES, RecipeCategory.BUILDING_BLOCKS, ModBlocks.VAILSTONE.get(), 0.10f, 200, "vailstone" );
+		oreSmelting(pWriter, GNEISS_SMELTABLES, RecipeCategory.BUILDING_BLOCKS, ModBlocks.SMOOTHGNEISS.get(), 0.10f, 200, "smooth_gneiss" );
+		oreSmelting(pWriter, MARBLE_SMELTABLES, RecipeCategory.BUILDING_BLOCKS, ModBlocks.SMOOTHMARBLE.get(), 0.10f, 200, "smooth_marble" );
+		oreSmelting(pWriter, SLATE_SMELTABLES, RecipeCategory.BUILDING_BLOCKS, ModBlocks.SMOOTHLUNARSLATE.get(), 0.10f, 200, "smooth_lunarslate" );
+		oreSmelting(pWriter, SHALE_SMELTABLES, RecipeCategory.BUILDING_BLOCKS, ModBlocks.LUNARSLATE.get(), 0.10f, 200, "lunarslate" );
 		
-		oreSmelting(pWriter, ARCHFISH_COOKING, RecipeCategory.MISC, ModItems.COOKED_ARCHFISH.get(), 0.20f, 200, "archfish" );
-		foodSmoking(pWriter, ARCHFISH_COOKING, RecipeCategory.MISC, ModItems.COOKED_ARCHFISH.get(), 0.20f, 150, "archfish" );
+		oreSmelting(pWriter, LUNAR_CLAY_SMELTING, RecipeCategory.MISC, ModItems.LUNAR_CLAY_BRICK.get(), 0.10f, 200, "lunar_clay_brick" );
+		
+		oreSmelting(pWriter, ARCHFISH_COOKING, RecipeCategory.FOOD, ModItems.COOKED_ARCHFISH.get(), 0.20f, 200, "archfish" );
+		foodSmoking(pWriter, ARCHFISH_COOKING, RecipeCategory.FOOD, ModItems.COOKED_ARCHFISH.get(), 0.20f, 150, "archfish" );
 	
 		//High level Foods
-		ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModItems.SPICY_ARCHFISH.get(),4 )
+		ShapedRecipeBuilder.shaped(RecipeCategory.FOOD, ModItems.SPICY_ARCHFISH.get(),2 )
 			.pattern("   ")
 			.pattern("SAS")
 			.pattern("SSS")
@@ -83,7 +96,7 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
 			.unlockedBy(getHasName(ModItems.SARROT.get()), has(ModItems.SARROT.get()))
 			.unlockedBy(getHasName(ModItems.COOKED_ARCHFISH.get()), has(ModItems.COOKED_ARCHFISH.get()))
 			.save(pWriter);
-		ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModItems.LOONBERRY_PIE.get(),4 )
+		ShapedRecipeBuilder.shaped(RecipeCategory.FOOD, ModItems.LOONBERRY_PIE.get(),2 )
 			.pattern("   ")
 			.pattern("LLL")
 			.pattern("WWW")
@@ -92,60 +105,352 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
 			.unlockedBy(getHasName(ModItems.LOONBERRY.get()), has(ModItems.LOONBERRY.get()))
 			.unlockedBy(getHasName(ModItems.LUNAR_WHEAT.get()), has(ModItems.LUNAR_WHEAT.get()))
 			.save(pWriter);
+		ShapedRecipeBuilder.shaped(RecipeCategory.FOOD, ModItems.LUN_BREAD.get(),1 )
+			.pattern("WWW")
+			.define('W', ModItems.LUNAR_WHEAT.get())
+			.unlockedBy(getHasName(ModItems.LUNAR_WHEAT.get()), has(ModItems.LUNAR_WHEAT.get()))
+			.save(pWriter);
+		
+		//Special Recipes
+		ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModItems.MOONDIAL.get(),1 )
+			.pattern("LGL")
+			.pattern("GDG")
+			.pattern("LGL")
+			.define('L', Items.LAPIS_LAZULI)
+			.define('G', Items.GOLD_INGOT)
+			.define('D', Items.DIAMOND)
+			.unlockedBy(getHasName(Items.LAPIS_LAZULI), has(Items.LAPIS_LAZULI))
+			.unlockedBy(getHasName(Items.GOLD_INGOT), has(Items.GOLD_INGOT))
+			.unlockedBy(getHasName(Items.DIAMOND), has(Items.DIAMOND))
+			.save(pWriter);
+		ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModBlocks.VAILSTONE_FURNACE.get(),1 )
+			.pattern("VVV")
+			.pattern("VLV")
+			.pattern("VVV")
+			.define('V', ModBlocks.COBBLED_VAILSTONE.get())
+			.define('L', ModItems.LABRADORITE.get())
+			.unlockedBy(getHasName(ModItems.LABRADORITE.get()), has(ModItems.LABRADORITE.get()))
+			.unlockedBy(getHasName(ModBlocks.COBBLED_VAILSTONE.get()), has(ModBlocks.COBBLED_VAILSTONE.get()))
+			.save(pWriter);
+		ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModBlocks.LUNARIS_CRAFTING_TABLE.get(),1 )
+			.pattern("##")
+			.pattern("##")
+			.define('#', ModTags.Items.LUNAR_PLANKS)
+			.unlockedBy(getHasName(ModBlocks.CELEST_PLANKS.get()), has(ModTags.Items.LUNAR_PLANKS))
+			.unlockedBy(getHasName(ModBlocks.STELLAR_PLANKS.get()), has(ModTags.Items.LUNAR_PLANKS))
+			.unlockedBy(getHasName(ModBlocks.SKYOAK_PLANKS.get()), has(ModTags.Items.LUNAR_PLANKS))
+			.save(pWriter);
+		ShapedRecipeBuilder.shaped(RecipeCategory.MISC, Blocks.FURNACE,1 )
+			.pattern("VVV")
+			.pattern("V V")
+			.pattern("VVV")
+			.define('V', ModBlocks.COBBLED_VAILSTONE.get())
+			.unlockedBy(getHasName(ModBlocks.COBBLED_VAILSTONE.get()), has(ModBlocks.COBBLED_VAILSTONE.get()))
+			.save(pWriter, name("vanilla_furnace_from_vailstone"));
+		ShapedRecipeBuilder.shaped(RecipeCategory.MISC, Blocks.BLAST_FURNACE,1 )
+			.pattern("MMM")
+			.pattern("MFM")
+			.pattern("VVV")
+			.define('V', ModBlocks.VAILSTONE.get())
+			.define('M', ModItems.MOONSTEEL.get())
+			.define('F', Blocks.FURNACE)
+			.unlockedBy(getHasName(ModBlocks.VAILSTONE.get()), has(ModBlocks.VAILSTONE.get()))
+			.unlockedBy(getHasName(ModItems.MOONSTEEL.get()), has(ModItems.MOONSTEEL.get()))
+			.unlockedBy(getHasName(Blocks.FURNACE), has(Blocks.FURNACE))
+			.save(pWriter, name("vanilla_blast_furnace_from_lunaris"));
+		ShapedRecipeBuilder.shaped(RecipeCategory.MISC, Blocks.SMOKER,1 )
+			.pattern(" W ")
+			.pattern("WFW")
+			.pattern(" W ")
+			.define('W', ModTags.Items.LUNAR_LOGS_ITEM)
+			.define('F', Blocks.FURNACE)
+			.unlockedBy(getHasName(ModBlocks.CELEST_LOG.get()), has(ModTags.Items.LUNAR_LOGS_ITEM))
+			.unlockedBy(getHasName(ModBlocks.STELLAR_LOG.get()), has(ModTags.Items.LUNAR_LOGS_ITEM))
+			.unlockedBy(getHasName(ModBlocks.SKYOAK_LOG.get()), has(ModTags.Items.LUNAR_LOGS_ITEM))
+			.unlockedBy(getHasName(Blocks.FURNACE), has(Blocks.FURNACE))
+			.save(pWriter, name("vanilla_smoker_from_lunaris"));
+		
+		//Misc Items
+		ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModItems.LUNAR_STICK.get(),4 )
+			.pattern("#")
+			.pattern("#")
+			.define('#', ModTags.Items.LUNAR_PLANKS)
+			.unlockedBy(getHasName(ModBlocks.CELEST_PLANKS.get()), has(ModTags.Items.LUNAR_PLANKS))
+			.unlockedBy(getHasName(ModBlocks.STELLAR_PLANKS.get()), has(ModTags.Items.LUNAR_PLANKS))
+			.unlockedBy(getHasName(ModBlocks.SKYOAK_PLANKS.get()), has(ModTags.Items.LUNAR_PLANKS))
+			.save(pWriter);
+		ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModBlocks.LUNGLASS_PANE.get(),6 )
+			.pattern("###")
+			.pattern("###")
+			.define('#', ModBlocks.LUNGLASS.get())
+			.unlockedBy(getHasName(ModBlocks.LUNGLASS.get()), has(ModBlocks.LUNGLASS.get()))
+			.save(pWriter);
+		ShapedRecipeBuilder.shaped(RecipeCategory.MISC, Items.TORCH,4 )
+			.pattern("C")
+			.pattern("S")
+			.define('C', Items.COAL)
+			.define('S', ModItems.LUNAR_STICK.get())
+			.unlockedBy(getHasName(ModItems.LUNAR_STICK.get()), has(ModItems.LUNAR_STICK.get()))
+			.save(pWriter, name("vanilla_torch_from_lunaris"));
+		ShapedRecipeBuilder.shaped(RecipeCategory.MISC, Items.TORCH,4 )
+			.pattern("C")
+			.pattern("S")
+			.define('C', Items.CHARCOAL)
+			.define('S', ModItems.LUNAR_STICK.get())
+			.unlockedBy(getHasName(ModItems.LUNAR_STICK.get()), has(ModItems.LUNAR_STICK.get()))
+			.save(pWriter, name("vanilla_charcoal_torch_from_lunaris"));
+		ShapedRecipeBuilder.shaped(RecipeCategory.MISC, Items.FLOWER_POT,1 )
+			.pattern("# #")
+			.pattern(" # ")
+			.define('#', ModItems.LUNAR_CLAY_BRICK.get())
+			.unlockedBy(getHasName(ModItems.LUNAR_CLAY_BRICK.get()), has(ModItems.LUNAR_CLAY_BRICK.get()))
+			.save(pWriter ,name("vanilla_flowerpot_from_lunaris"));
+		ShapedRecipeBuilder.shaped(RecipeCategory.MISC, Blocks.CHEST,1 )
+			.pattern("###")
+			.pattern("# #")
+			.pattern("###")
+			.define('#', ModTags.Items.LUNAR_PLANKS)
+			.unlockedBy(getHasName(ModBlocks.CELEST_PLANKS.get()), has(ModTags.Items.LUNAR_PLANKS))
+			.save(pWriter ,name("vanilla_chest_from_lunaris"));
+		
+		//Dyes
+		ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, Items.ORANGE_DYE, 2)
+        	.requires(ModBlocks.ORANGEYE.get())
+        	.unlockedBy(getHasName(ModBlocks.ORANGEYE.get()), has(ModBlocks.ORANGEYE.get()))
+        	.save(pWriter, name("orangeye_dye"));
+		ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, Items.CYAN_DYE, 2)
+        	.requires(ModBlocks.CYANEYE.get())
+        	.unlockedBy(getHasName(ModBlocks.CYANEYE.get()), has(ModBlocks.CYANEYE.get()))
+        	.save(pWriter, name("cyaneye_dye"));
+		ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, Items.MAGENTA_DYE, 2)
+        	.requires(ModBlocks.MAGENTEYE.get())
+        	.unlockedBy(getHasName(ModBlocks.MAGENTEYE.get()), has(ModBlocks.MAGENTEYE.get()))
+        	.save(pWriter, name("magenteye_dye"));
+		ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, Items.LIME_DYE, 2)
+        	.requires(ModBlocks.LUN_CLOVER.get())
+        	.unlockedBy(getHasName(ModBlocks.LUN_CLOVER.get()), has(ModBlocks.LUN_CLOVER.get()))
+        	.save(pWriter, name("lun_clover_dye"));
+		ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, Items.BROWN_DYE, 2)
+        	.requires(ModBlocks.BRAMBLE.get())
+        	.unlockedBy(getHasName(ModBlocks.BRAMBLE.get()), has(ModBlocks.BRAMBLE.get()))
+        	.save(pWriter, name("bramble_dye"));
+		
+		//Planks
+		ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, ModBlocks.CELEST_PLANKS.get(), 4)
+        	.requires(ModTags.Items.CELEST_WOODS)
+        	.unlockedBy(getHasName(ModBlocks.CELEST_LOG.get()), has(ModBlocks.CELEST_LOG.get()))
+        	.save(pWriter);
+		ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, ModBlocks.STELLAR_PLANKS.get(), 4)
+        	.requires(ModTags.Items.STELLAR_WOODS)
+        	.unlockedBy(getHasName(ModBlocks.STELLAR_LOG.get()), has(ModBlocks.STELLAR_LOG.get()))
+        	.save(pWriter);
+		ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, ModBlocks.SKYOAK_PLANKS.get(), 4)
+        	.requires(ModTags.Items.SKYOAK_WOODS)
+        	.unlockedBy(getHasName(ModBlocks.SKYOAK_LOG.get()), has(ModBlocks.SKYOAK_LOG.get()))
+        	.save(pWriter);
+		
+		//Block -> Ingot
+		makeBlockToIngot(ModItems.RAW_MOONSTEEL, ModBlocks.RAW_MOONSTEEL_BLOCK).save(pWriter, name("raw_moonsteel_block_to_ingot"));
+		makeBlockToIngot(ModItems.MOONSTEEL, ModBlocks.MOONSTEEL_BLOCK).save(pWriter, name("moonsteel_block_to_ingot"));
+		makeBlockToIngot(ModItems.EMOONSTEEL, ModBlocks.EMOONSTEEL_BLOCK).save(pWriter, name("emoonsteel_block_to_ingot"));
+		makeBlockToIngot(ModItems.LABRADORITE, ModBlocks.LABRADORITE_BLOCK).save(pWriter, name("labradorite_block_to_ingot"));
+		makeBlockToIngot(ModItems.LUNARITE, ModBlocks.LUNARITE_BLOCK).save(pWriter, name("lunarite_block_to_ingot"));
+		
+		//Ingot -> Block
+		makeIngotToBlock(ModBlocks.RAW_MOONSTEEL_BLOCK, ModItems.RAW_MOONSTEEL).save(pWriter);
+		makeIngotToBlock(ModBlocks.MOONSTEEL_BLOCK, ModItems.MOONSTEEL).save(pWriter);
+		makeIngotToBlock(ModBlocks.EMOONSTEEL_BLOCK, ModItems.EMOONSTEEL).save(pWriter);
+		makeIngotToBlock(ModBlocks.LABRADORITE_BLOCK, ModItems.LABRADORITE).save(pWriter);
+		makeIngotToBlock(ModBlocks.LUNARITE_BLOCK, ModItems.LUNARITE).save(pWriter);
+		
+		//Ingot -> Nugget
+		makeIngotToNugget(ModItems.MOONSTEEL, ModItems.MOONSTEEL_NUGGET).save(pWriter, name("moonsteel_ingot_to_nugget"));
+		makeIngotToNugget(ModItems.EMOONSTEEL, ModItems.EMOONSTEEL_NUGGET).save(pWriter, name("emoonsteel_ingot_to_nugget"));
+		
+		//Nugget -> Ingot
+		makeNuggetToIngot(ModItems.MOONSTEEL_NUGGET, ModItems.MOONSTEEL).save(pWriter, name("moonsteel_nugget_to_ingot"));
+		makeNuggetToIngot(ModItems.EMOONSTEEL_NUGGET, ModItems.EMOONSTEEL).save(pWriter, name("emoonsteel_nugget_to_ingot"));
+
+		//Wooden Tools
+		ShapedRecipeBuilder.shaped(RecipeCategory.TOOLS, Items.WOODEN_AXE,1 )
+			.pattern("LL ")
+			.pattern("LS ")
+			.pattern(" S ")
+			.define('L', ModTags.Items.LUNAR_PLANKS)
+			.define('S', ModItems.LUNAR_STICK.get())
+			.unlockedBy(getHasName(ModItems.LUNAR_STICK.get()), has(ModItems.LUNAR_STICK.get()))
+			.save(pWriter, name("wooden_axe_from_lunaris"));
+		ShapedRecipeBuilder.shaped(RecipeCategory.TOOLS, Items.WOODEN_HOE,1 )
+			.pattern("LL ")
+			.pattern(" S ")
+			.pattern(" S ")
+			.define('L', ModTags.Items.LUNAR_PLANKS)
+			.define('S', ModItems.LUNAR_STICK.get())
+			.unlockedBy(getHasName(ModItems.LUNAR_STICK.get()), has(ModItems.LUNAR_STICK.get()))
+			.save(pWriter, name("wooden_hoe_from_lunaris"));
+		ShapedRecipeBuilder.shaped(RecipeCategory.TOOLS, Items.WOODEN_PICKAXE,1 )
+			.pattern("LLL")
+			.pattern(" S ")
+			.pattern(" S ")
+			.define('L', ModTags.Items.LUNAR_PLANKS)
+			.define('S', ModItems.LUNAR_STICK.get())
+			.unlockedBy(getHasName(ModItems.LUNAR_STICK.get()), has(ModItems.LUNAR_STICK.get()))
+			.save(pWriter, name("wooden_pickaxe_from_lunaris"));
+		ShapedRecipeBuilder.shaped(RecipeCategory.TOOLS, Items.WOODEN_SHOVEL,1 )
+			.pattern(" L ")
+			.pattern(" S ")
+			.pattern(" S ")
+			.define('L', ModTags.Items.LUNAR_PLANKS)
+			.define('S', ModItems.LUNAR_STICK.get())
+			.unlockedBy(getHasName(ModItems.LUNAR_STICK.get()), has(ModItems.LUNAR_STICK.get()))
+			.save(pWriter, name("wooden_shovel_from_lunaris"));
+		ShapedRecipeBuilder.shaped(RecipeCategory.COMBAT, Items.WOODEN_SWORD,1 )
+			.pattern(" L ")
+			.pattern(" L ")
+			.pattern(" S ")
+			.define('L', ModTags.Items.LUNAR_PLANKS)
+			.define('S', ModItems.LUNAR_STICK.get())
+			.unlockedBy(getHasName(ModItems.LUNAR_STICK.get()), has(ModItems.LUNAR_STICK.get()))
+			.save(pWriter, name("wooden_sword_from_lunaris"));
+		
+		//Vailstone Tools
+		ShapedRecipeBuilder.shaped(RecipeCategory.TOOLS, ModItems.VAILSTONE_AXE.get(),1 )
+			.pattern("LL ")
+			.pattern("LS ")
+			.pattern(" S ")
+			.define('L', ModBlocks.VAILSTONE.get())
+			.define('S', ModItems.LUNAR_STICK.get())
+			.unlockedBy(getHasName(ModBlocks.VAILSTONE.get()), has(ModBlocks.VAILSTONE.get()))
+			.save(pWriter);
+		ShapedRecipeBuilder.shaped(RecipeCategory.TOOLS, ModItems.VAILSTONE_HOE.get(),1 )
+			.pattern("LL ")
+			.pattern(" S ")
+			.pattern(" S ")
+			.define('L', ModBlocks.VAILSTONE.get())
+			.define('S', ModItems.LUNAR_STICK.get())
+			.unlockedBy(getHasName(ModBlocks.VAILSTONE.get()), has(ModBlocks.VAILSTONE.get()))
+			.save(pWriter);
+		ShapedRecipeBuilder.shaped(RecipeCategory.TOOLS, ModItems.VAILSTONE_PICKAXE.get(),1 )
+			.pattern("LLL")
+			.pattern(" S ")
+			.pattern(" S ")
+			.define('L', ModBlocks.VAILSTONE.get())
+			.define('S', ModItems.LUNAR_STICK.get())
+			.unlockedBy(getHasName(ModBlocks.VAILSTONE.get()), has(ModBlocks.VAILSTONE.get()))
+			.save(pWriter);
+		ShapedRecipeBuilder.shaped(RecipeCategory.TOOLS, ModItems.VAILSTONE_SHOVEL.get(),1 )
+			.pattern(" L ")
+			.pattern(" S ")
+			.pattern(" S ")
+			.define('L', ModBlocks.VAILSTONE.get())
+			.define('S', ModItems.LUNAR_STICK.get())
+			.unlockedBy(getHasName(ModBlocks.VAILSTONE.get()), has(ModBlocks.VAILSTONE.get()))
+			.save(pWriter);
+		ShapedRecipeBuilder.shaped(RecipeCategory.COMBAT, ModItems.VAILSTONE_SWORD.get(),1 )
+			.pattern(" L ")
+			.pattern(" L ")
+			.pattern(" S ")
+			.define('L', ModBlocks.VAILSTONE.get())
+			.define('S', ModItems.LUNAR_STICK.get())
+			.unlockedBy(getHasName(ModBlocks.VAILSTONE.get()), has(ModBlocks.VAILSTONE.get()))
+			.save(pWriter);
 		
 		//Moonsteel Armors
-		ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModItems.MOONSTEEL_HELMET.get(),1 )
+		ShapedRecipeBuilder.shaped(RecipeCategory.COMBAT, ModItems.MOONSTEEL_HELMET.get(),1 )
 			.pattern("   ")
 			.pattern("MMM")
 			.pattern("M M")
 			.define('M', ModItems.MOONSTEEL.get())
 			.unlockedBy(getHasName(ModItems.MOONSTEEL.get()), has(ModItems.MOONSTEEL.get()))
 			.save(pWriter);
-		ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModItems.MOONSTEEL_CHESTPLATE.get(),1 )
+		ShapedRecipeBuilder.shaped(RecipeCategory.COMBAT, ModItems.MOONSTEEL_CHESTPLATE.get(),1 )
 			.pattern("M M")
 			.pattern("MMM")
 			.pattern("MMM")
 			.define('M', ModItems.MOONSTEEL.get())
 			.unlockedBy(getHasName(ModItems.MOONSTEEL.get()), has(ModItems.MOONSTEEL.get()))
 			.save(pWriter);
-		ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModItems.MOONSTEEL_LEGGINGS.get(),1 )
+		ShapedRecipeBuilder.shaped(RecipeCategory.COMBAT, ModItems.MOONSTEEL_LEGGINGS.get(),1 )
 			.pattern("MMM")
 			.pattern("M M")
 			.pattern("M M")
 			.define('M', ModItems.MOONSTEEL.get())
 			.unlockedBy(getHasName(ModItems.MOONSTEEL.get()), has(ModItems.MOONSTEEL.get()))
 			.save(pWriter);
-		ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModItems.MOONSTEEL_BOOTS.get(),1 )
+		ShapedRecipeBuilder.shaped(RecipeCategory.COMBAT, ModItems.MOONSTEEL_BOOTS.get(),1 )
 			.pattern("   ")
 			.pattern("M M")
 			.pattern("M M")
 			.define('M', ModItems.MOONSTEEL.get())
 			.unlockedBy(getHasName(ModItems.MOONSTEEL.get()), has(ModItems.MOONSTEEL.get()))
 			.save(pWriter);
+		
+		//Moonsteel Tools
+		ShapedRecipeBuilder.shaped(RecipeCategory.TOOLS, ModItems.MOONSTEEL_AXE.get(),1 )
+			.pattern("LL ")
+			.pattern("LS ")
+			.pattern(" S ")
+			.define('L', ModItems.MOONSTEEL.get())
+			.define('S', ModItems.LUNAR_STICK.get())
+			.unlockedBy(getHasName(ModItems.MOONSTEEL.get()), has(ModItems.MOONSTEEL.get()))
+			.save(pWriter);
+		ShapedRecipeBuilder.shaped(RecipeCategory.TOOLS, ModItems.MOONSTEEL_HOE.get(),1 )
+			.pattern("LL ")
+			.pattern(" S ")
+			.pattern(" S ")
+			.define('L', ModItems.MOONSTEEL.get())
+			.define('S', ModItems.LUNAR_STICK.get())
+			.unlockedBy(getHasName(ModItems.MOONSTEEL.get()), has(ModItems.MOONSTEEL.get()))
+			.save(pWriter);
+		ShapedRecipeBuilder.shaped(RecipeCategory.TOOLS, ModItems.MOONSTEEL_PICKAXE.get(),1 )
+			.pattern("LLL")
+			.pattern(" S ")
+			.pattern(" S ")
+			.define('L', ModItems.MOONSTEEL.get())
+			.define('S', ModItems.LUNAR_STICK.get())
+			.unlockedBy(getHasName(ModItems.MOONSTEEL.get()), has(ModItems.MOONSTEEL.get()))
+			.save(pWriter);
+		ShapedRecipeBuilder.shaped(RecipeCategory.TOOLS, ModItems.MOONSTEEL_SHOVEL.get(),1 )
+			.pattern(" L ")
+			.pattern(" S ")
+			.pattern(" S ")
+			.define('L', ModItems.MOONSTEEL.get())
+			.define('S', ModItems.LUNAR_STICK.get())
+			.unlockedBy(getHasName(ModItems.MOONSTEEL.get()), has(ModItems.MOONSTEEL.get()))
+			.save(pWriter);
+		ShapedRecipeBuilder.shaped(RecipeCategory.COMBAT, ModItems.MOONSTEEL_SWORD.get(),1 )
+			.pattern(" L ")
+			.pattern(" L ")
+			.pattern(" S ")
+			.define('L', ModItems.MOONSTEEL.get())
+			.define('S', ModItems.LUNAR_STICK.get())
+			.unlockedBy(getHasName(ModItems.MOONSTEEL.get()), has(ModItems.MOONSTEEL.get()))
+			.save(pWriter);
+
 		
 		//Ethereal Moonsteel Armor
-		ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModItems.EMOONSTEEL_HELMET.get(),1 )
+		ShapedRecipeBuilder.shaped(RecipeCategory.COMBAT, ModItems.EMOONSTEEL_HELMET.get(),1 )
 			.pattern("   ")
 			.pattern("MMM")
 			.pattern("M M")
 			.define('M', ModItems.EMOONSTEEL.get())
 			.unlockedBy(getHasName(ModItems.EMOONSTEEL.get()), has(ModItems.EMOONSTEEL.get()))
 			.save(pWriter);
-		ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModItems.EMOONSTEEL_CHESTPLATE.get(),1 )
+		ShapedRecipeBuilder.shaped(RecipeCategory.COMBAT, ModItems.EMOONSTEEL_CHESTPLATE.get(),1 )
 			.pattern("M M")
 			.pattern("MMM")
 			.pattern("MMM")
 			.define('M', ModItems.EMOONSTEEL.get())
 			.unlockedBy(getHasName(ModItems.EMOONSTEEL.get()), has(ModItems.EMOONSTEEL.get()))
 			.save(pWriter);
-		ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModItems.EMOONSTEEL_LEGGINGS.get(),1 )
+		ShapedRecipeBuilder.shaped(RecipeCategory.COMBAT, ModItems.EMOONSTEEL_LEGGINGS.get(),1 )
 			.pattern("MMM")
 			.pattern("M M")
 			.pattern("M M")
 			.define('M', ModItems.EMOONSTEEL.get())
 			.unlockedBy(getHasName(ModItems.EMOONSTEEL.get()), has(ModItems.EMOONSTEEL.get()))
 			.save(pWriter);
-		ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModItems.EMOONSTEEL_BOOTS.get(),1 )
+		ShapedRecipeBuilder.shaped(RecipeCategory.COMBAT, ModItems.EMOONSTEEL_BOOTS.get(),1 )
 			.pattern("   ")
 			.pattern("M M")
 			.pattern("M M")
@@ -153,8 +458,50 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
 			.unlockedBy(getHasName(ModItems.EMOONSTEEL.get()), has(ModItems.EMOONSTEEL.get()))
 			.save(pWriter);
 		
+		//Ethereal Moonsteel Tools
+		ShapedRecipeBuilder.shaped(RecipeCategory.TOOLS, ModItems.EMOONSTEEL_AXE.get(),1 )
+			.pattern("LL ")
+			.pattern("LS ")
+			.pattern(" S ")
+			.define('L', ModItems.EMOONSTEEL.get())
+			.define('S', ModItems.LUNAR_STICK.get())
+			.unlockedBy(getHasName(ModItems.EMOONSTEEL.get()), has(ModItems.EMOONSTEEL.get()))
+			.save(pWriter);
+		ShapedRecipeBuilder.shaped(RecipeCategory.TOOLS, ModItems.EMOONSTEEL_HOE.get(),1 )
+			.pattern("LL ")
+			.pattern(" S ")
+			.pattern(" S ")
+			.define('L', ModItems.EMOONSTEEL.get())
+			.define('S', ModItems.LUNAR_STICK.get())
+			.unlockedBy(getHasName(ModItems.EMOONSTEEL.get()), has(ModItems.EMOONSTEEL.get()))
+			.save(pWriter);
+		ShapedRecipeBuilder.shaped(RecipeCategory.TOOLS, ModItems.EMOONSTEEL_PICKAXE.get(),1 )
+			.pattern("LLL")
+			.pattern(" S ")
+			.pattern(" S ")
+			.define('L', ModItems.EMOONSTEEL.get())
+			.define('S', ModItems.LUNAR_STICK.get())
+			.unlockedBy(getHasName(ModItems.EMOONSTEEL.get()), has(ModItems.EMOONSTEEL.get()))
+			.save(pWriter);
+		ShapedRecipeBuilder.shaped(RecipeCategory.TOOLS, ModItems.EMOONSTEEL_SHOVEL.get(),1 )
+			.pattern(" L ")
+			.pattern(" S ")
+			.pattern(" S ")
+			.define('L', ModItems.EMOONSTEEL.get())
+			.define('S', ModItems.LUNAR_STICK.get())
+			.unlockedBy(getHasName(ModItems.EMOONSTEEL.get()), has(ModItems.EMOONSTEEL.get()))
+			.save(pWriter);
+		ShapedRecipeBuilder.shaped(RecipeCategory.COMBAT, ModItems.EMOONSTEEL_SWORD.get(),1 )
+			.pattern(" L ")
+			.pattern(" L ")
+			.pattern(" S ")
+			.define('L', ModItems.EMOONSTEEL.get())
+			.define('S', ModItems.LUNAR_STICK.get())
+			.unlockedBy(getHasName(ModItems.EMOONSTEEL.get()), has(ModItems.EMOONSTEEL.get()))
+			.save(pWriter);		
+		
 		//Lunarite Armor
-		ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModItems.LUNARITE_HELMET.get(),1 )
+		ShapedRecipeBuilder.shaped(RecipeCategory.COMBAT, ModItems.LUNARITE_HELMET.get(),1 )
 			.pattern("   ")
 			.pattern("LLL")
 			.pattern("LML")
@@ -162,7 +509,7 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
 			.define('M', ModItems.EMOONSTEEL_HELMET.get())
 			.unlockedBy(getHasName(ModItems.LUNARITE.get()), has(ModItems.LUNARITE.get()))
 			.save(pWriter);
-		ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModItems.LUNARITE_CHESTPLATE.get(),1 )
+		ShapedRecipeBuilder.shaped(RecipeCategory.COMBAT, ModItems.LUNARITE_CHESTPLATE.get(),1 )
 			.pattern("LML")
 			.pattern("LLL")
 			.pattern("LLL")
@@ -170,7 +517,7 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
 			.define('M', ModItems.EMOONSTEEL_CHESTPLATE.get())
 			.unlockedBy(getHasName(ModItems.LUNARITE.get()), has(ModItems.LUNARITE.get()))
 			.save(pWriter);
-		ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModItems.LUNARITE_LEGGINGS.get(),1 )
+		ShapedRecipeBuilder.shaped(RecipeCategory.COMBAT, ModItems.LUNARITE_LEGGINGS.get(),1 )
 			.pattern("LLL")
 			.pattern("LML")
 			.pattern("L L")
@@ -178,7 +525,7 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
 			.define('M', ModItems.EMOONSTEEL_LEGGINGS.get())
 			.unlockedBy(getHasName(ModItems.LUNARITE.get()), has(ModItems.LUNARITE.get()))
 			.save(pWriter);
-		ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModItems.LUNARITE_BOOTS.get(),1 )
+		ShapedRecipeBuilder.shaped(RecipeCategory.COMBAT, ModItems.LUNARITE_BOOTS.get(),1 )
 			.pattern("   ")
 			.pattern("LML")
 			.pattern("L L")
@@ -287,23 +634,30 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
 			.define('S', ModBlocks.SMOOTHMARBLE.get())
 			.unlockedBy(getHasName(ModBlocks.SMOOTHMARBLE.get()), has(ModBlocks.SMOOTHMARBLE.get()))
 			.save(pWriter);	
+		ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModBlocks.LUNCLAY_BRICK_BLOCK_STAIRS.get(), 4)
+			.pattern("  S")
+			.pattern(" SS")
+			.pattern("SSS")
+			.define('S', ModBlocks.LUNCLAY_BRICK_BLOCK.get())
+			.unlockedBy(getHasName(ModBlocks.LUNCLAY_BRICK_BLOCK.get()), has(ModBlocks.LUNCLAY_BRICK_BLOCK.get()))
+			.save(pWriter);
 		
 		//slabs
-		ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModBlocks.CELEST_SLAB.get(), 6)
+		ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, ModBlocks.CELEST_SLAB.get(), 6)
 			.pattern("   ")
 			.pattern("   ")
 			.pattern("PPP")
 			.define('P', ModBlocks.CELEST_PLANKS.get())
 			.unlockedBy(getHasName(ModBlocks.CELEST_PLANKS.get()), has(ModBlocks.CELEST_PLANKS.get()))
 			.save(pWriter);
-		ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModBlocks.STELLAR_SLAB.get(), 6)
+		ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, ModBlocks.STELLAR_SLAB.get(), 6)
 			.pattern("   ")
 			.pattern("   ")
 			.pattern("PPP")
 			.define('P', ModBlocks.STELLAR_PLANKS.get())
 			.unlockedBy(getHasName(ModBlocks.STELLAR_PLANKS.get()), has(ModBlocks.STELLAR_PLANKS.get()))
 			.save(pWriter);
-		ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModBlocks.SKYOAK_SLAB.get(), 6)
+		ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, ModBlocks.SKYOAK_SLAB.get(), 6)
 			.pattern("   ")
 			.pattern("   ")
 			.pattern("PPP")
@@ -311,81 +665,95 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
 			.unlockedBy(getHasName(ModBlocks.SKYOAK_PLANKS.get()), has(ModBlocks.SKYOAK_PLANKS.get()))
 			.save(pWriter);
 
-		ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModBlocks.COBBLED_VAILSTONE_SLAB.get(), 6)
+		ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, ModBlocks.COBBLED_VAILSTONE_SLAB.get(), 6)
 			.pattern("   ")
 			.pattern("   ")
 			.pattern("SSS")
 			.define('S', ModBlocks.COBBLED_VAILSTONE.get())
 			.unlockedBy(getHasName(ModBlocks.COBBLED_VAILSTONE.get()), has(ModBlocks.COBBLED_VAILSTONE.get()))
 			.save(pWriter);	
-		ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModBlocks.VAILSTONEBRICK_SLAB.get(), 6)
+		ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, ModBlocks.VAILSTONEBRICK_SLAB.get(), 6)
 			.pattern("   ")
 			.pattern("   ")
 			.pattern("SSS")
 			.define('S', ModBlocks.VAILSTONEBRICK.get())
 			.unlockedBy(getHasName(ModBlocks.VAILSTONEBRICK.get()), has(ModBlocks.VAILSTONEBRICK.get()))
 			.save(pWriter);	
-		ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModBlocks.SMOOTHGNEISS_SLAB.get(), 6)
+		ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, ModBlocks.SMOOTHGNEISS_SLAB.get(), 6)
 			.pattern("   ")
 			.pattern("   ")
 			.pattern("SSS")
 			.define('S', ModBlocks.SMOOTHGNEISS.get())
 			.unlockedBy(getHasName(ModBlocks.SMOOTHGNEISS.get()), has(ModBlocks.SMOOTHGNEISS.get()))
 			.save(pWriter);	
-		ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModBlocks.SMOOTHLUNARSLATE_SLAB.get(), 6)
+		ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, ModBlocks.SMOOTHLUNARSLATE_SLAB.get(), 6)
 			.pattern("   ")
 			.pattern("   ")
 			.pattern("SSS")
 			.define('S', ModBlocks.SMOOTHLUNARSLATE.get())
 			.unlockedBy(getHasName(ModBlocks.SMOOTHLUNARSLATE.get()), has(ModBlocks.SMOOTHLUNARSLATE.get()))
 			.save(pWriter);	
-		ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModBlocks.SMOOTHMARBLE_SLAB.get(), 6)
+		ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, ModBlocks.SMOOTHMARBLE_SLAB.get(), 6)
 			.pattern("   ")
 			.pattern("   ")
 			.pattern("SSS")
 			.define('S', ModBlocks.SMOOTHMARBLE.get())
 			.unlockedBy(getHasName(ModBlocks.SMOOTHMARBLE.get()), has(ModBlocks.SMOOTHMARBLE.get()))
 			.save(pWriter);	
+		ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, ModBlocks.LUNCLAY_BRICK_BLOCK_SLAB.get(), 6)
+			.pattern("   ")
+			.pattern("   ")
+			.pattern("SSS")
+			.define('S', ModBlocks.LUNCLAY_BRICK_BLOCK.get())
+			.unlockedBy(getHasName(ModBlocks.LUNCLAY_BRICK_BLOCK.get()), has(ModBlocks.LUNCLAY_BRICK_BLOCK.get()))
+			.save(pWriter);	
 	
 		//walls
-		ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModBlocks.COBBLED_VAILSTONE_WALL.get(), 6)
+		ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, ModBlocks.COBBLED_VAILSTONE_WALL.get(), 3)
 			.pattern("   ")
 			.pattern("SSS")
 			.pattern("SSS")
 			.define('S', ModBlocks.COBBLED_VAILSTONE.get())
 			.unlockedBy(getHasName(ModBlocks.COBBLED_VAILSTONE.get()), has(ModBlocks.COBBLED_VAILSTONE.get()))
 			.save(pWriter);
-		ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModBlocks.VAILSTONEBRICK_WALL.get(), 6)
+		ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, ModBlocks.VAILSTONEBRICK_WALL.get(), 3)
 			.pattern("   ")
 			.pattern("SSS")
 			.pattern("SSS")
 			.define('S', ModBlocks.VAILSTONEBRICK.get())
 			.unlockedBy(getHasName(ModBlocks.VAILSTONEBRICK.get()), has(ModBlocks.VAILSTONEBRICK.get()))
 			.save(pWriter);	
-		ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModBlocks.SMOOTHGNEISS_WALL.get(), 6)
+		ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, ModBlocks.SMOOTHGNEISS_WALL.get(), 3)
 			.pattern("   ")
 			.pattern("SSS")
 			.pattern("SSS")
 			.define('S', ModBlocks.SMOOTHGNEISS.get())
 			.unlockedBy(getHasName(ModBlocks.SMOOTHGNEISS.get()), has(ModBlocks.SMOOTHGNEISS.get()))
 			.save(pWriter);	
-		ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModBlocks.SMOOTHLUNARSLATE_WALL.get(), 6)
+		ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, ModBlocks.SMOOTHLUNARSLATE_WALL.get(), 3)
 			.pattern("   ")
 			.pattern("SSS")
 			.pattern("SSS")
 			.define('S', ModBlocks.SMOOTHLUNARSLATE.get())
 			.unlockedBy(getHasName(ModBlocks.SMOOTHLUNARSLATE.get()), has(ModBlocks.SMOOTHLUNARSLATE.get()))
 			.save(pWriter);	
-		ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModBlocks.SMOOTHMARBLE_WALL.get(), 6)
+		ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, ModBlocks.SMOOTHMARBLE_WALL.get(), 3)
 			.pattern("   ")
 			.pattern("SSS")
 			.pattern("SSS")
 			.define('S', ModBlocks.SMOOTHMARBLE.get())
 			.unlockedBy(getHasName(ModBlocks.SMOOTHMARBLE.get()), has(ModBlocks.SMOOTHMARBLE.get()))
+			.save(pWriter);		
+		ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, ModBlocks.LUNCLAY_BRICK_BLOCK_WALL.get(), 3)
+			.pattern("   ")
+			.pattern("SSS")
+			.pattern("SSS")
+			.define('S', ModBlocks.LUNCLAY_BRICK_BLOCK.get())
+			.unlockedBy(getHasName(ModBlocks.LUNCLAY_BRICK_BLOCK.get()), has(ModBlocks.LUNCLAY_BRICK_BLOCK.get()))
 			.save(pWriter);	
 		
 		//fence
-		ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModBlocks.CELEST_FENCE_GATE.get(),1 )
+		ShapedRecipeBuilder.shaped(RecipeCategory.REDSTONE, ModBlocks.CELEST_FENCE_GATE.get(),1 )
 			.pattern("   ")
 			.pattern("SPS")
 			.pattern("SPS")
@@ -401,7 +769,7 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
 			.define('S', ModItems.LUNAR_STICK.get())
 			.unlockedBy(getHasName(ModBlocks.CELEST_PLANKS.get()), has(ModBlocks.CELEST_PLANKS.get()))
 			.save(pWriter);
-		ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModBlocks.STELLAR_FENCE_GATE.get(),1 )
+		ShapedRecipeBuilder.shaped(RecipeCategory.REDSTONE, ModBlocks.STELLAR_FENCE_GATE.get(),1 )
 			.pattern("   ")
 			.pattern("SPS")
 			.pattern("SPS")
@@ -417,7 +785,7 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
 			.define('S', ModItems.LUNAR_STICK.get())
 			.unlockedBy(getHasName(ModBlocks.STELLAR_PLANKS.get()), has(ModBlocks.STELLAR_PLANKS.get()))
 			.save(pWriter);
-		ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModBlocks.SKYOAK_FENCE_GATE.get(),1 )
+		ShapedRecipeBuilder.shaped(RecipeCategory.REDSTONE, ModBlocks.SKYOAK_FENCE_GATE.get(),1 )
 			.pattern("   ")
 			.pattern("SPS")
 			.pattern("SPS")
@@ -435,21 +803,21 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
 			.save(pWriter);
 		
 		//doors
-		ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModBlocks.CELEST_DOOR.get(),3 )
+		ShapedRecipeBuilder.shaped(RecipeCategory.REDSTONE, ModBlocks.CELEST_DOOR.get(),3 )
 			.pattern(" PP")
 			.pattern(" PP")
 			.pattern(" PP")
 			.define('P', ModBlocks.CELEST_PLANKS.get())
 			.unlockedBy(getHasName(ModBlocks.CELEST_PLANKS.get()), has(ModBlocks.CELEST_PLANKS.get()))
 			.save(pWriter);
-		ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModBlocks.STELLAR_DOOR.get(),3 )
+		ShapedRecipeBuilder.shaped(RecipeCategory.REDSTONE, ModBlocks.STELLAR_DOOR.get(),3 )
 			.pattern(" PP")
 			.pattern(" PP")
 			.pattern(" PP")
 			.define('P', ModBlocks.STELLAR_PLANKS.get())
 			.unlockedBy(getHasName(ModBlocks.STELLAR_PLANKS.get()), has(ModBlocks.STELLAR_PLANKS.get()))
 			.save(pWriter);
-		ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModBlocks.SKYOAK_DOOR.get(),3 )
+		ShapedRecipeBuilder.shaped(RecipeCategory.REDSTONE, ModBlocks.SKYOAK_DOOR.get(),3 )
 			.pattern(" PP")
 			.pattern(" PP")
 			.pattern(" PP")
@@ -458,27 +826,66 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
 			.save(pWriter);
 		
 		//trapdoors
-		ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModBlocks.CELEST_TRAPDOOR.get(),3 )
+		ShapedRecipeBuilder.shaped(RecipeCategory.REDSTONE, ModBlocks.CELEST_TRAPDOOR.get(),3 )
 			.pattern("   ")
 			.pattern("PPP")
 			.pattern("PPP")
 			.define('P', ModBlocks.CELEST_PLANKS.get())
 			.unlockedBy(getHasName(ModBlocks.CELEST_PLANKS.get()), has(ModBlocks.CELEST_PLANKS.get()))
 			.save(pWriter);
-		ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModBlocks.STELLAR_TRAPDOOR.get(),3 )
+		ShapedRecipeBuilder.shaped(RecipeCategory.REDSTONE, ModBlocks.STELLAR_TRAPDOOR.get(),3 )
 			.pattern("   ")
 			.pattern("PPP")
 			.pattern("PPP")
 			.define('P', ModBlocks.STELLAR_PLANKS.get())
 			.unlockedBy(getHasName(ModBlocks.STELLAR_PLANKS.get()), has(ModBlocks.STELLAR_PLANKS.get()))
 			.save(pWriter);
-		ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModBlocks.SKYOAK_TRAPDOOR.get(),3 )
+		ShapedRecipeBuilder.shaped(RecipeCategory.REDSTONE, ModBlocks.SKYOAK_TRAPDOOR.get(),3 )
 			.pattern("   ")
 			.pattern("PPP")
 			.pattern("PPP")
 			.define('P', ModBlocks.SKYOAK_PLANKS.get())
 			.unlockedBy(getHasName(ModBlocks.SKYOAK_PLANKS.get()), has(ModBlocks.SKYOAK_PLANKS.get()))
 			.save(pWriter);
+		
+		//brick block
+		ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModBlocks.LUNCLAY_BRICK_BLOCK.get(),1 )
+			.pattern("##")
+			.pattern("##")
+			.define('#', ModItems.LUNAR_CLAY_BRICK.get())
+			.unlockedBy(getHasName(ModItems.LUNAR_CLAY_BRICK.get()), has(ModItems.LUNAR_CLAY_BRICK.get()))
+			.save(pWriter);
+	}
+	
+
+	public ShapedRecipeBuilder makeIngotToBlock(Supplier<? extends Block> blockOut, Supplier<? extends Item> ingotIn) {
+		return ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, blockOut.get())
+				.pattern("###")
+				.pattern("###")
+				.pattern("###")
+				.define('#', ingotIn.get())
+				.unlockedBy("has_" + ForgeRegistries.ITEMS.getKey(ingotIn.get()).getPath(), has(ingotIn.get()));
+	}
+
+	public ShapelessRecipeBuilder makeBlockToIngot(Supplier<? extends Item> ingotOut, Supplier<? extends Block> blockIn) {
+		return ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, ingotOut.get(), 9)
+				.requires(blockIn.get())
+				.unlockedBy("has_" + ForgeRegistries.BLOCKS.getKey(blockIn.get()).getPath(), has(blockIn.get()));
+	}
+
+	public ShapedRecipeBuilder makeNuggetToIngot(Supplier<? extends Item> ingotOut, Supplier<? extends Item> nuggetIn) {
+		return ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ingotOut.get(), 1)
+				.pattern("NNN")
+				.pattern("NNN")
+				.pattern("NNN")
+				.define('N', nuggetIn.get())
+				.unlockedBy("has_" + ForgeRegistries.ITEMS.getKey(nuggetIn.get()).getPath(), has(nuggetIn.get()));
+	}
+
+	public ShapelessRecipeBuilder makeIngotToNugget(Supplier<? extends Item> nuggetOut, Supplier<? extends Item> ingotIn) {
+		return ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, nuggetOut.get(), 9)
+				.requires(ingotIn.get())
+				.unlockedBy("has_" + ForgeRegistries.ITEMS.getKey(ingotIn.get()).getPath(), has(ingotIn.get()));
 	}
 	
 	protected static void oreSmelting(Consumer<FinishedRecipe> p_250654_, List<ItemLike> p_250172_, RecipeCategory p_250588_, ItemLike p_251868_, float p_250789_, int p_252144_, String p_251687_) {
@@ -497,6 +904,10 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
 	         		.group(p_251450_).unlockedBy(getHasName(itemlike), has(itemlike))
 	         		.save(p_250791_, TheLunaris.MODID + ":" + getItemName(p_250066_) + p_249236_ + "_" + getItemName(itemlike));
 	    }
+	}
+	
+	private ResourceLocation name(String name) {
+		return new ResourceLocation(TheLunaris.MODID, name);
 	}
 
 }

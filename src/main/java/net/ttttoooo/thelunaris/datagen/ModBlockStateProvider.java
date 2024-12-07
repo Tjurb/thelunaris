@@ -87,10 +87,17 @@ public class ModBlockStateProvider extends BlockStateProvider{
         simpleBlockWithItem(ModBlocks.LUNGRASS_BLOCK.get(),
                 new ModelFile.UncheckedModelFile(modLoc("block/lungrass_block")));
         farmland(ModBlocks.LUNDIRT_FARMLAND.get(),ModBlocks.LUNDIRT.get());
+		blockWithItem(ModBlocks.LUNCLAY_BLOCK);
+		blockWithItem(ModBlocks.LUNCLAY_BRICK_BLOCK);
+		stairsBlock(((StairBlock) ModBlocks.LUNCLAY_BRICK_BLOCK_STAIRS.get()), blockTexture(ModBlocks.LUNCLAY_BRICK_BLOCK.get()));
+		slabBlock(((SlabBlock) ModBlocks.LUNCLAY_BRICK_BLOCK_SLAB.get()), blockTexture(ModBlocks.LUNCLAY_BRICK_BLOCK.get()),
+				blockTexture(ModBlocks.LUNCLAY_BRICK_BLOCK.get()));
+		wallBlock(((WallBlock) ModBlocks.LUNCLAY_BRICK_BLOCK_WALL.get()), blockTexture(ModBlocks.LUNCLAY_BRICK_BLOCK.get()));
 		blockWithItem(ModBlocks.LUNSAND);
 		blockWithItem(ModBlocks.LUNSANDSTONE);
 		stairsBlock(((StairBlock) ModBlocks.LUNSANDSTONE_STAIRS.get()), blockTexture(ModBlocks.LUNSANDSTONE.get()));
-		slabBlock(((SlabBlock) ModBlocks.LUNSANDSTONE_SLAB.get()), blockTexture(ModBlocks.LUNSANDSTONE.get()), blockTexture(ModBlocks.LUNSANDSTONE.get()));
+		slabBlock(((SlabBlock) ModBlocks.LUNSANDSTONE_SLAB.get()), blockTexture(ModBlocks.LUNSANDSTONE.get()),
+				blockTexture(ModBlocks.LUNSANDSTONE.get()));
 		wallBlock(((WallBlock) ModBlocks.LUNSANDSTONE_WALL.get()), blockTexture(ModBlocks.LUNSANDSTONE.get()));
 		
 		//tree blocks

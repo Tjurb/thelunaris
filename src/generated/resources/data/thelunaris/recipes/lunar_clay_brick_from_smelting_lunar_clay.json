@@ -1,0 +1,11 @@
+{
+  "type": "minecraft:smelting",
+  "category": "misc",
+  "cookingtime": 200,
+  "experience": 0.1,
+  "group": "lunar_clay_brick",
+  "ingredient": {
+    "item": "thelunaris:lunar_clay"
+  },
+  "result": "thelunaris:lunar_clay_brick"
+}

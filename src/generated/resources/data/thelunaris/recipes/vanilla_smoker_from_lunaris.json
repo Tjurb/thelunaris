@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "F": {
+      "item": "minecraft:furnace"
+    },
+    "W": {
+      "tag": "thelunaris:lunar_logs_item"
+    }
+  },
+  "pattern": [
+    " W ",
+    "WFW",
+    " W "
+  ],
+  "result": {
+    "item": "minecraft:smoker"
+  },
+  "show_notification": true
+}

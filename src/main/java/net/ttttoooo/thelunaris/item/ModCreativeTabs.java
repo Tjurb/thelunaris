@@ -27,6 +27,11 @@ public class ModCreativeTabs {
 				
 				pOutput.accept(ModBlocks.LUNGRASS_BLOCK.get());
 				pOutput.accept(ModBlocks.LUNDIRT.get());
+				pOutput.accept(ModBlocks.LUNCLAY_BLOCK.get());
+				pOutput.accept(ModBlocks.LUNCLAY_BRICK_BLOCK.get());
+				pOutput.accept(ModBlocks.LUNCLAY_BRICK_BLOCK_STAIRS.get());
+				pOutput.accept(ModBlocks.LUNCLAY_BRICK_BLOCK_SLAB.get());
+				pOutput.accept(ModBlocks.LUNCLAY_BRICK_BLOCK_WALL.get());
 				pOutput.accept(ModBlocks.LUNSAND.get());
 				pOutput.accept(ModBlocks.LUNSANDSTONE.get());
 				pOutput.accept(ModBlocks.LUNSANDSTONE_STAIRS.get());
@@ -145,11 +150,15 @@ public class ModCreativeTabs {
 				pOutput.accept(ModItems.MOONDIAL.get());
 				pOutput.accept(ModItems.RAW_MOONSTEEL.get());
 				pOutput.accept(ModItems.MOONSTEEL.get());
+				pOutput.accept(ModItems.MOONSTEEL_NUGGET.get());
 				pOutput.accept(ModItems.LABRADORITE.get());
 				pOutput.accept(ModItems.EMOONSTEEL.get());
+				pOutput.accept(ModItems.EMOONSTEEL_NUGGET.get());
 				pOutput.accept(ModItems.LUNARITE.get());
 				pOutput.accept(ModItems.LUNAR_WHEAT_SEEDS.get());
 				pOutput.accept(ModItems.HEXDUST.get());
+				pOutput.accept(ModItems.LUNAR_CLAY.get());
+				pOutput.accept(ModItems.LUNAR_CLAY_BRICK.get());
 				
 				//Food Entry
 				pOutput.accept(ModItems.LOONBERRY.get());

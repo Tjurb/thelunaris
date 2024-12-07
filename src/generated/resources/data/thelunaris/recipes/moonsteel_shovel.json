@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "key": {
+    "L": {
+      "item": "thelunaris:moonsteel"
+    },
+    "S": {
+      "item": "thelunaris:lunar_stick"
+    }
+  },
+  "pattern": [
+    " L ",
+    " S ",
+    " S "
+  ],
+  "result": {
+    "item": "thelunaris:moonsteel_shovel"
+  },
+  "show_notification": true
+}

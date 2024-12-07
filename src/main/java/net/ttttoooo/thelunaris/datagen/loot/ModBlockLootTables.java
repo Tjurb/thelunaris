@@ -94,6 +94,13 @@ public class ModBlockLootTables extends BlockLootSubProvider{
 		this.dropSelf(ModBlocks.LUNDIRT.get());
 		this.add(ModBlocks.LUNDIRT_FARMLAND.get(),
 				block -> createGrassBlockLikeDrops(ModBlocks.LUNDIRT.get(), ModBlocks.LUNDIRT.get()));
+
+		this.add(ModBlocks.LUNCLAY_BLOCK.get(),
+				block -> createClayLikeDrops(ModBlocks.LUNCLAY_BLOCK.get(), ModItems.LUNAR_CLAY.get()));
+		this.dropSelf(ModBlocks.LUNCLAY_BRICK_BLOCK.get());
+		this.dropSelf(ModBlocks.LUNCLAY_BRICK_BLOCK_STAIRS.get());
+		this.dropSelf(ModBlocks.LUNCLAY_BRICK_BLOCK_WALL.get());
+		
 		this.dropSelf(ModBlocks.LUNSAND.get());
 		this.dropSelf(ModBlocks.LUNSANDSTONE.get());
 		this.dropSelf(ModBlocks.LUNSANDSTONE_STAIRS.get());
@@ -179,6 +186,8 @@ public class ModBlockLootTables extends BlockLootSubProvider{
 		
 		this.add(ModBlocks.LUNSANDSTONE_SLAB.get(),
 				block -> createSlabItemTable(ModBlocks.LUNSANDSTONE_SLAB.get()));
+		this.add(ModBlocks.LUNCLAY_BRICK_BLOCK_SLAB.get(),
+				block -> createSlabItemTable(ModBlocks.LUNCLAY_BRICK_BLOCK_SLAB.get()));
 		
 		//Leaf Blocks
 		this.add(ModBlocks.STELLAR_LEAVES.get(), block ->
@@ -245,6 +254,14 @@ public class ModBlockLootTables extends BlockLootSubProvider{
 				this.applyExplosionDecay(pBlock,
 						LootItem.lootTableItem(item)
 						.apply(SetItemCountFunction.setCount(UniformGenerator.between(1.0f, 2.0f)))
+						.apply(ApplyBonusCount.addOreBonusCount(Enchantments.BLOCK_FORTUNE))));
+	}
+	
+	protected LootTable.Builder createClayLikeDrops(Block pBlock, Item item){
+		return createSilkTouchDispatchTable(pBlock,
+				this.applyExplosionDecay(pBlock,
+						LootItem.lootTableItem(item)
+						.apply(SetItemCountFunction.setCount(UniformGenerator.between(4.0f, 6.0f)))
 						.apply(ApplyBonusCount.addOreBonusCount(Enchantments.BLOCK_FORTUNE))));
 	}
 	

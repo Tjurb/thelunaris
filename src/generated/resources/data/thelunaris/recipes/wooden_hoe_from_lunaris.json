@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "key": {
+    "L": {
+      "tag": "thelunaris:lunar_planks"
+    },
+    "S": {
+      "item": "thelunaris:lunar_stick"
+    }
+  },
+  "pattern": [
+    "LL ",
+    " S ",
+    " S "
+  ],
+  "result": {
+    "item": "minecraft:wooden_hoe"
+  },
+  "show_notification": true
+}

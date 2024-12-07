@@ -19,6 +19,7 @@ public class ModTags {
 		
 		public static final TagKey<Block> VAILSTONE_ORE_REPLACEABLES = tag("vailstone_ore_replaceables");
 		public static final TagKey<Block> GNEISS_ORE_REPLACEABLES = tag("gneiss_ore_replaceables");
+		public static final TagKey<Block> SANDDIRT_REPLACEABLES = tag("sanddirt_replaceables");
 		
 		public static final TagKey<Block> LUNAR_PORTAL_BLOCKS = tag("lunar_portal_blocks");
 		
@@ -48,6 +49,8 @@ public class ModTags {
 		public static final TagKey<Item> LUNAR_CATILIST = tag("lunar_catalist");
 		
 		public static final TagKey<Item> LUNAR_PLANKS = tag("lunar_planks");
+		
+		public static final TagKey<Item> LUNAR_LOGS_ITEM = tag("lunar_logs_item");
 		
 		public static final TagKey<Item> CELEST_WOODS = tag("celest_woods");
 		public static final TagKey<Item> STELLAR_WOODS = tag("stellar_woods");

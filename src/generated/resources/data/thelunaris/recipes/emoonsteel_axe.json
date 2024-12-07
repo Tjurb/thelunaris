@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "key": {
+    "L": {
+      "item": "thelunaris:emoonsteel"
+    },
+    "S": {
+      "item": "thelunaris:lunar_stick"
+    }
+  },
+  "pattern": [
+    "LL ",
+    "LS ",
+    " S "
+  ],
+  "result": {
+    "item": "thelunaris:emoonsteel_axe"
+  },
+  "show_notification": true
+}

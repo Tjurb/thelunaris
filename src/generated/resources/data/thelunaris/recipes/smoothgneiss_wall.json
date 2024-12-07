@@ -1,6 +1,6 @@
 {
   "type": "minecraft:crafting_shaped",
-  "category": "misc",
+  "category": "building",
   "key": {
     "S": {
       "item": "thelunaris:smoothgneiss"
@@ -12,7 +12,7 @@
     "SSS"
   ],
   "result": {
-    "count": 6,
+    "count": 3,
     "item": "thelunaris:smoothgneiss_wall"
   },
   "show_notification": true

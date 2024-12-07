@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "key": {
+    "L": {
+      "tag": "thelunaris:lunar_planks"
+    },
+    "S": {
+      "item": "thelunaris:lunar_stick"
+    }
+  },
+  "pattern": [
+    "LLL",
+    " S ",
+    " S "
+  ],
+  "result": {
+    "item": "minecraft:wooden_pickaxe"
+  },
+  "show_notification": true
+}

@@ -1,0 +1,61 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_furnace": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "minecraft:furnace"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_moonsteel": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "thelunaris:moonsteel"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "thelunaris:vanilla_blast_furnace_from_lunaris"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    },
+    "has_vailstone": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "thelunaris:vailstone"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "requirements": [
+    [
+      "has_vailstone",
+      "has_moonsteel",
+      "has_furnace",
+      "has_the_recipe"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "thelunaris:vanilla_blast_furnace_from_lunaris"
+    ]
+  },
+  "sends_telemetry_event": false
+}
