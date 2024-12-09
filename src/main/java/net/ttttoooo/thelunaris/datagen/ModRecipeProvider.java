@@ -123,6 +123,17 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
 			.unlockedBy(getHasName(Items.GOLD_INGOT), has(Items.GOLD_INGOT))
 			.unlockedBy(getHasName(Items.DIAMOND), has(Items.DIAMOND))
 			.save(pWriter);
+		ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModItems.MOONDIAL.get(),1 )
+			.pattern("LGL")
+			.pattern("GDG")
+			.pattern("LGL")
+			.define('L', ModItems.LABRADORITE.get())
+			.define('G', ModItems.EMOONSTEEL.get())
+			.define('D', ModItems.LUNARITE.get())
+			.unlockedBy(getHasName(ModItems.LABRADORITE.get()), has(ModItems.LABRADORITE.get()))
+			.unlockedBy(getHasName(ModItems.EMOONSTEEL.get()), has(ModItems.EMOONSTEEL.get()))
+			.unlockedBy(getHasName(ModItems.LUNARITE.get()), has(ModItems.LUNARITE.get()))
+			.save(pWriter, name("moondial_from_lunaris"));
 		ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModBlocks.VAILSTONE_FURNACE.get(),1 )
 			.pattern("VVV")
 			.pattern("VLV")
@@ -855,6 +866,44 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
 			.define('#', ModItems.LUNAR_CLAY_BRICK.get())
 			.unlockedBy(getHasName(ModItems.LUNAR_CLAY_BRICK.get()), has(ModItems.LUNAR_CLAY_BRICK.get()))
 			.save(pWriter);
+		
+		//chissled bricks
+		ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModBlocks.CHISELED_VAILSTONEBRICK.get(),4 )
+			.pattern("##")
+			.pattern("##")
+			.define('#', ModBlocks.VAILSTONEBRICK.get())
+			.unlockedBy(getHasName(ModBlocks.VAILSTONEBRICK.get()), has(ModBlocks.VAILSTONEBRICK.get()))
+			.save(pWriter);
+		ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModBlocks.CHISELED_SMOOTHGNEISS.get(),4 )
+			.pattern("##")
+			.pattern("##")
+			.define('#', ModBlocks.SMOOTHGNEISS.get())
+			.unlockedBy(getHasName(ModBlocks.SMOOTHGNEISS.get()), has(ModBlocks.SMOOTHGNEISS.get()))
+			.save(pWriter);
+		ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModBlocks.CHISELED_SMOOTHLUNARSLATE.get(),4 )
+			.pattern("##")
+			.pattern("##")
+			.define('#', ModBlocks.SMOOTHLUNARSLATE.get())
+			.unlockedBy(getHasName(ModBlocks.SMOOTHLUNARSLATE.get()), has(ModBlocks.SMOOTHLUNARSLATE.get()))
+			.save(pWriter);
+		ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModBlocks.CHISELED_SMOOTHMARBLE.get(),4 )
+			.pattern("##")
+			.pattern("##")
+			.define('#', ModBlocks.SMOOTHMARBLE.get())
+			.unlockedBy(getHasName(ModBlocks.SMOOTHMARBLE.get()), has(ModBlocks.SMOOTHMARBLE.get()))
+			.save(pWriter);
+		ShapedRecipeBuilder.shaped(RecipeCategory.MISC, Blocks.CHISELED_STONE_BRICKS,4 )
+			.pattern("VG")
+			.pattern("SM")
+			.define('V', ModBlocks.VAILSTONEBRICK.get())
+			.define('G', ModBlocks.SMOOTHGNEISS.get())
+			.define('S', ModBlocks.SMOOTHLUNARSLATE.get())
+			.define('M', ModBlocks.SMOOTHMARBLE.get())
+			.unlockedBy(getHasName(ModBlocks.VAILSTONEBRICK.get()), has(ModBlocks.VAILSTONEBRICK.get()))
+			.unlockedBy(getHasName(ModBlocks.SMOOTHGNEISS.get()), has(ModBlocks.SMOOTHGNEISS.get()))
+			.unlockedBy(getHasName(ModBlocks.SMOOTHLUNARSLATE.get()), has(ModBlocks.SMOOTHLUNARSLATE.get()))
+			.unlockedBy(getHasName(ModBlocks.SMOOTHMARBLE.get()), has(ModBlocks.SMOOTHMARBLE.get()))
+			.save(pWriter, name("vanilla_chiseled_stone_bricks_from_lunaris"));
 	}
 	
 

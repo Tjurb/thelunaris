@@ -13,6 +13,8 @@ public class ModSurfaceRules {
     private static final SurfaceRules.RuleSource LUNSANDSTONE = makeStateRule(ModBlocks.LUNSANDSTONE.get());
     private static final SurfaceRules.RuleSource LUNARBEDROCK = makeStateRule(ModBlocks.LUNARIS_BEDROCK.get());
     private static final SurfaceRules.RuleSource GNEISS = makeStateRule(ModBlocks.GNEISS.get());
+	private static final SurfaceRules.RuleSource CRIMSGRASS = makeStateRule(ModBlocks.CRIMSON_LUNGRASS_BLOCK.get());
+	private static final SurfaceRules.RuleSource DUSKGRASS = makeStateRule(ModBlocks.DUSKLIGHT_LUNGRASS_BLOCK.get());
 
     public static SurfaceRules.RuleSource makeRules() {
         SurfaceRules.ConditionSource isAtOrAboveWaterLevel = SurfaceRules.waterBlockCheck(-1, 0);
@@ -21,12 +23,17 @@ public class ModSurfaceRules {
         SurfaceRules.ConditionSource isAtGneissLevel = SurfaceRules.verticalGradient("gneiss_layer",VerticalAnchor.absolute(0), VerticalAnchor.absolute(8));
 
         SurfaceRules.RuleSource sandOcean = SurfaceRules.sequence(SurfaceRules.ifTrue(isAtOrAboveWaterLevel, LUNSAND), LUNDIRT);
+        SurfaceRules.RuleSource sandCoast = SurfaceRules.sequence(SurfaceRules.ifTrue(isAtOrAboveWaterLevel, LUNSAND), LUNSAND);
         SurfaceRules.RuleSource sandSurface = SurfaceRules.sequence(SurfaceRules.ifTrue(isAtOrAboveWaterLevel, LUNSAND), LUNSAND);
         SurfaceRules.RuleSource sandstoneSurface = SurfaceRules.sequence(SurfaceRules.ifTrue(isAtOrAboveWaterLevel, LUNSANDSTONE), LUNSANDSTONE);
         SurfaceRules.RuleSource grassSurface = SurfaceRules.sequence(SurfaceRules.ifTrue(isAtOrAboveWaterLevel, LUNGRASS_BLOCK), LUNDIRT);
         SurfaceRules.RuleSource dirtSurface = SurfaceRules.sequence(SurfaceRules.ifTrue(isAtOrAboveWaterLevel, LUNDIRT), LUNDIRT);
         SurfaceRules.RuleSource bedrockFill = SurfaceRules.sequence(SurfaceRules.ifTrue(isAtBedrockLevel, LUNARBEDROCK));
         SurfaceRules.RuleSource deepfill = SurfaceRules.sequence(SurfaceRules.ifTrue(isAtGneissLevel, GNEISS));
+        
+        SurfaceRules.RuleSource duskSurface = SurfaceRules.sequence(SurfaceRules.ifTrue(isAtOrAboveWaterLevel, DUSKGRASS), LUNDIRT);
+        SurfaceRules.RuleSource crimsonSurface = SurfaceRules.sequence(SurfaceRules.ifTrue(isAtOrAboveWaterLevel, CRIMSGRASS), LUNDIRT);
+        
         
         return SurfaceRules.sequence(
         		SurfaceRules.sequence(SurfaceRules.ifTrue(isAtBedrockLevel, bedrockFill)),
@@ -35,39 +42,63 @@ public class ModSurfaceRules {
                 	SurfaceRules.ifTrue(SurfaceRules.ON_FLOOR, grassSurface)
                 )),
         		SurfaceRules.sequence(SurfaceRules.ifTrue(SurfaceRules.isBiome(ModBiomes.LUNAR_FORESTS), 
-                    	SurfaceRules.ifTrue(SurfaceRules.UNDER_FLOOR, dirtSurface)
-                    )),
+                	SurfaceRules.ifTrue(SurfaceRules.UNDER_FLOOR, dirtSurface)
+                )),
+        		
         		SurfaceRules.sequence(SurfaceRules.ifTrue(SurfaceRules.isBiome(ModBiomes.SAPPHIRE_RIVER), 
-                    SurfaceRules.ifTrue(SurfaceRules.ON_FLOOR, dirtSurface)
+                    SurfaceRules.ifTrue(SurfaceRules.ON_FLOOR, grassSurface)
                 )),
         		SurfaceRules.sequence(SurfaceRules.ifTrue(SurfaceRules.isBiome(ModBiomes.SAPPHIRE_RIVER), 
-                        SurfaceRules.ifTrue(SurfaceRules.UNDER_FLOOR, dirtSurface)
-                    )),
+                	SurfaceRules.ifTrue(SurfaceRules.UNDER_FLOOR, dirtSurface)
+                )),
+        		
         		SurfaceRules.sequence(SurfaceRules.ifTrue(SurfaceRules.isBiome(ModBiomes.SHIMMERING_COAST), 
-                    SurfaceRules.ifTrue(SurfaceRules.ON_FLOOR, sandSurface)
+                    SurfaceRules.ifTrue(SurfaceRules.ON_FLOOR, sandCoast)
                 )),
         		SurfaceRules.sequence(SurfaceRules.ifTrue(SurfaceRules.isBiome(ModBiomes.SHIMMERING_COAST), 
-                    	SurfaceRules.ifTrue(SurfaceRules.UNDER_FLOOR, sandstoneSurface)
-                    )),
+                	SurfaceRules.ifTrue(SurfaceRules.UNDER_FLOOR, sandCoast)
+                )),
+        		SurfaceRules.sequence(SurfaceRules.ifTrue(SurfaceRules.isBiome(ModBiomes.SHIMMERING_COAST), 
+                	SurfaceRules.ifTrue(SurfaceRules.DEEP_UNDER_FLOOR, sandstoneSurface)
+                )),
+        		
         		SurfaceRules.sequence(SurfaceRules.ifTrue(SurfaceRules.isBiome(ModBiomes.AZUREITE_OCEAN), 
                     SurfaceRules.ifTrue(SurfaceRules.ON_FLOOR, sandOcean)
                 )),
         		SurfaceRules.sequence(SurfaceRules.ifTrue(SurfaceRules.isBiome(ModBiomes.AZUREITE_OCEAN), 
-                    	SurfaceRules.ifTrue(SurfaceRules.UNDER_FLOOR, sandOcean)
-                    )),
+                	SurfaceRules.ifTrue(SurfaceRules.UNDER_FLOOR, sandOcean)
+                )),
+        		
         		SurfaceRules.sequence(SurfaceRules.ifTrue(SurfaceRules.isBiome(ModBiomes.SKYWORD_MOUNTAINS), 
                     SurfaceRules.ifTrue(SurfaceRules.ON_FLOOR, grassSurface)
                 )),
         		SurfaceRules.sequence(SurfaceRules.ifTrue(SurfaceRules.isBiome(ModBiomes.SKYWORD_MOUNTAINS), 
-                        SurfaceRules.ifTrue(SurfaceRules.UNDER_FLOOR, dirtSurface)
-                    )),
+                    SurfaceRules.ifTrue(SurfaceRules.UNDER_FLOOR, dirtSurface)
+                )),
+        		
         		SurfaceRules.sequence(SurfaceRules.ifTrue(SurfaceRules.isBiome(ModBiomes.SLEEPING_SANDS), 
                     SurfaceRules.ifTrue(SurfaceRules.ON_FLOOR, sandSurface)
                 )),
         		SurfaceRules.sequence(SurfaceRules.ifTrue(SurfaceRules.isBiome(ModBiomes.SLEEPING_SANDS), 
-                        SurfaceRules.ifTrue(SurfaceRules.UNDER_FLOOR, sandstoneSurface)
-                    )),
+                    SurfaceRules.ifTrue(SurfaceRules.UNDER_FLOOR, sandSurface)
+                )),
+        		SurfaceRules.sequence(SurfaceRules.ifTrue(SurfaceRules.isBiome(ModBiomes.SLEEPING_SANDS), 
+                    SurfaceRules.ifTrue(SurfaceRules.DEEP_UNDER_FLOOR, sandstoneSurface)
+                )),
         		
+        		SurfaceRules.sequence(SurfaceRules.ifTrue(SurfaceRules.isBiome(ModBiomes.DUSKLIGHT_CAVES), 
+                	SurfaceRules.ifTrue(SurfaceRules.ON_FLOOR, duskSurface)
+                )),
+            	SurfaceRules.sequence(SurfaceRules.ifTrue(SurfaceRules.isBiome(ModBiomes.DUSKLIGHT_CAVES), 
+                	SurfaceRules.ifTrue(SurfaceRules.UNDER_FLOOR, dirtSurface)
+                )),
+
+        		SurfaceRules.sequence(SurfaceRules.ifTrue(SurfaceRules.isBiome(ModBiomes.CRIMSON_SHELFS), 
+                	SurfaceRules.ifTrue(SurfaceRules.ON_FLOOR, crimsonSurface)
+                )),
+            	SurfaceRules.sequence(SurfaceRules.ifTrue(SurfaceRules.isBiome(ModBiomes.CRIMSON_SHELFS), 
+                	SurfaceRules.ifTrue(SurfaceRules.UNDER_FLOOR, dirtSurface)
+                )),
 
         		SurfaceRules.sequence(SurfaceRules.ifTrue(isAtGneissLevel, deepfill))
         		

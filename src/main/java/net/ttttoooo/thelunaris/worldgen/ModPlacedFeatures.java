@@ -22,6 +22,7 @@ import net.minecraft.world.level.levelgen.feature.stateproviders.BlockStateProvi
 import net.minecraft.world.level.levelgen.placement.BiomeFilter;
 import net.minecraft.world.level.levelgen.placement.HeightRangePlacement;
 import net.minecraft.world.level.levelgen.placement.InSquarePlacement;
+import net.minecraft.world.level.levelgen.placement.NoiseBasedCountPlacement;
 import net.minecraft.world.level.levelgen.placement.NoiseThresholdCountPlacement;
 import net.minecraft.world.level.levelgen.placement.PlacedFeature;
 import net.minecraft.world.level.levelgen.placement.PlacementModifier;
@@ -70,6 +71,16 @@ public class ModPlacedFeatures {
 	public static final ResourceKey<PlacedFeature> LUNARIS_BONEMEAL_KEY = registerKey("lunaris_vegetation_placed");
 	public static final ResourceKey<PlacedFeature> LUNARIS_BONEMEAL_BERRY_KEY = registerKey("lunaris_vegitation_berry_placed");
 	public static final ResourceKey<PlacedFeature> LUNARIS_BONEMEAL_SARROT_KEY = registerKey("lunaris_vegitation_sarrot_placed");
+	
+	//deep vegetation key
+	public static final ResourceKey<PlacedFeature> CRIMSON_GRASS_PATCH_PLACED_KEY = registerKey("crimson_grass_patch_placed");
+	public static final ResourceKey<PlacedFeature> DUSKLIGHT_GRASS_PATCH_PLACED_KEY = registerKey("dusklight_grass_patch_placed");
+	public static final ResourceKey<PlacedFeature> CRIMSON_GLOWBUSH_PATCH_PLACED_KEY = registerKey("crimson_glowbush_patch_placed");
+	public static final ResourceKey<PlacedFeature> CRIMSON_GLOWBUSH_BONEMEAL_KEY = registerKey("dusklight_glowbush_patch_placed");
+	public static final ResourceKey<PlacedFeature> CRIMSON_BONEMEAL_KEY = registerKey("crimson_vegetation_placed");
+	public static final ResourceKey<PlacedFeature> DUSKLIGHT_BONEMEAL_KEY = registerKey("dusklight_vegetation_placed");
+	public static final ResourceKey<PlacedFeature> DUSKLIGHT_GLOWBUSH_PATCH_PLACED_KEY = registerKey("cglowbush_vegetation_placed");
+	public static final ResourceKey<PlacedFeature> DUSKLIGHT_GLOWBUSH_BONEMEAL_KEY = registerKey("dglowbush_vegetation_placed");
 
 	//flower key
 	public static final ResourceKey<PlacedFeature> LUNAR_FLOWER_DEFAULT_PLACED_KEY = registerKey("lunar_flower_default");
@@ -173,7 +184,25 @@ public class ModPlacedFeatures {
         		VegetationPlacements.worldSurfaceSquaredWithCount(5));
         register(context, LUNARIS_BONEMEAL_KEY, configuredFeatures.getOrThrow(ModConfiguredFeatures.SINGLE_PIECE_OF_LUNGRASS),
         		VegetationPlacements.worldSurfaceSquaredWithCount(1));
-        
+
+        register(context, CRIMSON_GRASS_PATCH_PLACED_KEY, configuredFeatures.getOrThrow(ModConfiguredFeatures.CRIMSONGRASS_PATCH_KEY),
+        		VegetationPlacements.worldSurfaceSquaredWithCount(5));
+        register(context, CRIMSON_BONEMEAL_KEY, configuredFeatures.getOrThrow(ModConfiguredFeatures.SINGLE_PIECE_OF_CRIMSON),
+        		VegetationPlacements.worldSurfaceSquaredWithCount(1));
+        register(context, CRIMSON_GLOWBUSH_PATCH_PLACED_KEY, configuredFeatures.getOrThrow(ModConfiguredFeatures.CRIMSONGLOWBUSH_PATCH_KEY),
+        		VegetationPlacements.worldSurfaceSquaredWithCount(5));
+        register(context, CRIMSON_GLOWBUSH_BONEMEAL_KEY, configuredFeatures.getOrThrow(ModConfiguredFeatures.SINGLE_PIECE_OF_CGLOWBUSH),
+        		VegetationPlacements.worldSurfaceSquaredWithCount(1));
+
+        register(context, DUSKLIGHT_GRASS_PATCH_PLACED_KEY, configuredFeatures.getOrThrow(ModConfiguredFeatures.DUSKLIGHTGRASS_PATCH_KEY),
+        		VegetationPlacements.worldSurfaceSquaredWithCount(5));
+        register(context, DUSKLIGHT_BONEMEAL_KEY, configuredFeatures.getOrThrow(ModConfiguredFeatures.SINGLE_PIECE_OF_DUSKLIGHT),
+        		VegetationPlacements.worldSurfaceSquaredWithCount(1));
+        register(context, DUSKLIGHT_GLOWBUSH_PATCH_PLACED_KEY, configuredFeatures.getOrThrow(ModConfiguredFeatures.DUSKLIGHTGLOWBUSH_PATCH_KEY),
+        		VegetationPlacements.worldSurfaceSquaredWithCount(5));
+        register(context, DUSKLIGHT_GLOWBUSH_BONEMEAL_KEY, configuredFeatures.getOrThrow(ModConfiguredFeatures.SINGLE_PIECE_OF_DGLOWBUSH),
+        		VegetationPlacements.worldSurfaceSquaredWithCount(1));
+
         //wild foods
         register(context, LUNARIS_SARROT_PATCH_PLACED_KEY, configuredFeatures.getOrThrow(ModConfiguredFeatures.LUNARIS_SARROT_PATCH_KEY),
         		List.of(RarityFilter.onAverageOnceEvery(64), InSquarePlacement.spread(), PlacementUtils.HEIGHTMAP, BiomeFilter.biome()));
@@ -195,7 +224,9 @@ public class ModPlacedFeatures {
         register(context, LUNAR_FLOWER_MOUNTAIN_PLACED_KEY, 
         		configuredFeatures.getOrThrow(ModConfiguredFeatures.LUNARIS_FLOWER_MOUNTAIN_KEY),
         		List.of(RarityFilter.onAverageOnceEvery(16), InSquarePlacement.spread(), PlacementUtils.HEIGHTMAP, BiomeFilter.biome()));
-    }
+    
+        //deep register
+	}
 	
     private static ResourceKey<PlacedFeature> registerKey(String name) {
         return ResourceKey.create(Registries.PLACED_FEATURE, new ResourceLocation(TheLunaris.MODID, name));

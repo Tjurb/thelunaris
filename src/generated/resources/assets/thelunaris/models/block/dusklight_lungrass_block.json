@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/cube_bottom_top",
+  "textures": {
+    "bottom": "thelunaris:block/lundirt",
+    "side": "thelunaris:block/dusklight_lungrass_block_side",
+    "top": "thelunaris:block/dusklight_lungrass_block"
+  }
+}

@@ -26,6 +26,8 @@ public class ModCreativeTabs {
 				pOutput.accept(ModBlocks.LUNARIS_BEDROCK.get());
 				
 				pOutput.accept(ModBlocks.LUNGRASS_BLOCK.get());
+				pOutput.accept(ModBlocks.CRIMSON_LUNGRASS_BLOCK.get());
+				pOutput.accept(ModBlocks.DUSKLIGHT_LUNGRASS_BLOCK.get());
 				pOutput.accept(ModBlocks.LUNDIRT.get());
 				pOutput.accept(ModBlocks.LUNCLAY_BLOCK.get());
 				pOutput.accept(ModBlocks.LUNCLAY_BRICK_BLOCK.get());
@@ -45,6 +47,7 @@ public class ModCreativeTabs {
 				
 				pOutput.accept(ModBlocks.VAILSTONE.get());
 				pOutput.accept(ModBlocks.VAILSTONEBRICK.get());
+				pOutput.accept(ModBlocks.CHISELED_VAILSTONEBRICK.get());
 				pOutput.accept(ModBlocks.VAILSTONEBRICK_STAIRS.get());
 				pOutput.accept(ModBlocks.VAILSTONEBRICK_SLAB.get());
 				pOutput.accept(ModBlocks.VAILSTONEBRICK_WALL.get());
@@ -52,18 +55,21 @@ public class ModCreativeTabs {
 				pOutput.accept(ModBlocks.LUNARSHALE.get());
 				pOutput.accept(ModBlocks.LUNARSLATE.get());
 				pOutput.accept(ModBlocks.SMOOTHLUNARSLATE.get());
+				pOutput.accept(ModBlocks.CHISELED_SMOOTHLUNARSLATE.get());
 				pOutput.accept(ModBlocks.SMOOTHLUNARSLATE_STAIRS.get());
 				pOutput.accept(ModBlocks.SMOOTHLUNARSLATE_SLAB.get());
 				pOutput.accept(ModBlocks.SMOOTHLUNARSLATE_WALL.get());
 				
 				pOutput.accept(ModBlocks.GNEISS.get());
 				pOutput.accept(ModBlocks.SMOOTHGNEISS.get());
+				pOutput.accept(ModBlocks.CHISELED_SMOOTHGNEISS.get());
 				pOutput.accept(ModBlocks.SMOOTHGNEISS_STAIRS.get());
 				pOutput.accept(ModBlocks.SMOOTHGNEISS_SLAB.get());
 				pOutput.accept(ModBlocks.SMOOTHGNEISS_WALL.get());
 				
 				pOutput.accept(ModBlocks.MARBLE.get());
 				pOutput.accept(ModBlocks.SMOOTHMARBLE.get());
+				pOutput.accept(ModBlocks.CHISELED_SMOOTHMARBLE.get());
 				pOutput.accept(ModBlocks.SMOOTHMARBLE_STAIRS.get());
 				pOutput.accept(ModBlocks.SMOOTHMARBLE_SLAB.get());
 				pOutput.accept(ModBlocks.SMOOTHMARBLE_WALL.get());
@@ -139,6 +145,10 @@ public class ModCreativeTabs {
 
 				//Nature Blocks
 				pOutput.accept(ModBlocks.LUNGRASS.get());
+				pOutput.accept(ModBlocks.CRIMSON_LUNGRASS.get());
+				pOutput.accept(ModBlocks.DUSKLIGHT_LUNGRASS.get());
+				pOutput.accept(ModBlocks.CRIMSON_GLOWBUSH.get());
+				pOutput.accept(ModBlocks.DUSKLIGHT_GLOWBUSH.get());
 				pOutput.accept(ModBlocks.ORANGEYE.get());
 				pOutput.accept(ModBlocks.CYANEYE.get());
 				pOutput.accept(ModBlocks.MAGENTEYE.get());

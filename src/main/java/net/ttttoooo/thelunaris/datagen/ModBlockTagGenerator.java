@@ -94,11 +94,15 @@ public class ModBlockTagGenerator extends BlockTagsProvider{
 		
 		this.tag(BlockTags.DIRT)
 			.add(ModBlocks.LUNDIRT.get(),
-					ModBlocks.LUNGRASS_BLOCK.get());
+					ModBlocks.LUNGRASS_BLOCK.get(),
+					ModBlocks.CRIMSON_LUNGRASS_BLOCK.get(),
+					ModBlocks.DUSKLIGHT_LUNGRASS_BLOCK.get());
 		
 		this.tag(ModTags.Blocks.LUNAR_DIRTS)
 			.add(ModBlocks.LUNDIRT.get(),
-					ModBlocks.LUNGRASS_BLOCK.get());
+					ModBlocks.LUNGRASS_BLOCK.get(),
+					ModBlocks.CRIMSON_LUNGRASS_BLOCK.get(),
+					ModBlocks.DUSKLIGHT_LUNGRASS_BLOCK.get());
 		
 		this.tag(BlockTags.SAND)
 			.add(ModBlocks.LUNSAND.get());

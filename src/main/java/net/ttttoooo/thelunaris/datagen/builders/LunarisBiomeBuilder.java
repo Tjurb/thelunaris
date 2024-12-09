@@ -2,8 +2,10 @@ package net.ttttoooo.thelunaris.datagen.builders;
 
 import net.minecraft.core.HolderGetter;
 import net.minecraft.data.worldgen.Carvers;
+import net.minecraft.data.worldgen.placement.TreePlacements;
 import net.minecraft.sounds.Musics;
 import net.minecraft.sounds.SoundEvents;
+import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.MobCategory;
 import net.minecraft.world.level.biome.*;
 import net.minecraft.world.level.levelgen.GenerationStep;
@@ -14,8 +16,38 @@ import net.ttttoooo.thelunaris.worldgen.ModPlacedFeatures;
 
 
 public class LunarisBiomeBuilder {
+	public static Biome barrendeep(HolderGetter<PlacedFeature> placedFeatures, HolderGetter<ConfiguredWorldCarver<?>> worldCarvers) {
+		return makeBarrenBiome(new BiomeGenerationSettings.Builder(placedFeatures, worldCarvers)
+                .addFeature(GenerationStep.Decoration.UNDERGROUND_ORES, ModPlacedFeatures.LUNARIS_LUNARITE_ORE_PLACED_KEY)
+                .addFeature(GenerationStep.Decoration.UNDERGROUND_ORES, ModPlacedFeatures.LUNARIS_MOONSTEEL_ORE_PLACED_KEY)
+                .addFeature(GenerationStep.Decoration.UNDERGROUND_ORES, ModPlacedFeatures.LUNARIS_LARGE_LUNARITE_ORE_PLACED_KEY)
+                .addFeature(GenerationStep.Decoration.UNDERGROUND_ORES, ModPlacedFeatures.LUNARIS_LARGE_MOONSTEEL_ORE_PLACED_KEY)
+                .addFeature(GenerationStep.Decoration.UNDERGROUND_ORES, ModPlacedFeatures.LUNARIS_DEEP_LABRADORITE_ORE_PLACED_KEY)
+                .addFeature(GenerationStep.Decoration.UNDERGROUND_ORES, ModPlacedFeatures.LUNARIS_DEEP_MOONSTEEL_ORE_PLACED_KEY)
+                .addFeature(GenerationStep.Decoration.UNDERGROUND_ORES, ModPlacedFeatures.LUNARIS_DEEP_LARGE_MOONSTEEL_ORE_PLACED_KEY)
+                .addFeature(GenerationStep.Decoration.UNDERGROUND_ORES, ModPlacedFeatures.LUNARIS_DEEP_LUNARITE_ORE_PLACED_KEY)
+                .addFeature(GenerationStep.Decoration.UNDERGROUND_ORES, ModPlacedFeatures.LUNARIS_DEEP_LARGE_LUNARITE_ORE_PLACED_KEY)
+                .addFeature(GenerationStep.Decoration.UNDERGROUND_ORES, ModPlacedFeatures.LUNARIS_COAL_ORE_PLACED_KEY)
+                .addFeature(GenerationStep.Decoration.UNDERGROUND_ORES, ModPlacedFeatures.LUNARIS_LARGE_COAL_ORE_PLACED_KEY)
+                .addFeature(GenerationStep.Decoration.UNDERGROUND_ORES, ModPlacedFeatures.LUNARIS_DEEP_COAL_ORE_PLACED_KEY)
+                .addFeature(GenerationStep.Decoration.UNDERGROUND_ORES, ModPlacedFeatures.LUNARIS_DEEP_LARGE_COAL_ORE_PLACED_KEY)
+                .addFeature(GenerationStep.Decoration.UNDERGROUND_ORES, ModPlacedFeatures.MARBLE_PLACED_KEY)
+                .addFeature(GenerationStep.Decoration.UNDERGROUND_ORES, ModPlacedFeatures.SHALE_PLACED_KEY)
+                .addFeature(GenerationStep.Decoration.UNDERGROUND_ORES, ModPlacedFeatures.SLATE_PLACED_KEY)
+                .addFeature(GenerationStep.Decoration.UNDERGROUND_ORES, ModPlacedFeatures.LUNAR_CLAY_PLACED_KEY)
+                .addFeature(GenerationStep.Decoration.UNDERGROUND_ORES, ModPlacedFeatures.DEEP_MARBLE_PLACED_KEY)
+                .addFeature(GenerationStep.Decoration.UNDERGROUND_ORES, ModPlacedFeatures.DEEP_SHALE_PLACED_KEY)
+                .addFeature(GenerationStep.Decoration.UNDERGROUND_ORES, ModPlacedFeatures.DEEP_SLATE_PLACED_KEY)
+                .addCarver(GenerationStep.Carving.AIR, Carvers.CAVE)
+                .addCarver(GenerationStep.Carving.AIR, Carvers.CAVE_EXTRA_UNDERGROUND)
+                .addCarver(GenerationStep.Carving.AIR, Carvers.CANYON));
+    }
+	
 	public static Biome crimsonshelf(HolderGetter<PlacedFeature> placedFeatures, HolderGetter<ConfiguredWorldCarver<?>> worldCarvers) {
-    	return makeDeepBiome(new BiomeGenerationSettings.Builder(placedFeatures, worldCarvers)
+		return makeCrimsonBiome(new BiomeGenerationSettings.Builder(placedFeatures, worldCarvers)
+        		.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, ModPlacedFeatures.STELLAR_PLACED_KEY)
+        		.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, ModPlacedFeatures.CRIMSON_GRASS_PATCH_PLACED_KEY)
+        		.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, ModPlacedFeatures.CRIMSON_GLOWBUSH_PATCH_PLACED_KEY)
                 .addFeature(GenerationStep.Decoration.UNDERGROUND_ORES, ModPlacedFeatures.LUNARIS_LUNARITE_ORE_PLACED_KEY)
                 .addFeature(GenerationStep.Decoration.UNDERGROUND_ORES, ModPlacedFeatures.LUNARIS_MOONSTEEL_ORE_PLACED_KEY)
                 .addFeature(GenerationStep.Decoration.UNDERGROUND_ORES, ModPlacedFeatures.LUNARIS_LARGE_LUNARITE_ORE_PLACED_KEY)
@@ -42,7 +74,10 @@ public class LunarisBiomeBuilder {
     }
 	
 	public static Biome dusklightcave(HolderGetter<PlacedFeature> placedFeatures, HolderGetter<ConfiguredWorldCarver<?>> worldCarvers) {
-    	return makeDeepBiome(new BiomeGenerationSettings.Builder(placedFeatures, worldCarvers)
+    	return makeDuskBiome(new BiomeGenerationSettings.Builder(placedFeatures, worldCarvers)
+        		.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, ModPlacedFeatures.CELEST_PLACED_KEY)
+        		.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, ModPlacedFeatures.DUSKLIGHT_GRASS_PATCH_PLACED_KEY)
+        		.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, ModPlacedFeatures.DUSKLIGHT_GLOWBUSH_PATCH_PLACED_KEY)
                 .addFeature(GenerationStep.Decoration.UNDERGROUND_ORES, ModPlacedFeatures.LUNARIS_LUNARITE_ORE_PLACED_KEY)
                 .addFeature(GenerationStep.Decoration.UNDERGROUND_ORES, ModPlacedFeatures.LUNARIS_MOONSTEEL_ORE_PLACED_KEY)
                 .addFeature(GenerationStep.Decoration.UNDERGROUND_ORES, ModPlacedFeatures.LUNARIS_LARGE_LUNARITE_ORE_PLACED_KEY)
@@ -88,6 +123,7 @@ public class LunarisBiomeBuilder {
                 .addFeature(GenerationStep.Decoration.UNDERGROUND_ORES, ModPlacedFeatures.MARBLE_PLACED_KEY)
                 .addFeature(GenerationStep.Decoration.UNDERGROUND_ORES, ModPlacedFeatures.SHALE_PLACED_KEY)
                 .addFeature(GenerationStep.Decoration.UNDERGROUND_ORES, ModPlacedFeatures.SLATE_PLACED_KEY)
+                .addFeature(GenerationStep.Decoration.UNDERGROUND_ORES, ModPlacedFeatures.LUNAR_CLAY_PLACED_KEY)
                 .addFeature(GenerationStep.Decoration.UNDERGROUND_ORES, ModPlacedFeatures.DEEP_MARBLE_PLACED_KEY)
                 .addFeature(GenerationStep.Decoration.UNDERGROUND_ORES, ModPlacedFeatures.DEEP_SHALE_PLACED_KEY)
                 .addFeature(GenerationStep.Decoration.UNDERGROUND_ORES, ModPlacedFeatures.DEEP_SLATE_PLACED_KEY)
@@ -242,28 +278,87 @@ public class LunarisBiomeBuilder {
     }
     
 
-    public static Biome makeDeepBiome(BiomeGenerationSettings.Builder builder) {
+    public static Biome makeBarrenBiome(BiomeGenerationSettings.Builder builder) {
         return fullDefinition(
                 false,
                 0.7F,
                 0.8F,
                 new BiomeSpecialEffects.Builder()
-                	.waterColor(0x111155)
-                	.waterFogColor(0x111155)
-                	.fogColor(0x124266)
-                	.skyColor(0x124266)
-                	.grassColorOverride(0x2986cc)
-                	.foliageColorOverride(0x156DAF)
+                	.waterColor(0x260656)
+                	.waterFogColor(0x260656)
+                	.fogColor(0x260656)
+                	.skyColor(0x260656)
+                	.grassColorOverride(0x260656)
+                	.foliageColorOverride(0x260656)
                     .grassColorModifier(BiomeSpecialEffects.GrassColorModifier.NONE)
+                    .ambientLoopSound(SoundEvents.AMBIENT_NETHER_WASTES_LOOP)
+                    .backgroundMusic(Musics.createGameMusic(SoundEvents.MUSIC_BIOME_NETHER_WASTES))
+                    .build(),
+                new MobSpawnSettings.Builder()
+                	.creatureGenerationProbability(0.25F)
+                	.addSpawn(MobCategory.CREATURE, new MobSpawnSettings.SpawnerData(ModEntities.ARCHFISH.get(), 40, 3, 5))
+                	.addSpawn(MobCategory.MONSTER, new MobSpawnSettings.SpawnerData(ModEntities.PHYREX.get(), 5, 1, 1))
+                	.addSpawn(MobCategory.MONSTER, new MobSpawnSettings.SpawnerData(ModEntities.HEX.get(), 5, 1, 1))
+                	
+	                	.build(),
+                        builder 
+                        .build(),
+                Biome.TemperatureModifier.NONE
+        );
+    }
+    
+    public static Biome makeCrimsonBiome(BiomeGenerationSettings.Builder builder) {
+        return fullDefinition(
+                false,
+                0.7F,
+                0.8F,
+                new BiomeSpecialEffects.Builder()
+                	.waterColor(0x260656)
+                	.waterFogColor(0x260656)
+                	.fogColor(0x260656)
+                	.skyColor(0x260656)
+                	.grassColorOverride(0xDC143C)
+                	.foliageColorOverride(0xDC143C)
+                    .grassColorModifier(BiomeSpecialEffects.GrassColorModifier.NONE)
+                    .ambientLoopSound(SoundEvents.AMBIENT_CRIMSON_FOREST_LOOP)
                     .backgroundMusic(Musics.createGameMusic(SoundEvents.MUSIC_BIOME_CRIMSON_FOREST))
                     .build(),
                 new MobSpawnSettings.Builder()
                 	.creatureGenerationProbability(0.25F)
                 	.addSpawn(MobCategory.CREATURE, new MobSpawnSettings.SpawnerData(ModEntities.ARCHFISH.get(), 40, 3, 5))
                 	.addSpawn(MobCategory.MONSTER, new MobSpawnSettings.SpawnerData(ModEntities.PHYREX.get(), 5, 1, 2))
-                	.addSpawn(MobCategory.MONSTER, new MobSpawnSettings.SpawnerData(ModEntities.HEX.get(), 50, 2, 3))
+                	.addSpawn(MobCategory.MONSTER, new MobSpawnSettings.SpawnerData(ModEntities.HEX.get(), 10, 2, 3))
+                	
+                		.build(),
+                        builder 
+                        .build(),
+                Biome.TemperatureModifier.NONE
+        );
+    }
+    
+    public static Biome makeDuskBiome(BiomeGenerationSettings.Builder builder) {
+        return fullDefinition(
+                false,
+                0.7F,
+                0.8F,
+                new BiomeSpecialEffects.Builder()
+                	.waterColor(0x260656)
+                	.waterFogColor(0x260656)
+                	.fogColor(0x260656)
+                	.skyColor(0x260656)
+                	.grassColorOverride(0x260656)
+                	.foliageColorOverride(0x260656)
+                    .grassColorModifier(BiomeSpecialEffects.GrassColorModifier.NONE)
+                    .ambientLoopSound(SoundEvents.AMBIENT_WARPED_FOREST_LOOP)
+                    .backgroundMusic(Musics.createGameMusic(SoundEvents.MUSIC_BIOME_DEEP_DARK))
+                    .build(),
+                new MobSpawnSettings.Builder()
+                	.creatureGenerationProbability(0.25F)
+                	.addSpawn(MobCategory.CREATURE, new MobSpawnSettings.SpawnerData(ModEntities.ARCHFISH.get(), 40, 3, 5))
+                	.addSpawn(MobCategory.MONSTER, new MobSpawnSettings.SpawnerData(ModEntities.PHYREX.get(), 5, 1, 2))
+                	.addSpawn(MobCategory.MONSTER, new MobSpawnSettings.SpawnerData(ModEntities.HEX.get(), 20, 2, 3))
                 
-                	.build(),
+                		.build(),
                         builder 
                         .build(),
                 Biome.TemperatureModifier.NONE
@@ -286,10 +381,9 @@ public class LunarisBiomeBuilder {
                     .backgroundMusic(Musics.createGameMusic(SoundEvents.MUSIC_GAME))
                     .build(),
                 new MobSpawnSettings.Builder()
-            	.creatureGenerationProbability(0.25F)
-            	//for ModEntities Spawnrates spawnweight, min number, max number
-            	.addSpawn(MobCategory.CREATURE, new MobSpawnSettings.SpawnerData(ModEntities.ARCHFISH.get(), 40, 2, 3))
-            	.addSpawn(MobCategory.CREATURE, new MobSpawnSettings.SpawnerData(ModEntities.MOONSNAIL.get(), 10, 2, 3))
+            		.creatureGenerationProbability(0.25F)
+            		.addSpawn(MobCategory.CREATURE, new MobSpawnSettings.SpawnerData(ModEntities.ARCHFISH.get(), 40, 2, 3))
+            		.addSpawn(MobCategory.CREATURE, new MobSpawnSettings.SpawnerData(ModEntities.MOONSNAIL.get(), 10, 2, 3))
             
                         .build(),
                         builder 
@@ -375,7 +469,7 @@ public class LunarisBiomeBuilder {
                 	.addSpawn(MobCategory.MONSTER, new MobSpawnSettings.SpawnerData(ModEntities.PHYREX.get(), 10, 1, 2))
                 	.addSpawn(MobCategory.MONSTER, new MobSpawnSettings.SpawnerData(ModEntities.HEX.get(), 5, 2, 3))
                 
-                	.build(),
+                		.build(),
                         builder 
                         .build(),
                 Biome.TemperatureModifier.NONE

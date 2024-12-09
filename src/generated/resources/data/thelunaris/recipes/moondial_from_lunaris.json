@@ -1,0 +1,24 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "D": {
+      "item": "thelunaris:lunarite"
+    },
+    "G": {
+      "item": "thelunaris:emoonsteel"
+    },
+    "L": {
+      "item": "thelunaris:labradorite"
+    }
+  },
+  "pattern": [
+    "LGL",
+    "GDG",
+    "LGL"
+  ],
+  "result": {
+    "item": "thelunaris:moondial"
+  },
+  "show_notification": true
+}

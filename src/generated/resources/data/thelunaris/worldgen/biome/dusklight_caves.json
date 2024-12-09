@@ -9,18 +9,19 @@
   "creature_spawn_probability": 0.25,
   "downfall": 0.8,
   "effects": {
-    "fog_color": 1196646,
-    "foliage_color": 1404335,
-    "grass_color": 2721484,
+    "ambient_sound": "minecraft:ambient.warped_forest.loop",
+    "fog_color": 2491990,
+    "foliage_color": 2491990,
+    "grass_color": 2491990,
     "music": {
       "max_delay": 24000,
       "min_delay": 12000,
       "replace_current_music": false,
-      "sound": "minecraft:music.nether.crimson_forest"
+      "sound": "minecraft:music.overworld.deep_dark"
     },
-    "sky_color": 1196646,
-    "water_color": 1118549,
-    "water_fog_color": 1118549
+    "sky_color": 2491990,
+    "water_color": 2491990,
+    "water_fog_color": 2491990
   },
   "features": [
     [],
@@ -50,6 +51,13 @@
       "thelunaris:deep_marble_placed",
       "thelunaris:deep_shale_placed",
       "thelunaris:deep_slate_placed"
+    ],
+    [],
+    [],
+    [
+      "thelunaris:celest_placed",
+      "thelunaris:dusklight_grass_patch_placed",
+      "thelunaris:cglowbush_vegetation_placed"
     ]
   ],
   "has_precipitation": false,
@@ -77,7 +85,7 @@
         "type": "thelunaris:hex",
         "maxCount": 3,
         "minCount": 2,
-        "weight": 50
+        "weight": 20
       }
     ],
     "underground_water_creature": [],

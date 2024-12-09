@@ -49,6 +49,7 @@ public class ModBlockLootTables extends BlockLootSubProvider{
 		this.add(ModBlocks.VAILSTONE.get(),
 				block -> createGrassBlockLikeDrops(ModBlocks.VAILSTONE.get(), ModBlocks.COBBLED_VAILSTONE.get()));
 		this.dropSelf(ModBlocks.VAILSTONEBRICK.get());
+		this.dropSelf(ModBlocks.CHISELED_VAILSTONEBRICK.get());
 		this.dropSelf(ModBlocks.VAILSTONEBRICK_STAIRS.get());
 		this.dropSelf(ModBlocks.VAILSTONEBRICK_WALL.get());
 		this.dropSelf(ModBlocks.COBBLED_VAILSTONE.get());
@@ -57,14 +58,17 @@ public class ModBlockLootTables extends BlockLootSubProvider{
 		this.dropSelf(ModBlocks.LUNARSHALE.get());
 		this.dropSelf(ModBlocks.LUNARSLATE.get());
 		this.dropSelf(ModBlocks.SMOOTHLUNARSLATE.get());
+		this.dropSelf(ModBlocks.CHISELED_SMOOTHLUNARSLATE.get());
 		this.dropSelf(ModBlocks.SMOOTHLUNARSLATE_STAIRS.get());
 		this.dropSelf(ModBlocks.SMOOTHLUNARSLATE_WALL.get());
 		this.dropSelf(ModBlocks.GNEISS.get());
 		this.dropSelf(ModBlocks.SMOOTHGNEISS.get());
+		this.dropSelf(ModBlocks.CHISELED_SMOOTHGNEISS.get());
 		this.dropSelf(ModBlocks.SMOOTHGNEISS_STAIRS.get());
 		this.dropSelf(ModBlocks.SMOOTHGNEISS_WALL.get());
 		this.dropSelf(ModBlocks.MARBLE.get());
 		this.dropSelf(ModBlocks.SMOOTHMARBLE.get());
+		this.dropSelf(ModBlocks.CHISELED_SMOOTHMARBLE.get());
 		this.dropSelf(ModBlocks.SMOOTHMARBLE_STAIRS.get());
 		this.dropSelf(ModBlocks.SMOOTHMARBLE_WALL.get());
 		
@@ -91,6 +95,11 @@ public class ModBlockLootTables extends BlockLootSubProvider{
 
 		this.add(ModBlocks.LUNGRASS_BLOCK.get(),
 				block -> createGrassBlockLikeDrops(ModBlocks.LUNGRASS_BLOCK.get(), ModBlocks.LUNDIRT.get()));
+		this.add(ModBlocks.CRIMSON_LUNGRASS_BLOCK.get(),
+				block -> createGrassBlockLikeDrops(ModBlocks.CRIMSON_LUNGRASS_BLOCK.get(), ModBlocks.LUNDIRT.get()));
+		this.add(ModBlocks.DUSKLIGHT_LUNGRASS_BLOCK.get(),
+				block -> createGrassBlockLikeDrops(ModBlocks.DUSKLIGHT_LUNGRASS_BLOCK.get(), ModBlocks.LUNDIRT.get()));
+		
 		this.dropSelf(ModBlocks.LUNDIRT.get());
 		this.add(ModBlocks.LUNDIRT_FARMLAND.get(),
 				block -> createGrassBlockLikeDrops(ModBlocks.LUNDIRT.get(), ModBlocks.LUNDIRT.get()));
@@ -200,6 +209,14 @@ public class ModBlockLootTables extends BlockLootSubProvider{
 		//Nature Blocks
 		this.add(ModBlocks.LUNGRASS.get(), block ->
 			createGrassLikeDrops(block));
+		this.add(ModBlocks.CRIMSON_LUNGRASS.get(), block ->
+			createGrassLikeDrops(block));
+		this.add(ModBlocks.CRIMSON_GLOWBUSH.get(), block ->
+			createGrassLikeDrops(block));
+		this.add(ModBlocks.DUSKLIGHT_LUNGRASS.get(), block ->
+			createGrassLikeDrops(block));
+		this.add(ModBlocks.DUSKLIGHT_GLOWBUSH.get(), block ->
+			createGrassLikeDrops(block));
 		this.add(ModBlocks.WILD_LOONBERRY.get(), block ->
 			createWildLoonberryDrops(block));
 		this.add(ModBlocks.WILD_SARROT.get(), block ->
@@ -219,7 +236,7 @@ public class ModBlockLootTables extends BlockLootSubProvider{
         this.add(ModBlocks.POTTED_LUN_CLOVER.get(), createPotFlowerItemTable(ModBlocks.LUN_CLOVER.get()));
         this.add(ModBlocks.POTTED_BRAMBLE.get(), createPotFlowerItemTable(ModBlocks.BRAMBLE.get()));
 	}
-	
+
 	protected LootTable.Builder createGrassLikeDrops(Block p_252139_) {
 	      return createShearsDispatchTable(p_252139_, 
 	    		  this.applyExplosionDecay(p_252139_, 

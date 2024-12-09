@@ -9,13 +9,11 @@ import net.minecraft.core.Direction;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.util.valueproviders.UniformInt;
 import net.minecraft.world.effect.MobEffects;
-import net.minecraft.world.flag.FeatureFlag;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.ButtonBlock;
-import net.minecraft.world.level.block.CraftingTableBlock;
 import net.minecraft.world.level.block.DeadBushBlock;
 import net.minecraft.world.level.block.DoorBlock;
 import net.minecraft.world.level.block.DropExperienceBlock;
@@ -37,7 +35,6 @@ import net.minecraft.world.level.block.WallBlock;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.properties.BlockSetType;
-import net.minecraft.world.level.material.MapColor;
 import net.minecraft.world.level.material.PushReaction;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.registries.DeferredRegister;
@@ -107,6 +104,10 @@ public class ModBlocks {
 	public static final RegistryObject<Block> LUNDIRT_FARMLAND = registerBlock("lundirt_farmland", 
 			() -> new LundirtFarmlandBlock(BlockBehaviour.Properties.copy(Blocks.DIRT).randomTicks().sound(SoundType.GRAVEL)));
 	public static final RegistryObject<Block> LUNGRASS_BLOCK = registerBlock("lungrass_block", 
+			() -> new LunGrassBlock(BlockBehaviour.Properties.copy(Blocks.GRASS_BLOCK).sound(SoundType.GRASS)));
+	public static final RegistryObject<Block> CRIMSON_LUNGRASS_BLOCK = registerBlock("crimson_lungrass_block", 
+			() -> new LunGrassBlock(BlockBehaviour.Properties.copy(Blocks.GRASS_BLOCK).sound(SoundType.GRASS)));
+	public static final RegistryObject<Block> DUSKLIGHT_LUNGRASS_BLOCK = registerBlock("dusklight_lungrass_block", 
 			() -> new LunGrassBlock(BlockBehaviour.Properties.copy(Blocks.GRASS_BLOCK).sound(SoundType.GRASS)));
 	
 	public static final RegistryObject<Block> LUNCLAY_BLOCK = registerBlock("lunclay_block", 
@@ -449,6 +450,8 @@ public class ModBlocks {
 			() -> new SlabBlock(BlockBehaviour.Properties.copy(Blocks.STONE_BRICKS).sound(SoundType.STONE)));
 	public static final RegistryObject<Block> VAILSTONEBRICK_WALL = registerBlock("vailstonebrick_wall", 
 			() -> new WallBlock(BlockBehaviour.Properties.copy(Blocks.STONE_BRICKS).sound(SoundType.STONE)));
+	public static final RegistryObject<Block> CHISELED_VAILSTONEBRICK = registerBlock("chiseled_vailstonebrick", 
+			() -> new Block(BlockBehaviour.Properties.copy(Blocks.STONE).sound(SoundType.STONE)));
 	
 	//Cobbled Vailstone Blocks
 	public static final RegistryObject<Block> COBBLED_VAILSTONE = registerBlock("cobbled_vailstone", 
@@ -475,6 +478,8 @@ public class ModBlocks {
 			() -> new SlabBlock(BlockBehaviour.Properties.copy(Blocks.STONE).sound(SoundType.STONE)));
 	public static final RegistryObject<Block> SMOOTHLUNARSLATE_WALL = registerBlock("smoothlunarslate_wall", 
 			() -> new WallBlock(BlockBehaviour.Properties.copy(Blocks.STONE).sound(SoundType.STONE)));
+	public static final RegistryObject<Block> CHISELED_SMOOTHLUNARSLATE = registerBlock("chiseled_smoothlunarslate", 
+			() -> new Block(BlockBehaviour.Properties.copy(Blocks.STONE).sound(SoundType.STONE)));
 	
 	public static final RegistryObject<Block> GNEISS = registerBlock("gneiss", 
 			() -> new Block(BlockBehaviour.Properties.copy(Blocks.DEEPSLATE).sound(SoundType.DEEPSLATE)));
@@ -487,6 +492,8 @@ public class ModBlocks {
 			() -> new SlabBlock(BlockBehaviour.Properties.copy(Blocks.DEEPSLATE).sound(SoundType.DEEPSLATE_TILES)));
 	public static final RegistryObject<Block> SMOOTHGNEISS_WALL = registerBlock("smoothgneiss_wall", 
 			() -> new WallBlock(BlockBehaviour.Properties.copy(Blocks.DEEPSLATE).sound(SoundType.DEEPSLATE_TILES)));
+	public static final RegistryObject<Block> CHISELED_SMOOTHGNEISS = registerBlock("chiseled_smoothgneiss", 
+			() -> new Block(BlockBehaviour.Properties.copy(Blocks.STONE).sound(SoundType.STONE)));
 	
 	public static final RegistryObject<Block> MARBLE = registerBlock("marble", 
 			() -> new Block(BlockBehaviour.Properties.copy(Blocks.STONE).sound(SoundType.STONE)));
@@ -499,6 +506,9 @@ public class ModBlocks {
 			() -> new SlabBlock(BlockBehaviour.Properties.copy(Blocks.STONE).sound(SoundType.STONE)));
 	public static final RegistryObject<Block> SMOOTHMARBLE_WALL = registerBlock("smoothmarble_wall", 
 			() -> new WallBlock(BlockBehaviour.Properties.copy(Blocks.STONE).sound(SoundType.STONE)));	
+	public static final RegistryObject<Block> CHISELED_SMOOTHMARBLE = registerBlock("chiseled_smoothmarble", 
+			() -> new Block(BlockBehaviour.Properties.copy(Blocks.STONE).sound(SoundType.STONE)));
+	
 	
 	//Ore Blocks
 	public static final RegistryObject<Block> LUNARITE_ORE = registerBlock("lunarite_ore", 
@@ -535,6 +545,15 @@ public class ModBlocks {
             () -> new TallGrassBlock(BlockBehaviour.Properties.copy(Blocks.GRASS)));
 	public static final RegistryObject<Block> WILD_SARROT = registerBlock("wild_sarrot",
             () -> new TallGrassBlock(BlockBehaviour.Properties.copy(Blocks.GRASS)));
+
+	public static final RegistryObject<Block> CRIMSON_LUNGRASS = registerBlock("crimson_lungrass",
+            () -> new TallGrassBlock(BlockBehaviour.Properties.copy(Blocks.GRASS)));
+	public static final RegistryObject<Block> CRIMSON_GLOWBUSH = registerBlock("crimson_glowbush",
+            () -> new TallGrassBlock(BlockBehaviour.Properties.copy(Blocks.GRASS).lightLevel((state) -> 10)));
+	public static final RegistryObject<Block> DUSKLIGHT_LUNGRASS = registerBlock("dusklight_lungrass",
+            () -> new TallGrassBlock(BlockBehaviour.Properties.copy(Blocks.GRASS)));
+	public static final RegistryObject<Block> DUSKLIGHT_GLOWBUSH = registerBlock("dusklight_glowbush",
+            () -> new TallGrassBlock(BlockBehaviour.Properties.copy(Blocks.GRASS).lightLevel((state) -> 10)));
 
 	//flowers
 	public static final RegistryObject<Block> ORANGEYE = registerBlock("orangeye",

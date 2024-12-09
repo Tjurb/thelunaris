@@ -5,22 +5,13 @@ import java.util.function.Function;
 
 import net.minecraft.core.Direction;
 import net.minecraft.data.PackOutput;
-import net.minecraft.data.models.blockstates.Condition;
-import net.minecraft.data.models.blockstates.MultiPartGenerator;
-import net.minecraft.data.models.blockstates.Variant;
-import net.minecraft.data.models.blockstates.VariantProperties;
-import net.minecraft.data.models.model.ModelLocationUtils;
-import net.minecraft.data.models.model.ModelTemplates;
-import net.minecraft.data.models.model.TextureMapping;
 import net.minecraft.resources.ResourceLocation;
-import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.ButtonBlock;
 import net.minecraft.world.level.block.CropBlock;
 import net.minecraft.world.level.block.DoorBlock;
 import net.minecraft.world.level.block.FenceBlock;
 import net.minecraft.world.level.block.FenceGateBlock;
-import net.minecraft.world.level.block.GlassBlock;
 import net.minecraft.world.level.block.IronBarsBlock;
 import net.minecraft.world.level.block.NetherPortalBlock;
 import net.minecraft.world.level.block.PressurePlateBlock;
@@ -30,7 +21,6 @@ import net.minecraft.world.level.block.StairBlock;
 import net.minecraft.world.level.block.TrapDoorBlock;
 import net.minecraft.world.level.block.WallBlock;
 import net.minecraft.world.level.block.state.BlockState;
-import net.minecraft.world.level.block.state.properties.BlockStateProperties;
 import net.minecraftforge.client.model.generators.BlockStateProvider;
 import net.minecraftforge.client.model.generators.ConfiguredModel;
 import net.minecraftforge.client.model.generators.ModelFile;
@@ -84,9 +74,10 @@ public class ModBlockStateProvider extends BlockStateProvider{
 		
 		//terrain blocks
 		blockWithItem(ModBlocks.LUNDIRT);
-        simpleBlockWithItem(ModBlocks.LUNGRASS_BLOCK.get(),
-                new ModelFile.UncheckedModelFile(modLoc("block/lungrass_block")));
-        farmland(ModBlocks.LUNDIRT_FARMLAND.get(),ModBlocks.LUNDIRT.get());
+		grassBlockWithItem(ModBlocks.LUNGRASS_BLOCK.get());
+		grassBlockWithItem(ModBlocks.CRIMSON_LUNGRASS_BLOCK.get());
+		grassBlockWithItem(ModBlocks.DUSKLIGHT_LUNGRASS_BLOCK.get());
+		farmland(ModBlocks.LUNDIRT_FARMLAND.get(),ModBlocks.LUNDIRT.get());
 		blockWithItem(ModBlocks.LUNCLAY_BLOCK);
 		blockWithItem(ModBlocks.LUNCLAY_BRICK_BLOCK);
 		stairsBlock(((StairBlock) ModBlocks.LUNCLAY_BRICK_BLOCK_STAIRS.get()), blockTexture(ModBlocks.LUNCLAY_BRICK_BLOCK.get()));
@@ -176,6 +167,7 @@ public class ModBlockStateProvider extends BlockStateProvider{
 		stairsBlock(((StairBlock) ModBlocks.VAILSTONEBRICK_STAIRS.get()), blockTexture(ModBlocks.VAILSTONEBRICK.get()));
 		slabBlock(((SlabBlock) ModBlocks.VAILSTONEBRICK_SLAB.get()), blockTexture(ModBlocks.VAILSTONEBRICK.get()), blockTexture(ModBlocks.VAILSTONEBRICK.get()));
 		wallBlock(((WallBlock) ModBlocks.VAILSTONEBRICK_WALL.get()), blockTexture(ModBlocks.VAILSTONEBRICK.get()));
+		blockWithItem(ModBlocks.CHISELED_VAILSTONEBRICK);
 
 		blockWithItem(ModBlocks.COBBLED_VAILSTONE);
 		stairsBlock(((StairBlock) ModBlocks.COBBLED_VAILSTONE_STAIRS.get()), blockTexture(ModBlocks.COBBLED_VAILSTONE.get()));
@@ -188,18 +180,21 @@ public class ModBlockStateProvider extends BlockStateProvider{
 		stairsBlock(((StairBlock) ModBlocks.SMOOTHLUNARSLATE_STAIRS.get()), blockTexture(ModBlocks.SMOOTHLUNARSLATE.get()));
 		slabBlock(((SlabBlock) ModBlocks.SMOOTHLUNARSLATE_SLAB.get()), blockTexture(ModBlocks.SMOOTHLUNARSLATE.get()), blockTexture(ModBlocks.SMOOTHLUNARSLATE.get()));
 		wallBlock(((WallBlock) ModBlocks.SMOOTHLUNARSLATE_WALL.get()), blockTexture(ModBlocks.SMOOTHLUNARSLATE.get()));
+		blockWithItem(ModBlocks.CHISELED_SMOOTHLUNARSLATE);
 
 		blockWithItem(ModBlocks.GNEISS);
 		blockWithItem(ModBlocks.SMOOTHGNEISS);
 		stairsBlock(((StairBlock) ModBlocks.SMOOTHGNEISS_STAIRS.get()), blockTexture(ModBlocks.SMOOTHGNEISS.get()));
 		slabBlock(((SlabBlock) ModBlocks.SMOOTHGNEISS_SLAB.get()), blockTexture(ModBlocks.SMOOTHGNEISS.get()), blockTexture(ModBlocks.SMOOTHGNEISS.get()));
 		wallBlock(((WallBlock) ModBlocks.SMOOTHGNEISS_WALL.get()), blockTexture(ModBlocks.SMOOTHGNEISS.get()));
+		blockWithItem(ModBlocks.CHISELED_SMOOTHGNEISS);
 
 		blockWithItem(ModBlocks.MARBLE);
 		blockWithItem(ModBlocks.SMOOTHMARBLE);
 		stairsBlock(((StairBlock) ModBlocks.SMOOTHMARBLE_STAIRS.get()), blockTexture(ModBlocks.SMOOTHMARBLE.get()));
 		slabBlock(((SlabBlock) ModBlocks.SMOOTHMARBLE_SLAB.get()), blockTexture(ModBlocks.SMOOTHMARBLE.get()), blockTexture(ModBlocks.SMOOTHMARBLE.get()));
 		wallBlock(((WallBlock) ModBlocks.SMOOTHMARBLE_WALL.get()), blockTexture(ModBlocks.SMOOTHMARBLE.get()));
+		blockWithItem(ModBlocks.CHISELED_SMOOTHMARBLE);
 		
 		//ore blocks
 		blockWithItem(ModBlocks.LUNARITE_ORE);
@@ -214,6 +209,10 @@ public class ModBlockStateProvider extends BlockStateProvider{
 		
 		//nature blocks
 		saplingBlock(ModBlocks.LUNGRASS);
+		saplingBlock(ModBlocks.CRIMSON_LUNGRASS);
+		saplingBlock(ModBlocks.DUSKLIGHT_LUNGRASS);
+		saplingBlock(ModBlocks.CRIMSON_GLOWBUSH);
+		saplingBlock(ModBlocks.DUSKLIGHT_GLOWBUSH);
 		saplingBlock(ModBlocks.WILD_LOONBERRY);
 		saplingBlock(ModBlocks.WILD_SARROT);
 		
@@ -258,6 +257,13 @@ public class ModBlockStateProvider extends BlockStateProvider{
 	
 	private void blockWithItem(RegistryObject<Block> blockRegistryObject) {
 		simpleBlockWithItem(blockRegistryObject.get(), cubeAll(blockRegistryObject.get()));
+	}
+	
+	private void grassBlockWithItem(Block block) {
+		simpleBlockWithItem(block, models().cubeBottomTop(name(block), 
+        		new ResourceLocation(TheLunaris.MODID, "block/" + this.name(block) + "_side"),
+				blockTexture(ModBlocks.LUNDIRT.get()),
+        		new ResourceLocation(TheLunaris.MODID, "block/" + this.name(block))));
 	}
 	
 	private void translucentBlockWithItem(RegistryObject<Block> blockRegistryObject) {

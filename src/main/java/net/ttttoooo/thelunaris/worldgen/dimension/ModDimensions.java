@@ -358,7 +358,25 @@ public class ModDimensions {
                                         		Climate.Parameter.span(-1F, -0.1F), //Erosion
                                         		Climate.Parameter.span(1F, 1.1F), //Depth
                                         		Climate.Parameter.span(-1F, 1F), //Weirdness
-                                        		0.0F), biomeRegistry.getOrThrow(ModBiomes.DUSKLIGHT_CAVES))
+                                        		0.0F), biomeRegistry.getOrThrow(ModBiomes.DUSKLIGHT_CAVES)),
+                                Pair.of(
+                                        Climate.parameters(
+                                        		Climate.Parameter.span(-0.55F, 0.55F), //Temp
+                                        		Climate.Parameter.span(-1F, 1F), //Humidity
+                                        		Climate.Parameter.span(0F, 1F), //Continentalness
+                                        		Climate.Parameter.span(-1F, -0.1F), //Erosion
+                                        		Climate.Parameter.span(0.2F, 0.9F), //Depth
+                                        		Climate.Parameter.span(-1F, 1F), //Weirdness
+                                        		0.0F), biomeRegistry.getOrThrow(ModBiomes.BARREN_DEEP)),
+                                Pair.of(
+                                        Climate.parameters(
+                                        		Climate.Parameter.span(-1F, 1F), //Temp
+                                        		Climate.Parameter.span(-1F, 1F), //Humidity
+                                        		Climate.Parameter.span(-1F, 1F), //Continentalness
+                                        		Climate.Parameter.span(-1F, -0.1F), //Erosion
+                                        		Climate.Parameter.span(0.2F, 0.9F), //Depth
+                                        		Climate.Parameter.span(-1F, 1F), //Weirdness
+                                        		0.0F), biomeRegistry.getOrThrow(ModBiomes.BARREN_DEEP))
                                 
                         ))),
                 noiseGenSettings.getOrThrow(LunarisNoiseSettings.LUNA));
