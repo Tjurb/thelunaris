@@ -1479,7 +1479,7 @@
               -0.1
             ],
             "humidity": [
-              0.7,
+              -1.0,
               1.0
             ],
             "offset": 0.0,
@@ -1509,7 +1509,7 @@
               -0.1
             ],
             "humidity": [
-              -1.0,
+              0.6,
               1.0
             ],
             "offset": 0.0,
@@ -1527,7 +1527,7 @@
           "biome": "thelunaris:barren_deep",
           "parameters": {
             "continentalness": [
-              0.8,
+              -1.0,
               1.0
             ],
             "depth": [
@@ -1557,7 +1557,7 @@
           "biome": "thelunaris:barren_deep",
           "parameters": {
             "continentalness": [
-              -1.0,
+              0.6,
               1.0
             ],
             "depth": [
@@ -1566,7 +1566,7 @@
             ],
             "erosion": [
               -1.0,
-              -0.1
+              0.2
             ],
             "humidity": [
               -1.0,
@@ -1596,7 +1596,7 @@
             ],
             "erosion": [
               -1.0,
-              -0.3
+              -0.1
             ],
             "humidity": [
               -1.0,

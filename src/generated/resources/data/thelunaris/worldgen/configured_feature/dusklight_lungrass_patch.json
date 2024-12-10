@@ -16,9 +16,18 @@
               },
               {
                 "data": {
+                  "Name": "thelunaris:tall_dusklight_lungrass",
+                  "Properties": {
+                    "half": "lower"
+                  }
+                },
+                "weight": 15
+              },
+              {
+                "data": {
                   "Name": "thelunaris:dusklight_glowbush"
                 },
-                "weight": 10
+                "weight": 40
               },
               {
                 "data": {

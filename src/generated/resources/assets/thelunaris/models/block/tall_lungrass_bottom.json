@@ -1,6 +1,7 @@
 {
-  "parent": "minecraft:block/tall_grass_bottom",
+  "parent": "minecraft:block/cross",
+  "render_type": "minecraft:cutout",
   "textures": {
-    "texture": "thelunaris:block/tall_lungrass_bottom"
+    "cross": "thelunaris:block/tall_lungrass_bottom"
   }
 }
