@@ -2,6 +2,7 @@ package net.ttttoooo.thelunaris.worldgen;
 
 import java.util.List;
 
+import net.minecraft.core.BlockPos;
 import net.minecraft.core.Holder;
 import net.minecraft.core.HolderGetter;
 import net.minecraft.core.registries.Registries;
@@ -14,13 +15,16 @@ import net.minecraft.resources.ResourceKey;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.levelgen.VerticalAnchor;
+import net.minecraft.world.level.levelgen.blockpredicates.BlockPredicate;
 import net.minecraft.world.level.levelgen.feature.ConfiguredFeature;
 import net.minecraft.world.level.levelgen.feature.Feature;
 import net.minecraft.world.level.levelgen.feature.configurations.RandomPatchConfiguration;
 import net.minecraft.world.level.levelgen.feature.configurations.SimpleBlockConfiguration;
 import net.minecraft.world.level.levelgen.feature.stateproviders.BlockStateProvider;
 import net.minecraft.world.level.levelgen.placement.BiomeFilter;
+import net.minecraft.world.level.levelgen.placement.BlockPredicateFilter;
 import net.minecraft.world.level.levelgen.placement.CountOnEveryLayerPlacement;
+import net.minecraft.world.level.levelgen.placement.CountPlacement;
 import net.minecraft.world.level.levelgen.placement.HeightRangePlacement;
 import net.minecraft.world.level.levelgen.placement.InSquarePlacement;
 import net.minecraft.world.level.levelgen.placement.NoiseBasedCountPlacement;
@@ -65,6 +69,13 @@ public class ModPlacedFeatures {
 	public static final ResourceKey<PlacedFeature> CELEST_PLACED_KEY = registerKey("celest_placed");
 	public static final ResourceKey<PlacedFeature> STELLAR_PLACED_KEY = registerKey("stellar_placed");
 	public static final ResourceKey<PlacedFeature> SKYOAK_PLACED_KEY = registerKey("skyoak_placed");
+
+	public static final ResourceKey<PlacedFeature> LARGE_CELEST_PLACED_KEY = registerKey("large_celest_placed");
+	public static final ResourceKey<PlacedFeature> LARGE_STELLAR_PLACED_KEY = registerKey("large_stellar_placed");
+	public static final ResourceKey<PlacedFeature> LARGE_SKYOAK_PLACED_KEY = registerKey("large_skyoak_placed");
+	
+	public static final ResourceKey<PlacedFeature> DEEP_CELEST_PLACED_KEY = registerKey("deep_celest_placed");
+	public static final ResourceKey<PlacedFeature> DEEP_STELLAR_PLACED_KEY = registerKey("deep_stellar_placed");
 	
 	//ground vegetation key
 	public static final ResourceKey<PlacedFeature> LUNARIS_GRASS_PATCH_PLACED_KEY = registerKey("lunaris_grass_patch_placed");
@@ -177,6 +188,19 @@ public class ModPlacedFeatures {
                 VegetationPlacements.treePlacement(PlacementUtils.countExtra(1, 0.2f, 2),
                         ModBlocks.SKYOAK_SAPLING.get()));
         
+        register(context, LARGE_CELEST_PLACED_KEY, configuredFeatures.getOrThrow(ModConfiguredFeatures.LARGE_CELEST_KEY),
+                VegetationPlacements.treePlacement(PlacementUtils.countExtra(7, 0.1f, 4),
+                        ModBlocks.CELEST_SAPLING.get()));
+        register(context, LARGE_STELLAR_PLACED_KEY, configuredFeatures.getOrThrow(ModConfiguredFeatures.LARGE_STELLAR_KEY),
+                VegetationPlacements.treePlacement(PlacementUtils.countExtra(7, 0.2f, 4),
+                        ModBlocks.STELLAR_SAPLING.get()));
+        register(context, LARGE_SKYOAK_PLACED_KEY, configuredFeatures.getOrThrow(ModConfiguredFeatures.LARGE_SKYOAK_KEY),
+                VegetationPlacements.treePlacement(PlacementUtils.countExtra(7, 0.2f, 4),
+                        ModBlocks.SKYOAK_SAPLING.get()));
+        
+        register(context, DEEP_CELEST_PLACED_KEY, configuredFeatures.getOrThrow(ModConfiguredFeatures.DEEP_CELEST_KEY), tree(8));
+        register(context, DEEP_STELLAR_PLACED_KEY, configuredFeatures.getOrThrow(ModConfiguredFeatures.DEEP_STELLAR_KEY), tree(8));
+		
         //vegetation register
         register(context, LUNARIS_GRASS_PATCH_PLACED_KEY, configuredFeatures.getOrThrow(ModConfiguredFeatures.LUNARIS_GRASS_PATCH_KEY),
         		VegetationPlacements.worldSurfaceSquaredWithCount(5));
@@ -184,14 +208,14 @@ public class ModPlacedFeatures {
         		VegetationPlacements.worldSurfaceSquaredWithCount(1));
 
         register(context, CRIMSON_GRASS_PATCH_PLACED_KEY, configuredFeatures.getOrThrow(ModConfiguredFeatures.CRIMSONGRASS_PATCH_KEY),
-        		VegetationPlacements.worldSurfaceSquaredWithCount(5));
+        		patch(15));
         register(context, CRIMSON_BONEMEAL_KEY, configuredFeatures.getOrThrow(ModConfiguredFeatures.SINGLE_PIECE_OF_CRIMSON),
-        		VegetationPlacements.worldSurfaceSquaredWithCount(1));
+        		patch(1));
 
         register(context, DUSKLIGHT_GRASS_PATCH_PLACED_KEY, configuredFeatures.getOrThrow(ModConfiguredFeatures.DUSKLIGHTGRASS_PATCH_KEY),
-        		VegetationPlacements.worldSurfaceSquaredWithCount(5));
+        		patch(15));
         register(context, DUSKLIGHT_BONEMEAL_KEY, configuredFeatures.getOrThrow(ModConfiguredFeatures.SINGLE_PIECE_OF_DUSKLIGHT),
-        		VegetationPlacements.worldSurfaceSquaredWithCount(1));
+        		patch(1));
 
         //wild foods
         register(context, LUNARIS_SARROT_PATCH_PLACED_KEY, configuredFeatures.getOrThrow(ModConfiguredFeatures.LUNARIS_SARROT_PATCH_KEY),
@@ -221,6 +245,14 @@ public class ModPlacedFeatures {
     private static ResourceKey<PlacedFeature> registerKey(String name) {
         return ResourceKey.create(Registries.PLACED_FEATURE, new ResourceLocation(TheLunaris.MODID, name));
     }
+    
+    private static List<PlacementModifier> tree(int count) {
+		return List.of(CountOnEveryLayerPlacement.of(count), BiomeFilter.biome(), BlockPredicateFilter.forPredicate(BlockPredicate.wouldSurvive(Blocks.OAK_SAPLING.defaultBlockState(), BlockPos.ZERO)));
+	}
+    
+    private static List<PlacementModifier> patch(int count) {
+		return List.of(CountPlacement.of(count), InSquarePlacement.spread(), PlacementUtils.FULL_RANGE, BiomeFilter.biome());
+	}
 
     private static void register(BootstapContext<PlacedFeature> context, ResourceKey<PlacedFeature> key, Holder<ConfiguredFeature<?, ?>> configuration,
                                  List<PlacementModifier> modifiers) {

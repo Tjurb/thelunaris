@@ -1,4 +1,4 @@
-// 1.20.1	2024-12-09T03:12:58.6919485	Loot Tables
+// 1.20.1	2024-12-10T01:55:00.2531005	Loot Tables
 92097a82c34fc961772082dd36ad27e92bbdb77e data/thelunaris/loot_tables/blocks/bramble.json
 06dc455cb1cc43492a0c8635acf08992e970dac9 data/thelunaris/loot_tables/blocks/celest_button.json
 1412bc510edd1519210cff7aaf3d5841ee4e8f4f data/thelunaris/loot_tables/blocks/celest_door.json
@@ -33,6 +33,9 @@ d6c4a516d876a7501df23637dfa5e1124618074b data/thelunaris/loot_tables/blocks/dusk
 623cc0e10427e2eb982afdcb4b93c41962803c0d data/thelunaris/loot_tables/blocks/dusklight_lungrass.json
 f75e62c2aeab4aecc59f45d01437d840d6c8afa6 data/thelunaris/loot_tables/blocks/dusklight_lungrass_block.json
 45a186dae6426145885d6bea0b211a8c421a2730 data/thelunaris/loot_tables/blocks/emoonsteel_block.json
+700e18d268f545c8faff106c287964b03406c849 data/thelunaris/loot_tables/blocks/glowing_celest_leaves.json
+1da3bb0dd4fb1400a37c6472c28ec65dcd0e3451 data/thelunaris/loot_tables/blocks/glowing_skyoak_leaves.json
+4845365fb3b79e7fbbec4cf770707f680bbbfb02 data/thelunaris/loot_tables/blocks/glowing_stellar_leaves.json
 ca549ddea92ce96c307d9bea5cee5b5f22a81fc3 data/thelunaris/loot_tables/blocks/gneiss.json
 cc341454641140011ddf620b78f5959ac125e8cd data/thelunaris/loot_tables/blocks/labradorite_block.json
 2da2465427d2e0d298009823dbd6a3c5c36267cd data/thelunaris/loot_tables/blocks/labradorite_ore.json

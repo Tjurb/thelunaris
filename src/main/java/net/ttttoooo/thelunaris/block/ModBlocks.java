@@ -164,6 +164,23 @@ public class ModBlocks {
                     return 30;
                 }
 			});
+	public static final RegistryObject<Block> GLOWING_CELEST_LEAVES = registerBlock("glowing_celest_leaves", 
+			() -> new LeavesBlock(BlockBehaviour.Properties.copy(Blocks.OAK_LEAVES).sound(SoundType.GRASS).lightLevel((state) -> 10)) {
+				@Override
+                public boolean isFlammable(BlockState state, BlockGetter level, BlockPos pos, Direction direction) {
+                    return true;
+                }
+
+                @Override
+                public int getFlammability(BlockState state, BlockGetter level, BlockPos pos, Direction direction) {
+                    return 60;
+                }
+
+                @Override
+                public int getFireSpreadSpeed(BlockState state, BlockGetter level, BlockPos pos, Direction direction) {
+                    return 30;
+                }
+			});
 	public static final RegistryObject<Block> CELEST_PLANKS = registerBlock("celest_planks", 
 			() -> new Block(BlockBehaviour.Properties.copy(Blocks.OAK_PLANKS).sound(SoundType.WOOD)) {
 				@Override
@@ -255,6 +272,23 @@ public class ModBlocks {
                     return 30;
                 }
 			});
+	public static final RegistryObject<Block> GLOWING_STELLAR_LEAVES = registerBlock("glowing_stellar_leaves", 
+			() -> new LeavesBlock(BlockBehaviour.Properties.copy(Blocks.OAK_LEAVES).sound(SoundType.GRASS).lightLevel((state) -> 10)) {
+				@Override
+                public boolean isFlammable(BlockState state, BlockGetter level, BlockPos pos, Direction direction) {
+                    return true;
+                }
+
+                @Override
+                public int getFlammability(BlockState state, BlockGetter level, BlockPos pos, Direction direction) {
+                    return 60;
+                }
+
+                @Override
+                public int getFireSpreadSpeed(BlockState state, BlockGetter level, BlockPos pos, Direction direction) {
+                    return 30;
+                }
+			});
 	public static final RegistryObject<Block> STELLAR_PLANKS = registerBlock("stellar_planks", 
 			() -> new Block(BlockBehaviour.Properties.copy(Blocks.OAK_PLANKS).sound(SoundType.WOOD)) {
 				@Override
@@ -331,6 +365,23 @@ public class ModBlocks {
 			() -> new ModFlammableRotatedPillarBlock(BlockBehaviour.Properties.copy(Blocks.OAK_WOOD).sound(SoundType.WOOD).strength(3f)));
 	public static final RegistryObject<Block> SKYOAK_LEAVES = registerBlock("skyoak_leaves", 
 			() -> new LeavesBlock(BlockBehaviour.Properties.copy(Blocks.OAK_LEAVES).sound(SoundType.GRASS)) {
+				@Override
+                public boolean isFlammable(BlockState state, BlockGetter level, BlockPos pos, Direction direction) {
+                    return true;
+                }
+
+                @Override
+                public int getFlammability(BlockState state, BlockGetter level, BlockPos pos, Direction direction) {
+                    return 60;
+                }
+
+                @Override
+                public int getFireSpreadSpeed(BlockState state, BlockGetter level, BlockPos pos, Direction direction) {
+                    return 30;
+                }
+			});
+	public static final RegistryObject<Block> GLOWING_SKYOAK_LEAVES = registerBlock("glowing_skyoak_leaves", 
+			() -> new LeavesBlock(BlockBehaviour.Properties.copy(Blocks.OAK_LEAVES).sound(SoundType.GRASS).lightLevel((state) -> 10)) {
 				@Override
                 public boolean isFlammable(BlockState state, BlockGetter level, BlockPos pos, Direction direction) {
                     return true;

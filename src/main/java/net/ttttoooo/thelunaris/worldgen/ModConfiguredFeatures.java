@@ -1,6 +1,7 @@
 package net.ttttoooo.thelunaris.worldgen;
 
 import java.util.List;
+import java.util.OptionalInt;
 
 import net.minecraft.core.registries.Registries;
 import net.minecraft.data.worldgen.BootstapContext;
@@ -23,10 +24,14 @@ import net.minecraft.world.level.levelgen.feature.configurations.OreConfiguratio
 import net.minecraft.world.level.levelgen.feature.configurations.RandomPatchConfiguration;
 import net.minecraft.world.level.levelgen.feature.configurations.SimpleBlockConfiguration;
 import net.minecraft.world.level.levelgen.feature.configurations.TreeConfiguration;
+import net.minecraft.world.level.levelgen.feature.featuresize.ThreeLayersFeatureSize;
 import net.minecraft.world.level.levelgen.feature.featuresize.TwoLayersFeatureSize;
 import net.minecraft.world.level.levelgen.feature.foliageplacers.BlobFoliagePlacer;
+import net.minecraft.world.level.levelgen.feature.foliageplacers.DarkOakFoliagePlacer;
 import net.minecraft.world.level.levelgen.feature.stateproviders.BlockStateProvider;
 import net.minecraft.world.level.levelgen.feature.stateproviders.WeightedStateProvider;
+import net.minecraft.world.level.levelgen.feature.treedecorators.TreeDecorator;
+import net.minecraft.world.level.levelgen.feature.trunkplacers.DarkOakTrunkPlacer;
 import net.minecraft.world.level.levelgen.feature.trunkplacers.StraightTrunkPlacer;
 import net.minecraft.world.level.levelgen.placement.PlacedFeature;
 import net.minecraft.world.level.levelgen.structure.templatesystem.RuleTest;
@@ -70,8 +75,13 @@ public class ModConfiguredFeatures {
 	public static final ResourceKey<ConfiguredFeature<?, ?>> CELEST_KEY = registerKey("celest");
 	public static final ResourceKey<ConfiguredFeature<?, ?>> STELLAR_KEY = registerKey("stellar");
 	public static final ResourceKey<ConfiguredFeature<?, ?>> SKYOAK_KEY = registerKey("skyoak");
+	public static final ResourceKey<ConfiguredFeature<?, ?>> LARGE_CELEST_KEY = registerKey("large_celest");
+	public static final ResourceKey<ConfiguredFeature<?, ?>> LARGE_STELLAR_KEY = registerKey("large_stellar");
+	public static final ResourceKey<ConfiguredFeature<?, ?>> LARGE_SKYOAK_KEY = registerKey("large_skyoak");
 	
 	//deep keys
+	public static final ResourceKey<ConfiguredFeature<?, ?>> DEEP_CELEST_KEY = registerKey("deep_celest");
+	public static final ResourceKey<ConfiguredFeature<?, ?>> DEEP_STELLAR_KEY = registerKey("deep_stellar");
 	public static final ResourceKey<ConfiguredFeature<?, ?>> CRIMSONGRASS_PATCH_KEY = registerKey("crimson_lungrass_patch");
 	public static final ResourceKey<ConfiguredFeature<?, ?>> DUSKLIGHTGRASS_PATCH_KEY = registerKey("dusklight_lungrass_patch");
 	public static final ResourceKey<ConfiguredFeature<?, ?>> SINGLE_PIECE_OF_CRIMSON = registerKey("crimson_lungrass_single");
@@ -181,6 +191,48 @@ public class ModConfiguredFeatures {
         		BlockStateProvider.simple(ModBlocks.SKYOAK_LEAVES.get()),
         		new BlobFoliagePlacer(ConstantInt.of(3), ConstantInt.of(2), 4),
         		new TwoLayersFeatureSize(2, 0, 2)).build());
+
+        register(context, DEEP_CELEST_KEY, Feature.TREE, new TreeConfiguration.TreeConfigurationBuilder(
+        		BlockStateProvider.simple(ModBlocks.CELEST_LOG.get()),
+        		new StraightTrunkPlacer(2, 2, 3),
+        		new WeightedStateProvider(SimpleWeightedRandomList.<BlockState>builder()
+        				.add(ModBlocks.CELEST_LEAVES.get().defaultBlockState(), 3)
+        				.add(ModBlocks.GLOWING_CELEST_LEAVES.get().defaultBlockState(), 1)),
+        		new BlobFoliagePlacer(ConstantInt.of(4), ConstantInt.of(2), 2),
+        		new TwoLayersFeatureSize(2, 0, 2)).build());
+
+        register(context, DEEP_STELLAR_KEY, Feature.TREE, new TreeConfiguration.TreeConfigurationBuilder(
+        		BlockStateProvider.simple(ModBlocks.STELLAR_LOG.get()),
+        		new StraightTrunkPlacer(2, 2, 3),
+        		new WeightedStateProvider(SimpleWeightedRandomList.<BlockState>builder()
+        				.add(ModBlocks.STELLAR_LEAVES.get().defaultBlockState(), 3)
+        				.add(ModBlocks.GLOWING_STELLAR_LEAVES.get().defaultBlockState(), 1)),
+        		new BlobFoliagePlacer(ConstantInt.of(3), ConstantInt.of(2), 3),
+        		new TwoLayersFeatureSize(2, 0, 2)).build());
+        
+
+        register(context, LARGE_CELEST_KEY, Feature.TREE, new TreeConfiguration.TreeConfigurationBuilder(
+        		BlockStateProvider.simple(ModBlocks.CELEST_LOG.get()),
+        		new DarkOakTrunkPlacer(5, 2, 2),
+        		BlockStateProvider.simple(ModBlocks.CELEST_LEAVES.get()),
+        		new DarkOakFoliagePlacer(ConstantInt.of(0), ConstantInt.of(0)),
+        		new ThreeLayersFeatureSize(2, 2, 0, 2, 2, OptionalInt.empty())).build());
+        
+        register(context, LARGE_STELLAR_KEY, Feature.TREE, new TreeConfiguration.TreeConfigurationBuilder(
+        		BlockStateProvider.simple(ModBlocks.STELLAR_LOG.get()),
+        		new DarkOakTrunkPlacer(4, 2, 2),
+        		BlockStateProvider.simple(ModBlocks.STELLAR_LEAVES.get()),
+        		new DarkOakFoliagePlacer(ConstantInt.of(0), ConstantInt.of(0)),
+        		new ThreeLayersFeatureSize(2, 2, 0, 2, 2, OptionalInt.empty())).build());
+        
+        register(context, LARGE_SKYOAK_KEY, Feature.TREE, new TreeConfiguration.TreeConfigurationBuilder(
+        		BlockStateProvider.simple(ModBlocks.SKYOAK_LOG.get()),
+        		new DarkOakTrunkPlacer(7, 2, 3),
+        		new WeightedStateProvider(SimpleWeightedRandomList.<BlockState>builder()
+        				.add(ModBlocks.SKYOAK_LEAVES.get().defaultBlockState(), 3)
+        				.add(ModBlocks.GLOWING_SKYOAK_LEAVES.get().defaultBlockState(), 1)),
+        		new DarkOakFoliagePlacer(ConstantInt.of(0), ConstantInt.of(0)),
+        		new ThreeLayersFeatureSize(2, 2, 0, 2, 2, OptionalInt.empty())).build());
         
         //vegetation register
         register(context, LUNARIS_GRASS_PATCH_KEY, Feature.RANDOM_PATCH,
@@ -202,12 +254,12 @@ public class ModConfiguredFeatures {
         		grassPatch(new WeightedStateProvider(SimpleWeightedRandomList.<BlockState>builder()
         				.add(ModBlocks.CRIMSON_LUNGRASS.get().defaultBlockState(), 85)
         				.add(ModBlocks.CRIMSON_GLOWBUSH.get().defaultBlockState(), 10)
-        				.add(ModBlocks.DUSKLIGHT_GLOWBUSH.get().defaultBlockState(), 5)), 32));
+        				.add(ModBlocks.DUSKLIGHT_GLOWBUSH.get().defaultBlockState(), 5)), 64));
         register(context, DUSKLIGHTGRASS_PATCH_KEY, Feature.RANDOM_PATCH,
         		grassPatch(new WeightedStateProvider(SimpleWeightedRandomList.<BlockState>builder()
         				.add(ModBlocks.DUSKLIGHT_LUNGRASS.get().defaultBlockState(), 85)
         				.add(ModBlocks.DUSKLIGHT_GLOWBUSH.get().defaultBlockState(), 10)
-        				.add(ModBlocks.CRIMSON_GLOWBUSH.get().defaultBlockState(), 5)), 32));
+        				.add(ModBlocks.CRIMSON_GLOWBUSH.get().defaultBlockState(), 5)), 64));
 
         register(context, SINGLE_PIECE_OF_CRIMSON, Feature.SIMPLE_BLOCK, 
         		new SimpleBlockConfiguration(BlockStateProvider.simple(ModBlocks.CRIMSON_LUNGRASS.get().defaultBlockState())));

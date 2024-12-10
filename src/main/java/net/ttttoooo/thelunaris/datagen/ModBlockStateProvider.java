@@ -107,6 +107,7 @@ public class ModBlockStateProvider extends BlockStateProvider{
 		blockItem(ModBlocks.STRIPPED_CELEST_LOG);
 		blockItem(ModBlocks.STRIPPED_CELEST_WOOD);
 		blockWithItem(ModBlocks.CELEST_LEAVES);
+		blockWithItem(ModBlocks.GLOWING_CELEST_LEAVES);
 		blockWithItem(ModBlocks.CELEST_PLANKS);
 		stairsBlock(((StairBlock) ModBlocks.CELEST_STAIRS.get()), blockTexture(ModBlocks.CELEST_PLANKS.get()));
 		slabBlock(((SlabBlock) ModBlocks.CELEST_SLAB.get()), blockTexture(ModBlocks.CELEST_PLANKS.get()), blockTexture(ModBlocks.CELEST_PLANKS.get()));
@@ -130,6 +131,7 @@ public class ModBlockStateProvider extends BlockStateProvider{
 		blockItem(ModBlocks.STRIPPED_STELLAR_LOG);
 		blockItem(ModBlocks.STRIPPED_STELLAR_WOOD);
 		blockWithItem(ModBlocks.STELLAR_LEAVES);
+		blockWithItem(ModBlocks.GLOWING_STELLAR_LEAVES);
 		blockWithItem(ModBlocks.STELLAR_PLANKS);
 		stairsBlock(((StairBlock) ModBlocks.STELLAR_STAIRS.get()), blockTexture(ModBlocks.STELLAR_PLANKS.get()));
 		slabBlock(((SlabBlock) ModBlocks.STELLAR_SLAB.get()), blockTexture(ModBlocks.STELLAR_PLANKS.get()), blockTexture(ModBlocks.STELLAR_PLANKS.get()));
@@ -153,6 +155,7 @@ public class ModBlockStateProvider extends BlockStateProvider{
 		blockItem(ModBlocks.STRIPPED_SKYOAK_LOG);
 		blockItem(ModBlocks.STRIPPED_SKYOAK_WOOD);
 		blockWithItem(ModBlocks.SKYOAK_LEAVES);
+		blockWithItem(ModBlocks.GLOWING_SKYOAK_LEAVES);
 		blockWithItem(ModBlocks.SKYOAK_PLANKS);
 		stairsBlock(((StairBlock) ModBlocks.SKYOAK_STAIRS.get()), blockTexture(ModBlocks.SKYOAK_PLANKS.get()));
 		slabBlock(((SlabBlock) ModBlocks.SKYOAK_SLAB.get()), blockTexture(ModBlocks.SKYOAK_PLANKS.get()), blockTexture(ModBlocks.SKYOAK_PLANKS.get()));

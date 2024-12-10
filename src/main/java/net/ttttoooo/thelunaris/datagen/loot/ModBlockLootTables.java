@@ -9,13 +9,17 @@ import net.minecraft.world.item.Item;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.item.enchantment.Enchantments;
 import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.block.Blocks;
+import net.minecraft.world.level.storage.loot.LootPool;
 import net.minecraft.world.level.storage.loot.LootTable;
 import net.minecraft.world.level.storage.loot.entries.LootItem;
 import net.minecraft.world.level.storage.loot.functions.ApplyBonusCount;
 import net.minecraft.world.level.storage.loot.functions.SetItemCountFunction;
+import net.minecraft.world.level.storage.loot.predicates.BonusLevelTableCondition;
 import net.minecraft.world.level.storage.loot.predicates.LootItemBlockStatePropertyCondition;
 import net.minecraft.world.level.storage.loot.predicates.LootItemCondition;
 import net.minecraft.world.level.storage.loot.predicates.LootItemRandomChanceCondition;
+import net.minecraft.world.level.storage.loot.providers.number.ConstantValue;
 import net.minecraft.world.level.storage.loot.providers.number.UniformGenerator;
 import net.minecraftforge.registries.RegistryObject;
 import net.ttttoooo.thelunaris.block.ModBlocks;
@@ -205,6 +209,13 @@ public class ModBlockLootTables extends BlockLootSubProvider{
 			createLeavesDrops(block, ModBlocks.CELEST_SAPLING.get(), NORMAL_LEAVES_SAPLING_CHANCES));
 		this.add(ModBlocks.SKYOAK_LEAVES.get(), block ->
 			createLeavesDrops(block, ModBlocks.SKYOAK_SAPLING.get(), NORMAL_LEAVES_SAPLING_CHANCES));
+
+		this.add(ModBlocks.GLOWING_STELLAR_LEAVES.get(), block ->
+			createLeavesDrops(block, ModBlocks.STELLAR_SAPLING.get(), NORMAL_LEAVES_SAPLING_CHANCES));
+		this.add(ModBlocks.GLOWING_CELEST_LEAVES.get(), block ->
+			createLeavesDrops(block, ModBlocks.CELEST_SAPLING.get(), NORMAL_LEAVES_SAPLING_CHANCES));
+		this.add(ModBlocks.GLOWING_SKYOAK_LEAVES.get(), block ->
+			createLeavesDrops(block, ModBlocks.SKYOAK_SAPLING.get(), NORMAL_LEAVES_SAPLING_CHANCES));
 		
 		//Nature Blocks
 		this.add(ModBlocks.LUNGRASS.get(), block ->
@@ -294,6 +305,23 @@ public class ModBlockLootTables extends BlockLootSubProvider{
 				this.applyExplosionDecay(pBlock,
 						LootItem.lootTableItem(Block)
 						.apply(SetItemCountFunction.setCount(UniformGenerator.between(1.0f, 1.0f)))));
+	}
+	
+	protected LootTable.Builder createLeavesDrops(Block p_250088_, Block p_250731_, float... p_248949_) {
+		float[] NORMAL_LEAVES_STICK_CHANCES = new float[]{0.02F, 0.022222223F, 0.025F, 0.033333335F, 0.1F};
+		final LootItemCondition.Builder HAS_SHEARS_OR_SILK_TOUCH = HAS_SHEARS.or(HAS_SILK_TOUCH);
+		final LootItemCondition.Builder HAS_NO_SHEARS_OR_SILK_TOUCH = HAS_SHEARS_OR_SILK_TOUCH.invert();
+	    return createSilkTouchOrShearsDispatchTable(p_250088_, 
+	    		this.applyExplosionCondition(p_250088_, 
+	    				LootItem.lootTableItem(p_250731_))
+	    		.when(BonusLevelTableCondition.bonusLevelFlatChance(Enchantments.BLOCK_FORTUNE, p_248949_)))
+	    		.withPool(LootPool.lootPool().setRolls(ConstantValue.exactly(1.0F))
+	    				.when(HAS_NO_SHEARS_OR_SILK_TOUCH)
+	    				.add(this.applyExplosionDecay(p_250088_, 
+	    						LootItem.lootTableItem(Items.STICK)
+	    						.apply(SetItemCountFunction.setCount(UniformGenerator.between(1.0F, 2.0F))))
+	    						.when(BonusLevelTableCondition.bonusLevelFlatChance(Enchantments.BLOCK_FORTUNE,
+	    								NORMAL_LEAVES_STICK_CHANCES))));
 	}
 	
 	protected Iterable<Block> getKnownBlocks(){

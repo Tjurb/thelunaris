@@ -55,6 +55,8 @@
     [
       "thelunaris:celest_placed",
       "thelunaris:stellar_placed",
+      "thelunaris:large_celest_placed",
+      "thelunaris:large_stellar_placed",
       "thelunaris:lunaris_grass_patch_placed",
       "thelunaris:lunaris_sarrot_patch_placed",
       "thelunaris:lunar_flower_default"
