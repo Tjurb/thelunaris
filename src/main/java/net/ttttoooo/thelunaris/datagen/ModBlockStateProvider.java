@@ -280,16 +280,12 @@ public class ModBlockStateProvider extends BlockStateProvider{
 	    ResourceLocation topTexture = new ResourceLocation(TheLunaris.MODID, "block/" + variantName + "_top");
 
 	    // Generate models for the top and bottom halves
-	    ModelFile bottomModel = models().singleTexture(
-	            variantName + "_bottom", 
-	            new ResourceLocation("block/tall_grass_bottom"), 
-	            "texture", bottomTexture
-	    );
-	    ModelFile topModel = models().singleTexture(
-	            variantName + "_top", 
-	            new ResourceLocation("block/tall_grass_top"), 
-	            "texture", topTexture
-	    );
+	    ModelFile bottomModel = 
+                models().cross(ForgeRegistries.BLOCKS.getKey(block.get()).getPath() + "_bottom", 
+                		bottomTexture).renderType("cutout");
+	    ModelFile topModel = 
+                models().cross(ForgeRegistries.BLOCKS.getKey(block.get()).getPath() + "_top", 
+                		topTexture).renderType("cutout");
 
 	    // Generate blockstate with top and bottom parts
 	    getVariantBuilder(block.get()).forAllStates(state -> {

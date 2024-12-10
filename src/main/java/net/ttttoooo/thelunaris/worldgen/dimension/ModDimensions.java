@@ -616,7 +616,16 @@ public class ModDimensions {
                                 Pair.of(
                                         Climate.parameters(
                                         		Climate.Parameter.span(-1F, 1F), //Temp
-                                        		Climate.Parameter.span(0.7F, 1F), //Humidity
+                                        		Climate.Parameter.span(-1F, 1F), //Humidity
+                                        		Climate.Parameter.span(-1F, 1F), //Continentalness
+                                        		Climate.Parameter.span(-1F, -0.1F), //Erosion
+                                        		Climate.Parameter.span(0.2F, 0.9F), //Depth
+                                        		Climate.Parameter.span(-1F, 1F), //Weirdness
+                                        		0.0F), biomeRegistry.getOrThrow(ModBiomes.CRIMSON_SHELFS)),
+                                Pair.of(
+                                        Climate.parameters(
+                                        		Climate.Parameter.span(-1F, 1F), //Temp
+                                        		Climate.Parameter.span(0.6F, 1F), //Humidity
                                         		Climate.Parameter.span(-1F, 1F), //Continentalness
                                         		Climate.Parameter.span(-1F, -0.1F), //Erosion
                                         		Climate.Parameter.span(0.2F, 0.9F), //Depth
@@ -630,13 +639,13 @@ public class ModDimensions {
                                         		Climate.Parameter.span(-1F, -0.1F), //Erosion
                                         		Climate.Parameter.span(0.2F, 0.9F), //Depth
                                         		Climate.Parameter.span(-1F, 1F), //Weirdness
-                                        		0.0F), biomeRegistry.getOrThrow(ModBiomes.CRIMSON_SHELFS)),
+                                        		0.0F), biomeRegistry.getOrThrow(ModBiomes.BARREN_DEEP)),
                                 Pair.of(
                                         Climate.parameters(
                                         		Climate.Parameter.span(-1F, 1F), //Temp
                                         		Climate.Parameter.span(-1F, 1F), //Humidity
-                                        		Climate.Parameter.span(0.8F, 1F), //Continentalness
-                                        		Climate.Parameter.span(-1F, -0.1F), //Erosion
+                                        		Climate.Parameter.span(0.6F, 1F), //Continentalness
+                                        		Climate.Parameter.span(-1F, 0.2F), //Erosion
                                         		Climate.Parameter.span(0.2F, 0.9F), //Depth
                                         		Climate.Parameter.span(-1F, 1F), //Weirdness
                                         		0.0F), biomeRegistry.getOrThrow(ModBiomes.BARREN_DEEP)),
@@ -646,15 +655,6 @@ public class ModDimensions {
                                         		Climate.Parameter.span(-1F, 1F), //Humidity
                                         		Climate.Parameter.span(-1F, 1F), //Continentalness
                                         		Climate.Parameter.span(-1F, -0.1F), //Erosion
-                                        		Climate.Parameter.span(0.2F, 0.9F), //Depth
-                                        		Climate.Parameter.span(-1F, 1F), //Weirdness
-                                        		0.0F), biomeRegistry.getOrThrow(ModBiomes.BARREN_DEEP)),
-                                Pair.of(
-                                        Climate.parameters(
-                                        		Climate.Parameter.span(-1F, 1F), //Temp
-                                        		Climate.Parameter.span(-1F, 1F), //Humidity
-                                        		Climate.Parameter.span(-1F, 1F), //Continentalness
-                                        		Climate.Parameter.span(-1F, -0.3F), //Erosion
                                         		Climate.Parameter.span(1F, 1.1F), //Depth
                                         		Climate.Parameter.span(-1F, 1F), //Weirdness
                                         		0.0F), biomeRegistry.getOrThrow(ModBiomes.DUSKLIGHT_CAVES)),

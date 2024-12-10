@@ -189,9 +189,12 @@ public class ModItemModelProvider extends ItemModelProvider{
 		
 		//nature
 		saplingItem(ModBlocks.LUNGRASS);
+		tallsaplingItem(ModBlocks.TALL_LUNGRASS);
 		saplingItem(ModBlocks.CRIMSON_LUNGRASS);
+		tallsaplingItem(ModBlocks.TALL_CRIMSON_LUNGRASS);
 		saplingItem(ModBlocks.CRIMSON_GLOWBUSH);
 		saplingItem(ModBlocks.DUSKLIGHT_LUNGRASS);
+		tallsaplingItem(ModBlocks.TALL_DUSKLIGHT_LUNGRASS);
 		saplingItem(ModBlocks.DUSKLIGHT_GLOWBUSH);
 		saplingItem(ModBlocks.WILD_LOONBERRY);
 		saplingItem(ModBlocks.WILD_SARROT);
@@ -208,6 +211,12 @@ public class ModItemModelProvider extends ItemModelProvider{
         return withExistingParent(item.getId().getPath(),
                 new ResourceLocation("item/generated")).texture("layer0",
                 new ResourceLocation(TheLunaris.MODID,"block/" + item.getId().getPath()));
+    }
+	
+	private ItemModelBuilder tallsaplingItem(RegistryObject<Block> item) {
+        return withExistingParent(item.getId().getPath(),
+                new ResourceLocation("item/generated")).texture("layer0",
+                new ResourceLocation(TheLunaris.MODID,"block/" + item.getId().getPath() + "_top"));
     }
 	
 	// Shoutout to El_Redstoniano for making this

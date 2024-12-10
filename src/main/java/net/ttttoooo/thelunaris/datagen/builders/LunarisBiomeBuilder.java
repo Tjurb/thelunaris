@@ -190,6 +190,7 @@ public class LunarisBiomeBuilder {
 
     public static Biome lunarplains(HolderGetter<PlacedFeature> placedFeatures, HolderGetter<ConfiguredWorldCarver<?>> worldCarvers) {
         return makeForestBiome(new BiomeGenerationSettings.Builder(placedFeatures, worldCarvers)
+        		.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, ModPlacedFeatures.TALL_LUNARIS_GRASS_PATCH_PLACED_KEY)
         		.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, ModPlacedFeatures.LUNARIS_GRASS_PATCH_PLACED_KEY)
         		.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, ModPlacedFeatures.LUNARIS_SARROT_PATCH_PLACED_KEY)
         		.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, ModPlacedFeatures.LUNARIS_BERRY_PATCH_PLACED_KEY)

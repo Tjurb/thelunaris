@@ -89,6 +89,7 @@ public class ModConfiguredFeatures {
 	
 	//vegetation keys
 	public static final ResourceKey<ConfiguredFeature<?, ?>> LUNARIS_GRASS_PATCH_KEY = registerKey("lunaris_lungrass_patch");
+	public static final ResourceKey<ConfiguredFeature<?, ?>> TALL_LUNARIS_GRASS_PATCH_KEY = registerKey("tall_lungrass_patch");
 	public static final ResourceKey<ConfiguredFeature<?, ?>> LUNARIS_SARROT_PATCH_KEY = registerKey("lunaris_sarrot_patch");
 	public static final ResourceKey<ConfiguredFeature<?, ?>> LUNARIS_BERRY_PATCH_KEY = registerKey("lunaris_berry_patch");
 	public static final ResourceKey<ConfiguredFeature<?, ?>> SINGLE_PIECE_OF_LUNGRASS = registerKey("lunaris_lungrass_single");
@@ -237,6 +238,8 @@ public class ModConfiguredFeatures {
         //vegetation register
         register(context, LUNARIS_GRASS_PATCH_KEY, Feature.RANDOM_PATCH,
         		grassPatch(BlockStateProvider.simple(ModBlocks.LUNGRASS.get()), 32));
+        register(context, TALL_LUNARIS_GRASS_PATCH_KEY, Feature.RANDOM_PATCH,
+        		grassPatch(BlockStateProvider.simple(ModBlocks.TALL_LUNGRASS.get()), 32));
         register(context, LUNARIS_SARROT_PATCH_KEY, Feature.RANDOM_PATCH,
         		grassPatch(BlockStateProvider.simple(ModBlocks.WILD_SARROT.get()), 32));
         register(context, LUNARIS_BERRY_PATCH_KEY, Feature.RANDOM_PATCH,
@@ -253,12 +256,14 @@ public class ModConfiguredFeatures {
         register(context, CRIMSONGRASS_PATCH_KEY, Feature.RANDOM_PATCH, 
         		grassPatch(new WeightedStateProvider(SimpleWeightedRandomList.<BlockState>builder()
         				.add(ModBlocks.CRIMSON_LUNGRASS.get().defaultBlockState(), 85)
-        				.add(ModBlocks.CRIMSON_GLOWBUSH.get().defaultBlockState(), 10)
+        				.add(ModBlocks.TALL_CRIMSON_LUNGRASS.get().defaultBlockState(), 15)
+        				.add(ModBlocks.CRIMSON_GLOWBUSH.get().defaultBlockState(), 40)
         				.add(ModBlocks.DUSKLIGHT_GLOWBUSH.get().defaultBlockState(), 5)), 64));
         register(context, DUSKLIGHTGRASS_PATCH_KEY, Feature.RANDOM_PATCH,
         		grassPatch(new WeightedStateProvider(SimpleWeightedRandomList.<BlockState>builder()
         				.add(ModBlocks.DUSKLIGHT_LUNGRASS.get().defaultBlockState(), 85)
-        				.add(ModBlocks.DUSKLIGHT_GLOWBUSH.get().defaultBlockState(), 10)
+        				.add(ModBlocks.TALL_DUSKLIGHT_LUNGRASS.get().defaultBlockState(), 15)
+        				.add(ModBlocks.DUSKLIGHT_GLOWBUSH.get().defaultBlockState(), 40)
         				.add(ModBlocks.CRIMSON_GLOWBUSH.get().defaultBlockState(), 5)), 64));
 
         register(context, SINGLE_PIECE_OF_CRIMSON, Feature.SIMPLE_BLOCK, 

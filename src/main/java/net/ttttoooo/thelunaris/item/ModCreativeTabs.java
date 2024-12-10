@@ -94,6 +94,7 @@ public class ModCreativeTabs {
 				pOutput.accept(ModBlocks.STRIPPED_CELEST_LOG.get());
 				pOutput.accept(ModBlocks.STRIPPED_CELEST_WOOD.get());
 				pOutput.accept(ModBlocks.CELEST_LEAVES.get());
+				pOutput.accept(ModBlocks.GLOWING_CELEST_LEAVES.get());
 				pOutput.accept(ModBlocks.CELEST_PLANKS.get());
 				pOutput.accept(ModBlocks.CELEST_STAIRS.get());
 				pOutput.accept(ModBlocks.CELEST_SLAB.get());
@@ -110,6 +111,7 @@ public class ModCreativeTabs {
 				pOutput.accept(ModBlocks.STRIPPED_STELLAR_LOG.get());
 				pOutput.accept(ModBlocks.STRIPPED_STELLAR_WOOD.get());
 				pOutput.accept(ModBlocks.STELLAR_LEAVES.get());;
+				pOutput.accept(ModBlocks.GLOWING_STELLAR_LEAVES.get());;
 				pOutput.accept(ModBlocks.STELLAR_PLANKS.get());
 				pOutput.accept(ModBlocks.STELLAR_STAIRS.get());
 				pOutput.accept(ModBlocks.STELLAR_SLAB.get());
@@ -126,6 +128,7 @@ public class ModCreativeTabs {
 				pOutput.accept(ModBlocks.STRIPPED_SKYOAK_LOG.get());
 				pOutput.accept(ModBlocks.STRIPPED_SKYOAK_WOOD.get());
 				pOutput.accept(ModBlocks.SKYOAK_LEAVES.get());;
+				pOutput.accept(ModBlocks.GLOWING_SKYOAK_LEAVES.get());;
 				pOutput.accept(ModBlocks.SKYOAK_PLANKS.get());
 				pOutput.accept(ModBlocks.SKYOAK_STAIRS.get());
 				pOutput.accept(ModBlocks.SKYOAK_SLAB.get());
@@ -147,6 +150,9 @@ public class ModCreativeTabs {
 				pOutput.accept(ModBlocks.LUNGRASS.get());
 				pOutput.accept(ModBlocks.CRIMSON_LUNGRASS.get());
 				pOutput.accept(ModBlocks.DUSKLIGHT_LUNGRASS.get());
+				pOutput.accept(ModBlocks.TALL_LUNGRASS.get());
+				pOutput.accept(ModBlocks.TALL_CRIMSON_LUNGRASS.get());
+				pOutput.accept(ModBlocks.TALL_DUSKLIGHT_LUNGRASS.get());
 				pOutput.accept(ModBlocks.CRIMSON_GLOWBUSH.get());
 				pOutput.accept(ModBlocks.DUSKLIGHT_GLOWBUSH.get());
 				pOutput.accept(ModBlocks.ORANGEYE.get());
@@ -178,6 +184,7 @@ public class ModCreativeTabs {
 				pOutput.accept(ModItems.SPICY_ARCHFISH.get());
 				pOutput.accept(ModItems.LOONBERRY_PIE.get());
 				pOutput.accept(ModItems.LUNAR_WHEAT.get());
+				pOutput.accept(ModItems.LUN_BREAD.get());
 				
 				//Tool Entry
 				pOutput.accept(ModItems.VAILSTONE_SWORD.get());

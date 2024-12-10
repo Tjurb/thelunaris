@@ -79,6 +79,7 @@ public class ModPlacedFeatures {
 	
 	//ground vegetation key
 	public static final ResourceKey<PlacedFeature> LUNARIS_GRASS_PATCH_PLACED_KEY = registerKey("lunaris_grass_patch_placed");
+	public static final ResourceKey<PlacedFeature> TALL_LUNARIS_GRASS_PATCH_PLACED_KEY = registerKey("tall_lunaris_grass_patch_placed");
 	public static final ResourceKey<PlacedFeature> LUNARIS_SARROT_PATCH_PLACED_KEY = registerKey("lunaris_sarrot_patch_placed");
 	public static final ResourceKey<PlacedFeature> LUNARIS_BERRY_PATCH_PLACED_KEY = registerKey("lunaris_berry_patch_placed");
 	public static final ResourceKey<PlacedFeature> LUNARIS_BONEMEAL_KEY = registerKey("lunaris_vegetation_placed");
@@ -204,6 +205,8 @@ public class ModPlacedFeatures {
         //vegetation register
         register(context, LUNARIS_GRASS_PATCH_PLACED_KEY, configuredFeatures.getOrThrow(ModConfiguredFeatures.LUNARIS_GRASS_PATCH_KEY),
         		VegetationPlacements.worldSurfaceSquaredWithCount(5));
+        register(context, TALL_LUNARIS_GRASS_PATCH_PLACED_KEY, configuredFeatures.getOrThrow(ModConfiguredFeatures.TALL_LUNARIS_GRASS_PATCH_KEY),
+        		VegetationPlacements.worldSurfaceSquaredWithCount(5));
         register(context, LUNARIS_BONEMEAL_KEY, configuredFeatures.getOrThrow(ModConfiguredFeatures.SINGLE_PIECE_OF_LUNGRASS),
         		VegetationPlacements.worldSurfaceSquaredWithCount(1));
 
@@ -247,11 +250,19 @@ public class ModPlacedFeatures {
     }
     
     private static List<PlacementModifier> tree(int count) {
-		return List.of(CountOnEveryLayerPlacement.of(count), BiomeFilter.biome(), BlockPredicateFilter.forPredicate(BlockPredicate.wouldSurvive(Blocks.OAK_SAPLING.defaultBlockState(), BlockPos.ZERO)));
+		return List.of(CountOnEveryLayerPlacement.of(count), 
+				BiomeFilter.biome(),
+				BlockPredicateFilter.forPredicate(BlockPredicate.wouldSurvive(Blocks.OAK_SAPLING.defaultBlockState(),
+						BlockPos.ZERO)),
+				BlockPredicateFilter.forPredicate(BlockPredicate.ONLY_IN_AIR_PREDICATE));
 	}
     
     private static List<PlacementModifier> patch(int count) {
-		return List.of(CountPlacement.of(count), InSquarePlacement.spread(), PlacementUtils.FULL_RANGE, BiomeFilter.biome());
+		return List.of(CountPlacement.of(count),
+				InSquarePlacement.spread(),
+				PlacementUtils.FULL_RANGE,
+				BiomeFilter.biome(),
+				BlockPredicateFilter.forPredicate(BlockPredicate.ONLY_IN_AIR_PREDICATE));
 	}
 
     private static void register(BootstapContext<PlacedFeature> context, ResourceKey<PlacedFeature> key, Holder<ConfiguredFeature<?, ?>> configuration,
