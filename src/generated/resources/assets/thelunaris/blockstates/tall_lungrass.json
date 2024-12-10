@@ -1,0 +1,10 @@
+{
+  "variants": {
+    "half=lower": {
+      "model": "thelunaris:block/tall_lungrass_bottom"
+    },
+    "half=upper": {
+      "model": "thelunaris:block/tall_lungrass_top"
+    }
+  }
+}

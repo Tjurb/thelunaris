@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/tall_grass_bottom",
+  "textures": {
+    "texture": "thelunaris:block/tall_crimson_lungrass_bottom"
+  }
+}

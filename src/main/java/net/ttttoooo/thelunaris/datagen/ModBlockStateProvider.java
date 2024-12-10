@@ -10,6 +10,7 @@ import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.ButtonBlock;
 import net.minecraft.world.level.block.CropBlock;
 import net.minecraft.world.level.block.DoorBlock;
+import net.minecraft.world.level.block.DoublePlantBlock;
 import net.minecraft.world.level.block.FenceBlock;
 import net.minecraft.world.level.block.FenceGateBlock;
 import net.minecraft.world.level.block.IronBarsBlock;
@@ -21,6 +22,7 @@ import net.minecraft.world.level.block.StairBlock;
 import net.minecraft.world.level.block.TrapDoorBlock;
 import net.minecraft.world.level.block.WallBlock;
 import net.minecraft.world.level.block.state.BlockState;
+import net.minecraft.world.level.block.state.properties.DoubleBlockHalf;
 import net.minecraftforge.client.model.generators.BlockStateProvider;
 import net.minecraftforge.client.model.generators.ConfiguredModel;
 import net.minecraftforge.client.model.generators.ModelFile;
@@ -211,6 +213,9 @@ public class ModBlockStateProvider extends BlockStateProvider{
 		saplingBlock(ModBlocks.LUNGRASS);
 		saplingBlock(ModBlocks.CRIMSON_LUNGRASS);
 		saplingBlock(ModBlocks.DUSKLIGHT_LUNGRASS);
+		generateTallLungrassVariants("tall_lungrass", ModBlocks.TALL_LUNGRASS);
+		generateTallLungrassVariants("tall_crimson_lungrass", ModBlocks.TALL_CRIMSON_LUNGRASS);
+		generateTallLungrassVariants("tall_dusklight_lungrass", ModBlocks.TALL_DUSKLIGHT_LUNGRASS);
 		saplingBlock(ModBlocks.CRIMSON_GLOWBUSH);
 		saplingBlock(ModBlocks.DUSKLIGHT_GLOWBUSH);
 		saplingBlock(ModBlocks.WILD_LOONBERRY);
@@ -265,6 +270,33 @@ public class ModBlockStateProvider extends BlockStateProvider{
 				blockTexture(ModBlocks.LUNDIRT.get()),
         		new ResourceLocation(TheLunaris.MODID, "block/" + this.name(block))));
 	}
+	
+	private void generateTallLungrassVariants(String variantName, RegistryObject<Block> block) {
+	    // Define texture locations based on the variant name
+	    ResourceLocation bottomTexture = new ResourceLocation(TheLunaris.MODID, "block/" + variantName + "_bottom");
+	    ResourceLocation topTexture = new ResourceLocation(TheLunaris.MODID, "block/" + variantName + "_top");
+
+	    // Generate models for the top and bottom halves
+	    ModelFile bottomModel = models().singleTexture(
+	            variantName + "_bottom", 
+	            new ResourceLocation("block/tall_grass_bottom"), 
+	            "texture", bottomTexture
+	    );
+	    ModelFile topModel = models().singleTexture(
+	            variantName + "_top", 
+	            new ResourceLocation("block/tall_grass_top"), 
+	            "texture", topTexture
+	    );
+
+	    // Generate blockstate with top and bottom parts
+	    getVariantBuilder(block.get()).forAllStates(state -> {
+	        boolean isTop = state.getValue(DoublePlantBlock.HALF) == DoubleBlockHalf.UPPER;
+	        return ConfiguredModel.builder()
+	                .modelFile(isTop ? topModel : bottomModel)
+	                .build();
+	    });
+	}
+
 	
 	private void translucentBlockWithItem(RegistryObject<Block> blockRegistryObject) {
 		simpleBlockWithItem(blockRegistryObject.get(), 

@@ -16,6 +16,7 @@ import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.ButtonBlock;
 import net.minecraft.world.level.block.DeadBushBlock;
 import net.minecraft.world.level.block.DoorBlock;
+import net.minecraft.world.level.block.DoublePlantBlock;
 import net.minecraft.world.level.block.DropExperienceBlock;
 import net.minecraft.world.level.block.FenceBlock;
 import net.minecraft.world.level.block.FenceGateBlock;
@@ -49,6 +50,7 @@ import net.ttttoooo.thelunaris.block.custom.LunarisCraftingTable;
 import net.ttttoooo.thelunaris.block.custom.LundirtFarmlandBlock;
 import net.ttttoooo.thelunaris.block.custom.ModFlammableRotatedPillarBlock;
 import net.ttttoooo.thelunaris.block.custom.SarrotCropBlock;
+import net.ttttoooo.thelunaris.block.custom.TallLunGrass;
 import net.ttttoooo.thelunaris.block.custom.VailstoneFurnace;
 import net.ttttoooo.thelunaris.block.custom.portal.ModPortalBlock;
 import net.ttttoooo.thelunaris.item.ModItems;
@@ -540,20 +542,27 @@ public class ModBlocks {
 	
 	//vegetation blocks
 	public static final RegistryObject<Block> LUNGRASS = registerBlock("lungrass",
-            () -> new TallGrassBlock(BlockBehaviour.Properties.copy(Blocks.GRASS)));
+            () -> new TallLunGrass(BlockBehaviour.Properties.copy(Blocks.GRASS)));
 	public static final RegistryObject<Block> WILD_LOONBERRY = registerBlock("wild_loonberry",
-            () -> new TallGrassBlock(BlockBehaviour.Properties.copy(Blocks.GRASS)));
+            () -> new TallLunGrass(BlockBehaviour.Properties.copy(Blocks.GRASS)));
 	public static final RegistryObject<Block> WILD_SARROT = registerBlock("wild_sarrot",
-            () -> new TallGrassBlock(BlockBehaviour.Properties.copy(Blocks.GRASS)));
+            () -> new TallLunGrass(BlockBehaviour.Properties.copy(Blocks.GRASS)));
 
 	public static final RegistryObject<Block> CRIMSON_LUNGRASS = registerBlock("crimson_lungrass",
-            () -> new TallGrassBlock(BlockBehaviour.Properties.copy(Blocks.GRASS)));
+            () -> new TallLunGrass(BlockBehaviour.Properties.copy(Blocks.GRASS)));
 	public static final RegistryObject<Block> CRIMSON_GLOWBUSH = registerBlock("crimson_glowbush",
-            () -> new TallGrassBlock(BlockBehaviour.Properties.copy(Blocks.GRASS).lightLevel((state) -> 10)));
+            () -> new TallLunGrass(BlockBehaviour.Properties.copy(Blocks.GRASS).lightLevel((state) -> 10)));
 	public static final RegistryObject<Block> DUSKLIGHT_LUNGRASS = registerBlock("dusklight_lungrass",
-            () -> new TallGrassBlock(BlockBehaviour.Properties.copy(Blocks.GRASS)));
+            () -> new TallLunGrass(BlockBehaviour.Properties.copy(Blocks.GRASS)));
 	public static final RegistryObject<Block> DUSKLIGHT_GLOWBUSH = registerBlock("dusklight_glowbush",
-            () -> new TallGrassBlock(BlockBehaviour.Properties.copy(Blocks.GRASS).lightLevel((state) -> 10)));
+            () -> new TallLunGrass(BlockBehaviour.Properties.copy(Blocks.GRASS).lightLevel((state) -> 10)));
+	
+	public static final RegistryObject<Block> TALL_LUNGRASS = registerBlock("tall_lungrass",
+            () -> new DoublePlantBlock(BlockBehaviour.Properties.copy(Blocks.TALL_GRASS)));
+	public static final RegistryObject<Block> TALL_CRIMSON_LUNGRASS = registerBlock("tall_crimson_lungrass",
+            () -> new DoublePlantBlock(BlockBehaviour.Properties.copy(Blocks.TALL_GRASS)));
+	public static final RegistryObject<Block> TALL_DUSKLIGHT_LUNGRASS = registerBlock("tall_dusklight_lungrass",
+            () -> new DoublePlantBlock(BlockBehaviour.Properties.copy(Blocks.TALL_GRASS)));
 
 	//flowers
 	public static final RegistryObject<Block> ORANGEYE = registerBlock("orangeye",

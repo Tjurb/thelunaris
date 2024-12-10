@@ -189,6 +189,10 @@ public class ModItemModelProvider extends ItemModelProvider{
 		
 		//nature
 		saplingItem(ModBlocks.LUNGRASS);
+		saplingItem(ModBlocks.CRIMSON_LUNGRASS);
+		saplingItem(ModBlocks.CRIMSON_GLOWBUSH);
+		saplingItem(ModBlocks.DUSKLIGHT_LUNGRASS);
+		saplingItem(ModBlocks.DUSKLIGHT_GLOWBUSH);
 		saplingItem(ModBlocks.WILD_LOONBERRY);
 		saplingItem(ModBlocks.WILD_SARROT);
 		

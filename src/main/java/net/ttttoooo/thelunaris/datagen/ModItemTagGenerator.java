@@ -79,6 +79,11 @@ public class ModItemTagGenerator extends ItemTagsProvider {
 					ModBlocks.SKYOAK_LOG.get().asItem(),
 					ModBlocks.SKYOAK_WOOD.get().asItem());
 		
+		this.tag(ModTags.Items.LUNAR_GRASS)
+			.add(ModBlocks.LUNGRASS.get().asItem(),
+					ModBlocks.CRIMSON_LUNGRASS.get().asItem(),
+					ModBlocks.DUSKLIGHT_LUNGRASS.get().asItem());
+		
 		this.tag(ItemTags.TRIMMABLE_ARMOR)
 			.add(ModItems.MOONSTEEL_HELMET.get(),
 					ModItems.MOONSTEEL_CHESTPLATE.get(),

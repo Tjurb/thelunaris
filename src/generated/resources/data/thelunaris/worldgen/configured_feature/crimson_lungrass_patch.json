@@ -6,10 +6,27 @@
         "type": "minecraft:simple_block",
         "config": {
           "to_place": {
-            "type": "minecraft:simple_state_provider",
-            "state": {
-              "Name": "thelunaris:crimson_lungrass"
-            }
+            "type": "minecraft:weighted_state_provider",
+            "entries": [
+              {
+                "data": {
+                  "Name": "thelunaris:crimson_lungrass"
+                },
+                "weight": 85
+              },
+              {
+                "data": {
+                  "Name": "thelunaris:crimson_glowbush"
+                },
+                "weight": 10
+              },
+              {
+                "data": {
+                  "Name": "thelunaris:dusklight_glowbush"
+                },
+                "weight": 5
+              }
+            ]
           }
         }
       },

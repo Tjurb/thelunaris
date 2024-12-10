@@ -18,6 +18,7 @@ import net.minecraft.world.level.levelgen.feature.Feature;
 import net.minecraft.world.level.levelgen.feature.HugeFungusConfiguration;
 import net.minecraft.world.level.levelgen.feature.HugeFungusFeature;
 import net.minecraft.world.level.levelgen.feature.configurations.FeatureConfiguration;
+import net.minecraft.world.level.levelgen.feature.configurations.NetherForestVegetationConfig;
 import net.minecraft.world.level.levelgen.feature.configurations.OreConfiguration;
 import net.minecraft.world.level.levelgen.feature.configurations.RandomPatchConfiguration;
 import net.minecraft.world.level.levelgen.feature.configurations.SimpleBlockConfiguration;
@@ -73,12 +74,8 @@ public class ModConfiguredFeatures {
 	//deep keys
 	public static final ResourceKey<ConfiguredFeature<?, ?>> CRIMSONGRASS_PATCH_KEY = registerKey("crimson_lungrass_patch");
 	public static final ResourceKey<ConfiguredFeature<?, ?>> DUSKLIGHTGRASS_PATCH_KEY = registerKey("dusklight_lungrass_patch");
-	public static final ResourceKey<ConfiguredFeature<?, ?>> CRIMSONGLOWBUSH_PATCH_KEY = registerKey("crimson_glowbush_patch");
-	public static final ResourceKey<ConfiguredFeature<?, ?>> DUSKLIGHTGLOWBUSH_PATCH_KEY = registerKey("dusklight_glowbush_patch");
 	public static final ResourceKey<ConfiguredFeature<?, ?>> SINGLE_PIECE_OF_CRIMSON = registerKey("crimson_lungrass_single");
 	public static final ResourceKey<ConfiguredFeature<?, ?>> SINGLE_PIECE_OF_DUSKLIGHT = registerKey("dusklight_lungrass_single");
-	public static final ResourceKey<ConfiguredFeature<?, ?>> SINGLE_PIECE_OF_CGLOWBUSH = registerKey("crimson_glowbush_single");
-	public static final ResourceKey<ConfiguredFeature<?, ?>> SINGLE_PIECE_OF_DGLOWBUSH = registerKey("dusklight_glowbush_single");
 	
 	//vegetation keys
 	public static final ResourceKey<ConfiguredFeature<?, ?>> LUNARIS_GRASS_PATCH_KEY = registerKey("lunaris_lungrass_patch");
@@ -192,15 +189,6 @@ public class ModConfiguredFeatures {
         		grassPatch(BlockStateProvider.simple(ModBlocks.WILD_SARROT.get()), 32));
         register(context, LUNARIS_BERRY_PATCH_KEY, Feature.RANDOM_PATCH,
         		grassPatch(BlockStateProvider.simple(ModBlocks.WILD_LOONBERRY.get()), 32));
-        
-        register(context, CRIMSONGRASS_PATCH_KEY, Feature.RANDOM_PATCH,
-        		grassPatch(BlockStateProvider.simple(ModBlocks.CRIMSON_LUNGRASS.get()), 32));
-        register(context, CRIMSONGLOWBUSH_PATCH_KEY, Feature.RANDOM_PATCH,
-        		grassPatch(BlockStateProvider.simple(ModBlocks.CRIMSON_GLOWBUSH.get()), 32));
-        register(context, DUSKLIGHTGRASS_PATCH_KEY, Feature.RANDOM_PATCH,
-        		grassPatch(BlockStateProvider.simple(ModBlocks.DUSKLIGHT_LUNGRASS.get()), 32));
-        register(context, DUSKLIGHTGLOWBUSH_PATCH_KEY, Feature.RANDOM_PATCH,
-        		grassPatch(BlockStateProvider.simple(ModBlocks.DUSKLIGHT_GLOWBUSH.get()), 32));
 
         register(context, SINGLE_PIECE_OF_LUNGRASS, Feature.SIMPLE_BLOCK, 
         		new SimpleBlockConfiguration(BlockStateProvider.simple(ModBlocks.LUNGRASS.get().defaultBlockState())));
@@ -209,14 +197,22 @@ public class ModConfiguredFeatures {
         register(context, SINGLE_PIECE_OF_BERRY, Feature.SIMPLE_BLOCK, 
         		new SimpleBlockConfiguration(BlockStateProvider.simple(ModBlocks.WILD_LOONBERRY.get().defaultBlockState())));
         
+        //deep vegetation register
+        register(context, CRIMSONGRASS_PATCH_KEY, Feature.RANDOM_PATCH, 
+        		grassPatch(new WeightedStateProvider(SimpleWeightedRandomList.<BlockState>builder()
+        				.add(ModBlocks.CRIMSON_LUNGRASS.get().defaultBlockState(), 85)
+        				.add(ModBlocks.CRIMSON_GLOWBUSH.get().defaultBlockState(), 10)
+        				.add(ModBlocks.DUSKLIGHT_GLOWBUSH.get().defaultBlockState(), 5)), 32));
+        register(context, DUSKLIGHTGRASS_PATCH_KEY, Feature.RANDOM_PATCH,
+        		grassPatch(new WeightedStateProvider(SimpleWeightedRandomList.<BlockState>builder()
+        				.add(ModBlocks.DUSKLIGHT_LUNGRASS.get().defaultBlockState(), 85)
+        				.add(ModBlocks.DUSKLIGHT_GLOWBUSH.get().defaultBlockState(), 10)
+        				.add(ModBlocks.CRIMSON_GLOWBUSH.get().defaultBlockState(), 5)), 32));
+
         register(context, SINGLE_PIECE_OF_CRIMSON, Feature.SIMPLE_BLOCK, 
         		new SimpleBlockConfiguration(BlockStateProvider.simple(ModBlocks.CRIMSON_LUNGRASS.get().defaultBlockState())));
-        register(context, SINGLE_PIECE_OF_CGLOWBUSH, Feature.SIMPLE_BLOCK, 
-        		new SimpleBlockConfiguration(BlockStateProvider.simple(ModBlocks.CRIMSON_GLOWBUSH.get().defaultBlockState())));
         register(context, SINGLE_PIECE_OF_DUSKLIGHT, Feature.SIMPLE_BLOCK, 
         		new SimpleBlockConfiguration(BlockStateProvider.simple(ModBlocks.DUSKLIGHT_LUNGRASS.get().defaultBlockState())));
-        register(context, SINGLE_PIECE_OF_DGLOWBUSH, Feature.SIMPLE_BLOCK, 
-        		new SimpleBlockConfiguration(BlockStateProvider.simple(ModBlocks.DUSKLIGHT_GLOWBUSH.get().defaultBlockState())));
         
         //flower register
         register(context, LUNARIS_FLOWER_DEFAULT_KEY, Feature.FLOWER, 
@@ -242,7 +238,7 @@ public class ModConfiguredFeatures {
 	private static RandomPatchConfiguration grassPatch(BlockStateProvider p_195203_, int p_195204_) {
 	      return FeatureUtils.simpleRandomPatchConfiguration(p_195204_, PlacementUtils.onlyWhenEmpty(Feature.SIMPLE_BLOCK, new SimpleBlockConfiguration(p_195203_)));
 	}
-	   
+	
 	private static <FC extends FeatureConfiguration, F extends Feature<FC>> void register(BootstapContext<ConfiguredFeature<?, ?>> context,
 			ResourceKey<ConfiguredFeature<?, ?>> key, F feature, FC configuration) {
 		context.register(key, new ConfiguredFeature<>(feature, configuration));

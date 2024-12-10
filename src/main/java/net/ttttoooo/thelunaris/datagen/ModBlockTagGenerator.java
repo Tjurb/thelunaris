@@ -124,11 +124,15 @@ public class ModBlockTagGenerator extends BlockTagsProvider{
 			.add(ModBlocks.LUNDIRT.get(),
 					ModBlocks.LUNSAND.get(),
 					ModBlocks.LUNCLAY_BLOCK.get(),
-					ModBlocks.LUNGRASS_BLOCK.get());
+					ModBlocks.LUNGRASS_BLOCK.get(),
+					ModBlocks.CRIMSON_LUNGRASS_BLOCK.get(),
+					ModBlocks.DUSKLIGHT_LUNGRASS_BLOCK.get());
+		
+		this.tag(ModTags.Blocks.NEEDS_VAILSTONE_TOOL)
+		.add(ModBlocks.MOONSTEEL_ORE.get());
 		
 		this.tag(ModTags.Blocks.NEEDS_MOONSTEEL_TOOL)
 			.add(ModBlocks.MOONDIALBLOCK.get(),
-					ModBlocks.MOONSTEEL_ORE.get(),
 					ModBlocks.LABRADORITE_ORE.get());
 		
 		this.tag(ModTags.Blocks.NEEDS_EMOONSTEEL_TOOL)

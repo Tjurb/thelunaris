@@ -6,20 +6,20 @@
       "type": "minecraft:multi_noise",
       "biomes": [
         {
-          "biome": "thelunaris:sapphire_river",
+          "biome": "thelunaris:azureite_ocean",
           "parameters": {
             "continentalness": [
-              -0.19,
-              1.0
+              -1.05,
+              -0.19
             ],
             "depth": 0.0,
             "erosion": [
-              0.0,
-              0.5
+              -1.0,
+              1.0
             ],
             "humidity": [
-              -0.5,
-              0.5
+              -1.0,
+              1.0
             ],
             "offset": 0.0,
             "temperature": [
@@ -28,34 +28,7 @@
             ],
             "weirdness": [
               -1.0,
-              -0.85
-            ]
-          }
-        },
-        {
-          "biome": "thelunaris:shimmering_coast",
-          "parameters": {
-            "continentalness": [
-              -0.19,
-              -0.11
-            ],
-            "depth": 0.0,
-            "erosion": [
-              0.0,
-              0.5
-            ],
-            "humidity": [
-              -0.5,
-              0.5
-            ],
-            "offset": 0.0,
-            "temperature": [
-              -1.0,
               1.0
-            ],
-            "weirdness": [
-              -0.6,
-              0.2
             ]
           }
         },
@@ -66,252 +39,9 @@
               -1.05,
               -0.19
             ],
-            "depth": 0.0,
-            "erosion": [
-              0.0,
-              0.5
-            ],
-            "humidity": [
-              -0.5,
-              0.5
-            ],
-            "offset": 0.0,
-            "temperature": [
-              -1.0,
-              1.0
-            ],
-            "weirdness": [
-              -1.0,
-              0.6
-            ]
-          }
-        },
-        {
-          "biome": "thelunaris:lunar_forests",
-          "parameters": {
-            "continentalness": [
-              0.0,
-              1.0
-            ],
-            "depth": 0.0,
+            "depth": 1.0,
             "erosion": [
               -1.0,
-              1.0
-            ],
-            "humidity": [
-              -0.1,
-              0.1
-            ],
-            "offset": 0.0,
-            "temperature": [
-              -0.45,
-              0.2
-            ],
-            "weirdness": [
-              0.0,
-              1.0
-            ]
-          }
-        },
-        {
-          "biome": "thelunaris:lunar_forests",
-          "parameters": {
-            "continentalness": [
-              0.0,
-              1.0
-            ],
-            "depth": 0.0,
-            "erosion": [
-              -1.0,
-              1.0
-            ],
-            "humidity": [
-              -0.1,
-              0.1
-            ],
-            "offset": 0.0,
-            "temperature": [
-              0.2,
-              0.55
-            ],
-            "weirdness": [
-              -1.0,
-              0.0
-            ]
-          }
-        },
-        {
-          "biome": "thelunaris:lunar_forests",
-          "parameters": {
-            "continentalness": [
-              0.0,
-              1.0
-            ],
-            "depth": 0.0,
-            "erosion": [
-              -1.0,
-              1.0
-            ],
-            "humidity": [
-              -0.1,
-              0.1
-            ],
-            "offset": 0.0,
-            "temperature": [
-              -0.45,
-              -0.15
-            ],
-            "weirdness": [
-              -1.0,
-              0.0
-            ]
-          }
-        },
-        {
-          "biome": "thelunaris:lunar_forests",
-          "parameters": {
-            "continentalness": [
-              0.0,
-              1.0
-            ],
-            "depth": 0.0,
-            "erosion": [
-              -1.0,
-              1.0
-            ],
-            "humidity": [
-              -0.1,
-              0.1
-            ],
-            "offset": 0.0,
-            "temperature": [
-              -0.15,
-              0.2
-            ],
-            "weirdness": [
-              0.0,
-              1.0
-            ]
-          }
-        },
-        {
-          "biome": "thelunaris:lunar_forests",
-          "parameters": {
-            "continentalness": [
-              0.0,
-              1.0
-            ],
-            "depth": 0.0,
-            "erosion": [
-              -1.0,
-              1.0
-            ],
-            "humidity": [
-              -0.1,
-              0.3
-            ],
-            "offset": 0.0,
-            "temperature": [
-              0.2,
-              0.55
-            ],
-            "weirdness": [
-              -1.0,
-              1.0
-            ]
-          }
-        },
-        {
-          "biome": "thelunaris:lunar_forests",
-          "parameters": {
-            "continentalness": [
-              0.0,
-              1.0
-            ],
-            "depth": 0.0,
-            "erosion": [
-              -1.0,
-              1.0
-            ],
-            "humidity": [
-              -0.1,
-              0.1
-            ],
-            "offset": 0.0,
-            "temperature": [
-              0.2,
-              0.55
-            ],
-            "weirdness": [
-              -1.0,
-              0.0
-            ]
-          }
-        },
-        {
-          "biome": "thelunaris:skyword_mountains",
-          "parameters": {
-            "continentalness": [
-              0.0,
-              1.0
-            ],
-            "depth": 0.0,
-            "erosion": [
-              -1.0,
-              -0.375
-            ],
-            "humidity": [
-              0.0,
-              1.0
-            ],
-            "offset": 0.1,
-            "temperature": [
-              -1.0,
-              1.0
-            ],
-            "weirdness": [
-              0.7,
-              1.0
-            ]
-          }
-        },
-        {
-          "biome": "thelunaris:skyword_mountains",
-          "parameters": {
-            "continentalness": [
-              -0.15,
-              1.0
-            ],
-            "depth": 0.0,
-            "erosion": [
-              -1.0,
-              -0.375
-            ],
-            "humidity": [
-              0.0,
-              1.0
-            ],
-            "offset": 0.1,
-            "temperature": [
-              -1.0,
-              1.0
-            ],
-            "weirdness": [
-              -0.6,
-              0.7
-            ]
-          }
-        },
-        {
-          "biome": "thelunaris:sleeping_sands",
-          "parameters": {
-            "continentalness": [
-              -0.19,
-              1.0
-            ],
-            "depth": 0.0,
-            "erosion": [
-              0.0,
               1.0
             ],
             "humidity": [
@@ -320,61 +50,7 @@
             ],
             "offset": 0.0,
             "temperature": [
-              0.55,
-              1.0
-            ],
-            "weirdness": [
               -1.0,
-              1.0
-            ]
-          }
-        },
-        {
-          "biome": "thelunaris:sleeping_sands",
-          "parameters": {
-            "continentalness": [
-              -0.19,
-              1.0
-            ],
-            "depth": 0.0,
-            "erosion": [
-              0.0,
-              1.0
-            ],
-            "humidity": [
-              -1.0,
-              1.0
-            ],
-            "offset": 0.0,
-            "temperature": [
-              0.55,
-              1.0
-            ],
-            "weirdness": [
-              -1.0,
-              1.0
-            ]
-          }
-        },
-        {
-          "biome": "thelunaris:sleeping_sands",
-          "parameters": {
-            "continentalness": [
-              -0.19,
-              1.0
-            ],
-            "depth": 0.0,
-            "erosion": [
-              0.0,
-              1.0
-            ],
-            "humidity": [
-              -1.0,
-              1.0
-            ],
-            "offset": 0.0,
-            "temperature": [
-              0.55,
               1.0
             ],
             "weirdness": [
@@ -392,12 +68,12 @@
             ],
             "depth": 1.0,
             "erosion": [
-              0.0,
-              0.5
+              -1.0,
+              1.0
             ],
             "humidity": [
-              -0.5,
-              0.5
+              -1.0,
+              1.0
             ],
             "offset": 0.0,
             "temperature": [
@@ -419,48 +95,129 @@
             ],
             "depth": 1.0,
             "erosion": [
-              0.0,
-              0.5
+              -0.2225,
+              1.0
             ],
             "humidity": [
-              -0.5,
-              0.5
+              -1.0,
+              1.0
             ],
             "offset": 0.0,
             "temperature": [
               -1.0,
-              1.0
+              0.55
             ],
             "weirdness": [
-              -0.6,
-              0.2
+              -1.0,
+              1.0
             ]
           }
         },
         {
-          "biome": "thelunaris:azureite_ocean",
+          "biome": "thelunaris:sleeping_sands",
           "parameters": {
             "continentalness": [
-              -1.05,
-              -0.19
+              -0.19,
+              -0.11
             ],
             "depth": 1.0,
             "erosion": [
-              0.0,
-              0.5
+              -0.2225,
+              1.0
             ],
             "humidity": [
-              -0.5,
-              0.5
+              -1.0,
+              1.0
             ],
             "offset": 0.0,
             "temperature": [
-              -1.0,
+              0.55,
               1.0
             ],
             "weirdness": [
               -1.0,
-              0.6
+              1.0
+            ]
+          }
+        },
+        {
+          "biome": "thelunaris:shimmering_coast",
+          "parameters": {
+            "continentalness": [
+              -0.19,
+              -0.11
+            ],
+            "depth": 0.0,
+            "erosion": [
+              -0.2225,
+              1.0
+            ],
+            "humidity": [
+              -1.0,
+              1.0
+            ],
+            "offset": 0.0,
+            "temperature": [
+              -1.0,
+              0.55
+            ],
+            "weirdness": [
+              -1.0,
+              1.0
+            ]
+          }
+        },
+        {
+          "biome": "thelunaris:sleeping_sands",
+          "parameters": {
+            "continentalness": [
+              -0.19,
+              -0.11
+            ],
+            "depth": 0.0,
+            "erosion": [
+              -0.2225,
+              1.0
+            ],
+            "humidity": [
+              -1.0,
+              1.0
+            ],
+            "offset": 0.0,
+            "temperature": [
+              0.55,
+              1.0
+            ],
+            "weirdness": [
+              -1.0,
+              1.0
+            ]
+          }
+        },
+        {
+          "biome": "thelunaris:lunar_plains",
+          "parameters": {
+            "continentalness": [
+              0.03,
+              1.0
+            ],
+            "depth": 0.0,
+            "erosion": [
+              0.55,
+              1.0
+            ],
+            "humidity": [
+              -1.0,
+              0.1
+            ],
+            "offset": 0.0,
+            "temperature": [
+              -1.0,
+              0.2
+            ],
+            "weirdness": [
+              -1.0,
+              1.0
             ]
           }
         },
@@ -468,12 +225,147 @@
           "biome": "thelunaris:lunar_forests",
           "parameters": {
             "continentalness": [
-              0.0,
+              0.03,
+              1.0
+            ],
+            "depth": 0.0,
+            "erosion": [
+              0.55,
+              1.0
+            ],
+            "humidity": [
+              0.1,
+              1.0
+            ],
+            "offset": 0.0,
+            "temperature": [
+              -1.0,
+              0.55
+            ],
+            "weirdness": [
+              -1.0,
+              1.0
+            ]
+          }
+        },
+        {
+          "biome": "thelunaris:lunar_plains",
+          "parameters": {
+            "continentalness": [
+              0.03,
+              1.0
+            ],
+            "depth": 0.0,
+            "erosion": [
+              0.55,
+              1.0
+            ],
+            "humidity": [
+              -1.0,
+              -0.1
+            ],
+            "offset": 0.0,
+            "temperature": [
+              0.2,
+              0.55
+            ],
+            "weirdness": [
+              -1.0,
+              1.0
+            ]
+          }
+        },
+        {
+          "biome": "thelunaris:lunar_plains",
+          "parameters": {
+            "continentalness": [
+              0.03,
               1.0
             ],
             "depth": 1.0,
             "erosion": [
+              0.55,
+              1.0
+            ],
+            "humidity": [
               -1.0,
+              0.1
+            ],
+            "offset": 0.0,
+            "temperature": [
+              -1.0,
+              0.2
+            ],
+            "weirdness": [
+              -1.0,
+              1.0
+            ]
+          }
+        },
+        {
+          "biome": "thelunaris:lunar_forests",
+          "parameters": {
+            "continentalness": [
+              0.03,
+              1.0
+            ],
+            "depth": 1.0,
+            "erosion": [
+              0.55,
+              1.0
+            ],
+            "humidity": [
+              0.1,
+              1.0
+            ],
+            "offset": 0.0,
+            "temperature": [
+              -1.0,
+              0.55
+            ],
+            "weirdness": [
+              -1.0,
+              1.0
+            ]
+          }
+        },
+        {
+          "biome": "thelunaris:lunar_plains",
+          "parameters": {
+            "continentalness": [
+              0.03,
+              1.0
+            ],
+            "depth": 1.0,
+            "erosion": [
+              0.55,
+              1.0
+            ],
+            "humidity": [
+              -1.0,
+              -0.1
+            ],
+            "offset": 0.0,
+            "temperature": [
+              0.2,
+              0.55
+            ],
+            "weirdness": [
+              -1.0,
+              1.0
+            ]
+          }
+        },
+        {
+          "biome": "thelunaris:lunar_plains",
+          "parameters": {
+            "continentalness": [
+              0.03,
+              1.0
+            ],
+            "depth": 0.0,
+            "erosion": [
+              0.55,
               1.0
             ],
             "humidity": [
@@ -482,8 +374,8 @@
             ],
             "offset": 0.0,
             "temperature": [
-              -0.45,
-              0.2
+              0.2,
+              0.55
             ],
             "weirdness": [
               0.0,
@@ -495,12 +387,12 @@
           "biome": "thelunaris:lunar_forests",
           "parameters": {
             "continentalness": [
-              0.0,
+              0.03,
               1.0
             ],
-            "depth": 1.0,
+            "depth": 0.0,
             "erosion": [
-              -1.0,
+              0.55,
               1.0
             ],
             "humidity": [
@@ -519,20 +411,425 @@
           }
         },
         {
-          "biome": "thelunaris:lunar_forests",
+          "biome": "thelunaris:sleeping_sands",
           "parameters": {
             "continentalness": [
-              0.0,
+              0.03,
+              1.0
+            ],
+            "depth": 0.0,
+            "erosion": [
+              0.55,
+              1.0
+            ],
+            "humidity": [
+              -1.0,
+              1.0
+            ],
+            "offset": 0.0,
+            "temperature": [
+              0.55,
+              1.0
+            ],
+            "weirdness": [
+              -1.0,
+              1.0
+            ]
+          }
+        },
+        {
+          "biome": "thelunaris:lunar_plains",
+          "parameters": {
+            "continentalness": [
+              0.03,
               1.0
             ],
             "depth": 1.0,
             "erosion": [
-              -1.0,
+              0.55,
               1.0
             ],
             "humidity": [
               -0.1,
               0.1
+            ],
+            "offset": 0.0,
+            "temperature": [
+              0.2,
+              0.55
+            ],
+            "weirdness": [
+              0.0,
+              1.0
+            ]
+          }
+        },
+        {
+          "biome": "thelunaris:lunar_forests",
+          "parameters": {
+            "continentalness": [
+              0.03,
+              1.0
+            ],
+            "depth": 1.0,
+            "erosion": [
+              0.55,
+              1.0
+            ],
+            "humidity": [
+              -0.1,
+              0.1
+            ],
+            "offset": 0.0,
+            "temperature": [
+              0.2,
+              0.55
+            ],
+            "weirdness": [
+              -1.0,
+              0.0
+            ]
+          }
+        },
+        {
+          "biome": "thelunaris:sleeping_sands",
+          "parameters": {
+            "continentalness": [
+              0.03,
+              1.0
+            ],
+            "depth": 1.0,
+            "erosion": [
+              0.55,
+              1.0
+            ],
+            "humidity": [
+              -1.0,
+              1.0
+            ],
+            "offset": 0.0,
+            "temperature": [
+              0.55,
+              1.0
+            ],
+            "weirdness": [
+              -1.0,
+              1.0
+            ]
+          }
+        },
+        {
+          "biome": "thelunaris:sleeping_sands",
+          "parameters": {
+            "continentalness": [
+              0.03,
+              1.0
+            ],
+            "depth": 0.0,
+            "erosion": [
+              0.45,
+              0.55
+            ],
+            "humidity": [
+              -1.0,
+              1.0
+            ],
+            "offset": 0.0,
+            "temperature": [
+              0.55,
+              1.0
+            ],
+            "weirdness": [
+              -1.0,
+              1.0
+            ]
+          }
+        },
+        {
+          "biome": "thelunaris:lunar_plains",
+          "parameters": {
+            "continentalness": [
+              0.03,
+              1.0
+            ],
+            "depth": 0.0,
+            "erosion": [
+              0.45,
+              0.55
+            ],
+            "humidity": [
+              -1.0,
+              1.0
+            ],
+            "offset": 0.0,
+            "temperature": [
+              -1.0,
+              -0.45
+            ],
+            "weirdness": [
+              -1.0,
+              1.0
+            ]
+          }
+        },
+        {
+          "biome": "thelunaris:lunar_forests",
+          "parameters": {
+            "continentalness": [
+              0.03,
+              1.0
+            ],
+            "depth": 0.0,
+            "erosion": [
+              0.45,
+              0.55
+            ],
+            "humidity": [
+              -0.1,
+              0.1
+            ],
+            "offset": 0.0,
+            "temperature": [
+              -0.15,
+              0.2
+            ],
+            "weirdness": [
+              -1.0,
+              1.0
+            ]
+          }
+        },
+        {
+          "biome": "thelunaris:lunar_forests",
+          "parameters": {
+            "continentalness": [
+              0.03,
+              1.0
+            ],
+            "depth": 0.0,
+            "erosion": [
+              0.45,
+              0.55
+            ],
+            "humidity": [
+              -0.1,
+              0.1
+            ],
+            "offset": 0.0,
+            "temperature": [
+              -0.45,
+              -0.15
+            ],
+            "weirdness": [
+              -1.0,
+              1.0
+            ]
+          }
+        },
+        {
+          "biome": "thelunaris:sleeping_sands",
+          "parameters": {
+            "continentalness": [
+              0.03,
+              1.0
+            ],
+            "depth": 1.0,
+            "erosion": [
+              0.45,
+              0.55
+            ],
+            "humidity": [
+              -1.0,
+              1.0
+            ],
+            "offset": 0.0,
+            "temperature": [
+              0.55,
+              1.0
+            ],
+            "weirdness": [
+              -1.0,
+              1.0
+            ]
+          }
+        },
+        {
+          "biome": "thelunaris:lunar_plains",
+          "parameters": {
+            "continentalness": [
+              0.03,
+              1.0
+            ],
+            "depth": 1.0,
+            "erosion": [
+              0.45,
+              0.55
+            ],
+            "humidity": [
+              -1.0,
+              1.0
+            ],
+            "offset": 0.0,
+            "temperature": [
+              -1.0,
+              -0.45
+            ],
+            "weirdness": [
+              -1.0,
+              1.0
+            ]
+          }
+        },
+        {
+          "biome": "thelunaris:lunar_forests",
+          "parameters": {
+            "continentalness": [
+              0.03,
+              1.0
+            ],
+            "depth": 1.0,
+            "erosion": [
+              0.45,
+              0.55
+            ],
+            "humidity": [
+              -0.1,
+              0.1
+            ],
+            "offset": 0.0,
+            "temperature": [
+              -0.15,
+              0.2
+            ],
+            "weirdness": [
+              -1.0,
+              1.0
+            ]
+          }
+        },
+        {
+          "biome": "thelunaris:lunar_forests",
+          "parameters": {
+            "continentalness": [
+              0.03,
+              1.0
+            ],
+            "depth": 1.0,
+            "erosion": [
+              0.45,
+              0.55
+            ],
+            "humidity": [
+              -0.1,
+              0.1
+            ],
+            "offset": 0.0,
+            "temperature": [
+              -0.45,
+              -0.15
+            ],
+            "weirdness": [
+              -1.0,
+              1.0
+            ]
+          }
+        },
+        {
+          "biome": "thelunaris:lunar_plains",
+          "parameters": {
+            "continentalness": [
+              0.03,
+              1.0
+            ],
+            "depth": 1.0,
+            "erosion": [
+              0.45,
+              0.55
+            ],
+            "humidity": [
+              -1.0,
+              -0.1
+            ],
+            "offset": 0.0,
+            "temperature": [
+              -0.45,
+              0.55
+            ],
+            "weirdness": [
+              -1.0,
+              1.0
+            ]
+          }
+        },
+        {
+          "biome": "thelunaris:lunar_plains",
+          "parameters": {
+            "continentalness": [
+              0.03,
+              1.0
+            ],
+            "depth": 1.0,
+            "erosion": [
+              0.45,
+              0.55
+            ],
+            "humidity": [
+              -0.1,
+              0.3
+            ],
+            "offset": 0.0,
+            "temperature": [
+              -0.45,
+              -0.15
+            ],
+            "weirdness": [
+              0.0,
+              1.0
+            ]
+          }
+        },
+        {
+          "biome": "thelunaris:lunar_plains",
+          "parameters": {
+            "continentalness": [
+              0.03,
+              1.0
+            ],
+            "depth": 1.0,
+            "erosion": [
+              0.45,
+              0.55
+            ],
+            "humidity": [
+              -0.1,
+              0.3
+            ],
+            "offset": 0.0,
+            "temperature": [
+              -0.15,
+              0.2
+            ],
+            "weirdness": [
+              -1.0,
+              0.0
+            ]
+          }
+        },
+        {
+          "biome": "thelunaris:lunar_forests",
+          "parameters": {
+            "continentalness": [
+              0.03,
+              1.0
+            ],
+            "depth": 1.0,
+            "erosion": [
+              0.45,
+              0.55
+            ],
+            "humidity": [
+              -0.1,
+              0.3
             ],
             "offset": 0.0,
             "temperature": [
@@ -549,17 +846,17 @@
           "biome": "thelunaris:lunar_forests",
           "parameters": {
             "continentalness": [
-              0.0,
+              0.03,
               1.0
             ],
             "depth": 1.0,
             "erosion": [
-              -1.0,
-              1.0
+              0.45,
+              0.55
             ],
             "humidity": [
               -0.1,
-              0.1
+              0.3
             ],
             "offset": 0.0,
             "temperature": [
@@ -576,13 +873,175 @@
           "biome": "thelunaris:lunar_forests",
           "parameters": {
             "continentalness": [
-              0.0,
+              0.03,
               1.0
             ],
             "depth": 1.0,
             "erosion": [
+              0.45,
+              0.55
+            ],
+            "humidity": [
+              -0.1,
+              0.3
+            ],
+            "offset": 0.0,
+            "temperature": [
+              0.2,
+              0.55
+            ],
+            "weirdness": [
               -1.0,
               1.0
+            ]
+          }
+        },
+        {
+          "biome": "thelunaris:lunar_plains",
+          "parameters": {
+            "continentalness": [
+              0.03,
+              1.0
+            ],
+            "depth": 0.0,
+            "erosion": [
+              0.45,
+              0.55
+            ],
+            "humidity": [
+              -1.0,
+              -0.1
+            ],
+            "offset": 0.0,
+            "temperature": [
+              -0.45,
+              0.55
+            ],
+            "weirdness": [
+              -1.0,
+              1.0
+            ]
+          }
+        },
+        {
+          "biome": "thelunaris:lunar_plains",
+          "parameters": {
+            "continentalness": [
+              0.03,
+              1.0
+            ],
+            "depth": 0.0,
+            "erosion": [
+              0.45,
+              0.55
+            ],
+            "humidity": [
+              -0.1,
+              0.3
+            ],
+            "offset": 0.0,
+            "temperature": [
+              -0.45,
+              -0.15
+            ],
+            "weirdness": [
+              0.0,
+              1.0
+            ]
+          }
+        },
+        {
+          "biome": "thelunaris:lunar_plains",
+          "parameters": {
+            "continentalness": [
+              0.03,
+              1.0
+            ],
+            "depth": 0.0,
+            "erosion": [
+              0.45,
+              0.55
+            ],
+            "humidity": [
+              -0.1,
+              0.3
+            ],
+            "offset": 0.0,
+            "temperature": [
+              -0.15,
+              0.2
+            ],
+            "weirdness": [
+              -1.0,
+              0.0
+            ]
+          }
+        },
+        {
+          "biome": "thelunaris:lunar_forests",
+          "parameters": {
+            "continentalness": [
+              0.03,
+              1.0
+            ],
+            "depth": 0.0,
+            "erosion": [
+              0.45,
+              0.55
+            ],
+            "humidity": [
+              -0.1,
+              0.3
+            ],
+            "offset": 0.0,
+            "temperature": [
+              -0.45,
+              -0.15
+            ],
+            "weirdness": [
+              -1.0,
+              0.0
+            ]
+          }
+        },
+        {
+          "biome": "thelunaris:lunar_forests",
+          "parameters": {
+            "continentalness": [
+              0.03,
+              1.0
+            ],
+            "depth": 0.0,
+            "erosion": [
+              0.45,
+              0.55
+            ],
+            "humidity": [
+              -0.1,
+              0.3
+            ],
+            "offset": 0.0,
+            "temperature": [
+              -0.15,
+              0.2
+            ],
+            "weirdness": [
+              0.0,
+              1.0
+            ]
+          }
+        },
+        {
+          "biome": "thelunaris:lunar_forests",
+          "parameters": {
+            "continentalness": [
+              0.03,
+              1.0
+            ],
+            "depth": 0.0,
+            "erosion": [
+              0.45,
+              0.55
             ],
             "humidity": [
               -0.1,
@@ -603,26 +1062,215 @@
           "biome": "thelunaris:lunar_forests",
           "parameters": {
             "continentalness": [
-              0.0,
+              -0.11,
               1.0
             ],
-            "depth": 1.0,
+            "depth": 0.0,
             "erosion": [
-              -1.0,
-              1.0
+              -0.2225,
+              0.05
             ],
             "humidity": [
-              -0.1,
-              0.1
+              -0.35,
+              1.0
             ],
             "offset": 0.0,
             "temperature": [
-              0.2,
+              -0.45,
               0.55
             ],
             "weirdness": [
               -1.0,
-              0.0
+              1.0
+            ]
+          }
+        },
+        {
+          "biome": "thelunaris:sleeping_sands",
+          "parameters": {
+            "continentalness": [
+              -0.11,
+              1.0
+            ],
+            "depth": 0.0,
+            "erosion": [
+              -0.2225,
+              0.05
+            ],
+            "humidity": [
+              -1.0,
+              1.0
+            ],
+            "offset": 0.0,
+            "temperature": [
+              0.55,
+              1.0
+            ],
+            "weirdness": [
+              -1.0,
+              1.0
+            ]
+          }
+        },
+        {
+          "biome": "thelunaris:lunar_plains",
+          "parameters": {
+            "continentalness": [
+              -0.11,
+              1.0
+            ],
+            "depth": 0.0,
+            "erosion": [
+              -0.2225,
+              0.05
+            ],
+            "humidity": [
+              -1.0,
+              -0.35
+            ],
+            "offset": 0.0,
+            "temperature": [
+              -0.45,
+              0.55
+            ],
+            "weirdness": [
+              -1.0,
+              1.0
+            ]
+          }
+        },
+        {
+          "biome": "thelunaris:lunar_plains",
+          "parameters": {
+            "continentalness": [
+              -0.11,
+              1.0
+            ],
+            "depth": 0.0,
+            "erosion": [
+              -0.2225,
+              0.05
+            ],
+            "humidity": [
+              -1.0,
+              1.0
+            ],
+            "offset": 0.0,
+            "temperature": [
+              -1.0,
+              -0.45
+            ],
+            "weirdness": [
+              -1.0,
+              1.0
+            ]
+          }
+        },
+        {
+          "biome": "thelunaris:lunar_forests",
+          "parameters": {
+            "continentalness": [
+              -0.11,
+              1.0
+            ],
+            "depth": 1.0,
+            "erosion": [
+              -0.2225,
+              0.05
+            ],
+            "humidity": [
+              -0.35,
+              1.0
+            ],
+            "offset": 0.0,
+            "temperature": [
+              -0.45,
+              0.55
+            ],
+            "weirdness": [
+              -1.0,
+              1.0
+            ]
+          }
+        },
+        {
+          "biome": "thelunaris:sleeping_sands",
+          "parameters": {
+            "continentalness": [
+              -0.11,
+              1.0
+            ],
+            "depth": 1.0,
+            "erosion": [
+              -0.2225,
+              0.05
+            ],
+            "humidity": [
+              -1.0,
+              1.0
+            ],
+            "offset": 0.0,
+            "temperature": [
+              0.55,
+              1.0
+            ],
+            "weirdness": [
+              -1.0,
+              1.0
+            ]
+          }
+        },
+        {
+          "biome": "thelunaris:lunar_plains",
+          "parameters": {
+            "continentalness": [
+              -0.11,
+              1.0
+            ],
+            "depth": 1.0,
+            "erosion": [
+              -0.2225,
+              0.05
+            ],
+            "humidity": [
+              -1.0,
+              -0.35
+            ],
+            "offset": 0.0,
+            "temperature": [
+              -0.45,
+              0.55
+            ],
+            "weirdness": [
+              -1.0,
+              1.0
+            ]
+          }
+        },
+        {
+          "biome": "thelunaris:lunar_plains",
+          "parameters": {
+            "continentalness": [
+              -0.11,
+              1.0
+            ],
+            "depth": 1.0,
+            "erosion": [
+              -0.2225,
+              0.05
+            ],
+            "humidity": [
+              -1.0,
+              1.0
+            ],
+            "offset": 0.0,
+            "temperature": [
+              -1.0,
+              -0.45
+            ],
+            "weirdness": [
+              -1.0,
+              1.0
             ]
           }
         },
@@ -630,19 +1278,19 @@
           "biome": "thelunaris:skyword_mountains",
           "parameters": {
             "continentalness": [
-              0.0,
+              -0.19,
               1.0
             ],
-            "depth": 1.0,
+            "depth": 0.0,
             "erosion": [
               -1.0,
-              -0.375
+              -0.7799
             ],
             "humidity": [
-              0.0,
+              -1.0,
               1.0
             ],
-            "offset": 0.1,
+            "offset": 0.0,
             "temperature": [
               -1.0,
               1.0
@@ -657,40 +1305,121 @@
           "biome": "thelunaris:skyword_mountains",
           "parameters": {
             "continentalness": [
-              -0.15,
+              -0.19,
               1.0
             ],
             "depth": 1.0,
             "erosion": [
               -1.0,
-              -0.375
+              -0.7799
             ],
             "humidity": [
-              0.0,
+              -1.0,
               1.0
             ],
-            "offset": 0.1,
+            "offset": 0.0,
+            "temperature": [
+              -1.0,
+              1.0
+            ],
+            "weirdness": [
+              0.7,
+              1.0
+            ]
+          }
+        },
+        {
+          "biome": "thelunaris:skyword_mountains",
+          "parameters": {
+            "continentalness": [
+              -0.11,
+              1.0
+            ],
+            "depth": 0.0,
+            "erosion": [
+              -1.0,
+              -0.7799
+            ],
+            "humidity": [
+              -1.0,
+              1.0
+            ],
+            "offset": 0.0,
+            "temperature": [
+              -1.0,
+              1.0
+            ],
+            "weirdness": [
+              0.2,
+              0.7
+            ]
+          }
+        },
+        {
+          "biome": "thelunaris:skyword_mountains",
+          "parameters": {
+            "continentalness": [
+              -0.11,
+              1.0
+            ],
+            "depth": 1.0,
+            "erosion": [
+              -1.0,
+              -0.7799
+            ],
+            "humidity": [
+              -1.0,
+              1.0
+            ],
+            "offset": 0.0,
+            "temperature": [
+              -1.0,
+              1.0
+            ],
+            "weirdness": [
+              0.2,
+              0.7
+            ]
+          }
+        },
+        {
+          "biome": "thelunaris:skyword_mountains",
+          "parameters": {
+            "continentalness": [
+              0.03,
+              1.0
+            ],
+            "depth": 0.0,
+            "erosion": [
+              -1.0,
+              -0.7799
+            ],
+            "humidity": [
+              -1.0,
+              1.0
+            ],
+            "offset": 0.0,
             "temperature": [
               -1.0,
               1.0
             ],
             "weirdness": [
               -0.6,
-              0.7
+              0.2
             ]
           }
         },
         {
-          "biome": "thelunaris:sleeping_sands",
+          "biome": "thelunaris:skyword_mountains",
           "parameters": {
             "continentalness": [
-              -0.19,
+              0.03,
               1.0
             ],
             "depth": 1.0,
             "erosion": [
-              0.0,
-              1.0
+              -1.0,
+              -0.7799
             ],
             "humidity": [
               -1.0,
@@ -698,12 +1427,12 @@
             ],
             "offset": 0.0,
             "temperature": [
-              0.55,
+              -1.0,
               1.0
             ],
             "weirdness": [
-              -1.0,
-              1.0
+              -0.6,
+              0.2
             ]
           }
         },
@@ -711,40 +1440,13 @@
           "biome": "thelunaris:sleeping_sands",
           "parameters": {
             "continentalness": [
-              -0.19,
+              0.3,
               1.0
             ],
-            "depth": 1.0,
+            "depth": 0.0,
             "erosion": [
-              0.0,
-              1.0
-            ],
-            "humidity": [
-              -1.0,
-              1.0
-            ],
-            "offset": 0.0,
-            "temperature": [
-              0.55,
-              1.0
-            ],
-            "weirdness": [
-              -1.0,
-              1.0
-            ]
-          }
-        },
-        {
-          "biome": "thelunaris:sleeping_sands",
-          "parameters": {
-            "continentalness": [
-              -0.19,
-              1.0
-            ],
-            "depth": 1.0,
-            "erosion": [
-              0.0,
-              1.0
+              -0.375,
+              -0.2225
             ],
             "humidity": [
               -1.0,
@@ -765,7 +1467,37 @@
           "biome": "thelunaris:crimson_shelfs",
           "parameters": {
             "continentalness": [
-              -0.19,
+              -1.0,
+              1.0
+            ],
+            "depth": [
+              0.2,
+              0.9
+            ],
+            "erosion": [
+              -1.0,
+              -0.1
+            ],
+            "humidity": [
+              0.7,
+              1.0
+            ],
+            "offset": 0.0,
+            "temperature": [
+              -1.0,
+              1.0
+            ],
+            "weirdness": [
+              -1.0,
+              1.0
+            ]
+          }
+        },
+        {
+          "biome": "thelunaris:crimson_shelfs",
+          "parameters": {
+            "continentalness": [
+              -1.0,
               1.0
             ],
             "depth": [
@@ -782,7 +1514,7 @@
             ],
             "offset": 0.0,
             "temperature": [
-              0.55,
+              -1.0,
               1.0
             ],
             "weirdness": [
@@ -792,7 +1524,37 @@
           }
         },
         {
-          "biome": "thelunaris:crimson_shelfs",
+          "biome": "thelunaris:barren_deep",
+          "parameters": {
+            "continentalness": [
+              0.8,
+              1.0
+            ],
+            "depth": [
+              0.2,
+              0.9
+            ],
+            "erosion": [
+              -1.0,
+              -0.1
+            ],
+            "humidity": [
+              -1.0,
+              1.0
+            ],
+            "offset": 0.0,
+            "temperature": [
+              -1.0,
+              1.0
+            ],
+            "weirdness": [
+              -1.0,
+              1.0
+            ]
+          }
+        },
+        {
+          "biome": "thelunaris:barren_deep",
           "parameters": {
             "continentalness": [
               -1.0,
@@ -825,7 +1587,7 @@
           "biome": "thelunaris:dusklight_caves",
           "parameters": {
             "continentalness": [
-              -0.19,
+              -1.0,
               1.0
             ],
             "depth": [
@@ -834,7 +1596,7 @@
             ],
             "erosion": [
               -1.0,
-              -0.1
+              -0.3
             ],
             "humidity": [
               -1.0,
@@ -843,7 +1605,7 @@
             "offset": 0.0,
             "temperature": [
               -1.0,
-              -0.55
+              1.0
             ],
             "weirdness": [
               -1.0,
@@ -864,67 +1626,7 @@
             ],
             "erosion": [
               -1.0,
-              -0.1
-            ],
-            "humidity": [
-              -1.0,
-              1.0
-            ],
-            "offset": 0.0,
-            "temperature": [
-              -1.0,
-              1.0
-            ],
-            "weirdness": [
-              -1.0,
-              1.0
-            ]
-          }
-        },
-        {
-          "biome": "thelunaris:barren_deep",
-          "parameters": {
-            "continentalness": [
-              0.0,
-              1.0
-            ],
-            "depth": [
-              0.2,
-              0.9
-            ],
-            "erosion": [
-              -1.0,
-              -0.1
-            ],
-            "humidity": [
-              -1.0,
-              1.0
-            ],
-            "offset": 0.0,
-            "temperature": [
-              -0.55,
-              0.55
-            ],
-            "weirdness": [
-              -1.0,
-              1.0
-            ]
-          }
-        },
-        {
-          "biome": "thelunaris:barren_deep",
-          "parameters": {
-            "continentalness": [
-              -1.0,
-              1.0
-            ],
-            "depth": [
-              0.2,
-              0.9
-            ],
-            "erosion": [
-              -1.0,
-              -0.1
+              -0.3
             ],
             "humidity": [
               -1.0,

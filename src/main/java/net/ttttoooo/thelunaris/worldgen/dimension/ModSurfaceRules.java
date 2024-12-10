@@ -38,11 +38,18 @@ public class ModSurfaceRules {
         return SurfaceRules.sequence(
         		SurfaceRules.sequence(SurfaceRules.ifTrue(isAtBedrockLevel, bedrockFill)),
         		
-        		SurfaceRules.sequence(SurfaceRules.ifTrue(SurfaceRules.isBiome(ModBiomes.LUNAR_FORESTS), 
+        		SurfaceRules.sequence(SurfaceRules.ifTrue(SurfaceRules.isBiome(ModBiomes.LUNAR_PLAINS), 
                 	SurfaceRules.ifTrue(SurfaceRules.ON_FLOOR, grassSurface)
                 )),
-        		SurfaceRules.sequence(SurfaceRules.ifTrue(SurfaceRules.isBiome(ModBiomes.LUNAR_FORESTS), 
+        		SurfaceRules.sequence(SurfaceRules.ifTrue(SurfaceRules.isBiome(ModBiomes.LUNAR_PLAINS), 
                 	SurfaceRules.ifTrue(SurfaceRules.UNDER_FLOOR, dirtSurface)
+                )),
+        		
+        		SurfaceRules.sequence(SurfaceRules.ifTrue(SurfaceRules.isBiome(ModBiomes.LUNAR_FORESTS), 
+                    SurfaceRules.ifTrue(SurfaceRules.ON_FLOOR, grassSurface)
+                )),
+        		SurfaceRules.sequence(SurfaceRules.ifTrue(SurfaceRules.isBiome(ModBiomes.LUNAR_FORESTS), 
+                    SurfaceRules.ifTrue(SurfaceRules.UNDER_FLOOR, dirtSurface)
                 )),
         		
         		SurfaceRules.sequence(SurfaceRules.ifTrue(SurfaceRules.isBiome(ModBiomes.SAPPHIRE_RIVER), 

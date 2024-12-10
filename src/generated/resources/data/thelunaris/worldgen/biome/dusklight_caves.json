@@ -56,8 +56,7 @@
     [],
     [
       "thelunaris:celest_placed",
-      "thelunaris:dusklight_grass_patch_placed",
-      "thelunaris:cglowbush_vegetation_placed"
+      "thelunaris:dusklight_grass_patch_placed"
     ]
   ],
   "has_precipitation": false,

@@ -221,6 +221,13 @@ public class ModBlockLootTables extends BlockLootSubProvider{
 			createWildLoonberryDrops(block));
 		this.add(ModBlocks.WILD_SARROT.get(), block ->
 			createWildSarrotDrops(block));
+
+		this.add(ModBlocks.TALL_LUNGRASS.get(), block ->
+			createGrassLikeDrops(block));
+		this.add(ModBlocks.TALL_CRIMSON_LUNGRASS.get(), block ->
+			createGrassLikeDrops(block));
+		this.add(ModBlocks.TALL_DUSKLIGHT_LUNGRASS.get(), block ->
+			createGrassLikeDrops(block));
 		
 		//Flower Blocks
 		this.dropSelf(ModBlocks.ORANGEYE.get());

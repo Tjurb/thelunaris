@@ -1,4 +1,4 @@
-// 1.20.1	2024-12-08T21:04:48.4876067	Loot Tables
+// 1.20.1	2024-12-09T03:12:58.6919485	Loot Tables
 92097a82c34fc961772082dd36ad27e92bbdb77e data/thelunaris/loot_tables/blocks/bramble.json
 06dc455cb1cc43492a0c8635acf08992e970dac9 data/thelunaris/loot_tables/blocks/celest_button.json
 1412bc510edd1519210cff7aaf3d5841ee4e8f4f data/thelunaris/loot_tables/blocks/celest_door.json
@@ -119,6 +119,9 @@ a27bd0b31b58e263fd9aea3ea20ccc8c8e7e6c76 data/thelunaris/loot_tables/blocks/stel
 522b9ee2217be4384eb09b7f6039243e4b5f27c7 data/thelunaris/loot_tables/blocks/stripped_skyoak_wood.json
 5a86a2bcb0f55c2410683cb7d92a3a2cd69f38e3 data/thelunaris/loot_tables/blocks/stripped_stellar_log.json
 3ca7baca72d29dece2be8beb50bed56fbe052572 data/thelunaris/loot_tables/blocks/stripped_stellar_wood.json
+8f0a4d80fd738fe2a0454321191dac220a5d3e94 data/thelunaris/loot_tables/blocks/tall_crimson_lungrass.json
+d6ca0b4a91599dfbe657845ce3aa31313e5c854e data/thelunaris/loot_tables/blocks/tall_dusklight_lungrass.json
+061f53bcda47d200dc7df04756309b62e1153de8 data/thelunaris/loot_tables/blocks/tall_lungrass.json
 9711bc63e16d510cdc6d4c00f5dd4a5845538bd0 data/thelunaris/loot_tables/blocks/vailstone.json
 44c99c921cf7b784e046d5c088542e6240a11273 data/thelunaris/loot_tables/blocks/vailstonebrick.json
 7fe0eaf58eda67c67906a5ab287d20aa8f838039 data/thelunaris/loot_tables/blocks/vailstonebrick_slab.json

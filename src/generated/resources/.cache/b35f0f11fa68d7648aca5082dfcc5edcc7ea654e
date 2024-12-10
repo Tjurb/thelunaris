@@ -1,8 +1,9 @@
-// 1.20.1	2024-12-06T23:23:23.6461602	Tags for minecraft:item mod id thelunaris
+// 1.20.1	2024-12-09T04:04:25.5020898	Tags for minecraft:item mod id thelunaris
 d607f02152b453bab537280ef438830cb97e631e data/minecraft/tags/items/logs_that_burn.json
 28004daa55a0e89b1deed5201dbbe464bee9e110 data/minecraft/tags/items/trimmable_armor.json
 92615d4156b7e18748b0ec00cf8a5db14b5cebe2 data/thelunaris/tags/items/celest_woods.json
 3344fea8ed976e65e9deef091ca25744133aa1a6 data/thelunaris/tags/items/enricher_fuel.json
+3c4c2c06fe7d631dd6c31540a5a754249f07c717 data/thelunaris/tags/items/lunar_grass.json
 5ddafb87f8bdf95cf23667393da192725e506720 data/thelunaris/tags/items/lunar_logs_item.json
 2eab7252c9bde4498e0bbccb56dff2015ff1fe7d data/thelunaris/tags/items/lunar_planks.json
 42fe56ff2527636d6d1d402bda8fbcbfe856451a data/thelunaris/tags/items/mooncow_temp_items.json

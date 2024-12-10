@@ -1,0 +1,55 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_crimson_lungrass": {
+      "conditions": {
+        "items": [
+          {
+            "tag": "thelunaris:lunar_grass"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_dusklight_lungrass": {
+      "conditions": {
+        "items": [
+          {
+            "tag": "thelunaris:lunar_grass"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_lungrass": {
+      "conditions": {
+        "items": [
+          {
+            "tag": "thelunaris:lunar_grass"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "thelunaris:string_from_lunaris"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_lungrass",
+      "has_crimson_lungrass",
+      "has_dusklight_lungrass",
+      "has_the_recipe"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "thelunaris:string_from_lunaris"
+    ]
+  },
+  "sends_telemetry_event": false
+}

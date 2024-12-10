@@ -190,6 +190,14 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
 			.unlockedBy(getHasName(ModBlocks.STELLAR_PLANKS.get()), has(ModTags.Items.LUNAR_PLANKS))
 			.unlockedBy(getHasName(ModBlocks.SKYOAK_PLANKS.get()), has(ModTags.Items.LUNAR_PLANKS))
 			.save(pWriter);
+		ShapedRecipeBuilder.shaped(RecipeCategory.MISC, Items.STRING,4 )
+			.pattern("##")
+			.pattern("##")
+			.define('#', ModTags.Items.LUNAR_GRASS)
+			.unlockedBy(getHasName(ModBlocks.LUNGRASS.get()), has(ModTags.Items.LUNAR_GRASS))
+			.unlockedBy(getHasName(ModBlocks.CRIMSON_LUNGRASS.get()), has(ModTags.Items.LUNAR_GRASS))
+			.unlockedBy(getHasName(ModBlocks.DUSKLIGHT_LUNGRASS.get()), has(ModTags.Items.LUNAR_GRASS))
+			.save(pWriter, name("string_from_lunaris"));
 		ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModBlocks.LUNGLASS_PANE.get(),6 )
 			.pattern("###")
 			.pattern("###")
@@ -283,6 +291,14 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
 		makeNuggetToIngot(ModItems.EMOONSTEEL_NUGGET, ModItems.EMOONSTEEL).save(pWriter, name("emoonsteel_nugget_to_ingot"));
 
 		//Wooden Tools
+		ShapedRecipeBuilder.shaped(RecipeCategory.TOOLS, Items.FISHING_ROD,1 )
+			.pattern("  S")
+			.pattern(" SG")
+			.pattern("S G")
+			.define('G', Items.STRING)
+			.define('S', ModItems.LUNAR_STICK.get())
+			.unlockedBy(getHasName(ModItems.LUNAR_STICK.get()), has(ModItems.LUNAR_STICK.get()))
+			.save(pWriter, name("fishingrod_from_lunaris"));
 		ShapedRecipeBuilder.shaped(RecipeCategory.TOOLS, Items.WOODEN_AXE,1 )
 			.pattern("LL ")
 			.pattern("LS ")

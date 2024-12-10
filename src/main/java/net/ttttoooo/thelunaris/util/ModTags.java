@@ -22,7 +22,7 @@ public class ModTags {
 		public static final TagKey<Block> SANDDIRT_REPLACEABLES = tag("sanddirt_replaceables");
 		
 		public static final TagKey<Block> LUNAR_PORTAL_BLOCKS = tag("lunar_portal_blocks");
-		
+
 		public static final TagKey<Block> LUNAR_LOGS = tag("lunar_logs");
 		public static final TagKey<Block> LUNAR_DIRTS = tag("lunar_dirts");
 		
@@ -49,7 +49,8 @@ public class ModTags {
 		public static final TagKey<Item> LUNAR_CATILIST = tag("lunar_catalist");
 		
 		public static final TagKey<Item> LUNAR_PLANKS = tag("lunar_planks");
-		
+
+		public static final TagKey<Item> LUNAR_GRASS = tag("lunar_grass");
 		public static final TagKey<Item> LUNAR_LOGS_ITEM = tag("lunar_logs_item");
 		
 		public static final TagKey<Item> CELEST_WOODS = tag("celest_woods");

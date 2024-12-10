@@ -1,4 +1,4 @@
-// 1.20.1	2024-12-07T00:59:04.589916	Item Models: thelunaris
+// 1.20.1	2024-12-08T23:49:10.682961	Item Models: thelunaris
 b7176a2f31e02ede645f754b6b7dd43a1b142ecc assets/thelunaris/models/item/archfish.json
 63ec6c618a3a23eab4cab9c52d7d3250de9b516e assets/thelunaris/models/item/archfish_spawn_egg.json
 8ab1547e061a408db5f44f0233cb88ec3d1a9ba6 assets/thelunaris/models/item/bramble.json
@@ -15,7 +15,11 @@ c1911d875c42538e2125f6b7b5dd31811c99fa19 assets/thelunaris/models/item/celest_tr
 4a7502dfd5a601089c73bce954e0e68423289157 assets/thelunaris/models/item/cobbled_vailstone_stairs.json
 b3abd4ad0dc272a6a884012c782f213d09e95cce assets/thelunaris/models/item/cobbled_vailstone_wall.json
 9120ca205b5c0208a34a3a425218d0a9309d086b assets/thelunaris/models/item/cooked_archfish.json
+fa6b348910a248e522182b40310f1aa10ce6f7d9 assets/thelunaris/models/item/crimson_glowbush.json
+3e3e033ef2254cf5eae8566d303e17979d4595ab assets/thelunaris/models/item/crimson_lungrass.json
 862c257b26f51732c2afaeb581b174e2537a71a4 assets/thelunaris/models/item/cyaneye.json
+798674fb4bee475c6aa6471b63b1d749b09f9442 assets/thelunaris/models/item/dusklight_glowbush.json
+a67adde442b9712bba9b92e2dae5fbcdc75257de assets/thelunaris/models/item/dusklight_lungrass.json
 0414281635d08f78f0de15b50fdf44888b1001ee assets/thelunaris/models/item/emoonsteel.json
 733ec8c997ecf5c63c7291cb7663168feb25f733 assets/thelunaris/models/item/emoonsteel_axe.json
 295bf2aaf0976bdf1de31baedc0a1c6b632d64f8 assets/thelunaris/models/item/emoonsteel_boots.json
