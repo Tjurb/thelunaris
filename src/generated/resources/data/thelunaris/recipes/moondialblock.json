@@ -1,0 +1,24 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "D": {
+      "item": "thelunaris:moondial"
+    },
+    "M": {
+      "item": "thelunaris:smoothmarble"
+    },
+    "V": {
+      "item": "thelunaris:vailstonebrick"
+    }
+  },
+  "pattern": [
+    " D ",
+    " V ",
+    " M "
+  ],
+  "result": {
+    "item": "thelunaris:moondialblock"
+  },
+  "show_notification": true
+}

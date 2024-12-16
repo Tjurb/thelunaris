@@ -1,4 +1,4 @@
-// 1.20.1	2024-12-09T04:04:25.5066089	Recipes
+// 1.20.1	2024-12-16T13:05:01.8161138	Recipes
 211ab9bdf8b24647908004e2ff7fe1309b3533e3 data/thelunaris/advancements/recipes/building_blocks/celest_slab.json
 346d301ec627c1d06777549ba6b866e111eb0bad data/thelunaris/advancements/recipes/building_blocks/cobbled_vailstone_slab.json
 fc43c9d72cf64826df32195428f5669dbb7ad100 data/thelunaris/advancements/recipes/building_blocks/cobbled_vailstone_wall.json
@@ -89,6 +89,7 @@ b7885a657d990b564997ec79341f2d0581c42c9a data/thelunaris/advancements/recipes/mi
 0b45a2e87f60b186e03c5bd6bfb4977dbd898460 data/thelunaris/advancements/recipes/misc/lun_clover_dye.json
 ec80d811d4ea65b52a6e8c16739385b1ccd18583 data/thelunaris/advancements/recipes/misc/magenteye_dye.json
 ff6b685ebb908469e1dae0460202147b394e00f4 data/thelunaris/advancements/recipes/misc/moondial.json
+92665e40003225febd54939a9c6e3980c946dd96 data/thelunaris/advancements/recipes/misc/moondialblock.json
 47f4601e83128126edd6527c08e0662cb2d75247 data/thelunaris/advancements/recipes/misc/moondial_from_lunaris.json
 3580c537ba9d3b85133d75380c461f40c5634468 data/thelunaris/advancements/recipes/misc/moonsteel_block_to_ingot.json
 f5be2810e3419edadea2a4cd51f0e1d93c553685 data/thelunaris/advancements/recipes/misc/moonsteel_from_blasting_deep_moonsteel_ore.json
@@ -229,6 +230,7 @@ a98e23649483dfb8d6ebbc8088f82734b9c4d238 data/thelunaris/recipes/lunglass_from_s
 04c3c9e4f9cd2aa7a426f064a875f26b96eba880 data/thelunaris/recipes/lun_clover_dye.json
 3254076b622bb9d8ea96073f4e2529c0f9a78944 data/thelunaris/recipes/magenteye_dye.json
 a2610bb1ff8ea5590573935a536d7a747723ca7e data/thelunaris/recipes/moondial.json
+9ee8503433ed9a3a47cb6e5efb63a1401cf342b2 data/thelunaris/recipes/moondialblock.json
 78458e77ad781a44c9f28221727a23e38f35cedb data/thelunaris/recipes/moondial_from_lunaris.json
 d60671d229f384f901c3b18e330069702d4c533d data/thelunaris/recipes/moonsteel_axe.json
 900765183d1997cdf28498e5d1dd1d06205a4a57 data/thelunaris/recipes/moonsteel_block.json

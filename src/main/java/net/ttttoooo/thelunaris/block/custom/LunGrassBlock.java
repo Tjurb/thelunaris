@@ -7,7 +7,9 @@ import net.minecraft.core.registries.Registries;
 import net.minecraft.data.worldgen.features.NetherFeatures;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.server.level.ServerLevel;
+import net.minecraft.tags.FluidTags;
 import net.minecraft.util.RandomSource;
+import net.minecraft.world.entity.Entity;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.LevelReader;
 import net.minecraft.world.level.block.Block;
@@ -17,6 +19,7 @@ import net.minecraft.world.level.block.GrassBlock;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.StateDefinition;
 import net.minecraft.world.level.chunk.ChunkGenerator;
+import net.minecraft.world.level.gameevent.GameEvent;
 import net.minecraft.world.level.levelgen.feature.ConfiguredFeature;
 import net.minecraft.world.level.levelgen.feature.configurations.RandomPatchConfiguration;
 import net.minecraft.world.level.levelgen.feature.configurations.TreeConfiguration;
@@ -28,6 +31,8 @@ import net.ttttoooo.thelunaris.worldgen.ModPlacedFeatures;
 import java.util.List;
 import java.util.Optional;
 import java.util.function.BiConsumer;
+
+import javax.annotation.Nullable;
 
 public class LunGrassBlock extends GrassBlock {
     public LunGrassBlock(Properties properties) {
@@ -44,12 +49,17 @@ public class LunGrassBlock extends GrassBlock {
         placeFunction.accept(pos, ModBlocks.LUNDIRT.get().defaultBlockState());
         return true;
     }
+    
+    public static void turntoLunDirt(@Nullable Entity entity, BlockState state, Level level, BlockPos pos) {
+	    BlockState blockstate = pushEntitiesUp(state, ModBlocks.LUNDIRT.get().defaultBlockState(), level, pos);
+	    level.setBlockAndUpdate(pos, blockstate);
+	    level.gameEvent(GameEvent.BLOCK_CHANGE, pos, GameEvent.Context.of(entity, blockstate));
+	}
 
     @Override
     public void randomTick(BlockState state, ServerLevel level, BlockPos pos, RandomSource random) {
         // Ensure the block is loaded
         if (!level.isAreaLoaded(pos, 3)) return;
-
         // Check for light level to allow spreading
         if (level.getMaxLocalRawBrightness(pos.above()) >= 9) {
             for (int i = 0; i < 4; ++i) {
@@ -58,9 +68,12 @@ public class LunGrassBlock extends GrassBlock {
                 BlockState nearbyState = level.getBlockState(nearbyPos);
 
                 // Check if the nearby block is dirt (or your custom dirt block)
-                if (nearbyState.is(ModBlocks.LUNDIRT.get()) && level.getMaxLocalRawBrightness(nearbyPos.above()) >= 9) {
+                if (nearbyState.is(ModBlocks.LUNDIRT.get()) && level.getMaxLocalRawBrightness(nearbyPos.above()) >= 9
+                		&& !level.getFluidState(nearbyPos.above()).is(FluidTags.WATER)) {
                     // Replace the dirt block with LunGrass
                     level.setBlock(nearbyPos, this.defaultBlockState(), 3);
+                } else if(level.getFluidState(pos.above()).is(FluidTags.WATER)) {
+                	level.setBlock(pos, ModBlocks.LUNDIRT.get().defaultBlockState(), 3);
                 }
             }
         }

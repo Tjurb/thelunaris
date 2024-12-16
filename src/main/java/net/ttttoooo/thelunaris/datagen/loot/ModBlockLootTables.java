@@ -318,7 +318,7 @@ public class ModBlockLootTables extends BlockLootSubProvider{
 	    		.withPool(LootPool.lootPool().setRolls(ConstantValue.exactly(1.0F))
 	    				.when(HAS_NO_SHEARS_OR_SILK_TOUCH)
 	    				.add(this.applyExplosionDecay(p_250088_, 
-	    						LootItem.lootTableItem(Items.STICK)
+	    						LootItem.lootTableItem(ModItems.LUNAR_STICK.get())
 	    						.apply(SetItemCountFunction.setCount(UniformGenerator.between(1.0F, 2.0F))))
 	    						.when(BonusLevelTableCondition.bonusLevelFlatChance(Enchantments.BLOCK_FORTUNE,
 	    								NORMAL_LEAVES_STICK_CHANCES))));

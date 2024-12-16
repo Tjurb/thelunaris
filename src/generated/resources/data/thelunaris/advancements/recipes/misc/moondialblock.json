@@ -1,0 +1,61 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_moondial": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "thelunaris:moondial"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_smoothmarble": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "thelunaris:smoothmarble"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "thelunaris:moondialblock"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    },
+    "has_vailstonebrick": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "thelunaris:vailstonebrick"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "requirements": [
+    [
+      "has_smoothmarble",
+      "has_vailstonebrick",
+      "has_moondial",
+      "has_the_recipe"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "thelunaris:moondialblock"
+    ]
+  },
+  "sends_telemetry_event": false
+}

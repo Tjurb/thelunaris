@@ -44,7 +44,9 @@ public class ModBlockStateProvider extends BlockStateProvider{
 	@Override
 	protected void registerStatesAndModels() {
 		//special blocks
-		blockWithItem(ModBlocks.MOONDIALBLOCK);
+		simpleBlockWithItem(ModBlocks.MOONDIALBLOCK.get(),
+        	new ModelFile.UncheckedModelFile(modLoc("block/moondialblock")));
+		blockItem(ModBlocks.MOONDIALBLOCK);
 		portal(ModBlocks.LUNARPORTAL_BLOCK.get());
         simpleBlockWithItem(ModBlocks.LUNAR_CRAFTER.get(),
                 new ModelFile.UncheckedModelFile(modLoc("block/lunarcrafter")));

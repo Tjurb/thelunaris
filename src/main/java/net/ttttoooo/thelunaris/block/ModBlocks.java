@@ -70,7 +70,7 @@ public class ModBlocks {
 	
 	//Special Blocks
 	public static final RegistryObject<Block> MOONDIALBLOCK = registerBlock("moondialblock", 
-			() -> new Block(BlockBehaviour.Properties.copy(Blocks.IRON_BLOCK).sound(SoundType.ANCIENT_DEBRIS)));
+			() -> new Block(BlockBehaviour.Properties.copy(Blocks.IRON_BLOCK).sound(SoundType.ANCIENT_DEBRIS).noOcclusion()));
 	public static final RegistryObject<Block> LUNAR_CRAFTER = registerBlock("lunar_crafter", 
 			() -> new LunarCrafter(BlockBehaviour.Properties.copy(Blocks.OAK_PLANKS).sound(SoundType.WOOD).noOcclusion()));
 	public static final RegistryObject<Block> VAILSTONE_FURNACE = registerBlock("vailstone_furnace", 

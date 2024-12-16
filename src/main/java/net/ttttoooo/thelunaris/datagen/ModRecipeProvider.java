@@ -180,7 +180,18 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
 			.unlockedBy(getHasName(ModBlocks.SKYOAK_LOG.get()), has(ModTags.Items.LUNAR_LOGS_ITEM))
 			.unlockedBy(getHasName(Blocks.FURNACE), has(Blocks.FURNACE))
 			.save(pWriter, name("vanilla_smoker_from_lunaris"));
-		
+		ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModBlocks.MOONDIALBLOCK.get(),1 )
+			.pattern(" D ")
+			.pattern(" V ")
+			.pattern(" M ")
+			.define('V', ModBlocks.VAILSTONEBRICK.get())
+			.define('M', ModBlocks.SMOOTHMARBLE.get())
+			.define('D', ModItems.MOONDIAL.get())
+			.unlockedBy(getHasName(ModBlocks.SMOOTHMARBLE.get()), has(ModBlocks.SMOOTHMARBLE.get()))
+			.unlockedBy(getHasName(ModBlocks.VAILSTONEBRICK.get()), has(ModBlocks.VAILSTONEBRICK.get()))
+			.unlockedBy(getHasName(ModItems.MOONDIAL.get()), has(ModItems.MOONDIAL.get()))
+			.save(pWriter);
+
 		//Misc Items
 		ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModItems.LUNAR_STICK.get(),4 )
 			.pattern("#")

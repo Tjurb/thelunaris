@@ -1,4 +1,4 @@
-// 1.20.1	2024-12-10T02:58:39.5759077	Block States: thelunaris
+// 1.20.1	2024-12-12T10:31:56.699958	Block States: thelunaris
 8e084b27256cba04f467fee5546de7334d83c739 assets/thelunaris/blockstates/bramble.json
 9d70aa31c54a09a1cb4d854c0bdbe7d4176bc291 assets/thelunaris/blockstates/celest_button.json
 4a6b353df99601e318f5b79672188604ef5ffa93 assets/thelunaris/blockstates/celest_door.json
@@ -251,7 +251,6 @@ e1821d8cb4152d5ccc57854394ae0f7581576ebc assets/thelunaris/models/block/lunsands
 48db1e31d3f3e794475835980b218724dc2df00f assets/thelunaris/models/block/lun_clover.json
 3962c9c4aab456ee22e9e8b5333e68440e8c2a5f assets/thelunaris/models/block/magenteye.json
 7949bdd6f66e4d0941c24d79abb259823beb8e09 assets/thelunaris/models/block/marble.json
-6ff36e185bc4b38c1d508a22f6cec62e7351fa92 assets/thelunaris/models/block/moondialblock.json
 ae6812d368c0d987ea57bf313e9a5a42b16ae84f assets/thelunaris/models/block/moonsteel_block.json
 3a710a6365e35c69ba34509fc7eadec7844af75f assets/thelunaris/models/block/moonsteel_ore.json
 f887c51b805ad84bbe0c5d544d0d953a87794a8b assets/thelunaris/models/block/orangeye.json
