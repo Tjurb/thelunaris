@@ -77,6 +77,15 @@ public class ModPlacedFeatures {
 	public static final ResourceKey<PlacedFeature> DEEP_CELEST_PLACED_KEY = registerKey("deep_celest_placed");
 	public static final ResourceKey<PlacedFeature> DEEP_STELLAR_PLACED_KEY = registerKey("deep_stellar_placed");
 	
+	public static final ResourceKey<PlacedFeature> FROZEN_SKYOAK_PLACED_KEY = registerKey("frozen_skyoak_placed");
+	public static final ResourceKey<PlacedFeature> LARGE_FROZEN_SKYOAK_PLACED_KEY = registerKey("large_frozen_skyoak_placed");
+	public static final ResourceKey<PlacedFeature> ICELEAF_PLACED_KEY = registerKey("iceleaf_placed");
+	public static final ResourceKey<PlacedFeature> LARGE_ICELEAF_PLACED_KEY = registerKey("large_iceleaf_placed");
+	
+	public static final ResourceKey<PlacedFeature> TWISTED_VINEWOOD_PLACED_KEY = registerKey("twisted_vinewood_placed");
+	public static final ResourceKey<PlacedFeature> SHORT_VINEWOOD_PLACED_KEY = registerKey("short_vinewood_placed");
+	public static final ResourceKey<PlacedFeature> VINEWOOD_PLACED_KEY = registerKey("vinewood_placed");
+	
 	//ground vegetation key
 	public static final ResourceKey<PlacedFeature> LUNARIS_GRASS_PATCH_PLACED_KEY = registerKey("lunaris_grass_patch_placed");
 	public static final ResourceKey<PlacedFeature> TALL_LUNARIS_GRASS_PATCH_PLACED_KEY = registerKey("tall_lunaris_grass_patch_placed");

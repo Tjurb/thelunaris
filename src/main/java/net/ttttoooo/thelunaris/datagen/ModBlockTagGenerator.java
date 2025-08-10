@@ -234,5 +234,10 @@ public class ModBlockTagGenerator extends BlockTagsProvider{
 					ModBlocks.STRIPPED_STELLAR_LOG.get(),
 					ModBlocks.STELLAR_WOOD.get(),
 					ModBlocks.STRIPPED_STELLAR_WOOD.get());
+		
+		this.tag(BlockTags.CROPS)
+			.add(ModBlocks.LOONBERRY_CROP.get(),
+					ModBlocks.LUNWHEAT_CROP.get(),
+					ModBlocks.SARROT_CROP.get());
 	}
 }

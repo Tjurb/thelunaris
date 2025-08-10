@@ -9,6 +9,7 @@ import net.minecraft.data.PackOutput;
 import net.minecraft.data.tags.ItemTagsProvider;
 import net.minecraft.tags.ItemTags;
 import net.minecraft.world.level.block.Block;
+import net.minecraftforge.common.Tags;
 import net.minecraftforge.common.data.ExistingFileHelper;
 import net.ttttoooo.thelunaris.TheLunaris;
 import net.ttttoooo.thelunaris.block.ModBlocks;
@@ -97,6 +98,16 @@ public class ModItemTagGenerator extends ItemTagsProvider {
 					ModItems.LUNARITE_CHESTPLATE.get(),
 					ModItems.LUNARITE_LEGGINGS.get(),
 					ModItems.LUNARITE_BOOTS.get());
+		
+		this.tag(Tags.Items.SEEDS)
+			.add(ModItems.LUNAR_WHEAT_SEEDS.get(),
+					ModItems.LOONBERRY.get(),
+					ModItems.SARROT.get());
+		
+		this.tag(Tags.Items.CROPS)
+			.add(ModItems.LUNAR_WHEAT.get(),
+					ModItems.LOONBERRY.get(),
+					ModItems.SARROT.get());
 		
 	}
 }
