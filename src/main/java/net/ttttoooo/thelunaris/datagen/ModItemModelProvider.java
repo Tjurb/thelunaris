@@ -139,6 +139,8 @@ public class ModItemModelProvider extends ItemModelProvider{
 		evenSimplerBlockItem(ModBlocks.CELEST_STAIRS);
 		evenSimplerBlockItem(ModBlocks.STELLAR_STAIRS);
 		evenSimplerBlockItem(ModBlocks.SKYOAK_STAIRS);
+		evenSimplerBlockItem(ModBlocks.VINEWOOD_STAIRS);
+		evenSimplerBlockItem(ModBlocks.ICEWOOD_STAIRS);
 		evenSimplerBlockItem(ModBlocks.LUNSANDSTONE_STAIRS);
 		evenSimplerBlockItem(ModBlocks.LUNCLAY_BRICK_BLOCK_STAIRS);
 		
@@ -151,6 +153,8 @@ public class ModItemModelProvider extends ItemModelProvider{
 		evenSimplerBlockItem(ModBlocks.CELEST_SLAB);
 		evenSimplerBlockItem(ModBlocks.STELLAR_SLAB);
 		evenSimplerBlockItem(ModBlocks.SKYOAK_SLAB);
+		evenSimplerBlockItem(ModBlocks.VINEWOOD_SLAB);
+		evenSimplerBlockItem(ModBlocks.ICEWOOD_SLAB);
 		evenSimplerBlockItem(ModBlocks.LUNSANDSTONE_SLAB);
 		evenSimplerBlockItem(ModBlocks.LUNCLAY_BRICK_BLOCK_SLAB);
 		
@@ -161,31 +165,45 @@ public class ModItemModelProvider extends ItemModelProvider{
         evenSimplerBlockItem(ModBlocks.STELLAR_FENCE_GATE);
 		fenceItem(ModBlocks.SKYOAK_FENCE, ModBlocks.SKYOAK_PLANKS);
         evenSimplerBlockItem(ModBlocks.SKYOAK_FENCE_GATE);
+		fenceItem(ModBlocks.VINEWOOD_FENCE, ModBlocks.VINEWOOD_PLANKS);
+        evenSimplerBlockItem(ModBlocks.VINEWOOD_FENCE_GATE);
+		fenceItem(ModBlocks.ICEWOOD_FENCE, ModBlocks.ICEWOOD_PLANKS);
+        evenSimplerBlockItem(ModBlocks.ICEWOOD_FENCE_GATE);
 		
 		//pressureplates
         evenSimplerBlockItem(ModBlocks.CELEST_PRESSURE_PLATE);
         evenSimplerBlockItem(ModBlocks.STELLAR_PRESSURE_PLATE);
         evenSimplerBlockItem(ModBlocks.SKYOAK_PRESSURE_PLATE);
+        evenSimplerBlockItem(ModBlocks.VINEWOOD_PRESSURE_PLATE);
+        evenSimplerBlockItem(ModBlocks.ICEWOOD_PRESSURE_PLATE);
         
         //buttons
         buttonItem(ModBlocks.CELEST_BUTTON, ModBlocks.CELEST_PLANKS);
         buttonItem(ModBlocks.STELLAR_BUTTON, ModBlocks.STELLAR_PLANKS);
         buttonItem(ModBlocks.SKYOAK_BUTTON, ModBlocks.SKYOAK_PLANKS);
+        buttonItem(ModBlocks.VINEWOOD_BUTTON, ModBlocks.VINEWOOD_PLANKS);
+        buttonItem(ModBlocks.ICEWOOD_BUTTON, ModBlocks.ICEWOOD_PLANKS);
 
         //doors
         simpleBlockItem(ModBlocks.CELEST_DOOR);
         simpleBlockItem(ModBlocks.STELLAR_DOOR);
         simpleBlockItem(ModBlocks.SKYOAK_DOOR);
+        simpleBlockItem(ModBlocks.VINEWOOD_DOOR);
+        simpleBlockItem(ModBlocks.ICEWOOD_DOOR);
         
         //trapdoors
         trapdoorItem(ModBlocks.CELEST_TRAPDOOR);
         trapdoorItem(ModBlocks.STELLAR_TRAPDOOR);
         trapdoorItem(ModBlocks.SKYOAK_TRAPDOOR);
+        trapdoorItem(ModBlocks.VINEWOOD_TRAPDOOR);
+        trapdoorItem(ModBlocks.ICEWOOD_TRAPDOOR);
         
 		//saplings
 		saplingItem(ModBlocks.CELEST_SAPLING);
 		saplingItem(ModBlocks.STELLAR_SAPLING);
 		saplingItem(ModBlocks.SKYOAK_SAPLING);
+		saplingItem(ModBlocks.VINEWOOD_SAPLING);
+		saplingItem(ModBlocks.ICEWOOD_SAPLING);
 		
 		//nature
 		saplingItem(ModBlocks.LUNGRASS);

@@ -1,4 +1,4 @@
-// 1.20.1	2024-12-10T02:56:04.3484328	Item Models: thelunaris
+// 1.20.1	2025-10-02T15:24:39.2203877	Item Models: thelunaris
 b7176a2f31e02ede645f754b6b7dd43a1b142ecc assets/thelunaris/models/item/archfish.json
 63ec6c618a3a23eab4cab9c52d7d3250de9b516e assets/thelunaris/models/item/archfish_spawn_egg.json
 8ab1547e061a408db5f44f0233cb88ec3d1a9ba6 assets/thelunaris/models/item/bramble.json
@@ -74,6 +74,15 @@ e63f7b6929c41ebda46dcecc712b30c94ee0d0e0 assets/thelunaris/models/item/emoonstee
 9caf1fb7e0fae73f5cef0f4f2410df7fd9b26a4e assets/thelunaris/models/item/hex_charge.json
 91e2c53b7662326e9ee7739df753ea656091522a assets/thelunaris/models/item/hex_dust.json
 63ec6c618a3a23eab4cab9c52d7d3250de9b516e assets/thelunaris/models/item/hex_spawn_egg.json
+dd2773cddfc976dd05a19e826fcd805bf065c0d2 assets/thelunaris/models/item/icewood_button.json
+666e853577dc0ca258c0b1e0691a1425ce50daee assets/thelunaris/models/item/icewood_door.json
+35652f37e64cd3cad140af1c53b280c37c6cf8ac assets/thelunaris/models/item/icewood_fence.json
+0431a3fd3cf5d519a44a487cc795e8d78b8100d8 assets/thelunaris/models/item/icewood_fence_gate.json
+9ef2b807fb008abfa97b25f60a5a7400f5a7a8ab assets/thelunaris/models/item/icewood_pressure_plate.json
+6ea8145146f9be811295599468c75e1ee355e08c assets/thelunaris/models/item/icewood_sapling.json
+7edc6074ece864f71f005bc703facabe4947d137 assets/thelunaris/models/item/icewood_slab.json
+851ddf3478c13bdbc534b31e777401d82c115a5e assets/thelunaris/models/item/icewood_stairs.json
+34e527e5a584842b4b45939f7aa0a2aae1317235 assets/thelunaris/models/item/icewood_trapdoor.json
 cd8161acf28a94464e953dc839c7f39832cc2d32 assets/thelunaris/models/item/labradorite.json
 e5c1a8cba13f83b6b236fe51e4fd66aab34ab1c7 assets/thelunaris/models/item/loonberry.json
 542b4cfa98097c063394d7a15d751a52edffeff9 assets/thelunaris/models/item/loonberry_pie.json
@@ -241,5 +250,14 @@ aec6995ae8a746c2d7676077f11d8bd00cd29e9e assets/thelunaris/models/item/vailstone
 73646ef3184ef78921b8e10dae7c9e4f79cecacb assets/thelunaris/models/item/vailstone_pickaxe.json
 dc7b5d7059b10d7ac56552d44cf3dd5bb2ae9434 assets/thelunaris/models/item/vailstone_shovel.json
 63d0c3461611dad6c28e74ccd0d790c6662d9178 assets/thelunaris/models/item/vailstone_sword.json
+12ff6beb782fa8f352989c62675aae33bcc6e01c assets/thelunaris/models/item/vinewood_button.json
+dc097e719ce8926f3294d04625e368c5e9d991b3 assets/thelunaris/models/item/vinewood_door.json
+6cffda8ffedc6794acfb5844afb8dacfafa8f3fc assets/thelunaris/models/item/vinewood_fence.json
+2a465ed9e96abe4a829cb439da235639cf83bcab assets/thelunaris/models/item/vinewood_fence_gate.json
+a7797f4b46575d98914c518dd9618d2a980d6f2e assets/thelunaris/models/item/vinewood_pressure_plate.json
+3d3e9663d8a331956d7af7b394ea69e9c2a8e4e7 assets/thelunaris/models/item/vinewood_sapling.json
+fa3d8c6eca18fb04c224f7ab7d2e5c584ddda4f6 assets/thelunaris/models/item/vinewood_slab.json
+c5c58e48261d252430e837d71f8e2ee312eeaee0 assets/thelunaris/models/item/vinewood_stairs.json
+c85e722415d361a788917d191d4d9125b13f2077 assets/thelunaris/models/item/vinewood_trapdoor.json
 6abed2402894136a183a567e8b6ce2eb3804c545 assets/thelunaris/models/item/wild_loonberry.json
 fc59b23818f3b85285fd09fbda316a813ce07f9e assets/thelunaris/models/item/wild_sarrot.json

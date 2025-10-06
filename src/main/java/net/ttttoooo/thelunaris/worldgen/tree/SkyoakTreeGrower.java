@@ -13,6 +13,10 @@ public class SkyoakTreeGrower extends AbstractTreeGrower {
 	@Nullable
 	@Override
 	protected ResourceKey<ConfiguredFeature<?, ?>> getConfiguredFeature(RandomSource pRandom, boolean pHasFlowers) {
-		return ModConfiguredFeatures.SKYOAK_KEY;
+		if (pRandom.nextInt(10) == 0) {
+	         return pHasFlowers ? ModConfiguredFeatures.SKYOAK_KEY : ModConfiguredFeatures.LARGE_SKYOAK_KEY;
+	      } else {
+	         return pHasFlowers ? ModConfiguredFeatures.FROZEN_SKYOAK_KEY : ModConfiguredFeatures.FROZEN_SKYOAK_KEY;
+	      }
 	}
 }

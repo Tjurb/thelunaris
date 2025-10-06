@@ -106,6 +106,42 @@ public class ModSurfaceRules {
             	SurfaceRules.sequence(SurfaceRules.ifTrue(SurfaceRules.isBiome(ModBiomes.CRIMSON_SHELFS), 
                 	SurfaceRules.ifTrue(SurfaceRules.UNDER_FLOOR, dirtSurface)
                 )),
+            	
+            	//NEW SURFACEGEN
+            	SurfaceRules.sequence(SurfaceRules.ifTrue(SurfaceRules.isBiome(ModBiomes.FROZEN_CAVES), 
+                   	SurfaceRules.ifTrue(SurfaceRules.ON_FLOOR, grassSurface)
+                )),
+                SurfaceRules.sequence(SurfaceRules.ifTrue(SurfaceRules.isBiome(ModBiomes.FROZEN_CAVES), 
+                    SurfaceRules.ifTrue(SurfaceRules.UNDER_FLOOR, dirtSurface)
+                )),
+
+            	SurfaceRules.sequence(SurfaceRules.ifTrue(SurfaceRules.isBiome(ModBiomes.FROZEN_COVER), 
+                    SurfaceRules.ifTrue(SurfaceRules.ON_FLOOR, grassSurface)
+                )),
+                SurfaceRules.sequence(SurfaceRules.ifTrue(SurfaceRules.isBiome(ModBiomes.FROZEN_COVER), 
+                    SurfaceRules.ifTrue(SurfaceRules.UNDER_FLOOR, dirtSurface)
+                )),
+
+            	SurfaceRules.sequence(SurfaceRules.ifTrue(SurfaceRules.isBiome(ModBiomes.HIGHTOP_JUNGLE), 
+                    SurfaceRules.ifTrue(SurfaceRules.ON_FLOOR, grassSurface)
+                )),
+                SurfaceRules.sequence(SurfaceRules.ifTrue(SurfaceRules.isBiome(ModBiomes.HIGHTOP_JUNGLE), 
+                    SurfaceRules.ifTrue(SurfaceRules.UNDER_FLOOR, dirtSurface)
+                )),
+                
+            	SurfaceRules.sequence(SurfaceRules.ifTrue(SurfaceRules.isBiome(ModBiomes.GRASSY_CAVES), 
+                    SurfaceRules.ifTrue(SurfaceRules.ON_FLOOR, grassSurface)
+                )),
+                SurfaceRules.sequence(SurfaceRules.ifTrue(SurfaceRules.isBiome(ModBiomes.GRASSY_CAVES), 
+                    SurfaceRules.ifTrue(SurfaceRules.UNDER_FLOOR, dirtSurface)
+                )),
+                
+            	SurfaceRules.sequence(SurfaceRules.ifTrue(SurfaceRules.isBiome(ModBiomes.FORESTED_CAVES), 
+                    SurfaceRules.ifTrue(SurfaceRules.ON_FLOOR, grassSurface)
+                )),
+                SurfaceRules.sequence(SurfaceRules.ifTrue(SurfaceRules.isBiome(ModBiomes.FORESTED_CAVES), 
+                    SurfaceRules.ifTrue(SurfaceRules.UNDER_FLOOR, dirtSurface)
+                )),
 
         		SurfaceRules.sequence(SurfaceRules.ifTrue(isAtGneissLevel, deepfill))
         		

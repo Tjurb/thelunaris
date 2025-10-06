@@ -5,6 +5,10 @@
     "thelunaris:stellar_log",
     "thelunaris:stellar_wood",
     "thelunaris:skyoak_log",
-    "thelunaris:skyoak_wood"
+    "thelunaris:skyoak_wood",
+    "thelunaris:vinewood_log",
+    "thelunaris:vinewood_wood",
+    "thelunaris:icewood_log",
+    "thelunaris:icewood_wood"
   ]
 }

@@ -1,0 +1,98 @@
+{
+  "carvers": {
+    "air": [
+      "minecraft:cave",
+      "minecraft:cave_extra_underground",
+      "minecraft:canyon"
+    ]
+  },
+  "creature_spawn_probability": 0.25,
+  "downfall": 0.8,
+  "effects": {
+    "ambient_sound": "minecraft:ambient.nether_wastes.loop",
+    "fog_color": 2491990,
+    "foliage_color": 2491990,
+    "grass_color": 2491990,
+    "music": {
+      "max_delay": 24000,
+      "min_delay": 12000,
+      "replace_current_music": false,
+      "sound": "minecraft:music.overworld.lush_caves"
+    },
+    "sky_color": 2491990,
+    "water_color": 2491990,
+    "water_fog_color": 2491990
+  },
+  "features": [
+    [],
+    [],
+    [],
+    [],
+    [],
+    [],
+    [
+      "thelunaris:lunarite_ore_placed",
+      "thelunaris:moonsteel_ore_placed",
+      "thelunaris:large_lunarite_ore_placed",
+      "thelunaris:large_moonsteel_ore_placed",
+      "thelunaris:deep_labradorite_ore_placed",
+      "thelunaris:deep_moonsteel_ore_placed",
+      "thelunaris:large_deep_moonsteel_ore_placed",
+      "thelunaris:deep_lunarite_ore_placed",
+      "thelunaris:large_deep_lunarite_ore_placed",
+      "thelunaris:lunaris_coal_ore_placed",
+      "thelunaris:large_lunaris_coal_ore_placed",
+      "thelunaris:deep_lunaris_coal_ore_placed",
+      "thelunaris:large_deep_lunaris_coal_ore_placed",
+      "thelunaris:marble_placed",
+      "thelunaris:shale_placed",
+      "thelunaris:slate_placed",
+      "thelunaris:lunar_clay_placed",
+      "thelunaris:deep_marble_placed",
+      "thelunaris:deep_shale_placed",
+      "thelunaris:deep_slate_placed"
+    ],
+    [],
+    [],
+    [
+      "thelunaris:deep_stellar_placed",
+      "thelunaris:deep_celest_placed",
+      "thelunaris:twisted_vinewood_placed",
+      "thelunaris:tall_lunaris_grass_patch_placed",
+      "thelunaris:lunaris_grass_patch_placed"
+    ]
+  ],
+  "has_precipitation": false,
+  "spawn_costs": {},
+  "spawners": {
+    "ambient": [],
+    "axolotls": [],
+    "creature": [
+      {
+        "type": "thelunaris:archfish",
+        "maxCount": 5,
+        "minCount": 3,
+        "weight": 40
+      }
+    ],
+    "misc": [],
+    "monster": [
+      {
+        "type": "thelunaris:phyrex",
+        "maxCount": 1,
+        "minCount": 1,
+        "weight": 5
+      },
+      {
+        "type": "thelunaris:hex",
+        "maxCount": 1,
+        "minCount": 1,
+        "weight": 5
+      }
+    ],
+    "underground_water_creature": [],
+    "water_ambient": [],
+    "water_creature": []
+  },
+  "temperature": 0.7
+}

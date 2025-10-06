@@ -161,6 +161,34 @@ public class ModBlockLootTables extends BlockLootSubProvider{
 		this.dropSelf(ModBlocks.SKYOAK_DOOR.get());
 		this.dropSelf(ModBlocks.SKYOAK_TRAPDOOR.get());
 		
+		this.dropSelf(ModBlocks.VINEWOOD_LOG.get());
+		this.dropSelf(ModBlocks.VINEWOOD_SAPLING.get());
+		this.dropSelf(ModBlocks.VINEWOOD_WOOD.get());
+		this.dropSelf(ModBlocks.STRIPPED_VINEWOOD_LOG.get());
+		this.dropSelf(ModBlocks.STRIPPED_VINEWOOD_WOOD.get());
+		this.dropSelf(ModBlocks.VINEWOOD_PLANKS.get());
+		this.dropSelf(ModBlocks.VINEWOOD_STAIRS.get());
+		this.dropSelf(ModBlocks.VINEWOOD_BUTTON.get());
+		this.dropSelf(ModBlocks.VINEWOOD_PRESSURE_PLATE.get());
+		this.dropSelf(ModBlocks.VINEWOOD_FENCE.get());
+		this.dropSelf(ModBlocks.VINEWOOD_FENCE_GATE.get());
+		this.dropSelf(ModBlocks.VINEWOOD_DOOR.get());
+		this.dropSelf(ModBlocks.VINEWOOD_TRAPDOOR.get());
+		
+		this.dropSelf(ModBlocks.ICEWOOD_LOG.get());
+		this.dropSelf(ModBlocks.ICEWOOD_SAPLING.get());
+		this.dropSelf(ModBlocks.ICEWOOD_WOOD.get());
+		this.dropSelf(ModBlocks.STRIPPED_ICEWOOD_LOG.get());
+		this.dropSelf(ModBlocks.STRIPPED_ICEWOOD_WOOD.get());
+		this.dropSelf(ModBlocks.ICEWOOD_PLANKS.get());
+		this.dropSelf(ModBlocks.ICEWOOD_STAIRS.get());
+		this.dropSelf(ModBlocks.ICEWOOD_BUTTON.get());
+		this.dropSelf(ModBlocks.ICEWOOD_PRESSURE_PLATE.get());
+		this.dropSelf(ModBlocks.ICEWOOD_FENCE.get());
+		this.dropSelf(ModBlocks.ICEWOOD_FENCE_GATE.get());
+		this.dropSelf(ModBlocks.ICEWOOD_DOOR.get());
+		this.dropSelf(ModBlocks.ICEWOOD_TRAPDOOR.get());
+		
 		this.add(ModBlocks.LUNARITE_ORE.get(),
 				block -> createDiamondLikeOreDrops(ModBlocks.LUNARITE_ORE.get(), ModItems.LUNARITE.get()));
 		this.add(ModBlocks.MOONSTEEL_ORE.get(),
@@ -196,6 +224,10 @@ public class ModBlockLootTables extends BlockLootSubProvider{
 				block -> createSlabItemTable(ModBlocks.STELLAR_SLAB.get()));
 		this.add(ModBlocks.SKYOAK_SLAB.get(),
 				block -> createSlabItemTable(ModBlocks.SKYOAK_SLAB.get()));
+		this.add(ModBlocks.VINEWOOD_SLAB.get(),
+				block -> createSlabItemTable(ModBlocks.VINEWOOD_SLAB.get()));
+		this.add(ModBlocks.ICEWOOD_SLAB.get(),
+				block -> createSlabItemTable(ModBlocks.ICEWOOD_SLAB.get()));
 		
 		this.add(ModBlocks.LUNSANDSTONE_SLAB.get(),
 				block -> createSlabItemTable(ModBlocks.LUNSANDSTONE_SLAB.get()));
@@ -209,6 +241,10 @@ public class ModBlockLootTables extends BlockLootSubProvider{
 			createLeavesDrops(block, ModBlocks.CELEST_SAPLING.get(), NORMAL_LEAVES_SAPLING_CHANCES));
 		this.add(ModBlocks.SKYOAK_LEAVES.get(), block ->
 			createLeavesDrops(block, ModBlocks.SKYOAK_SAPLING.get(), NORMAL_LEAVES_SAPLING_CHANCES));
+		this.add(ModBlocks.VINEWOOD_LEAVES.get(), block ->
+		createLeavesDrops(block, ModBlocks.VINEWOOD_SAPLING.get(), NORMAL_LEAVES_SAPLING_CHANCES));
+		this.add(ModBlocks.ICEWOOD_LEAVES.get(), block ->
+		createLeavesDrops(block, ModBlocks.ICEWOOD_SAPLING.get(), NORMAL_LEAVES_SAPLING_CHANCES));
 
 		this.add(ModBlocks.GLOWING_STELLAR_LEAVES.get(), block ->
 			createLeavesDrops(block, ModBlocks.STELLAR_SAPLING.get(), NORMAL_LEAVES_SAPLING_CHANCES));
@@ -216,6 +252,8 @@ public class ModBlockLootTables extends BlockLootSubProvider{
 			createLeavesDrops(block, ModBlocks.CELEST_SAPLING.get(), NORMAL_LEAVES_SAPLING_CHANCES));
 		this.add(ModBlocks.GLOWING_SKYOAK_LEAVES.get(), block ->
 			createLeavesDrops(block, ModBlocks.SKYOAK_SAPLING.get(), NORMAL_LEAVES_SAPLING_CHANCES));
+		this.add(ModBlocks.FROZEN_SKYOAK_LEAVES.get(), block ->
+			createLeavesDrops(block, ModBlocks.ICEWOOD_SAPLING.get(), NORMAL_LEAVES_SAPLING_CHANCES));
 		
 		//Nature Blocks
 		this.add(ModBlocks.LUNGRASS.get(), block ->

@@ -222,7 +222,7 @@
           }
         },
         {
-          "biome": "thelunaris:lunar_forests",
+          "biome": "thelunaris:hightop_jungle",
           "parameters": {
             "continentalness": [
               0.03,
@@ -303,7 +303,7 @@
           }
         },
         {
-          "biome": "thelunaris:lunar_forests",
+          "biome": "thelunaris:hightop_jungle",
           "parameters": {
             "continentalness": [
               0.03,
@@ -546,7 +546,7 @@
           }
         },
         {
-          "biome": "thelunaris:lunar_plains",
+          "biome": "thelunaris:frozen_cover",
           "parameters": {
             "continentalness": [
               0.03,
@@ -573,7 +573,7 @@
           }
         },
         {
-          "biome": "thelunaris:lunar_forests",
+          "biome": "thelunaris:hightop_jungle",
           "parameters": {
             "continentalness": [
               0.03,
@@ -654,7 +654,7 @@
           }
         },
         {
-          "biome": "thelunaris:lunar_plains",
+          "biome": "thelunaris:frozen_cover",
           "parameters": {
             "continentalness": [
               0.03,
@@ -681,7 +681,7 @@
           }
         },
         {
-          "biome": "thelunaris:lunar_forests",
+          "biome": "thelunaris:hightop_jungle",
           "parameters": {
             "continentalness": [
               0.03,
@@ -1514,7 +1514,7 @@
             ],
             "offset": 0.0,
             "temperature": [
-              -1.0,
+              0.6,
               1.0
             ],
             "weirdness": [
@@ -1569,12 +1569,192 @@
               0.2
             ],
             "humidity": [
+              -0.6,
+              0.6
+            ],
+            "offset": 0.0,
+            "temperature": [
+              -0.6,
+              0.6
+            ],
+            "weirdness": [
+              -1.0,
+              1.0
+            ]
+          }
+        },
+        {
+          "biome": "thelunaris:frozen_caves",
+          "parameters": {
+            "continentalness": [
+              -1.0,
+              1.0
+            ],
+            "depth": [
+              0.2,
+              0.9
+            ],
+            "erosion": [
+              -1.0,
+              -0.1
+            ],
+            "humidity": [
               -1.0,
               1.0
             ],
             "offset": 0.0,
             "temperature": [
               -1.0,
+              1.0
+            ],
+            "weirdness": [
+              -1.0,
+              1.0
+            ]
+          }
+        },
+        {
+          "biome": "thelunaris:frozen_caves",
+          "parameters": {
+            "continentalness": [
+              0.6,
+              1.0
+            ],
+            "depth": [
+              0.2,
+              0.9
+            ],
+            "erosion": [
+              -1.0,
+              0.2
+            ],
+            "humidity": [
+              -1.0,
+              -0.6
+            ],
+            "offset": 0.0,
+            "temperature": [
+              -1.0,
+              -0.6
+            ],
+            "weirdness": [
+              -1.0,
+              1.0
+            ]
+          }
+        },
+        {
+          "biome": "thelunaris:grassy_caves",
+          "parameters": {
+            "continentalness": [
+              -1.0,
+              1.0
+            ],
+            "depth": [
+              0.2,
+              0.9
+            ],
+            "erosion": [
+              -1.0,
+              -0.1
+            ],
+            "humidity": [
+              -1.0,
+              1.0
+            ],
+            "offset": 0.0,
+            "temperature": [
+              -1.0,
+              1.0
+            ],
+            "weirdness": [
+              -1.0,
+              1.0
+            ]
+          }
+        },
+        {
+          "biome": "thelunaris:grassy_caves",
+          "parameters": {
+            "continentalness": [
+              0.6,
+              1.0
+            ],
+            "depth": [
+              0.2,
+              0.9
+            ],
+            "erosion": [
+              -1.0,
+              0.2
+            ],
+            "humidity": [
+              0.6,
+              1.0
+            ],
+            "offset": 0.0,
+            "temperature": [
+              -1.0,
+              -0.6
+            ],
+            "weirdness": [
+              -1.0,
+              1.0
+            ]
+          }
+        },
+        {
+          "biome": "thelunaris:forested_caves",
+          "parameters": {
+            "continentalness": [
+              -1.0,
+              1.0
+            ],
+            "depth": [
+              0.2,
+              0.9
+            ],
+            "erosion": [
+              -1.0,
+              -0.1
+            ],
+            "humidity": [
+              -1.0,
+              1.0
+            ],
+            "offset": 0.0,
+            "temperature": [
+              -1.0,
+              1.0
+            ],
+            "weirdness": [
+              -1.0,
+              1.0
+            ]
+          }
+        },
+        {
+          "biome": "thelunaris:forested_caves",
+          "parameters": {
+            "continentalness": [
+              0.6,
+              1.0
+            ],
+            "depth": [
+              0.2,
+              0.9
+            ],
+            "erosion": [
+              -1.0,
+              0.2
+            ],
+            "humidity": [
+              -1.0,
+              -0.6
+            ],
+            "offset": 0.0,
+            "temperature": [
+              0.6,
               1.0
             ],
             "weirdness": [

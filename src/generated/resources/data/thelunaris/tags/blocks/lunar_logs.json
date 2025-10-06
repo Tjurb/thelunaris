@@ -11,6 +11,14 @@
     "thelunaris:stellar_log",
     "thelunaris:stripped_stellar_log",
     "thelunaris:stellar_wood",
-    "thelunaris:stripped_stellar_wood"
+    "thelunaris:stripped_stellar_wood",
+    "thelunaris:vinewood_log",
+    "thelunaris:vinewood_wood",
+    "thelunaris:stripped_vinewood_log",
+    "thelunaris:stripped_vinewood_wood",
+    "thelunaris:icewood_log",
+    "thelunaris:icewood_wood",
+    "thelunaris:stripped_icewood_log",
+    "thelunaris:stripped_icewood_wood"
   ]
 }

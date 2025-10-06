@@ -129,6 +129,7 @@ public class ModCreativeTabs {
 				pOutput.accept(ModBlocks.STRIPPED_SKYOAK_WOOD.get());
 				pOutput.accept(ModBlocks.SKYOAK_LEAVES.get());;
 				pOutput.accept(ModBlocks.GLOWING_SKYOAK_LEAVES.get());;
+				pOutput.accept(ModBlocks.FROZEN_SKYOAK_LEAVES.get());;
 				pOutput.accept(ModBlocks.SKYOAK_PLANKS.get());
 				pOutput.accept(ModBlocks.SKYOAK_STAIRS.get());
 				pOutput.accept(ModBlocks.SKYOAK_SLAB.get());
@@ -138,6 +139,38 @@ public class ModCreativeTabs {
 				pOutput.accept(ModBlocks.SKYOAK_FENCE_GATE.get());
 				pOutput.accept(ModBlocks.SKYOAK_DOOR.get());
 				pOutput.accept(ModBlocks.SKYOAK_TRAPDOOR.get());
+				
+				pOutput.accept(ModBlocks.VINEWOOD_SAPLING.get());
+				pOutput.accept(ModBlocks.VINEWOOD_LOG.get());
+				pOutput.accept(ModBlocks.VINEWOOD_WOOD.get());
+				pOutput.accept(ModBlocks.STRIPPED_VINEWOOD_LOG.get());
+				pOutput.accept(ModBlocks.STRIPPED_VINEWOOD_WOOD.get());
+				pOutput.accept(ModBlocks.VINEWOOD_LEAVES.get());;
+				pOutput.accept(ModBlocks.VINEWOOD_PLANKS.get());
+				pOutput.accept(ModBlocks.VINEWOOD_STAIRS.get());
+				pOutput.accept(ModBlocks.VINEWOOD_SLAB.get());
+				pOutput.accept(ModBlocks.VINEWOOD_BUTTON.get());
+				pOutput.accept(ModBlocks.VINEWOOD_PRESSURE_PLATE.get());
+				pOutput.accept(ModBlocks.VINEWOOD_FENCE.get());
+				pOutput.accept(ModBlocks.VINEWOOD_FENCE_GATE.get());
+				pOutput.accept(ModBlocks.VINEWOOD_DOOR.get());
+				pOutput.accept(ModBlocks.VINEWOOD_TRAPDOOR.get());
+				
+				pOutput.accept(ModBlocks.ICEWOOD_SAPLING.get());
+				pOutput.accept(ModBlocks.ICEWOOD_LOG.get());
+				pOutput.accept(ModBlocks.ICEWOOD_WOOD.get());
+				pOutput.accept(ModBlocks.STRIPPED_ICEWOOD_LOG.get());
+				pOutput.accept(ModBlocks.STRIPPED_ICEWOOD_WOOD.get());
+				pOutput.accept(ModBlocks.ICEWOOD_LEAVES.get());;
+				pOutput.accept(ModBlocks.ICEWOOD_PLANKS.get());
+				pOutput.accept(ModBlocks.ICEWOOD_STAIRS.get());
+				pOutput.accept(ModBlocks.ICEWOOD_SLAB.get());
+				pOutput.accept(ModBlocks.ICEWOOD_BUTTON.get());
+				pOutput.accept(ModBlocks.ICEWOOD_PRESSURE_PLATE.get());
+				pOutput.accept(ModBlocks.ICEWOOD_FENCE.get());
+				pOutput.accept(ModBlocks.ICEWOOD_FENCE_GATE.get());
+				pOutput.accept(ModBlocks.ICEWOOD_DOOR.get());
+				pOutput.accept(ModBlocks.ICEWOOD_TRAPDOOR.get());
 				
 				//Pure Blocks
 				pOutput.accept(ModBlocks.LUNARITE_BLOCK.get());

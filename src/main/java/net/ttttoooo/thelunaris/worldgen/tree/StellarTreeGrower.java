@@ -13,6 +13,10 @@ public class StellarTreeGrower extends AbstractTreeGrower{
 	@Nullable
 	@Override
 	protected ResourceKey<ConfiguredFeature<?, ?>> getConfiguredFeature(RandomSource pRandom, boolean pHasFlowers) {
-		return ModConfiguredFeatures.STELLAR_KEY;
+		if (pRandom.nextInt(10) == 0) {
+	         return pHasFlowers ? ModConfiguredFeatures.STELLAR_KEY : ModConfiguredFeatures.LARGE_STELLAR_KEY;
+	      } else {
+	         return pHasFlowers ? ModConfiguredFeatures.DEEP_STELLAR_KEY : ModConfiguredFeatures.DEEP_STELLAR_KEY;
+	      }
 	}
 }

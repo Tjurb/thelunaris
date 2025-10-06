@@ -46,7 +46,9 @@ public class LunarisBiomeBuilder {
 	//New Biome
 	public static Biome frozencaves(HolderGetter<PlacedFeature> placedFeatures, HolderGetter<ConfiguredWorldCarver<?>> worldCarvers) {
 		return makeFrozenCaveBiome(new BiomeGenerationSettings.Builder(placedFeatures, worldCarvers)
-                .addFeature(GenerationStep.Decoration.UNDERGROUND_ORES, ModPlacedFeatures.LUNARIS_LUNARITE_ORE_PLACED_KEY)
+				.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, ModPlacedFeatures.DEEP_ICEWOOD_PLACED_KEY)
+				.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, ModPlacedFeatures.DEEP_STELLAR_PLACED_KEY)
+				.addFeature(GenerationStep.Decoration.UNDERGROUND_ORES, ModPlacedFeatures.LUNARIS_LUNARITE_ORE_PLACED_KEY)
                 .addFeature(GenerationStep.Decoration.UNDERGROUND_ORES, ModPlacedFeatures.LUNARIS_MOONSTEEL_ORE_PLACED_KEY)
                 .addFeature(GenerationStep.Decoration.UNDERGROUND_ORES, ModPlacedFeatures.LUNARIS_LARGE_LUNARITE_ORE_PLACED_KEY)
                 .addFeature(GenerationStep.Decoration.UNDERGROUND_ORES, ModPlacedFeatures.LUNARIS_LARGE_MOONSTEEL_ORE_PLACED_KEY)
@@ -74,7 +76,12 @@ public class LunarisBiomeBuilder {
 	//New Biome
 	public static Biome forestedcaves(HolderGetter<PlacedFeature> placedFeatures, HolderGetter<ConfiguredWorldCarver<?>> worldCarvers) {
 		return makeForestCaveBiome(new BiomeGenerationSettings.Builder(placedFeatures, worldCarvers)
-                .addFeature(GenerationStep.Decoration.UNDERGROUND_ORES, ModPlacedFeatures.LUNARIS_LUNARITE_ORE_PLACED_KEY)
+				.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, ModPlacedFeatures.DEEP_STELLAR_PLACED_KEY)
+				.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, ModPlacedFeatures.DEEP_CELEST_PLACED_KEY)
+				.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, ModPlacedFeatures.TWISTED_VINEWOOD_PLACED_KEY)
+				.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, ModPlacedFeatures.TALL_LUNARIS_GRASS_PATCH_PLACED_KEY)
+        		.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, ModPlacedFeatures.LUNARIS_GRASS_PATCH_PLACED_KEY)
+        		.addFeature(GenerationStep.Decoration.UNDERGROUND_ORES, ModPlacedFeatures.LUNARIS_LUNARITE_ORE_PLACED_KEY)
                 .addFeature(GenerationStep.Decoration.UNDERGROUND_ORES, ModPlacedFeatures.LUNARIS_MOONSTEEL_ORE_PLACED_KEY)
                 .addFeature(GenerationStep.Decoration.UNDERGROUND_ORES, ModPlacedFeatures.LUNARIS_LARGE_LUNARITE_ORE_PLACED_KEY)
                 .addFeature(GenerationStep.Decoration.UNDERGROUND_ORES, ModPlacedFeatures.LUNARIS_LARGE_MOONSTEEL_ORE_PLACED_KEY)
@@ -102,7 +109,10 @@ public class LunarisBiomeBuilder {
 	//New Biome
 	public static Biome grassycaves(HolderGetter<PlacedFeature> placedFeatures, HolderGetter<ConfiguredWorldCarver<?>> worldCarvers) {
 		return makeGrassyCaveBiome(new BiomeGenerationSettings.Builder(placedFeatures, worldCarvers)
-                .addFeature(GenerationStep.Decoration.UNDERGROUND_ORES, ModPlacedFeatures.LUNARIS_LUNARITE_ORE_PLACED_KEY)
+				.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, ModPlacedFeatures.SMALL_VINEWOOD_PLACED_KEY)
+				.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, ModPlacedFeatures.TALL_LUNARIS_GRASS_PATCH_PLACED_KEY)
+        		.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, ModPlacedFeatures.LUNARIS_GRASS_PATCH_PLACED_KEY)
+        		.addFeature(GenerationStep.Decoration.UNDERGROUND_ORES, ModPlacedFeatures.LUNARIS_LUNARITE_ORE_PLACED_KEY)
                 .addFeature(GenerationStep.Decoration.UNDERGROUND_ORES, ModPlacedFeatures.LUNARIS_MOONSTEEL_ORE_PLACED_KEY)
                 .addFeature(GenerationStep.Decoration.UNDERGROUND_ORES, ModPlacedFeatures.LUNARIS_LARGE_LUNARITE_ORE_PLACED_KEY)
                 .addFeature(GenerationStep.Decoration.UNDERGROUND_ORES, ModPlacedFeatures.LUNARIS_LARGE_MOONSTEEL_ORE_PLACED_KEY)
@@ -339,10 +349,10 @@ public class LunarisBiomeBuilder {
 	//New Biome
     public static Biome hightopjungle(HolderGetter<PlacedFeature> placedFeatures, HolderGetter<ConfiguredWorldCarver<?>> worldCarvers) {
         return makeJungleBiome(new BiomeGenerationSettings.Builder(placedFeatures, worldCarvers)
-        		.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, ModPlacedFeatures.CELEST_PLACED_KEY)
+        		.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, ModPlacedFeatures.VINEWOOD_PLACED_KEY)
+        		.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, ModPlacedFeatures.TWISTED_VINEWOOD_PLACED_KEY)
+        		.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, ModPlacedFeatures.SMALL_VINEWOOD_PLACED_KEY)
         		.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, ModPlacedFeatures.STELLAR_PLACED_KEY)
-        		.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, ModPlacedFeatures.LARGE_CELEST_PLACED_KEY)
-        		.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, ModPlacedFeatures.LARGE_STELLAR_PLACED_KEY)
         		.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, ModPlacedFeatures.LUNARIS_GRASS_PATCH_PLACED_KEY)
         		.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, ModPlacedFeatures.LUNARIS_SARROT_PATCH_PLACED_KEY)
         		.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, ModPlacedFeatures.LUNAR_FLOWER_DEFAULT_PLACED_KEY)
@@ -373,12 +383,11 @@ public class LunarisBiomeBuilder {
 	//New Biome
     public static Biome frozencover(HolderGetter<PlacedFeature> placedFeatures, HolderGetter<ConfiguredWorldCarver<?>> worldCarvers) {
         return makeFrozenBiome(new BiomeGenerationSettings.Builder(placedFeatures, worldCarvers)
-        		.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, ModPlacedFeatures.CELEST_PLACED_KEY)
-        		.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, ModPlacedFeatures.STELLAR_PLACED_KEY)
-        		.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, ModPlacedFeatures.LARGE_CELEST_PLACED_KEY)
-        		.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, ModPlacedFeatures.LARGE_STELLAR_PLACED_KEY)
+        		.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, ModPlacedFeatures.FROZEN_SKYOAK_PLACED_KEY)
+        		.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, ModPlacedFeatures.ICEWOOD_PLACED_KEY)
+        		.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, ModPlacedFeatures.TALL_ICEWOOD_PLACED_KEY)
+        		.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, ModPlacedFeatures.SKYOAK_PLACED_KEY)
         		.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, ModPlacedFeatures.LUNARIS_GRASS_PATCH_PLACED_KEY)
-        		.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, ModPlacedFeatures.LUNARIS_SARROT_PATCH_PLACED_KEY)
         		.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, ModPlacedFeatures.LUNAR_FLOWER_DEFAULT_PLACED_KEY)
                 .addFeature(GenerationStep.Decoration.UNDERGROUND_ORES, ModPlacedFeatures.LUNARIS_LUNARITE_ORE_PLACED_KEY)
                 .addFeature(GenerationStep.Decoration.UNDERGROUND_ORES, ModPlacedFeatures.LUNARIS_MOONSTEEL_ORE_PLACED_KEY)
@@ -492,6 +501,7 @@ public class LunarisBiomeBuilder {
         );
     }
     
+    //new Builder
     public static Biome makeFrozenCaveBiome(BiomeGenerationSettings.Builder builder) {
         return fullDefinition(
                 false,
@@ -506,7 +516,7 @@ public class LunarisBiomeBuilder {
                 	.foliageColorOverride(0x260656)
                     .grassColorModifier(BiomeSpecialEffects.GrassColorModifier.NONE)
                     .ambientLoopSound(SoundEvents.AMBIENT_NETHER_WASTES_LOOP)
-                    .backgroundMusic(Musics.createGameMusic(SoundEvents.MUSIC_BIOME_NETHER_WASTES))
+                    .backgroundMusic(Musics.createGameMusic(SoundEvents.MUSIC_BIOME_FROZEN_PEAKS))
                     .build(),
                 new MobSpawnSettings.Builder()
                 	.creatureGenerationProbability(0.25F)
@@ -517,10 +527,11 @@ public class LunarisBiomeBuilder {
 	                	.build(),
                         builder 
                         .build(),
-                Biome.TemperatureModifier.NONE
+                Biome.TemperatureModifier.FROZEN
         );
     }
-    
+
+    //new Builder
     public static Biome makeForestCaveBiome(BiomeGenerationSettings.Builder builder) {
         return fullDefinition(
                 false,
@@ -535,7 +546,7 @@ public class LunarisBiomeBuilder {
                 	.foliageColorOverride(0x260656)
                     .grassColorModifier(BiomeSpecialEffects.GrassColorModifier.NONE)
                     .ambientLoopSound(SoundEvents.AMBIENT_NETHER_WASTES_LOOP)
-                    .backgroundMusic(Musics.createGameMusic(SoundEvents.MUSIC_BIOME_NETHER_WASTES))
+                    .backgroundMusic(Musics.createGameMusic(SoundEvents.MUSIC_BIOME_LUSH_CAVES))
                     .build(),
                 new MobSpawnSettings.Builder()
                 	.creatureGenerationProbability(0.25F)
@@ -549,7 +560,8 @@ public class LunarisBiomeBuilder {
                 Biome.TemperatureModifier.NONE
         );
     }
-    
+
+    //new Builder
     public static Biome makeGrassyCaveBiome(BiomeGenerationSettings.Builder builder) {
         return fullDefinition(
                 false,
@@ -564,7 +576,7 @@ public class LunarisBiomeBuilder {
                 	.foliageColorOverride(0x260656)
                     .grassColorModifier(BiomeSpecialEffects.GrassColorModifier.NONE)
                     .ambientLoopSound(SoundEvents.AMBIENT_NETHER_WASTES_LOOP)
-                    .backgroundMusic(Musics.createGameMusic(SoundEvents.MUSIC_BIOME_NETHER_WASTES))
+                    .backgroundMusic(Musics.createGameMusic(SoundEvents.MUSIC_BIOME_LUSH_CAVES))
                     .build(),
                 new MobSpawnSettings.Builder()
                 	.creatureGenerationProbability(0.25F)
@@ -748,6 +760,7 @@ public class LunarisBiomeBuilder {
         );
     }
     
+    //new builder
     public static Biome makeJungleBiome(BiomeGenerationSettings.Builder builder) {
         return fullDefinition(
                 false,
@@ -761,11 +774,10 @@ public class LunarisBiomeBuilder {
                 	.grassColorOverride(0x2986cc)
                 	.foliageColorOverride(0x156DAF)
                     .grassColorModifier(BiomeSpecialEffects.GrassColorModifier.NONE)
-                    .backgroundMusic(Musics.createGameMusic(SoundEvents.MUSIC_BIOME_FOREST))
+                    .backgroundMusic(Musics.createGameMusic(SoundEvents.MUSIC_BIOME_JUNGLE))
                     .build(),
                 new MobSpawnSettings.Builder()
                 	.creatureGenerationProbability(0.25F)
-                	.addSpawn(MobCategory.CREATURE, new MobSpawnSettings.SpawnerData(ModEntities.MOONCOW.get(), 80, 2, 4))
                 	.addSpawn(MobCategory.CREATURE, new MobSpawnSettings.SpawnerData(ModEntities.MOONSNAIL.get(), 20, 1, 2))
                 	.addSpawn(MobCategory.CREATURE, new MobSpawnSettings.SpawnerData(ModEntities.ARCHFISH.get(), 40, 3, 5))
                 	.addSpawn(MobCategory.MONSTER, new MobSpawnSettings.SpawnerData(ModEntities.PHYREX.get(), 10, 1, 2))
@@ -778,6 +790,7 @@ public class LunarisBiomeBuilder {
         );
     }
     
+    //new builder
     public static Biome makeFrozenBiome(BiomeGenerationSettings.Builder builder) {
         return fullDefinition(
                 false,
@@ -791,20 +804,18 @@ public class LunarisBiomeBuilder {
                 	.grassColorOverride(0x2986cc)
                 	.foliageColorOverride(0x156DAF)
                     .grassColorModifier(BiomeSpecialEffects.GrassColorModifier.NONE)
-                    .backgroundMusic(Musics.createGameMusic(SoundEvents.MUSIC_BIOME_FOREST))
+                    .backgroundMusic(Musics.createGameMusic(SoundEvents.MUSIC_BIOME_FROZEN_PEAKS))
                     .build(),
                 new MobSpawnSettings.Builder()
                 	.creatureGenerationProbability(0.25F)
                 	.addSpawn(MobCategory.CREATURE, new MobSpawnSettings.SpawnerData(ModEntities.MOONCOW.get(), 80, 2, 4))
-                	.addSpawn(MobCategory.CREATURE, new MobSpawnSettings.SpawnerData(ModEntities.MOONSNAIL.get(), 20, 1, 2))
-                	.addSpawn(MobCategory.CREATURE, new MobSpawnSettings.SpawnerData(ModEntities.ARCHFISH.get(), 40, 3, 5))
                 	.addSpawn(MobCategory.MONSTER, new MobSpawnSettings.SpawnerData(ModEntities.PHYREX.get(), 10, 1, 2))
                 	.addSpawn(MobCategory.MONSTER, new MobSpawnSettings.SpawnerData(ModEntities.HEX.get(), 5, 2, 3))
                 
                 		.build(),
                         builder 
                         .build(),
-                Biome.TemperatureModifier.NONE
+                Biome.TemperatureModifier.FROZEN
         );
     }
 

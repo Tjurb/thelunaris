@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/cube_column",
+  "textures": {
+    "end": "thelunaris:block/icewood_log_top",
+    "side": "thelunaris:block/icewood_log"
+  }
+}

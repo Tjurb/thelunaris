@@ -55,8 +55,10 @@ import net.ttttoooo.thelunaris.block.custom.VailstoneFurnace;
 import net.ttttoooo.thelunaris.block.custom.portal.ModPortalBlock;
 import net.ttttoooo.thelunaris.item.ModItems;
 import net.ttttoooo.thelunaris.worldgen.tree.CelestTreeGrower;
+import net.ttttoooo.thelunaris.worldgen.tree.IcewoodTreeGrower;
 import net.ttttoooo.thelunaris.worldgen.tree.SkyoakTreeGrower;
 import net.ttttoooo.thelunaris.worldgen.tree.StellarTreeGrower;
+import net.ttttoooo.thelunaris.worldgen.tree.VinewoodTreeGrower;
 
 public class ModBlocks {
 	public static final DeferredRegister<Block> BLOCKS =
@@ -380,6 +382,23 @@ public class ModBlocks {
                     return 30;
                 }
 			});
+	public static final RegistryObject<Block> FROZEN_SKYOAK_LEAVES = registerBlock("frozen_skyoak_leaves", 
+			() -> new LeavesBlock(BlockBehaviour.Properties.copy(Blocks.OAK_LEAVES).sound(SoundType.GLASS)) {
+				@Override
+                public boolean isFlammable(BlockState state, BlockGetter level, BlockPos pos, Direction direction) {
+                    return true;
+                }
+
+                @Override
+                public int getFlammability(BlockState state, BlockGetter level, BlockPos pos, Direction direction) {
+                    return 60;
+                }
+
+                @Override
+                public int getFireSpreadSpeed(BlockState state, BlockGetter level, BlockPos pos, Direction direction) {
+                    return 30;
+                }
+			});
 	public static final RegistryObject<Block> GLOWING_SKYOAK_LEAVES = registerBlock("glowing_skyoak_leaves", 
 			() -> new LeavesBlock(BlockBehaviour.Properties.copy(Blocks.OAK_LEAVES).sound(SoundType.GRASS).lightLevel((state) -> 10)) {
 				@Override
@@ -467,6 +486,188 @@ public class ModBlocks {
             () -> new TrapDoorBlock(BlockBehaviour.Properties.copy(Blocks.OAK_PLANKS).sound(SoundType.WOOD)
             		.noOcclusion(), BlockSetType.OAK));
 	
+	public static final RegistryObject<Block> VINEWOOD_LOG = registerBlock("vinewood_log", 
+			() -> new ModFlammableRotatedPillarBlock(BlockBehaviour.Properties.copy(Blocks.OAK_LOG).sound(SoundType.WOOD).strength(3f)));
+	public static final RegistryObject<Block> VINEWOOD_WOOD = registerBlock("vinewood_wood", 
+			() -> new ModFlammableRotatedPillarBlock(BlockBehaviour.Properties.copy(Blocks.OAK_WOOD).sound(SoundType.WOOD).strength(3f)));
+	public static final RegistryObject<Block> VINEWOOD_LEAVES = registerBlock("vinewood_leaves", 
+			() -> new LeavesBlock(BlockBehaviour.Properties.copy(Blocks.OAK_LEAVES).sound(SoundType.GRASS)) {
+				@Override
+                public boolean isFlammable(BlockState state, BlockGetter level, BlockPos pos, Direction direction) {
+                    return true;
+                }
+
+                @Override
+                public int getFlammability(BlockState state, BlockGetter level, BlockPos pos, Direction direction) {
+                    return 60;
+                }
+
+                @Override
+                public int getFireSpreadSpeed(BlockState state, BlockGetter level, BlockPos pos, Direction direction) {
+                    return 30;
+                }
+			});
+	public static final RegistryObject<Block> VINEWOOD_PLANKS = registerBlock("vinewood_planks", 
+			() -> new Block(BlockBehaviour.Properties.copy(Blocks.OAK_PLANKS).sound(SoundType.WOOD)) {
+				@Override
+                public boolean isFlammable(BlockState state, BlockGetter level, BlockPos pos, Direction direction) {
+                    return true;
+                }
+
+                @Override
+                public int getFlammability(BlockState state, BlockGetter level, BlockPos pos, Direction direction) {
+                    return 20;
+                }
+
+                @Override
+                public int getFireSpreadSpeed(BlockState state, BlockGetter level, BlockPos pos, Direction direction) {
+                    return 5;
+                }
+			});
+	public static final RegistryObject<Block> VINEWOOD_STAIRS = registerBlock("vinewood_stairs", 
+			() -> new StairBlock(() -> ModBlocks.VINEWOOD_PLANKS.get().defaultBlockState(),
+			BlockBehaviour.Properties.copy(Blocks.OAK_PLANKS).sound(SoundType.WOOD)) {
+				@Override
+                public boolean isFlammable(BlockState state, BlockGetter level, BlockPos pos, Direction direction) {
+                    return true;
+                }
+
+                @Override
+                public int getFlammability(BlockState state, BlockGetter level, BlockPos pos, Direction direction) {
+                    return 20;
+                }
+
+                @Override
+                public int getFireSpreadSpeed(BlockState state, BlockGetter level, BlockPos pos, Direction direction) {
+                    return 5;
+                }
+			});
+	public static final RegistryObject<Block> VINEWOOD_SLAB = registerBlock("vinewood_slab", 
+			() -> new SlabBlock(BlockBehaviour.Properties.copy(Blocks.OAK_PLANKS).sound(SoundType.WOOD)) {
+				@Override
+                public boolean isFlammable(BlockState state, BlockGetter level, BlockPos pos, Direction direction) {
+                    return true;
+                }
+
+                @Override
+                public int getFlammability(BlockState state, BlockGetter level, BlockPos pos, Direction direction) {
+                    return 20;
+                }
+
+                @Override
+                public int getFireSpreadSpeed(BlockState state, BlockGetter level, BlockPos pos, Direction direction) {
+                    return 5;
+                }
+			});
+    public static final RegistryObject<Block> VINEWOOD_BUTTON = registerBlock("vinewood_button",
+            () -> new ButtonBlock(BlockBehaviour.Properties.copy(Blocks.OAK_BUTTON).sound(SoundType.WOOD),
+                    BlockSetType.OAK, 10, true));
+    public static final RegistryObject<Block> VINEWOOD_PRESSURE_PLATE = registerBlock("vinewood_pressure_plate",
+            () -> new PressurePlateBlock(PressurePlateBlock.Sensitivity.EVERYTHING, BlockBehaviour.Properties.copy(Blocks.OAK_PLANKS)
+            		.sound(SoundType.WOOD),BlockSetType.OAK));
+    public static final RegistryObject<Block> VINEWOOD_FENCE = registerBlock("vinewood_fence",
+            () -> new FenceBlock(BlockBehaviour.Properties.copy(Blocks.OAK_PLANKS).sound(SoundType.WOOD)));
+    public static final RegistryObject<Block> VINEWOOD_FENCE_GATE = registerBlock("vinewood_fence_gate",
+            () -> new FenceGateBlock(BlockBehaviour.Properties.copy(Blocks.OAK_PLANKS).sound(SoundType.WOOD),
+            		SoundEvents.FENCE_GATE_OPEN, SoundEvents.FENCE_GATE_CLOSE));
+    public static final RegistryObject<Block> VINEWOOD_DOOR = registerBlock("vinewood_door",
+            () -> new DoorBlock(BlockBehaviour.Properties.copy(Blocks.OAK_PLANKS).sound(SoundType.WOOD)
+            		.noOcclusion(), BlockSetType.OAK));
+    public static final RegistryObject<Block> VINEWOOD_TRAPDOOR = registerBlock("vinewood_trapdoor",
+            () -> new TrapDoorBlock(BlockBehaviour.Properties.copy(Blocks.OAK_PLANKS).sound(SoundType.WOOD)
+            		.noOcclusion(), BlockSetType.OAK));
+    
+    public static final RegistryObject<Block> ICEWOOD_LOG = registerBlock("icewood_log", 
+			() -> new ModFlammableRotatedPillarBlock(BlockBehaviour.Properties.copy(Blocks.OAK_LOG).sound(SoundType.GLASS).strength(3f)));
+	public static final RegistryObject<Block> ICEWOOD_WOOD = registerBlock("icewood_wood", 
+			() -> new ModFlammableRotatedPillarBlock(BlockBehaviour.Properties.copy(Blocks.OAK_WOOD).sound(SoundType.GLASS).strength(3f)));
+	public static final RegistryObject<Block> ICEWOOD_LEAVES = registerBlock("icewood_leaves", 
+			() -> new LeavesBlock(BlockBehaviour.Properties.copy(Blocks.OAK_LEAVES).sound(SoundType.GLASS)) {
+				@Override
+                public boolean isFlammable(BlockState state, BlockGetter level, BlockPos pos, Direction direction) {
+                    return true;
+                }
+
+                @Override
+                public int getFlammability(BlockState state, BlockGetter level, BlockPos pos, Direction direction) {
+                    return 60;
+                }
+
+                @Override
+                public int getFireSpreadSpeed(BlockState state, BlockGetter level, BlockPos pos, Direction direction) {
+                    return 30;
+                }
+			});
+	public static final RegistryObject<Block> ICEWOOD_PLANKS = registerBlock("icewood_planks", 
+			() -> new Block(BlockBehaviour.Properties.copy(Blocks.OAK_PLANKS).sound(SoundType.GLASS)) {
+				@Override
+                public boolean isFlammable(BlockState state, BlockGetter level, BlockPos pos, Direction direction) {
+                    return true;
+                }
+
+                @Override
+                public int getFlammability(BlockState state, BlockGetter level, BlockPos pos, Direction direction) {
+                    return 20;
+                }
+
+                @Override
+                public int getFireSpreadSpeed(BlockState state, BlockGetter level, BlockPos pos, Direction direction) {
+                    return 5;
+                }
+			});
+	public static final RegistryObject<Block> ICEWOOD_STAIRS = registerBlock("icewood_stairs", 
+			() -> new StairBlock(() -> ModBlocks.ICEWOOD_PLANKS.get().defaultBlockState(),
+			BlockBehaviour.Properties.copy(Blocks.OAK_PLANKS).sound(SoundType.GLASS)) {
+				@Override
+                public boolean isFlammable(BlockState state, BlockGetter level, BlockPos pos, Direction direction) {
+                    return true;
+                }
+
+                @Override
+                public int getFlammability(BlockState state, BlockGetter level, BlockPos pos, Direction direction) {
+                    return 20;
+                }
+
+                @Override
+                public int getFireSpreadSpeed(BlockState state, BlockGetter level, BlockPos pos, Direction direction) {
+                    return 5;
+                }
+			});
+	public static final RegistryObject<Block> ICEWOOD_SLAB = registerBlock("icewood_slab", 
+			() -> new SlabBlock(BlockBehaviour.Properties.copy(Blocks.OAK_PLANKS).sound(SoundType.GLASS)) {
+				@Override
+                public boolean isFlammable(BlockState state, BlockGetter level, BlockPos pos, Direction direction) {
+                    return true;
+                }
+
+                @Override
+                public int getFlammability(BlockState state, BlockGetter level, BlockPos pos, Direction direction) {
+                    return 20;
+                }
+
+                @Override
+                public int getFireSpreadSpeed(BlockState state, BlockGetter level, BlockPos pos, Direction direction) {
+                    return 5;
+                }
+			});
+    public static final RegistryObject<Block> ICEWOOD_BUTTON = registerBlock("icewood_button",
+            () -> new ButtonBlock(BlockBehaviour.Properties.copy(Blocks.OAK_BUTTON).sound(SoundType.GLASS),
+                    BlockSetType.OAK, 10, true));
+    public static final RegistryObject<Block> ICEWOOD_PRESSURE_PLATE = registerBlock("icewood_pressure_plate",
+            () -> new PressurePlateBlock(PressurePlateBlock.Sensitivity.EVERYTHING, BlockBehaviour.Properties.copy(Blocks.OAK_PLANKS)
+            		.sound(SoundType.GLASS),BlockSetType.OAK));
+    public static final RegistryObject<Block> ICEWOOD_FENCE = registerBlock("icewood_fence",
+            () -> new FenceBlock(BlockBehaviour.Properties.copy(Blocks.OAK_PLANKS).sound(SoundType.GLASS)));
+    public static final RegistryObject<Block> ICEWOOD_FENCE_GATE = registerBlock("icewood_fence_gate",
+            () -> new FenceGateBlock(BlockBehaviour.Properties.copy(Blocks.OAK_PLANKS).sound(SoundType.GLASS),
+            		SoundEvents.FENCE_GATE_OPEN, SoundEvents.FENCE_GATE_CLOSE));
+    public static final RegistryObject<Block> ICEWOOD_DOOR = registerBlock("icewood_door",
+            () -> new DoorBlock(BlockBehaviour.Properties.copy(Blocks.OAK_PLANKS).sound(SoundType.GLASS)
+            		.noOcclusion(), BlockSetType.OAK));
+    public static final RegistryObject<Block> ICEWOOD_TRAPDOOR = registerBlock("icewood_trapdoor",
+            () -> new TrapDoorBlock(BlockBehaviour.Properties.copy(Blocks.OAK_PLANKS).sound(SoundType.GLASS)
+            		.noOcclusion(), BlockSetType.OAK));
+	
 	//Sapling Blocks
 	public static final RegistryObject<Block> CELEST_SAPLING = registerBlock("celest_sapling", 
 			() -> new SaplingBlock(new CelestTreeGrower(), BlockBehaviour.Properties.copy(Blocks.OAK_SAPLING)));
@@ -474,6 +675,10 @@ public class ModBlocks {
 			() -> new SaplingBlock(new StellarTreeGrower(), BlockBehaviour.Properties.copy(Blocks.OAK_SAPLING)));
 	public static final RegistryObject<Block> SKYOAK_SAPLING = registerBlock("skyoak_sapling", 
 			() -> new SaplingBlock(new SkyoakTreeGrower(), BlockBehaviour.Properties.copy(Blocks.OAK_SAPLING)));
+	public static final RegistryObject<Block> VINEWOOD_SAPLING = registerBlock("vinewood_sapling", 
+			() -> new SaplingBlock(new VinewoodTreeGrower(), BlockBehaviour.Properties.copy(Blocks.OAK_SAPLING)));
+	public static final RegistryObject<Block> ICEWOOD_SAPLING = registerBlock("icewood_sapling", 
+			() -> new SaplingBlock(new IcewoodTreeGrower(), BlockBehaviour.Properties.copy(Blocks.OAK_SAPLING)));
 	
 	//Stripped Logs
 	public static final RegistryObject<Block> STRIPPED_CELEST_LOG = registerBlock("stripped_celest_log", 
@@ -490,6 +695,16 @@ public class ModBlocks {
 			() -> new ModFlammableRotatedPillarBlock(BlockBehaviour.Properties.copy(Blocks.OAK_LOG).sound(SoundType.WOOD).strength(3f)));
 	public static final RegistryObject<Block> STRIPPED_SKYOAK_WOOD = registerBlock("stripped_skyoak_wood", 
 			() -> new ModFlammableRotatedPillarBlock(BlockBehaviour.Properties.copy(Blocks.OAK_WOOD).sound(SoundType.WOOD).strength(3f)));
+	
+	public static final RegistryObject<Block> STRIPPED_VINEWOOD_LOG = registerBlock("stripped_vinewood_log", 
+			() -> new ModFlammableRotatedPillarBlock(BlockBehaviour.Properties.copy(Blocks.OAK_LOG).sound(SoundType.WOOD).strength(3f)));
+	public static final RegistryObject<Block> STRIPPED_VINEWOOD_WOOD = registerBlock("stripped_vinewood_wood", 
+			() -> new ModFlammableRotatedPillarBlock(BlockBehaviour.Properties.copy(Blocks.OAK_WOOD).sound(SoundType.WOOD).strength(3f)));
+	
+	public static final RegistryObject<Block> STRIPPED_ICEWOOD_LOG = registerBlock("stripped_icewood_log", 
+			() -> new ModFlammableRotatedPillarBlock(BlockBehaviour.Properties.copy(Blocks.OAK_LOG).sound(SoundType.GLASS).strength(3f)));
+	public static final RegistryObject<Block> STRIPPED_ICEWOOD_WOOD = registerBlock("stripped_icewood_wood", 
+			() -> new ModFlammableRotatedPillarBlock(BlockBehaviour.Properties.copy(Blocks.OAK_WOOD).sound(SoundType.GLASS).strength(3f)));
 	
 	//Vailstone Blocks
 	public static final RegistryObject<Block> VAILSTONE = registerBlock("vailstone", 

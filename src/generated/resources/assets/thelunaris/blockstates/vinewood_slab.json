@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=bottom": {
+      "model": "thelunaris:block/vinewood_slab"
+    },
+    "type=double": {
+      "model": "thelunaris:block/vinewood_planks"
+    },
+    "type=top": {
+      "model": "thelunaris:block/vinewood_slab_top"
+    }
+  }
+}

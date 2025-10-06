@@ -29,7 +29,17 @@ public class ModBiomeTagProvider extends BiomeTagsProvider{
         			ModBiomes.SKYWORD_MOUNTAINS,
         			ModBiomes.SLEEPING_SANDS,
         			ModBiomes.SHIMMERING_COAST,
-        			ModBiomes.SAPPHIRE_RIVER);
+        			ModBiomes.SAPPHIRE_RIVER,
+        			
+        			ModBiomes.CRIMSON_SHELFS,
+        			ModBiomes.BARREN_DEEP,
+        			ModBiomes.DUSKLIGHT_CAVES,
+        			
+        			ModBiomes.FORESTED_CAVES,
+        			ModBiomes.FROZEN_CAVES,
+        			ModBiomes.GRASSY_CAVES,
+        			ModBiomes.FROZEN_COVER,
+        			ModBiomes.HIGHTOP_JUNGLE);
         
         this.tag(ModTags.Biomes.IS_LUNARIS_MOUNTAIN)
         	.add(ModBiomes.SKYWORD_MOUNTAINS);

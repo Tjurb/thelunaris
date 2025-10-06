@@ -7,7 +7,7 @@
     ]
   },
   "creature_spawn_probability": 0.25,
-  "downfall": 0.8,
+  "downfall": 0.0,
   "effects": {
     "fog_color": 1196646,
     "foliage_color": 1404335,
@@ -16,11 +16,11 @@
       "max_delay": 24000,
       "min_delay": 12000,
       "replace_current_music": false,
-      "sound": "minecraft:music.overworld.forest"
+      "sound": "minecraft:music.game"
     },
     "sky_color": 1196646,
-    "water_color": 1118549,
-    "water_fog_color": 1118549
+    "water_color": 1114214,
+    "water_fog_color": 1114214
   },
   "features": [
     [],
@@ -68,35 +68,29 @@
     "creature": [
       {
         "type": "thelunaris:mooncow",
-        "maxCount": 4,
-        "minCount": 2,
-        "weight": 80
-      },
-      {
-        "type": "thelunaris:moonsnail",
         "maxCount": 2,
         "minCount": 1,
-        "weight": 20
+        "weight": 40
       },
       {
         "type": "thelunaris:archfish",
         "maxCount": 5,
         "minCount": 3,
-        "weight": 40
+        "weight": 10
       }
     ],
     "misc": [],
     "monster": [
       {
         "type": "thelunaris:phyrex",
-        "maxCount": 2,
+        "maxCount": 1,
         "minCount": 1,
         "weight": 10
       },
       {
-        "type": "thelunaris:hex",
-        "maxCount": 3,
-        "minCount": 2,
+        "type": "thelunaris:lunarsleeper",
+        "maxCount": 1,
+        "minCount": 1,
         "weight": 5
       }
     ],
@@ -104,5 +98,5 @@
     "water_ambient": [],
     "water_creature": []
   },
-  "temperature": 0.7
+  "temperature": 2.0
 }

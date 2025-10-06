@@ -78,13 +78,15 @@ public class ModPlacedFeatures {
 	public static final ResourceKey<PlacedFeature> DEEP_STELLAR_PLACED_KEY = registerKey("deep_stellar_placed");
 	
 	public static final ResourceKey<PlacedFeature> FROZEN_SKYOAK_PLACED_KEY = registerKey("frozen_skyoak_placed");
-	public static final ResourceKey<PlacedFeature> LARGE_FROZEN_SKYOAK_PLACED_KEY = registerKey("large_frozen_skyoak_placed");
-	public static final ResourceKey<PlacedFeature> ICELEAF_PLACED_KEY = registerKey("iceleaf_placed");
-	public static final ResourceKey<PlacedFeature> LARGE_ICELEAF_PLACED_KEY = registerKey("large_iceleaf_placed");
+	public static final ResourceKey<PlacedFeature> ICEWOOD_PLACED_KEY = registerKey("icewood_placed");
+	public static final ResourceKey<PlacedFeature> TALL_ICEWOOD_PLACED_KEY = registerKey("tall_icewood_placed");
 	
 	public static final ResourceKey<PlacedFeature> TWISTED_VINEWOOD_PLACED_KEY = registerKey("twisted_vinewood_placed");
-	public static final ResourceKey<PlacedFeature> SHORT_VINEWOOD_PLACED_KEY = registerKey("short_vinewood_placed");
+	public static final ResourceKey<PlacedFeature> SMALL_VINEWOOD_PLACED_KEY = registerKey("small_vinewood_placed");
 	public static final ResourceKey<PlacedFeature> VINEWOOD_PLACED_KEY = registerKey("vinewood_placed");
+	
+	public static final ResourceKey<PlacedFeature> DEEP_ICEWOOD_PLACED_KEY = registerKey("deep_icewood_placed");
+	public static final ResourceKey<PlacedFeature> DEEP_VINEWOOD_PLACED_KEY = registerKey("deep_vinewood_placed");
 	
 	//ground vegetation key
 	public static final ResourceKey<PlacedFeature> LUNARIS_GRASS_PATCH_PLACED_KEY = registerKey("lunaris_grass_patch_placed");
@@ -211,6 +213,29 @@ public class ModPlacedFeatures {
         register(context, DEEP_CELEST_PLACED_KEY, configuredFeatures.getOrThrow(ModConfiguredFeatures.DEEP_CELEST_KEY), tree(8));
         register(context, DEEP_STELLAR_PLACED_KEY, configuredFeatures.getOrThrow(ModConfiguredFeatures.DEEP_STELLAR_KEY), tree(8));
 		
+        register(context, ICEWOOD_PLACED_KEY, configuredFeatures.getOrThrow(ModConfiguredFeatures.ICEWOOD_KEY),
+                VegetationPlacements.treePlacement(PlacementUtils.countExtra(1, 0.2f, 2),
+                        ModBlocks.ICEWOOD_SAPLING.get()));
+        register(context, TALL_ICEWOOD_PLACED_KEY, configuredFeatures.getOrThrow(ModConfiguredFeatures.TALL_ICEWOOD_KEY),
+                VegetationPlacements.treePlacement(PlacementUtils.countExtra(2, 0.2f, 2),
+                        ModBlocks.ICEWOOD_SAPLING.get()));
+        register(context, FROZEN_SKYOAK_PLACED_KEY, configuredFeatures.getOrThrow(ModConfiguredFeatures.FROZEN_SKYOAK_KEY),
+                VegetationPlacements.treePlacement(PlacementUtils.countExtra(1, 0.2f, 2),
+                        ModBlocks.SKYOAK_SAPLING.get()));
+        
+        register(context, VINEWOOD_PLACED_KEY, configuredFeatures.getOrThrow(ModConfiguredFeatures.VINEWOOD_KEY),
+                VegetationPlacements.treePlacement(PlacementUtils.countExtra(1, 0.2f, 2),
+                        ModBlocks.VINEWOOD_SAPLING.get()));
+        register(context, SMALL_VINEWOOD_PLACED_KEY, configuredFeatures.getOrThrow(ModConfiguredFeatures.SMALL_VINEWOOD_KEY),
+                VegetationPlacements.treePlacement(PlacementUtils.countExtra(4, 0.2f, 2),
+                        ModBlocks.VINEWOOD_SAPLING.get()));
+        register(context, TWISTED_VINEWOOD_PLACED_KEY, configuredFeatures.getOrThrow(ModConfiguredFeatures.TWISTED_VINEWOOD_KEY),
+                VegetationPlacements.treePlacement(PlacementUtils.countExtra(1, 0.2f, 2),
+                        ModBlocks.VINEWOOD_SAPLING.get()));
+        
+        register(context, DEEP_ICEWOOD_PLACED_KEY, configuredFeatures.getOrThrow(ModConfiguredFeatures.DEEP_ICEWOOD_KEY), tree(8));
+        register(context, DEEP_VINEWOOD_PLACED_KEY, configuredFeatures.getOrThrow(ModConfiguredFeatures.DEEP_VINEWOOD_KEY), tree(8));
+        
         //vegetation register
         register(context, LUNARIS_GRASS_PATCH_PLACED_KEY, configuredFeatures.getOrThrow(ModConfiguredFeatures.LUNARIS_GRASS_PATCH_KEY),
         		VegetationPlacements.worldSurfaceSquaredWithCount(5));

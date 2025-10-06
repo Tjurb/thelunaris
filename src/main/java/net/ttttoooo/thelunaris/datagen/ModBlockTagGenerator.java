@@ -150,12 +150,16 @@ public class ModBlockTagGenerator extends BlockTagsProvider{
 		this.tag(BlockTags.FENCES)
 			.add(ModBlocks.CELEST_FENCE.get(),
 					ModBlocks.STELLAR_FENCE.get(),
-					ModBlocks.SKYOAK_FENCE.get());
+					ModBlocks.SKYOAK_FENCE.get(),
+					ModBlocks.VINEWOOD_FENCE.get(),
+					ModBlocks.ICEWOOD_FENCE.get());
 
 		this.tag(BlockTags.FENCE_GATES)
 			.add(ModBlocks.CELEST_FENCE_GATE.get(),
 					ModBlocks.STELLAR_FENCE_GATE.get(),
-					ModBlocks.SKYOAK_FENCE_GATE.get());
+					ModBlocks.SKYOAK_FENCE_GATE.get(),
+					ModBlocks.VINEWOOD_FENCE_GATE.get(),
+					ModBlocks.ICEWOOD_FENCE_GATE.get());
 		
 		this.tag(BlockTags.MINEABLE_WITH_AXE)
 			.add(ModBlocks.CELEST_LOG.get(),
@@ -200,6 +204,34 @@ public class ModBlockTagGenerator extends BlockTagsProvider{
 					ModBlocks.SKYOAK_DOOR.get(),
 					ModBlocks.SKYOAK_TRAPDOOR.get(),
 					
+					ModBlocks.VINEWOOD_LOG.get(),
+					ModBlocks.VINEWOOD_WOOD.get(),
+					ModBlocks.STRIPPED_VINEWOOD_LOG.get(),
+					ModBlocks.STRIPPED_VINEWOOD_WOOD.get(),
+					ModBlocks.VINEWOOD_PLANKS.get(),
+					ModBlocks.VINEWOOD_STAIRS.get(),
+					ModBlocks.VINEWOOD_SLAB.get(),
+					ModBlocks.VINEWOOD_BUTTON.get(),
+					ModBlocks.VINEWOOD_PRESSURE_PLATE.get(),
+					ModBlocks.VINEWOOD_FENCE.get(),
+					ModBlocks.VINEWOOD_FENCE_GATE.get(),
+					ModBlocks.VINEWOOD_DOOR.get(),
+					ModBlocks.VINEWOOD_TRAPDOOR.get(),
+					
+					ModBlocks.ICEWOOD_LOG.get(),
+					ModBlocks.ICEWOOD_WOOD.get(),
+					ModBlocks.STRIPPED_ICEWOOD_LOG.get(),
+					ModBlocks.STRIPPED_ICEWOOD_WOOD.get(),
+					ModBlocks.ICEWOOD_PLANKS.get(),
+					ModBlocks.ICEWOOD_STAIRS.get(),
+					ModBlocks.ICEWOOD_SLAB.get(),
+					ModBlocks.ICEWOOD_BUTTON.get(),
+					ModBlocks.ICEWOOD_PRESSURE_PLATE.get(),
+					ModBlocks.ICEWOOD_FENCE.get(),
+					ModBlocks.ICEWOOD_FENCE_GATE.get(),
+					ModBlocks.ICEWOOD_DOOR.get(),
+					ModBlocks.ICEWOOD_TRAPDOOR.get(),
+					
 					ModBlocks.LUNAR_CRAFTER.get(),
 					ModBlocks.LUNARIS_CRAFTING_TABLE.get());
 		
@@ -217,7 +249,12 @@ public class ModBlockTagGenerator extends BlockTagsProvider{
 					ModBlocks.SKYOAK_LOG.get(),
 					ModBlocks.SKYOAK_WOOD.get(),
 					ModBlocks.STRIPPED_SKYOAK_LOG.get(),
-					ModBlocks.STRIPPED_SKYOAK_WOOD.get());
+					ModBlocks.STRIPPED_SKYOAK_WOOD.get(),
+					
+					ModBlocks.VINEWOOD_LOG.get(),
+					ModBlocks.VINEWOOD_WOOD.get(),
+					ModBlocks.STRIPPED_VINEWOOD_LOG.get(),
+					ModBlocks.STRIPPED_VINEWOOD_WOOD.get());
 		
 		this.tag(ModTags.Blocks.LUNAR_LOGS)
 			.add(ModBlocks.CELEST_LOG.get(),
@@ -233,7 +270,17 @@ public class ModBlockTagGenerator extends BlockTagsProvider{
 					ModBlocks.STELLAR_LOG.get(),
 					ModBlocks.STRIPPED_STELLAR_LOG.get(),
 					ModBlocks.STELLAR_WOOD.get(),
-					ModBlocks.STRIPPED_STELLAR_WOOD.get());
+					ModBlocks.STRIPPED_STELLAR_WOOD.get(),
+					
+					ModBlocks.VINEWOOD_LOG.get(),
+					ModBlocks.VINEWOOD_WOOD.get(),
+					ModBlocks.STRIPPED_VINEWOOD_LOG.get(),
+					ModBlocks.STRIPPED_VINEWOOD_WOOD.get(),
+					
+					ModBlocks.ICEWOOD_LOG.get(),
+					ModBlocks.ICEWOOD_WOOD.get(),
+					ModBlocks.STRIPPED_ICEWOOD_LOG.get(),
+					ModBlocks.STRIPPED_ICEWOOD_WOOD.get());
 		
 		this.tag(BlockTags.CROPS)
 			.add(ModBlocks.LOONBERRY_CROP.get(),

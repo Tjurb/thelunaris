@@ -166,7 +166,7 @@ public class ModDimensions {
                                         		Climate.Parameter.span(0.55F, 1F), //Erosion
                                         		Climate.Parameter.span(0F, 0F), //Depth
                                         		Climate.Parameter.span(-1F, 1F), //Weirdness
-                                        		0.0F), biomeRegistry.getOrThrow(ModBiomes.LUNAR_FORESTS)),//WINDSWEPT FOREST & JUNGLE PLACEHOLER
+                                        		0.0F), biomeRegistry.getOrThrow(ModBiomes.HIGHTOP_JUNGLE)),//WINDSWEPT FOREST & JUNGLE PLACEHOLER
                                 Pair.of(
                                         Climate.parameters(
                                         		Climate.Parameter.span(0.2F, 0.55F), //Temp
@@ -193,7 +193,7 @@ public class ModDimensions {
                                         		Climate.Parameter.span(0.55F, 1F), //Erosion
                                         		Climate.Parameter.span(1F, 1F), //Depth
                                         		Climate.Parameter.span(-1F, 1F), //Weirdness
-                                        		0.0F), biomeRegistry.getOrThrow(ModBiomes.LUNAR_FORESTS)),//WINDSWEPT FOREST & JUNGLE PLACEHOLER
+                                        		0.0F), biomeRegistry.getOrThrow(ModBiomes.HIGHTOP_JUNGLE)),//WINDSWEPT FOREST & JUNGLE PLACEHOLER
                                 Pair.of(
                                         Climate.parameters(
                                         		Climate.Parameter.span(0.2F, 0.55F), //Temp
@@ -282,7 +282,7 @@ public class ModDimensions {
                                         		Climate.Parameter.span(0.45F, 0.55F), //Erosion
                                         		Climate.Parameter.span(0F, 0F), //Depth
                                         		Climate.Parameter.span(-1F, 1F), //Weirdness
-                                        		0.0F), biomeRegistry.getOrThrow(ModBiomes.LUNAR_PLAINS)),//SNOWY PLACEHOLDER
+                                        		0.0F), biomeRegistry.getOrThrow(ModBiomes.FROZEN_COVER)),
                                 Pair.of(
                                         Climate.parameters(
                                         		Climate.Parameter.span(-0.15F, 0.2F), //Temp
@@ -291,7 +291,7 @@ public class ModDimensions {
                                         		Climate.Parameter.span(0.45F, 0.55F), //Erosion
                                         		Climate.Parameter.span(0F, 0F), //Depth
                                         		Climate.Parameter.span(-1F, 1F), //Weirdness
-                                        		0.0F), biomeRegistry.getOrThrow(ModBiomes.LUNAR_FORESTS)),//JUNGLE PLACEHOLDER
+                                        		0.0F), biomeRegistry.getOrThrow(ModBiomes.HIGHTOP_JUNGLE)),
                                 Pair.of(
                                         Climate.parameters(
                                         		Climate.Parameter.span(-0.45F, -0.15F), //Temp
@@ -318,7 +318,7 @@ public class ModDimensions {
                                         		Climate.Parameter.span(0.45F, 0.55F), //Erosion
                                         		Climate.Parameter.span(1F, 1F), //Depth
                                         		Climate.Parameter.span(-1F, 1F), //Weirdness
-                                        		0.0F), biomeRegistry.getOrThrow(ModBiomes.LUNAR_PLAINS)),//SNOWY PLACEHOLDER
+                                        		0.0F), biomeRegistry.getOrThrow(ModBiomes.FROZEN_COVER)),
                                 Pair.of(
                                         Climate.parameters(
                                         		Climate.Parameter.span(-0.15F, 0.2F), //Temp
@@ -327,7 +327,7 @@ public class ModDimensions {
                                         		Climate.Parameter.span(0.45F, 0.55F), //Erosion
                                         		Climate.Parameter.span(1F, 1F), //Depth
                                         		Climate.Parameter.span(-1F, 1F), //Weirdness
-                                        		0.0F), biomeRegistry.getOrThrow(ModBiomes.LUNAR_FORESTS)),//JUNGLE PLACEHOLDER
+                                        		0.0F), biomeRegistry.getOrThrow(ModBiomes.HIGHTOP_JUNGLE)),
                                 Pair.of(
                                         Climate.parameters(
                                         		Climate.Parameter.span(-0.45F, -0.15F), //Temp
@@ -624,7 +624,7 @@ public class ModDimensions {
                                         		0.0F), biomeRegistry.getOrThrow(ModBiomes.CRIMSON_SHELFS)),
                                 Pair.of(
                                         Climate.parameters(
-                                        		Climate.Parameter.span(-1F, 1F), //Temp
+                                        		Climate.Parameter.span(0.6F, 1F), //Temp
                                         		Climate.Parameter.span(0.6F, 1F), //Humidity
                                         		Climate.Parameter.span(-1F, 1F), //Continentalness
                                         		Climate.Parameter.span(-1F, -0.1F), //Erosion
@@ -642,13 +642,67 @@ public class ModDimensions {
                                         		0.0F), biomeRegistry.getOrThrow(ModBiomes.BARREN_DEEP)),
                                 Pair.of(
                                         Climate.parameters(
-                                        		Climate.Parameter.span(-1F, 1F), //Temp
-                                        		Climate.Parameter.span(-1F, 1F), //Humidity
+                                        		Climate.Parameter.span(-0.6F, 0.6F), //Temp
+                                        		Climate.Parameter.span(-0.6F, 0.6F), //Humidity
                                         		Climate.Parameter.span(0.6F, 1F), //Continentalness
                                         		Climate.Parameter.span(-1F, 0.2F), //Erosion
                                         		Climate.Parameter.span(0.2F, 0.9F), //Depth
                                         		Climate.Parameter.span(-1F, 1F), //Weirdness
                                         		0.0F), biomeRegistry.getOrThrow(ModBiomes.BARREN_DEEP)),
+                                Pair.of(
+                                        Climate.parameters(
+                                        		Climate.Parameter.span(-1F, 1F), //Temp
+                                        		Climate.Parameter.span(-1F, 1F), //Humidity
+                                        		Climate.Parameter.span(-1F, 1F), //Continentalness
+                                        		Climate.Parameter.span(-1F, -0.1F), //Erosion
+                                        		Climate.Parameter.span(0.2F, 0.9F), //Depth
+                                        		Climate.Parameter.span(-1F, 1F), //Weirdness
+                                        		0.0F), biomeRegistry.getOrThrow(ModBiomes.FROZEN_CAVES)),
+                                Pair.of(
+                                        Climate.parameters(
+                                        		Climate.Parameter.span(-1F, -0.6F), //Temp
+                                        		Climate.Parameter.span(-1F, -0.6F), //Humidity
+                                        		Climate.Parameter.span(0.6F, 1F), //Continentalness
+                                        		Climate.Parameter.span(-1F, 0.2F), //Erosion
+                                        		Climate.Parameter.span(0.2F, 0.9F), //Depth
+                                        		Climate.Parameter.span(-1F, 1F), //Weirdness
+                                        		0.0F), biomeRegistry.getOrThrow(ModBiomes.FROZEN_CAVES)),
+                                Pair.of(
+                                        Climate.parameters(
+                                        		Climate.Parameter.span(-1F, 1F), //Temp
+                                        		Climate.Parameter.span(-1F, 1F), //Humidity
+                                        		Climate.Parameter.span(-1F, 1F), //Continentalness
+                                        		Climate.Parameter.span(-1F, -0.1F), //Erosion
+                                        		Climate.Parameter.span(0.2F, 0.9F), //Depth
+                                        		Climate.Parameter.span(-1F, 1F), //Weirdness
+                                        		0.0F), biomeRegistry.getOrThrow(ModBiomes.GRASSY_CAVES)),
+                                Pair.of(
+                                        Climate.parameters(
+                                        		Climate.Parameter.span(-1F, -0.6F), //Temp
+                                        		Climate.Parameter.span(0.6F, 1F), //Humidity
+                                        		Climate.Parameter.span(0.6F, 1F), //Continentalness
+                                        		Climate.Parameter.span(-1F, 0.2F), //Erosion
+                                        		Climate.Parameter.span(0.2F, 0.9F), //Depth
+                                        		Climate.Parameter.span(-1F, 1F), //Weirdness
+                                        		0.0F), biomeRegistry.getOrThrow(ModBiomes.GRASSY_CAVES)),
+                                Pair.of(
+                                        Climate.parameters(
+                                        		Climate.Parameter.span(-1F, 1F), //Temp
+                                        		Climate.Parameter.span(-1F, 1F), //Humidity
+                                        		Climate.Parameter.span(-1F, 1F), //Continentalness
+                                        		Climate.Parameter.span(-1F, -0.1F), //Erosion
+                                        		Climate.Parameter.span(0.2F, 0.9F), //Depth
+                                        		Climate.Parameter.span(-1F, 1F), //Weirdness
+                                        		0.0F), biomeRegistry.getOrThrow(ModBiomes.FORESTED_CAVES)),
+                                Pair.of(
+                                        Climate.parameters(
+                                        		Climate.Parameter.span(0.6F, 1F), //Temp
+                                        		Climate.Parameter.span(-1F, -0.6F), //Humidity
+                                        		Climate.Parameter.span(0.6F, 1F), //Continentalness
+                                        		Climate.Parameter.span(-1F, 0.2F), //Erosion
+                                        		Climate.Parameter.span(0.2F, 0.9F), //Depth
+                                        		Climate.Parameter.span(-1F, 1F), //Weirdness
+                                        		0.0F), biomeRegistry.getOrThrow(ModBiomes.FORESTED_CAVES)),
                                 Pair.of(
                                         Climate.parameters(
                                         		Climate.Parameter.span(-1F, 1F), //Temp

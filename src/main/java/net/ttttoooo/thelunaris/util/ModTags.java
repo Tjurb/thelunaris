@@ -56,6 +56,8 @@ public class ModTags {
 		public static final TagKey<Item> CELEST_WOODS = tag("celest_woods");
 		public static final TagKey<Item> STELLAR_WOODS = tag("stellar_woods");
 		public static final TagKey<Item> SKYOAK_WOODS = tag("skyoak_woods");
+		public static final TagKey<Item> VINEWOOD_WOODS = tag("vinewood_woods");
+		public static final TagKey<Item> ICEWOOD_WOODS = tag("icewood_woods");
 		
 		private static TagKey<Item> tag(String name){
 			return ItemTags.create(new ResourceLocation(TheLunaris.MODID, name));

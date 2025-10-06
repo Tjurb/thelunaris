@@ -158,6 +158,7 @@ public class ModBlockStateProvider extends BlockStateProvider{
 		blockItem(ModBlocks.STRIPPED_SKYOAK_WOOD);
 		blockWithItem(ModBlocks.SKYOAK_LEAVES);
 		blockWithItem(ModBlocks.GLOWING_SKYOAK_LEAVES);
+		blockWithItem(ModBlocks.FROZEN_SKYOAK_LEAVES);
 		blockWithItem(ModBlocks.SKYOAK_PLANKS);
 		stairsBlock(((StairBlock) ModBlocks.SKYOAK_STAIRS.get()), blockTexture(ModBlocks.SKYOAK_PLANKS.get()));
 		slabBlock(((SlabBlock) ModBlocks.SKYOAK_SLAB.get()), blockTexture(ModBlocks.SKYOAK_PLANKS.get()), blockTexture(ModBlocks.SKYOAK_PLANKS.get()));
@@ -167,6 +168,52 @@ public class ModBlockStateProvider extends BlockStateProvider{
         fenceGateBlock(((FenceGateBlock) ModBlocks.SKYOAK_FENCE_GATE.get()), blockTexture(ModBlocks.SKYOAK_PLANKS.get()));
         doorBlockWithRenderType(((DoorBlock) ModBlocks.SKYOAK_DOOR.get()), modLoc("block/skyoak_door_bottom"), modLoc("block/skyoak_door_top"), "cutout");
         trapdoorBlockWithRenderType(((TrapDoorBlock) ModBlocks.SKYOAK_TRAPDOOR.get()), modLoc("block/skyoak_trapdoor"), true, "cutout");
+        
+        logBlock(((RotatedPillarBlock)ModBlocks.VINEWOOD_LOG.get()));
+		saplingBlock(ModBlocks.VINEWOOD_SAPLING);
+		axisBlock(((RotatedPillarBlock)ModBlocks.VINEWOOD_WOOD.get()),
+				blockTexture(ModBlocks.VINEWOOD_LOG.get()),blockTexture(ModBlocks.VINEWOOD_LOG.get()));
+		axisBlock(((RotatedPillarBlock)ModBlocks.STRIPPED_VINEWOOD_LOG.get()),blockTexture(ModBlocks.STRIPPED_VINEWOOD_LOG.get()),
+				new ResourceLocation(TheLunaris.MODID, "block/stripped_vinewood_top"));
+		axisBlock(((RotatedPillarBlock)ModBlocks.STRIPPED_VINEWOOD_WOOD.get()),
+				blockTexture(ModBlocks.STRIPPED_VINEWOOD_LOG.get()),blockTexture(ModBlocks.STRIPPED_VINEWOOD_LOG.get()));
+		blockItem(ModBlocks.VINEWOOD_LOG);
+		blockItem(ModBlocks.VINEWOOD_WOOD);
+		blockItem(ModBlocks.STRIPPED_VINEWOOD_LOG);
+		blockItem(ModBlocks.STRIPPED_VINEWOOD_WOOD);
+		blockWithItem(ModBlocks.VINEWOOD_LEAVES);
+		blockWithItem(ModBlocks.VINEWOOD_PLANKS);
+		stairsBlock(((StairBlock) ModBlocks.VINEWOOD_STAIRS.get()), blockTexture(ModBlocks.VINEWOOD_PLANKS.get()));
+		slabBlock(((SlabBlock) ModBlocks.VINEWOOD_SLAB.get()), blockTexture(ModBlocks.VINEWOOD_PLANKS.get()), blockTexture(ModBlocks.VINEWOOD_PLANKS.get()));
+		buttonBlock(((ButtonBlock) ModBlocks.VINEWOOD_BUTTON.get()), blockTexture(ModBlocks.VINEWOOD_PLANKS.get()));
+        pressurePlateBlock(((PressurePlateBlock) ModBlocks.VINEWOOD_PRESSURE_PLATE.get()), blockTexture(ModBlocks.VINEWOOD_PLANKS.get()));
+        fenceBlock(((FenceBlock) ModBlocks.VINEWOOD_FENCE.get()), blockTexture(ModBlocks.VINEWOOD_PLANKS.get()));
+        fenceGateBlock(((FenceGateBlock) ModBlocks.VINEWOOD_FENCE_GATE.get()), blockTexture(ModBlocks.VINEWOOD_PLANKS.get()));
+        doorBlockWithRenderType(((DoorBlock) ModBlocks.VINEWOOD_DOOR.get()), modLoc("block/vinewood_door_bottom"), modLoc("block/vinewood_door_top"), "cutout");
+        trapdoorBlockWithRenderType(((TrapDoorBlock) ModBlocks.VINEWOOD_TRAPDOOR.get()), modLoc("block/vinewood_trapdoor"), true, "cutout");
+        
+        logBlock(((RotatedPillarBlock)ModBlocks.ICEWOOD_LOG.get()));
+		saplingBlock(ModBlocks.ICEWOOD_SAPLING);
+		axisBlock(((RotatedPillarBlock)ModBlocks.ICEWOOD_WOOD.get()),
+				blockTexture(ModBlocks.ICEWOOD_LOG.get()),blockTexture(ModBlocks.ICEWOOD_LOG.get()));
+		axisBlock(((RotatedPillarBlock)ModBlocks.STRIPPED_ICEWOOD_LOG.get()),blockTexture(ModBlocks.STRIPPED_ICEWOOD_LOG.get()),
+				new ResourceLocation(TheLunaris.MODID, "block/stripped_icewood_top"));
+		axisBlock(((RotatedPillarBlock)ModBlocks.STRIPPED_ICEWOOD_WOOD.get()),
+				blockTexture(ModBlocks.STRIPPED_ICEWOOD_LOG.get()),blockTexture(ModBlocks.STRIPPED_ICEWOOD_LOG.get()));
+		blockItem(ModBlocks.ICEWOOD_LOG);
+		blockItem(ModBlocks.ICEWOOD_WOOD);
+		blockItem(ModBlocks.STRIPPED_ICEWOOD_LOG);
+		blockItem(ModBlocks.STRIPPED_ICEWOOD_WOOD);
+		blockWithItem(ModBlocks.ICEWOOD_LEAVES);
+		blockWithItem(ModBlocks.ICEWOOD_PLANKS);
+		stairsBlock(((StairBlock) ModBlocks.ICEWOOD_STAIRS.get()), blockTexture(ModBlocks.ICEWOOD_PLANKS.get()));
+		slabBlock(((SlabBlock) ModBlocks.ICEWOOD_SLAB.get()), blockTexture(ModBlocks.ICEWOOD_PLANKS.get()), blockTexture(ModBlocks.ICEWOOD_PLANKS.get()));
+		buttonBlock(((ButtonBlock) ModBlocks.ICEWOOD_BUTTON.get()), blockTexture(ModBlocks.ICEWOOD_PLANKS.get()));
+        pressurePlateBlock(((PressurePlateBlock) ModBlocks.ICEWOOD_PRESSURE_PLATE.get()), blockTexture(ModBlocks.ICEWOOD_PLANKS.get()));
+        fenceBlock(((FenceBlock) ModBlocks.ICEWOOD_FENCE.get()), blockTexture(ModBlocks.ICEWOOD_PLANKS.get()));
+        fenceGateBlock(((FenceGateBlock) ModBlocks.ICEWOOD_FENCE_GATE.get()), blockTexture(ModBlocks.ICEWOOD_PLANKS.get()));
+        doorBlockWithRenderType(((DoorBlock) ModBlocks.ICEWOOD_DOOR.get()), modLoc("block/icewood_door_bottom"), modLoc("block/icewood_door_top"), "cutout");
+        trapdoorBlockWithRenderType(((TrapDoorBlock) ModBlocks.ICEWOOD_TRAPDOOR.get()), modLoc("block/icewood_trapdoor"), true, "cutout");
         
 		//stone blocks
 		blockWithItem(ModBlocks.VAILSTONE);

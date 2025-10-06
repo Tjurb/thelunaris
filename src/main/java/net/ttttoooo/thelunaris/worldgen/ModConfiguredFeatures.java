@@ -28,10 +28,15 @@ import net.minecraft.world.level.levelgen.feature.featuresize.ThreeLayersFeature
 import net.minecraft.world.level.levelgen.feature.featuresize.TwoLayersFeatureSize;
 import net.minecraft.world.level.levelgen.feature.foliageplacers.BlobFoliagePlacer;
 import net.minecraft.world.level.levelgen.feature.foliageplacers.DarkOakFoliagePlacer;
+import net.minecraft.world.level.levelgen.feature.foliageplacers.MegaJungleFoliagePlacer;
 import net.minecraft.world.level.levelgen.feature.stateproviders.BlockStateProvider;
 import net.minecraft.world.level.levelgen.feature.stateproviders.WeightedStateProvider;
 import net.minecraft.world.level.levelgen.feature.treedecorators.TreeDecorator;
+import net.minecraft.world.level.levelgen.feature.trunkplacers.CherryTrunkPlacer;
 import net.minecraft.world.level.levelgen.feature.trunkplacers.DarkOakTrunkPlacer;
+import net.minecraft.world.level.levelgen.feature.trunkplacers.ForkingTrunkPlacer;
+import net.minecraft.world.level.levelgen.feature.trunkplacers.GiantTrunkPlacer;
+import net.minecraft.world.level.levelgen.feature.trunkplacers.MegaJungleTrunkPlacer;
 import net.minecraft.world.level.levelgen.feature.trunkplacers.StraightTrunkPlacer;
 import net.minecraft.world.level.levelgen.placement.PlacedFeature;
 import net.minecraft.world.level.levelgen.structure.templatesystem.RuleTest;
@@ -79,9 +84,20 @@ public class ModConfiguredFeatures {
 	public static final ResourceKey<ConfiguredFeature<?, ?>> LARGE_STELLAR_KEY = registerKey("large_stellar");
 	public static final ResourceKey<ConfiguredFeature<?, ?>> LARGE_SKYOAK_KEY = registerKey("large_skyoak");
 	
+	public static final ResourceKey<ConfiguredFeature<?, ?>> FROZEN_SKYOAK_KEY = registerKey("frozen_skyoak");
+
+	public static final ResourceKey<ConfiguredFeature<?, ?>> VINEWOOD_KEY = registerKey("vinewood");
+	public static final ResourceKey<ConfiguredFeature<?, ?>> SMALL_VINEWOOD_KEY = registerKey("small_vinewood");
+	public static final ResourceKey<ConfiguredFeature<?, ?>> TWISTED_VINEWOOD_KEY = registerKey("twisted_vinewood");
+	
+	public static final ResourceKey<ConfiguredFeature<?, ?>> ICEWOOD_KEY = registerKey("icewood");
+	public static final ResourceKey<ConfiguredFeature<?, ?>> TALL_ICEWOOD_KEY = registerKey("tall_icewood");
+	
 	//deep keys
 	public static final ResourceKey<ConfiguredFeature<?, ?>> DEEP_CELEST_KEY = registerKey("deep_celest");
 	public static final ResourceKey<ConfiguredFeature<?, ?>> DEEP_STELLAR_KEY = registerKey("deep_stellar");
+	public static final ResourceKey<ConfiguredFeature<?, ?>> DEEP_ICEWOOD_KEY = registerKey("deep_icewood");
+	public static final ResourceKey<ConfiguredFeature<?, ?>> DEEP_VINEWOOD_KEY = registerKey("deep_vinewood");
 	public static final ResourceKey<ConfiguredFeature<?, ?>> CRIMSONGRASS_PATCH_KEY = registerKey("crimson_lungrass_patch");
 	public static final ResourceKey<ConfiguredFeature<?, ?>> DUSKLIGHTGRASS_PATCH_KEY = registerKey("dusklight_lungrass_patch");
 	public static final ResourceKey<ConfiguredFeature<?, ?>> SINGLE_PIECE_OF_CRIMSON = registerKey("crimson_lungrass_single");
@@ -211,7 +227,6 @@ public class ModConfiguredFeatures {
         		new BlobFoliagePlacer(ConstantInt.of(3), ConstantInt.of(2), 3),
         		new TwoLayersFeatureSize(2, 0, 2)).build());
         
-
         register(context, LARGE_CELEST_KEY, Feature.TREE, new TreeConfiguration.TreeConfigurationBuilder(
         		BlockStateProvider.simple(ModBlocks.CELEST_LOG.get()),
         		new DarkOakTrunkPlacer(5, 2, 2),
@@ -234,6 +249,67 @@ public class ModConfiguredFeatures {
         				.add(ModBlocks.GLOWING_SKYOAK_LEAVES.get().defaultBlockState(), 1)),
         		new DarkOakFoliagePlacer(ConstantInt.of(0), ConstantInt.of(0)),
         		new ThreeLayersFeatureSize(2, 2, 0, 2, 2, OptionalInt.empty())).build());
+        
+        //New Tree Keys
+        register(context, FROZEN_SKYOAK_KEY, Feature.TREE, new TreeConfiguration.TreeConfigurationBuilder(
+        		BlockStateProvider.simple(ModBlocks.SKYOAK_LOG.get()),
+        		new StraightTrunkPlacer(2, 1, 3),
+        		new WeightedStateProvider(SimpleWeightedRandomList.<BlockState>builder()
+        				.add(ModBlocks.FROZEN_SKYOAK_LEAVES.get().defaultBlockState(), 3)
+        				.add(ModBlocks.SKYOAK_LEAVES.get().defaultBlockState(), 2)),
+        		new BlobFoliagePlacer(ConstantInt.of(3), ConstantInt.of(2), 4),
+        		new TwoLayersFeatureSize(2, 0, 2)).build());
+        
+        register(context, VINEWOOD_KEY, Feature.TREE, new TreeConfiguration.TreeConfigurationBuilder(
+        		BlockStateProvider.simple(ModBlocks.VINEWOOD_LOG.get()),
+        		new ForkingTrunkPlacer(5, 1, 2),
+        		BlockStateProvider.simple(ModBlocks.VINEWOOD_LEAVES.get()),
+        		new BlobFoliagePlacer(ConstantInt.of(3), ConstantInt.of(2), 2),
+        		new TwoLayersFeatureSize(2, 0, 2)).build());
+        
+        register(context, SMALL_VINEWOOD_KEY, Feature.TREE, new TreeConfiguration.TreeConfigurationBuilder(
+        		BlockStateProvider.simple(ModBlocks.VINEWOOD_LOG.get()),
+        		new StraightTrunkPlacer(1, 1, 1),
+        		BlockStateProvider.simple(ModBlocks.VINEWOOD_LEAVES.get()),
+        		new BlobFoliagePlacer(ConstantInt.of(2), ConstantInt.of(2), 2),
+        		new TwoLayersFeatureSize(2, 0, 2)).build());
+        
+        register(context, TWISTED_VINEWOOD_KEY, Feature.TREE, new TreeConfiguration.TreeConfigurationBuilder(
+        		BlockStateProvider.simple(ModBlocks.VINEWOOD_LOG.get()),
+        		new GiantTrunkPlacer(10, 2, 2),
+        		BlockStateProvider.simple(ModBlocks.VINEWOOD_LEAVES.get()),
+        		new BlobFoliagePlacer(ConstantInt.of(4), ConstantInt.of(2), 2),
+        		new TwoLayersFeatureSize(2, 0, 2)).build());
+        
+        register(context, ICEWOOD_KEY, Feature.TREE, new TreeConfiguration.TreeConfigurationBuilder(
+        		BlockStateProvider.simple(ModBlocks.ICEWOOD_LOG.get()),
+        		new StraightTrunkPlacer(5, 1, 2),
+        		BlockStateProvider.simple(ModBlocks.ICEWOOD_LEAVES.get()),
+        		new BlobFoliagePlacer(ConstantInt.of(4), ConstantInt.of(2), 2),
+        		new TwoLayersFeatureSize(2, 0, 2)).build());
+        
+        register(context, TALL_ICEWOOD_KEY, Feature.TREE, new TreeConfiguration.TreeConfigurationBuilder(
+        		BlockStateProvider.simple(ModBlocks.ICEWOOD_LOG.get()),
+        		new MegaJungleTrunkPlacer(10, 2, 19),
+        		BlockStateProvider.simple(ModBlocks.ICEWOOD_LEAVES.get()),
+        		new MegaJungleFoliagePlacer(ConstantInt.of(5), ConstantInt.of(3), 2),
+        		new TwoLayersFeatureSize(1, 1, 2)).build());
+        
+        register(context, DEEP_ICEWOOD_KEY, Feature.TREE, new TreeConfiguration.TreeConfigurationBuilder(
+        		BlockStateProvider.simple(ModBlocks.ICEWOOD_LOG.get()),
+        		new StraightTrunkPlacer(2, 2, 3),
+        		new WeightedStateProvider(SimpleWeightedRandomList.<BlockState>builder()
+        				.add(ModBlocks.FROZEN_SKYOAK_LEAVES.get().defaultBlockState(), 3)
+        				.add(ModBlocks.ICEWOOD_LEAVES.get().defaultBlockState(), 1)),
+        		new BlobFoliagePlacer(ConstantInt.of(3), ConstantInt.of(2), 3),
+        		new TwoLayersFeatureSize(2, 0, 2)).build());
+        
+        register(context, DEEP_VINEWOOD_KEY, Feature.TREE, new TreeConfiguration.TreeConfigurationBuilder(
+        		BlockStateProvider.simple(ModBlocks.VINEWOOD_LOG.get()),
+        		new ForkingTrunkPlacer(5, 1, 2),
+        		BlockStateProvider.simple(ModBlocks.VINEWOOD_LEAVES.get()),
+        		new BlobFoliagePlacer(ConstantInt.of(3), ConstantInt.of(2), 2),
+        		new TwoLayersFeatureSize(2, 0, 2)).build());
         
         //vegetation register
         register(context, LUNARIS_GRASS_PATCH_KEY, Feature.RANDOM_PATCH,

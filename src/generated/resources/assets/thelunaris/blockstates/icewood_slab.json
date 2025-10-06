@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=bottom": {
+      "model": "thelunaris:block/icewood_slab"
+    },
+    "type=double": {
+      "model": "thelunaris:block/icewood_planks"
+    },
+    "type=top": {
+      "model": "thelunaris:block/icewood_slab_top"
+    }
+  }
+}

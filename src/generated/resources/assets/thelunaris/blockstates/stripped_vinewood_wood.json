@@ -1,0 +1,16 @@
+{
+  "variants": {
+    "axis=x": {
+      "model": "thelunaris:block/stripped_vinewood_wood_horizontal",
+      "x": 90,
+      "y": 90
+    },
+    "axis=y": {
+      "model": "thelunaris:block/stripped_vinewood_wood"
+    },
+    "axis=z": {
+      "model": "thelunaris:block/stripped_vinewood_wood_horizontal",
+      "x": 90
+    }
+  }
+}
