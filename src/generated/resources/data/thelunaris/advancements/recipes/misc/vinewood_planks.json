@@ -1,0 +1,35 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "thelunaris:vinewood_planks"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    },
+    "has_vinewood_log": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "thelunaris:vinewood_log"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "requirements": [
+    [
+      "has_vinewood_log",
+      "has_the_recipe"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "thelunaris:vinewood_planks"
+    ]
+  },
+  "sends_telemetry_event": false
+}

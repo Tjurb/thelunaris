@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "tag": "thelunaris:vinewood_woods"
+    }
+  ],
+  "result": {
+    "count": 4,
+    "item": "thelunaris:vinewood_planks"
+  }
+}

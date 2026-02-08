@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "redstone",
+  "key": {
+    "P": {
+      "item": "thelunaris:icewood_planks"
+    }
+  },
+  "pattern": [
+    "   ",
+    "PPP",
+    "PPP"
+  ],
+  "result": {
+    "count": 3,
+    "item": "thelunaris:icewood_trapdoor"
+  },
+  "show_notification": true
+}

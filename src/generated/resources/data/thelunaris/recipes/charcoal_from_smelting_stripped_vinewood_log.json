@@ -1,0 +1,11 @@
+{
+  "type": "minecraft:smelting",
+  "category": "misc",
+  "cookingtime": 200,
+  "experience": 0.1,
+  "group": "lunar_charcoal",
+  "ingredient": {
+    "item": "thelunaris:stripped_vinewood_log"
+  },
+  "result": "minecraft:charcoal"
+}

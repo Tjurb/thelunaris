@@ -1,0 +1,22 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "P": {
+      "item": "thelunaris:icewood_planks"
+    },
+    "S": {
+      "item": "thelunaris:lunar_stick"
+    }
+  },
+  "pattern": [
+    "   ",
+    "PSP",
+    "PSP"
+  ],
+  "result": {
+    "count": 3,
+    "item": "thelunaris:icewood_fence"
+  },
+  "show_notification": true
+}
