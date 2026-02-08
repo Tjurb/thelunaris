@@ -45,7 +45,9 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
 			ModBlocks.SKYOAK_LOG.get(),
 			ModBlocks.STRIPPED_SKYOAK_LOG.get(),
 			ModBlocks.STELLAR_LOG.get(),
-			ModBlocks.STRIPPED_STELLAR_LOG.get());
+			ModBlocks.STRIPPED_STELLAR_LOG.get(),
+			ModBlocks.VINEWOOD_LOG.get(),
+			ModBlocks.STRIPPED_VINEWOOD_LOG.get());
 	
 	public static final List<ItemLike> STONELIKE_SMELTABLES = List.of(ModBlocks.COBBLED_VAILSTONE.get());
 	public static final List<ItemLike> GNEISS_SMELTABLES = List.of(ModBlocks.GNEISS.get());
@@ -150,6 +152,8 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
 			.unlockedBy(getHasName(ModBlocks.CELEST_PLANKS.get()), has(ModTags.Items.LUNAR_PLANKS))
 			.unlockedBy(getHasName(ModBlocks.STELLAR_PLANKS.get()), has(ModTags.Items.LUNAR_PLANKS))
 			.unlockedBy(getHasName(ModBlocks.SKYOAK_PLANKS.get()), has(ModTags.Items.LUNAR_PLANKS))
+			.unlockedBy(getHasName(ModBlocks.VINEWOOD_PLANKS.get()), has(ModTags.Items.LUNAR_PLANKS))
+			.unlockedBy(getHasName(ModBlocks.ICEWOOD_PLANKS.get()), has(ModTags.Items.LUNAR_PLANKS))
 			.save(pWriter);
 		ShapedRecipeBuilder.shaped(RecipeCategory.MISC, Blocks.FURNACE,1 )
 			.pattern("VVV")
@@ -200,6 +204,8 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
 			.unlockedBy(getHasName(ModBlocks.CELEST_PLANKS.get()), has(ModTags.Items.LUNAR_PLANKS))
 			.unlockedBy(getHasName(ModBlocks.STELLAR_PLANKS.get()), has(ModTags.Items.LUNAR_PLANKS))
 			.unlockedBy(getHasName(ModBlocks.SKYOAK_PLANKS.get()), has(ModTags.Items.LUNAR_PLANKS))
+			.unlockedBy(getHasName(ModBlocks.VINEWOOD_PLANKS.get()), has(ModTags.Items.LUNAR_PLANKS))
+			.unlockedBy(getHasName(ModBlocks.ICEWOOD_PLANKS.get()), has(ModTags.Items.LUNAR_PLANKS))
 			.save(pWriter);
 		ShapedRecipeBuilder.shaped(RecipeCategory.MISC, Items.STRING,4 )
 			.pattern("##")
@@ -241,6 +247,10 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
 			.pattern("###")
 			.define('#', ModTags.Items.LUNAR_PLANKS)
 			.unlockedBy(getHasName(ModBlocks.CELEST_PLANKS.get()), has(ModTags.Items.LUNAR_PLANKS))
+			.unlockedBy(getHasName(ModBlocks.STELLAR_PLANKS.get()), has(ModTags.Items.LUNAR_PLANKS))
+			.unlockedBy(getHasName(ModBlocks.SKYOAK_PLANKS.get()), has(ModTags.Items.LUNAR_PLANKS))
+			.unlockedBy(getHasName(ModBlocks.VINEWOOD_PLANKS.get()), has(ModTags.Items.LUNAR_PLANKS))
+			.unlockedBy(getHasName(ModBlocks.ICEWOOD_PLANKS.get()), has(ModTags.Items.LUNAR_PLANKS))
 			.save(pWriter ,name("vanilla_chest_from_lunaris"));
 		
 		//Dyes
@@ -277,6 +287,14 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
 		ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, ModBlocks.SKYOAK_PLANKS.get(), 4)
         	.requires(ModTags.Items.SKYOAK_WOODS)
         	.unlockedBy(getHasName(ModBlocks.SKYOAK_LOG.get()), has(ModBlocks.SKYOAK_LOG.get()))
+        	.save(pWriter);
+		ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, ModBlocks.VINEWOOD_PLANKS.get(), 4)
+        	.requires(ModTags.Items.VINEWOOD_WOODS)
+        	.unlockedBy(getHasName(ModBlocks.VINEWOOD_LOG.get()), has(ModBlocks.VINEWOOD_LOG.get()))
+        	.save(pWriter);
+		ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, ModBlocks.ICEWOOD_PLANKS.get(), 4)
+        	.requires(ModTags.Items.ICEWOOD_WOODS)
+        	.unlockedBy(getHasName(ModBlocks.ICEWOOD_LOG.get()), has(ModBlocks.ICEWOOD_LOG.get()))
         	.save(pWriter);
 		
 		//Block -> Ingot
@@ -636,6 +654,20 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
 			.define('P', ModBlocks.SKYOAK_PLANKS.get())
 			.unlockedBy(getHasName(ModBlocks.SKYOAK_PLANKS.get()), has(ModBlocks.SKYOAK_PLANKS.get()))
 			.save(pWriter);
+		ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModBlocks.VINEWOOD_STAIRS.get(), 4)
+			.pattern("  P")
+			.pattern(" PP")
+			.pattern("PPP")
+			.define('P', ModBlocks.VINEWOOD_PLANKS.get())
+			.unlockedBy(getHasName(ModBlocks.VINEWOOD_PLANKS.get()), has(ModBlocks.VINEWOOD_PLANKS.get()))
+			.save(pWriter);
+		ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModBlocks.ICEWOOD_STAIRS.get(), 4)
+			.pattern("  P")
+			.pattern(" PP")
+			.pattern("PPP")
+			.define('P', ModBlocks.ICEWOOD_PLANKS.get())
+			.unlockedBy(getHasName(ModBlocks.ICEWOOD_PLANKS.get()), has(ModBlocks.ICEWOOD_PLANKS.get()))
+			.save(pWriter);
 
 		ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModBlocks.VAILSTONEBRICK_STAIRS.get(), 4)
 			.pattern("  S")
@@ -701,6 +733,20 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
 			.pattern("PPP")
 			.define('P', ModBlocks.SKYOAK_PLANKS.get())
 			.unlockedBy(getHasName(ModBlocks.SKYOAK_PLANKS.get()), has(ModBlocks.SKYOAK_PLANKS.get()))
+			.save(pWriter);
+		ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, ModBlocks.VINEWOOD_SLAB.get(), 6)
+			.pattern("   ")
+			.pattern("   ")
+			.pattern("PPP")
+			.define('P', ModBlocks.VINEWOOD_PLANKS.get())
+			.unlockedBy(getHasName(ModBlocks.VINEWOOD_PLANKS.get()), has(ModBlocks.VINEWOOD_PLANKS.get()))
+			.save(pWriter);
+		ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, ModBlocks.ICEWOOD_SLAB.get(), 6)
+			.pattern("   ")
+			.pattern("   ")
+			.pattern("PPP")
+			.define('P', ModBlocks.ICEWOOD_PLANKS.get())
+			.unlockedBy(getHasName(ModBlocks.ICEWOOD_PLANKS.get()), has(ModBlocks.ICEWOOD_PLANKS.get()))
 			.save(pWriter);
 
 		ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, ModBlocks.COBBLED_VAILSTONE_SLAB.get(), 6)
@@ -839,6 +885,38 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
 			.define('S', ModItems.LUNAR_STICK.get())
 			.unlockedBy(getHasName(ModBlocks.SKYOAK_PLANKS.get()), has(ModBlocks.SKYOAK_PLANKS.get()))
 			.save(pWriter);
+		ShapedRecipeBuilder.shaped(RecipeCategory.REDSTONE, ModBlocks.VINEWOOD_FENCE_GATE.get(),1 )
+			.pattern("   ")
+			.pattern("SPS")
+			.pattern("SPS")
+			.define('P', ModBlocks.VINEWOOD_PLANKS.get())
+			.define('S', ModItems.LUNAR_STICK.get())
+			.unlockedBy(getHasName(ModBlocks.VINEWOOD_PLANKS.get()), has(ModBlocks.VINEWOOD_PLANKS.get()))
+			.save(pWriter);
+		ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModBlocks.VINEWOOD_FENCE.get(),3 )
+			.pattern("   ")
+			.pattern("PSP")
+			.pattern("PSP")
+			.define('P', ModBlocks.VINEWOOD_PLANKS.get())
+			.define('S', ModItems.LUNAR_STICK.get())
+			.unlockedBy(getHasName(ModBlocks.VINEWOOD_PLANKS.get()), has(ModBlocks.VINEWOOD_PLANKS.get()))
+			.save(pWriter);
+		ShapedRecipeBuilder.shaped(RecipeCategory.REDSTONE, ModBlocks.ICEWOOD_FENCE_GATE.get(),1 )
+			.pattern("   ")
+			.pattern("SPS")
+			.pattern("SPS")
+			.define('P', ModBlocks.ICEWOOD_PLANKS.get())
+			.define('S', ModItems.LUNAR_STICK.get())
+			.unlockedBy(getHasName(ModBlocks.ICEWOOD_PLANKS.get()), has(ModBlocks.ICEWOOD_PLANKS.get()))
+			.save(pWriter);
+		ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModBlocks.ICEWOOD_FENCE.get(),3 )
+			.pattern("   ")
+			.pattern("PSP")
+			.pattern("PSP")
+			.define('P', ModBlocks.ICEWOOD_PLANKS.get())
+			.define('S', ModItems.LUNAR_STICK.get())
+			.unlockedBy(getHasName(ModBlocks.ICEWOOD_PLANKS.get()), has(ModBlocks.ICEWOOD_PLANKS.get()))
+			.save(pWriter);
 		
 		//doors
 		ShapedRecipeBuilder.shaped(RecipeCategory.REDSTONE, ModBlocks.CELEST_DOOR.get(),3 )
@@ -862,6 +940,20 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
 			.define('P', ModBlocks.SKYOAK_PLANKS.get())
 			.unlockedBy(getHasName(ModBlocks.SKYOAK_PLANKS.get()), has(ModBlocks.SKYOAK_PLANKS.get()))
 			.save(pWriter);
+		ShapedRecipeBuilder.shaped(RecipeCategory.REDSTONE, ModBlocks.VINEWOOD_DOOR.get(),3 )
+			.pattern(" PP")
+			.pattern(" PP")
+			.pattern(" PP")
+			.define('P', ModBlocks.VINEWOOD_PLANKS.get())
+			.unlockedBy(getHasName(ModBlocks.VINEWOOD_PLANKS.get()), has(ModBlocks.VINEWOOD_PLANKS.get()))
+			.save(pWriter);
+		ShapedRecipeBuilder.shaped(RecipeCategory.REDSTONE, ModBlocks.ICEWOOD_DOOR.get(),3 )
+			.pattern(" PP")
+			.pattern(" PP")
+			.pattern(" PP")
+			.define('P', ModBlocks.ICEWOOD_PLANKS.get())
+			.unlockedBy(getHasName(ModBlocks.ICEWOOD_PLANKS.get()), has(ModBlocks.ICEWOOD_PLANKS.get()))
+			.save(pWriter);
 		
 		//trapdoors
 		ShapedRecipeBuilder.shaped(RecipeCategory.REDSTONE, ModBlocks.CELEST_TRAPDOOR.get(),3 )
@@ -884,6 +976,20 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
 			.pattern("PPP")
 			.define('P', ModBlocks.SKYOAK_PLANKS.get())
 			.unlockedBy(getHasName(ModBlocks.SKYOAK_PLANKS.get()), has(ModBlocks.SKYOAK_PLANKS.get()))
+			.save(pWriter);
+		ShapedRecipeBuilder.shaped(RecipeCategory.REDSTONE, ModBlocks.VINEWOOD_TRAPDOOR.get(),3 )
+			.pattern("   ")
+			.pattern("PPP")
+			.pattern("PPP")
+			.define('P', ModBlocks.VINEWOOD_PLANKS.get())
+			.unlockedBy(getHasName(ModBlocks.VINEWOOD_PLANKS.get()), has(ModBlocks.VINEWOOD_PLANKS.get()))
+			.save(pWriter);
+		ShapedRecipeBuilder.shaped(RecipeCategory.REDSTONE, ModBlocks.ICEWOOD_TRAPDOOR.get(),3 )
+			.pattern("   ")
+			.pattern("PPP")
+			.pattern("PPP")
+			.define('P', ModBlocks.ICEWOOD_PLANKS.get())
+			.unlockedBy(getHasName(ModBlocks.ICEWOOD_PLANKS.get()), has(ModBlocks.ICEWOOD_PLANKS.get()))
 			.save(pWriter);
 		
 		//brick block

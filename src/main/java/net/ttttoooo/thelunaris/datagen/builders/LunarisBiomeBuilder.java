@@ -804,7 +804,7 @@ public class LunarisBiomeBuilder {
                 	.grassColorOverride(0x2986cc)
                 	.foliageColorOverride(0x156DAF)
                     .grassColorModifier(BiomeSpecialEffects.GrassColorModifier.NONE)
-                    .backgroundMusic(Musics.createGameMusic(SoundEvents.MUSIC_BIOME_FROZEN_PEAKS))
+                    .backgroundMusic(Musics.createGameMusic(SoundEvents.MUSIC_BIOME_SNOWY_SLOPES))
                     .build(),
                 new MobSpawnSettings.Builder()
                 	.creatureGenerationProbability(0.25F)

@@ -32,4 +32,15 @@ public class ModToolTiers {
 			new ForgeTier(5, 2200, 10f, 5f, 20,
 					ModTags.Blocks.NEEDS_LUNARITE_TOOL, () -> Ingredient.of(ModItems.LUNARITE.get())),
 			new ResourceLocation(TheLunaris.MODID, "lunarite"), List.of(Tiers.NETHERITE), List.of());
+	
+	//new tiers
+	public static final Tier BLED_LUNARITE = TierSortingRegistry.registerTier(
+			new ForgeTier(6, 2800, 11f, 6f, 21,
+					ModTags.Blocks.NEEDS_LUNARITE_TOOL, () -> Ingredient.of(ModItems.BLED_LUNARITE.get())),
+			new ResourceLocation(TheLunaris.MODID, "bled_lunarite"), List.of(ModToolTiers.LUNARITE), List.of());
+
+	public static final Tier BLUE_LUNARITE = TierSortingRegistry.registerTier(
+			new ForgeTier(6, 2800, 11f, 6f, 21,
+					ModTags.Blocks.NEEDS_LUNARITE_TOOL, () -> Ingredient.of(ModItems.BLUE_LUNARITE.get())),
+			new ResourceLocation(TheLunaris.MODID, "blue_lunarite"), List.of(ModToolTiers.LUNARITE), List.of());
 }

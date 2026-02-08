@@ -292,7 +292,7 @@ public class ModConfiguredFeatures {
         		BlockStateProvider.simple(ModBlocks.ICEWOOD_LOG.get()),
         		new MegaJungleTrunkPlacer(10, 2, 19),
         		BlockStateProvider.simple(ModBlocks.ICEWOOD_LEAVES.get()),
-        		new MegaJungleFoliagePlacer(ConstantInt.of(5), ConstantInt.of(3), 2),
+        		new MegaJungleFoliagePlacer(ConstantInt.of(2), ConstantInt.of(0), 2),
         		new TwoLayersFeatureSize(1, 1, 2)).build());
         
         register(context, DEEP_ICEWOOD_KEY, Feature.TREE, new TreeConfiguration.TreeConfigurationBuilder(

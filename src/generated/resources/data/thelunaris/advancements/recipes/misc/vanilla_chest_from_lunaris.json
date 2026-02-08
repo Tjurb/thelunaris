@@ -11,16 +11,60 @@
       },
       "trigger": "minecraft:inventory_changed"
     },
+    "has_icewood_planks": {
+      "conditions": {
+        "items": [
+          {
+            "tag": "thelunaris:lunar_planks"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_skyoak_planks": {
+      "conditions": {
+        "items": [
+          {
+            "tag": "thelunaris:lunar_planks"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_stellar_planks": {
+      "conditions": {
+        "items": [
+          {
+            "tag": "thelunaris:lunar_planks"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
     "has_the_recipe": {
       "conditions": {
         "recipe": "thelunaris:vanilla_chest_from_lunaris"
       },
       "trigger": "minecraft:recipe_unlocked"
+    },
+    "has_vinewood_planks": {
+      "conditions": {
+        "items": [
+          {
+            "tag": "thelunaris:lunar_planks"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
     }
   },
   "requirements": [
     [
       "has_celest_planks",
+      "has_stellar_planks",
+      "has_skyoak_planks",
+      "has_vinewood_planks",
+      "has_icewood_planks",
       "has_the_recipe"
     ]
   ],

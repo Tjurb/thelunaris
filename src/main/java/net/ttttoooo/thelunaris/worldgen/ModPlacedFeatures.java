@@ -227,10 +227,10 @@ public class ModPlacedFeatures {
                 VegetationPlacements.treePlacement(PlacementUtils.countExtra(1, 0.2f, 2),
                         ModBlocks.VINEWOOD_SAPLING.get()));
         register(context, SMALL_VINEWOOD_PLACED_KEY, configuredFeatures.getOrThrow(ModConfiguredFeatures.SMALL_VINEWOOD_KEY),
-                VegetationPlacements.treePlacement(PlacementUtils.countExtra(4, 0.2f, 2),
+                VegetationPlacements.treePlacement(PlacementUtils.countExtra(1, 0.2f, 2),
                         ModBlocks.VINEWOOD_SAPLING.get()));
         register(context, TWISTED_VINEWOOD_PLACED_KEY, configuredFeatures.getOrThrow(ModConfiguredFeatures.TWISTED_VINEWOOD_KEY),
-                VegetationPlacements.treePlacement(PlacementUtils.countExtra(1, 0.2f, 2),
+                VegetationPlacements.treePlacement(PlacementUtils.countExtra(2, 0.2f, 2),
                         ModBlocks.VINEWOOD_SAPLING.get()));
         
         register(context, DEEP_ICEWOOD_PLACED_KEY, configuredFeatures.getOrThrow(ModConfiguredFeatures.DEEP_ICEWOOD_KEY), tree(8));

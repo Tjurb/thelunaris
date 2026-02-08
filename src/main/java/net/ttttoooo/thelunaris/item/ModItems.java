@@ -49,6 +49,11 @@ public class ModItems {
 			() -> new Item(new Item.Properties()));
 	public static final RegistryObject<Item> LUNAR_CLAY_BRICK = ITEMS.register("lunar_clay_brick", 
 			() -> new Item(new Item.Properties()));
+	//new materials
+	public static final RegistryObject<Item> BLED_LUNARITE = ITEMS.register("bled_lunarite", 
+			() -> new Item(new Item.Properties()));
+	public static final RegistryObject<Item> BLUE_LUNARITE = ITEMS.register("blue_lunarite", 
+			() -> new Item(new Item.Properties()));
 	
 	//foods
 	public static final RegistryObject<Item> LUNAR_WHEAT = ITEMS.register("lunar_wheat", 
@@ -93,7 +98,6 @@ public class ModItems {
 	public static final RegistryObject<Item> MOONSTEEL_HOE = ITEMS.register("moonsteel_hoe", 
 			() -> new HoeItem(ModToolTiers.MOONSTEEL, 0, 0, new Item.Properties()));
 	
-
 	public static final RegistryObject<Item> EMOONSTEEL_SWORD = ITEMS.register("emoonsteel_sword", 
 			() -> new SwordItem(ModToolTiers.EMOONSTEEL, 4, 2, new Item.Properties()));
 	public static final RegistryObject<Item> EMOONSTEEL_PICKAXE = ITEMS.register("emoonsteel_pickaxe", 
@@ -105,7 +109,6 @@ public class ModItems {
 	public static final RegistryObject<Item> EMOONSTEEL_HOE = ITEMS.register("emoonsteel_hoe", 
 			() -> new HoeItem(ModToolTiers.EMOONSTEEL, 0, 0, new Item.Properties()));
 	
-
 	public static final RegistryObject<Item> LUNARITE_SWORD = ITEMS.register("lunarite_sword", 
 			() -> new SwordItem(ModToolTiers.LUNARITE, 4, 2, new Item.Properties()));
 	public static final RegistryObject<Item> LUNARITE_PICKAXE = ITEMS.register("lunarite_pickaxe", 
@@ -116,6 +119,28 @@ public class ModItems {
 			() -> new AxeItem(ModToolTiers.LUNARITE, 5, 1, new Item.Properties()));
 	public static final RegistryObject<Item> LUNARITE_HOE = ITEMS.register("lunarite_hoe", 
 			() -> new HoeItem(ModToolTiers.LUNARITE, 0, 0, new Item.Properties()));
+	//new tools
+	public static final RegistryObject<Item> BLED_LUNARITE_SWORD = ITEMS.register("bled_lunarite_sword", 
+			() -> new SwordItem(ModToolTiers.BLED_LUNARITE, 4, 2, new Item.Properties()));
+	public static final RegistryObject<Item> BLED_LUNARITE_PICKAXE = ITEMS.register("bled_lunarite_pickaxe", 
+			() -> new PickaxeItem(ModToolTiers.BLED_LUNARITE, 2, 1, new Item.Properties()));
+	public static final RegistryObject<Item> BLED_LUNARITE_SHOVEL = ITEMS.register("bled_lunarite_shovel", 
+			() -> new ShovelItem(ModToolTiers.BLED_LUNARITE, 0, 0, new Item.Properties()));
+	public static final RegistryObject<Item> BLED_LUNARITE_AXE = ITEMS.register("bled_lunarite_axe", 
+			() -> new AxeItem(ModToolTiers.BLED_LUNARITE, 5, 1, new Item.Properties()));
+	public static final RegistryObject<Item> BLED_LUNARITE_HOE = ITEMS.register("bled_lunarite_hoe", 
+			() -> new HoeItem(ModToolTiers.BLED_LUNARITE, 0, 0, new Item.Properties()));
+	
+	public static final RegistryObject<Item> BLUE_LUNARITE_SWORD = ITEMS.register("blue_lunarite_sword", 
+			() -> new SwordItem(ModToolTiers.BLUE_LUNARITE, 4, 2, new Item.Properties()));
+	public static final RegistryObject<Item> BLUE_LUNARITE_PICKAXE = ITEMS.register("blue_lunarite_pickaxe", 
+			() -> new PickaxeItem(ModToolTiers.BLUE_LUNARITE, 2, 1, new Item.Properties()));
+	public static final RegistryObject<Item> BLUE_LUNARITE_SHOVEL = ITEMS.register("blue_lunarite_shovel", 
+			() -> new ShovelItem(ModToolTiers.BLUE_LUNARITE, 0, 0, new Item.Properties()));
+	public static final RegistryObject<Item> BLUE_LUNARITE_AXE = ITEMS.register("blue_lunarite_axe", 
+			() -> new AxeItem(ModToolTiers.BLUE_LUNARITE, 5, 1, new Item.Properties()));
+	public static final RegistryObject<Item> BLUE_LUNARITE_HOE = ITEMS.register("blue_lunarite_hoe", 
+			() -> new HoeItem(ModToolTiers.BLUE_LUNARITE, 0, 0, new Item.Properties()));
 	
 	//SpawnEggs
 	public static final RegistryObject<Item> MOONCOW_SPANW_EGG = ITEMS.register("mooncow_spawn_egg",
@@ -158,6 +183,7 @@ public class ModItems {
             () -> new ArmorItem(ModArmorMaterials.LUNARITE, ArmorItem.Type.LEGGINGS, new Item.Properties()));
     public static final RegistryObject<Item> LUNARITE_BOOTS = ITEMS.register("lunarite_boots",
             () -> new ArmorItem(ModArmorMaterials.LUNARITE, ArmorItem.Type.BOOTS, new Item.Properties()));
+    //new armor
     
 	public static void register(IEventBus eventBus) {
 		ITEMS.register(eventBus);

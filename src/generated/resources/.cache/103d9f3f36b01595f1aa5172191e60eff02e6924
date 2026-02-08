@@ -1,4 +1,4 @@
-// 1.20.1	2025-10-06T15:51:27.1912144	Registries
+// 1.20.1	2026-02-08T16:48:51.0772816	Registries
 94a7d19f26aaf9ee5707fdc8023179608da8ae3c data/thelunaris/dimension/lunarisdim.json
 bca042591bbdc2b08e58ff6974e272e89eb3ab68 data/thelunaris/dimension_type/lunarisdim_type.json
 58df882e216d2bba21d5f7ecc11a5156e9a67564 data/thelunaris/worldgen/biome/azureite_ocean.json
@@ -7,7 +7,7 @@ bca042591bbdc2b08e58ff6974e272e89eb3ab68 data/thelunaris/dimension_type/lunarisd
 e80cbb765d444c9d3bc1413273805f2ca614e371 data/thelunaris/worldgen/biome/dusklight_caves.json
 4f10b2b7d8ed12b88e6384f0e279d198ad760a42 data/thelunaris/worldgen/biome/forested_caves.json
 37295f27fae87da9fe6af75994f0777d98aa0db1 data/thelunaris/worldgen/biome/frozen_caves.json
-8e8083c1c96fc191fafd6b68d40b2e157328440c data/thelunaris/worldgen/biome/frozen_cover.json
+f8606974669352fb94f8df3ed4d5df2f9207788b data/thelunaris/worldgen/biome/frozen_cover.json
 976fdf8847dde1a5074112e74ee49f6ff514f005 data/thelunaris/worldgen/biome/grassy_caves.json
 f4b8ece9ee315448363a9e2c90335f32c6a3c49f data/thelunaris/worldgen/biome/hightop_jungle.json
 552268096505d50a54ee13cf99919f443807025c data/thelunaris/worldgen/biome/lunar_forests.json
@@ -65,7 +65,7 @@ cb10ee96bdb53e80efafd9e28ea14fb1f1c6e108 data/thelunaris/worldgen/configured_fea
 1c978273c103117405ad080333be716c524ea42f data/thelunaris/worldgen/configured_feature/skyoak.json
 a208f5bf238ccbbe872ed5099b0973aa00561dbc data/thelunaris/worldgen/configured_feature/small_vinewood.json
 153e650bebbeb3a3846588712616e5f0870e5c17 data/thelunaris/worldgen/configured_feature/stellar.json
-d1eb2336be7f7a75128bb0a6d20e490cfc30f4c3 data/thelunaris/worldgen/configured_feature/tall_icewood.json
+23f86c1173d41a2127fc5fbdf257f0dd2b6f3501 data/thelunaris/worldgen/configured_feature/tall_icewood.json
 9b3733b79c8e8b5cd635fe70d408f2777060d2bd data/thelunaris/worldgen/configured_feature/tall_lungrass_patch.json
 d1dc28db6f3e268de44d8830b884894a7507cd82 data/thelunaris/worldgen/configured_feature/twisted_vinewood.json
 682241e192b890c2ff6a9ccd564198ca4fa40ecb data/thelunaris/worldgen/configured_feature/vinewood.json

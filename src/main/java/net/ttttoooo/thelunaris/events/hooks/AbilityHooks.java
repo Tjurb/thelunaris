@@ -25,9 +25,13 @@ public class AbilityHooks {
                 .put(ModBlocks.CELEST_LOG.get(), ModBlocks.STRIPPED_CELEST_LOG.get())
                 .put(ModBlocks.STELLAR_LOG.get(), ModBlocks.STRIPPED_STELLAR_LOG.get())
                 .put(ModBlocks.SKYOAK_LOG.get(), ModBlocks.STRIPPED_SKYOAK_LOG.get())
+                .put(ModBlocks.ICEWOOD_LOG.get(), ModBlocks.STRIPPED_ICEWOOD_LOG.get())
+                .put(ModBlocks.VINEWOOD_LOG.get(), ModBlocks.STRIPPED_VINEWOOD_LOG.get())
                 .put(ModBlocks.CELEST_WOOD.get(), ModBlocks.STRIPPED_CELEST_WOOD.get())
                 .put(ModBlocks.STELLAR_WOOD.get(), ModBlocks.STRIPPED_STELLAR_WOOD.get())
                 .put(ModBlocks.SKYOAK_WOOD.get(), ModBlocks.STRIPPED_SKYOAK_WOOD.get())
+                .put(ModBlocks.ICEWOOD_WOOD.get(), ModBlocks.STRIPPED_ICEWOOD_WOOD.get())
+                .put(ModBlocks.VINEWOOD_WOOD.get(), ModBlocks.STRIPPED_VINEWOOD_WOOD.get())
                 .build();
 
         public static final Map<Block, Block> FLATTENABLES = (new ImmutableMap.Builder<Block, Block>())
@@ -38,6 +42,8 @@ public class AbilityHooks {
         public static final Map<Block, Block> TILLABLES = (new ImmutableMap.Builder<Block, Block>())
                 .put(ModBlocks.LUNDIRT.get(), ModBlocks.LUNDIRT_FARMLAND.get())
                 .put(ModBlocks.LUNGRASS_BLOCK.get(), ModBlocks.LUNDIRT_FARMLAND.get())
+                .put(ModBlocks.CRIMSON_LUNGRASS_BLOCK.get(), ModBlocks.LUNDIRT_FARMLAND.get())
+                .put(ModBlocks.DUSKLIGHT_LUNGRASS_BLOCK.get(), ModBlocks.LUNDIRT_FARMLAND.get())
                 .build();
 
         public static boolean debuffTools;

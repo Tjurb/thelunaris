@@ -240,6 +240,16 @@ public class ModCreativeTabs {
 				pOutput.accept(ModItems.LUNARITE_AXE.get());
 				pOutput.accept(ModItems.LUNARITE_SHOVEL.get());
 				pOutput.accept(ModItems.LUNARITE_HOE.get());
+				pOutput.accept(ModItems.BLED_LUNARITE_SWORD.get());
+				pOutput.accept(ModItems.BLED_LUNARITE_PICKAXE.get());
+				pOutput.accept(ModItems.BLED_LUNARITE_AXE.get());
+				pOutput.accept(ModItems.BLED_LUNARITE_SHOVEL.get());
+				pOutput.accept(ModItems.BLED_LUNARITE_HOE.get());
+				pOutput.accept(ModItems.BLUE_LUNARITE_SWORD.get());
+				pOutput.accept(ModItems.BLUE_LUNARITE_PICKAXE.get());
+				pOutput.accept(ModItems.BLUE_LUNARITE_AXE.get());
+				pOutput.accept(ModItems.BLUE_LUNARITE_SHOVEL.get());
+				pOutput.accept(ModItems.BLUE_LUNARITE_HOE.get());
 				
 				//Armor Entry
 				pOutput.accept(ModItems.MOONSTEEL_HELMET.get());
